@@ -1,0 +1,11 @@
+<Mod
+	name="Deep End"
+	description="Give up all your hope."
+	ui_newgame_name="Deep End"
+	ui_newgame_description="Falling down is the only way out."
+	ui_newgame_gfx_banner_bg="mods/deep_end/files/menu_banner_background.png"
+	ui_newgame_gfx_banner_fg="mods/deep_end/files/menu_banner_overlay.png"
+	request_no_api_restrictions="0" 
+	is_game_mode="1"
+	> 
+</Mod>
