@@ -35,13 +35,31 @@ ATTENTION! If you've planted SUN, please be extra careful when exploring the las
 
 -----------------------------------------------------------------------------------------------------
 
-[spoiler][b]-> Fast Travel Room:[/b]
+This mod DOES NOT need to be enabled manually.
+
+Please select the GAME MODE named "Deep end" in the "New Game" option.
+
+If you want to play this mod as a SWITCHABLE MOD in the "Mods" option rather than a game mode:
+
+- browse the workshop file [i]Steam\steamapps\workshop\content\881100\3356681136\mod.xml[/i]
+
+- edit the code [i]is_game_mode="1"[/i] as [i]is_game_mode="0"[/i]
+
+- if do so, please enable this mod in A NEW RUN , otherwise errors may occur!
+
+If you run into any issues, please reach out to me on Discord:
+[spoiler]https://discord.gg/cN3T69yPfP[/spoiler]
+[strike]Although I don't read messages often[/strike]
+
+-----------------------------------------------------------------------------------------------------
+
+[spoiler][b]Fast Travel Room:[/b]
 
 After killing the Kolmisilmä, a portal under the bridge will take you to the Fast Travel Room.
 Where you can tp to challenge most bosses in this game mode and tp back after killing them.
 [/spoiler]
 
-[spoiler][b]-> Weaknesses & Rewards:[/b]
+[spoiler][b]Weaknesses & Rewards:[/b]
 
 Suomuhauki is very aggressive, be careful! Plus, you'd better just use projectile damage.
 And it gives you many useful modifiers, including Light Shot, Mana To Damage, Spells To Power, etc.
@@ -79,7 +97,7 @@ Last, if you beat bosses by using Cessation the spell, you might miss out on som
 
 -----------------------------------------------------------------------------------------------------
 
-[spoiler][b]-> About The Plot:[/b]
+[spoiler][b]About The Plot:[/b]
 
 Honestly, I haven't decided yet.
 Maybe it's a prequel or a sequel of the normal mode, or generalized parallel worlds....
@@ -87,10 +105,3 @@ Maybe it's a prequel or a sequel of the normal mode, or generalized parallel wor
 [i]But why?[/i]
 [/spoiler]
 
------------------------------------------------------------------------------------------------------
-
-If you run into any issues, feel free to reach out to me on Discord:
-[spoiler]https://discord.gg/cN3T69yPfP
-[/spoiler]
-
-[strike]Although I don't read messages often[/strike]
