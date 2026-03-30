@@ -1,4 +1,4 @@
-# Deep-End
+# Deep End
 One mod of the game Noita
 Update synchronously on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3356681136)
 
