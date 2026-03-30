@@ -1,0 +1,2093 @@
+<Materials>
+
+	<CellData
+	name="magic_gas_hp_regeneration"
+	ui_name="$mat_magic_gas_hp_regeneration"
+	tags="[gas],[vapour],[regenerative_gas]"
+	burnable="0"
+	density="2"
+	cell_type="gas"
+	lifetime="180"
+	wang_color="7fA1F18C"
+	generates_smoke="0"
+	liquid_gravity="0.5"
+	liquid_sand="0"
+	on_fire="0"
+	requires_oxygen="0"
+	temperature_of_fire="0"
+	autoignition_temperature="99" 
+	gfx_glow="255"
+	show_in_creative_mode="1"
+	liquid_stains="1"
+	liquid_sprite_stains_status_threshold="0.15"
+	liquid_sprite_stain_shaken_drop_chance="5"
+	status_effects="HP_REGENERATION"
+	audio_materialaudio_type="MAGICAL" 
+	liquid_sprite_stains_check_offset="1"
+	>
+	<ParticleEffect
+		vel.y="0"
+		vel_random.min_x="-17"
+		vel_random.max_x="17"
+		vel_random.min_y="-17"
+		vel_random.max_y="-17"
+		lifetime.min="0.075"
+		lifetime.max="0.15"
+		gravity.y="-0.8"
+		render_on_grid="1"
+		airflow_force="0.75"
+		airflow_scale="0.15"
+		friction="0.5"
+		probability="0.35"
+		count.min="0"
+		count.max="1"
+	>
+	</ParticleEffect>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="DEEP_END_HP_UP" amount="0.15" />
+		</Ingestion>
+	</StatusEffects>
+	</CellData>
+
+	<CellData
+	name="magic_liquid_hp_regeneration"
+	ui_name="$mat_magic_liquid_hp_regeneration"
+	tags="[liquid],[water],[magic_liquid],[regenerative]"
+	burnable="0"
+	density="5.53"
+	cell_type="liquid"
+	wang_color="80a1f18b"
+	generates_smoke="0"
+	liquid_gravity="0.8"
+	liquid_sand="0"
+	gfx_glow="130"
+	on_fire="0"
+	requires_oxygen="0"
+	liquid_stains="1"
+	liquid_sprite_stains_status_threshold="0.05"
+	liquid_sprite_stain_shaken_drop_chance="3"
+	status_effects="DEEP_END_HP_UP"
+	audio_materialaudio_type="MAGICAL" 
+	show_in_creative_mode="1"
+	>
+	<ParticleEffect
+		vel.y="-12.5"
+		vel_random.min_x="-0.25"
+		vel_random.max_x="0.25"
+		vel_random.min_y="-10.0"
+		vel_random.max_y="10.0"
+		lifetime.min="0"
+		lifetime.max="18"
+		gravity.y="0"
+		render_on_grid="1"
+		airflow_force="0.12"
+		airflow_scale="-0.3"
+		probability="0.015"
+		count.min="0"
+	>
+	</ParticleEffect>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="HP_REGENERATION" amount="0.15" />
+		</Ingestion>
+	</StatusEffects>
+	</CellData>
+
+	<CellData
+	_parent="magic_liquid_hp_regeneration"
+	name="magic_liquid_hp_regeneration_unstable"
+	ui_name="$mat_magic_liquid_hp_regeneration_unstable"
+	tags="[liquid],[water],[magic_liquid],[regenerative]"
+	burnable="0"
+	density="5.74"
+	cell_type="liquid"
+	wang_color="80a1f18c"
+	generates_smoke="0"
+	liquid_gravity="0.8"
+	liquid_sand="0"
+	gfx_glow="220"
+	on_fire="0"
+	requires_oxygen="0"
+	liquid_stains="1"
+	liquid_sprite_stains_status_threshold="0.1"
+	liquid_sprite_stain_shaken_drop_chance="4"
+	status_effects="HP_REGENERATION"
+	audio_materialaudio_type="MAGICAL" 
+	lifetime="900"
+	show_in_creative_mode="1"
+	>
+	<ParticleEffect
+		vel.y="-27.5"
+		vel_random.min_x="-0.4"
+		vel_random.max_x="0.4"
+		vel_random.min_y="-15.0"
+		vel_random.max_y="15.0"
+		lifetime.min="0"
+		lifetime.max="12"
+		gravity.y="0"
+		render_on_grid="1"
+		airflow_force="0.2"
+		airflow_scale="-0.5"
+		probability="0.03"
+		count.min="0"
+	>
+	</ParticleEffect>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="DEEP_END_HP_UP" amount="0.04" />
+			<StatusEffect type="HP_REGENERATION" amount="0.04" />
+		</Ingestion>
+	</StatusEffects>
+	</CellData>
+
+	<CellData
+	name="cheese_static"
+	ui_name="$mat_cheese_static"
+	tags="[static],[corrodible],[meltable_to_lava],[alchemy],[solid],[earth]"
+	burnable="0"
+	density="5"
+	cell_type="liquid"
+	wang_color="ffF3CD67"
+	liquid_gravity="1.2"
+	liquid_sand="1"
+	liquid_static="1"
+	solid_static_type="1"
+	durability="5"
+	on_fire="0"
+	hp="1000" 
+	platform_type="1"
+	audio_physics_material_event="slime"
+	audio_physics_material_wall="slime"
+	audio_physics_material_solid="slime"
+	show_in_creative_mode="1"
+	>
+	<Graphics 
+	texture_file="data/materials_gfx/deep_end_cheese.png"
+	>
+    </Graphics>
+	</CellData>
+
+	<CellDataChild
+	_parent="wood"
+	_inherit_reactions="1"
+	name="wood_prop_durable" 
+	ui_name="$mat_wood_prop_durable"
+	platform_type="0"
+	solid_static_type="0"
+	solid_collide_with_self="1"
+	fire_hp="250000"
+	temperature_of_fire="15"
+	hp="200000"
+	wang_color="ff966410"
+	audio_physics_material_wall="woodwall"
+	audio_physics_material_solid="wood" >
+	<Graphics
+	texture_file="data/materials_gfx/wood.png"
+	color="ff966410" >
+	</Graphics>
+	</CellDataChild>
+
+	<CellDataChild
+	_parent="salt"
+	name="sodium"
+	ui_name="$mat_sodium"
+	wang_color="ff410F24"
+	show_in_creative_mode="1"
+	>
+	<Graphics
+	texture_file="data/materials_gfx/lavarock.png"
+	color="ffa66253"
+	>
+	</Graphics>
+	</CellDataChild>
+
+	<CellDataChild
+	_parent="silver"
+	name="metal_sand"
+	ui_name="$mat_metal_sand"
+	tags="[sand_metal],[corrodible],[alchemy],[meltable_metal]"
+	wang_color="ffe4f4b0"
+	gfx_glow="0"
+	electrical_conductivity="1"
+	platform_type="0"
+	>
+	<Graphics
+	texture_file="data/materials_gfx/steel.png"
+	color="ffebf4a1"
+	>
+	</Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="OILED" amount="1.0" />
+		</Ingestion>
+	</StatusEffects>
+	</CellDataChild>
+
+	<CellDataChild
+	_parent="rainbow_gas"
+	_inherit_reactions="1"
+	name="Deep_End_Cocktail"
+	ui_name="$mat_rainbow_gas"
+	wang_color="7fF2E606" >
+	<Graphics 
+	texture_file="data/materials_gfx/deep_end_rainbow_gas.png" >
+    </Graphics>
+	</CellDataChild>
+
+	<CellDataChild
+  	_parent="rock_static"
+  	_inherit_reactions="1"
+  	name="Rock_Magic_Deep_End" 
+	ui_name="$Rock_Magic_Deep_End"
+	tags="[static],[matter_eater_ignore_list],[indestructible],[sunbaby_ignore_list],"
+	wang_color="ff420433"
+	durability="18"
+	hp="400000"
+	audio_physics_material_wall="rock"
+	audio_physics_material_solid="rock"
+	>
+  	<Graphics
+	texture_file="data/materials_gfx/deep_end_brick.png"
+	color="ff5c14d0" >
+    </Graphics>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="rock_static"
+  	_inherit_reactions="1"
+  	name="Wood_Deep_End" 
+	ui_name="$Wood_Deep_End"
+	tags="[static],[matter_eater_ignore_list],[indestructible],[sunbaby_ignore_list],"
+	wang_color="ff6b0034"
+	durability="17"
+	hp="400000"
+	audio_physics_material_wall="rock"
+	audio_physics_material_solid="rock"
+	>
+  	<Graphics
+	texture_file="data/materials_gfx/deep_end_wood.png"
+	color="ff5600e1" >
+    </Graphics>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="aluminium"
+  	_inherit_reactions="1"
+	tags="[box2d],[matter_eater_ignore_list],[indestructible],[sunbaby_ignore_list]"
+  	name="Box2d_Deep_End"
+	ui_name="$Metal_Magic_Deep_End"
+	platform_type="1"
+	hp="100000" 
+	durability="17"
+	electrical_conductivity="0"
+	wang_color="ff2d6dbf"
+	audio_physics_material_wall="metalhollow"
+	audio_physics_material_solid="metalhollow"
+	audio_size_multiplier="3.0" 
+	show_in_creative_mode="1"
+	>
+  	<Graphics
+		texture_file="data/materials_gfx/rock.png"
+		color="ff2d2dac" >
+    </Graphics>
+  </CellDataChild>
+
+  <CellData
+	name="Eucharist_Deep_End"
+	ui_name="$Eucharist_Deep_End"
+  	tags="[sand_other],[corrodible],[alchemy]"
+	burnable="0"
+	density="7"
+	durability="3"
+	cell_type="liquid"
+	liquid_gravity="0"
+	wang_color="ffbe4df8"
+	generates_smoke="0"
+	liquid_gravity="2"
+	liquid_sand="1"
+	on_fire="0"
+	requires_oxygen="0"
+	temperature_of_fire="10"
+	autoignition_temperature="0"
+	generates_flames="0"
+	on_fire_flame_material="swamp"
+	platform_type="0"
+	hp="1000" 
+	fire_hp="20"
+	audio_physics_material_event="sand"
+	audio_physics_material_wall="sand"
+	audio_physics_material_solid="sand"
+	show_in_creative_mode="0"
+	lifetime="9000"
+	>
+    <Graphics
+	  texture_file="data/materials_gfx/wax.png"
+	color="fffffad1">
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="PROTECTION_POLYMORPH" amount="1.0" />
+			<StatusEffect type="RAINBOW_FARTS" amount="1.0" />
+			<StatusEffect type="JARATE" amount="0.04" />
+			<StatusEffect type="PROTECTION_ALL" amount="0.04" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellDataChild
+  	_parent="aluminium"
+  	_inherit_reactions="1"
+	tags="[box2d]"
+  	name="potion_toughened_glass_box2d"
+	ui_name="$mat_potion_glass_box2d"
+	platform_type="0"
+	solid_gravity_scale="0.8"
+	hp="30000"
+	durability="12"
+	gfx_glow="188"
+	electrical_conductivity="0"
+	gfx_glow_color="0xFF0000FF"
+	wang_color="ff8bd1"
+	stainable="0" 
+	audio_physics_material_wall="glass"
+	audio_physics_material_solid="glass"
+	>
+  	<Graphics
+	normal_mapped="1"
+	texture_file="data/materials_gfx/crystal.png"
+	color="ff5787E7" >
+    </Graphics>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="templerock_static"
+  	_inherit_reactions="1"
+  	name="glowstone_Deep_End" 
+	ui_name="Welcome"
+	gfx_glow="255"
+	hp="40000"
+	audio_physics_material_wall="rock"
+	audio_physics_material_solid="rock"
+	wang_color="ffA2FF53">
+  	<Graphics
+	texture_file="data/materials_gfx/templebrick_alt.png"
+	color="ffAAF06E" >
+    </Graphics>
+  </CellDataChild>
+
+	<CellData
+	name="Bouncing_Burst_powder"
+	ui_name="$Bouncing_Burst_powder"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+	burnable="1"
+	density="7"
+	cell_type="liquid"
+	liquid_gravity="0"
+	wang_color="ff200084"
+	generates_smoke="0"
+	liquid_gravity="2"
+	liquid_sand="1"
+	on_fire="1"
+	requires_oxygen="0"
+	temperature_of_fire="50"
+	autoignition_temperature="0"
+	platform_type="0"
+	hp="1000" 
+	fire_hp="0"
+	audio_physics_material_event="organicbouncy"
+	audio_physics_material_wall="organicbouncy"
+	audio_physics_material_solid="organicbouncy"
+	show_in_creative_mode="0"
+	audio_event_name="explosions/gunpowder"
+	>
+	<ExplosionConfig 
+		damage="0"
+		cell_explosion_power="1"
+		cell_explosion_damage_required="1"
+		cell_explosion_radius_min="1"
+		explosion_sprite=""
+		load_this_entity="data/custom_materials/rubber_ball_spawner.xml"
+		ray_energy="1"
+		sparks_enabled="0"
+		>
+	</ExplosionConfig>
+    <Graphics
+	  texture_file="data/materials_gfx/moss.png"
+	color="ff00ff40">
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="DEEP_END_NO_EDIT_EFFECT" amount="0.15" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="Firebolt_powder"
+	ui_name="$Firebolt_powder"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+	burnable="1"
+	density="7"
+	durability="3"
+	cell_type="liquid"
+	liquid_gravity="0"
+	wang_color="ffbe4df9"
+	generates_smoke="0"
+	liquid_gravity="2"
+	liquid_sand="1"
+	on_fire="0"
+	requires_oxygen="0"
+	temperature_of_fire="10"
+	autoignition_temperature="0"
+	generates_flames="0"
+	on_fire_flame_material="swamp"
+	platform_type="0"
+	hp="1000" 
+	fire_hp="20"
+	audio_physics_material_event="organicbouncy"
+	audio_physics_material_wall="organicbouncy"
+	audio_physics_material_solid="organicbouncy"
+	show_in_creative_mode="0"
+	lifetime="60.0"
+	>
+    <Graphics
+	  texture_file="data/materials_gfx/moss_rust.png"
+	color="ffffaa00">
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="INGESTION_FREEZING" amount="0.1" />
+			<StatusEffect type="INGESTION_ON_FIRE" amount="0.1" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="Pollen_powder"
+	ui_name="$Pollen_powder"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+	burnable="1"
+	density="7"
+	durability="3"
+	cell_type="liquid"
+	liquid_gravity="0"
+	wang_color="ffbe4dfa"
+	generates_smoke="0"
+	liquid_gravity="2"
+	liquid_sand="1"
+	on_fire="0"
+	requires_oxygen="0"
+	temperature_of_fire="10"
+	autoignition_temperature="0"
+	generates_flames="0"
+	on_fire_flame_material="swamp"
+	platform_type="0"
+	hp="1000" 
+	fire_hp="20"
+	audio_physics_material_event="organicbouncy"
+	audio_physics_material_wall="organicbouncy"
+	audio_physics_material_solid="organicbouncy"
+	show_in_creative_mode="0"
+	lifetime="90.0"
+	>
+    <Graphics
+	  texture_file="data/materials_gfx/wax.png"
+	color="ffc8fff1">
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="DEEP_END_DIZZY_EFFECT" amount="0.15" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="Lightning_Spells_powder"
+	ui_name="$Lightning_Spells_powder"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+	burnable="1"
+	density="7"
+	durability="3"
+	cell_type="liquid"
+	liquid_gravity="0"
+	wang_color="ffbe4dfb"
+	generates_smoke="0"
+	liquid_gravity="2"
+	liquid_sand="1"
+	on_fire="0"
+	requires_oxygen="0"
+	temperature_of_fire="10"
+	autoignition_temperature="0"
+	generates_flames="0"
+	on_fire_flame_material="swamp"
+	platform_type="0"
+	hp="1000" 
+	fire_hp="20"
+	audio_physics_material_event="organicbouncy"
+	audio_physics_material_wall="organicbouncy"
+	audio_physics_material_solid="organicbouncy"
+	show_in_creative_mode="0"
+	lifetime="120.0"
+	>
+    <Graphics
+	  texture_file="data/materials_gfx/blueblood.png"
+	color="ff7af4ff">
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="DEEP_END_NO_HEAL_EFFECT" amount="0.15" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="Disc_powder"
+	ui_name="$Disc_powder"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+	burnable="1"
+	density="7"
+	cell_type="liquid"
+	liquid_gravity="0"
+	wang_color="ff200085"
+	generates_smoke="0"
+	liquid_gravity="2"
+	liquid_sand="1"
+	on_fire="1"
+	requires_oxygen="0"
+	temperature_of_fire="50"
+	autoignition_temperature="0"
+	platform_type="0"
+	hp="1000" 
+	fire_hp="0"
+	audio_physics_material_event="organicbouncy"
+	audio_physics_material_wall="organicbouncy"
+	audio_physics_material_solid="organicbouncy"
+	show_in_creative_mode="0"
+	audio_event_name="explosions/gunpowder"
+	>
+	<ExplosionConfig 
+		damage="0"
+		cell_explosion_power="1"
+		cell_explosion_damage_required="1"
+		cell_explosion_radius_min="1"
+		explosion_sprite=""
+		load_this_entity="data/custom_materials/disc_spawner.xml"
+		ray_energy="1"
+		sparks_enabled="0"
+		>
+	</ExplosionConfig>
+    <Graphics
+	  texture_file="data/materials_gfx/concrete.png"
+	color="ff737373">
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="DEEP_END_DIZZY_EFFECT" amount="0.15" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="Vigour_powder"
+	ui_name="$Vigour_powder"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+	burnable="1"
+	density="7"
+	durability="3"
+	cell_type="liquid"
+	liquid_gravity="0"
+	wang_color="ffbe4dfc"
+	generates_smoke="0"
+	liquid_gravity="2"
+	liquid_sand="1"
+	on_fire="0"
+	requires_oxygen="0"
+	temperature_of_fire="10"
+	autoignition_temperature="0"
+	generates_flames="0"
+	on_fire_flame_material="swamp"
+	platform_type="0"
+	hp="1000" 
+	fire_hp="20"
+	audio_physics_material_event="organicbouncy"
+	audio_physics_material_wall="organicbouncy"
+	audio_physics_material_solid="organicbouncy"
+	show_in_creative_mode="0"
+	lifetime="600.0"
+	>
+    <Graphics
+	  texture_file="data/materials_gfx/ice_acid.png"
+		color="ffaeff5c">
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="HP_REGENERATION" amount="0.15" />
+			<StatusEffect type="RAINBOW_FARTS" amount="0.15" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="Cell_Eater_powder"
+	ui_name="$Cell_Eater_powder"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy],[indestructible]"
+	burnable="1"
+	density="7"
+	cell_type="liquid"
+	liquid_gravity="0"
+	wang_color="ff200076"
+	generates_smoke="0"
+	liquid_gravity="2"
+	liquid_sand="1"
+	on_fire="1"
+	requires_oxygen="0"
+	temperature_of_fire="50"
+	autoignition_temperature="0"
+	platform_type="0"
+	hp="1000" 
+	fire_hp="0"
+	audio_physics_material_event="organicbouncy"
+	audio_physics_material_wall="organicbouncy"
+	audio_physics_material_solid="organicbouncy"
+	show_in_creative_mode="0"
+	audio_event_name="explosions/gunpowder"
+	>
+	<ExplosionConfig 
+		damage="0"
+		cell_explosion_power="1"
+		cell_explosion_damage_required="1"
+		cell_explosion_radius_min="1"
+		explosion_sprite=""
+		load_this_entity="data/custom_materials/cell_eater_spawner.xml"
+		ray_energy="1"
+		sparks_enabled="0"
+		>
+	</ExplosionConfig>
+    <Graphics
+	  texture_file="data/materials_gfx/the_end.png"
+	color="ff260b35">
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="WEAKNESS" amount="0.1" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="Witch_powder"
+	ui_name="$Witch_powder"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+	burnable="1"
+	density="7"
+	durability="3"
+	cell_type="liquid"
+	liquid_gravity="0"
+	wang_color="ffbe4dfd"
+	generates_smoke="0"
+	liquid_gravity="2"
+	liquid_sand="1"
+	on_fire="0"
+	requires_oxygen="0"
+	temperature_of_fire="10"
+	autoignition_temperature="0"
+	generates_flames="0"
+	on_fire_flame_material="swamp"
+	platform_type="0"
+	hp="1000" 
+	fire_hp="20"
+	audio_physics_material_event="organicbouncy"
+	audio_physics_material_wall="organicbouncy"
+	audio_physics_material_solid="organicbouncy"
+	show_in_creative_mode="0"
+	lifetime="1200.0"
+	>
+    <Graphics
+	  texture_file="data/materials_gfx/slime_green.png"
+	color="ffb4d400">
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="INVISIBILITY" amount="0.15" />
+			<StatusEffect type="CURSE_CLOUD" amount="0.15" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData 
+	name="super_urine"  
+	ui_name="$super_urine"
+  	tags="[liquid],[corrodible],[soluble],[liquid_common]"
+	burnable="0"  
+	density="3"  
+	cell_type="liquid" 
+	liquid_gravity="4"
+	audio_materialaudio_type="MAGICAL" 
+	wang_color="33FFEE03"  
+	generates_smoke="0"  
+	liquid_gravity="0.9"  
+	liquid_sand="0"  
+	liquid_stains="1"
+	liquid_sprite_stain_shaken_drop_chance="0.1"
+	on_fire="0"  
+	requires_oxygen="1"  
+	temperature_of_fire="10" >
+	<Graphics
+		color="33FFAA00"
+	>
+    </Graphics>
+	<StatusEffects>
+		<Stains>
+			<StatusEffect type="JARATE" />
+		</Stains>
+		<Ingestion>
+			<StatusEffect type="DEEP_END_NO_HEAL_EFFECT" amount="0.15" />
+			<StatusEffect type="DEEP_END_DIZZY_EFFECT" amount="0.15" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData 
+	name="super_beer"  
+	ui_name="$super_beer"
+  	tags="[liquid],[water],[impure],[liquid_common]"
+	density="3.5"
+	cell_type="liquid"
+	liquid_gravity="4"
+	audio_materialaudio_type="MAGICAL" 
+	wang_color="33FFEE04"
+	liquid_gravity="1.2"
+	liquid_sand="0"
+	liquid_stains="1"
+	liquid_sprite_stain_shaken_drop_chance="0.1"
+	liquid_stains_self="0"
+	show_in_creative_mode="1" >
+	<Graphics
+		color="4FD6E45B"
+	>
+    </Graphics>
+	<StatusEffects>
+		<Stains>
+			<StatusEffect type="ALCOHOLIC" />
+		</Stains>
+		<Ingestion>
+			<StatusEffect type="DEEP_END_NO_EDIT_EFFECT" amount="0.15" />
+			<StatusEffect type="DEEP_END_DIZZY_EFFECT" amount="0.15" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="deep_end_magic_acid"
+	ui_name="$deep_end_magic_acid"
+  	tags="[fire_lava],[liquid],[matter_eater_ignore_list],[indestructible],[sunbaby_ignore_list]"
+	burnable="0"
+	density="4.4"
+	cell_type="liquid"
+	gfx_glow="125"
+	wang_color="4B02fe11"
+	generates_smoke="0"
+	liquid_gravity="0.06"
+	liquid_sand="0"
+	liquid_viscosity="10"
+	on_fire="0"
+	liquid_stains="1"
+	liquid_sprite_stains_status_threshold="0.2"
+	liquid_sprite_stain_shaken_drop_chance="0.1"
+	requires_oxygen="0"
+	temperature_of_fire="90"
+	audio_materialaudio_type="LAVA" 
+	show_in_creative_mode="1"
+	lifetime="3600"
+		><Graphics
+			color="55FFE100" 
+    	></Graphics
+		><ParticleEffect
+			vel.y="-25"
+			vel_random.min_x="-8"
+			vel_random.max_x="8"
+			vel_random.min_y="-7"
+			vel_random.max_y="-2"
+			lifetime.min="0.6"
+			lifetime.max="0.9"
+			gravity.y="0.04"
+			render_on_grid="1"
+			airflow_force="0.76"
+			airflow_scale="0.39"
+			friction="-0.00035"
+			probability="0.04"
+			count.min="0"
+			count.max="1"
+		></ParticleEffect>
+	<StatusEffects>
+		<Stains>
+			<StatusEffect type="OILED" />
+			<StatusEffect type="CONFUSION" />
+			<StatusEffect type="TRIP" />
+			<StatusEffect type="ALCOHOLIC" />
+			<StatusEffect type="INGESTION_DRUNK" />
+			<StatusEffect type="INGESTION_FREEZING" />
+			<StatusEffect type="INGESTION_ON_FIRE" />
+		</Stains>
+		<Ingestion>
+			<StatusEffect type="WEAKNESS" amount="0.66" />
+			<StatusEffect type="CONFUSION" amount="0.66" />
+			<StatusEffect type="DEEP_END_DIZZY_EFFECT" amount="0.66" />
+			<StatusEffect type="DEEP_END_NO_EDIT_EFFECT" amount="0.66" />
+			<StatusEffect type="DEEP_END_NO_HEAL_EFFECT" amount="0.66" />
+			<StatusEffect type="INGESTION_FREEZING" amount="0.66" />
+			<StatusEffect type="INGESTION_ON_FIRE" amount="0.66" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="deep_end_creepy_liquid"
+	ui_name="$deep_end_creepy_liquid"
+  	tags="[liquid],[impure],[catastrophic]"
+	burnable="0"
+	density="15"
+	lifetime="999999"
+	cell_type="liquid"
+	liquid_gravity="0"
+	audio_materialaudio_type="MAGICAL" 
+	wang_color="7f010001"
+	generates_smoke="0"
+	liquid_gravity="0.5"
+	liquid_sand="0"
+	gfx_glow="40"
+	on_fire="0"
+	requires_oxygen="0"
+	temperature_of_fire="60"
+	liquid_stains="1"
+	liquid_sprite_stain_shaken_drop_chance="15"
+	liquid_sprite_stains_check_offset="1"  >
+	<Graphics 
+		texture_file="data/materials_gfx/deep_end_creepy_liquid.png" 
+		color="7f010001">
+    </Graphics>
+	<StatusEffects>
+		<Stains>
+			<StatusEffect type="HP_REGENERATION" />
+			<StatusEffect type="FASTER_LEVITATION" />
+			<StatusEffect type="MOVEMENT_FASTER_2X" />
+			<StatusEffect type="NIGHTVISION" />
+			<StatusEffect type="MANA_REGENERATION" />
+			<StatusEffect type="BERSERK" />
+			<StatusEffect type="CHARM" />
+			<StatusEffect type="TRIP" />
+			<StatusEffect type="WEAKNESS" />
+			<StatusEffect type="PROTECTION_ALL" />
+			<StatusEffect type="PROTECTION_POLYMORPH" />
+			<StatusEffect type="WET" />
+			<StatusEffect type="OILED" />
+			<StatusEffect type="BLOODY" />
+			<StatusEffect type="SLIMY" />
+			<StatusEffect type="RADIOACTIVE" />
+			<StatusEffect type="ALCOHOLIC" />
+			<StatusEffect type="POISONED" />
+			<StatusEffect type="CONFUSION" />
+			<StatusEffect type="JARATE" />
+			<StatusEffect type="FARTS" />
+			<StatusEffect type="WORM_ATTRACTOR" />
+			<StatusEffect type="FOOD_POISONING" />
+			<StatusEffect type="DEEP_END_GRAVITY_EFFECT" />
+			<StatusEffect type="DEEP_END_LASER_EYE_EFFECT" />
+			<StatusEffect type="DEEP_END_NO_EDIT_EFFECT" />
+			<StatusEffect type="DEEP_END_NO_HEAL_EFFECT" />
+			<StatusEffect type="DEEP_END_DIZZY_EFFECT" />
+		</Stains>
+		<Ingestion>
+			<StatusEffect type="DEEP_END_DIZZY_EFFECT" amount="99.0" />
+			<StatusEffect type="DEEP_END_HARDEN_EFFECT" amount="99.0" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData 
+	name="deep_end_gravity_potion"  
+	ui_name="$de_gravity_potion"
+  	tags="[liquid],[corrodible],[soluble],[liquid_common]"
+	burnable="0"  
+	density="1"  
+	cell_type="liquid" 
+	liquid_gravity="0.01"
+	audio_materialaudio_type="LAVA" 
+	wang_color="bb42007c"  
+	generates_smoke="0"  
+	liquid_sand="0"  
+	liquid_stains="1"
+	on_fire="0"  
+	requires_oxygen="1"  
+	temperature_of_fire="10" >
+	<Graphics
+		color="BB42007c"
+	>
+    </Graphics>
+	<StatusEffects>
+		<Stains>
+			<StatusEffect type="DEEP_END_GRAVITY_EFFECT" />
+		</Stains>
+		<Ingestion>
+			<StatusEffect type="DEEP_END_GRAVITY_EFFECT" amount="0.6" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData 
+	name="deep_end_laser_eye_potion"  
+	ui_name="$de_laser_eye"
+  	tags="[liquid],[corrodible],[soluble],[liquid_common]"
+	burnable="0"  
+	density="4"  
+	cell_type="liquid" 
+	liquid_gravity="0.2"
+	audio_materialaudio_type="LAVA" 
+	wang_color="8000bee6"  
+	generates_smoke="0"  
+	liquid_sand="0"  
+	liquid_stains="1"
+	on_fire="0"  
+	requires_oxygen="1"
+	lifetime="6000"
+	temperature_of_fire="10" >
+	<Graphics
+		color="8000BEE6"
+	>
+    </Graphics>
+	<StatusEffects>
+		<Stains>
+			<StatusEffect type="DEEP_END_LASER_EYE_EFFECT" />
+		</Stains>
+		<Ingestion>
+			<StatusEffect type="DEEP_END_LASER_EYE_EFFECT" amount="0.6" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData 
+	name="deep_end_harden_potion"  
+	ui_name="$de_hardener"
+  	tags="[liquid],[corrodible],[soluble],[liquid_common]"
+	burnable="0"  
+	density="10.5"  
+	cell_type="liquid" 
+	liquid_gravity="0.1"
+	liquid_sprite_stain_shaken_drop_chance="6"
+	audio_physics_material_event="metalhollow"
+	audio_physics_material_wall="metalhollow"
+	audio_physics_material_solid="metalhollow"
+	wang_color="dd900000"  
+	generates_smoke="0"   
+	liquid_sand="0"  
+	liquid_stains="1"
+	stickyness="3.6"
+	on_fire="0"  
+	requires_oxygen="1"  
+	temperature_of_fire="10" >
+	<Graphics
+		color="DD900000"
+	>
+    </Graphics>
+	<StatusEffects>
+		<Stains>
+			<StatusEffect type="DEEP_END_HARDEN_EFFECT" />
+		</Stains>
+		<Ingestion>
+			<StatusEffect type="DEEP_END_HARDEN_EFFECT" amount="0.1" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="Hemokinesis_powder"
+	ui_name="$HEMOKINESIS"
+  	tags="[liquid],[corrodible],[soluble],[liquid_common]"
+	burnable="0"  
+	density="3"  
+	cell_type="liquid" 
+	liquid_gravity="0"
+	wang_color="FFBE4DF4"  
+	generates_smoke="0"  
+	liquid_gravity="0.9"  
+	liquid_sand="0"  
+	liquid_stains="1"
+	on_fire="0"  
+	requires_oxygen="1"  
+	temperature_of_fire="10" >
+    <Graphics
+	color="aa831400">
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="POISONED" amount="0.04" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="Hemokinesis_powder_worm"
+	ui_name="$HEMOKINESIS"
+  	tags="[liquid],[corrodible],[soluble],[liquid_common]"
+	burnable="0"  
+	density="3"  
+	cell_type="liquid" 
+	liquid_gravity="0"
+	wang_color="FFBE4DF5"  
+	generates_smoke="0"  
+	liquid_gravity="0.9"  
+	liquid_sand="0"  
+	liquid_stains="1"
+	on_fire="0"  
+	requires_oxygen="1"  
+	temperature_of_fire="10" >
+    <Graphics
+	color="88c8bc00">
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="WORM_ATTRACTOR" amount="0.04" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+	<CellData
+		name="deep_end_hush"
+		ui_name="$deep_end_hush"
+		tags="[gas]"
+		burnable="0"
+		density="5"
+		durability="1"
+		cell_type="gas"
+		liquid_static="1"
+		platform_type="0"
+		gfx_glow="130"
+		wang_color="7fAFAFBB"
+		electrical_conductivity="1"
+		generates_smoke="0"
+		gas_speed="5"
+		gas_upwards_speed="5"
+		gas_horizontal_speed="5"
+		gas_downwards_speed="5"
+		slippery="1"
+		stainable="0"
+		liquid_gravity="0"
+		liquid_sand="0"
+		danger_fire="1"
+		on_fire="0"
+		fire_hp="-1"
+		requires_oxygen="0"
+		temperature_of_fire="99"
+		autoignition_temperature="99"
+		><Graphics
+			color="00ffffff"
+    	></Graphics
+		><ParticleEffect
+			vel_random.min_y="-20"
+			vel_random.max_y="20"
+			vel_random.min_x="-20"
+			vel_random.max_x="20"
+			lifetime.min="0.01"
+			lifetime.max="0.05"
+			gravity.x="0"
+			gravity.y="0"
+			render_on_grid="1"
+			draw_as_long="1"
+			friction="2"
+			count.min="0"
+			count.max="5"
+		></ParticleEffect
+	></CellData>
+
+	<CellData
+		name="deep_end_hush_static"
+		ui_name="$deep_end_hush"
+		tags="[static],[matter_eater_ignore_list],[indestructible],[sunbaby_ignore_list],"
+		burnable="0"
+		density="15"
+		durability="19"
+		cell_type="liquid"
+		liquid_gravity="1.2"
+		liquid_sand="1"
+		liquid_static="1"
+		on_fire="0"
+		hp="130000" 
+		solid_friction="0.75"
+		platform_type="1"
+		gfx_glow="120"
+		wang_color="7fAFAFBA"
+		electrical_conductivity="1"
+		generates_smoke="0"
+		slippery="1"
+		stainable="0"
+		danger_fire="1"
+		on_fire="0"
+		fire_hp="-1"
+		requires_oxygen="0"
+		temperature_of_fire="99"
+		autoignition_temperature="99"
+		audio_physics_material_event="metalhollow"
+		audio_physics_material_wall="metalwall"
+		audio_physics_material_solid="metalhollow"
+		wang_noise_percent="0.28"
+		><Graphics
+			color="00ffffff"
+    	></Graphics
+		><ParticleEffect
+			vel_random.min_y="-20"
+			vel_random.max_y="20"
+			vel_random.min_x="-20"
+			vel_random.max_x="20"
+			lifetime.min="0.01"
+			lifetime.max="0.05"
+			gravity.x="0"
+			gravity.y="0"
+			render_on_grid="1"
+			draw_as_long="1"
+			friction="2"
+			count.min="0"
+			count.max="5"
+		></ParticleEffect
+	></CellData>
+
+
+	<!-- =================================================================================================================  -->
+	<!-- REACTIONS -->
+
+	<Reaction probability="20"
+			input_cell1="Hemokinesis_powder_worm" 	input_cell2="air"
+			output_cell1="air" 						output_cell2="air" 
+			entity="data/entities/misc/hemokinesis_spawner_worm.xml" >
+	</Reaction>
+
+	<Reaction probability="100"
+			input_cell1="Hemokinesis_powder_worm" 	input_cell2="air"
+			output_cell1="air" 						output_cell2="air" >
+	</Reaction>
+
+	<Reaction probability="20"
+			input_cell1="Hemokinesis_powder" 	input_cell2="Hemokinesis_powder"
+			output_cell1="air" 					output_cell2="air" 
+			entity="data/entities/misc/hemokinesis_spawner.xml" >
+	</Reaction>
+
+	<Reaction probability="100"
+			input_cell1="Hemokinesis_powder" 	input_cell2="Hemokinesis_powder"
+			output_cell1="air" 					output_cell2="air" >
+	</Reaction>
+
+	<Reaction probability="5"
+			input_cell1="[acid]" 				input_cell2="[lava]"
+			output_cell1="deep_end_magic_acid" 	output_cell2="air"
+			audio_fx_volume_1="10.0"
+	></Reaction>
+
+	<Reaction probability="50"
+			input_cell1="deep_end_magic_acid"	input_cell2="[lava]"
+			output_cell1="deep_end_magic_acid" 	output_cell2="air"
+			audio_fx_volume_1="10.0"
+	></Reaction>
+
+	<Reaction probability="50"
+			input_cell1="deep_end_magic_acid"	input_cell2="[acid]"
+			output_cell1="deep_end_magic_acid" 	output_cell2="air"
+			audio_fx_volume_1="10.0"
+	></Reaction>
+
+	<Reaction probability="25"
+			fast_reaction="1"
+			input_cell1="[acid]" 				input_cell2="Witch_powder"
+			output_cell1="deep_end_magic_acid"	output_cell2="magic_gas_fungus"
+			audio_fx_volume_1="10.0" >
+	</Reaction>
+
+	<Reaction probability="25"
+			fast_reaction="1"
+			input_cell1="deep_end_magic_acid" 	input_cell2="Cell_Eater_powder"
+			output_cell1="fire"					output_cell2="fire_blue"
+			audio_fx_volume_1="10.0" >
+	</Reaction>
+
+	<Reaction probability="25"
+			fast_reaction="1"
+			input_cell1="deep_end_magic_acid" 	input_cell2="Vigour_powder"
+			output_cell1="fire"					output_cell2="fire_blue"
+			audio_fx_volume_1="10.0" >
+	</Reaction>
+
+	<Reaction probability="25"
+			fast_reaction="1"
+			input_cell1="sulphur" 				input_cell2="Lightning_Spells_powder"
+			output_cell1="deep_end_magic_acid"	output_cell2="deep_end_magic_acid"
+			audio_fx_volume_1="10.0" >
+	</Reaction>
+
+	<Reaction probability="25"
+			fast_reaction="1"
+			input_cell1="vomit" 				input_cell2="Firebolt_powder"
+			output_cell1="deep_end_magic_acid"	output_cell2="poo_gas"
+			audio_fx_volume_1="10.0" >
+	</Reaction>
+
+	<Reaction probability="25"
+			fast_reaction="1"
+			input_cell1="[lava]" 				input_cell2="Bouncing_Burst_powder"
+			output_cell1="fire"					output_cell2="fire_blue"
+			audio_fx_volume_1="10.0" >
+	</Reaction>
+
+	<Reaction probability="25"
+			fast_reaction="1"
+			input_cell1="deep_end_magic_acid" 	input_cell2="Pollen_powder"
+			output_cell1="deep_end_magic_acid"	output_cell2="smoke"
+			audio_fx_volume_1="10.0" >
+	</Reaction>
+
+	<Reaction probability="25"
+			fast_reaction="1"
+			input_cell1="deep_end_magic_acid" 	input_cell2="Disc_powder"
+			output_cell1="deep_end_magic_acid"	output_cell2="deep_end_magic_acid"
+			audio_fx_volume_1="10.0" >
+	</Reaction>
+
+	<Reaction probability="25"
+			fast_reaction="1"
+			input_cell1="deep_end_magic_acid" 	input_cell2="Disc_powder"
+			output_cell1="deep_end_magic_acid"	output_cell2="deep_end_magic_acid"
+			audio_fx_volume_1="10.0" >
+	</Reaction>
+
+	<Reaction probability="25"
+			fast_reaction="1"
+			input_cell1="deep_end_magic_acid" 	input_cell2="midas"
+			output_cell1="void_liquid"			output_cell2="void_liquid"
+			audio_fx_volume_1="10.0" >
+	</Reaction>
+
+	<Reaction probability="25"
+			fast_reaction="1"
+			input_cell1="deep_end_magic_acid" 	input_cell2="midas_precursor"
+			output_cell1="void_liquid"			output_cell2="smoke_magic"
+			audio_fx_volume_1="10.0" >
+	</Reaction>
+
+	<Reaction probability="25"
+			fast_reaction="1"
+			input_cell1="deep_end_magic_acid" 	input_cell2="magic_liquid_protection_all"	input_cell3="air"
+			output_cell1="plasma_fading_green"	output_cell2="plasma_fading_pink"			output_cell3="plasma_fading_bright"
+			audio_fx_volume_1="10.0" >
+	</Reaction>
+
+	<Reaction probability="20"
+			input_cell1="deep_end_magic_acid" 	input_cell2="Wood_Deep_End"
+			output_cell1="deep_end_magic_acid"	output_cell2="Rock_Magic_Deep_End"
+			audio_fx_volume_1="10.0" >
+	</Reaction>
+
+	<Reaction probability="50"
+		fast_reaction="1"
+		input_cell1="deep_end_magic_acid" 		input_cell2="[fire]"
+		output_cell1="deep_end_magic_acid" 		output_cell2="smoke_magic"
+		audio_fx_volume_1="1.0" >
+	</Reaction>
+
+	<Reaction probability="10"
+		fast_reaction="1"
+		input_cell1="deep_end_magic_acid" 		input_cell2="[water]"
+		output_cell1="deep_end_magic_acid" 		output_cell2="smoke_magic"
+		audio_fx_volume_1="1.0" >
+	</Reaction>
+
+	<Reaction probability="10" 
+		fast_reaction="1"
+		input_cell1="deep_end_magic_acid" 		input_cell2="[corrodible]" 
+		output_cell1="deep_end_magic_acid" 		output_cell2="smoke_magic"
+		audio_fx_volume_1="10.0" >
+	</Reaction>
+
+	<Reaction probability="1"
+			input_cell1="deep_end_magic_acid" 	input_cell2="[alchemy]"
+			output_cell1="deep_end_magic_acid"	output_cell2="deep_end_magic_acid"
+			audio_fx_volume_1="10.0" >
+	</Reaction>
+
+	<Reaction probability="50"
+			input_cell1="corruption_static" 	input_cell2="[water]"
+			output_cell1="corruption_static"	output_cell2="blood" >
+	</Reaction>
+
+	<Reaction probability="5"
+			input_cell1="magic_liquid_weakness" 	input_cell2="air"
+			output_cell1="magic_gas_weakness" 		output_cell2="air" >
+	</Reaction>
+
+	<Reaction probability="10"
+			input_cell1="fire" 		input_cell2="oil"
+			output_cell1="fire" 	output_cell2="smoke" >
+	</Reaction>
+
+	<Reaction probability="20"
+			input_cell1="liquid_fire" 			input_cell2="air"
+			output_cell1="liquid_fire_weak" 	output_cell2="oil" >
+	</Reaction>
+
+	<Reaction probability="30"
+			input_cell1="liquid_fire_weak" 	input_cell2="air"
+			output_cell1="fire" 			output_cell2="oil" >
+	</Reaction>
+
+	<Reaction probability="50"
+			input_cell1="fire" 		input_cell2="[radioactive]"
+			output_cell1="smoke" 	output_cell2="smoke"
+	><ExplosionConfig
+		damage="0.004"
+		explosion_sprite="data/particles/explosion_012.xml"
+		cell_explosion_power="160"
+		cell_explosion_damage_required="3000"
+		cell_explosion_radius_min="22"
+		cell_explosion_radius_max="28"
+		cell_explosion_probability="1.1"
+		ray_energy="20000"
+		audio_event_name="explosions/gunpowder"
+	></ExplosionConfig></Reaction>
+
+	<Reaction probability="40"
+			input_cell1="blood_fading" 		input_cell2="blood"
+			output_cell1="blood_fading" 	output_cell2="blood_fading" >
+	</Reaction>
+
+	<Reaction probability="10"
+			input_cell1="cloud_blood" 			input_cell2="blood"
+			output_cell1="blood_fading_slow" 	output_cell2="blood_fading_slow" >
+	</Reaction>
+
+	<Reaction probability="200"
+			input_cell1="deep_end_creepy_liquid" 	input_cell2="air"
+			output_cell1="deep_end_creepy_liquid" 	output_cell2="deep_end_creepy_liquid" >
+	</Reaction>
+
+	<Reaction probability="200"
+			input_cell1="deep_end_creepy_liquid"	input_cell2="[alchemy]"
+			output_cell1="deep_end_creepy_liquid" 	output_cell2="deep_end_creepy_liquid" >
+	</Reaction>
+
+	<Reaction probability="200"
+			input_cell1="deep_end_creepy_liquid"	input_cell2="[static]"
+			output_cell1="deep_end_creepy_liquid" 	output_cell2="deep_end_creepy_liquid" >
+	</Reaction>
+
+	<Reaction probability="200"
+			input_cell1="deep_end_creepy_liquid"	input_cell2="[solid]"
+			output_cell1="deep_end_creepy_liquid" 	output_cell2="deep_end_creepy_liquid" >
+	</Reaction>
+
+	<Reaction probability="200"
+			input_cell1="deep_end_creepy_liquid" 	input_cell2="[liquid]"
+			output_cell1="deep_end_creepy_liquid" 	output_cell2="deep_end_creepy_liquid" >
+	</Reaction>
+
+	<Reaction probability="200"
+			input_cell1="deep_end_creepy_liquid" 	input_cell2="[food]"
+			output_cell1="deep_end_creepy_liquid" 	output_cell2="deep_end_creepy_liquid" >
+	</Reaction>
+
+	<Reaction probability="200"
+			input_cell1="deep_end_creepy_liquid"	input_cell2="[fire]"
+			output_cell1="deep_end_creepy_liquid" 	output_cell2="deep_end_creepy_liquid" >
+	</Reaction>
+
+	<Reaction probability="200"
+			input_cell1="deep_end_creepy_liquid" 	input_cell2="[box2d]"
+			output_cell1="deep_end_creepy_liquid" 	output_cell2="deep_end_creepy_liquid" >
+	</Reaction>
+
+	<Reaction probability="20"
+			input_cell1="deep_end_creepy_liquid" 	input_cell2="deep_end_creepy_liquid"
+			output_cell1="creepy_liquid" 			output_cell2="air" >
+	</Reaction>
+
+	<Reaction probability="200"
+			input_cell1="creepy_liquid" 	input_cell2="material_darkness"
+			output_cell1="creepy_liquid" 	output_cell2="creepy_liquid" >
+	</Reaction>
+
+	<Reaction probability="200"
+			input_cell1="creepy_liquid" 	input_cell2="snow"
+			output_cell1="creepy_liquid" 	output_cell2="creepy_liquid" >
+	</Reaction>
+
+	<Reaction probability="100"
+			input_cell1="blood_cold" 	input_cell2="magic_gas_worm_blood"
+			output_cell1="blood_worm" 	output_cell2="blood_worm"
+	></Reaction>
+
+	<Reaction probability="100"
+			input_cell1="blood_cold_vapour" input_cell2="blood_worm"
+			output_cell1="blood_worm" 		output_cell2="blood_worm"
+	></Reaction>
+
+	<Reaction probability="100"
+			input_cell1="blood_cold_vapour" input_cell2="magic_gas_worm_blood"
+			output_cell1="blood_worm" 		output_cell2="magic_gas_worm_blood"
+	></Reaction>
+
+	<Reaction probability="1" 
+		input_cell1="material_rainbow" 		input_cell2="magic_liquid"	input_cell3="material_darkness"
+		output_cell1="air" 					output_cell2="air"
+		entity="data/entities/projectiles/deck/new_year/ultimate_flash_new_year.xml"
+	></Reaction>
+
+	<Reaction probability="1" 
+		input_cell1="magic_liquid_hp_regeneration_unstable" 				input_cell2="air"  
+		output_cell1="magic_gas_hp_regeneration" 							output_cell2="magic_gas_hp_regeneration"
+	></Reaction>
+
+	<Reaction probability="10" 
+		input_cell1="material_rainbow" 		input_cell2="urine"  
+		output_cell1="material_rainbow" 	output_cell2="material_rainbow"
+	></Reaction>
+
+	<Reaction probability="10" 
+		input_cell1="material_rainbow" 		input_cell2="vomit"  
+		output_cell1="vomit" 				output_cell2="vomit"
+	></Reaction>
+
+	<Reaction probability="10" 
+		input_cell1="material_rainbow" 		input_cell2="peat"  
+		output_cell1="rainbow_gas" 			output_cell2="fire_blue"
+	><ExplosionConfig
+		damage="0.004"
+		explosion_sprite="data/particles/explosion_012.xml"
+		cell_explosion_power="160"
+		cell_explosion_damage_required="3000"
+		cell_explosion_radius_min="22"
+		cell_explosion_radius_max="28"
+		cell_explosion_probability="1.1"
+		ray_energy="20000"
+		audio_event_name="explosions/gunpowder"
+	></ExplosionConfig></Reaction>
+
+	<Reaction probability="10" 
+		input_cell1="material_rainbow" 			input_cell2="milk"  
+		output_cell1="rainbow_gas" 				output_cell2="fire_blue"
+	></Reaction>
+
+	<Reaction probability="1"
+			input_cell1="milk" 	input_cell2="water"
+			output_cell1="water" output_cell2="water"
+	></Reaction>
+
+	<Reaction probability="20"
+			input_cell1="milk" 	input_cell2="lava"
+			output_cell1="bone" output_cell2="poo_gas"
+	></Reaction>
+
+	<Reaction probability="20"
+			input_cell1="milk" 	input_cell2="poo"
+			output_cell1="vomit" output_cell2="urine"
+	></Reaction>
+
+	<Reaction probability="80"
+			input_cell1="water" input_cell2="bone"
+			output_cell1="milk" output_cell2="milk"
+	></Reaction>
+
+	<Reaction probability="40" 
+			input_cell1="pus" 		input_cell2="milk"  
+			output_cell1="pus" 		output_cell2="pus"
+	></Reaction>
+
+	<Reaction probability="1"
+			input_cell1="juhannussima" 	input_cell2="water"
+			output_cell1="juhannussima" output_cell2="juhannussima"
+	></Reaction>
+
+	<Reaction probability="2"
+			input_cell1="material_darkness" 	input_cell2="[liquid]"
+			output_cell1="material_darkness" 	output_cell2="material_darkness" >
+	</Reaction>
+
+	<Reaction probability="20"
+			input_cell1="poo_gas" 	input_cell2="material_darkness"
+			output_cell1="poo_gas" 	output_cell2="poo_gas"
+	><ExplosionConfig
+		damage="0.004"
+		explosion_sprite="data/particles/explosion_012.xml"
+		cell_explosion_power="160"
+		cell_explosion_damage_required="3000"
+		cell_explosion_radius_min="22"
+		cell_explosion_radius_max="28"
+		cell_explosion_probability="1.1"
+		ray_energy="20000"
+		audio_event_name="explosions/gunpowder"
+	></ExplosionConfig></Reaction>
+
+	<Reaction probability="100"
+			input_cell1="poo_gas" 		input_cell2="acid_gas"
+			output_cell1="poo_gas" 		output_cell2="poo_gas">
+	</Reaction>
+
+	<Reaction probability="5"
+			input_cell1="water" 	input_cell2="blood"
+			output_cell1="water_salt" output_cell2="water_salt"
+	></Reaction>
+
+	<Reaction probability="15"
+			input_cell1="water" 		input_cell2="[slime]"
+			output_cell1="water_swamp" 	output_cell2="water_swamp"
+	></Reaction>
+
+	<Reaction probability="10" 
+	input_cell1="cursed_liquid" 		input_cell2="urine"  
+	output_cell1="super_urine" 			output_cell2="super_urine"
+	></Reaction>
+
+	<Reaction probability="10" 
+	input_cell1="cursed_liquid" 		input_cell2="mammi"  
+	output_cell1="super_urine" 			output_cell2="super_urine"
+	></Reaction>
+
+	<Reaction probability="10" 
+	input_cell1="cursed_liquid" 		input_cell2="beer"  
+	output_cell1="super_beer" 			output_cell2="super_beer"
+	></Reaction>
+
+	<Reaction probability="10" 
+	input_cell1="cursed_liquid" 		input_cell2="vomit"  
+	output_cell1="super_urine" 			output_cell2="super_urine"
+	></Reaction>
+
+	<Reaction probability="100"
+			input_cell1="urine" 		input_cell2="mammi"
+			output_cell1="super_urine" 	output_cell2="super_urine"
+	></Reaction>
+
+	<Reaction probability="100"
+			input_cell1="beer" 			input_cell2="vomit"
+			output_cell1="super_beer" 	output_cell2="super_beer"
+	></Reaction>
+
+	<Reaction probability="20"
+			input_cell1="super_beer" 		input_cell2="super_urine"
+			output_cell1="material_rainbow" output_cell2="magic_gas_midas"
+	><ExplosionConfig
+		damage="0.004"
+		explosion_sprite="data/particles/explosion_012.xml"
+		cell_explosion_power="160"
+		cell_explosion_damage_required="3000"
+		cell_explosion_radius_min="2"
+		cell_explosion_radius_max="2"
+		cell_explosion_probability="1.1"
+		ray_energy="20"
+		audio_event_name="explosions/gunpowder"
+		sparks_enabled="0"
+	></ExplosionConfig></Reaction>
+
+	<Reaction probability="100"
+			input_cell1="Firebolt_powder" 	input_cell2="air"
+			output_cell1="air" 				output_cell2="air"
+			entity="data/custom_materials/grenade_spawner.xml"
+	></Reaction>
+
+	<Reaction probability="5"
+			input_cell1="Pollen_powder" 	input_cell2="air"
+			output_cell1="air" 				output_cell2="air"
+			entity="data/custom_materials/pollen_spawner.xml"
+	></Reaction>
+
+	<Reaction probability="100"
+			input_cell1="Lightning_Spells_powder" 	input_cell2="air"
+			output_cell1="air" 						output_cell2="air"
+			entity="data/custom_materials/lightning_spawner.xml"
+	></Reaction>
+
+	<Reaction probability="100"
+			input_cell1="Vigour_powder" input_cell2="[burnable]" input_cell3="[burnable]"
+			output_cell1="air" 			output_cell2="air"
+			entity="data/custom_materials/regeneration_field_spawner.xml"
+	></Reaction>
+
+	<Reaction probability="50"
+			input_cell1="Vigour_powder" input_cell2="air"
+			output_cell1="air" 			output_cell2="air"
+			entity="data/custom_materials/regeneration_field_spawner.xml"
+	></Reaction>
+
+	<Reaction probability="5"
+			input_cell1="Witch_powder" 	input_cell2="air"
+			output_cell1="air" 			output_cell2="air"
+			entity="data/custom_materials/konna_spawner.xml"
+	></Reaction>
+
+	<Reaction probability="20" 
+			input_cell1="magic_liquid_berserk" 		input_cell2="[slime]"  
+			output_cell1="oil" 						output_cell2="oil"
+	></Reaction>
+	
+	<Reaction probability="20" 
+			input_cell1="magic_liquid_mana_regeneration" 		input_cell2="[slime]"  
+			output_cell1="plasma_fading" 						output_cell2="plasma_fading"
+	><ExplosionConfig
+		damage="0.004"
+		explosion_sprite="data/particles/explosion_012.xml"
+		cell_explosion_power="160"
+		cell_explosion_damage_required="3000"
+		cell_explosion_radius_min="22"
+		cell_explosion_radius_max="28"
+		cell_explosion_probability="1.1"
+		ray_energy="2000"
+		audio_event_name="explosions/gunpowder"
+	></ExplosionConfig></Reaction>
+	
+	<Reaction probability="20" 
+			input_cell1="magic_liquid_faster_levitation_and_movement" 		input_cell2="water"  
+			output_cell1="Bouncing_Burst_powder" 							output_cell2="fire_blue"
+	></Reaction>
+	
+	<Reaction probability="20" 
+			input_cell1="magic_liquid_faster_levitation_and_movement" 		input_cell2="magic_liquid_mana_regeneration"  
+			output_cell1="Lightning_Spells_powder" 							output_cell2="magic_liquid_mana_regeneration"
+	></Reaction>
+
+	<Reaction probability="20" 
+			input_cell1="magic_liquid_faster_levitation_and_movement" 		input_cell2="magic_liquid_berserk"  
+			output_cell1="Firebolt_powder" 									output_cell2="magic_liquid_berserk"
+	></Reaction>
+
+	<Reaction probability="20" 
+			input_cell1="magic_liquid_berserk" 		input_cell2="magic_liquid_mana_regeneration"  
+			output_cell1="Disc_powder" 				output_cell2="fire_blue"
+	></Reaction>
+
+	<Reaction probability="10" 
+			input_cell1="material_confusion" 		input_cell2="magic_liquid_faster_levitation_and_movement"  
+			output_cell1="Pollen_powder" 			output_cell2="magic_liquid_faster_levitation_and_movement"
+	></Reaction>
+
+	<Reaction probability="10" 
+			input_cell1="material_confusion" 		input_cell2="magic_liquid_mana_regeneration"  
+			output_cell1="Witch_powder" 			output_cell2="magic_liquid_mana_regeneration"
+	></Reaction>
+
+	<Reaction probability="100" 
+			input_cell1="material_confusion" 		input_cell2="endslime_static"  
+			output_cell1="Cell_Eater_powder" 		output_cell2="fire_blue"
+	></Reaction>
+
+	<Reaction probability="10" 
+			input_cell1="milk" 					input_cell2="[radioactive]"  
+			output_cell1="vomit" 				output_cell2="glue"
+	></Reaction>
+
+	<Reaction probability="100" 
+			input_cell1="[slime]" 				input_cell2="[radioactive]"  
+			output_cell1="urine" 				output_cell2="urine"
+	></Reaction>
+
+	<Reaction probability="10" 
+			input_cell1="oil" 					input_cell2="[radioactive]"  
+			output_cell1="plastic_red_molten" 	output_cell2="plastic_red_molten"
+	></Reaction>
+
+	<Reaction probability="20" 
+			input_cell1="blood" 			input_cell2="[radioactive]"  
+			output_cell1="water_swamp" 		output_cell2="swamp"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="magic_liquid_berserk" 		input_cell2="[radioactive]"  
+	output_cell1="poison" 					output_cell2="poison"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="magic_liquid_charm" 		input_cell2="[radioactive]"  
+	output_cell1="cursed_liquid" 			output_cell2="cursed_liquid"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="magic_liquid_mana_regeneration" 		input_cell2="[radioactive]"  
+	output_cell1="blood_fungi" 							output_cell2="blood_fungi"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="magic_liquid_faster_levitation_and_movement" 		input_cell2="[radioactive]"  
+	output_cell1="material_darkness" 								output_cell2="air"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="material_confusion" 		input_cell2="[radioactive]"  
+	output_cell1="rat_powder" 				output_cell2="rat_powder"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="magic_liquid_berserk" 		input_cell2="magic_liquid_teleportation"  
+	output_cell1="copper" 					output_cell2="magic_liquid_unstable_teleportation"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="magic_liquid_faster_levitation_and_movement" 		input_cell2="magic_liquid_teleportation"  
+	output_cell1="silver" 											output_cell2="magic_liquid_unstable_teleportation"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="magic_liquid_mana_regeneration" 		input_cell2="oil"  
+	output_cell1="acid" 								output_cell2="acid"
+	><ExplosionConfig
+		damage="0.004"
+		explosion_sprite="data/particles/explosion_012.xml"
+		cell_explosion_power="160"
+		cell_explosion_damage_required="3000"
+		cell_explosion_radius_min="22"
+		cell_explosion_radius_max="28"
+		cell_explosion_probability="1.1"
+		ray_energy="2000"
+		audio_event_name="explosions/gunpowder"
+	></ExplosionConfig></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="oil" 					input_cell2="magic_liquid_teleportation"  
+	output_cell1="glue" 				output_cell2="glue"
+	></Reaction>
+
+	<Reaction probability="100"
+	input_cell1="sodium_unstable" 	input_cell2="[chaotic_transmutation]"
+	output_cell1="smoke_magic" 	output_cell2="steam"  
+	><ExplosionConfig
+		cell_explosion_power="30"
+		cell_explosion_damage_required="3000"
+		cell_explosion_radius_min="5"
+		cell_explosion_radius_max="5"
+		cell_explosion_probability="1.1"
+		ray_energy="50000"
+	></ExplosionConfig>
+  	</Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="urine" 									input_cell2="poo"  
+	output_cell1="magic_liquid_mana_regeneration" 			output_cell2="magic_liquid_mana_regeneration"
+	><ExplosionConfig
+		damage="0.004"
+		explosion_sprite="data/particles/explosion_012.xml"
+		cell_explosion_power="10"
+		cell_explosion_damage_required="3000"
+		cell_explosion_radius_min="2"
+		cell_explosion_radius_max="2"
+		cell_explosion_probability="1.1"
+		ray_energy="200"
+	></ExplosionConfig></Reaction>
+
+	<Reaction probability="100" 
+	input_cell1="midas_precursor" 							input_cell2="magic_liquid"  
+	output_cell1="magic_liquid_protection_all" 				output_cell2="magic_liquid_protection_all"
+	></Reaction>
+
+	<Reaction probability="100" 
+	input_cell1="magic_liquid_hp_regeneration" 				input_cell2="magic_liquid"  
+	output_cell1="magic_liquid_hp_regeneration_unstable" 	output_cell2="magic_liquid_hp_regeneration_unstable"
+	></Reaction>
+
+	<Reaction probability="100" 
+	input_cell1="snow" 				input_cell2="[radioactive]"  
+	output_cell1="coal" 			output_cell2="coal"
+	></Reaction>
+
+	<Reaction probability="100" 
+	input_cell1="coal" 				input_cell2="[slime]"  
+	output_cell1="soil" 			output_cell2="soil"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="peat" 				input_cell2="blood"  
+	output_cell1="slime" 			output_cell2="cloud_slime"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="peat" 				input_cell2="[radioactive]"  
+	output_cell1="oil" 				output_cell2="oil"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="vomit" 				input_cell2="oil"  
+	output_cell1="peat" 				output_cell2="mud"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="blood_worm" 				input_cell2="oil"  
+	output_cell1="blood_fungi" 				output_cell2="blood_fungi"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="blood_fungi" 		input_cell2="peat"  	input_cell3="alcohol" 
+	output_cell1="magic_liquid_polymorph" 					output_cell2="magic_liquid_polymorph"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="magic_liquid_berserk" 		input_cell2="magic_liquid_polymorph"  
+	output_cell1="pus" 						output_cell2="pus"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="magic_liquid_teleportation" 		input_cell2="magic_liquid_polymorph"  
+	output_cell1="pus" 								output_cell2="pus"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="magic_liquid_mana_regeneration" 		input_cell2="magic_liquid_polymorph"  
+	output_cell1="pus" 									output_cell2="pus"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="magic_liquid_faster_levitation_and_movement" 		input_cell2="magic_liquid_polymorph"  
+	output_cell1="pus" 												output_cell2="pus"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="vomit" 					input_cell2="blood_worm"  
+	output_cell1="pea_soup" 				output_cell2="pea_soup"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="vomit" 					input_cell2="blood_fungi"  
+	output_cell1="pea_soup" 				output_cell2="pea_soup"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="Eucharist_Deep_End" 						input_cell2="[blood]"  
+	output_cell1="magic_liquid_protection_all" 				output_cell2="magic_liquid_protection_all"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="Eucharist_Deep_End" 		input_cell2="blood_fungi"  
+	output_cell1="midas_precursor" 			output_cell2="midas_precursor"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="Eucharist_Deep_End" 		input_cell2="blood_worm"  
+	output_cell1="porridge" 				output_cell2="porridge"
+	></Reaction>
+
+	<Reaction probability="100" 
+	input_cell1="magic_liquid_protection_all" 		input_cell2="purifying_powder"  
+	output_cell1="Eucharist_Deep_End" 				output_cell2="Eucharist_Deep_End"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="blood_cold" 		input_cell2="oil"  
+	output_cell1="alcohol" 			output_cell2="alcohol"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="blood_cold" 		input_cell2="vomit"  
+	output_cell1="milk" 			output_cell2="mud"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="blood_cold" 		input_cell2="urine"  
+	output_cell1="milk" 			output_cell2="poo_gas"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="magic_liquid_mana_regeneration" 		input_cell2="diamond"  
+	output_cell1="porridge" 							output_cell2="porridge"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="magic_liquid_faster_levitation_and_movement" 		input_cell2="honey"  
+	output_cell1="porridge" 										output_cell2="porridge"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="magic_liquid_berserk" 		input_cell2="just_death"  
+	output_cell1="porridge" 				output_cell2="porridge"
+	></Reaction>
+
+	<Reaction probability="20" 
+	input_cell1="material_confusion" 		input_cell2="cursed_liquid"  
+	output_cell1="porridge" 				output_cell2="porridge"
+	></Reaction>
+	
+	<Reaction probability="5" 
+		input_cell1="plastic_red_molten" 		input_cell2="air"  
+		output_cell1="material_rainbow" 		output_cell2="wax"
+	></Reaction>
+
+	<Reaction probability="100" 
+		input_cell1="magic_liquid" 		input_cell2="[alchemy]"  
+		output_cell1="salt" 			output_cell2="magic_liquid"
+	></Reaction>
+
+	<Reaction probability="10" 
+		input_cell1="magic_liquid" 		input_cell2="water"  
+		output_cell1="magic_liquid" 	output_cell2="magic_liquid"
+	><ExplosionConfig
+		damage="0.8"
+		explosion_sprite="data/particles/explosion_012.xml"
+		cell_explosion_power="20"
+		cell_explosion_damage_required="3000"
+		cell_explosion_radius_min="2"
+		cell_explosion_radius_max="2"
+		cell_explosion_probability="1.1"
+		ray_energy="200"
+	></ExplosionConfig></Reaction>
+
+	<Reaction probability="100" 
+		input_cell1="cursed_liquid" 		input_cell2="[meltable_to_radioactive]"  
+		output_cell1="cursed_liquid" 		output_cell2="cursed_liquid"
+	></Reaction>
+
+	<Reaction probability="10" 
+		input_cell1="magic_liquid" 			input_cell2="midas"  
+		output_cell1="cursed_liquid" 		output_cell2="cursed_liquid"
+	><ExplosionConfig
+		damage="0.8"
+		explosion_sprite="data/particles/explosion_012.xml"
+		cell_explosion_power="20"
+		cell_explosion_damage_required="3000"
+		cell_explosion_radius_min="2"
+		cell_explosion_radius_max="2"
+		cell_explosion_probability="1.1"
+		ray_energy="20000"
+	></ExplosionConfig></Reaction>
+
+	<Reaction probability="10" 
+		input_cell1="cursed_liquid" 		input_cell2="magic_liquid_protection_all"  
+		output_cell1="cursed_liquid" 		output_cell2="cursed_liquid"
+	><ExplosionConfig
+		damage="0.8"
+		explosion_sprite="data/particles/explosion_012.xml"
+		cell_explosion_power="20"
+		cell_explosion_damage_required="3000"
+		cell_explosion_radius_min="2"
+		cell_explosion_radius_max="2"
+		cell_explosion_probability="1.1"
+		ray_energy="20000"
+		sparks_enabled="0"
+	></ExplosionConfig></Reaction>
+
+	<Reaction probability="10" 
+		input_cell1="cursed_liquid" 		input_cell2="magic_liquid_hp_regeneration"  
+		output_cell1="cursed_liquid" 		output_cell2="cursed_liquid"
+	><ExplosionConfig
+		damage="0.8"
+		explosion_sprite="data/particles/explosion_012.xml"
+		cell_explosion_power="20"
+		cell_explosion_damage_required="3000"
+		cell_explosion_radius_min="2"
+		cell_explosion_radius_max="2"
+		cell_explosion_probability="1.1"
+		ray_energy="20000"
+		sparks_enabled="0"
+	></ExplosionConfig></Reaction>
+
+	<Reaction probability="10" 
+		input_cell1="cursed_liquid" 		input_cell2="magic_liquid_hp_regeneration_unstable"  
+		output_cell1="cursed_liquid" 		output_cell2="cursed_liquid"
+	><ExplosionConfig
+		damage="0.8"
+		explosion_sprite="data/particles/explosion_012.xml"
+		cell_explosion_power="20"
+		cell_explosion_damage_required="3000"
+		cell_explosion_radius_min="2"
+		cell_explosion_radius_max="2"
+		cell_explosion_probability="1.1"
+		ray_energy="20000"
+		sparks_enabled="0"
+	></ExplosionConfig></Reaction>
+
+	<Reaction probability="5" 
+		input_cell1="magic_liquid_hp_regeneration" 				input_cell2="air"  
+		output_cell1="air" 										output_cell2="air"
+	></Reaction>
+
+	<Reaction probability="1" 
+		input_cell1="magic_liquid_hp_regeneration" 				input_cell2="magic_liquid_hp_regeneration_unstable"  
+		output_cell1="magic_liquid_hp_regeneration_unstable" 	output_cell2="magic_liquid_hp_regeneration_unstable"
+	></Reaction>
+
+	<Reaction probability="1" 
+		input_cell1="magic_liquid_protection_all" 		input_cell2="air"			input_cell3="air"  
+		output_cell1="urine" 							output_cell2="rainbow_gas"	output_cell3="rainbow_gas"
+	></Reaction>
+
+	<Reaction probability="10" 
+		input_cell1="magic_liquid_protection_all" 		input_cell2="magic_liquid_invisibility"  
+		output_cell1="air" 								output_cell2="air"
+	></Reaction>
+
+	<Reaction probability="50" 
+		input_cell1="spore_pod_stalk" 		input_cell2="air"  
+		output_cell1="air" 					output_cell2="air"
+	></Reaction>
+
+	<Reaction probability="50" 
+		input_cell1="ice_glass_b2" 			input_cell2="air"  
+		output_cell1="air" 					output_cell2="air"
+	></Reaction>
+
+	<Reaction probability="25" 
+		input_cell1="cheese_static" 		input_cell2="lava"
+		output_cell1="bone_static" 			output_cell2="poo_gas"
+	></Reaction>
+
+	<Reaction probability="1" 
+		input_cell1="deep_end_harden_potion" 		input_cell2="air"  
+		output_cell1="plastic_red" 					output_cell2="concrete_sand"
+	></Reaction>
+
+	<Reaction probability="50" 
+		input_cell1="deep_end_harden_potion" 		input_cell2="magic_liquid_faster_levitation_and_movement"  
+		output_cell1="magic_liquid_protection_all" 	output_cell2="cement"
+	></Reaction>
+
+	<Reaction probability="5" 
+		input_cell1="deep_end_harden_potion" 		input_cell2="magic_liquid_protection_all"  
+		output_cell1="deep_end_harden_potion" 		output_cell2="deep_end_harden_potion"
+	></Reaction>
+
+	<Reaction probability="25" 
+		input_cell1="magic_liquid_mana_regeneration" 		input_cell2="blood_worm"  
+		output_cell1="deep_end_laser_eye_potion" 			output_cell2="deep_end_laser_eye_potion"
+	></Reaction>
+
+	<Reaction probability="25" 
+		input_cell1="magic_liquid_mana_regeneration" 		input_cell2="blood_cold"  
+		output_cell1="deep_end_laser_eye_potion" 			output_cell2="sand_blue"
+	></Reaction>
+
+	<Reaction probability="25" 
+		input_cell1="material_confusion" 		input_cell2="void_liquid"  
+		output_cell1="deep_end_gravity_potion" 	output_cell2="deep_end_gravity_potion"
+	></Reaction>
+
+	<Reaction probability="25" 
+		input_cell1="[corrodible]" 				input_cell2="material_confusion"  
+		output_cell1="[corrodible]" 			output_cell2="air"
+	></Reaction>	
+
+	<Reaction probability="25" 
+		input_cell1="material_confusion" 		input_cell2="air"  
+		output_cell1="air" 						output_cell2="air"
+	></Reaction>
+
+	<Reaction probability="1" 
+		input_cell1="material_confusion" 		input_cell2="air"  
+		output_cell1="rainbow_gas" 				output_cell2="air"
+	></Reaction>
+
+	<Reaction probability="100" 
+		input_cell1="[corrodible]" 				input_cell2="material_rainbow"
+		output_cell1="[corrodible]" 			output_cell2="rainbow_gas"
+	></Reaction>
+
+	<Reaction probability="4"
+		input_cell1="[fire]" 		input_cell2="water"		input_cell3="water"
+		output_cell1="steam" 		output_cell2="steam"  >
+	</Reaction>
+
+	<Reaction probability="100" 
+		input_cell1="Rock_Magic_Deep_End" 			input_cell2="magic_liquid"
+		output_cell1="smoke" 						output_cell2="smoke"
+	></Reaction>
+
+</Materials>
