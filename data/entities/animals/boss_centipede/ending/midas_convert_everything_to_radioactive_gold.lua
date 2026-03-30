@@ -1,0 +1,1 @@
+ConvertEverythingToGold( "fire_blue", "fire_blue" )

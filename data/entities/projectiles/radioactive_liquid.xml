@@ -1,0 +1,126 @@
+<Entity name="$projectile_default" >
+
+	<Base file="data/entities/base_projectile.xml" >
+		<VelocityComponent
+    		gravity_y="-1400">
+    	</VelocityComponent> 
+	</Base>
+
+	<ProjectileComponent 
+		_enabled="1" 
+		lob_min="0.8"
+		lob_max="1.0"
+		speed_min="800"
+		speed_max="900"
+		friction="3.0"
+		direction_random_rad="0.1"
+    	die_on_low_velocity="1"
+		on_death_explode="0"
+		on_death_gfx_leave_sprite="0" 
+		on_lifetime_out_explode="0"
+		explosion_dont_damage_shooter="1" 
+		on_collision_die="0"
+		lifetime="30"
+		damage="0.2"
+		velocity_sets_scale="1"
+		lifetime_randomness="4"
+		ragdoll_force_multiplier="0.01"
+		hit_particle_force_multiplier="0.25 "
+		camera_shake_when_shot="1.0" >
+	</ProjectileComponent>
+
+	<ParticleEmitterComponent 
+		emitted_material_name="radioactive_liquid_yellow"
+		count_max="45"
+		offset.x="0"
+		offset.y="-2"
+		x_pos_offset_min="-4"
+		y_pos_offset_min="-4"
+		x_pos_offset_max="4"
+		y_pos_offset_max="4"
+		x_vel_min="-10"
+		x_vel_max="10"
+		y_vel_min="-10"
+		y_vel_max="10"
+		lifetime_min="1"
+		lifetime_max="3"
+		create_real_particles="1"
+		emit_cosmetic_particles="0"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<ParticleEmitterComponent 
+		emitted_material_name="pus"
+		count_max="5"
+		offset.x="0"
+		offset.y="-2"
+		x_pos_offset_min="-4"
+		y_pos_offset_min="-4"
+		x_pos_offset_max="4"
+		y_pos_offset_max="4"
+		x_vel_min="-10"
+		x_vel_max="10"
+		y_vel_min="-10"
+		y_vel_max="10"
+		lifetime_min="1"
+		lifetime_max="3"
+		create_real_particles="1"
+		emit_cosmetic_particles="0"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<ParticleEmitterComponent 
+		emitted_material_name="poo_gas"
+		count_max="5"
+		offset.x="0"
+		offset.y="-2"
+		x_pos_offset_min="-4"
+		y_pos_offset_min="-4"
+		x_pos_offset_max="4"
+		y_pos_offset_max="4"
+		x_vel_min="-10"
+		x_vel_max="10"
+		y_vel_min="-10"
+		y_vel_max="10"
+		lifetime_min="1"
+		lifetime_max="3"
+		create_real_particles="1"
+		emit_cosmetic_particles="0"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<ParticleEmitterComponent 
+		emitted_material_name="radioactive_gas"
+		count_max="5"
+		offset.x="0"
+		offset.y="-2"
+		x_pos_offset_min="-4"
+		y_pos_offset_min="-4"
+		x_pos_offset_max="4"
+		y_pos_offset_max="4"
+		x_vel_min="-10"
+		x_vel_max="10"
+		y_vel_min="-10"
+		y_vel_max="10"
+		lifetime_min="1"
+		lifetime_max="3"
+		create_real_particles="1"
+		emit_cosmetic_particles="0"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+	<VariableStorageComponent
+		name="projectile_file"
+		value_string="data/entities/projectiles/radioactive_liquid.xml"
+		>
+	</VariableStorageComponent>
+</Entity>
+

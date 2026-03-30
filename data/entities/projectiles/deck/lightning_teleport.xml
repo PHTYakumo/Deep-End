@@ -1,0 +1,169 @@
+<Entity name="$projectile_default" tags="resist_repulsion,projectile_player,thunder,teleportable_NOT">
+	
+	<VelocityComponent
+    air_friction="-0.1"
+    gravity_y="0"
+		mass="0.05"
+    terminal_velocity="16384"
+		affect_physics_bodies="1" >
+	</VelocityComponent>
+
+  <ProjectileComponent 
+    speed_min="18000"
+    speed_max="18000"
+    projectile_type="LIGHTNING"
+    on_collision_die="0"
+    on_death_explode="0"
+    on_death_gfx_leave_sprite="0"
+    on_lifetime_out_explode="0"
+    explosion_dont_damage_shooter="1"
+    never_hit_player="1"
+    collide_with_world="0"
+    penetrate_world="1"
+    penetrate_world_velocity_coeff="1.0"
+    lifetime="3"
+    lifetime_randomness="0"
+    direction_random_rad="0"
+    muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_laser.xml"
+    damage="0.4"
+    bounces_left="0"
+    bounce_always="0"
+    bounce_energy="0.1"
+    shoot_light_flash_r="190"
+    shoot_light_flash_g="248"
+    shoot_light_flash_b="255"
+    shoot_light_flash_radius="208"
+    ><damage_by_type 
+    electricity="1.2" 
+    ></damage_by_type>
+  </ProjectileComponent>
+  
+  <LightningComponent 
+    _enabled="1"
+    sprite_lightning_file="data/particles/lightning_purple.png"
+    is_projectile="1"
+    explosion_type="1"
+    >
+    <config_explosion
+      never_cache="1" 
+      camera_shake="1.5" 
+      explosion_radius="20"
+      damage="0.002"
+      explosion_sprite="data/particles/explosion_016_electric.xml"
+      load_this_entity=""
+      explosion_sprite_lifetime="0" 
+      create_cell_probability="0"
+      explosion_sprite_emissive="1"
+      explosion_sprite_additive="1"
+      hole_destroy_liquid="0" 
+      particle_effect="0"
+      hole_enabled="0" 
+      hole_image="data/temp/explosion_hole.png" 
+      particle_effect="0" 
+      damage_mortals="1"
+      physics_explosion_power.max="0.4" 
+      physics_explosion_power.max="0.5" 
+      physics_throw_enabled="1" 
+      shake_vegetation="1" 
+      sparks_inner_radius_coeff="0.66"
+      spark_material="spark_purple_bright"
+      sparks_count_min="2" 
+      sparks_count_max="3" 
+      sparks_enabled="1" 
+      stains_enabled="0" 
+      stains_radius="8"
+      audio_enabled="0" >
+    </config_explosion>
+  </LightningComponent>
+
+  <SpriteParticleEmitterComponent
+    sprite_file="data/particles/spark_electric_red.xml"
+    delay="0"
+    lifetime="1"
+    color.r="1" color.g="1" color.b="1" color.a="1"
+    color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-0.9"
+    velocity.x="0" velocity.y="0"
+    gravity.x="0" gravity.y="0"
+    velocity_slowdown="0"
+    rotation="0"
+    angular_velocity="0"
+    use_velocity_as_rotation="0"
+    scale.x="1" scale.y="1"
+    scale_velocity.x="0" scale_velocity.y="0"
+    emission_interval_min_frames="6"
+    emission_interval_max_frames="9"
+    count_min="2" 
+    count_max="2"
+    randomize_rotation.min="-3.1415"
+    randomize_rotation.max="3.1415"
+    randomize_position.min_x="-70"
+    randomize_position.max_x="70"
+    randomize_position.min_y="-8"
+    randomize_position.max_y="8"
+    velocity_always_away_from_center="6" 
+    >
+  </SpriteParticleEmitterComponent>
+
+  <AudioComponent
+      file="data/audio/Desktop/projectiles.bank"
+      event_root="player_projectiles/chain_bolt">
+  </AudioComponent>
+
+  <AudioComponent
+      file="data/audio/Desktop/projectiles.bank"
+      event_root="player_projectiles/bullet_disc">
+  </AudioComponent>
+
+  <TeleportProjectileComponent
+    reset_shooter_y_vel="0"
+    min_distance_from_wall="0">
+  </TeleportProjectileComponent>
+
+  <LifetimeComponent
+			lifetime="4" >
+	</LifetimeComponent>
+
+  <AreaDamageComponent
+		_tags="area_damage"
+		aabb_min.x="-36" 
+		aabb_min.y="-36" 
+		aabb_max.x="36" 
+		aabb_max.y="36"
+		damage_per_frame="0.22"
+		update_every_n_frame="1"
+		entities_with_tag="homing_target"
+		damage_type="DAMAGE_SLICE"
+		death_cause="$dCLEAVE"
+		circle_radius="48"
+		>
+	</AreaDamageComponent>
+
+  <AreaDamageComponent
+		_tags="area_damage"
+		aabb_min.x="-36" 
+		aabb_min.y="-36" 
+		aabb_max.x="36" 
+		aabb_max.y="36"
+		damage_per_frame="0.22"
+		update_every_n_frame="1"
+		entities_with_tag="homing_target"
+		death_cause="$dCLEAVE"
+		damage_type="NONE"
+    circle_radius="48"
+		>
+	</AreaDamageComponent>
+
+  <LuaComponent
+		script_source_file="data/scripts/projectiles/phasing_lightning_teleport.lua"
+		execute_on_removed="1"
+		execute_every_n_frame="-1">
+	</LuaComponent>
+  
+  <VariableStorageComponent
+    name="projectile_file"
+    value_string="data/entities/projectiles/deck/lightning_teleport.xml"
+    >
+  </VariableStorageComponent>
+
+</Entity>
+

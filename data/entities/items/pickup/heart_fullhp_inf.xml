@@ -1,0 +1,27 @@
+<Entity >
+
+	<Base file="data/entities/items/pickup/heart_fullhp.xml">
+
+		<VelocityComponent
+			gravity_y="1"
+			air_friction="7.5"
+		></VelocityComponent>
+
+		<ItemComponent
+			auto_pickup="0"
+		></ItemComponent>
+
+		<LuaComponent 
+			script_item_picked_up="data/scripts/items/heart_fullhp_inf.lua" 
+		></LuaComponent>
+
+		<SpriteComponent 
+			has_special_scale="1"
+			special_scale_x="0.625"
+			special_scale_y="0.625"
+			image_file="data/items_gfx/heart_inf.xml" 
+		></SpriteComponent>
+
+    </Base>
+
+</Entity>

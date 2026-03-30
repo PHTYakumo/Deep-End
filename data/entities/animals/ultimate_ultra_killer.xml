@@ -1,0 +1,198 @@
+<Entity name="$deep_end_ultimate_ultra_killer" tags="boss,small_friend,touchmagic_immunity,polymorphable_NOT,teleportable_NOT,curse_NOT,do_not_homing_this" >
+  
+	<!--StreamingKeepAliveComponent /-->
+	
+	<Base file="data/entities/base_enemy_flying.xml" >
+		<AnimalAIComponent  
+			preferred_job="JobDefault"
+			escape_if_damaged_probability="40"
+			attack_melee_damage_min="3.55" 
+			attack_melee_damage_max="3.55"
+			creature_detection_range_x="600"
+			creature_detection_range_y="600"
+			creature_detection_angular_range_deg="60"
+			creature_detection_check_every_x_frames="60"
+			food_material="meat"
+			needs_food="1"
+			sense_creatures="1"
+			can_fly="1"  
+			attack_melee_enabled="1"
+			attack_melee_max_distance="13"
+			attack_ranged_enabled="1"
+			attack_ranged_action_frame="0.1"
+			attack_melee_action_frame="2"
+			attack_ranged_min_distance="10"
+			attack_ranged_max_distance="500"
+			attack_ranged_entity_file="data/entities/projectiles/ultimate_ultra_killer_megabomb.xml"
+			attack_ranged_entity_count_min="20"
+			attack_ranged_entity_count_max="20"
+			attack_ranged_frames_between="0.1"
+			attack_ranged_offset_x="0"
+			attack_ranged_offset_y="0"
+			aggressiveness_min="80"
+			aggressiveness_max="100"
+			>
+		</AnimalAIComponent>
+		
+		<DamageModelComponent 
+            hp="231.04"
+			fire_probability_of_ignition="0"
+            materials_create_messages="1"
+			ragdoll_filenames_file="data/ragdolls/ultimate_killer/filenames.txt" 
+			ragdoll_material="magic_liquid_charm"
+			blood_multiplier="0.01"
+			fire_probability_of_ignition="100"
+			blood_material="magic_gas_weakness"
+    		blood_spray_material="magic_gas_weakness"
+			ragdoll_offset_y="1"
+			air_needed="0"
+			materials_damage="0"
+			><damage_multipliers
+			melee="-10"
+			slice="-10"
+			drill="-10"
+			projectile="-10"
+			explosion="-10"
+			electricity="-10"
+			ice="-10"
+			fire="-10"
+			radioactive="-10"
+			poison="-10"
+			curse="-10"
+			holy="-10"
+			physics_hit="-10"
+			healing="0"
+			></damage_multipliers>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			image_file="data/enemies_gfx/ultimate_ultra_killer.xml" 
+			offset_x="0"
+			offset_y="0"
+			>
+		</SpriteComponent>
+
+		<PathFindingComponent
+			can_jump="0"
+			can_fly="1" 
+			jump_speed="80"
+			initial_jump_lob="1"
+			initial_jump_max_distance_x="60"
+			initial_jump_max_distance_y="60" >
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="24" >
+		</PathFindingGridMarkerComponent>
+		
+		<GenomeDataComponent 
+			herd_id="orcs"
+			food_chain_rank="9"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			fly_speed_change_spd="0.8"
+			fly_velocity_x="28" 
+			accel_x="0.03" 
+			jump_velocity_y="-12" 
+			run_velocity="17"  >
+		</CharacterPlatformingComponent>
+
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+		
+		<HitboxComponent 
+            _enabled="1" 
+            aabb_min_x="-3" 
+            aabb_max_x="3" 
+            aabb_min_y="-5" 
+            aabb_max_y="3" 
+			>
+        </HitboxComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-2.0" 
+			collision_aabb_max_x="2.0" 
+			collision_aabb_min_y="-3" 
+			collision_aabb_max_y="3"
+			mass="1.1"
+			>
+		</CharacterDataComponent>
+	</Base>
+
+	<Entity>
+		<Base file="data/entities/misc/ultimate_ultra_killer_shield_sector_1.xml">
+		</Base>
+	</Entity>
+
+	<Entity>
+		<Base file="data/entities/misc/ultimate_ultra_killer_shield_sector_2.xml">
+		</Base>
+	</Entity>
+
+	<Entity>
+		<Base file="data/entities/misc/ultimate_ultra_killer_shield_sector_3.xml">
+		</Base>
+	</Entity>
+
+	<Entity>
+		<Base file="data/entities/misc/ultimate_ultra_killer_shield_sector_4.xml">
+		</Base>
+	</Entity>
+
+	<Entity>
+		<Base file="data/entities/misc/ultimate_ultra_killer_shield_sector_5.xml">
+		</Base>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="KNOCKBACK_IMMUNITY"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent>
+			<Transform position.x="0" position.y="4" ></Transform>
+		</InheritTransformComponent>
+			
+		<Base file="data/entities/base_jetpack.xml" />
+	</Entity>
+
+	<LightComponent 
+		radius="50"
+		fade_out_time="1.5" >
+	</LightComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/ultimate_killer" >
+	</AudioComponent>
+
+	<ItemPickUpperComponent
+    	is_in_npc="1">
+    </ItemPickUpperComponent>
+	
+	<LuaComponent
+		script_death="data/scripts/animals/deep_end_ultimate_ultra_killer_death.lua"
+		execute_every_n_frame="-1"
+		remove_after_executed="0"
+		>
+	</LuaComponent>
+	
+	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
+
+	<BossHealthBarComponent
+		gui_max_distance_visible="200"
+	></BossHealthBarComponent>
+</Entity>
+

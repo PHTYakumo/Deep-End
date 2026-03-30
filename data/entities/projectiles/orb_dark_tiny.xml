@@ -1,0 +1,14 @@
+<Entity>
+  <Base file="data/entities/projectiles/orb_dark.xml" >
+    <SpriteComponent 
+      has_special_scale="1"
+	    special_scale_x="0.75"
+	    special_scale_y="0.75"
+      update_transform_rotation="1"
+    ></SpriteComponent>
+
+    <VariableStorageComponent
+      value_string="data/entities/projectiles/orb_dark_tiny.xml"
+    ></VariableStorageComponent>
+  </Base>
+</Entity>

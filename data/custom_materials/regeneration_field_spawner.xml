@@ -1,0 +1,8 @@
+<Entity tags="regeneration_field_spawner">
+  
+	<LuaComponent
+		script_source_file="data/custom_materials/regeneration_field_spawner.lua"
+		execute_on_added="1"
+	></LuaComponent>
+
+</Entity>

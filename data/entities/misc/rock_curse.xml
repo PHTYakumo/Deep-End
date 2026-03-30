@@ -1,0 +1,136 @@
+<Entity name="workshop_altar" tags="no_swap" >
+
+	<!-- DEBUG - LOL DON'T COMMIT -->
+	<!-- <SpriteComponent image_file="data/debug/circle_16.png" /> -->
+
+	<!-- NOTE( Petri ): 15.5.2023 - do we want to make this 512x512? -->
+	<AreaDamageComponent
+		aabb_min.x="-255.5" 
+		aabb_min.y="-255.5" 
+		aabb_max.x="255.5" 
+		aabb_max.y="255.5" 
+		damage_per_frame="0.858"
+		update_every_n_frame="66"
+		death_cause="$damage_rock_curse"
+		entities_with_tag="player_unit"
+		damage_type="DAMAGE_CURSE"
+		>
+	</AreaDamageComponent>
+
+	<AreaDamageComponent
+		aabb_min.x="-255.5" 
+		aabb_min.y="-255.5" 
+		aabb_max.x="255.5" 
+		aabb_max.y="255.5" 
+		damage_per_frame="0.858"
+		update_every_n_frame="66"
+		death_cause="$damage_rock_curse"
+		entities_with_tag="player_unit"
+		damage_type="DAMAGE_MATERIAL"
+		>
+	</AreaDamageComponent>
+
+	<AreaDamageComponent
+		aabb_min.x="-255.5" 
+		aabb_min.y="-255.5" 
+		aabb_max.x="255.5" 
+		aabb_max.y="255.5" 
+		damage_per_frame="0.858"
+		update_every_n_frame="66"
+		death_cause="$damage_rock_curse"
+		entities_with_tag="player_unit"
+		damage_type="DAMAGE_MATERIAL_WITH_FLASH"
+		>
+	</AreaDamageComponent>
+
+	<AreaDamageComponent
+		aabb_min.x="-255.5" 
+		aabb_min.y="-255.5" 
+		aabb_max.x="255.5" 
+		aabb_max.y="255.5" 
+		damage_per_frame="0.858"
+		update_every_n_frame="66"
+		death_cause="$damage_rock_curse"
+		entities_with_tag="player_unit"
+		damage_type="DAMAGE_HEALING"
+		>
+	</AreaDamageComponent>
+
+	<AreaDamageComponent
+		aabb_min.x="-255.5" 
+		aabb_min.y="-255.5" 
+		aabb_max.x="255.5" 
+		aabb_max.y="255.5" 
+		damage_per_frame="0.858"
+		update_every_n_frame="66"
+		death_cause="$damage_rock_curse"
+		entities_with_tag="player_unit"
+		damage_type="DAMAGE_OVEREATING"
+		>
+	</AreaDamageComponent>
+
+	<AreaDamageComponent
+		aabb_min.x="-255.5" 
+		aabb_min.y="-255.5" 
+		aabb_max.x="255.5" 
+		aabb_max.y="255.5" 
+		damage_per_frame="0.858"
+		update_every_n_frame="66"
+		death_cause="$damage_rock_curse"
+		entities_with_tag="player_unit"
+		damage_type="NONE"
+		>
+	</AreaDamageComponent>
+
+	<LightComponent 
+    	_enabled="1"
+    	r="255"
+    	g="255"
+    	b="255"
+		radius="998" >
+	</LightComponent>
+
+	<SpriteComponent 
+		alpha="0.35"
+		image_file="data/particles/fog_of_war_hole_giga.xml"
+		smooth_filtering="1"
+		fog_of_war_hole="1" >
+	</SpriteComponent>
+
+	<SpriteParticleEmitterComponent
+		sprite_file="data/particles/explosion_016_plasma_red.xml"
+		delay="0"
+		lifetime="0.4"
+		color.r="1" color.g="1" color.b="1" color.a="0.4"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="0"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="6"
+		use_velocity_as_rotation="0"
+		scale.x="0.8" scale.y="0.8"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="15"
+		emission_interval_max_frames="60"
+		count_min="4" count_max="24"
+		randomize_rotation.min="-0.68"
+		randomize_rotation.max="0.68"
+		randomize_angular_velocity.min="-0.9"
+		randomize_angular_velocity.max="0.9"
+		randomize_position.min_x="-256"
+		randomize_position.max_x="256"
+		randomize_position.min_y="-256"
+		randomize_position.max_y="256"
+		randomize_velocity.min_x="-7"
+		randomize_velocity.max_x="7"
+		randomize_velocity.min_y="-7"
+		randomize_velocity.max_y="7"
+	></SpriteParticleEmitterComponent>
+	
+	<CameraBoundComponent
+	  max_count="10"
+	  distance="2000">
+	</CameraBoundComponent>
+
+</Entity>

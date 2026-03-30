@@ -1,0 +1,153 @@
+<Entity>
+        <ParticleEmitterComponent 
+                emitted_material_name="blood_fading"
+                count_min="1"
+                count_max="1"
+                offset.x="-2"
+                offset.y="0"
+                x_pos_offset_min="-6"
+                y_pos_offset_min="-6"
+                x_pos_offset_max="6"
+                y_pos_offset_max="6"
+                gravity.y="0"
+                x_vel_min="-9"
+                x_vel_max="9"
+                y_vel_min="-9"
+                y_vel_max="9"
+                lifetime_min="0.1"
+                lifetime_max="0.3"
+                create_real_particles="1"
+                emit_cosmetic_particles="0"
+                emission_interval_min_frames="3"
+                emission_interval_max_frames="12"
+                is_emitting="1"
+                emitter_lifetime_frames="30" >
+        </ParticleEmitterComponent>
+
+        <MagicConvertMaterialComponent
+                kill_when_finished="0"
+                from_material="blood_fungi"
+                to_material="Hemokinesis_powder_worm"
+                steps_per_frame="15"
+                is_circle="1"
+                radius="12"
+                loop="1" >
+        </MagicConvertMaterialComponent>
+
+        <MagicConvertMaterialComponent
+                kill_when_finished="0"
+                from_material="blood_worm"
+                to_material="Hemokinesis_powder_worm"
+                steps_per_frame="15"
+                is_circle="1"
+                radius="12"
+                loop="1" >
+        </MagicConvertMaterialComponent>
+
+        <MagicConvertMaterialComponent
+                kill_when_finished="0"
+                from_material="blood_cold"
+                to_material="Hemokinesis_powder_worm"
+                steps_per_frame="15"
+                is_circle="1"
+                radius="12"
+                loop="1" >
+        </MagicConvertMaterialComponent>
+
+        <MagicConvertMaterialComponent
+                kill_when_finished="0"
+                from_material="deep_end_laser_eye_potion"
+                to_material="Hemokinesis_powder_worm"
+                steps_per_frame="15"
+                is_circle="1"
+                radius="12"
+                loop="1" >
+        </MagicConvertMaterialComponent>
+
+        <MagicConvertMaterialComponent
+                kill_when_finished="0"
+                from_material="plasma_fading"
+                to_material="Hemokinesis_powder_worm"
+                steps_per_frame="15"
+                is_circle="1"
+                radius="12"
+                loop="1" >
+        </MagicConvertMaterialComponent>
+
+        <MagicConvertMaterialComponent
+                kill_when_finished="0"
+                from_material="ice_blood_static"
+                to_material="Hemokinesis_powder"
+                steps_per_frame="15"
+                is_circle="1"
+                radius="15"
+                loop="1" >
+        </MagicConvertMaterialComponent>
+
+        <MagicConvertMaterialComponent
+                kill_when_finished="0"
+                from_material="cloud_blood"
+                to_material="Hemokinesis_powder"
+                steps_per_frame="15"
+                is_circle="1"
+                radius="15"
+                loop="1" >
+        </MagicConvertMaterialComponent>
+
+        <MagicConvertMaterialComponent
+                kill_when_finished="0"
+                from_material="blood"
+                to_material="Hemokinesis_powder"
+                steps_per_frame="15"
+                is_circle="1"
+                radius="15"
+                loop="1" >
+        </MagicConvertMaterialComponent>
+
+        <MagicConvertMaterialComponent
+                kill_when_finished="0"
+                from_material="blood_fading"
+                to_material="Hemokinesis_powder"
+                steps_per_frame="15"
+                is_circle="1"
+                radius="15"
+                loop="1" >
+        </MagicConvertMaterialComponent>
+
+        <MagicConvertMaterialComponent
+                kill_when_finished="0"
+                from_material="blood_fading_slow"
+                to_material="Hemokinesis_powder"
+                steps_per_frame="15"
+                is_circle="1"
+                radius="15"
+                loop="1" >
+        </MagicConvertMaterialComponent>
+
+        <!--
+
+        <MagicConvertMaterialComponent
+                from_material_array="blood_fungi,blood_worm,blood_cold,deep_end_laser_eye_potion,deep_end_gravity_potion"
+                to_material_array="Hemokinesis_powder_worm,Hemokinesis_powder_worm,Hemokinesis_powder_worm,Hemokinesis_powder_worm,Hemokinesis_powder_worm"
+                steps_per_frame="20"
+                loop="1"
+                is_circle="1"
+                radius="12" >
+        </MagicConvertMaterialComponent>
+
+        <MagicConvertMaterialComponent
+                from_material_array="ice_blood_static,cloud_blood,blood,blood_fading,blood_fading_slow"
+                to_material_array="Hemokinesis_powder,Hemokinesis_powder,Hemokinesis_powder,Hemokinesis_powder,Hemokinesis_powder"
+                steps_per_frame="20"
+                loop="1"
+                is_circle="1"
+                radius="15" >
+        </MagicConvertMaterialComponent>
+        
+        -->
+
+        <LifetimeComponent
+		lifetime="135"
+		>
+	</LifetimeComponent>
+</Entity>

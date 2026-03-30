@@ -1,0 +1,8 @@
+<Entity >
+  <Base file="data/entities/animals/worm.xml"  include_children="1">
+    <DamageModelComponent 
+      hp="120"
+      max_hp="120"
+     ></DamageModelComponent >
+  </Base>
+</Entity>

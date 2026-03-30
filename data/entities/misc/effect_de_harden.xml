@@ -1,0 +1,47 @@
+<Entity>
+	<InheritTransformComponent 
+		_enabled="1" >
+    </InheritTransformComponent>
+
+	<GameEffectComponent
+		effect="BREATH_UNDERWATER" 
+        frames="90"
+    >
+	</GameEffectComponent>
+
+	<GameEffectComponent
+		effect="PROTECTION_POLYMORPH" 
+        frames="90"
+    >
+	</GameEffectComponent>
+
+	<GameEffectComponent
+		effect="PROTECTION_ALL" 
+        frames="90"
+    >
+	</GameEffectComponent>
+
+	<GameEffectComponent
+		effect="SAVING_GRACE" 
+        frames="90"
+    >
+	</GameEffectComponent>
+
+	<GameEffectComponent
+		effect="NO_DAMAGE_FLASH" 
+        frames="90"
+    >
+	</GameEffectComponent >
+
+	<GameEffectComponent
+		effect="STAINS_DROP_FASTER" 
+        frames="90"
+    >
+	</GameEffectComponent >
+
+	<LuaComponent 
+		_enabled="1" 
+		script_source_file="data/scripts/status_effects/moveless.lua"
+		execute_every_n_frame="1" >
+   	</LuaComponent>
+</Entity>

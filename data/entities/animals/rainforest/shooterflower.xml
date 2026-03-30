@@ -1,0 +1,8 @@
+<Entity >
+  <Base file="data/entities/animals/shooterflower.xml">
+    <DamageModelComponent 
+      hp="2"
+      max_hp="4"
+     ></DamageModelComponent >
+  </Base>
+</Entity>

@@ -1,0 +1,15 @@
+<Entity>
+	<LuaComponent
+		script_source_file="data/scripts/buildings/fungitrap_01.lua"
+		execute_every_n_frame="150"
+		execute_times="4"
+		>
+	</LuaComponent>
+	
+	<CameraBoundComponent
+		max_count="5"
+		distance="3200"
+		freeze_on_distance_kill="false" >
+	</CameraBoundComponent>
+</Entity>
+

@@ -1,0 +1,14 @@
+<Entity >
+	<HomingComponent
+		homing_targeting_coeff="0.5"
+		homing_velocity_multiplier="0.99"
+		detect_distance="75"
+	>
+	</HomingComponent>
+	
+	<LuaComponent
+		script_source_file="data/scripts/projectiles/homing_accelerating.lua"
+		execute_every_n_frame="4"
+		>
+	</LuaComponent>
+</Entity>

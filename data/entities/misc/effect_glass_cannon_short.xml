@@ -1,0 +1,38 @@
+<Entity tags="de_effect_cannon" >
+	<Base file="data/entities/particles/berserk.xml" >
+		<SpriteParticleEmitterComponent
+    		emission_interval_min_frames="5"
+    		emission_interval_max_frames="15"
+			randomize_position_inside_hitbox="1"  >
+		</SpriteParticleEmitterComponent>
+	</Base>
+	
+	<InheritTransformComponent 
+		_enabled="1" >
+    </InheritTransformComponent>	
+    
+    <GameEffectComponent 
+        effect="DAMAGE_MULTIPLIER"
+        frames="601" >
+	</GameEffectComponent>
+
+	<LifetimeComponent
+		lifetime="601" >
+	</LifetimeComponent>
+
+	<UIIconComponent
+		icon_sprite_file="data/ui_gfx/status_indicators/glass_cannon.png"
+		name="$HAEMOSPASIA"
+		description="$statusdesc_berserk"
+		display_above_head="0"
+		display_in_hud="1"
+		is_perk="0" >
+	</UIIconComponent>
+
+	<LuaComponent
+		script_source_file="data/scripts/projectiles/glass_cannon_short_end.lua"
+		execute_every_n_frame="-1"
+		execute_on_removed="1" >
+	</LuaComponent>
+
+</Entity>

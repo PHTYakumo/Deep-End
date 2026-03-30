@@ -1,0 +1,12 @@
+<Entity tags="glue_NOT">
+	<Base file="data/entities/items/pickup/chest_random.xml" >
+		<PhysicsImageShapeComponent 
+    		material="gem_box2d_yellow_sun_gravity"
+  		></PhysicsImageShapeComponent>
+    </Base>
+
+	<VariableStorageComponent
+		name="type"
+		value_int="1"
+	></VariableStorageComponent>
+</Entity>

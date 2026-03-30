@@ -1,0 +1,19 @@
+<Sprite
+ filename="data/particles/bloody_thorn.png"
+ offset_x="2.5"
+ offset_y="6.0"
+ default_animation="fireball" >
+
+ <!-- animation -->
+ <RectAnimation
+  name="fireball"
+  pos_x="0"
+  pos_y="0"
+  frame_count="1"
+  frame_width="5"
+  frame_height="19"
+  frame_wait="0.2"
+  frames_per_row="1"
+  loop="1"   >
+ </RectAnimation>
+</Sprite>

@@ -1,0 +1,27 @@
+<Entity>
+
+	<GameEffectComponent 
+    	effect="MOVEMENT_FASTER"
+    	frames="5400"
+    >
+	</GameEffectComponent >
+
+	<DrugEffectModifierComponent>
+		<fx_add
+			doublevision_amount="0.016"
+		/>
+	</DrugEffectModifierComponent>
+	
+	<InheritTransformComponent>
+	</InheritTransformComponent>
+
+	<UIIconComponent
+		icon_sprite_file="data/ui_gfx/status_indicators/g_fuel_oh_yeah.png"
+		name="$GFUEL"
+		description="$dGFUEL"
+		display_above_head="0"
+		display_in_hud="1"
+		is_perk="0"
+		>
+	</UIIconComponent>
+</Entity>

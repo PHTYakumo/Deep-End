@@ -1,0 +1,25 @@
+<Entity>
+
+	<LifetimeComponent
+			lifetime="150" >
+	</LifetimeComponent>
+  
+	<LuaComponent
+		_enabled="1" 
+		script_source_file="data/entities/animals/boss_spirit/summon_lance.lua"
+		execute_every_n_frame="3"
+	></LuaComponent>
+
+	<LuaComponent
+		_enabled="1" 
+		script_source_file="data/entities/animals/boss_spirit/homing.lua"
+		execute_every_n_frame="1"
+	></LuaComponent>
+
+	<VariableStorageComponent
+		name="branche_timer"
+		value_int="5"
+		>
+	</VariableStorageComponent>
+
+</Entity>

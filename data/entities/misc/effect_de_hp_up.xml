@@ -1,0 +1,25 @@
+<Entity>
+	<Base file="data/entities/particles/heal.xml" >
+		<SpriteParticleEmitterComponent
+    		emission_interval_min_frames="50"
+    		emission_interval_max_frames="70"
+			randomize_position_inside_hitbox="1"  >
+		</SpriteParticleEmitterComponent>
+	</Base>
+	
+	<InheritTransformComponent 
+		_enabled="1" >
+    </InheritTransformComponent>
+
+	<GameEffectComponent
+		effect="FARTS" 
+        frames="90"
+    >
+	</GameEffectComponent>
+
+	<LuaComponent 
+		_enabled="1" 
+		script_source_file="data/scripts/status_effects/de_hp_up.lua"
+		execute_every_n_frame="1" >
+   	</LuaComponent>
+</Entity>

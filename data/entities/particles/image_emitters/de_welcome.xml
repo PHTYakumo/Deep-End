@@ -1,0 +1,29 @@
+<Entity tags="controls_f">
+	
+	<LifetimeComponent
+		_enabled="0"
+		lifetime="600"
+		>
+	</LifetimeComponent>
+
+	<MagicConvertMaterialComponent
+      _enabled="0"
+      kill_when_finished="0"
+      from_material="glowstone_Deep_End"
+      steps_per_frame="1"
+      to_material="Deep_End_Cocktail"
+      radius="200" >
+    </MagicConvertMaterialComponent>
+
+	<MagicConvertMaterialComponent
+	  _enabled="0"
+      from_material_array="oil"
+      to_material_array="smoke"
+      kill_when_finished="0"
+      steps_per_frame="5"
+      is_circle="1"
+      radius="320" >
+    </MagicConvertMaterialComponent>
+
+</Entity>
+

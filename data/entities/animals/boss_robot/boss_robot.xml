@@ -1,0 +1,502 @@
+<Entity tags="deep_end_boss_robot,enemy,mortal,human,hittable,homing_target,teleportable_NOT,boss,polymorphable_NOT,miniboss,music_energy_100,necrobot_NOT,glue_NOT" name="$animal_boss_robot">
+	
+	<!-- art - main body -->
+
+	<LightComponent 
+		_enabled="1" 
+		radius="256"
+		r="100"
+		g="255"
+		b="130"
+		offset_y="0"
+   		fade_out_time="1.5" >
+	</LightComponent>
+
+	<SpriteComponent 
+		_tags="character"
+		image_file="data/entities/animals/boss_robot/body.xml" 
+		offset_y="22"
+		offset_x="22" >
+	</SpriteComponent>
+
+
+	<!-- AI -->
+
+	<LimbBossComponent
+		state="1"
+		>
+	</LimbBossComponent>
+
+	<PathFindingComponent 
+		can_dive="1" 
+		can_fly="1" 
+		can_jump="0" 
+		can_swim_on_surface="0" 
+		can_walk="0" 
+		cost_of_flying="500" 
+		distance_to_reach_node_x="20" 
+		distance_to_reach_node_y="20" 
+		frames_between_searches="20" 
+		frames_to_get_stuck="120" 
+		initial_jump_lob="1" 
+		initial_jump_max_distance_x="100" 
+		initial_jump_max_distance_y="60" 
+		iterations_max_no_goal="9999999" 
+		iterations_max_with_goal="145000" 
+		jump_speed="200" 
+		max_jump_distance_from_camera="400" 
+		search_depth_max_no_goal="120" 
+		search_depth_max_with_goal="145000" 
+		y_walking_compensation="8" >
+	</PathFindingComponent>
+
+	<PathFindingGridMarkerComponent 
+		_enabled="1" 
+		marker_offset_x="0" 
+		marker_offset_y="-6" 
+		marker_work_flag="16" >
+	</PathFindingGridMarkerComponent>
+
+
+	<!-- physics -->
+
+	<PhysicsAIComponent
+		target_vec_max_len="750.0"
+		force_coeff="60.0"
+		force_balancing_coeff="0.8"
+		force_max="500"
+		torque_coeff="50"
+		torque_balancing_coeff="4"
+		torque_max="50.0"
+		damage_deactivation_probability="0"
+		damage_deactivation_time_min="2"
+		damage_deactivation_time_max="10" >
+	</PhysicsAIComponent>
+
+	<PhysicsBodyComponent 
+		force_add_update_areas="1"
+		allow_sleep="1" 
+		angular_damping="0.01" 
+		fixed_rotation="0" 
+		is_bullet="0" 
+		linear_damping="0"  >
+	</PhysicsBodyComponent>
+
+	<PhysicsShapeComponent
+		is_circle="1"
+		radius_x="18"
+		radius_y="18"
+		friction="0.0"
+		restitution="0.3" >
+	</PhysicsShapeComponent>
+
+
+	<!-- damage -->
+
+	<DamageModelComponent 
+		hp="200" 
+		air_needed="0" 
+		falling_damages="0" 
+		fire_damage_amount="0.2" 	 
+		fire_probability_of_ignition="0" 
+		blood_material="liquid_fire"
+		is_on_fire="0" 
+		materials_damage="0" 
+		materials_how_much_damage="-0.002,-0.002" 
+		materials_that_damage="liquid_fire,magic_liquid_mana_regeneration" 
+		ragdoll_filenames_file=""
+        ragdoll_material="steel_static_unmeltable"
+		ragdoll_offset_y="-6"
+		ragdollify_child_entity_sprites="1" 
+		blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_oil_$[1-3].xml"
+		blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_oil_$[1-3].xml"
+		>
+		<damage_multipliers
+			melee="0"
+			projectile="-0.4"
+			explosion="-0.4"
+			electricity="0.08"
+			radioactive="-0.32"
+			poison="-0.32"
+			fire="-0.24"
+			ice="-0.24"
+			slice="0"
+			drill="0"
+			holy="0"
+			curse="0"
+			physics_hit="0.08"
+			>
+		</damage_multipliers>
+	</DamageModelComponent>
+
+	<GenomeDataComponent 
+		food_chain_rank="5" 
+		herd_id="robot" 
+		is_predator="1" >
+	</GenomeDataComponent>
+
+	<!-- center hitbox (default) -->
+	<HitboxComponent 
+		_tags="hitbox_default"
+		aabb_min_x="-18" 
+		aabb_max_x="18" 
+		aabb_min_y="-18" 
+		aabb_max_y="18"
+		damage_multiplier="1.0" >
+	</HitboxComponent>
+
+
+	<!-- etc -->
+
+	<AudioComponent 
+		file="data/audio/Desktop/animals.bank"
+		event_root=""
+		set_latest_event_position="1" >
+	</AudioComponent>
+
+	<SpriteAnimatorComponent 
+		rotate_to_surface_normal="0" 
+		target_sprite_comp_name="character" >
+	</SpriteAnimatorComponent>
+	
+	<CellEaterComponent
+		radius="40"
+		ignored_material="aluminium_robot"
+		eat_probability="100">
+	</CellEaterComponent>
+
+	<!-- health bar -->
+
+	<SpriteComponent 
+		_tags="health_bar_back,ui"
+		_enabled="1" 
+		alpha="1" 
+		has_special_scale="1" 
+		image_file="data/ui_gfx/health_slider_back.png" 
+		is_text_sprite="0" 
+		next_rect_animation="" 
+		offset_x="12" 
+		offset_y="42" 
+		rect_animation="" 
+		special_scale_x="1" 
+		special_scale_y="1" 
+		ui_is_parent="0" 
+		update_transform="1" 
+		visible="1" 
+		emissive="1"
+		never_ragdollify_on_death="1"
+		z_index="-9000" >
+	</SpriteComponent>
+
+	<SpriteComponent 
+		_tags="health_bar,ui" 
+		_enabled="1" 
+		alpha="1" 
+		has_special_scale="1" 
+		image_file="data/ui_gfx/health_slider_front.png" 
+		is_text_sprite="0" 
+		next_rect_animation="" 
+		offset_x="12" 
+		offset_y="42" 
+		rect_animation="" 
+		special_scale_x="1" 
+		special_scale_y="1" 
+		ui_is_parent="0" 
+		update_transform="1" 
+		visible="1" 
+		emissive="1"
+		never_ragdollify_on_death="1"
+		z_index="-9000" >
+	</SpriteComponent>
+		
+	<BossHealthBarComponent>
+	</BossHealthBarComponent>
+	
+	<LuaComponent
+		script_death="data/entities/animals/boss_robot/death.lua"
+		>
+	</LuaComponent>
+	
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/robot">
+	</AudioComponent>
+
+	<AreaDamageComponent
+		circle_radius="18" 
+		aabb_min.x="-18" 
+		aabb_min.y="-18" 
+		aabb_max.x="18" 
+		aabb_max.y="18" 
+		damage_per_frame="2.0"
+		update_every_n_frame="66"
+		entities_with_tag="player_unit"
+		death_cause="$damage_darksun"
+		damage_type="DAMAGE_FIRE"
+		>
+	</AreaDamageComponent>
+
+	<AreaDamageComponent
+		circle_radius="38" 
+		aabb_min.x="-38" 
+		aabb_min.y="-38" 
+		aabb_max.x="38" 
+		aabb_max.y="38" 
+		damage_per_frame="0.8"
+		update_every_n_frame="66"
+		entities_with_tag="player_unit"
+		death_cause="$damage_sun"
+		damage_type="DAMAGE_FIRE"
+		>
+	</AreaDamageComponent>
+
+
+	<!-- limbs
+	 13, not a good number.. -->
+
+	<Entity>  <Base file="data/entities/animals/boss_robot/limb.xml" />  </Entity>
+	<Entity>  <Base file="data/entities/animals/boss_robot/limb.xml" />  </Entity>
+	<Entity>  <Base file="data/entities/animals/boss_robot/limb.xml" />  </Entity>
+	<Entity>  <Base file="data/entities/animals/boss_robot/limb.xml" />  </Entity>
+	<Entity>  <Base file="data/entities/animals/boss_robot/limb.xml" />  </Entity>
+	<Entity>  <Base file="data/entities/animals/boss_robot/limb.xml" />  </Entity>
+	<Entity>  <Base file="data/entities/animals/boss_robot/limb.xml" />  </Entity>
+	<Entity>  <Base file="data/entities/animals/boss_robot/limb.xml" />  </Entity>
+	<Entity>  <Base file="data/entities/animals/boss_robot/limb.xml" />  </Entity>
+	<Entity>  <Base file="data/entities/animals/boss_robot/limb.xml" />  </Entity>
+	<Entity>  <Base file="data/entities/animals/boss_robot/limb.xml" />  </Entity>
+	<Entity>  <Base file="data/entities/animals/boss_robot/limb.xml" />  </Entity>
+	<Entity>  <Base file="data/entities/animals/boss_robot/limb.xml" />  </Entity>
+	
+	<Entity>
+		<InheritTransformComponent
+			only_position="1"
+			>
+		</InheritTransformComponent>
+		
+		<LuaComponent
+			script_source_file="data/entities/animals/boss_robot/spell_eater.lua"
+			execute_every_n_frame="1"
+			>
+		</LuaComponent>
+
+		<ParticleEmitterComponent
+			_tags="boss_robot_spell_eater"
+			emitted_material_name="spark_red"
+			gravity.y="0.0"
+			lifetime_min="0.2"
+			lifetime_max="0.9"
+			count_min="200"
+			count_max="400"
+			render_on_grid="1"
+			fade_based_on_lifetime="1"
+			velocity_always_away_from_center="20"
+			attractor_force="20"
+			area_circle_radius.min="37"
+			area_circle_radius.max="37"
+			cosmetic_force_create="0"
+			airflow_force="5.0"
+			airflow_time="0.04"
+			airflow_scale="3.0"
+			emission_interval_min_frames="0"
+			emission_interval_max_frames="0"
+			emit_cosmetic_particles="1"
+			is_emitting="1"
+			area_circle_sector_degrees="315"
+			>
+		</ParticleEmitterComponent>
+
+		<ParticleEmitterComponent
+			_tags="boss_robot_spell_eater"
+			emitted_material_name="spark_red"
+			gravity.y="0.0"
+			lifetime_min="0.2"
+			lifetime_max="0.9"
+			count_min="200"
+			count_max="400"
+			render_on_grid="1"
+			fade_based_on_lifetime="1"
+			velocity_always_away_from_center="40"
+			attractor_force="40"
+			area_circle_radius.min="37"
+			area_circle_radius.max="37"
+			cosmetic_force_create="0"
+			airflow_force="3.0"
+			airflow_time="0.08"
+			airflow_scale="7.0"
+			emission_interval_min_frames="0"
+			emission_interval_max_frames="0"
+			emit_cosmetic_particles="1"
+			is_emitting="1"
+			area_circle_sector_degrees="315"
+			>
+		</ParticleEmitterComponent>
+
+		<ParticleEmitterComponent
+			_tags="boss_robot_spell_eater"
+			emitted_material_name="spark_red"
+			gravity.y="0.0"
+			lifetime_min="0.1"
+			lifetime_max="0.1"
+			count_min="250"
+			count_max="400"
+			render_on_grid="1"
+			fade_based_on_lifetime="1"
+			area_circle_radius.min="37"
+			area_circle_radius.max="37"
+			cosmetic_force_create="0"
+			airflow_force="1.0"
+			airflow_time="0.05"
+			airflow_scale="2.0"
+			emission_interval_min_frames="0"
+			emission_interval_max_frames="0"
+			emit_cosmetic_particles="1"
+			is_emitting="0"
+			area_circle_sector_degrees="315"
+			>
+		</ParticleEmitterComponent>
+	</Entity>
+	
+	<VariableStorageComponent
+		name="state"
+		value_int="-1"
+		>
+	</VariableStorageComponent>
+	
+	<VariableStorageComponent
+		name="spell_eater"
+		value_int="1"
+		>
+	</VariableStorageComponent>
+	
+	<VariableStorageComponent
+		name="laser_angle"
+		value_float="0"
+		>
+	</VariableStorageComponent>
+	
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_robot/state.lua"
+		execute_every_n_frame="120"
+		>
+	</LuaComponent>
+	<!--
+	<LaserEmitterComponent
+		is_emitting="0"
+		laser_angle_add_rad="0"
+		>
+		<laser
+			damage_to_entities="1.5"
+			max_cell_durability_to_destroy="2"
+			damage_to_cells="5000000"
+			max_length="1200"
+			beam_radius="20"
+			hit_particle_chance="90"
+			beam_particle_chance="10000"
+			beam_particle_type="spark_red"
+			audio_enabled="1"
+			>
+		</laser>
+	</LaserEmitterComponent>
+	
+	<LaserEmitterComponent
+		is_emitting="0"
+		laser_angle_add_rad="0"
+		>
+		<laser
+			damage_to_entities="1.5"
+			max_cell_durability_to_destroy="2"
+			damage_to_cells="5000000"
+			max_length="1200"
+			beam_radius="20"
+			hit_particle_chance="90"
+			beam_particle_chance="10000"
+			beam_particle_type="spark_red"
+			audio_enabled="1"
+			>
+		</laser>
+	</LaserEmitterComponent>
+	
+	<LaserEmitterComponent
+		is_emitting="0"
+		laser_angle_add_rad="0"
+		>
+		<laser
+			damage_to_entities="1.5"
+			max_cell_durability_to_destroy="2"
+			damage_to_cells="5000000"
+			max_length="1200"
+			beam_radius="20"
+			hit_particle_chance="90"
+			beam_particle_chance="10000"
+			beam_particle_type="spark_red"
+			audio_enabled="1"
+			>
+		</laser>
+	</LaserEmitterComponent>
+
+	<LaserEmitterComponent
+		is_emitting="0"
+		laser_angle_add_rad="0"
+		>
+		<laser
+			damage_to_entities="1.5"
+			max_cell_durability_to_destroy="2"
+			damage_to_cells="5000000"
+			max_length="1200"
+			beam_radius="20"
+			hit_particle_chance="90"
+			beam_particle_chance="10000"
+			beam_particle_type="spark_red"
+			audio_enabled="1"
+			>
+		</laser>
+	</LaserEmitterComponent>
+
+	<LaserEmitterComponent
+		is_emitting="0"
+		laser_angle_add_rad="0"
+		>
+		<laser
+			damage_to_entities="1.5"
+			max_cell_durability_to_destroy="2"
+			damage_to_cells="5000000"
+			max_length="1200"
+			beam_radius="20"
+			hit_particle_chance="90"
+			beam_particle_chance="10000"
+			beam_particle_type="spark_red"
+			audio_enabled="1"
+			>
+		</laser>
+	</LaserEmitterComponent>
+
+	<LaserEmitterComponent
+		is_emitting="0"
+		laser_angle_add_rad="0"
+		>
+		<laser
+			damage_to_entities="1.5"
+			max_cell_durability_to_destroy="2"
+			damage_to_cells="5000000"
+			max_length="1200"
+			beam_radius="20"
+			hit_particle_chance="90"
+			beam_particle_chance="10000"
+			beam_particle_type="spark_red"
+			audio_enabled="1"
+			>
+		</laser>
+	</LaserEmitterComponent>
+	-->
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_PROJECTILE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+
+</Entity>

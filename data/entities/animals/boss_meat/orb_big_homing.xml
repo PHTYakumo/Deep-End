@@ -1,0 +1,25 @@
+<Entity name="$projectile_default" >
+
+	<Base file="data/entities/animals/boss_meat/orb_big.xml" >
+		<VelocityComponent
+			air_friction="-4"
+			terminal_velocity="610" >
+		</VelocityComponent>
+
+		<HomingComponent
+			homing_targeting_coeff="666" >
+		</HomingComponent>
+
+    <ProjectileComponent
+      lifetime="220" >
+    </ProjectileComponent>
+	</Base>
+
+  <HitEffectComponent 
+      effect_hit="LOAD_UNIQUE_CHILD_ENTITY"
+      value_string="data/entities/misc/effect_no_heal_de_short.xml" >
+  </HitEffectComponent >
+
+
+</Entity>
+

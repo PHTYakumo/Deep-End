@@ -1,0 +1,27 @@
+<Entity>
+
+	<StreamingKeepAliveComponent />
+	
+	<LuaComponent
+		script_source_file="data/entities/misc/what_is_this/all_spells/all_spells_follow.lua"
+		execute_every_n_frame="5"
+	></LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/misc/what_is_this/all_spells/all_spells_loader.lua"
+		execute_every_n_frame="26"
+	></LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/misc/what_is_this/all_spells/all_spells_end.lua"
+		execute_every_n_frame="1678"
+		remove_after_executed="1"
+	></LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/misc/what_is_this/all_spells/all_spells_start.lua"
+		execute_every_n_frame="1"
+		remove_after_executed="1"
+	></LuaComponent>
+
+</Entity>

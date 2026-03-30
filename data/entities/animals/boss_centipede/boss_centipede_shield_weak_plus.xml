@@ -1,0 +1,78 @@
+<Entity tags="energy_shield">
+	<InheritTransformComponent>
+		<Transform 
+			only_position="1"
+			position.x="0" 
+			position.y="0" >
+		</Transform>
+	</InheritTransformComponent>
+
+    <EnergyShieldComponent 
+    	_tags="shield,disabled_at_start"
+		_enabled="0"
+        recharge_speed="0.3"
+		radius="56.0" >
+    </EnergyShieldComponent>
+
+	<ParticleEmitterComponent
+		_tags="shield,disabled_at_start,shield_ring"
+		_enabled="0"
+		emitted_material_name="plastic_red_molten"
+		gravity.y="0.0"
+		lifetime_min="0.02"
+		lifetime_max="0.05"
+		count_min="200"
+		count_max="300"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="54"
+		area_circle_radius.max="56"
+		cosmetic_force_create="0"
+		airflow_force="0.3"
+		airflow_time="0.01"
+		airflow_scale="0.05"
+		emission_interval_min_frames="0"
+		emission_interval_max_frames="0"
+		emit_cosmetic_particles="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<ParticleEmitterComponent
+		_tags="shield,disabled_at_start,shield_hit"
+		_enabled="0"
+		emitted_material_name="plastic_red_molten"
+		gravity.y="0.0"
+		lifetime_min="0.3"
+		lifetime_max="1"
+		count_min="400"
+		count_max="600"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="56"
+		area_circle_radius.max="56"
+		cosmetic_force_create="0"
+		airflow_force="2.8"
+		airflow_time="0.03"
+		airflow_scale="0.8"
+		emission_interval_min_frames="0"
+		emission_interval_max_frames="0"
+		emit_cosmetic_particles="1"
+		is_emitting="0" >
+	</ParticleEmitterComponent>
+
+	<LightComponent 
+		_tags="shield,disabled_at_start,shield_hit"
+		_enabled="0"
+        radius="80"
+        fade_out_time="1.5" 
+    	r="150"
+    	g="190"
+    	b="230" >
+	</LightComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_root="player_projectiles/shield"
+		set_latest_event_position="1" >
+	</AudioComponent>
+</Entity>

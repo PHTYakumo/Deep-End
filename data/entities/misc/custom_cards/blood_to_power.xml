@@ -1,0 +1,68 @@
+<Entity>
+	
+	<Base file="data/entities/base_custom_card.xml" > 
+		<SpriteComponent 
+			image_file="data/ui_gfx/gun_actions/deep_end/blood_punch.png" 
+			>
+		</SpriteComponent>
+		
+		<ItemActionComponent 
+			_tags="enabled_in_world"
+			action_id="BLOOD_TO_POWER" >
+		</ItemActionComponent>
+	</Base>
+	
+	<InheritTransformComponent
+		_tags="enabled_in_world,enabled_in_hand"
+		parent_hotspot_tag="shoot_pos" >
+	</InheritTransformComponent>
+
+	<ParticleEmitterComponent 
+		_tags="enabled_in_world,item_identified"
+		emitted_material_name="blood"
+		offset.x="0"
+		offset.y="0"
+		x_pos_offset_min="-6"
+		x_pos_offset_max="6"
+		y_pos_offset_min="1"
+		y_pos_offset_max="-4"
+		x_vel_min="-70"
+		x_vel_max="70"
+		y_vel_min="-120"
+		y_vel_max="-20"
+		count_min="6"
+		count_max="24"
+		lifetime_min="0.5"
+		lifetime_max="1.1"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		emission_interval_min_frames="10"
+		emission_interval_max_frames="20"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<ParticleEmitterComponent 
+		_tags="enabled_in_world,enabled_in_hand,item_identified"
+		emitted_material_name="blood"
+		offset.x="0"
+		offset.y="0"
+		x_pos_offset_min="-4"
+		x_pos_offset_max="4"
+		y_pos_offset_min="0"
+		y_pos_offset_max="-2"
+		x_vel_min="-40"
+		x_vel_max="40"
+		y_vel_min="-60"
+		y_vel_max="-30"
+		count_min="3"
+		count_max="8"
+		lifetime_min="0.5"
+		lifetime_max="1.1"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		emission_interval_min_frames="30"
+		emission_interval_max_frames="50"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+</Entity>

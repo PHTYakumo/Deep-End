@@ -1,0 +1,22 @@
+<Entity name="$projectile_default">
+  	<Base file="data/entities/projectiles/laser_turret_new.xml" >
+		<VelocityComponent
+			air_friction="-7.2"
+			terminal_velocity="4"
+		></VelocityComponent>
+
+		<ProjectileComponent
+			speed_min="256"
+			speed_max="256"
+		></ProjectileComponent>
+
+		<AudioComponent
+			event_root="projectiles/laser"
+		></AudioComponent>
+
+		<VariableStorageComponent
+			value_string="data/entities/projectiles/deck/laser_turret_new.xml"
+		></VariableStorageComponent>
+  	</Base>
+</Entity>
+

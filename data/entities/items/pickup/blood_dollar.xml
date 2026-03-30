@@ -1,0 +1,22 @@
+<Entity name="unknown" tags="item_physics,gold_nugget" >
+
+	<Base file="data/entities/items/pickup/gold_dollar.xml" >
+
+		<PhysicsImageShapeComponent 
+			material="bloodgold_box2d" >
+		</PhysicsImageShapeComponent>
+
+    <VariableStorageComponent
+    _tags="enabled_in_world"
+      name="gold_value"
+      value_int="1250" >
+    </VariableStorageComponent>
+
+    <VariableStorageComponent
+      _tags="enabled_in_world"
+      name="hp_value"
+      value_float="40.0" >
+    </VariableStorageComponent>
+	</Base>
+
+</Entity>

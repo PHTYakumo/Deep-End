@@ -1,0 +1,19 @@
+<Entity>
+	
+	<Base file="data/entities/base_custom_card.xml" > 
+		<SpriteComponent 
+			image_file="data/ui_gfx/gun_actions/deep_end/swarm_fly.png" >
+		</SpriteComponent>
+		
+		<ItemActionComponent 
+			_tags="enabled_in_world"
+			action_id="SWARM_FLY" >
+		</ItemActionComponent>
+	</Base>
+
+	<ShotEffectComponent 
+		_tags="enabled_in_hand"
+    	extra_modifier="shot_swarm_fly" >
+	</ShotEffectComponent >
+
+</Entity>

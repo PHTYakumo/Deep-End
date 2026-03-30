@@ -1,0 +1,104 @@
+<Entity name="$projectile_default" tags="resist_repulsion" >
+
+	<Base file="data/entities/base_projectile.xml" >
+    <VelocityComponent
+        gravity_y="0" 
+        air_friction="-13.0" 
+		    mass="0.02"
+        terminal_velocity="2077"
+		>
+    </VelocityComponent>
+	</Base>
+
+  <ProjectileComponent 
+    _enabled="1" 
+    friendly_fire="0"
+    lob_min="0.8"
+    lob_max="1.1"
+    speed_min="1800"
+    speed_max="1800"
+    damage_scaled_by_speed="0"
+    on_death_explode="1"
+    on_death_gfx_leave_sprite="0" 
+    on_lifetime_out_explode="1"
+    explosion_dont_damage_shooter="1"
+		on_collision_die="1"
+    ragdoll_force_multiplier="0.03"
+    ragdoll_fx_on_collision="BLOOD_SPRAY"
+    lifetime="125"
+    ground_penetration_coeff="2"
+    velocity_sets_scale="1"
+    camera_shake_when_shot="2.0"
+    shoot_light_flash_radius="64"
+    hit_particle_force_multiplier="0.1"
+    create_shell_casing="1"
+    shell_casing_material="smoke_magic"
+    bounces_left="13"
+    damage="1.2"  
+    never_hit_player="1"
+    muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_large.xml"
+    knockback_force="44.0"
+	>
+    <config_explosion
+      never_cache="1" 
+      damage="0.02"
+      camera_shake="0.2" 
+      explosion_radius="2" 
+      explosion_sprite="data/particles/explosion_008.xml" 
+      explosion_sprite_lifetime="0" 
+      create_cell_probability="0" 
+      hole_destroy_liquid="0" 
+      hole_enabled="1" 
+      hole_image="data/temp/explosion_hole.png" 
+      ray_energy="800000"
+      max_durability_to_destroy="10"
+      particle_effect="0" 
+	    physics_explosion_power.min="0.5"
+      physics_explosion_power.max="1.5" 
+      physics_throw_enabled="1"  
+      shake_vegetation="1" 
+      sparks_count_max="30" 
+      sparks_count_min="15" 
+	    material_sparks_enabled="1"
+      material_sparks_count_max="2"
+      material_sparks_count_min="0" 
+      sparks_enabled="0"  
+      light_enabled="0" 
+      stains_enabled="1"
+      stains_radius="3">
+    </config_explosion>
+  </ProjectileComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="data/projectiles_gfx/bullet.xml" 
+    offset_x="3.5"
+    has_special_scale="1"
+	  special_scale_x="2.4"
+	  special_scale_y="2.8"
+    next_rect_animation=""
+    rect_animation="" 
+    emissive="1"
+    additive="1"
+     >
+  </SpriteComponent>
+
+  <HitEffectComponent 
+        effect_hit="LOAD_UNIQUE_CHILD_ENTITY"
+        value_string="data/entities/misc/neutralized.xml" >
+	</HitEffectComponent >
+
+  <AudioLoopComponent
+      file="data/audio/Desktop/projectiles.bank"
+      event_name="projectiles/rocket_passby"
+      auto_play="1">
+  </AudioLoopComponent>
+  
+	<VariableStorageComponent
+		name="projectile_file"
+		value_string="data/entities/projectiles/deck/uav_projectile_ex.xml"
+		>
+	</VariableStorageComponent>
+
+</Entity>

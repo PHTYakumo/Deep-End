@@ -1,0 +1,20 @@
+<Sprite
+ filename="data/projectiles_gfx/katana_circle_slash.png"
+ offset_x="12.5"
+ offset_y="12.5"
+ default_animation="fireball" >
+
+ <!-- animation -->
+ <RectAnimation
+  name="fireball"
+  pos_x="0"
+  pos_y="0"
+  frame_count="3"
+  frame_width="25"
+  frame_height="25"
+  frame_wait="0.05"
+  frames_per_row="3"
+  loop="1"   >
+ </RectAnimation>
+ 
+</Sprite>

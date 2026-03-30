@@ -1,0 +1,72 @@
+<Entity name="$projectile_default" tags="projectile_player,resist_repulsion" >
+
+	<Base file="data/entities/projectiles/soldiershot.xml" >
+		<VelocityComponent
+			air_friction="-4"
+			terminal_velocity="25">
+		</VelocityComponent>
+
+		<HomingComponent
+			_enabled="0" 
+			homing_targeting_coeff="800"
+			detect_distance="12">
+		</HomingComponent>
+
+		<ProjectileComponent 
+			damage="0.38"
+			collide_with_shooter_frames="13"
+			><damage_by_type
+			fire="0.38"
+			slice="0.38"
+			radioactive="0.38"
+			></damage_by_type
+			><config_explosion
+			not_scaled_by_gamefx="1"
+			never_cache="1"
+			camera_shake="2" 
+			shake_vegetation="0"
+			explosion_radius="13"
+			damage="0.38"
+			explosion_sprite="data/particles/explosion_032_plasma.xml" 
+			create_cell_material="fire_blue" 
+			create_cell_probability="2"  
+			particle_effect="0"
+			sparks_enabled="0" 
+			stains_enabled="0"
+			audio_event_name="explosions/propane_tank"
+			></config_explosion>
+		</ProjectileComponent>
+
+		<ParticleEmitterComponent 
+			emitted_material_name="spark_blue_dark">
+		</ParticleEmitterComponent>
+
+		<ParticleEmitterComponent 
+			emitted_material_name="spark_teal">
+		</ParticleEmitterComponent>
+	</Base>
+
+	<LuaComponent
+		remove_after_executed="1"
+		script_source_file="data/scripts/projectiles/metastable_trajectory_init.lua" 
+		execute_every_n_frame="1">
+	</LuaComponent>
+
+	<LuaComponent
+		remove_after_executed="1"
+		script_source_file="data/scripts/projectiles/metastable_trajectory.lua" 
+		execute_every_n_frame="2">
+	</LuaComponent>
+
+	<VariableStorageComponent
+		name="angle"
+		value_float="314.16">
+	</VariableStorageComponent>
+
+	<VariableStorageComponent
+		name="phasing"
+		value_bool="true">
+	</VariableStorageComponent>
+
+</Entity>
+

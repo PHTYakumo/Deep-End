@@ -1,0 +1,51 @@
+<Entity name="$projectile_default" tags="teleportable_NOT,no_swap,glue_NOT,de_inf_train">
+	
+	<VelocityComponent
+		gravity_y="0"
+		air_friction="99"
+		mass="0.00"
+		terminal_velocity="8" >
+	</VelocityComponent>
+	
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="0.7" 
+		image_file="data/items_gfx/inf_train_guidance.png" 
+		offset_x="0" 
+		offset_y="26.5" 
+		next_rect_animation="" 
+		rect_animation="" >
+	</SpriteComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_name="player_projectiles/wall/loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+
+	<LifetimeComponent
+		lifetime="180" >
+	</LifetimeComponent>
+	
+	<LuaComponent
+		script_source_file="data/scripts/projectiles/inf_train_programme.lua"
+		execute_every_n_frame="1" >
+	</LuaComponent>
+
+	<VariableStorageComponent
+		name="x"
+		value_float="0" >
+	</VariableStorageComponent>
+
+	<VariableStorageComponent
+		name="y"
+		value_float="0" >
+	</VariableStorageComponent>
+
+	<VariableStorageComponent
+		name="num"
+		value_int="2" >
+	</VariableStorageComponent>
+	
+</Entity>

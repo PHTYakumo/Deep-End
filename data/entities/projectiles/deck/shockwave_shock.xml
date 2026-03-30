@@ -1,0 +1,78 @@
+<Entity 
+  name="$projectile_default" 
+   >
+
+	<Base file="data/entities/base_projectile.xml" >
+		<VelocityComponent
+    		gravity_y="0"
+			>
+    	</VelocityComponent> 
+	</Base>
+
+  <ProjectileComponent 
+    _enabled="1" 
+    lob_min="0.8"
+    lob_max="1.0"
+    speed_min="160"
+    speed_max="170"
+    on_death_explode="1"
+    on_death_gfx_leave_sprite="0" 
+    on_lifetime_out_explode="1"
+	  explosion_dont_damage_shooter="1"
+    die_on_low_velocity="1"
+    damage="0"
+    on_collision_die="1"
+    lifetime="1" >
+    <config_explosion
+    	not_scaled_by_gamefx="1"
+      never_cache="0" 
+      camera_shake="20" 
+	    damage="0.0004"
+      explosion_radius="63" 
+      explosion_sprite="data/particles/explosion_040_poof.xml" 
+	    load_this_entity="data/entities/particles/particle_explosion/main_large_simple.xml,data/entities/misc/explosion_was_here.xml"
+      explosion_sprite_lifetime="0" 
+	    explosion_sprite_random_rotation="0"
+      create_cell_probability="0" 
+      create_cell_material="blood_fading"
+      hole_destroy_liquid="1" 
+      hole_enabled="1" 
+      hole_image="data/temp/explosion_hole.png" 
+      particle_effect="1"
+	    physics_explosion_power.min="6.0"
+      physics_explosion_power.max="7.0" 
+      physics_throw_enabled="1" 
+      damage_mortals="1"
+      shake_vegetation="1"  
+      sparks_count_min="12" 
+	    sparks_count_max="16"
+      spark_material="flame"
+      sparks_enabled="0" 
+      stains_enabled="0" 
+      stains_radius="30"
+      stains_image="data/temp/explosion_stain.png"
+      audio_event_name="explosions/holy"
+	    ray_energy="2000000">
+    </config_explosion>
+  </ProjectileComponent>
+
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="0.3" 
+	  emissive="1"
+	  z_index="-1"
+    image_file="data/particles/smoke_04.xml" 
+    next_rect_animation=""
+    rect_animation="" 
+	  smooth_filtering="1"
+     >
+  </SpriteComponent>
+  
+	<VariableStorageComponent
+		name="projectile_file"
+		value_string="data/entities/projectiles/deck/shockwave_shock.xml"
+		>
+	</VariableStorageComponent>
+
+</Entity>
+

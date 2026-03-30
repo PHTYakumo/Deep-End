@@ -1,0 +1,44 @@
+<Entity name="$projectile_default">
+
+	<Base file="data/entities/projectiles/deck/laser_turret_a.xml" >
+		<ProjectileComponent
+			on_collision_die="0"
+      lifetime="30"
+      collide_with_world="1"
+      bounces_left="1"
+      damage="0.02"	
+			>
+		</ProjectileComponent>
+
+    <SpriteComponent
+			alpha="1"
+      z_index="1"	
+			>
+		</SpriteComponent>
+
+    <AudioComponent
+      event_root="projectiles/laser_turret"
+      >
+    </AudioComponent>
+
+    <VariableStorageComponent
+		  name="projectile_file"
+		  value_string="data/entities/projectiles/deck/laser_turret_d.xml"
+		  >
+	  </VariableStorageComponent>
+	</Base>
+
+  <LuaComponent
+		_tags="pingpong_path"
+		script_source_file="data/scripts/projectiles/pingpong_path.lua"
+		execute_every_n_frame="12"
+		>
+	</LuaComponent>
+
+  <LifetimeComponent
+			lifetime="60"
+      >
+	</LifetimeComponent>
+
+</Entity>
+

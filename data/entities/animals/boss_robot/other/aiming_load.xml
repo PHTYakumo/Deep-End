@@ -1,0 +1,13 @@
+<Entity name="ACE SNIPER" tags="de_robot_boss_create" >
+
+	<LifetimeComponent
+		lifetime="230" >
+	</LifetimeComponent>
+  
+	<LuaComponent
+		_enabled="1" 
+		script_source_file="data/entities/animals/boss_robot/other/aiming_load.lua"
+		execute_every_n_frame="25"
+	></LuaComponent>
+
+</Entity>

@@ -1,0 +1,39 @@
+<Entity name="$projectile_default">
+
+  <Base file="data/entities/projectiles/deck/geomagnetic_storm.xml" >
+    <ProjectileComponent
+      	collide_with_world="1"
+		penetrate_world="0"
+		bounce_always="1"
+		bounce_at_any_angle="1"
+    	bounces_left="77"
+    	bounce_energy="0.77"
+    ></ProjectileComponent>
+
+	<LightningComponent
+		sprite_lightning_file="data/particles/lightning_dark_2.png"
+		><config_explosion
+			explosion_sprite="data/particles/geomagnetic_storm_2.xml"
+			audio_enabled="0"
+		></config_explosion>
+	</LightningComponent>
+
+	<AudioComponent
+	></AudioComponent>
+
+	<AudioComponent
+		event_root="projectiles/tentacle/create"
+	></AudioComponent>
+
+	<LuaComponent
+		script_source_file="data/scripts/projectiles/avoiding_arc.lua"
+	></LuaComponent>
+
+    <VariableStorageComponent
+      name="projectile_file"
+      value_string="data/entities/projectiles/deck/geomagnetic_storm_ex.xml"
+    ></VariableStorageComponent>
+  </Base>
+
+</Entity>
+

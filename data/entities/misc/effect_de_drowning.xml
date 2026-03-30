@@ -1,0 +1,40 @@
+<Entity>
+	<InheritTransformComponent 
+		_enabled="1" >
+    </InheritTransformComponent>
+	
+	<ParticleEmitterComponent 
+		emitted_material_name="water"
+		gravity.y="-4.0"
+		lifetime_min="0.7"
+		lifetime_max="1.3"
+		count_min="2"
+		count_max="5"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.max="7"
+		cosmetic_force_create="0"
+		airflow_force="0.3"
+		airflow_time="0.8"
+		airflow_scale="0.2"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="3"
+		emit_cosmetic_particles="1"
+		x_vel_min="-13"
+		x_vel_max="13"
+		y_vel_min="-17"
+		y_vel_max="17"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<LuaComponent 
+		_enabled="1" 
+		script_source_file="data/scripts/status_effects/drowning.lua"
+		execute_every_n_frame="1">
+   	</LuaComponent>
+
+	<GameEffectComponent
+		effect="FOOD_POISONING" 
+        frames="900"
+    ></GameEffectComponent >
+</Entity>

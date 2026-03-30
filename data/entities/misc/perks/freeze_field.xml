@@ -1,0 +1,76 @@
+<Entity >
+	  <InheritTransformComponent>
+    </InheritTransformComponent>
+	
+    <MagicConvertMaterialComponent
+      kill_when_finished="0"
+      from_material_tag="[corrodible]"
+      steps_per_frame="12"
+      to_material="snow_static"
+      clean_stains="1"
+      is_circle="1"
+      radius="30" 
+	    loop="1" >
+    </MagicConvertMaterialComponent>
+
+    <MagicConvertMaterialComponent
+      kill_when_finished="0"
+      from_material_tag="[acid]"
+      steps_per_frame="12"
+      to_material="smoke"
+      clean_stains="1"
+      is_circle="1"
+      radius="36" 
+	    loop="1" >
+    </MagicConvertMaterialComponent>
+
+    <MagicConvertMaterialComponent
+      kill_when_finished="0"
+      from_material_tag="[lava]"
+      steps_per_frame="12"
+      to_material="smoke"
+      clean_stains="1"
+      is_circle="1"
+      radius="36" 
+	    loop="1" >
+    </MagicConvertMaterialComponent>
+
+    <MagicConvertMaterialComponent
+      kill_when_finished="0"
+      extinguish_fire="1"
+      is_circle="1"
+      loop="1"
+      radius="42" >
+    </MagicConvertMaterialComponent>
+
+    <!--
+    <MagicConvertMaterialComponent
+      kill_when_finished="0"
+      extinguish_fire="1"
+      temperature_reaction_temp="-10"
+      is_circle="1"
+      loop="1"
+      radius="24" >
+    </MagicConvertMaterialComponent>
+    -->
+
+    <GameEffectComponent 
+        effect="STAINS_DROP_FASTER"
+        frames="-1"
+    >
+    </GameEffectComponent >
+
+    <GameEffectComponent 
+        effect="STUN_PROTECTION_FREEZE"
+        frames="-1"
+    >
+    </GameEffectComponent >
+
+    <!--
+    <GameEffectComponent 
+        effect="STUN_PROTECTION_ELECTRICITY"
+        frames="-1"
+    >
+    </GameEffectComponent >
+    -->
+</Entity>

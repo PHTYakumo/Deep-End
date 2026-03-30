@@ -1,0 +1,75 @@
+<Entity>
+
+  	<ParticleEmitterComponent 
+		emitted_material_name="spark_purple_bright"
+		gravity.y="0.0"
+		lifetime_min="1"
+		lifetime_max="1"
+		count_min="1"
+		count_max="1"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="0"
+		area_circle_radius.max="0"
+		cosmetic_force_create="0"
+		airflow_force="0.01"
+		airflow_time="0.01"
+		airflow_scale="0.01"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		emit_cosmetic_particles="1"
+		image_animation_file="data/particles/image_emitters/wand_effect.png"
+		image_animation_speed="100"
+		image_animation_raytrace_from_center="1"
+		image_animation_loop="0"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<LifetimeComponent
+		lifetime="260" >
+	</LifetimeComponent>
+	
+	<MagicConvertMaterialComponent
+      _enabled="1"
+      kill_when_finished="0"
+      from_material="glowstone"
+      steps_per_frame="1"
+      to_material="Deep_End_Cocktail"
+	  is_circle="1"
+      radius="48" >
+    </MagicConvertMaterialComponent>
+
+	<MagicConvertMaterialComponent
+      _enabled="1"
+      kill_when_finished="0"
+      from_material="templebrick_thick_static_noedge"
+      steps_per_frame="5"
+      to_material="corruption_static"
+	  is_circle="1"
+      radius="45" >
+    </MagicConvertMaterialComponent>
+
+	<MagicConvertMaterialComponent
+	  _enabled="1"
+      from_material_array="material_darkness,pus,magic_liquid_teleportation,magic_liquid_unstable_teleportation,magic_liquid_polymorph,magic_liquid_random_polymorph,magic_liquid_unstable_polymorph,liquid_fire,fire,water_swamp,radioactive_liquid,lava,acid,blood_cold,poison,slime,vomit,oil"
+      to_material_array="blood,blood,blood,blood,blood,blood,blood,air,air,water,water,smoke,smoke,smoke,smoke,smoke,smoke,smoke"
+      kill_when_finished="0"
+      steps_per_frame="5"
+      is_circle="1"
+      radius="64" >
+    </MagicConvertMaterialComponent>
+
+    <AudioComponent
+      file="data/audio/Desktop/event_cues.bank"
+      event_root="event_cues/wand">
+    </AudioComponent>
+
+	<LuaComponent
+	  _enabled="1"
+	  remove_after_executed="1"
+	  script_source_file="data/scripts/perks/strength_buff_load.lua" 
+	  execute_on_added="1"
+	></LuaComponent>
+
+</Entity>
+

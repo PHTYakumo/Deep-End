@@ -1,0 +1,110 @@
+<Entity name="$projectile_default">
+	<Base file="data/entities/projectiles/deck/inf_train_engine.xml">
+		<SpriteComponent 
+			image_file="data/items_gfx/inf_train_engine_reverse.png" 
+		></SpriteComponent>
+    </Base>
+
+	<Entity>
+		<InheritTransformComponent
+			><Transform 
+				position.x="54"
+				position.y="0"
+			></Transform>
+		</InheritTransformComponent>
+
+		<CellEaterComponent
+			_enabled="0" 
+			radius="55"
+			eat_dynamic_physics_bodies="1" >
+		</CellEaterComponent>
+
+		<AudioLoopComponent
+			file="data/audio/Desktop/projectiles.bank"
+			event_name="projectiles/sniper_bullet_passby"
+			auto_play="1" >
+		</AudioLoopComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			><Transform 
+				position.x="18"
+				position.y="0"
+			></Transform>
+		</InheritTransformComponent>
+
+		<CellEaterComponent
+			_enabled="0" 
+			radius="55"
+			eat_dynamic_physics_bodies="1" >
+		</CellEaterComponent>
+
+		<AudioLoopComponent
+			file="data/audio/Desktop/projectiles.bank"
+			event_name="player_projectiles/meteor/loop"
+			auto_play="1" >
+		</AudioLoopComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			><Transform 
+				position.x="-18"
+				position.y="0"
+			></Transform>
+		</InheritTransformComponent>
+
+		<CellEaterComponent
+			_enabled="0" 
+			radius="55"
+			eat_dynamic_physics_bodies="1" >
+		</CellEaterComponent>
+
+		<AudioLoopComponent
+			file="data/audio/Desktop/projectiles.bank"
+			event_name="player_projectiles/meteor/loop"
+			auto_play="1" >
+		</AudioLoopComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			><Transform 
+				position.x="-54"
+			></Transform>
+		</InheritTransformComponent>
+
+		<CellEaterComponent
+			_enabled="0" 
+			radius="55"
+			eat_dynamic_physics_bodies="1" >
+		</CellEaterComponent>
+
+		<AudioLoopComponent
+			file="data/audio/Desktop/projectiles.bank"
+			event_name="projectiles/sniper_bullet_passby"
+			auto_play="1" >
+		</AudioLoopComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			><Transform 
+				position.y="0"
+			></Transform>
+		</InheritTransformComponent>
+
+		<GameEffectComponent
+			effect="PROTECTION_ALL"
+			frames="-1" >
+		</GameEffectComponent>
+
+		<AudioLoopComponent
+			file="data/audio/Desktop/projectiles.bank"
+			event_name="projectiles/rocket_passby"
+			auto_play="1" >
+		</AudioLoopComponent>
+	</Entity>
+</Entity>
+

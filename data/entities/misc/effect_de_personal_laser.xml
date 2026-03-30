@@ -1,0 +1,39 @@
+<Entity>
+	<LuaComponent
+		script_source_file="data/scripts/status_effects/personal_laser_offset.lua"
+		execute_every_n_frame="1"
+		remove_after_executed="1"	
+	></LuaComponent>
+
+	<InheritTransformComponent 
+		_enabled="1" 
+		rotate_based_on_x_scale="1"
+		><Transform 
+			position.x="0.2"
+			position.y="-8.8"
+		></Transform>
+    </InheritTransformComponent>
+	
+	<LaserEmitterComponent>
+		<laser
+			damage_to_entities="0.18"
+			damage_to_cells="9500"
+			max_length="36"
+			beam_radius="2.0"
+			max_cell_durability_to_destroy="11"
+			root_entity_is_responsible_for_damage="1"
+			audio_enabled="0"
+			audio_hit_always_enabled="1"
+			hit_particle_chance="25"
+			beam_particle_chance="90"
+			beam_particle_type="spark_electric"
+			is_emitting="1"
+		></laser>
+	</LaserEmitterComponent>
+
+	<GameEffectComponent
+		effect="NO_DAMAGE_FLASH" 
+        frames="90"
+    >
+	</GameEffectComponent >
+</Entity>

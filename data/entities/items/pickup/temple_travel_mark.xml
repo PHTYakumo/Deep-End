@@ -1,0 +1,127 @@
+<Entity tags="hittable,item,glue_NOT,teleportable_NOT">
+
+	<UIInfoComponent
+		_tags="enabled_in_world"
+		name="$deep_end_temple_travel_mark"
+		
+	></UIInfoComponent>
+
+	<ItemComponent
+		_tags="enabled_in_world"
+		item_name="$deep_end_temple_travel_mark"
+		ui_sprite="data/ui_gfx/items/temple_travel_mark.png"
+		ui_description="$ddeep_end_temple_travel_mark"
+    	preferred_inventory="FULL"
+		max_child_items="0"
+    	is_pickable="1"
+    	is_equipable_forced="1"
+	></ItemComponent>
+
+	<AbilityComponent
+		ui_name="$deep_end_temple_travel_mark"
+		throw_as_item="0"
+		><gun_config
+			deck_capacity="0"
+		></gun_config>
+	</AbilityComponent>
+	
+	<VelocityComponent
+        gravity_y="0"
+    ></VelocityComponent>
+
+	<SimplePhysicsComponent/>
+
+	<SpriteComponent 
+		_tags="enabled_in_world,character" 
+		alpha="1" 
+		image_file="data/buildings_gfx/temple_travel_mark.png" 
+		next_rect_animation="" 
+		rect_animation="" 
+		offset_x="8"
+		offset_y="8"
+		z_index="20" 
+	></SpriteComponent>
+
+	<SpriteComponent
+		_tags="enabled_in_hand"
+		_enabled="0"
+		offset_x="5"
+		offset_y="8"
+		image_file="data/items_gfx/in_hand/temple_travel_mark.png"
+	></SpriteComponent>
+
+	<LuaComponent
+		_tags="enabled_in_hand"
+		_enabled="0"
+		script_source_file="data/scripts/items/preferred_inventory_manager_quick.lua"
+		execute_every_n_frame="1"
+	></LuaComponent>
+
+	<LuaComponent
+		_tags="enabled_in_inventory"
+		_enabled="0"
+		script_source_file="data/scripts/items/preferred_inventory_manager_full.lua"
+		execute_every_n_frame="6"
+	></LuaComponent>
+
+  	<LuaComponent
+		_tags="enabled_in_hand"
+		_enabled="0"
+		script_source_file="data/scripts/items/temple_travel_mark.lua"
+		execute_every_n_frame="1"
+	></LuaComponent>
+
+	<LuaComponent 
+        _enabled="1" 
+        execute_on_added="1"
+        remove_after_executed="1"
+        execute_every_n_frame="-1"
+        script_source_file="data/scripts/items/temple_travel_mark_init.lua" 
+    ></LuaComponent>
+
+	<VariableStorageComponent
+		_tags="enabled_in_world,enabled_in_hand"
+    	name="x"
+    	value_float="0" 
+  	></VariableStorageComponent>
+
+	<VariableStorageComponent
+		_tags="enabled_in_world,enabled_in_hand"
+    	name="y"
+    	value_float="0" 
+  	></VariableStorageComponent>
+
+	<VariableStorageComponent
+		_tags="enabled_in_world,enabled_in_hand"
+    	name="ng"
+    	value_int="0" 
+  	></VariableStorageComponent>
+  
+	<ParticleEmitterComponent 
+		_tags="enabled_in_world,enabled_in_hand"
+		emitted_material_name="spark_white"
+		gravity.y="0.0"
+		lifetime_min="2"
+		lifetime_max="8"
+		x_vel_min="-10"
+		x_vel_max="10"
+		y_vel_min="-25"
+		y_vel_max="10"
+		count_min="4"
+		count_max="8"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		cosmetic_force_create="1"
+		collide_with_grid="0"
+		airflow_force="0.051"
+		airflow_time="1.01"
+		airflow_scale="0.03"
+		emission_interval_min_frames="15"
+		emission_interval_max_frames="60"
+		emit_cosmetic_particles="1"
+		area_circle_radius.max="11"
+		render_back="1"
+		is_emitting="1" 
+	></ParticleEmitterComponent>
+  
+</Entity>

@@ -1,0 +1,168 @@
+<Entity tags="boss_centipede_minion,glue_NOT,polymorphable_NOT" name="$animal_slimespirit" >
+  
+	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
+	
+	<Base file="data/entities/base_enemy_flying.xml" >
+		
+		<AnimalAIComponent 
+			_enabled="1" 
+			preferred_job="JobDefault"
+			escape_if_damaged_probability="35"
+			attack_ranged_min_distance="0"
+			attack_melee_damage_min="0.6" 
+			attack_melee_damage_max="0.8"
+			attack_dash_enabled="0"
+			attack_melee_enabled="0"
+			creature_detection_range_x="250"
+			creature_detection_range_y="250"
+			food_material="meat"
+			needs_food="0"
+			sense_creatures="1"
+			attack_ranged_enabled="0"
+			can_fly="1"  
+			>
+		</AnimalAIComponent>
+		
+		<DamageModelComponent 
+			hp="2"
+			critical_damage_resistance="0.99"
+			physics_objects_damage="0"
+			ragdoll_filenames_file=""
+			fire_probability_of_ignition="0" 
+			ragdoll_fx_forced="DISINTEGRATED"
+			ragdoll_material="rock_static_glow"
+			blood_material="plasma_fading"
+			blood_spray_material="plasma_fading"
+			blood_sprite_directional=""
+			blood_sprite_large=""
+			air_needed="0"
+			>
+			<damage_multipliers
+				projectile="0.4"
+				explosion="0"
+				ice="-2"
+				slice="0.4"
+				drill="0.4"
+				melee="0.8"
+				holy="2"
+				curse="2"
+				poison="0"
+				physics_hit="0.8" 
+				>
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			image_file="data/enemies_gfx/slimespirit_boss_minion.xml" 
+			offset_x="0"
+			offset_y="0"
+			additive="1"
+			emissive="1"
+			>
+		</SpriteComponent>
+
+		<PathFindingComponent
+		    can_swim_on_surface="1"
+			frames_to_get_stuck="20"
+			can_fly="1"
+			can_jump="0" >
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+		
+		<GenomeDataComponent 
+			herd_id="ghost"
+			food_chain_rank="15"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent
+			fly_speed_change_spd="0.8"
+			fly_velocity_x="48" 
+			accel_x="0.4"  
+			jump_velocity_y="0" 
+			run_velocity="0"
+			pixel_gravity="2"
+			velocity_min_x="-20"
+			velocity_max_x="20"
+			velocity_min_y="-25"
+			velocity_max_y="25">
+		</CharacterPlatformingComponent>
+
+		<CameraBoundComponent
+		  max_count="300"
+		  distance="160000">
+		</CameraBoundComponent>
+		
+		<HitboxComponent 
+		  _enabled="1" 
+		  aabb_min_x="-3.5" 
+		  aabb_max_x="3.5" 
+		  aabb_min_y="-3.5" 
+		  aabb_max_y="3.5" 
+		  >
+		</HitboxComponent>
+		
+		<CharacterDataComponent 
+			collision_aabb_min_x="-3.5"
+			collision_aabb_max_x="3.5"  
+			collision_aabb_min_y="-3.5"
+			collision_aabb_max_y="3.5"
+			mass="1.0"
+			>
+		</CharacterDataComponent>
+			
+		<AudioComponent
+			file="data/audio/Desktop/animals.bank"
+			event_root="animals/ghost" >
+		</AudioComponent>
+
+	</Base>
+	
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_centipede/minion/spirit_aura_slime.lua"
+		execute_every_n_frame="4" >
+	</LuaComponent>
+
+	<LuaComponent
+		script_damage_about_to_be_received="data/entities/animals/boss_centipede/minion/dmg_cap.lua"
+		execute_every_n_frame="-1" >
+	</LuaComponent>
+	
+	<ParticleEmitterComponent 
+		emitted_material_name="spark_purple"
+		gravity.y="0.0"
+		lifetime_min="0.2"
+		lifetime_max="0.7"
+		count_min="3"
+		count_max="8"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="11"
+		area_circle_radius.max="20"
+		cosmetic_force_create="0"
+		airflow_force="4.5"
+		airflow_time="0.9"
+		airflow_scale="0.5"
+		emission_interval_min_frames="3"
+		emission_interval_max_frames="6"
+		emit_cosmetic_particles="1"
+		draw_as_long="1"
+		x_vel_min="-1"
+		x_vel_max="1"
+		y_vel_min="-1"
+		y_vel_max="1"
+		is_emitting="1" 
+		velocity_always_away_from_center="140"
+		>
+	</ParticleEmitterComponent>
+
+	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
+</Entity>
+

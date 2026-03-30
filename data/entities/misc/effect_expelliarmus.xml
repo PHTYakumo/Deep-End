@@ -1,0 +1,17 @@
+<Entity>
+	<InheritTransformComponent 
+		_enabled="1" >
+    </InheritTransformComponent>	
+    
+    <LuaComponent
+		script_source_file="data/scripts/status_effects/de_expelliarmus.lua"
+		execute_every_n_frame="3"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+	
+	<LifetimeComponent
+		lifetime="12"
+		>
+	</LifetimeComponent>
+</Entity>

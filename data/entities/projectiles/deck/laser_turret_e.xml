@@ -1,0 +1,43 @@
+<Entity name="$projectile_default">
+
+	<Base file="data/entities/projectiles/deck/laser_turret_a.xml" >
+    	<VelocityComponent
+			  air_friction="20.0" 
+			>
+		  </VelocityComponent>
+
+		  <ProjectileComponent
+      		speed_min="350"
+      		speed_max="450"
+			    lifetime="60"
+      		collide_with_world="1"
+			>
+		  </ProjectileComponent>
+
+    	<SpriteComponent
+			    fog_of_war_hole="1"
+          update_transform_rotation="0"
+      		z_index="1"	
+			>
+		  </SpriteComponent>
+
+    	<AudioComponent
+      		event_root="projectiles/laser_turret"
+      		>
+    	</AudioComponent>
+
+    	<VariableStorageComponent
+		  name="projectile_file"
+		  value_string="data/entities/projectiles/deck/laser_turret_d.xml"
+		  >
+	  	</VariableStorageComponent>
+	</Base>
+
+  	<LuaComponent
+		script_source_file="data/scripts/projectiles/phasing_arc.lua"
+		execute_every_n_frame="4"
+		>
+	  </LuaComponent>
+
+</Entity>
+

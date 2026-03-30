@@ -1,0 +1,296 @@
+<Entity 
+  name="$projectile_default" tags="projectile_player,fireball,laser"
+   >
+
+	<Base file="data/entities/base_projectile.xml" >
+		<VelocityComponent
+      air_friction="6"
+    	gravity_y="2"
+			mass="0.09"
+      terminal_velocity="750"
+		></VelocityComponent> 
+	</Base>
+
+  <ProjectileComponent 
+    _enabled="1" 
+  	lob_min="0.8"
+  	lob_max="1.0"
+  	speed_min="140"
+  	speed_max="160"
+    die_on_low_velocity="1"
+    on_death_explode="1"
+    on_death_gfx_leave_sprite="0" 
+    on_lifetime_out_explode="1"
+	  explosion_dont_damage_shooter="1"
+	  die_on_liquid_collision="0"
+    on_collision_die="1"
+    penetrate_entities="1"
+    damage_every_x_frames="3"
+    damage="0.12"
+    lifetime="20"
+	  muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_launcher_large.xml"
+	  shoot_light_flash_r="255"
+    shoot_light_flash_g="140"
+    shoot_light_flash_b="10"
+    shoot_light_flash_radius="150"
+    penetrate_world="1"
+    penetrate_world_velocity_coeff="0.5"
+	  knockback_force="72.0"
+	  physics_impulse_coeff="2800"
+    bounce_fx_file="data/entities/misc/fire.xml"
+	><damage_by_type
+		fire="0.24"
+    poison="0.24"
+	></damage_by_type>
+    <config_explosion
+      not_scaled_by_gamefx="1"
+      never_cache="1" 
+      camera_shake="1.5" 
+      explosion_radius="12" 
+      explosion_sprite="data/particles/explosion_040_poof.xml" 
+      explosion_sprite_lifetime="0" 
+      create_cell_probability="45" 
+      create_cell_material="fire_blue" 
+      hole_destroy_liquid="0"
+	    load_this_entity="data/entities/misc/fire.xml"
+      hole_enabled="1" 
+	    damage="0.24"
+	    ray_energy="50000"
+      hole_image="data/temp/explosion_hole.png" 
+      particle_effect="1" 
+      damage_mortals="1"
+	    physics_explosion_power.min="0.6" 
+      physics_explosion_power.max="0.9" 
+      physics_throw_enabled="1" 
+      shake_vegetation="1" 
+      sparks_enabled="1" 
+      spark_material="spark_blue"
+      sparks_count_max="4" 
+      sparks_count_min="1"
+      light_fade_time="0.2" 
+      stains_enabled="1" 
+      stains_image="data/temp/explosion_stain.png"
+      audio_enabled="0" >
+    </config_explosion>
+  </ProjectileComponent>
+
+  <LifetimeComponent
+			lifetime="15" >
+	</LifetimeComponent>
+
+  <ParticleEmitterComponent 
+	    emitted_material_name="spark"
+		  custom_style="FIRE"
+	    offset.x="0"
+	    offset.y="0"
+	    x_pos_offset_min="-1"
+	    x_pos_offset_max="1"
+	    y_pos_offset_min="-1"
+	    y_pos_offset_max="1"
+	    x_vel_min="-2"
+	    x_vel_max="2"
+	    y_vel_min="-20"
+	    y_vel_max="-10"
+	    count_min="1"
+	    count_max="2"
+	    lifetime_min="0.3"
+	    lifetime_max="0.4"
+	    create_real_particles="1"
+	    emit_cosmetic_particles="0"
+	    emission_interval_min_frames="1"
+	    emission_interval_max_frames="3" >
+	</ParticleEmitterComponent>
+  
+   <SpriteParticleEmitterComponent
+    sprite_file="data/particles/explosion_040_poof.xml"
+    delay="0"
+    lifetime="0"
+	  additive="1"
+    color.r="1" color.g="1" color.b="1" color.a="1"
+    color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-2"
+    velocity.x="0" velocity.y="0"
+    gravity.x="0" gravity.y="0"
+    velocity_slowdown="0"
+    rotation="0"
+    angular_velocity="0"
+    use_velocity_as_rotation="0"
+    scale.x="0.6" scale.y="0.6"
+    scale_velocity.x="0" scale_velocity.y="0"
+    emission_interval_min_frames="1"
+    emission_interval_max_frames="2"
+    count_min="1" count_max="1"
+    randomize_rotation.min="-0.3415"
+    randomize_rotation.max="0.3415"
+    randomize_angular_velocity.min="-1.3415"
+    randomize_angular_velocity.max="1.3415"
+    randomize_position.min_x="6"
+    randomize_position.max_x="12"
+    randomize_position.min_y="-1"
+    randomize_position.max_y="1"
+    randomize_velocity.min_x="4"
+    randomize_velocity.max_x="6"
+    randomize_velocity.min_y="1"
+    randomize_velocity.max_y="1"
+	  is_emitting="1"
+    >
+  </SpriteParticleEmitterComponent>
+
+  <SpriteParticleEmitterComponent
+    sprite_file="data/particles/explosion_025_fuel.xml"
+    delay="0"
+    lifetime="0"
+	  additive="1"
+    color.r="1" color.g="1" color.b="1" color.a="1"
+    color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-2"
+    velocity.x="0" velocity.y="0"
+    gravity.x="0" gravity.y="0"
+    velocity_slowdown="0"
+    rotation="0"
+    angular_velocity="0"
+    use_velocity_as_rotation="1"
+    scale.x="1" scale.y="1"
+    scale_velocity.x="0" scale_velocity.y="0"
+    emission_interval_min_frames="1"
+    emission_interval_max_frames="2"
+    count_min="1" count_max="1"
+    randomize_rotation.min="-0.1"
+    randomize_rotation.max="0.1"
+    randomize_angular_velocity.min="-0.003"
+    randomize_angular_velocity.max="0.003"
+    randomize_position.min_x="0"
+    randomize_position.max_x="2"
+    randomize_position.min_y="-1"
+    randomize_position.max_y="1"
+    randomize_velocity.min_x="-1"
+    randomize_velocity.max_x="1"
+    randomize_velocity.min_y="1"
+    randomize_velocity.max_y="1"
+	  is_emitting="1"
+    entity_velocity_multiplier="0.0002"
+    >
+  </SpriteParticleEmitterComponent>
+
+  <AreaDamageComponent
+		_tags="area_damage"
+		aabb_min.x="-15" 
+		aabb_min.y="-12" 
+		aabb_max.x="15" 
+		aabb_max.y="12"
+		damage_per_frame="66"
+		update_every_n_frame="6"
+		entities_with_tag="live_fungus"
+		damage_type="DAMAGE_FIRE"
+		death_cause="$dTHERMAL_IMPACT"
+		circle_radius="24"
+		>
+	</AreaDamageComponent>
+
+  <AreaDamageComponent
+		_tags="area_damage"
+		aabb_min.x="-13" 
+		aabb_min.y="-10" 
+		aabb_max.x="13" 
+		aabb_max.y="10"
+		damage_per_frame="2.4"
+		update_every_n_frame="6"
+		entities_with_tag="robot"
+		damage_type="DAMAGE_FIRE"
+		death_cause="$dTHERMAL_IMPACT"
+		circle_radius="24"
+		>
+	</AreaDamageComponent>
+
+  <AreaDamageComponent
+		_tags="area_damage"
+		aabb_min.x="-11" 
+		aabb_min.y="-8" 
+		aabb_max.x="11" 
+		aabb_max.y="8"
+		damage_per_frame="0.6"
+		update_every_n_frame="6"
+		entities_with_tag="firemage"
+		damage_type="DAMAGE_POISON"
+		death_cause="$dTHERMAL_IMPACT"
+		circle_radius="24"
+		>
+	</AreaDamageComponent>
+
+  <AreaDamageComponent
+		_tags="area_damage"
+		aabb_min.x="-15" 
+		aabb_min.y="-12" 
+		aabb_max.x="15" 
+		aabb_max.y="12"
+		damage_per_frame="66"
+		update_every_n_frame="6"
+		entities_with_tag="zombie"
+		damage_type="DAMAGE_HOLY"
+		death_cause="$dTHERMAL_IMPACT"
+		circle_radius="24"
+		>
+	</AreaDamageComponent>
+
+  <MagicConvertMaterialComponent
+    from_material_array="cloud,cloud_lighter,lava,water,water_ice,water_salt,water_fading,water_static,water_swamp,radioactive_liquid,acid,blood_worm,blood,poison,slime,poo,urine,molut,milk,sand,sand_blue,sand_surface,lavasand,sandstone,sandstone_surface,magic_liquid_hp_regeneration,magic_liquid_hp_regeneration_unstable,material_rainbow,material_darkness,midas,midas_precursor,gold,gold_radioactive,gold_static,gold_static_radioactive,gold_static_dark,steel_static,steelmoss_static,steel_rusted_no_holes,steel_grey_static,steelfrost_static,steelmoss_slanted,steelsmoke_static,steelpipe_static,steel_static_strong,steel_static_unmeltable,copper,brass,silver,diamond,potion_glass_box2d,potion_toughened_glass_box2d,glass_broken,blood_cold,blood_cold_vapour,fire,liquid_fire,liquid_fire_weak,gold_b2,aluminium_robot,aluminium,steel,steel_rust,metal_rust_rust,metal_rust_barrel_rust,metal_prop,metal_prop_low_restitution,metal_prop_loose,metal,metal_hard,metal_rust,metal_rust_barrel,meat_static"
+    to_material_array="smoke_explosion,smoke_explosion,fire_blue,steam,steam,steam,steam,steam,steam,radioactive_gas,acid_gas,magic_gas_worm_blood,smoke,poison_gas,fungal_gas,poo_gas,poo_gas,poo_gas,poo_gas,smoke,smoke,smoke,smoke,smoke,smoke,magic_gas_hp_regeneration,magic_gas_hp_regeneration,rainbow_gas,rainbow_gas,magic_gas_midas,magic_gas_midas,gold_molten,gold_molten,gold_molten,gold_molten,gold_molten,metal_molten,metal_molten,metal_molten,metal_molten,metal_molten,metal_molten,metal_molten,metal_molten,metal_molten,metal_molten,copper_molten,brass_molten,silver_molten,smoke,glass_molten,glass_molten,glass_molten,fire_blue,fire_blue,fire_blue,fire_blue,fire_blue,gold_molten,aluminium_oxide_molten,aluminium_oxide_molten,steel_molten,steel_molten,steel_molten,steel_molten,steel_molten,steel_molten,steel_molten,steel_molten,steel_molten,steel_molten,steel_molten,oil"
+    kill_when_finished="0"
+    steps_per_frame="15"
+    is_circle="1"
+    radius="7" >
+  </MagicConvertMaterialComponent>
+
+  <MagicConvertMaterialComponent
+    from_material_tag="[frozen]"
+    to_material="steam"
+    kill_when_finished="0"
+    steps_per_frame="15"
+    is_circle="1"
+    radius="13" >
+  </MagicConvertMaterialComponent>
+
+  <MagicConvertMaterialComponent
+    from_material_tag="[cold]"
+    to_material="fire_blue"
+    kill_when_finished="0"
+    steps_per_frame="15"
+    is_circle="1"
+    radius="13" >
+  </MagicConvertMaterialComponent>
+
+  <MagicConvertMaterialComponent
+    from_material_tag="[burnable]"
+    to_material="smoke"
+    kill_when_finished="0"
+    steps_per_frame="15"
+    is_circle="1"
+    radius="13" >
+  </MagicConvertMaterialComponent>
+
+  <LightComponent 
+    _enabled="1" 
+    radius="150" >
+  </LightComponent>
+  
+  <AudioComponent
+    file="data/audio/Desktop/projectiles.bank"
+    event_root="projectiles/bullet_fire_heavy">
+  </AudioComponent>
+
+  <AudioLoopComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_name="projectiles/magic_big_passby"
+		auto_play="1">
+	</AudioLoopComponent>
+  
+	<VariableStorageComponent
+		name="projectile_file"
+		value_string="data/entities/projectiles/deck/thermal_impact.xml" >
+	</VariableStorageComponent>
+
+  <HitEffectComponent 
+    effect_hit="LOAD_UNIQUE_CHILD_ENTITY"
+    value_string="data/entities/misc/hitfx_burn_powerful.xml" >
+	</HitEffectComponent >
+
+</Entity>
+

@@ -1,0 +1,15 @@
+<Entity name="$projectile_default" >
+
+  <Base file="data/entities/projectiles/bomb.xml">
+
+    <VariableStorageComponent
+		  value_string="data/entities/projectiles/bomb_beep.xml" >
+	  </VariableStorageComponent>
+
+  </Base>
+
+  <LifetimeComponent 
+		lifetime="180" >
+	</LifetimeComponent>
+
+</Entity>

@@ -1,0 +1,11 @@
+<Entity>
+	<InheritTransformComponent>
+    </InheritTransformComponent>	
+    
+    <GameEffectComponent 
+    	effect="MOVEMENT_SLOWER"
+    	frames="10"
+    >
+	</GameEffectComponent >
+	
+</Entity>

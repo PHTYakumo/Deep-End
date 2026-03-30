@@ -1,0 +1,111 @@
+<Entity tags="energy_shield">
+
+	<HitboxComponent 
+        _tags="enabled_in_world"
+        aabb_min_x="-5" 
+        aabb_max_x="5" 
+        aabb_min_y="-4" 
+        aabb_max_y="4"
+    ></HitboxComponent>
+
+	<InheritTransformComponent
+        _tags="enabled_in_hand"
+        use_root_parent="1">
+      <Transform 
+        position.x="0" 
+        position.y="-4" >
+      </Transform>
+    </InheritTransformComponent>
+
+    <EnergyShieldComponent 
+        _tags="enabled_in_hand,item_identified__LEGACY"
+        recharge_speed="0.37" 
+		radius="24.0" >
+    </EnergyShieldComponent>
+
+    <ParticleEmitterComponent
+		_tags="character,enabled_in_hand,item_identified__LEGACY"
+		emitted_material_name="plasma_fading_green"
+		gravity.y="0.0"
+		lifetime_min="0.4"
+		lifetime_max="1.2"
+		count_min="6"
+		count_max="8"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+        area_circle_radius.min="4"
+		area_circle_radius.max="20"
+		cosmetic_force_create="0"
+		airflow_force="0.6"
+		airflow_time="0.2"
+		airflow_scale="0.8"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		velocity_always_away_from_center="18"
+		attractor_force="8"
+		friction="-2"
+		emit_cosmetic_particles="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<ParticleEmitterComponent
+		_tags="character,enabled_in_hand,item_identified__LEGACY,shield_ring"
+		emitted_material_name="plasma_fading_green"
+		gravity.y="0.0"
+		lifetime_min="0.1"
+		lifetime_max="0.1"
+		count_min="80"
+		count_max="120"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="24"
+		area_circle_radius.max="24"
+		cosmetic_force_create="0"
+		airflow_force="0.2"
+		airflow_time="0.01"
+		airflow_scale="0.04"
+		emission_interval_min_frames="0"
+		emission_interval_max_frames="0"
+		emit_cosmetic_particles="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<ParticleEmitterComponent
+		_tags="character,enabled_in_hand,item_identified__LEGACY,shield_hit"
+		emitted_material_name="plasma_fading_green"
+		gravity.y="0.0"
+		lifetime_min="0.4"
+		lifetime_max="1"
+		count_min="80"
+		count_max="120"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="24"
+		area_circle_radius.max="24"
+		cosmetic_force_create="0"
+		airflow_force="2.4"
+		airflow_time="0.04"
+		airflow_scale="0.8"
+		emission_interval_min_frames="0"
+		emission_interval_max_frames="0"
+		emit_cosmetic_particles="1"
+		is_emitting="0" >
+	</ParticleEmitterComponent>
+
+	<LightComponent 
+    	_tags="enabled_in_hand,item_identified"
+        _enabled="1" 
+        radius="80"
+        fade_out_time="1.5" 
+    	r="150"
+    	g="190"
+    	b="230" >
+	</LightComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_root="player_projectiles/shield"
+		set_latest_event_position="1" >
+	</AudioComponent>
+
+</Entity>

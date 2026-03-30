@@ -1,0 +1,11 @@
+<Entity>
+	<InheritTransformComponent />
+	<LifetimeComponent lifetime="6" />
+	
+	<LuaComponent 
+        _enabled="1" 
+		remove_after_executed="1"
+        execute_every_n_frame="1"
+        script_source_file="data/entities/misc/what_is_this/hamis_party.lua" 
+	></LuaComponent>
+</Entity>

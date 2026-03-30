@@ -1,0 +1,20 @@
+<Entity>
+
+	<LightComponent 
+		_enabled="1" 
+		r="6"
+		g="6"
+		b="6"
+		radius="32"
+		fade_out_time="0.75" >
+	</LightComponent>
+
+	<SpriteComponent 
+		alpha="1" 
+		image_file="data/items_gfx/deep_end_map/yakumoran_gfx.xml" 
+		next_rect_animation="" 
+		rect_animation="" 
+		z_index="32" >
+	</SpriteComponent>
+
+</Entity>

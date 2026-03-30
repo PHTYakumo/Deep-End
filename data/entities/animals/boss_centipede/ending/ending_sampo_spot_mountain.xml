@@ -1,0 +1,24 @@
+<Entity tags="ending_sampo_spot_mountain">
+	<LuaComponent 
+        _enabled="1" 
+        execute_every_n_frame="240"
+        script_source_file="data/scripts/magic/altar_tablet_magic.lua" 
+	>
+    </LuaComponent>
+	
+	<VariableStorageComponent
+		name="tablets_eaten"
+		value_int="0"
+		>
+	</VariableStorageComponent>
+
+	<SpriteComponent
+		_enabled="1" 
+		alpha="0.06"
+		image_file="data/entities/animals/boss_centipede/sampo_working_sprite.xml" 
+		offset_x="12"
+		offset_y="12"
+		z_index="0.5"
+		>
+	</SpriteComponent>
+</Entity>

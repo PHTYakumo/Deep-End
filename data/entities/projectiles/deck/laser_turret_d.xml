@@ -1,0 +1,28 @@
+<Entity name="$projectile_default">
+
+	<Base file="data/entities/projectiles/deck/laser_turret_a.xml" >
+    <SpriteComponent
+      z_index="1"	
+			>
+		</SpriteComponent>
+
+    <AudioComponent
+      event_root="projectiles/laser_turret"
+      >
+    </AudioComponent>
+
+    <VariableStorageComponent
+		  name="projectile_file"
+		  value_string="data/entities/projectiles/deck/laser_turret_d.xml"
+		  >
+	  </VariableStorageComponent>
+	</Base>
+
+  <LuaComponent
+		script_source_file="data/scripts/projectiles/chaotic_arc.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+</Entity>
+

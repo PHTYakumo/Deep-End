@@ -1,0 +1,16 @@
+<Entity>
+
+	<ProjectileComponent 
+    	_enabled="1" 
+    	speed_min="400"
+    	speed_max="1000"
+    ></ProjectileComponent>
+
+	<!-- give an initial velocity -->
+  
+	<LuaComponent
+		script_source_file="data/custom_materials/mimic_potion_death.lua"
+		execute_on_added="1"
+	></LuaComponent>
+
+</Entity>

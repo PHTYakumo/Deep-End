@@ -1,0 +1,115 @@
+<Entity 
+  name="$projectile_default"
+  tags="resist_repulsion,projectile_heal"
+   >
+
+	<Base file="data/entities/base_projectile.xml" >
+		<VelocityComponent
+      gravity_y="0"
+			air_friction="-0.01"
+      terminal_velocity="256"
+			mass="0.05"
+			>
+		</VelocityComponent>
+	</Base>
+
+  <ProjectileComponent 
+    _enabled="1" 
+    lob_min="0.2"
+    lob_max="0.5"
+    speed_min="25"
+    speed_max="70"
+    friction="0.25"
+    direction_random_rad="0.15"
+    on_death_explode="1"
+    on_death_gfx_leave_sprite="0" 
+    on_lifetime_out_explode="1"
+    explosion_dont_damage_shooter="1" 
+    on_collision_die="1"
+    lifetime="90"
+    damage="0.002"
+    velocity_sets_scale="1"
+    lifetime_randomness="30"
+    ragdoll_force_multiplier="0.02"
+    hit_particle_force_multiplier="3.0"
+    camera_shake_when_shot="4.0"
+    bounces_left="36"
+    shoot_light_flash_radius="30"
+	  knockback_force="0.07" 
+    ><damage_by_type 
+      healing="-0.002" 
+    ></damage_by_type
+    ><config_explosion
+      never_cache="1" 
+      camera_shake="0.8" 
+      explosion_radius="1" 
+      explosion_sprite="data/particles/explosion_016_plasma_pink.xml" 
+      explosion_sprite_lifetime="0.0" 
+      create_cell_probability="0" 
+      create_cell_material="plasma_fading"
+	    explosion_sprite_emissive="1"
+	    explosion_sprite_additive="1"
+	    ray_energy="75000"
+      hole_destroy_liquid="0" 
+      hole_enabled="0" 
+	    damage = "0.24"
+      hole_image="data/temp/explosion_hole.png" 
+      particle_effect="0" 
+      damage_mortals="1"
+	    physics_throw_enabled="0"
+      shake_vegetation="1"  
+      sparks_enabled="0" 
+	    spark_material="plasma_fading_pink"
+      sparks_count_max="6" 
+      sparks_count_min="3"
+      light_fade_time="0.9" 
+	    light_r="155"
+	    light_g="15"
+      light_b="150"
+      stains_enabled="0" 
+      stains_image="data/temp/explosion_stain.png" >
+    </config_explosion>
+  </ProjectileComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="data/projectiles_gfx/shine_2.xml" 
+    next_rect_animation="" 
+    offset_x="0" 
+    offset_y="0" 
+    rect_animation="" 
+    has_special_scale="1"
+	  special_scale_x="0.5"
+	  special_scale_y="0.5" >
+  </SpriteComponent>
+
+  <SpriteComponent 
+		alpha="0.4"
+		image_file="data/particles/fog_of_war_hole_128.xml"
+		smooth_filtering="1"
+		fog_of_war_hole="1" >
+	</SpriteComponent>
+
+  <LightComponent 
+    _enabled="1" 
+    radius="60" >
+  </LightComponent>
+
+  <HitEffectComponent 
+      effect_hit="LOAD_UNIQUE_CHILD_ENTITY"
+      value_string="data/entities/misc/effect_expelliarmus.xml" >
+	</HitEffectComponent >
+
+  <AudioComponent
+      file="data/audio/Desktop/projectiles.bank"
+      event_root="player_projectiles/summon_generic">
+  </AudioComponent>
+  
+  <VariableStorageComponent
+		name="projectile_file"
+		value_string="data/entities/projectiles/orb_shine_mysterious.xml">
+	</VariableStorageComponent>
+  
+</Entity>
+

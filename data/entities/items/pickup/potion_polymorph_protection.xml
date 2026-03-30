@@ -1,0 +1,9 @@
+<Entity>
+	<Base file="data/entities/items/pickup/potion_super.xml" />
+	
+	<VariableStorageComponent
+		name="potion_material"
+		value_string="Eucharist_Deep_End"
+		>
+	</VariableStorageComponent>
+</Entity>

@@ -1,0 +1,40 @@
+<Entity>
+	
+	<Base file="data/entities/base_custom_card.xml" > 
+		<SpriteComponent 
+			image_file="data/ui_gfx/gun_actions/deep_end/de_terraprisma.png" 
+		></SpriteComponent>
+		
+		<ItemActionComponent 
+			_tags="enabled_in_world"
+			action_id="DE_TR_PRISMA" 
+		></ItemActionComponent>
+	</Base>
+
+	<InheritTransformComponent
+		_tags="enabled_in_world,enabled_in_hand" 
+	  ><Transform 
+		position.x="8" 
+		position.y="0" 
+	  ></Transform
+	></InheritTransformComponent>
+
+	<SpriteComponent 
+	    _tags="enabled_in_hand"
+        alpha="1"
+        image_file="data/particles/torch_fog_of_war_hole.xml"
+        smooth_filtering="1"
+        fog_of_war_hole="1"
+        has_special_scale="1"
+        special_scale_x="4"
+        special_scale_y="4" 
+    ></SpriteComponent>
+
+	<LuaComponent
+		_enabled="1"
+		_tags="enabled_in_world,enabled_in_inventory,enabled_in_hand" 
+		script_source_file="data/scripts/projectiles/de_terraprisma_switch.lua"
+		execute_every_n_frame="1"
+	></LuaComponent>
+	
+</Entity>

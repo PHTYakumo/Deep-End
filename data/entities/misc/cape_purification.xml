@@ -1,0 +1,20 @@
+<Entity >
+	<LuaComponent
+		script_source_file="data/scripts/items/waterstone.lua"
+		execute_every_n_frame="5" >
+	</LuaComponent>
+
+  <MagicConvertMaterialComponent
+    _enabled="1"
+    from_material_array="material_darkness,pus,magic_liquid_teleportation,magic_liquid_unstable_teleportation,magic_liquid_polymorph,magic_liquid_random_polymorph,magic_liquid_unstable_polymorph,liquid_fire,fire,water_swamp,radioactive_liquid,lava,acid,blood_cold,poison,slime,vomit,oil"
+    to_material_array="blood,blood,blood,blood,blood,blood,blood,air,air,water,water,smoke,smoke,smoke,smoke,smoke,smoke,smoke"
+    kill_when_finished="0"
+    steps_per_frame="5"
+    is_circle="1"
+    radius="16" >
+  </MagicConvertMaterialComponent>
+
+  <LifetimeComponent
+		lifetime="9" >
+	</LifetimeComponent>
+</Entity>

@@ -1,0 +1,75 @@
+<Entity>
+	
+	<Base file="data/entities/base_custom_card.xml" > 
+		<SpriteComponent 
+			image_file="data/ui_gfx/gun_actions/deep_end/spore_pod.png" >
+		</SpriteComponent>
+		
+		<ItemActionComponent 
+			_tags="enabled_in_world"
+			action_id="SPORE_POD" >
+		</ItemActionComponent>
+	</Base>
+
+	<InheritTransformComponent
+		_tags="enabled_in_world,enabled_in_hand" >
+	  <Transform 
+		position.x="8" 
+		position.y="0" >
+	  </Transform>
+	</InheritTransformComponent>
+
+	 <ParticleEmitterComponent 
+	    _tags="enabled_in_hand"
+	    emitted_material_name="bluefungi_static"
+	    offset.x="0"
+	    offset.y="0"
+	    x_pos_offset_min="0"
+	    x_pos_offset_max="0"
+	    y_pos_offset_min="-1"
+	    y_pos_offset_max="1"
+	    x_vel_min="-0"
+	    x_vel_max="0"
+	    y_vel_min="0"
+	    y_vel_max="0"
+	    count_min="1"
+	    count_max="6"
+	    lifetime_min="0.1"
+	    lifetime_max="0.3"
+	    create_real_particles="0"
+	    emit_cosmetic_particles="1"
+	    emission_interval_min_frames="60"
+	    emission_interval_max_frames="120" >
+	</ParticleEmitterComponent>
+	  
+	<!--ParticleEmitterComponent 
+	    _tags="enabled_in_hand"
+	    emitted_material_name="fungus_powder"
+	    offset.x="0"
+	    offset.y="0"
+	    x_pos_offset_min="-1"
+	    x_pos_offset_max="1"
+	    y_pos_offset_min="-1"
+	    y_pos_offset_max="1"
+	    x_vel_min="-2"
+	    x_vel_max="2"
+	    y_vel_min="-20"
+	    y_vel_max="-10"
+	    count_min="1"
+	    count_max="6"
+	    lifetime_min="0.3"
+	    lifetime_max="0.4"
+	    create_real_particles="1"
+	    emit_cosmetic_particles="0"
+	    emission_interval_min_frames="60"
+	    emission_interval_max_frames="120" >
+	</ParticleEmitterComponent-->
+
+	<LuaComponent
+		_enabled="1"
+		_tags="enabled_in_world"
+		script_source_file="data/scripts/projectiles/spore_pod_card.lua"
+		execute_every_n_frame="45"
+	></LuaComponent>
+
+</Entity>

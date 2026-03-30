@@ -1,0 +1,17 @@
+<Entity>
+	<InheritTransformComponent 
+		_enabled="1" >
+    </InheritTransformComponent>	
+    
+    <GameEffectComponent 
+    	effect="CONFUSION"
+    	frames="200"
+    ></GameEffectComponent>
+
+	<LuaComponent 
+		_enabled="1" 
+		script_shot="data/scripts/projectiles/neutralized_weak.lua" 
+		execute_every_n_frame="-1">
+	</LuaComponent>
+
+</Entity>

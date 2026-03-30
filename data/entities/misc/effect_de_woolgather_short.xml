@@ -1,0 +1,57 @@
+<Entity>
+	<InheritTransformComponent>
+    </InheritTransformComponent>	
+    
+    <GameEffectComponent 
+        effect="NO_WAND_EDITING"
+        frames="1800"
+    >
+	</GameEffectComponent >
+
+    <GameEffectComponent 
+        effect="NO_WAND_EDITING"
+        frames="1800"
+    >
+	</GameEffectComponent >
+
+    <GameEffectComponent 
+        effect="NO_WAND_EDITING"
+        frames="1800"
+    >
+	</GameEffectComponent >
+
+    <GameEffectComponent 
+        effect="NO_WAND_EDITING"
+        frames="1800"
+    >
+	</GameEffectComponent >
+
+    <GameEffectComponent 
+        effect="NO_WAND_EDITING"
+        frames="1800"
+    >
+	</GameEffectComponent >
+
+    <GameEffectComponent 
+        effect="NO_WAND_EDITING"
+        frames="1800"
+    >
+	</GameEffectComponent >
+
+    <GameEffectComponent 
+        effect="NO_WAND_EDITING"
+        frames="1800"
+    >
+	</GameEffectComponent >
+
+    <UIIconComponent
+		name="$status_de_no_edit"
+		description="$dstatus_de_no_edit"
+		icon_sprite_file="data/ui_gfx/status_indicators/de_no_edit.png"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+
+</Entity>

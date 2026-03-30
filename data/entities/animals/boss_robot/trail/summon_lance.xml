@@ -1,0 +1,13 @@
+<Entity tags="de_robot_boss_create" >
+
+	<LifetimeComponent
+			lifetime="200" >
+	</LifetimeComponent>
+  
+	<LuaComponent
+		_enabled="1" 
+		script_source_file="data/entities/animals/boss_robot/trail/summon_lance.lua"
+		execute_every_n_frame="3"
+	></LuaComponent>
+
+</Entity>

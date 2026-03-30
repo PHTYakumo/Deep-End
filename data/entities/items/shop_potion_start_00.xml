@@ -1,0 +1,16 @@
+<Entity tags="item_shop" >
+
+    <Base file="data/entities/items/pickup/jar_super.xml">
+    </Base>
+
+    <Base file="data/entities/base_shop_item.xml">
+    	    <ItemCostComponent cost="6" />
+
+            <SpriteComponent 
+    		    update_transform_rotation="1"
+                offset_x="2.7"
+                offset_y="10.8"
+  		    ></SpriteComponent>
+    </Base>
+
+</Entity>

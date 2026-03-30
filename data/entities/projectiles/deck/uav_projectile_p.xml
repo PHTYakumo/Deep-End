@@ -1,0 +1,19 @@
+<Entity>
+
+  <Base file="data/entities/projectiles/deck/uav_projectile.xml" >
+    <ProjectileComponent
+      knockback_force="4"
+      create_shell_casing="1"
+      shell_casing_material="smoke"
+      muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_large.xml"
+    ></ProjectileComponent>
+  </Base>
+
+  <AudioLoopComponent
+      file="data/audio/Desktop/projectiles.bank"
+      event_name="projectiles/sniper_bullet_passby"
+      auto_play="1"
+  ></AudioLoopComponent>
+
+</Entity>
+

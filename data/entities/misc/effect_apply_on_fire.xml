@@ -1,0 +1,23 @@
+<Entity>
+
+	<InheritTransformComponent 
+		_enabled="1" >
+    </InheritTransformComponent>	
+    
+    <GameEffectComponent 
+        effect="ON_FIRE"
+        frames="660"
+    >
+	</GameEffectComponent >
+
+    <UIIconComponent
+		name="$status_on_fire"
+		description="$statusdesc_on_fire"
+		icon_sprite_file="data/ui_gfx/status_indicators/on_fire.png"
+		is_perk="0"
+		display_above_head="1"
+		display_in_hud="0"
+		>
+	</UIIconComponent>
+
+</Entity>

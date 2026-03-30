@@ -1,0 +1,47 @@
+<Entity name="$projectile_default" tags="resist_repulsion,projectile_heal" >
+
+  <Base file="data/entities/projectiles/deck/light_bullet_blue.xml" >
+
+	<VelocityComponent
+		gravity_y="0"
+	></VelocityComponent>
+
+    <ProjectileComponent
+      damage="0.4"
+	><damage_by_type 
+      healing="-0.002"
+    ></damage_by_type
+    ><config_explosion
+      explosion_radius="8" 
+      damage="0.16"
+    ></config_explosion
+    ></ProjectileComponent>
+
+	<SpriteComponent
+		has_special_scale="1"
+		special_scale_x="0.8"
+		special_scale_y="0.8"
+	></SpriteComponent>
+
+	<ParticleEmitterComponent
+		lifetime_min="0.5"
+		lifetime_max="0.7"
+	></ParticleEmitterComponent>
+
+	<ParticleEmitterComponent
+		lifetime_min="0.4"
+		lifetime_max="0.6"
+	></ParticleEmitterComponent>
+
+	<ParticleEmitterComponent
+		lifetime_min="0.8"
+		lifetime_max="0.9"
+	></ParticleEmitterComponent>
+
+	<VariableStorageComponent
+		value_string="data/entities/projectiles/deck/light_bullet_plankter.xml"
+	></VariableStorageComponent>
+
+  </Base>
+
+</Entity>

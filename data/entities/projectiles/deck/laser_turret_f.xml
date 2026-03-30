@@ -1,0 +1,24 @@
+<Entity name="$projectile_default">
+
+  <Base file="data/entities/projectiles/deck/laser_turret_a.xml" >
+    <ProjectileComponent
+      die_on_liquid_collision="0"
+      knockback_force="50.0"
+      collide_with_world="1"
+      >
+    </ProjectileComponent>
+
+    <SpriteComponent
+      alpha="1"
+      z_index="1"	
+      >
+    </SpriteComponent>
+
+    <AudioComponent
+      event_root="projectiles/laser_turret"
+      >
+    </AudioComponent>
+  </Base>
+
+</Entity>
+

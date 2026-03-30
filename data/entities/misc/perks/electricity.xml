@@ -1,0 +1,11 @@
+<Entity >
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+	
+    <ElectricitySourceComponent
+        radius="20"
+		emission_interval_frames="60"
+		>
+    </ElectricitySourceComponent>
+  
+</Entity>

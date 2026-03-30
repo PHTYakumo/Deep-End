@@ -1,0 +1,53 @@
+<Entity>
+
+	<Base file="data/entities/projectiles/deck/swarm_fly.xml" >
+		<ProjectileComponent
+			lifetime="180"
+			lifetime_randomness="45"
+			bounces_left="999"
+			><damage_by_type
+				melee="0.24"
+			></damage_by_type>
+		</ProjectileComponent>
+
+		<HomingComponent
+			homing_velocity_multiplier="0.7"
+			detect_distance="75"
+		></HomingComponent>
+	
+		<DamageModelComponent
+			hp="0.35"
+			ui_report_damage="0"
+		></DamageModelComponent>
+
+		<HitboxComponent 
+			is_enemy="0" 
+			is_item="1" 
+		></HitboxComponent>
+	
+		<VariableStorageComponent
+			value_string="data/entities/projectiles/deck/de_swarm_fly.xml"
+		></VariableStorageComponent>
+	</Base>
+
+	<HomingComponent
+		homing_targeting_coeff="45.0"
+		homing_velocity_multiplier="0.88"
+		detect_distance="110"
+	></HomingComponent>
+
+	<GenomeDataComponent
+		herd_id="player"
+	></GenomeDataComponent>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+        <GameEffectComponent 
+            effect="PROTECTION_ALL"
+            frames="30"
+        ></GameEffectComponent >
+    </Entity>
+
+</Entity>
+

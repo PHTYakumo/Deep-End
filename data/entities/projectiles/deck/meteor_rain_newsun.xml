@@ -1,0 +1,349 @@
+<Entity tags="projectile_heal" >
+
+	<Base file="data/entities/base_projectile.xml" >
+		<VelocityComponent
+		  air_friction="-10.0"
+		  gravity_y="0" >
+		</VelocityComponent>
+	</Base>
+
+	<ProjectileComponent 
+    _enabled="1" 
+    lob_min="0.8"
+    lob_max="1.0"
+    speed_min="250"
+    speed_max="250"
+    direction_random_rad="0.00"
+    on_death_explode="1"
+    on_death_gfx_leave_sprite="0" 
+    on_lifetime_out_explode="1"
+    explosion_dont_damage_shooter="1" 
+    on_collision_die="0"
+	collide_with_world="0"
+	dont_collide_with_tag="player_unit"
+    lifetime="21"
+    damage="80"
+    damage_every_x_frames="3"
+    knockback_force="72"
+    velocity_sets_scale="1"
+	velocity_sets_scale_coeff="2.0"
+    penetrate_entities="1"
+    lifetime_randomness="0"
+    velocity_sets_rotation="0"
+    ragdoll_force_multiplier="0.75"
+    hit_particle_force_multiplier="0.75"
+    camera_shake_when_shot="2"
+    muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_small_pink.xml"
+    collide_with_shooter_frames="999"
+    collide_with_entities="0"
+    friendly_fire="false"
+    shoot_light_flash_radius="360" 
+    shoot_light_flash_r="255"
+    shoot_light_flash_g="180"
+    shoot_light_flash_b="230"
+	><damage_by_type 
+    	fire="80" 
+		healing="-0.0001"
+    ></damage_by_type
+    ><config_explosion
+      	never_cache="1" 
+      	damage="120"
+      	camera_shake="1.6" 
+      	explosion_radius="144"
+        explosion_sprite="data/particles/explosion_128.xml" 
+		explosion_sprite_lifetime="0" 
+		load_this_entity="data/entities/particles/particle_explosion/main_large_radius.xml,data/entities/particles/particle_explosion/main_large_radius.xml,data/entities/particles/particle_explosion/main_large_radius.xml,data/entities/misc/loose_ground.xml,data/entities/misc/explosion_was_here.xml"
+		create_cell_probability="20" 
+		hole_destroy_liquid="1" 
+		hole_enabled="1" 
+		ray_energy="12400000"
+		particle_effect="1" 
+		damage_mortals="1"
+		physics_explosion_power.min="15.0"
+		physics_explosion_power.max="18.0" 
+		shake_vegetation="1" 
+		sparks_count_max="2400" 
+		sparks_count_min="2100" 
+		sparks_enabled="1" 
+		stains_enabled="1" 
+		stains_radius="160"
+		background_lightning_count="9" 
+		max_durability_to_destroy="15" 
+      	audio_event_name="explosions/holy" >
+    </config_explosion>
+  	</ProjectileComponent>
+	
+	<SpriteComponent
+		_tags="enabled_in_world"
+		_enabled="1"
+		offset_x="98"
+		offset_y="98"
+		image_file="data/particles/fog_of_war_hole_huge.png"
+		smooth_filtering="1"
+		fog_of_war_hole="1"
+	></SpriteComponent>
+	
+	<SpriteComponent
+		_tags="enabled_in_world"
+		_enabled="1"
+		offset_x="100"
+		offset_y="100"
+		has_special_scale="1"
+		special_scale_x="0.66"
+		special_scale_y="0.66"
+		emissive="1"
+		additive="1"
+		image_file="data/projectiles_gfx/meteor_rain_newsun.png"
+		smooth_filtering="1"
+	></SpriteComponent>
+
+	<SpriteComponent
+		_tags="enabled_in_world"
+		_enabled="1" 
+		alpha="1" 
+		next_rect_animation=""
+		rect_animation="" 
+		has_special_scale="1"
+		special_scale_x="2.73"
+		special_scale_y="2.73"
+		image_file="data/projectiles_gfx/meteor.xml"
+	></SpriteComponent>
+	
+	<MagicConvertMaterialComponent
+		_tags="enabled_in_world"
+		kill_when_finished="0"
+		from_material_tag="[alchemy]"
+		steps_per_frame="16"
+		to_material="fire"
+		clean_stains="0"
+		is_circle="1"
+		radius="45" 
+		loop="1"
+		>
+	</MagicConvertMaterialComponent>
+	
+	<MagicConvertMaterialComponent
+		_tags="enabled_in_world"
+		kill_when_finished="0"
+		ignite_materials="1"
+		steps_per_frame="16"
+		fan_the_flames="1"
+		clean_stains="0"
+		is_circle="1"
+		radius="60" 
+		loop="1"
+		>
+	</MagicConvertMaterialComponent>
+
+	<MagicConvertMaterialComponent
+		_tags="enabled_in_world"
+		kill_when_finished="0"
+		from_material_tag="[liquid]"
+		steps_per_frame="16"
+		to_material="smoke"
+		clean_stains="0"
+		is_circle="1"
+		radius="75" 
+		loop="1"
+		>
+	</MagicConvertMaterialComponent>
+	
+	<CellEaterComponent
+		radius="75"
+		eat_probability="50"
+		ignored_material="gem_box2d_yellow_sun"
+		>
+	</CellEaterComponent>
+	
+	<AreaDamageComponent
+		circle_radius="55" 
+		aabb_min.x="-50" 
+		aabb_min.y="-50" 
+		aabb_max.x="50" 
+		aabb_max.y="50" 
+		damage_per_frame="5.4"
+		update_every_n_frame="1"
+		entities_with_tag="homing_target"
+		death_cause="$damage_sun"
+		damage_type="DAMAGE_CURSE"
+		>
+	</AreaDamageComponent>
+	
+	<AreaDamageComponent
+		circle_radius="77" 
+		aabb_min.x="-70" 
+		aabb_min.y="-70" 
+		aabb_max.x="70" 
+		aabb_max.y="70" 
+		damage_per_frame="5.4"
+		update_every_n_frame="1"
+		entities_with_tag="homing_target"
+		death_cause="$damage_sun"
+		damage_type="DAMAGE_EXPLOSION"
+		>
+	</AreaDamageComponent>
+	
+	<AreaDamageComponent
+		circle_radius="99" 
+		aabb_min.x="-90" 
+		aabb_min.y="-90" 
+		aabb_max.x="90" 
+		aabb_max.y="90" 
+		damage_per_frame="5.4"
+		update_every_n_frame="1"
+		entities_with_tag="homing_target"
+		death_cause="$damage_sun"
+		damage_type="DAMAGE_FIRE"
+		>
+	</AreaDamageComponent>
+
+	<BlackHoleComponent
+		particle_attractor_force="4"
+		damage_probability="0.2"
+		radius="66">
+	</BlackHoleComponent>
+
+	<LuaComponent
+		script_source_file="data/scripts/projectiles/piercing_shot.lua"
+		execute_every_n_frame="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+	
+	<!--
+	<LuaComponent
+		script_source_file="data/scripts/buildings/sun/sun_controls.lua"
+		execute_every_n_frame="10"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		script_source_file="data/scripts/buildings/sun/sun_collision.lua"
+		execute_every_n_frame="10"
+		>
+	</LuaComponent>
+	-->
+	
+	<ParticleEmitterComponent 
+		_tags="enabled_in_world,enabled_in_hand"
+		emitted_material_name="spark_yellow"
+		fade_based_on_lifetime="1"
+		x_pos_offset_min="0"
+		x_pos_offset_max="0"
+		y_pos_offset_min="0"
+		y_pos_offset_max="0"
+		x_vel_min="-90"
+		x_vel_max="90"
+		y_vel_min="-90"
+		y_vel_max="90"
+		area_circle_radius.min="24"
+		area_circle_radius.max="48"
+		velocity_always_away_from_center="-450"
+		gravity.y="0"
+		friction="0.1"
+		airflow_force="0.9"
+		airflow_time="0.1"
+		airflow_scale="0.8"
+		count_min="60"
+		count_max="90"
+		lifetime_min="0.4"
+		lifetime_max="2.0"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		draw_as_long="1"
+		collide_with_grid="0"
+		render_on_grid="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		render_ultrabright="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+	<ParticleEmitterComponent 
+		_tags="enabled_in_world,enabled_in_hand"
+		emitted_material_name="spark"
+		fade_based_on_lifetime="1"
+		x_pos_offset_min="0"
+		x_pos_offset_max="0"
+		y_pos_offset_min="0"
+		y_pos_offset_max="0"
+		x_vel_min="-90"
+		x_vel_max="90"
+		y_vel_min="-90"
+		y_vel_max="90"
+		area_circle_radius.min="24"
+		area_circle_radius.max="48"
+		velocity_always_away_from_center="-450"
+		gravity.y="0"
+		friction="0.1"
+		airflow_force="0.9"
+		airflow_time="0.1"
+		airflow_scale="0.8"
+		count_min="60"
+		count_max="90"
+		lifetime_min="0.4"
+		lifetime_max="2.0"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		draw_as_long="1"
+		collide_with_grid="0"
+		render_on_grid="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		render_ultrabright="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<SpriteParticleEmitterComponent
+    sprite_file="data/particles/fire_large.xml"
+    delay="0"
+    lifetime="0"
+	emissive="1"
+	additive="1"
+    color.r="1" color.g="0.7" color.b="0.7" color.a="1"
+    color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1.5"
+    velocity.x="0" velocity.y="0"
+    gravity.x="0" gravity.y="0"
+    velocity_slowdown="0"
+    rotation="0"
+    angular_velocity="0"
+    use_velocity_as_rotation="0"
+    scale.x="2.4" scale.y="2.4"
+    scale_velocity.x="0" scale_velocity.y="0"
+    emission_interval_min_frames="1"
+    emission_interval_max_frames="1"
+    count_min="12" count_max="15"
+    randomize_rotation.min="-0.3415"
+    randomize_rotation.max="0.3415"
+    randomize_angular_velocity.min="-1.3415"
+    randomize_angular_velocity.max="1.3415"
+    randomize_position.min_x="-70"
+    randomize_position.max_x="70"
+    randomize_position.min_y="-70"
+    randomize_position.max_y="70"
+    randomize_velocity.min_x="-130"
+    randomize_velocity.max_x="130"
+    randomize_velocity.min_y="-130"
+    randomize_velocity.max_y="130"
+	is_emitting="1"
+    >
+  	</SpriteParticleEmitterComponent>
+	
+	<AudioComponent
+      file="data/audio/Desktop/projectiles.bank"
+      event_root="player_projectiles/bomb_holy">
+ 	</AudioComponent>
+	
+	<AudioLoopComponent
+      file="data/audio/Desktop/projectiles.bank"
+      event_name="player_projectiles/black_hole_giga/loop"
+      auto_play="1">
+  	</AudioLoopComponent>
+
+  	<VariableStorageComponent
+		name="projectile_file"
+		value_string="data/entities/projectiles/deck/meteor_rain_meteor.xml"
+		>
+	</VariableStorageComponent>
+
+</Entity>

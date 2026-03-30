@@ -1,0 +1,31 @@
+<Entity>
+	<InheritTransformComponent />
+	
+	<LuaComponent 
+		_enabled="1" 
+		script_source_file="data/scripts/projectiles/fireball_ray_enemy.lua" 
+		execute_every_n_frame="8">
+   </LuaComponent>
+	
+	<LifetimeComponent
+		lifetime="255" >
+	</LifetimeComponent>
+
+	<ShotEffectComponent 
+    	extra_modifier="explosive_projectile" >
+	</ShotEffectComponent >
+
+	<ShotEffectComponent 
+    	extra_modifier="projectile_fire_trail" >
+	</ShotEffectComponent >
+
+	<UIIconComponent
+		icon_sprite_file="data/ui_gfx/status_indicators/fireball_ray.png"
+		name="$status_de_fireball_ray"
+		description="$dstatus_de_fireball_ray"
+		display_above_head="0"
+		display_in_hud="1"
+		is_perk="0" >
+	</UIIconComponent>
+</Entity>
+

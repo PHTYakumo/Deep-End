@@ -1,0 +1,6 @@
+<Entity>
+	<LuaComponent
+		script_source_file="data/scripts/buildings/protection_field_robot_egg.lua"
+		execute_every_n_frame="30"
+	></LuaComponent>
+</Entity>

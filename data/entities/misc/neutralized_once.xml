@@ -1,0 +1,16 @@
+<Entity>
+	<InheritTransformComponent />
+	
+	<LuaComponent 
+		_enabled="1" 
+		script_shot="data/scripts/projectiles/neutralized.lua" 
+		execute_every_n_frame="-1">
+	</LuaComponent>
+	
+	<LifetimeComponent
+		lifetime="10"
+		>
+	</LifetimeComponent>
+	
+</Entity>
+

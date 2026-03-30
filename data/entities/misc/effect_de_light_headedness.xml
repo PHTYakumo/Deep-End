@@ -1,0 +1,23 @@
+<Entity>
+	<InheritTransformComponent>
+    </InheritTransformComponent>	
+    
+    <GameEffectComponent 
+    	effect="FOOD_POISONING"
+    	frames="360"
+    >
+	</GameEffectComponent >
+
+	<DrugEffectModifierComponent>
+		<fx_add
+            distortion_amount="6"
+			doublevision_amount="6"
+		/>
+	</DrugEffectModifierComponent>
+
+	<ShotEffectComponent 
+    	extra_modifier="extreme_spread"
+    >
+	</ShotEffectComponent >
+
+</Entity>

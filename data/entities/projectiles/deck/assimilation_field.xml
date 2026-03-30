@@ -1,0 +1,110 @@
+<Entity 
+  name="$projectile_default" tags="de_assimilation_field"
+   >
+	<GameAreaEffectComponent
+		radius="28" >
+	</GameAreaEffectComponent>
+	
+	<ParticleEmitterComponent 
+		emitted_material_name="liquid_fire"
+		gravity.y="0.0"
+		lifetime_min="0.5"
+		lifetime_max="1.5"
+		count_min="3"
+		count_max="6"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.max="24"
+		cosmetic_force_create="0"
+		airflow_force="0.5"
+		airflow_time="0.01"
+		airflow_scale="0.05"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		emit_cosmetic_particles="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+  	<ParticleEmitterComponent 
+		emitted_material_name="liquid_fire"
+		gravity.y="0.0"
+		lifetime_min="0.5"
+		lifetime_max="1.5"
+		count_min="12"
+		count_max="12"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="25"
+		area_circle_radius.max="28"
+		cosmetic_force_create="0"
+		airflow_force="0.3"
+		airflow_time="0.01"
+		airflow_scale="0.05"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		emit_cosmetic_particles="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<Base file="data/entities/projectiles/deck/base_field.xml">
+		<SpriteComponent 
+			image_file="" >
+		</SpriteComponent>
+
+		<SpriteParticleEmitterComponent
+			sprite_file="data/ui_gfx/gun_actions/spells_to_power.png"
+			scale.x="0.45"
+			scale.y="0.45"
+			color.r="1" color.g="1" color.b="0.6" color.a="1"
+			randomize_position.min_x="-20"
+    		randomize_position.max_x="20"
+    		randomize_position.min_y="-20"
+    		randomize_position.max_y="20"
+			emission_interval_min_frames="9"
+    		emission_interval_max_frames="15"
+			randomize_angular_velocity.min="-1.6"
+    		randomize_angular_velocity.max="1.6" >
+		</SpriteParticleEmitterComponent>
+
+		<ProjectileComponent
+			damage="0"
+			friendly_fire="0"
+			lifetime="1200"
+			damage_game_effect_entities="" >
+			<config_explosion
+				explosion_sprite="data/particles/blast_out_electrocution.xml" >
+			</config_explosion>
+		</ProjectileComponent>
+
+		<LifetimeComponent
+			lifetime="7200" >
+  		</LifetimeComponent>
+	</Base>
+
+	<LuaComponent
+		script_source_file="data/scripts/projectiles/effect_de_assimilation_field.lua"
+		remove_after_executed="0"
+		execute_every_n_frame="3"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/scripts/projectiles/effect_de_assimilation_field.lua"
+		execute_on_removed="1"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+	<VariableStorageComponent
+		name="assimilation_total"
+		value_float="0"
+		>
+	</VariableStorageComponent>
+	
+	<VariableStorageComponent
+		name="projectile_file"
+		value_string="data/entities/projectiles/deck/assimilation_field.xml"
+		>
+	</VariableStorageComponent>
+</Entity>
+

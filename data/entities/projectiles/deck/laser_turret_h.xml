@@ -1,0 +1,24 @@
+<Entity name="$projectile_default">
+
+  <Base file="data/entities/projectiles/deck/laser_turret_a.xml" >
+    <ProjectileComponent
+      direction_random_rad="0.06"
+      penetrate_entities="1"
+      die_on_liquid_collision="0"
+      >
+    </ProjectileComponent>
+
+    <AudioComponent
+      event_root="projectiles/laser_turret"
+      >
+    </AudioComponent>
+
+    <VariableStorageComponent
+      name="projectile_file"
+      value_string="data/entities/projectiles/deck/laser_turret_d.xml"
+      >
+    </VariableStorageComponent>
+  </Base>
+
+</Entity>
+

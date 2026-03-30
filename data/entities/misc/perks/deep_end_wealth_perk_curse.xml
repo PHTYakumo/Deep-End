@@ -1,0 +1,15 @@
+<Entity>
+	<InheritTransformComponent 
+		_enabled="1" 
+    ></InheritTransformComponent>
+
+	<GameEffectComponent
+        effect="NO_HEAL"
+        frames="-1"
+	></GameEffectComponent>
+
+	<LuaComponent 
+		script_source_file="data/scripts/perks/wealth_perk_curse.lua"
+		execute_every_n_frame="60"
+	></LuaComponent>
+</Entity>

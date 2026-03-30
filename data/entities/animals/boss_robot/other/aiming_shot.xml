@@ -1,0 +1,62 @@
+<Entity name="ACE SNIPER" >
+
+	<LifetimeComponent
+		lifetime="30" >
+	</LifetimeComponent>
+  
+	<LuaComponent
+		_enabled="1" 
+		script_source_file="data/entities/animals/boss_robot/other/aiming_shot.lua"
+		execute_on_removed="1"
+		execute_every_n_frame="-1"
+	></LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_robot/other/aiming_fade.lua"
+		execute_every_n_frame="1"
+	></LuaComponent>
+
+    <SpriteComponent 
+		alpha="0.04"
+		image_file="data/entities/animals/boss_robot/other/aiming.xml"
+		z_index="-1.3"
+		emissive="1"
+	></SpriteComponent>
+
+	<LightComponent 
+		_enabled="1" 
+		radius="14"
+		r="0"
+		g="255"
+		b="225"
+		fade_out_time="0.5"
+	></LightComponent>
+
+	<LightComponent 
+		_enabled="1" 
+		radius="16"
+		r="0"
+		g="255"
+		b="225"
+		fade_out_time="0.5"
+	></LightComponent>
+
+	<LightComponent 
+		_enabled="1" 
+		radius="18"
+		r="0"
+		g="255"
+		b="225"
+		fade_out_time="0.5"
+	></LightComponent>
+
+	<LightComponent 
+		_enabled="1" 
+		radius="20"
+		r="0"
+		g="255"
+		b="225"
+		fade_out_time="0.5"
+	></LightComponent>
+
+</Entity>

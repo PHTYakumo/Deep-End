@@ -1,0 +1,7 @@
+<Entity >
+	<LuaComponent
+		script_source_file="data/scripts/projectiles/de_homing_cursor.lua"
+		execute_every_n_frame="2"
+		>
+	</LuaComponent>
+</Entity>

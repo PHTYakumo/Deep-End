@@ -1,0 +1,45 @@
+<Entity>
+	<InheritTransformComponent>
+    </InheritTransformComponent>	
+
+	<GameEffectComponent 
+    	effect="CONFUSION"
+    	frames="330"
+    >
+	</GameEffectComponent >
+
+	<GameEffectComponent 
+        effect="BLINDNESS"
+        frames="330"
+    >
+	</GameEffectComponent>
+
+	<GameEffectComponent 
+    	effect="POISON"
+    	frames="330"
+    >
+	</GameEffectComponent >
+
+	<GameEffectComponent 
+    	effect="INTERNAL_FIRE"
+    	frames="330"
+    	disable_movement="0" >
+	</GameEffectComponent >
+
+	<GameEffectComponent 
+    	effect="INTERNAL_ICE"
+    	frames="330"
+    	disable_movement="0" >
+	</GameEffectComponent >
+
+	<UIIconComponent
+		icon_sprite_file="data/ui_gfx/status_indicators/confusion.png"
+		name="$status_blindness"
+		description="$statusdesc_blindness"
+		display_above_head="1"
+		display_in_hud="1"
+		is_perk="0"
+		>
+	</UIIconComponent>
+	
+</Entity>

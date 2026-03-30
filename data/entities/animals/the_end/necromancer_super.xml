@@ -1,0 +1,21 @@
+<Entity >
+  <Base file="data/entities/animals/necromancer_super.xml" include_children="1">
+
+    <VariableStorageComponent
+		  _tags=""
+	  ></VariableStorageComponent>
+
+    <DamageModelComponent 
+      hp="10"
+      max_hp="40"
+    ></DamageModelComponent>
+
+    <LuaComponent/>
+    <LuaComponent/>
+
+    <LuaComponent
+      execute_on_removed="1"
+		  execute_every_n_frame="-1" >
+	  </LuaComponent>
+  </Base>
+</Entity>

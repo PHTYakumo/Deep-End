@@ -1,0 +1,50 @@
+<Entity tags="card_action,de_plankter_wand">
+	
+	<Base file="data/entities/base_custom_card.xml" > 
+		<SpriteComponent 
+			image_file="data/ui_gfx/gun_actions/deep_end/plankter_wand.png" >
+		</SpriteComponent>
+		
+		<ItemActionComponent 
+			_tags="enabled_in_world"
+			action_id="DE_FLOATING_WANNO" >
+		</ItemActionComponent>
+	</Base>
+
+	<InheritTransformComponent
+		_tags="enabled_in_world,enabled_in_hand" >
+	  <Transform 
+		position.x="8" 
+		position.y="0" >
+	  </Transform>
+	</InheritTransformComponent>
+
+	<LightComponent 
+		_tags="enabled_in_hand,item_identified"
+		_enabled="1" 
+		radius="10"
+		fade_out_time="1.5" 
+		r="55"
+		g="25"
+		b="255" >
+	</LightComponent>
+
+	<ShotEffectComponent 
+		_tags="enabled_in_hand"
+    	extra_modifier="plankter_wand" >
+	</ShotEffectComponent >
+
+	<VariableStorageComponent 
+		_tags="enabled_in_hand"
+		value_int="0" >
+	</VariableStorageComponent>
+
+    <LuaComponent
+        _enabled="1"
+        _tags="enabled_in_hand"
+        script_source_file="data/scripts/gun/de_plankter.lua"
+        execute_every_n_frame="2"
+        >
+	</LuaComponent>
+
+</Entity>

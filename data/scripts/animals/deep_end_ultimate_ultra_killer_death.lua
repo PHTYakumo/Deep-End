@@ -1,0 +1,11 @@
+dofile_once("data/scripts/lib/utilities.lua")
+dofile_once("data/scripts/newgame_plus.lua")
+
+function death( damage_type_bit_field, damage_message, entity_thats_responsible, drop_items )
+	local entity_id    = GetUpdatedEntityID()
+	local pos_x, pos_y = EntityGetTransform( entity_id )
+
+	shoot_projectile( entity_id, "data/entities/projectiles/ultimate_killer_explosion.xml", pos_x, pos_y, 0, 0 )
+	
+	do_newgame_plus()
+end

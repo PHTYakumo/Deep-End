@@ -1,0 +1,37 @@
+<Entity name="$projectile_default" >
+
+  <Base file="data/entities/projectiles/bomb_beep.xml">
+  
+    <PhysicsBodyComponent 
+      gridworld_box2d="1"
+      linear_damping="-1" 
+      angular_damping="0"
+      buoyancy="1.5" >
+    </PhysicsBodyComponent>
+
+    <PhysicsImageShapeComponent 
+      image_file="data/items_gfx/bomb_bouncy.png"
+      material="meat_fruit" >
+    </PhysicsImageShapeComponent>
+
+    <PhysicsThrowableComponent
+      throw_force_coeff="2" >
+    </PhysicsThrowableComponent>
+
+    <AudioComponent
+      event_root="player_projectiles/bullet_slime">
+    </AudioComponent>
+
+    <VariableStorageComponent
+		  value_string="data/entities/projectiles/bomb_bouncy.xml" >
+	  </VariableStorageComponent>
+
+  </Base>
+
+  <LuaComponent
+    remove_after_executed="1"
+		script_source_file="data/scripts/projectiles/bomb_bouncy.lua"
+		execute_every_n_frame="10" >
+	</LuaComponent>
+
+</Entity>

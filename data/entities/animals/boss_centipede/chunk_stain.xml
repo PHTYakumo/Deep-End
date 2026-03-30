@@ -1,0 +1,20 @@
+<Entity>	
+
+	<CollisionTriggerComponent
+    	width="512"
+    	height="512"
+    	radius="512"
+		required_tag="player_unit"
+		remove_component_when_triggered="1"
+		destroy_this_entity_when_triggered="1"
+		timer_for_destruction="8"
+		skip_self_frames="4">
+    </CollisionTriggerComponent>
+
+	<LuaComponent
+		execute_on_removed="1"
+	    execute_every_n_frame="-1"
+		script_source_file="data/entities/animals/boss_centipede/chunk_stain.lua">
+  	</LuaComponent>
+    
+</Entity>

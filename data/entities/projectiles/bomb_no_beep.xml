@@ -1,0 +1,15 @@
+<Entity name="$projectile_default" >
+
+  <Base file="data/entities/projectiles/bomb.xml">
+
+    <PhysicsImageShapeComponent 
+      material="gold_box2d" >
+    </PhysicsImageShapeComponent>
+
+    <VariableStorageComponent
+		  value_string="data/entities/projectiles/bomb_no_beep.xml" >
+	  </VariableStorageComponent>
+
+  </Base>
+
+</Entity>

@@ -1,0 +1,23 @@
+<Entity name="$projectile_default" tags="resist_repulsion" >
+
+	<Base file="data/entities/projectiles/deck/projectile_meniscus_slash_a.xml">
+
+    <ProjectileComponent 
+      ><damage_by_type
+        melee="0.4"
+        slice="0.4"
+      ></damage_by_type>
+    </ProjectileComponent>
+
+    <SpriteComponent 
+      special_scale_x="0.63"
+      special_scale_y="0.44"
+    ></SpriteComponent>
+
+    <VariableStorageComponent
+      value_string="data/entities/projectiles/deck/projectile_meniscus_slash_d.xml"
+    ></VariableStorageComponent>
+  </Base>
+
+</Entity>
+

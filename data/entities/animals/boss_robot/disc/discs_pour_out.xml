@@ -1,0 +1,13 @@
+<Entity tags="de_robot_boss_create" >
+
+	<LifetimeComponent
+			lifetime="120" >
+	</LifetimeComponent>
+  
+	<LuaComponent
+		_enabled="1" 
+		script_source_file="data/entities/animals/boss_robot/disc/discs_pour_out.lua"
+		execute_every_n_frame="23"
+	></LuaComponent>
+
+</Entity>

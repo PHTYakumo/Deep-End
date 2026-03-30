@@ -1,0 +1,56 @@
+<Entity>
+	
+	<Base file="data/entities/base_custom_card.xml" > 
+		<SpriteComponent 
+			image_file="data/ui_gfx/gun_actions/deep_end/lightning_teleport.png" >
+		</SpriteComponent>
+		
+		<ItemActionComponent 
+			_tags="enabled_in_world"
+			action_id="DE_TELEPORT_PROJECTILE_LIGHTNING" >
+		</ItemActionComponent>
+	</Base>
+
+	<Base file="data/entities/misc/custom_cards/base_electricity.xml">
+		<SpriteParticleEmitterComponent
+			color_change.a="-0.5"
+			gravity.y="4">
+		</SpriteParticleEmitterComponent>
+	</Base>
+
+	<Base file="data/entities/misc/custom_cards/base_electricity.xml">
+		<SpriteParticleEmitterComponent
+			sprite_file="data/particles/spark_electric_red.xml"
+			color_change.a="-0.5"
+			gravity.y="-4">
+		</SpriteParticleEmitterComponent>
+
+		<ParticleEmitterComponent 
+			emitted_material_name="spark_red">
+		</ParticleEmitterComponent>
+	</Base>
+
+	<InheritTransformComponent
+		_tags="enabled_in_world,enabled_in_hand"
+		parent_hotspot_tag="shoot_pos" >
+	</InheritTransformComponent>
+
+	<Base file="data/entities/particles/water_electrocution.xml">
+		<SpriteParticleEmitterComponent
+			sprite_file="data/particles/spark_electric_red.xml" 
+			color_change.a="-1.8"
+			emission_interval_min_frames="9"
+			emission_interval_max_frames="16"
+			randomize_position.min_x="-4"
+			randomize_position.max_x="4"
+			randomize_position.min_y="-4"
+			randomize_position.max_y="4"
+			randomize_velocity.min_x="-32"
+			randomize_velocity.max_x="32"
+			randomize_velocity.min_y="-32"
+			randomize_velocity.max_y="32"
+			velocity_always_away_from_center="75" >
+		</SpriteParticleEmitterComponent>
+	</Base>
+
+</Entity>

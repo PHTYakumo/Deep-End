@@ -1,0 +1,295 @@
+<Entity name="$animal_tank" >
+  
+	<Base file="data/entities/base_enemy_robot.xml" >
+		<ItemChestComponent level="2" >
+		</ItemChestComponent>
+		
+		<AnimalAIComponent 
+			preferred_job="JobDefault"
+			escape_if_damaged_probability="0"
+			attack_melee_damage_min="0.4" 
+			attack_melee_damage_max="0.7"
+			creature_detection_range_x="600"
+			creature_detection_range_y="600"
+			attack_ranged_min_distance="0"
+			attack_ranged_max_distance="450"
+			pathfinding_max_depth_no_target="80"
+			pathfinding_max_depth_has_target="200"
+			food_material="blood"
+			needs_food="0"
+			sense_creatures="1"
+			attack_melee_enabled="0"
+			can_fly="0"  
+			aggressiveness_min="1"
+			aggressiveness_max="95"
+			dont_counter_attack_own_herd="1"
+			attack_ranged_laser_sight_beam_kind="1"
+			>
+		</AnimalAIComponent>
+		
+		<DamageModelComponent 
+            hp="4"
+            ragdoll_material="liquid_fire"
+			ragdoll_filenames_file="data/ragdolls/tank_super/filenames.txt" 
+			blood_material="smoke"
+			critical_damage_resistance="1.0"
+			fire_probability_of_ignition="0"
+			in_liquid_shooting_electrify_prob="5"
+			physics_objects_damage="0" >
+			<damage_multipliers
+				projectile="0.06"
+				explosion="-0.06"
+				electricity="1.6"
+				fire="-0.06" >
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			image_file="data/enemies_gfx/tank_super.xml" 
+			offset_x="0"
+			offset_y="0"
+			z_index="-1"
+			>
+		</SpriteComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+		
+		<PathFindingComponent
+		    distance_to_reach_node_x="20"
+		    distance_to_reach_node_y="20"
+			frames_to_get_stuck="120"
+			can_jump="1" >
+		</PathFindingComponent>
+
+		<GenomeDataComponent 
+			herd_id="orcs"
+			food_chain_rank="5"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			swim_idle_buoyancy_coeff="0.8"
+			jump_velocity_y="-12" 
+			run_velocity="18"  >
+		</CharacterPlatformingComponent>
+		
+		<HitboxComponent 
+			aabb_min_x="-8" 
+			aabb_max_x="8" 
+			aabb_min_y="-12" 
+			aabb_max_y="4" 
+			>
+		</HitboxComponent>
+	
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+		
+		<CharacterDataComponent 
+			collision_aabb_min_x="-3.0" 
+			collision_aabb_max_x="3.0" 
+			collision_aabb_min_y="-7" 
+			collision_aabb_max_y="3" 
+			mass="2.4"
+			>
+	    </CharacterDataComponent>
+	</Base>
+	
+	<ExplodeOnDamageComponent
+		explode_on_death_percent="1"
+		explode_on_damage_percent="0.0"
+		>
+		<config_explosion 
+		never_cache="0"
+		damage="8"
+		camera_shake="80" 
+		explosion_radius="80" 
+		explosion_sprite="data/particles/explosion_064_plasma.xml"
+		load_this_entity="data/entities/particles/particle_explosion/main_green_large.xml,data/entities/misc/loose_chunks_huge.xml"
+		explosion_sprite_lifetime="0" 
+		create_cell_probability="70"	  
+		hole_destroy_liquid="1" 
+		hole_enabled="1" 
+		ray_energy="240000"
+		particle_effect="1" 
+		damage_mortals="1"
+		physics_explosion_power.min="1.1"
+		physics_explosion_power.max="1.7" 
+		physics_throw_enabled="1"
+		shake_vegetation="1" 
+		spark_material="spark_green"
+		sparks_count_min="40" 
+		sparks_count_max="55" 
+		sparks_enabled="1" 
+		stains_enabled="1" 
+		stains_radius="110" >
+		</config_explosion>
+	</ExplodeOnDamageComponent>
+		
+  	<SpriteComponent 
+        _tags="character" 
+		alpha="1" 
+		image_file="data/enemies_gfx/tank_super_emissive.xml"
+		emissive="1"
+        additive="1"
+		next_rect_animation="" 
+		rect_animation="walk" 
+	 	>
+	</SpriteComponent>
+		
+	<SpriteComponent 
+		_tags="gun" 
+		alpha="1" 
+		image_file="data/enemies_gfx/tank_super_gun.xml"
+		transform_offset.y="-5"
+		next_rect_animation="" 
+		rect_animation=""
+		update_transform="1"
+		update_transform_rotation="0"
+		has_special_scale="1"
+		z_index="-1"
+	 	>
+	</SpriteComponent>
+
+	<SpriteComponent 
+   	_tags="laser_sight"
+    _enabled="1" 
+    alpha="1" 
+    image_file="data/particles/laser_blue.png"
+    offset_x="5" 
+    offset_y="5"
+    emissive="1"
+    additive="1"
+    visible="0"
+    update_transform="0"
+    next_rect_animation="" 
+    rect_animation="default" 
+     >
+  </SpriteComponent>
+
+	<AIAttackComponent
+		min_distance="330"
+		max_distance="540"
+		frames_between="12"
+		frames_between_global="12"
+		attack_ranged_aim_rotation_enabled="1"
+		attack_ranged_aim_rotation_speed="0.45"
+		attack_ranged_aim_rotation_shooting_ok_angle_deg="5"
+		attack_ranged_root_offset_y="-5"
+		attack_ranged_offset_y="-3"
+		attack_ranged_offset_x="10"
+		animation_name="attack_ranged"
+		attack_ranged_entity_file="data/entities/animals/boss_robot/rocket/rocket_roll.xml" 
+		angular_range_deg="90"
+		attack_ranged_use_laser_sight="1"
+		>
+	</AIAttackComponent>
+
+	<AIAttackComponent
+		min_distance="240"
+		max_distance="360"
+		frames_between="5"
+		frames_between_global="5"
+		attack_ranged_aim_rotation_enabled="1"
+		attack_ranged_aim_rotation_speed="0.35"
+		attack_ranged_aim_rotation_shooting_ok_angle_deg="5"
+		attack_ranged_root_offset_y="-5"
+		attack_ranged_offset_y="-3"
+		attack_ranged_offset_x="10"
+		animation_name="attack_ranged"
+		attack_ranged_entity_file="data/entities/projectiles/soldiershot.xml" 
+		angular_range_deg="90"
+		attack_ranged_use_laser_sight="1"
+		>
+	</AIAttackComponent>
+	
+	<AIAttackComponent
+		min_distance="120"
+		max_distance="240"
+		frames_between="3"
+		frames_between_global="3"
+		attack_ranged_aim_rotation_enabled="1"
+		attack_ranged_aim_rotation_speed="0.25"
+		attack_ranged_aim_rotation_shooting_ok_angle_deg="10"
+		attack_ranged_root_offset_y="-5"
+		attack_ranged_offset_y="-3"
+		attack_ranged_offset_x="10"
+		animation_name="attack_ranged"
+		attack_ranged_entity_file="data/entities/projectiles/machinegun_bullet_tank_super.xml" 
+		angular_range_deg="90"
+		attack_ranged_use_laser_sight="1"
+		>
+	</AIAttackComponent>
+	
+	<AIAttackComponent
+		min_distance="30"
+		max_distance="120"
+		frames_between="24"
+		frames_between_global="24"
+		attack_ranged_aim_rotation_enabled="1"
+		attack_ranged_aim_rotation_speed="0.15"
+		attack_ranged_aim_rotation_shooting_ok_angle_deg="75"
+		attack_ranged_root_offset_y="-5"
+		attack_ranged_offset_y="-5"
+		attack_ranged_offset_x="3"
+		animation_name="attack_grenade"
+		attack_ranged_entity_file="data/entities/projectiles/clusterbomb.xml"
+		attack_ranged_action_frame="8"
+		attack_ranged_use_laser_sight="1"
+		>
+	</AIAttackComponent>
+
+	<AIAttackComponent
+		min_distance="1"
+		max_distance="30"
+		frames_between="5"
+		frames_between_global="5"
+		attack_ranged_aim_rotation_enabled="1"
+		attack_ranged_aim_rotation_speed="0.55"
+		attack_ranged_aim_rotation_shooting_ok_angle_deg="180"
+		attack_ranged_root_offset_y="-5"
+		attack_ranged_offset_y="-5"
+		attack_ranged_offset_x="3"
+		animation_name="attack_grenade"
+		attack_ranged_entity_file="data/entities/projectiles/deck/shockwave_shock.xml"
+		attack_ranged_action_frame="8"
+		attack_ranged_use_laser_sight="1"
+		>
+	</AIAttackComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/tank" >
+	</AudioComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/tank/movement_loop"
+		set_speed_parameter_only_based_on_x_movement="1"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+
+	<AudioLoopComponent
+		_tags="turret_rotate_sound"
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/tank/turret_rotate_loop"
+		volume_autofade_speed="0.1" >
+	</AudioLoopComponent>
+	
+	<!-- protection from FREEZING -->
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+	
+</Entity>
+

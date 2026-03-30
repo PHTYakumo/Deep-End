@@ -1,0 +1,28 @@
+<Entity >
+   
+	<LuaComponent
+		script_source_file="data/scripts/projectiles/melody.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		remove_after_executed="1"
+		script_source_file="data/scripts/projectiles/melody_trajectory_init.lua" 
+		execute_on_added="1"
+		>
+	</LuaComponent>
+
+	<VariableStorageComponent
+		name="cx"
+		value_float="0"
+		>
+	</VariableStorageComponent>
+
+	<VariableStorageComponent
+		name="cy"
+		value_float="0"
+		>
+	</VariableStorageComponent>
+  
+</Entity>

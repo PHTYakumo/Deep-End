@@ -1,0 +1,146 @@
+<Entity name="$animal_longleg">
+  
+    <Base file="data/entities/base_enemy_basic.xml" >
+        <ItemChestComponent level="1" > </ItemChestComponent>
+        
+        <AnimalAIComponent
+            escape_if_damaged_probability="100"
+            sense_creatures="1"
+            pathfinding_max_depth_no_target="120"
+			pathfinding_max_depth_has_target="300"
+            attack_melee_max_distance="25" 
+    		attack_dash_enabled="1"
+    	    eating_area_radius_x="13"
+    	    eating_area_radius_y="13"
+    	    mouth_offset_x="0" 
+    	    mouth_offset_y="6"  >
+        </AnimalAIComponent>
+        
+        <SpriteComponent 
+            image_file="data/enemies_gfx/longleg.xml" 
+            offset_x="6" 
+            offset_y="12" >
+        </SpriteComponent>
+        
+        <SpriteAnimatorComponent
+            rotate_to_surface_normal="0" >
+        </SpriteAnimatorComponent>
+
+        <DamageModelComponent
+            hp="0.14"
+            ragdoll_filenames_file="data/ragdolls/longleg/filenames.txt"
+            ragdoll_offset_y="-6"
+            ragdoll_material="grass_holy"
+			blood_multiplier="0.4"
+			blood_material="grass_holy"
+			blood_spray_material="grass_holy"
+			blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_purple_$[1-3].xml"
+			blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_purple_$[1-3].xml"
+            blood_spray_create_some_cosmetic="1"
+			>
+        </DamageModelComponent>
+        
+        <CharacterPlatformingComponent 
+            jump_velocity_y="-250" 
+            run_velocity="90"  >
+        </CharacterPlatformingComponent>
+
+        <GenomeDataComponent 
+            herd_id="spider">
+        </GenomeDataComponent>
+        
+        <HitboxComponent 
+            _enabled="1"
+			aabb_min_x="-5" 
+            aabb_min_y="-6" 
+            aabb_max_x="5" 
+            aabb_max_y="6" 
+			>
+        </HitboxComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-2" 
+			collision_aabb_max_x="2" 
+			collision_aabb_min_y="-6" 
+			collision_aabb_max_y="3"
+			mass="0.3"
+			>
+		</CharacterDataComponent>
+
+		<CameraBoundComponent
+			max_count="149" >
+		</CameraBoundComponent>
+    </Base>
+	
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/longleg" >
+	</AudioComponent>
+	
+	<InteractableComponent
+		_tags="enabled_in_world,enabled_if_charmed"
+		_enabled="0"
+		name="longleg_love"
+		ui_text="$ui_longleg_love"
+        exclusivity_group="1"
+	></InteractableComponent>
+
+	<ItemPickUpperComponent
+		is_in_npc="1"
+		pick_up_any_item_buggy="1">
+	</ItemPickUpperComponent>
+
+	<LuaComponent  
+		script_shot="data/scripts/projectiles/neutralized.lua" 
+		execute_every_n_frame="-1">
+	</LuaComponent>
+
+	<LuaComponent  
+		script_source_file="data/scripts/animals/longleg_quit_the_game.lua" 
+		execute_every_n_frame="-1"
+		execute_on_removed="1">
+	</LuaComponent>
+	
+	<LuaComponent
+		script_interacting="data/scripts/animals/longleg_pet.lua">
+	</LuaComponent>
+	
+	<LuaComponent
+		script_source_file="data/scripts/animals/longleg_love.lua"
+		execute_every_n_frame="60">
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/scripts/animals/longleg_gravity.lua"
+		execute_every_n_frame="15">
+	</LuaComponent>
+
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_FIRE"
+	        frames="-1">
+		</GameEffectComponent>
+
+		<GameEffectComponent 
+	        effect="PROTECTION_FREEZE"
+	        frames="-1">
+		</GameEffectComponent>
+
+		<GameEffectComponent 
+	        effect="SAVING_GRACE"
+	        frames="-1">
+		</GameEffectComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_ALL"
+	        frames="66">
+		</GameEffectComponent>
+	</Entity>
+
+</Entity>

@@ -1,0 +1,24 @@
+<Entity>
+
+	<StreamingKeepAliveComponent />
+
+	<LuaComponent
+		_enabled="1" 
+		remove_after_executed="0"
+		script_source_file="data/scripts/projectiles/cursor_tracking_soul.lua"
+		execute_every_n_frame="2"
+	></LuaComponent>
+
+	<LuaComponent
+		_enabled="1" 
+		remove_after_executed="0"
+		script_source_file="data/scripts/projectiles/order_aim.lua"
+		execute_every_n_frame="2"
+	></LuaComponent>
+
+	<ElectricitySourceComponent
+		radius="128"
+        emission_interval_frames="15"
+	></ElectricitySourceComponent>
+
+</Entity>

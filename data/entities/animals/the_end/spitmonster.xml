@@ -1,0 +1,8 @@
+<Entity >
+  <Base file="data/entities/animals/spitmonster.xml"  include_children="1">
+    <DamageModelComponent 
+      hp="20"
+      max_hp="32"
+      ></DamageModelComponent >
+  </Base>
+</Entity>

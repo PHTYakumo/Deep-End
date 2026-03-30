@@ -1,0 +1,24 @@
+<Entity>
+ 	<Base file="data/entities/animals/boss_robot/disc/disc_shoot.xml">
+    	<VelocityComponent
+			air_friction="5"
+		></VelocityComponent>
+
+    	<ProjectileComponent 
+    		on_death_gfx_leave_sprite="1"
+			lifetime="60"
+    		lifetime_randomness="9"
+			knockback_force="8.0"
+    	></ProjectileComponent>
+
+    	<VariableStorageComponent
+			value_string="data/entities/animals/boss_robot/disc/disc_pour_out.xml"
+	  	></VariableStorageComponent>
+	</Base>
+
+	<LuaComponent
+		script_source_file="data/scripts/projectiles/chaotic_arc.lua"
+		execute_every_n_frame="7"
+	></LuaComponent>
+</Entity>
+

@@ -1,0 +1,22 @@
+<Entity name="$projectile_default" tags="death_cross" >
+
+	<Base file="data/entities/projectiles/deck/guided_missile.xml" >
+		<ProjectileComponent 
+		><config_explosion
+			explosion_sprite="data/particles/snowflake_1.xml" 
+			create_cell_material="spark_white_bright"
+			spark_material="rainbow_gas"
+		></config_explosion>
+		</ProjectileComponent>
+
+		<SpriteParticleEmitterComponent
+			sprite_file="data/projectiles_gfx/star_white.xml" >
+    	</SpriteParticleEmitterComponent> 
+
+		<LightComponent 
+			r="100"
+			g="100"
+			b="100" >
+		</LightComponent>
+	</Base>
+</Entity>

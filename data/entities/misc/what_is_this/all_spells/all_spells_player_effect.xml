@@ -1,0 +1,38 @@
+<Entity>
+
+	<InheritTransformComponent>
+    </InheritTransformComponent>	
+
+	<GameEffectComponent 
+    	effect="NO_DAMAGE_FLASH"
+    	frames="1678"
+    >
+	</GameEffectComponent >
+
+	<LifetimeComponent
+		lifetime="1678"
+		>
+	</LifetimeComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/misc/what_is_this/all_spells/all_spells_player_effect.lua"
+		execute_every_n_frame="1"
+	></LuaComponent>
+
+	<LuaComponent 
+		_enabled="1" 
+		script_shot="data/scripts/projectiles/neutralized.lua" 
+		execute_every_n_frame="-1">
+	</LuaComponent>
+	
+	<UIIconComponent
+		name="$effect_neutralized"
+		description="$effectdesc_neutralized"
+		icon_sprite_file="data/ui_gfx/status_indicators/neutralized.png"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+	
+</Entity>

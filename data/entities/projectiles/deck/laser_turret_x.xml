@@ -1,0 +1,39 @@
+<Entity name="$projectile_default">
+
+  <Base file="data/entities/projectiles/deck/laser_turret_a.xml" >
+    <ProjectileComponent
+      penetrate_entities="1"
+      die_on_liquid_collision="0"
+      collide_with_world="1"
+      bounces_left="1"
+      >
+    </ProjectileComponent>
+
+    <SpriteComponent
+      alpha="1"
+      z_index="1"	
+      >
+    </SpriteComponent>
+
+    <AudioComponent
+      event_root="projectiles/laser_turret"
+      >
+    </AudioComponent>
+
+    <VariableStorageComponent
+      name="projectile_file"
+      value_string="data/entities/projectiles/deck/laser_turret_d.xml"
+      >
+    </VariableStorageComponent>
+  </Base>
+
+  <SineWaveComponent
+    _enabled="1" 
+    sinewave_freq="0.5"
+    sinewave_m="1.2"
+    lifetime="-1"
+	 >
+  </SineWaveComponent>
+
+</Entity>
+

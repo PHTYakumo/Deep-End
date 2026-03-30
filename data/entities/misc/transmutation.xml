@@ -1,0 +1,22 @@
+<Entity >
+	<MagicConvertMaterialComponent
+      kill_when_finished="0"
+      from_material_tag="[chaotic_transmutation]"
+      steps_per_frame="48"
+      to_material="water"
+      clean_stains="0"
+      is_circle="1"
+      radius="16" 
+	  loop="1"
+	  _enabled="0"
+	  _tags="transmutation"
+	  >
+    </MagicConvertMaterialComponent>
+	
+	<LuaComponent
+		script_source_file="data/scripts/projectiles/transmutation.lua"
+		remove_after_executed="1"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+</Entity>

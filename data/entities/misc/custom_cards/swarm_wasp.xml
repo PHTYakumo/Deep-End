@@ -1,0 +1,20 @@
+<Entity>
+	
+	<Base file="data/entities/base_custom_card.xml" > 
+		<SpriteComponent 
+			image_file="data/ui_gfx/gun_actions/deep_end/swarm_wasp.png" >
+		</SpriteComponent>
+		
+		<ItemActionComponent 
+			_tags="enabled_in_world"
+			action_id="SWARM_WASP" >
+		</ItemActionComponent>
+	</Base>
+
+	<LuaComponent 
+		_tags="enabled_in_hand"
+    	script_source_file="data/scripts/projectiles/revenge_swarm_wasp.lua"
+		execute_every_n_frame="5" >
+	</LuaComponent >
+
+</Entity>

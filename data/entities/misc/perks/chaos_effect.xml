@@ -1,0 +1,14 @@
+<Entity name="chaos_vision_entity" tags="music_energy_100">
+	<DrugEffectModifierComponent>
+		<fx_add
+			distortion_amount="0.08"
+			color_amount="0.16"
+			fractals_amount="0.05"
+			fractals_size="0.05"
+			nightvision_amount="0.9"
+			doublevision_amount="0.08"
+		/>
+	</DrugEffectModifierComponent>
+	<InheritTransformComponent>
+	</InheritTransformComponent>
+</Entity>

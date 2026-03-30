@@ -1,0 +1,67 @@
+<Entity>
+	
+	<Base file="data/entities/base_custom_card.xml" > 
+		<SpriteComponent 
+			image_file="data/ui_gfx/gun_actions/deep_end/laser_aim.png" >
+		</SpriteComponent>
+		
+		<ItemActionComponent 
+			_tags="enabled_in_world"
+			action_id="DE_LASER_AIM" >
+		</ItemActionComponent>
+	</Base>
+
+	<InheritTransformComponent
+		use_root_parent="1"
+		always_use_immediate_parent_rotation="1"
+		><Transform 
+			position.x="0" 
+			position.y="-4"
+		></Transform>
+	</InheritTransformComponent>
+
+	<LaserEmitterComponent
+		_tags="enabled_in_hand"
+		><laser
+			damage_to_entities="0"
+			damage_to_cells="0"
+			max_length="288"
+			beam_radius="0.4"
+			max_cell_durability_to_destroy="0"
+			audio_enabled="0"
+			hit_particle_chance="0"
+			beam_particle_chance="50"
+			beam_particle_type="spark_purple_bright"
+		></laser>
+	</LaserEmitterComponent>
+
+	<LightComponent 
+		_tags="enabled_in_hand,item_identified"
+		_enabled="1" 
+		radius="12"
+		fade_out_time="1.5" 
+		r="255"
+		g="255"
+		b="255" >
+	</LightComponent>
+
+	<LuaComponent
+		_tags="enabled_in_inventory"
+		script_source_file="data/scripts/projectiles/card_laser_aim.lua"
+		execute_every_n_frame="30"
+		>
+	</LuaComponent>
+
+	<ShotEffectComponent 
+		_tags="enabled_in_hand"
+    	extra_modifier="laser_aim_passive" >
+	</ShotEffectComponent >
+    
+	<AudioComponent
+        _tags="enabled_in_hand,item_identified"
+        file="data/audio/Desktop/projectiles.bank"
+        event_root="player_projectiles/shield"
+        set_latest_event_position="1" >
+    </AudioComponent>
+
+</Entity>

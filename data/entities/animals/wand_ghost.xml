@@ -1,0 +1,49 @@
+<Entity tags="mortal,hittable,homing_target,wand_ghost" name="$animal_wand_ghost">
+
+	<Base file="data/entities/base_wand_ghost.xml" >
+		<AnimalAIComponent 
+		attack_ranged_entity_file="data/entities/projectiles/rubber_ball_enemy.xml"
+		creature_detection_check_every_x_frames="20"
+		>
+		</AnimalAIComponent>
+
+		<CameraBoundComponent
+			_enabled="0"
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+	</Base>
+
+	<SpriteComponent 
+		alpha="0.1"
+		image_file="data/enemies_gfx/playerghost.xml" 
+		emissive="1"
+		additive="1"
+		offset_x="6" 
+		offset_y="13" >
+	</SpriteComponent>
+
+	<LuaComponent 
+		_enabled="1"
+		remove_after_executed="1"
+		script_source_file="data/scripts/animals/wand_ghost.lua" >
+	</LuaComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/ghost/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_EXPLOSION"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+
+</Entity>

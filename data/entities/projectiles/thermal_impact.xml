@@ -1,0 +1,79 @@
+<Entity name="$projectile_default">
+
+  <Base file="data/entities/projectiles/deck/thermal_impact.xml" >
+    <ProjectileComponent
+      speed_min="480"
+  	  speed_max="520"
+      damage="0.2"
+      knockback_force="7.2"
+    ><damage_by_type
+      fire="0.8"
+      poison="0.2"
+    ></damage_by_type>
+    </ProjectileComponent>
+
+    <AreaDamageComponent
+      _enabled="0" 
+      aabb_min.x="-2" 
+      aabb_min.y="-2" 
+      aabb_max.x="2" 
+      aabb_max.y="2"
+      circle_radius="2"
+      >
+    </AreaDamageComponent>
+
+    <AreaDamageComponent
+      _enabled="0" 
+      aabb_min.x="-2" 
+      aabb_min.y="-2" 
+      aabb_max.x="2" 
+      aabb_max.y="2"
+      circle_radius="2"
+      >
+    </AreaDamageComponent>
+
+    <AreaDamageComponent
+      _enabled="0" 
+      aabb_min.x="-2" 
+      aabb_min.y="-2" 
+      aabb_max.x="2" 
+      aabb_max.y="2"
+      circle_radius="2"
+      >
+    </AreaDamageComponent>
+
+    <AreaDamageComponent
+      _enabled="0" 
+      aabb_min.x="-2" 
+      aabb_min.y="-2" 
+      aabb_max.x="2" 
+      aabb_max.y="2"
+      circle_radius="2"
+      >
+    </AreaDamageComponent>
+
+    <MagicConvertMaterialComponent
+      radius="6" >
+    </MagicConvertMaterialComponent>
+
+    <MagicConvertMaterialComponent
+      radius="9" >
+    </MagicConvertMaterialComponent>
+
+    <MagicConvertMaterialComponent
+      radius="9" >
+    </MagicConvertMaterialComponent>
+
+    <MagicConvertMaterialComponent
+      radius="9" >
+    </MagicConvertMaterialComponent>
+
+    <VariableStorageComponent
+      name="projectile_file"
+      value_string="data/entities/projectiles/deck/thermal_impact.xml"
+      >
+    </VariableStorageComponent>
+  </Base>
+
+</Entity>
+

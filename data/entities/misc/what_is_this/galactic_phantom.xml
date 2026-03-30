@@ -1,0 +1,16 @@
+<Entity>
+
+	<StreamingKeepAliveComponent />
+	
+	<LuaComponent
+		script_source_file="data/entities/misc/what_is_this/galactic_phantom.lua"
+		execute_every_n_frame="2"
+		remove_after_executed="1"
+	></LuaComponent>
+
+	<VariableStorageComponent
+		name="kill_who"
+		value_int="0"
+	></VariableStorageComponent>
+
+</Entity>

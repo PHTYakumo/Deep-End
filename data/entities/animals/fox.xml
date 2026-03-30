@@ -1,0 +1,139 @@
+<Entity name="$deep_end_fox" tags="holy_mountain_creature,polymorphable_NOT,do_not_homing_this" >
+
+	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
+  
+	<Base file="data/entities/base_enemy_basic.xml" >
+		<AnimalAIComponent 
+			_enabled="1" 
+			preferred_job="JobDefault"
+			creature_detection_check_every_x_frames="10"
+			attack_melee_enabled="0"
+			attack_dash_enabled="1"
+			attack_melee_damage_min="0.0" 
+			attack_melee_damage_max="0.0"
+			creature_detection_range_x="600"
+			creature_detection_range_y="600"
+			attack_knockback_multiplier="0"
+			attack_dash_frames_between="20"
+			attack_dash_damage="0.0"
+			attack_dash_distance="70"
+			attack_dash_speed="300"
+			attack_dash_lob="0.6"
+			food_material="magic_liquid_berserk"
+			attack_ranged_entity_file="data/entities/projectiles/jimi_bullet.xml"
+			attack_ranged_action_frame="5"
+			attack_ranged_frames_between="60"
+			attack_ranged_offset_x="-5"
+			attack_ranged_offset_y="0"
+			attack_ranged_min_distance="0"
+			attack_ranged_max_distance="40"
+			sense_creatures_through_walls="1"
+			needs_food="1"
+			defecates_and_pees="1"
+			food_material="soil"
+			butt_offset_x="-5"
+			butt_offset_y="0"
+			pee_velocity_x="70"
+			pee_velocity_y="-15"
+			sense_creatures="1"
+			aggressiveness_min="80"
+			aggressiveness_max="100"
+			attack_ranged_enabled="1"
+			can_fly="0">
+		</AnimalAIComponent>
+
+		<DamageModelComponent 
+            hp="0.088"
+			fire_probability_of_ignition="0"
+			critical_damage_resistance="1.0"
+            materials_create_messages="1"
+            ragdoll_material="oil"
+			blood_material="oil"
+			blood_spray_material="oil"
+			blood_multiplier="4"
+			air_needed="0"
+			physics_objects_damage="0"
+            ragdoll_filenames_file="data/ragdolls/wolf/filenames.txt" 
+			><damage_multipliers
+				fire="2.0" 
+			></damage_multipliers>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			image_file="data/enemies_gfx/fox.xml" 
+			offset_x="0"
+			offset_y="0">
+		</SpriteComponent>
+
+		<PathFindingComponent
+		    distance_to_reach_node_x="600"
+		    distance_to_reach_node_y="600"
+			frames_to_get_stuck="30"
+			can_jump="1" >
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+		
+		<GenomeDataComponent 
+			herd_id="wolf"
+			food_chain_rank="1"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			accel_x="4"
+    		pixel_gravity="100" 
+			jump_velocity_y="-60" 
+			run_velocity="160"
+			run_animation_velocity_switching_enabled="1"
+			run_animation_velocity_switching_threshold="50" >
+		</CharacterPlatformingComponent>
+		
+		<HitboxComponent 
+			_enabled="1" 
+			aabb_min_x="-2.5" 
+			aabb_max_x="2.5" 
+			aabb_min_y="-2.5" 
+			aabb_max_y="1" 
+			>
+		</HitboxComponent>
+
+		<CharacterDataComponent 
+			_enabled="1" 
+			climb_over_y="36" 
+			collision_aabb_min_x="-0.5" 
+			collision_aabb_max_x="0.5" 
+			collision_aabb_min_y="-1.5" 
+			collision_aabb_max_y="1.5" 
+			buoyancy_check_offset_y="-4"
+			mass="1.2"
+			>
+	    </CharacterDataComponent>
+
+		<CameraBoundComponent
+		  max_count="20"
+		  distance="160000">
+		</CameraBoundComponent>
+	</Base>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/ultimate_killer" >
+	</AudioComponent>
+
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="SAVING_GRACE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+
+</Entity>
+

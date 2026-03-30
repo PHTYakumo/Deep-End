@@ -1,0 +1,61 @@
+<Entity>
+	
+	<Base file="data/entities/base_custom_card.xml" > 
+		<SpriteComponent 
+			image_file="data/ui_gfx/gun_actions/deep_end/sohac_arc_passive.png" >
+		</SpriteComponent>
+		
+		<ItemActionComponent 
+			_tags="enabled_in_world"
+			action_id="DE_SOAHC_ARC_PASSIVE" >
+		</ItemActionComponent>
+	</Base>
+
+	<InheritTransformComponent
+		_tags="enabled_in_world,enabled_in_hand" >
+	  <Transform 
+		position.x="8" 
+		position.y="0" >
+	  </Transform>
+	</InheritTransformComponent>
+
+	<ParticleEmitterComponent 
+		_tags="enabled_in_hand,item_identified"
+		emitted_material_name="material_confusion"
+		offset.x="0"
+		offset.y="0"
+		x_pos_offset_min="-2"
+		x_pos_offset_max="2"
+		y_pos_offset_min="2"
+		y_pos_offset_max="-2"
+		x_vel_min="-2"
+		x_vel_max="2"
+		y_vel_min="-30"
+		y_vel_max="-10"
+		count_min="1"
+		count_max="2"
+		lifetime_min="0.4"
+		lifetime_max="0.6"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		emission_interval_min_frames="20"
+		emission_interval_max_frames="40"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<LightComponent 
+		_tags="enabled_in_hand,item_identified"
+		_enabled="1" 
+		radius="10"
+		fade_out_time="1.5" 
+		r="55"
+		g="25"
+		b="255" >
+	</LightComponent>
+
+	<ShotEffectComponent 
+		_tags="enabled_in_hand"
+    	extra_modifier="chaosoahc_arc" >
+	</ShotEffectComponent >
+
+</Entity>

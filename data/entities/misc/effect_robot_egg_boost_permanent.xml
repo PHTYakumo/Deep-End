@@ -1,0 +1,17 @@
+<Entity>
+	
+	<InheritTransformComponent>
+    </InheritTransformComponent>	
+
+	<LuaComponent 
+		_enabled="1" 
+		script_shot="data/scripts/projectiles/smart_shot.lua" 
+		execute_every_n_frame="-1">
+	</LuaComponent>
+
+	<GameEffectComponent 
+        effect="STAINLESS_ARMOUR"
+        frames="-1" >
+	</GameEffectComponent >
+
+</Entity>

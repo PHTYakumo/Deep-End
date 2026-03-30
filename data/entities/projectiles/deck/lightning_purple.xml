@@ -1,0 +1,80 @@
+<Entity name="$projectile_default" tags="resist_repulsion,projectile_player,thunder,teleportable_NOT" >
+
+	<Base file="data/entities/base_projectile.xml" >
+
+    <VelocityComponent
+      air_friction="-12"
+      terminal_velocity="16384" 
+    ></VelocityComponent>
+
+	</Base>
+
+  <ProjectileComponent 
+    speed_min="4096"
+    speed_max="4096"
+    on_collision_die="0"
+    on_death_explode="0"
+    on_death_gfx_leave_sprite="0"
+    on_lifetime_out_explode="0"
+    explosion_dont_damage_shooter="0"
+    lifetime="2"
+    projectile_type="LIGHTNING"
+    muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_laser.xml"
+    damage="0"
+    shoot_light_flash_r="255"
+    shoot_light_flash_g="55"
+    shoot_light_flash_b="255"
+    shoot_light_flash_radius="208"
+    >
+	<damage_by_type electricity="2.0" >
+    </damage_by_type>
+  </ProjectileComponent>
+  
+  <LightningComponent 
+    sprite_lightning_file="data/particles/lightning_purple.png"
+    is_projectile="1"
+    explosion_type="1"
+    >
+    <config_explosion
+      never_cache="1" 
+      camera_shake="4.5" 
+      damage="1.6"
+      explosion_radius="24"
+      explosion_sprite="data/particles/explosion_032_electric_red.xml"
+      load_this_entity=""
+      explosion_sprite_lifetime="0" 
+      create_cell_probability="1"
+      explosion_sprite_emissive="1"
+      explosion_sprite_additive="1"
+      hole_destroy_liquid="0" 
+      particle_effect="0"
+      sparks_inner_radius_coeff="0.66"
+      spark_material="spark_purple_bright"
+      hole_enabled="1" 
+      hole_image="data/temp/explosion_hole.png" 
+      damage_mortals="1"
+      physics_explosion_power.max="0.7" 
+      physics_explosion_power.max="1.5" 
+      physics_throw_enabled="1" 
+      shake_vegetation="1" 
+      sparks_count_min="1" 
+      sparks_count_max="3"
+      sparks_enabled="1" 
+      stains_enabled="1" 
+      stains_radius="6"
+      audio_enabled="0" >
+    </config_explosion>
+  </LightningComponent>
+
+  <AudioComponent
+      file="data/audio/Desktop/projectiles.bank"
+      event_root="player_projectiles/bullet_lightning">
+  </AudioComponent>
+  
+	<VariableStorageComponent
+		name="projectile_file"
+		value_string="data/entities/projectiles/deck/lightning_purple.xml"
+		>
+	</VariableStorageComponent>
+
+</Entity>

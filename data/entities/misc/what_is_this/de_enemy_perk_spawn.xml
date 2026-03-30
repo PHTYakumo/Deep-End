@@ -1,0 +1,12 @@
+<Entity>
+	<LifetimeComponent
+		lifetime="180" >
+	</LifetimeComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/misc/what_is_this/de_enemy_perk_spawn.lua"
+		execute_every_n_frame="88"
+		execute_on_added="1" >
+	</LuaComponent>
+</Entity>
+

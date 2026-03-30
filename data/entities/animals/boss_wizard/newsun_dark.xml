@@ -1,0 +1,295 @@
+<Entity tags="teleportable_NOT" >
+
+	<VelocityComponent
+		air_friction="0.4"
+		gravity_y="0"
+		mass="0.05"
+		affect_physics_bodies="1" >
+	</VelocityComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/projectiles.bank"
+		audio_physics_material="projectile"
+		event_root="projectiles/hit" >
+	</AudioComponent>
+
+	<ProjectileComponent 
+		_enabled="1" 
+		lob_min="0.8"
+		lob_max="1.0"
+		speed_min="240"
+		speed_max="240"
+		direction_random_rad="0.00"
+		on_death_explode="1"
+		on_death_gfx_leave_sprite="0" 
+		on_lifetime_out_explode="1"
+		explosion_dont_damage_shooter="1" 
+		on_collision_die="0"
+		collide_with_world="0"
+		collide_with_tag="player_unit"
+		lifetime="150"
+		damage="100"
+		damage_every_x_frames="1"
+		knockback_force="0.1"
+		velocity_sets_scale="1"
+		velocity_sets_scale_coeff="2.0"
+		penetrate_entities="1"
+		lifetime_randomness="0"
+		velocity_sets_rotation="0"
+		ragdoll_force_multiplier="0.0025"
+		hit_particle_force_multiplier="0.25 "
+		camera_shake_when_shot="2"
+		muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_small_pink.xml"
+		collide_with_shooter_frames="10"
+		collide_with_entities="0"
+		friendly_fire="false"
+		shoot_light_flash_radius="250" 
+		shoot_light_flash_r="255"
+		shoot_light_flash_g="180"
+		shoot_light_flash_b="230" >
+    <config_explosion
+		never_cache="1" 
+		damage="100"
+		camera_shake="0.25" 
+		explosion_radius="5"
+		explosion_sprite="data/particles/black_hole_big_circle_out.xml" 
+		explosion_sprite_emissive="1"
+		explosion_sprite_additive="1"
+		explosion_sprite_random_rotation="0"
+		explosion_sprite_lifetime="0" 
+		create_cell_probability="0" 
+		hole_destroy_liquid="0" 
+		hole_enabled="1" 
+		ray_energy="0"
+		particle_effect="0" 
+		damage_mortals="1"
+		physics_explosion_power.min="0" 
+		physics_explosion_power.max="0" 
+		physics_throw_enabled="0" 
+		shake_vegetation="1" 
+		sparks_count_max="1" 
+		sparks_count_min="4" 
+		sparks_enabled="0"
+		light_enabled="0" 
+		stains_enabled="0"
+		spark_material="plasma_fading" >
+    </config_explosion>
+  	</ProjectileComponent>
+	
+	<SpriteComponent
+		_tags="enabled_in_world"
+		_enabled="1"
+		offset_x="110"
+		offset_y="110"
+		emissive="1"
+		z_index="-1"
+		image_file="data/entities/animals/boss_wizard/sun_big_dark.png"
+		smooth_filtering="1"
+	></SpriteComponent>
+	
+	<MagicConvertMaterialComponent
+		_tags="enabled_in_world"
+		kill_when_finished="0"
+		steps_per_frame="16"
+		to_material="poison"
+		convert_entities="1"
+		clean_stains="0"
+		is_circle="1"
+		radius="100" 
+		loop="1"
+		stain_frozen="1"
+		>
+	</MagicConvertMaterialComponent>
+	
+	<MagicConvertMaterialComponent
+		_tags="enabled_in_world,enabled_in_hand"
+		kill_when_finished="0"
+		from_material_tag="[alchemy]"
+		steps_per_frame="16"
+		to_material="poison"
+		clean_stains="0"
+		is_circle="1"
+		radius="130" 
+		loop="1"
+		stain_frozen="1"
+		>
+	</MagicConvertMaterialComponent>
+	
+	<MagicConvertMaterialComponent
+		_tags="enabled_in_world,enabled_in_hand"
+		kill_when_finished="0"
+		extinguish_fire="1"
+		steps_per_frame="16"
+		clean_stains="0"
+		is_circle="1"
+		radius="130" 
+		loop="1"
+		stain_frozen="1"
+		>
+	</MagicConvertMaterialComponent>
+	
+	<CellEaterComponent
+		radius="100"
+		eat_probability="80"
+		ignored_material="gem_box2d_yellow_sun"
+		>
+	</CellEaterComponent>
+	
+	<AreaDamageComponent
+		circle_radius="66" 
+		aabb_min.x="-60" 
+		aabb_min.y="-60" 
+		aabb_max.x="60" 
+		aabb_max.y="60" 
+		damage_per_frame="6"
+		update_every_n_frame="1"
+		entities_with_tag="player_unit"
+		death_cause="$damage_darksun"
+		damage_type="DAMAGE_CURSE"
+		>
+	</AreaDamageComponent>
+	
+	<AreaDamageComponent
+		circle_radius="121" 
+		aabb_min.x="-110" 
+		aabb_min.y="-110" 
+		aabb_max.x="110" 
+		aabb_max.y="110" 
+		damage_per_frame="4"
+		update_every_n_frame="1"
+		entities_with_tag="player_unit"
+		death_cause="$damage_darksun"
+		damage_type="DAMAGE_ICE"
+		>
+	</AreaDamageComponent>
+	
+	<AreaDamageComponent
+		circle_radius="143" 
+		aabb_min.x="-130" 
+		aabb_min.y="-130" 
+		aabb_max.x="130" 
+		aabb_max.y="130" 
+		damage_per_frame="2"
+		update_every_n_frame="1"
+		entities_with_tag="player_unit"
+		death_cause="$damage_darksun"
+		damage_type="DAMAGE_ELECTRICITY"
+		>
+	</AreaDamageComponent>
+	
+	<ParticleEmitterComponent 
+		_tags="enabled_in_world,enabled_in_hand"
+		emitted_material_name="spark_purple_bright"
+		fade_based_on_lifetime="1"
+		x_pos_offset_min="0"
+		x_pos_offset_max="0"
+		y_pos_offset_min="0"
+		y_pos_offset_max="0"
+		x_vel_min="-100"
+		x_vel_max="100"
+		y_vel_min="-100"
+		y_vel_max="100"
+		area_circle_radius.min="64"
+		area_circle_radius.max="96"
+		velocity_always_away_from_center="500"
+		gravity.y="0"
+		friction="0.1"
+		airflow_force="0.9"
+		airflow_time="0.101"
+		airflow_scale="0.81"
+		count_min="80"
+		count_max="120"
+		lifetime_min="0.4"
+		lifetime_max="2.4"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		draw_as_long="1"
+		collide_with_grid="0"
+		render_on_grid="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		render_ultrabright="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+	<ParticleEmitterComponent 
+		_tags="enabled_in_world,enabled_in_hand"
+		emitted_material_name="spark_blue_dark"
+		fade_based_on_lifetime="1"
+		x_pos_offset_min="0"
+		x_pos_offset_max="0"
+		y_pos_offset_min="0"
+		y_pos_offset_max="0"
+		x_vel_min="-100"
+		x_vel_max="100"
+		y_vel_min="-100"
+		y_vel_max="100"
+		area_circle_radius.min="64"
+		area_circle_radius.max="96"
+		velocity_always_away_from_center="500"
+		gravity.y="0"
+		friction="0.1"
+		airflow_force="0.9"
+		airflow_time="0.101"
+		airflow_scale="0.81"
+		count_min="80"
+		count_max="120"
+		lifetime_min="0.4"
+		lifetime_max="2.4"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		draw_as_long="1"
+		collide_with_grid="0"
+		render_on_grid="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		render_ultrabright="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+	<BlackHoleComponent
+		particle_attractor_force="4"
+		damage_probability="0.25"
+		radius="140">
+	</BlackHoleComponent>
+
+	<LuaComponent
+		script_source_file="data/scripts/projectiles/piercing_shot.lua"
+		execute_every_n_frame="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_wizard/sun_controls.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+	<!--
+	<LuaComponent
+		script_source_file="data/scripts/buildings/sun/sun_controls.lua"
+		execute_every_n_frame="10"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		script_source_file="data/scripts/buildings/sun/sun_dark_effect.lua"
+		execute_every_n_frame="41"
+		>
+	</LuaComponent>
+	-->
+
+	<AudioComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_root="player_projectiles/black_hole_giga"
+		set_latest_event_position="1">
+  	</AudioComponent>
+	
+	<AudioLoopComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_name="player_projectiles/black_hole_giga/loop"
+		auto_play="1">
+  	</AudioLoopComponent>
+  
+</Entity>

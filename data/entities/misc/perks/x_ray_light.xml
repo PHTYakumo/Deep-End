@@ -1,0 +1,12 @@
+<Entity>
+    <InheritTransformComponent>
+    </InheritTransformComponent>    
+    
+    <SpriteComponent 
+		alpha="0.9"
+		image_file="data/particles/fog_of_war_hole_x_ray.xml"
+		smooth_filtering="1"
+		fog_of_war_hole="1" >
+	</SpriteComponent>
+
+</Entity>

@@ -1,0 +1,13 @@
+<Entity tags="de_robot_boss_create" >
+
+	<LifetimeComponent
+			lifetime="270" >
+	</LifetimeComponent>
+  
+	<LuaComponent
+		_enabled="1" 
+		script_source_file="data/entities/animals/boss_robot/rocket/summon_rocket.lua"
+		execute_every_n_frame="14"
+	></LuaComponent>
+
+</Entity>

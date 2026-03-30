@@ -1,0 +1,9 @@
+<Entity >
+  <Base file="data/entities/animals/tentacler.xml" include_children="1">
+    <DamageModelComponent 
+      hp="4"
+      max_hp="4"
+	    minimum_knockback_force="100000"
+     ></DamageModelComponent >
+  </Base>
+</Entity>

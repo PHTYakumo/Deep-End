@@ -1,0 +1,245 @@
+<PixelScenes>
+
+  <PixelSceneFiles>
+    <!-- add spliced pixel scenes here  -->
+    <File>data/biome_impl/spliced/lavalake2.xml</File>
+
+    <File>data/biome_impl/spliced/skull_in_desert.xml</File>
+
+    <File>data/biome_impl/spliced/boss_arena.xml</File>
+	
+    <File>data/biome_impl/spliced/tree_deep_end.xml</File>
+
+    <File>data/biome_impl/spliced/watercave.xml</File>
+
+    <File>data/biome_impl/spliced/mountain_lake.xml</File>
+	
+    <File>data/biome_impl/spliced/lake_statue.xml</File>
+	
+    <File>data/biome_impl/spliced/moon.xml</File>
+	
+	<File>data/biome_impl/spliced/moon_dark.xml</File>
+	
+	<File>data/biome_impl/spliced/lavalake_pit_bottom.xml</File>
+	
+	<File>data/biome_impl/spliced/gourd_room.xml</File>
+  </PixelSceneFiles>
+
+  <BackgroundImages>
+
+	<!--  added by init.lua
+		<Image filename="data/biome_impl/hidden/boss_arena.png" x="3425" y="40298" ></Image>
+		<Image filename="data/biome_impl/hidden/boss_arena_under.png" x="2976" y="41340" ></Image>
+		<Image filename="data/biome_impl/hidden/boss_arena_under_right.png" x="4238" y="42703" ></Image>
+	-->
+
+	<Image filename="data/biome_impl/hidden/completely_random.png" x="-5400" y="21887" ></Image>
+	<Image filename="data/biome_impl/hidden/completely_random_2.png" x="4256" y="26954" ></Image>
+	<Image filename="data/biome_impl/hidden/fungal_caverns_1.png" x="3419" y="4188" ></Image>
+	<Image filename="data/biome_impl/hidden/holy_mountain_1.png" x="1785" y="1837" ></Image>
+	<Image filename="data/biome_impl/hidden/jungle_right.png" x="2806" y="10198" ></Image>
+	<Image filename="data/biome_impl/hidden/mountain_text.png" x="700" y="-440" ></Image>
+	<Image filename="data/biome_impl/hidden/under_the_wand_cave.png" x="-4448" y="6535" ></Image>
+	<Image filename="data/biome_impl/hidden/vault_inside.png" x="-2120" y="13566" ></Image>
+	<Image filename="data/biome_impl/hidden/crypt_left.png" x="-4129" y="16677" ></Image>
+
+	<Image filename="data/biome_impl/liquidcave/liquidcave_corner.png" x="-3072" y="0" ></Image>
+	
+	<Image filename="data/biome_impl/liquidcave/liquidcave_corner.png" x="-3072" y="-32" ></Image>
+	<Image filename="data/biome_impl/liquidcave/liquidcave_top.png" x="-3584" y="-64" ></Image>
+	<Image filename="data/biome_impl/liquidcave/liquidcave_top.png" x="-4096" y="-64" ></Image>
+	<Image filename="data/biome_impl/liquidcave/liquidcave_top.png" x="-4608" y="-64" ></Image>
+	<Image filename="data/biome_impl/liquidcave/liquidcave_corner2.png" x="-5120" y="-32" ></Image>
+	
+	<!-- <Image filename="data/biome_impl/wandcave/right_edge.png" x="-2560" y="3584" ></Image> -->
+	
+	<!-- <Image filename="data/biome_impl/wandcave/bottom_corner.png" x="-3072" y="4096" ></Image> -->
+	<!--
+	<Image filename="data/biome_impl/wandcave/bottom_edge.png" x="-3584" y="4096" ></Image>
+	<Image filename="data/biome_impl/wandcave/bottom_edge.png" x="-4096" y="4096" ></Image>
+	-->
+	
+	<!-- <Image filename="data/biome_impl/wandcave/top_corner.png" x="-3072" y="3072" ></Image> -->
+	<!--
+	<Image filename="data/biome_impl/wandcave/top_edge.png" x="-3584" y="3072" ></Image>
+	<Image filename="data/biome_impl/wandcave/top_edge.png" x="-4096" y="3072" ></Image>
+	-->
+	
+	<!--
+	<Image filename="data/biome_impl/fungicave_right_edge.png" x="0" y="7168" ></Image>
+	<Image filename="data/biome_impl/fungicave_left_edge.png" x="-560" y="7168" ></Image>
+	<Image filename="data/biome_impl/fungicave_top_edge.png" x="-512" y="7120" ></Image>
+	<Image filename="data/biome_impl/fungicave_bottom_edge.png" x="-512" y="7680" ></Image>
+-->
+
+  </BackgroundImages>
+  
+  <!-- how to load pixel scenes without the .xml file wrapping
+  <mBufferedPixelScenes>
+    <PixelScene DEBUG_RELOAD_ME="0" background_filename="data/biome_impl/snowcastle/paneling_03.png" clean_area_before="0" colors_filename="" material_filename="data/biome_impl/snowcastle/paneling_wall.png" pos_x="-512" pos_y="-512" skip_biome_checks="1" skip_edge_textures="0" >
+    </PixelScene>
+  </mBufferedPixelScenes>
+-->
+	<mBufferedPixelScenes>
+		<!--
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/pyramid/reward_visual.png" material_filename="data/biome_impl/pyramid/reward.png" pos_x="9726" pos_y="-1024" skip_biome_checks="1" skip_edge_textures="0" >
+		</PixelScene>
+		-->
+		
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/pyramid/reward_visual.png" material_filename="data/biome_impl/pyramid/boss_limbs.png" pos_x="9726" pos_y="-1024" skip_biome_checks="1" skip_edge_textures="0" >
+		</PixelScene>
+		
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="data/biome_impl/temple/altar_snowcastle_capsule_background.png" clean_area_before="0" colors_filename="" material_filename="data/biome_impl/temple/altar_snowcastle_capsule.png" pos_x="143" pos_y="7680" skip_biome_checks="1" skip_edge_textures="0" >
+		</PixelScene>
+
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="data/biome_impl/snowcastle/forge_background.png" clean_area_before="0" colors_filename="data/biome_impl/snowcastle/forge_visual.png" material_filename="data/biome_impl/snowcastle/forge.png" pos_x="1464" pos_y="9560" skip_biome_checks="1" skip_edge_textures="0" >
+		</PixelScene>
+		
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="" material_filename="data/biome_impl/temple/altar_snowcave_capsule.png" pos_x="127" pos_y="4608" skip_biome_checks="1" skip_edge_textures="0" >
+		</PixelScene>
+		
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="" material_filename="data/biome_impl/tower_start.png" pos_x="9676" pos_y="9086" skip_biome_checks="1" skip_edge_textures="0" >
+		</PixelScene>
+		
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="" material_filename="data/biome_impl/the_end/the_end_shop.png" pos_x="0" pos_y="31744" skip_biome_checks="1" skip_edge_textures="0" >
+		</PixelScene>
+		
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="" material_filename="data/biome_impl/the_end/the_end_shop.png" pos_x="0" pos_y="-13954" skip_biome_checks="1" skip_edge_textures="0" >
+		</PixelScene>
+		
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="data/biome_impl/greed_treasure_background.png" clean_area_before="0" colors_filename="" material_filename="data/biome_impl/greed_treasure.png" pos_x="9216" pos_y="4096" skip_biome_checks="1" skip_edge_textures="0" >
+		</PixelScene>
+		
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="data/biome_impl/fishing_hut_background.png" clean_area_before="0" colors_filename="data/biome_impl/fishing_hut_visual.png" material_filename="data/biome_impl/fishing_hut.png" pos_x="-12600" pos_y="140" skip_biome_checks="1" skip_edge_textures="1" >
+		</PixelScene>
+		
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/overworld/essence_altar_visual.png" material_filename="data/biome_impl/overworld/essence_altar.png" pos_x="-6948" pos_y="-270" skip_biome_checks="1" skip_edge_textures="1" >
+		</PixelScene>
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/overworld/essence_altar_desert_visual.png" material_filename="data/biome_impl/overworld/essence_altar_desert.png" pos_x="12519" pos_y="-30" skip_biome_checks="1" skip_edge_textures="1" >
+		</PixelScene>
+		
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/overworld/essence_altar_visual.png" material_filename="data/biome_impl/overworld/essence_altar.png" pos_x="-43300" pos_y="-270" skip_biome_checks="1" skip_edge_textures="1" >
+		</PixelScene>
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/overworld/essence_altar_desert_visual.png" material_filename="data/biome_impl/overworld/essence_altar_desert.png" pos_x="-23833" pos_y="-30" skip_biome_checks="1" skip_edge_textures="1" >
+		</PixelScene>
+		
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/overworld/essence_altar_visual.png" material_filename="data/biome_impl/overworld/essence_altar.png" pos_x="29404" pos_y="-270" skip_biome_checks="1" skip_edge_textures="1" >
+		</PixelScene>
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/overworld/essence_altar_desert_visual.png" material_filename="data/biome_impl/overworld/essence_altar_desert.png" pos_x="48871" pos_y="-30" skip_biome_checks="1" skip_edge_textures="1" >
+		</PixelScene>
+		
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="data/biome_impl/bunker_background.png" clean_area_before="0" colors_filename="data/biome_impl/bunker_visual.png" material_filename="data/biome_impl/bunker.png" pos_x="-12603" pos_y="326" skip_biome_checks="1" skip_edge_textures="1" >
+		</PixelScene>
+		
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="data/biome_impl/bunker_background.png" clean_area_before="0" colors_filename="data/biome_impl/bunker_visual.png" material_filename="data/biome_impl/bunker2.png" pos_x="-12953" pos_y="540" skip_biome_checks="1" skip_edge_textures="1" >
+		</PixelScene>
+		
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/overworld/snowy_ruins_eye_pillar_visual.png" material_filename="data/biome_impl/overworld/snowy_ruins_eye_pillar.png" pos_x="-2446" pos_y="-223" skip_biome_checks="1" skip_edge_textures="1" >
+		</PixelScene>
+
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="" material_filename="data/biome_impl/rainbow_cloud.png" pos_x="-14059" pos_y="-2851" skip_biome_checks="1" skip_edge_textures="0" >
+		</PixelScene>
+		
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/overworld/cliff_visual.png" material_filename="data/biome_impl/overworld/cliff.png" pos_x="-12400" pos_y="-400" skip_biome_checks="1" skip_edge_textures="0" >
+		</PixelScene>
+		
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/eyespot_visual.png" material_filename="data/biome_impl/eyespot.png" pos_x="-3408" pos_y="1712" skip_biome_checks="1" skip_edge_textures="0" >
+		</PixelScene>
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/eyespot_visual.png" material_filename="data/biome_impl/eyespot.png" pos_x="5852" pos_y="-4944" skip_biome_checks="1" skip_edge_textures="0" >
+		</PixelScene>
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/eyespot_visual.png" material_filename="data/biome_impl/eyespot.png" pos_x="15024" pos_y="1712" skip_biome_checks="1" skip_edge_textures="0" >
+		</PixelScene>
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/eyespot_visual.png" material_filename="data/biome_impl/eyespot.png" pos_x="-1360" pos_y="9904" skip_biome_checks="1" skip_edge_textures="0" >
+		</PixelScene>
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/eyespot_visual.png" material_filename="data/biome_impl/eyespot.png" pos_x="12976" pos_y="9904" skip_biome_checks="1" skip_edge_textures="0" >
+		</PixelScene>
+		
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/overworld/desert_ruins_base_01_visual_fungus.png" material_filename="data/biome_impl/overworld/desert_ruins_base_01.png" pos_x="5890" pos_y="0" skip_biome_checks="1" skip_edge_textures="0" >
+		</PixelScene>
+
+		<!-- just load an entity -->
+		<PixelScene pos_x="-600" pos_y="-1800" just_load_an_entity="data/entities/props/music_machines/music_machine_00.xml" />
+		<PixelScene pos_x="-600" pos_y="-1600" just_load_an_entity="data/entities/props/music_machines/music_machine_01.xml" />
+		<PixelScene pos_x="-600" pos_y="-1400" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
+		<PixelScene pos_x="-600" pos_y="-1200" just_load_an_entity="data/entities/props/music_machines/music_machine_03.xml" />
+
+		<!-- these need to be spawned with a delay for the attachments to work, because the pixel scenes take their time -->
+		<PixelScene pos_x="-1824" pos_y="-1225" just_load_an_entity="data/entities/props/physics_fungus_acid_big.xml" />    
+		<PixelScene pos_x="-1809" pos_y="-1215" just_load_an_entity="data/entities/props/physics_fungus_acid_hugeish.xml" />
+		<PixelScene pos_x="-1737" pos_y="-1246" just_load_an_entity="data/entities/props/physics_fungus_acid_big.xml" />
+		<PixelScene pos_x="-1705" pos_y="-1160" just_load_an_entity="data/entities/props/physics_fungus_acid_big.xml" />
+		<PixelScene pos_x="-1695" pos_y="-1160" just_load_an_entity="data/entities/props/physics_fungus_acid_small.xml" />
+		
+		<PixelScene pos_x="140" pos_y="-400" just_load_an_entity="data/entities/props/physics/bridge_spawner.xml" />
+		<PixelScene pos_x="295" pos_y="-345" just_load_an_entity="data/entities/buildings/essence_eater.xml" />
+		
+		<!-- remove evil_eye -->
+		<PixelScene pos_x="-2434" pos_y="-208" just_load_an_entity="data/entities/props/meat_cyst.xml" />
+		<PixelScene pos_x="-2431" pos_y="-197" just_load_an_entity="data/entities/props/meat_cyst.xml" />
+		<PixelScene pos_x="-2436" pos_y="-186" just_load_an_entity="data/entities/props/meat_cyst.xml" />
+		<PixelScene pos_x="-2432" pos_y="-175" just_load_an_entity="data/entities/props/meat_cyst.xml" />
+		<PixelScene pos_x="-2436" pos_y="-164" just_load_an_entity="data/entities/props/meat_cyst.xml" />
+		<PixelScene pos_x="-2434" pos_y="-153" just_load_an_entity="data/entities/props/meat_cyst.xml" />
+		<PixelScene pos_x="-2430" pos_y="-142" just_load_an_entity="data/entities/props/meat_cyst.xml" />
+		<PixelScene pos_x="-2435" pos_y="-131" just_load_an_entity="data/entities/props/meat_cyst.xml" />
+		<PixelScene pos_x="-2432" pos_y="-120" just_load_an_entity="data/entities/props/meat_cyst.xml" />
+		<PixelScene pos_x="-2437" pos_y="-109" just_load_an_entity="data/entities/props/meat_cyst.xml" />
+		<PixelScene pos_x="-2433" pos_y="-98" just_load_an_entity="data/entities/props/meat_cyst.xml" />
+		<PixelScene pos_x="-2438" pos_y="-87" just_load_an_entity="data/entities/props/meat_cyst.xml" />
+		<PixelScene pos_x="-2434" pos_y="-76" just_load_an_entity="data/entities/props/meat_cyst.xml" />
+		
+		<PixelScene pos_x="-12441" pos_y="190" just_load_an_entity="data/entities/buildings/hut_check.xml" />
+		
+		<PixelScene pos_x="9990" pos_y="-1320" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="9990" pos_y="-1576" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="9990" pos_y="-1832" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="9990" pos_y="-2088" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="9990" pos_y="-2344" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="9990" pos_y="-2600" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="9990" pos_y="-2856" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="9990" pos_y="-3112" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="9990" pos_y="-3368" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="9990" pos_y="-3624" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="9990" pos_y="-3880" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="9990" pos_y="-4136" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		
+		<PixelScene pos_x="-12180" pos_y="-540" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="-12180" pos_y="-796" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="-12180" pos_y="-1052" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="-12180" pos_y="-1308" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="-12180" pos_y="-1564" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="-12180" pos_y="-1820" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="-12180" pos_y="-2076" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="-12180" pos_y="-2332" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="-12180" pos_y="-2588" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="-12180" pos_y="-2844" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="-12180" pos_y="-3100" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="-12180" pos_y="-3356" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="-12180" pos_y="-3612" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="-12180" pos_y="-3868" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		<PixelScene pos_x="-12180" pos_y="-4124" just_load_an_entity="data/entities/misc/platform_wide.xml" />
+		
+		<PixelScene pos_x="-3328" pos_y="1792" just_load_an_entity="data/entities/items/books/book_hint.xml" />
+		<PixelScene pos_x="-3328" pos_y="1792" just_load_an_entity="data/entities/buildings/eyespot_a.xml" />
+		<PixelScene pos_x="5932" pos_y="-4864" just_load_an_entity="data/entities/buildings/eyespot_b.xml" />
+		<PixelScene pos_x="15104" pos_y="1792" just_load_an_entity="data/entities/buildings/eyespot_c.xml" />
+		<PixelScene pos_x="-1280" pos_y="9984" just_load_an_entity="data/entities/buildings/eyespot_d.xml" />
+		<PixelScene pos_x="13056" pos_y="9984" just_load_an_entity="data/entities/buildings/eyespot_e.xml" />
+
+		
+		<PixelScene pos_x="840" pos_y="-1530" just_load_an_entity="data/entities/animals/ultimate_ultra_killer.xml" /> 
+		<PixelScene pos_x="59" pos_y="-579" just_load_an_entity="data/entities/animals/illusions/dark_alchemist.xml" /> 
+
+		<PixelScene pos_x="220" pos_y="-75" just_load_an_entity="data/entities/props/anti_forcefield_generator.xml" /> 
+		<PixelScene pos_x="232" pos_y="-215" just_load_an_entity="data/entities/buildings/biome_modifiers/drain_pipe_spawner.xml" />
+
+		<PixelScene pos_x="349" pos_y="-179" just_load_an_entity="data/entities/items/shop_potion_start_00.xml" />
+		<PixelScene pos_x="356" pos_y="-182" just_load_an_entity="data/entities/items/shop_potion_start_00.xml" />
+		<PixelScene pos_x="363" pos_y="-185" just_load_an_entity="data/entities/items/shop_potion_start_00.xml" />
+
+		<PixelScene pos_x="200" pos_y="-100" just_load_an_entity="data/entities/buildings/de_stuff_loader.xml" />
+		<PixelScene pos_x="1540" pos_y="9640" just_load_an_entity="data/entities/buildings/forge_item_check.xml" /> 
+		
+	</mBufferedPixelScenes>
+</PixelScenes>
+

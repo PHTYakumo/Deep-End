@@ -1,0 +1,157 @@
+<Entity name="$goldenrecyelingbin" tags="hittable,teleportable_NOT,item_physics,item_pickup,deep_end_bin_gold" >
+	
+	<PhysicsBodyComponent 
+    _tags="enabled_in_world"
+    uid="1" 
+    allow_sleep="1" 
+    angular_damping="0" 
+    fixed_rotation="0" 
+    is_bullet="1" 
+    linear_damping="0"
+    auto_clean="0"
+    on_death_leave_physics_body="0"
+    hax_fix_going_through_ground="1"
+  ></PhysicsBodyComponent>
+  
+  <PhysicsImageShapeComponent 
+    body_id="1"
+    centered="1"
+    image_file="data/props_gfx/goldbin.png"
+    material="rock_box2d_hard" >
+  </PhysicsImageShapeComponent>
+  
+  <CameraBoundComponent
+    max_count="50"
+    distance="500">
+  </CameraBoundComponent>
+  
+  <HitboxComponent
+	  _tags="enabled_in_world"
+    aabb_min_x="-5" 
+    aabb_max_x="5" 
+    aabb_min_y="-6" 
+    aabb_max_y="6" >
+  </HitboxComponent>
+  
+  <DamageModelComponent
+	  _tags="enabled_in_world"
+    air_needed="0" 
+    blood_material="" 
+    drop_items_on_death="0" 
+    falling_damages="0" 
+    physics_objects_damage="0"
+    fire_probability_of_ignition="0" 
+	  critical_damage_resistance="1"
+    hp="-1" 
+    is_on_fire="0" 
+    materials_create_messages="0" 
+    materials_damage="0" 
+    ragdoll_filenames_file="" 
+    ragdoll_material="" 
+	  invincibility_frames="40"
+	  ui_report_damage="1"
+	><damage_multipliers
+			physics_hit="0"
+			healing="-1"
+			></damage_multipliers>
+  </DamageModelComponent>
+	
+	<PhysicsThrowableComponent
+    max_throw_speed="10000000"
+    throw_force_coeff="1.5"
+  ></PhysicsThrowableComponent>
+  
+  <PhysicsBodyCollisionDamageComponent 
+    _tags="enabled_in_world" 
+    speed_threshold="0.1"
+  ></PhysicsBodyCollisionDamageComponent>
+  
+  <ItemComponent
+    _tags="enabled_in_world"
+    item_name="$goldenrecyelingbin"
+    max_child_items="0"
+    is_pickable="1"
+    is_equipable_forced="1"
+    ui_sprite="data/ui_gfx/items/goldbin.png"
+    ui_description="$dgoldenrecyelingbin"
+    preferred_inventory="FULL"
+  ></ItemComponent>
+  
+  <UIInfoComponent
+    _tags="enabled_in_world"
+    name="$goldenrecyelingbin" >
+  </UIInfoComponent>
+  
+  <AbilityComponent
+		ui_name="$goldenrecyelingbin"
+		throw_as_item="1"
+		><gun_config
+			deck_capacity="0"
+		></gun_config>
+	</AbilityComponent>
+	
+	<SpriteComponent
+    _tags="enabled_in_hand"
+    _enabled="0"
+    offset_x="2"
+    offset_y="7"
+    image_file="data/items_gfx/in_hand/goldbin.png"
+  ></SpriteComponent>
+
+  <ParticleEmitterComponent 
+		_tags="enabled_in_world,enabled_in_hand"
+		emitted_material_name="gold"
+		offset.x="0"
+		offset.y="0"
+		x_pos_offset_min="-1"
+		x_pos_offset_max="1"
+		y_pos_offset_min="-1"
+		y_pos_offset_max="1"
+		x_vel_min="0"
+		x_vel_max="0"
+		y_vel_min="0"
+		y_vel_max="0"
+		count_min="2"
+		count_max="3"
+		emission_interval_min_frames="4"
+		emission_interval_max_frames="9"
+		area_circle_radius.max="6"
+		emit_cosmetic_particles="1"
+		create_real_particles="0"
+		lifetime_min="0.3"
+		lifetime_max="0.7"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		airflow_force="0.5"
+		airflow_time="0.01"
+		airflow_scale="0.05"
+		collide_with_grid="0"
+		gravity.y="250.0"
+		render_back="1"
+		>
+	</ParticleEmitterComponent>
+
+	<LuaComponent
+		_tags="enabled_in_world"
+		script_damage_received="data/scripts/items/goldbin.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+  <LuaComponent
+		_tags="enabled_in_hand"
+		_enabled="0"
+		script_source_file="data/scripts/items/preferred_inventory_manager_quick.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		_tags="enabled_in_inventory"
+		_enabled="0"
+		script_source_file="data/scripts/items/preferred_inventory_manager_full.lua"
+		execute_every_n_frame="6"
+		>
+	</LuaComponent>
+
+</Entity>

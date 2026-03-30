@@ -1,0 +1,19 @@
+<Sprite
+ filename="data/projectiles_gfx/summon_knife_freeze_time.png"
+ offset_x="6"
+ offset_y="2.5"
+ default_animation="fireball" >
+
+ <!-- animation -->
+ <RectAnimation
+  name="fireball"
+  pos_x="0"
+  pos_y="0"
+  frame_count="4"
+  frame_width="14"
+  frame_height="6"
+  frame_wait="0.02"
+  frames_per_row="16"
+  loop="1"   >
+ </RectAnimation>
+</Sprite>

@@ -1,0 +1,106 @@
+<Entity tags="hittable,teleportable_NOT,item_physics,item_pickup" >
+
+  <Base file="data/entities/items/pickup/potion_super.xml" >
+  
+    <!-- NOTE: When potions are breaking properly these can be reverted -->
+    <PhysicsBodyComponent
+      on_death_leave_physics_body="0"
+    />
+
+    <ExplodeOnDamageComponent
+      _tags="enabled_in_world"
+      _enabled="0" >
+    </ExplodeOnDamageComponent>
+
+
+    <PhysicsImageShapeComponent 
+      body_id="1"
+      centered="1"
+      image_file="data/items_gfx/tr_potion_normals.png"
+      material="potion_toughened_glass_box2d"
+    ></PhysicsImageShapeComponent>
+
+  
+    <!-- item -->
+
+    <SpriteComponent
+      _tags="enabled_in_hand"
+      _enabled="0"
+      offset_x="4"
+      offset_y="4"
+      image_file="data/items_gfx/tr_potion.png"
+    ></SpriteComponent>
+
+    <ItemComponent
+      _tags="enabled_in_world"
+      item_name="$item_potion"
+      max_child_items="0"
+      is_pickable="1"
+      is_equipable_forced="1"
+      ui_sprite="data/ui_gfx/items/tr_potion.png"
+      ui_description="$item_description_potion"
+      preferred_inventory="FULL"
+    ></ItemComponent>
+
+    <MaterialSuckerComponent 
+      material_type="2"
+      num_cells_sucked_per_frame="10"
+    ></MaterialSuckerComponent>
+
+      <AbilityComponent
+        ui_name="$item_potion_with_material"
+        throw_as_item="1"
+      ><gun_config
+        deck_capacity="0"
+      ></gun_config>
+      </AbilityComponent>
+
+    <SpriteParticleEmitterComponent
+    _enabled="1"
+      sprite_file="data/particles/ray.xml" 
+      delay="0"
+      lifetime="0.2"
+      color.r="1" color.g="0.5" color.b="1" color.a="0.7"
+      color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-3.0"
+      velocity.x="0" velocity.y="0"
+      gravity.x="0" gravity.y="0"
+      velocity_slowdown="0"
+      rotation="0"
+      angular_velocity="0"
+      scale.x="1" scale.y="0"
+      scale_velocity.x="-0.3" scale_velocity.y="3"
+      emission_interval_min_frames="3"
+      emission_interval_max_frames="6"
+      emissive="1"
+      additive="1"
+      count_min="1" count_max="2"
+      use_velocity_as_rotation="1"
+      randomize_position.min_x="-5"
+      randomize_position.max_x="5"
+      randomize_position.min_y="-5"
+      randomize_position.max_y="5"
+      randomize_velocity.min_x="-130"
+      randomize_velocity.max_x="130"
+      randomize_velocity.min_y="-130"
+      randomize_velocity.max_y="130"
+      velocity_always_away_from_center="1">
+    </SpriteParticleEmitterComponent>
+  </Base>
+
+  <LuaComponent
+		_tags="enabled_in_hand"
+		_enabled="0"
+		script_source_file="data/scripts/items/preferred_inventory_manager_quick.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		_tags="enabled_in_inventory"
+		_enabled="0"
+		script_source_file="data/scripts/items/preferred_inventory_manager_full.lua"
+		execute_every_n_frame="6"
+		>
+	</LuaComponent>
+
+</Entity>

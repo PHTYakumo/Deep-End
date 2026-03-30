@@ -1,0 +1,25 @@
+<Entity>
+	<InheritTransformComponent>
+		<Transform 
+		position.x="-4" 
+		position.y="-2" >
+	  </Transform>
+    </InheritTransformComponent>	
+    
+    <GameEffectComponent 
+    	effect="MOVEMENT_FASTER_2X"
+    	frames="900"
+    	>
+	</GameEffectComponent >
+
+	<UIIconComponent
+		icon_sprite_file="data/ui_gfx/status_indicators/g_fuel_oh_yeah.png"
+		name="$GFUEL"
+		description="$dGFUEL"
+		display_above_head="1"
+		display_in_hud="0"
+		is_perk="0"
+		>
+	</UIIconComponent>
+	
+</Entity>

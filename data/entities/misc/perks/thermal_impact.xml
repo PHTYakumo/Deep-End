@@ -1,0 +1,105 @@
+<Entity name="$projectile_default" tags="resist_repulsion,projectile_heal" >
+
+  <Base file="data/entities/projectiles/deck/thermal_impact.xml" >
+    <VelocityComponent
+      air_friction="0.3"
+    	gravity_y="0"
+		></VelocityComponent> 
+
+    <ProjectileComponent
+      damage="0.8"
+      knockback_force="6"
+      never_hit_player="1"
+      on_collision_die="0"
+      lifetime="12"
+    ><damage_by_type
+      fire="0.8"
+      melee="0.8"
+      healing="-0.001"
+    ></damage_by_type
+    ><config_explosion
+      explosion_sprite="data/particles/fire_blue.xml"
+      create_cell_probability="0" 
+	    load_this_entity=""
+      damage="0"
+    ></config_explosion
+    ></ProjectileComponent>
+
+    <SpriteParticleEmitterComponent
+      sprite_file="data/particles/explosion_025_fuel.xml"
+      scale.x="0.6" scale.y="0.6"
+      emission_interval_min_frames="1"
+      emission_interval_max_frames="1"
+      randomize_position.min_x="-1"
+      randomize_position.max_x="1"
+      randomize_position.min_y="-1"
+      randomize_position.max_y="1"
+      randomize_velocity.min_x="-1"
+      randomize_velocity.max_x="1"
+      randomize_velocity.min_y="-1"
+      randomize_velocity.max_y="1"
+      use_velocity_as_rotation="1"
+      entity_velocity_multiplier="-0.001"
+    ></SpriteParticleEmitterComponent>
+
+    <SpriteParticleEmitterComponent
+      emission_interval_min_frames="1"
+      emission_interval_max_frames="1"
+      randomize_position.min_x="-1"
+      randomize_position.max_x="1"
+      randomize_position.min_y="-1"
+      randomize_position.max_y="1"
+      randomize_velocity.min_x="-1"
+      randomize_velocity.max_x="1"
+      randomize_velocity.min_y="-1"
+      randomize_velocity.max_y="1"
+      randomize_angular_velocity.min="0"
+      randomize_angular_velocity.max="0"
+      entity_velocity_multiplier="0.01"
+    ></SpriteParticleEmitterComponent>
+
+    <AreaDamageComponent
+      _enabled="0" 
+    ></AreaDamageComponent>
+
+    <AreaDamageComponent
+      _enabled="0" 
+    ></AreaDamageComponent>
+
+    <AreaDamageComponent
+      _enabled="0" 
+    ></AreaDamageComponent>
+
+    <AreaDamageComponent
+      _enabled="0" 
+    ></AreaDamageComponent>
+
+    <MagicConvertMaterialComponent
+      _enabled="0" 
+    ></MagicConvertMaterialComponent>
+
+    <AudioComponent
+      event_root="player_projectiles/bullet_rocket"
+    ></AudioComponent>
+  </Base>
+
+  <SetStartVelocityComponent
+		randomize_angle.min="-3.1416"
+		randomize_angle.max="3.1416"
+		randomize_speed.min="450"
+		randomize_speed.max="450"
+	></SetStartVelocityComponent>
+
+  <LuaComponent
+		script_source_file="data/scripts/projectiles/force_homing_cursor.lua"
+		execute_every_n_frame="-1"
+    execute_on_added="1"
+	></LuaComponent>
+
+  <LuaComponent
+		script_source_file="data/scripts/projectiles/kick_force_effect.lua"
+		execute_every_n_frame="1"
+	></LuaComponent>
+
+</Entity>
+

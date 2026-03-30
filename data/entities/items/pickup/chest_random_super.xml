@@ -1,0 +1,124 @@
+<Entity tags="teleportable_NOT,item_physics,chest,item_pickup,glue_NOT,effectable_prop">
+	<UIInfoComponent
+		name="$item_chest_treasure_super"
+		>
+	</UIInfoComponent>
+
+  	<PositionSeedComponent />
+
+  	<VariableStorageComponent
+		name="open"
+		value_int="0"
+		>
+	</VariableStorageComponent>
+	
+	<PhysicsBodyComponent 
+    _tags="enabled_in_world"
+    uid="1" 
+    allow_sleep="1" 
+    angular_damping="0" 
+    fixed_rotation="0" 
+    is_bullet="1" 
+    linear_damping="0"
+    auto_clean="1"
+    hax_fix_going_through_ground="1"
+    on_death_leave_physics_body="0"
+    on_death_really_leave_body="0"
+  ></PhysicsBodyComponent>
+  
+  <PhysicsImageShapeComponent 
+    body_id="1"
+    centered="1"
+    image_file="data/buildings_gfx/chest_random_super.png"
+    material="Box2d_Deep_End"
+  ></PhysicsImageShapeComponent>
+
+  <ItemComponent
+    item_name="$item_chest_treasure"
+    stats_count_as_item_pick_up="0"
+    play_spinning_animation="0"
+    custom_pickup_string="$itempickup_open"
+    play_pick_sound="0" >
+  </ItemComponent>
+
+  <LuaComponent 
+    script_physics_body_modified="data/scripts/items/chest_random_super.lua" 
+    execute_times="1"
+	>
+  </LuaComponent>
+  
+  <LuaComponent 
+    script_item_picked_up="data/scripts/items/chest_random_super.lua" >
+  </LuaComponent>
+
+  <LightComponent 
+    _tags="enabled_in_world"
+    r="255"
+    g="255"
+    b="255"
+    radius="64"
+    fade_out_time="0.75" >
+  </LightComponent>
+  
+  <ParticleEmitterComponent 
+		emitted_material_name="spark_yellow"
+		gravity.y="0.0"
+		lifetime_min="1"
+		lifetime_max="2"
+		x_vel_min="-10"
+		x_vel_max="10"
+		y_vel_min="-20"
+		y_vel_max="5"
+		count_min="4"
+		count_max="12"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		cosmetic_force_create="0"
+		collide_with_grid="0"
+		airflow_force="0.051"
+		airflow_time="1.01"
+		airflow_scale="0.03"
+		emission_interval_min_frames="8"
+		emission_interval_max_frames="12"
+		emit_cosmetic_particles="1"
+		area_circle_radius.max="11"
+		render_back="1"
+		is_emitting="1" 
+		>
+	</ParticleEmitterComponent>
+
+  <SpriteParticleEmitterComponent
+		_tags="enabled_in_hand,item_identified"
+		sprite_file="data/particles/ssspark_$[1-7].xml"
+		delay="0"
+		lifetime="0.4"
+		color.r="1" color.g="1" color.b="1" color.a="0.5"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="0"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="1"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="14"
+		emission_interval_max_frames="18"
+		count_min="1" count_max="2"
+		randomize_rotation.min="-0.68"
+		randomize_rotation.max="0.68"
+		randomize_angular_velocity.min="-0.5"
+		randomize_angular_velocity.max="0.5"
+		randomize_position.min_x="-7"
+		randomize_position.max_x="7"
+		randomize_position.min_y="-5"
+		randomize_position.max_y="5"
+		randomize_velocity.min_x="-36"
+		randomize_velocity.max_x="36"
+		randomize_velocity.min_y="-36"
+		randomize_velocity.max_y="36"
+		entity_velocity_multiplier="-1.2"
+	>
+	</SpriteParticleEmitterComponent>
+
+</Entity>

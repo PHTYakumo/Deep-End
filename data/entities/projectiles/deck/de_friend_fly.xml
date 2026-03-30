@@ -1,0 +1,54 @@
+<Entity>
+
+	<Base file="data/entities/projectiles/deck/friend_fly.xml" >
+		<ProjectileComponent
+			lifetime="600"
+			lifetime_randomness="90"
+			bounces_left="999"
+			><damage_by_type
+				melee="0.88"
+			></damage_by_type>
+		</ProjectileComponent>
+
+		<HomingComponent
+			homing_velocity_multiplier="0.9"
+			detect_distance="120"
+		></HomingComponent>
+
+		<DamageModelComponent
+			hp="2.5"
+			ui_report_damage="0"
+			ragdoll_fx_forced="DISINTEGRATED"
+		></DamageModelComponent>
+
+		<HitboxComponent 
+			is_enemy="0" 
+			is_item="1" 
+		></HitboxComponent>
+	
+		<VariableStorageComponent
+			value_string="data/entities/projectiles/deck/de_friend_fly.xml"
+		></VariableStorageComponent>
+	</Base>
+
+	<HomingComponent
+		homing_targeting_coeff="55.0"
+		homing_velocity_multiplier="0.95"
+		detect_distance="150"
+	></HomingComponent>
+	
+	<GenomeDataComponent
+		herd_id="player"
+	></GenomeDataComponent>
+
+	<Entity>
+		<InheritTransformComponent />
+		
+        <GameEffectComponent 
+            effect="PROTECTION_ALL"
+            frames="45"
+        ></GameEffectComponent >
+    </Entity>
+
+</Entity>
+

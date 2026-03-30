@@ -1,0 +1,19 @@
+<Sprite 
+  default_animation="fireball" 
+  filename="data/particles/geomagnetic_storm_2.png" 
+  offset_x="10" 
+  offset_y="10" >
+
+  <RectAnimation 
+    pos_x="0"
+    pos_y="0"
+    frame_count="5" 
+    frame_height="20" 
+    frame_width="20" 
+    frames_per_row="3" 
+    frame_wait="0.05" 
+    name="fireball" >
+  </RectAnimation>
+
+</Sprite>
+

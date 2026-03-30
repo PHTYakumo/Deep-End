@@ -1,0 +1,21 @@
+<Sprite 
+  default_animation="explosion" 
+  filename="data/ui_gfx/status_indicators/hearty.png" 
+  offset_x="6" 
+  offset_y="6" >
+
+  <RectAnimation 
+    frame_count="1" 
+    frame_height="12" 
+    frame_wait="0.06" 
+    frame_width="12" 
+    frames_per_row="3" 
+    loop="0" 
+    name="explosion" 
+    pos_x="0" 
+    pos_y="0">
+
+  </RectAnimation>
+
+</Sprite>
+

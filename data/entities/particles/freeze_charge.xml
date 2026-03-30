@@ -1,0 +1,73 @@
+<Entity>
+	<ParticleEmitterComponent 
+		emitted_material_name="spark_blue"
+		offset.x="0"
+		offset.y="0"
+		x_pos_offset_min="-2"
+		x_pos_offset_max="2"
+		y_pos_offset_min="-2"
+		y_pos_offset_max="2"
+		friction="0.15"
+		gravity.y="70"
+		x_vel_min="-2"
+		x_vel_max="2"
+		y_vel_min="2"
+		y_vel_max="10"
+		count_min="1"
+		count_max="2"
+		is_trail="0"
+		fade_based_on_lifetime="1"
+		lifetime_min="0.4"
+		lifetime_max="0.7"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		render_on_grid="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="3"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+  
+    <ParticleEmitterComponent 
+        emitted_material_name="spark_blue"
+        count_min="2"
+        count_max="3"
+        offset.y="0"
+        x_pos_offset_min="-1"
+        y_pos_offset_min="-1"
+        x_pos_offset_max="1"
+        y_pos_offset_max="1"
+        gravity.y="45"
+        x_vel_min="-10"
+        x_vel_max="10"
+        y_vel_min="-10"
+        y_vel_max="10"
+        lifetime_min="1.5"
+        lifetime_max="3.0"
+        create_real_particles="0"
+        emit_cosmetic_particles="1"
+        emission_interval_min_frames="4"
+        emission_interval_max_frames="8"
+        is_emitting="1"
+        emitter_lifetime_frames="300" >
+    </ParticleEmitterComponent>
+
+    <MagicConvertMaterialComponent
+        stain_frozen="1"
+        from_material="water"
+        to_material="ice_static"
+        steps_per_frame="20"
+        loop="1"
+		is_circle="1"
+        radius="15" >
+    </MagicConvertMaterialComponent>
+
+    <MagicConvertMaterialComponent
+        from_material_array = "water_ice,water_salt,water_static,water_swamp,lava,radioactive_liquid,acid,blood_cold,blood,poison,slime"
+        to_material_array = "ice_static,ice_static,ice_static,ice_static,rock_static,ice_radioactive_static,ice_acid_static,ice_cold_static,ice_blood_static,ice_poison_static,ice_slime_static"
+        steps_per_frame="20"
+        loop="1"
+		is_circle="1"
+        radius="15" >
+    </MagicConvertMaterialComponent>
+
+</Entity>

@@ -1,0 +1,21 @@
+<Sprite 
+  default_animation="fireball" 
+  filename="data/projectiles_gfx/rocket_boss_robot.png" 
+  offset_x="6.5" 
+  offset_y="6.5" >
+
+  <RectAnimation 
+    frame_count="2" 
+    frame_height="13" 
+    frame_wait="0.1" 
+    frame_width="13" 
+    frames_per_row="3" 
+    name="fireball" 
+    pos_x="0" 
+    pos_y="1" 
+    shrink_by_one_pixel="1" >
+
+  </RectAnimation>
+
+</Sprite>
+

@@ -1,0 +1,19 @@
+<Entity tags="de_robot_boss_create" >
+
+	<LifetimeComponent
+			lifetime="60" >
+	</LifetimeComponent>
+  
+	<LuaComponent
+		_enabled="1" 
+		script_source_file="data/entities/animals/boss_robot/trail/lance_formation.lua"
+		execute_on_removed="1"
+		execute_every_n_frame="-1"
+	></LuaComponent>
+
+	<VariableStorageComponent
+		name="type"
+		value_int="0" >
+	</VariableStorageComponent>
+
+</Entity>

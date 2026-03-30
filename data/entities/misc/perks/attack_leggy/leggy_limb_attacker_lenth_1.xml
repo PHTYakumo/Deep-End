@@ -1,0 +1,14 @@
+<Entity >
+
+	<Base file="data/entities/misc/perks/attack_leggy/leggy_limb_attacker.xml" >
+		<IKLimbAttackerComponent
+			radius="80"
+			leg_velocity_coeff="35" >
+		</IKLimbAttackerComponent>
+
+		<IKLimbComponent
+			length="80" >
+		</IKLimbComponent>
+	</Base>
+
+</Entity>

@@ -1,0 +1,217 @@
+<Entity tags="hittable,teleportable_NOT,item_physics,forgeable,broken_wand_big,item_pickup" >
+	<Base file="data/entities/base_item_projectile.xml" />
+
+	<!-- physical presence -->
+	
+	<PhysicsBodyComponent 
+		_tags="enabled_in_world"
+		uid="1" 
+		allow_sleep="1" 
+		angular_damping="0.6" 
+		linear_damping="0"
+		fixed_rotation="0" 
+		is_bullet="1" 
+		auto_clean="0"
+		on_death_leave_physics_body="1"
+		hax_fix_going_through_ground="1"
+		>
+	</PhysicsBodyComponent>
+	
+	<PhysicsImageShapeComponent 
+		body_id="1"
+		centered="1"
+		image_file="data/items_gfx/broken_wand_big.png"
+		material="Box2d_Deep_End"
+		>
+	</PhysicsImageShapeComponent>
+	
+	<PhysicsThrowableComponent
+		max_throw_speed="600"
+		throw_force_coeff="1.25"
+		min_torque="18"
+		max_torque="36"
+		>
+	</PhysicsThrowableComponent>
+
+	<VelocityComponent
+		_tags="enabled_in_world"
+		>
+	</VelocityComponent>
+
+	<!-- spell shooting functionality -->
+
+	<VariableStorageComponent
+		_tags="enabled_in_world"
+		name="spells_remaining"
+		value_int="0" >
+	</VariableStorageComponent>
+
+	<VariableStorageComponent
+		_tags="enabled_in_world"
+		name="throw_time"
+		value_int="0" >
+	</VariableStorageComponent>
+
+	<LuaComponent
+		_tags="enabled_in_world"
+		script_source_file="data/scripts/items/broken_wand_big_spells.lua"
+    execute_every_n_frame="12"
+    >
+	</LuaComponent>
+	
+	<LuaComponent
+		script_throw_item="data/scripts/items/broken_wand_throw.lua"
+    execute_every_n_frame="-1" >
+	</LuaComponent>
+	
+	<!-- item -->
+
+	<SpriteComponent
+		_tags="enabled_in_hand"
+		_enabled="0"
+		offset_x="3"
+		offset_y="5"
+		image_file="data/items_gfx/broken_wand_big.png"
+		>
+	</SpriteComponent>
+
+	<AreaDamageComponent
+	_tags="enabled_in_world"
+  		circle_radius="7" 
+		aabb_min.x="-6" 
+		aabb_min.y="-6" 
+		aabb_max.x="6" 
+		aabb_max.y="6" 
+		damage_per_frame="0.42"
+		update_every_n_frame="4"
+		entities_with_tag="enemy"
+		death_cause="$item_broken_wand"
+		damage_type="DAMAGE_PHYSICS_HIT"
+		>
+	</AreaDamageComponent>
+
+	<ItemComponent
+		_tags="enabled_in_world"
+		item_name="$item_broken_wand"
+		max_child_items="0"
+		is_pickable="1"
+		is_equipable_forced="1"
+		ui_sprite="data/ui_gfx/items/broken_wand_big.png"
+		ui_description="$dbroken_wand"
+		preferred_inventory="QUICK"
+		>
+	</ItemComponent>
+
+	<UIInfoComponent
+		_tags="enabled_in_world"
+		name="$item_broken_wand">
+	</UIInfoComponent>
+	
+	<SpriteParticleEmitterComponent
+		sprite_file="data/particles/ray.xml" 
+		delay="0"
+		lifetime="1.5"
+		color.r="1" color.g="0.5" color.b="1" color.a="1.0"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-3.5"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="0"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		scale.x="1" scale.y="0"
+		scale_velocity.x="-0.3" scale_velocity.y="3"
+		emission_interval_min_frames="3"
+		emission_interval_max_frames="6"
+		emissive="1"
+		additive="1"
+		count_min="2" count_max="5"
+		use_velocity_as_rotation="1"
+		randomize_position.min_x="-6"
+		randomize_position.max_x="6"
+		randomize_position.min_y="-2"
+		randomize_position.max_y="2"
+		randomize_velocity.min_x="-30"
+		randomize_velocity.max_x="30"
+		randomize_velocity.min_y="-30"
+		randomize_velocity.max_y="30"
+		velocity_always_away_from_center="1">
+	</SpriteParticleEmitterComponent>
+	
+	<AbilityComponent
+		ui_name="$item_broken_wand"
+		throw_as_item="0"
+		>
+		<gun_config
+			deck_capacity="0">
+		</gun_config>
+	</AbilityComponent>
+
+	<!-- FX -->
+
+	<LightComponent
+		_tags="enabled_in_world,enabled_in_hand"
+		radius="130"
+		r="255"
+		g="94"
+		b="244"
+		fade_out_time="0.5"
+		blinking_freq="0.95"
+		>
+	</LightComponent>
+	
+	<SpriteParticleEmitterComponent
+		_tags="enabled_in_world,enabled_in_hand"
+		sprite_file="data/particles/spark_electric.xml"
+		delay="0"
+		lifetime="0"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="0"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="10"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="10"
+		emission_interval_max_frames="28"
+		count_min="5" count_max="11"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_position.min_x="-6"
+		randomize_position.max_x="6"
+		randomize_position.min_y="-3"
+		randomize_position.max_y="3"
+		>
+	</SpriteParticleEmitterComponent>
+
+	<ParticleEmitterComponent 
+		_tags="enabled_in_world,enabled_in_hand"
+		emitted_material_name="spark_electric"
+		offset.x="0"
+		offset.y="0"
+		x_pos_offset_min="-10"
+		x_pos_offset_max="10"
+		y_pos_offset_min="-5"
+		y_pos_offset_max="5"
+		x_vel_min="-60"
+		x_vel_max="60"
+		y_vel_min="-60"
+		y_vel_max="60"
+		velocity_always_away_from_center="1"
+		friction="1"
+		count_min="4"
+		count_max="9"
+		lifetime_min="0.4"
+		lifetime_max="1.1"
+		emit_real_particles="0"
+		render_on_grid="1"
+		emit_cosmetic_particles="1"
+		fade_based_on_lifetime="0"
+		emission_interval_min_frames="6"
+		emission_interval_max_frames="32"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+</Entity>

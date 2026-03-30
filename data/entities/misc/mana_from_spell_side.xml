@@ -1,0 +1,10 @@
+<Entity tags="de_effect_charge_side" >
+	<InheritTransformComponent 
+		_enabled="1" >
+    </InheritTransformComponent>	
+    
+    <GameEffectComponent 
+        effect="MANA_REGENERATION"
+        frames="90" >
+	</GameEffectComponent >
+</Entity>

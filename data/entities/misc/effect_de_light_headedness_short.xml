@@ -1,0 +1,33 @@
+<Entity>
+	<InheritTransformComponent>
+    </InheritTransformComponent>	
+    
+    <GameEffectComponent 
+    	effect="FOOD_POISONING"
+    	frames="360"
+    >
+	</GameEffectComponent >
+
+	<DrugEffectModifierComponent>
+		<fx_add
+            distortion_amount="6"
+			doublevision_amount="6"
+		/>
+	</DrugEffectModifierComponent>
+
+	<ShotEffectComponent 
+    	extra_modifier="extreme_spread"
+    >
+	</ShotEffectComponent >
+
+    <UIIconComponent
+		name="$status_de_dizzy"
+		description="$dstatus_de_dizzy"
+		icon_sprite_file="data/ui_gfx/status_indicators/de_dizzy.png"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+
+</Entity>
