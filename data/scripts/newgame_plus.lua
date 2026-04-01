@@ -9,7 +9,7 @@ function DEEP_END_do_newgame_any_dimension( newgame )
 	local newgame_n = newgame
 	local trip = newgame_n - pre_newgame_n
 
-	if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) and ( newgame ~= 0 ) and ( newgame ~= -9999 ) then newgame_n = 9999 end 
+	if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) and newgame ~= 0 then newgame_n = 10000 end 
 
 	SessionNumbersSetValue( "NEW_GAME_PLUS_COUNT", newgame_n )
 	SessionNumbersSetValue( "DESIGN_SCALE_ENEMIES", "1" )

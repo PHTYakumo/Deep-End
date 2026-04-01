@@ -20,6 +20,6 @@ if player_entity ~= nil then
     EntitySetTransform( entity_id, nx, ny )
 	EntityApplyTransform( entity_id, nx, ny )
 else
-    if ( ModSettingGet( "DEEP_END.NIGHTMARE_END" ) ) then EntityLoad( "data/entities/projectiles/deck/circle_end.xml", x, y ) end
+    if not ModSettingGet( "DEEP_END.NIGHTMARE_END" ) then EntityLoad( "data/entities/projectiles/deck/circle_end.xml", x, y ) end
     EntityKill( entity_id )
 end

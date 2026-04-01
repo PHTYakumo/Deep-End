@@ -13,5 +13,5 @@ Update synchronously on the [Steam Workshop](https://steamcommunity.com/sharedfi
 - Please ***select the game mode named "Deep end"*** in the "New Game" option.
 - If you want to play this mod as ***a switchable mod*** in the "Mods" option rather than a game mode:
  - browse the file ``mods\deep_end\mod.xml``
- - edit the code ``is_game_mode="1"`` as ``is_game_mode="0"``
+ - edit the code ***is_game_mode="1"*** as ``is_game_mode="0"``
  - if do so, please enable this mod ***in a new run***, otherwise errors may occur!

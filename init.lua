@@ -656,14 +656,13 @@ function OnPlayerDied(player_entity)
 	end
 
 	if tonumber( StatsGetValue("damage_taken") ) <= 0 then EntityLoad( "data/entities/animals/boss_centipede/rewards/reward_nohit.xml", x, y-52 ) end
-
 	if EntityHasTag( player_entity, "speed_run_complete_in_deep_end" ) then EntityLoad( "data/entities/animals/boss_centipede/rewards/reward_clock.xml", x, y-27 ) end
 
 	EntityLoad( "data/entities/props/my_tombstone_0" .. tostring(Random( 1, 7 )) .. ".xml", x, y-4 )
 	shoot_projectile( player_entity, "data/entities/projectiles/deck/my_soul.xml", x, y, 0, -40 )
 
 	if tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") ) ~= 0 then
-		if ModSettingGet( "DEEP_END.NIGHTMARE_END" ) then
+		if not ModSettingGet( "DEEP_END.NIGHTMARE_END" ) then
 			EntityLoad( "data/entities/projectiles/deck/circle_end.xml", x, y )
 			EntityLoad( "data/entities/projectiles/deck/circle_end.xml", x+300, y+300 )
 			EntityLoad( "data/entities/projectiles/deck/circle_end.xml", x+300, y-300 )

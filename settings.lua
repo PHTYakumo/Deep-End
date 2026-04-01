@@ -23,7 +23,7 @@ function ModSettingsGui( gui, in_main_menu )
 	mod_settings_gui( mod_id, mod_settings, gui, in_main_menu )
 end
 
-if ( string.find( language, "中文" ) ) or ( string.find( language, "汉化" ) ) then
+if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 	mod_settings = 
 	{
 		{
@@ -38,7 +38,7 @@ if ( string.find( language, "中文" ) ) or ( string.find( language, "汉化" ) 
 			id = "NIGHTMARE_END",
 			ui_name = "简易结局演出",
 			ui_description =
-			"\n   仅作为死亡效果, 关掉可以大幅减少卡顿",
+			"\n   简化完成游戏的动画效果 (可降低卡顿)",
 			value_default = true,
 			scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
 		},
@@ -329,7 +329,7 @@ else
 			id = "NIGHTMARE_END",
 			ui_name = "Simple ending performance",
 			ui_description =
-			"\n   As a death effect only, disable it can greatly reduce stuttering",
+			"\n   Simplify the death effect ( reduce lag )",
 			value_default = true,
 			scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
 		},
@@ -360,7 +360,7 @@ else
 					ui_name = "Attention",
 					ui_description = 
 					"\n   Setting Cosmetic-particle-amount below 20% and Screen-shake-intensity" ..
-					"\n   below 15 is recommended. (to avoid the game stuck)",
+					"\n   below 15 is recommended. ( to avoid the game stuck )",
 					not_setting = true,
 				}
 			},

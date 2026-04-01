@@ -4,7 +4,7 @@ dofile_once("data/scripts/newgame_plus.lua")
 
 local players = EntityGetWithTag( "player_unit")
 
-if ( #players > 0 ) then
+if #players > 0 then
     for i=1,#players do
         local player_entity = players[i]
         local px, py = EntityGetTransform( player_entity )
@@ -19,24 +19,18 @@ if ( #players > 0 ) then
         shoot_projectile( player_entity, path, px, py, 0, 0 )
 
         local models = EntityGetComponent( player_entity, "CharacterPlatformingComponent" )
-        if( models ~= nil ) then
-            for i,model in ipairs(models) do
-                ComponentSetValue2( model, "pixel_gravity", 10 )
-            end
-        end
+        if models ~= nil then for i,model in ipairs(models) do
+            ComponentSetValue2( model, "pixel_gravity", 10 )
+        end end
 
         local wands = EntityGetWithTag( "wand" )
-        for i,wand in ipairs( wands ) do 
-            EntityKill( wand )
-        end
+        for i,wand in ipairs( wands ) do EntityKill( wand ) end
 
         local damagemodels = EntityGetComponent( player_entity, "DamageModelComponent" )
-        if( damagemodels ~= nil ) then
-            for i,damagemodel in ipairs(damagemodels) do
-                ComponentSetValue2( damagemodel, "max_hp", 0.04)
-                ComponentSetValue2( damagemodel, "hp", 0.04)
-            end
-        end
+        if damagemodels ~= nil then for i,damagemodel in ipairs(damagemodels) do
+            ComponentSetValue2( damagemodel, "max_hp", 0.04)
+            ComponentSetValue2( damagemodel, "hp", 0.04)
+        end end
 
         -- EntityRemoveIngestionStatusEffect( player_entity, "HP_REGENERATION" )
         EntityRemoveIngestionStatusEffect( player_entity, "PROTECTION_ALL" )
@@ -47,13 +41,12 @@ if ( #players > 0 ) then
         EntityRemoveStainStatusEffect( player_entity, "DEEP_END_HARDEN_EFFECT", 15 )
 
         local world_entity_id = GameGetWorldStateEntity()
-        if( world_entity_id ~= nil ) then
+        if world_entity_id ~= nil  then
             local comp_worldstate = EntityGetFirstComponent( world_entity_id, "WorldStateComponent" )
-            
-            if( comp_worldstate ~= nil ) then ComponentSetValue2( comp_worldstate, "time_dt", 0 ) end
+            if comp_worldstate ~= nil then ComponentSetValue2( comp_worldstate, "time_dt", 0 ) end
         end
 
-        if not ( ModSettingGet( "DEEP_END.NIGHTMARE_END" ) and ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) ) then
+        if ModSettingGet( "DEEP_END.NIGHTMARE_END" ) then
             EntityAddComponent( player_entity, "LuaComponent", 
             { 
                 script_source_file="data/scripts/animals/simple_game_complete_effect.lua",

@@ -8,11 +8,11 @@ local radius = 600
 local suns = EntityGetInRadiusWithTag( px, py, radius, "seed_e" )
 local dark_suns = EntityGetInRadiusWithTag( px, py, radius, "seed_f" )
 
-if ( #suns == 0 ) or ( #dark_suns == 0 ) then
-    if ( not EntityHasTag( entity_id, "deep_end_ending_triggered" ) ) then 
+if #suns == 0 or #dark_suns == 0 then
+    if not EntityHasTag( entity_id, "deep_end_ending_triggered" ) then 
         EntityAddTag( entity_id, "deep_end_ending_triggered" )
 
-        if ( ModSettingGet( "DEEP_END.NIGHTMARE_END" ) ) then DEEP_END_do_newgame_any_dimension(-10000)  end
+        if not ModSettingGet( "DEEP_END.NIGHTMARE_END" ) then DEEP_END_do_newgame_any_dimension(-10000)  end
     end
 
     local sun = EntityLoad( "data/entities/items/pickup/sun/newsun.xml", px-500, py )

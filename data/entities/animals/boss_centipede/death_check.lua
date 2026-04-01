@@ -58,7 +58,6 @@ function death()
 
 	if comp_worldstate ~= nil and newgame_n == 0 and ( not ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) ) then
 		local ed2_happened = ComponentGetValue2( comp_worldstate, "ENDING_HAPPINESS" )
-		
 		if ed2_happened then EntityLoad( "data/entities/animals/boss_fish/fish_giga.xml",  3842, 42620 ) end
 	end
 
