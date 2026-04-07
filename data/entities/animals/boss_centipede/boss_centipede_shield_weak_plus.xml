@@ -63,7 +63,7 @@
 	<LightComponent 
 		_tags="shield,disabled_at_start,shield_hit"
 		_enabled="0"
-        radius="80"
+        radius="56"
         fade_out_time="1.5" 
     	r="150"
     	g="190"

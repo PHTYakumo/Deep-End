@@ -348,13 +348,16 @@ function next_phase()
 
 	-- set a new phase
 	local entity_id = GetUpdatedEntityID()
-	local players = EntityGetWithTag( "player_unit" )
-	if players[1] ~= nil then
-		local player_id = players[1]
-		
-		local xe,ye = EntityGetTransform( entity_id )
-		local xp,yp = EntityGetTransform( player_id )
-		
+	local xe,ye = EntityGetTransform( entity_id )
+
+	local player_id = EntityGetClosestWithTag( xe, ye, "player_unit" )
+	local xp,yp = EntityGetTransform( player_id )
+
+	if xp == nil then
+		boss_wait(10)
+		phase_melee()
+		shield_on()
+	else
 		local dist = get_distance(xp,yp,xe,ye)
 		
 		local phases = -- { phase, repeat amount }
@@ -409,23 +412,18 @@ function next_phase()
 		end
 		
 		-- If player is way too far, boss assumes they have left the arena entirely and sets up phase 2
-		if (dist > 1300) and (boss_chase == 0) then
+		if dist > 2000 and boss_chase == 0 then
 			boss_chase = 1
-			
 			local celleater = EntityGetFirstComponent( GetUpdatedEntityID(), "CellEaterComponent" )
 		
-			if (celleater ~= nil) then
+			if celleater ~= nil then
 				ComponentSetValue2( celleater, "eat_probability", 100 )
 				ComponentSetValue2( celleater, "radius", 64 )
 			end
 			
 			set_force_coeff_mult(5)
-
-			
 			phase = phase_chase_direct
-		end
-		
-		--print("Boss distance: " .. tostring(dist))
+		end --print("Boss distance: " .. tostring(dist))
 	end
 end
 

@@ -1,4 +1,4 @@
-<Entity name="$projectile_default" tags="teleportable_NOT" >
+<Entity name="$projectile_default" tags="teleportable_NOT,projectile_heal" >
 
 	<VelocityComponent
 		gravity_y="0"
@@ -30,8 +30,8 @@
 		collide_with_tag="player_unit"
 		lifetime="150" >
 		<damage_by_type
-			holy="0.2"
-			healing="0.04"
+			holy="0.004"
+			healing="0.08"
 			>
 		</damage_by_type>
 		<config_explosion

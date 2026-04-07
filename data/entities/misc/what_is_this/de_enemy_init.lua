@@ -78,17 +78,18 @@ if EntityHasTag( entity_id, "robot" )
 and ( not EntityHasTag( entity_id, "boss" ) )
 and ( not EntityHasTag( entity_id, "robot_egg_boosted" ) )
 then
+    local acomp = EntityGetFirstComponent( entity_id, "AnimalAIComponent" )
+    if acomp ~= nil then ComponentSetValue2( acomp, "dont_counter_attack_own_herd", true ) end
+
+    local dcomp = EntityGetFirstComponent( entity_id, "DamageModelComponent" )
+    if dcomp ~= nil then ComponentObjectSetValue2( dcomp, "damage_multipliers", "physics_hit", 0.1 ) end
+
     if GameHasFlagRun( "DEEP_END_OPEN_CHEST_STEEL" ) then
         if not EntityHasTag( entity_id, "teleportable_NOT" ) then EntityAddTag( entity_id, "teleportable_NOT" ) end
         if not EntityHasTag( entity_id, "touchmagic_immunity" ) then EntityAddTag( entity_id, "touchmagic_immunity" ) end
         if not EntityHasTag( entity_id, "polymorphable_NOT" ) then EntityAddTag( entity_id, "polymorphable_NOT" ) end
 
-        local acomp = EntityGetFirstComponent( entity_id, "AnimalAIComponent" )
-        if acomp ~= nil then ComponentSetValue2( acomp, "dont_counter_attack_own_herd", true ) end
-
-        local dcomp = EntityGetFirstComponent( entity_id, "DamageModelComponent" )
         if dcomp ~= nil then ComponentSetValue2( dcomp, "blood_multiplier", 0.0001 ) end
-
         -- EntityAddTag( entity_id, "robot_egg_boosted" )
         
         EntityAddComponent( entity_id, "LuaComponent", {

@@ -170,18 +170,19 @@ de_perk_list_recompose =
 		perk_icon = "data/items_gfx/perks/trick_blood_money.png",
 		stackable = STACKABLE_NO,
 		func = function( entity_perk_item, entity_who_picked, item_name )
-			-- TODO trick gold, drops blood gold which gives back hp+3
 			local world_entity_id = GameGetWorldStateEntity()
+
 			if ( world_entity_id ~= nil ) then
 				local comp_worldstate = EntityGetFirstComponent( world_entity_id, "WorldStateComponent" )
+
 				if ( comp_worldstate ~= nil ) then
 					local perk_trick_blood_money = ComponentGetValue2( comp_worldstate, "perk_trick_kills_blood_money" )
+
 					if ( perk_trick_blood_money ) then
-						local perk_hp_drop_chance = tonumber( ComponentGetValue2( comp_worldstate, "perk_hp_drop_chance" ) )
-						perk_hp_drop_chance = perk_hp_drop_chance + 20
-						ComponentSetValue2( comp_worldstate, "perk_hp_drop_chance", perk_hp_drop_chance )
+						local perk_hp_drop_chance = ComponentGetValue2( comp_worldstate, "perk_hp_drop_chance" )
+						ComponentSetValue2( comp_worldstate, "perk_hp_drop_chance", perk_hp_drop_chance + 20 )
 					else
-						ComponentSetValue( comp_worldstate, "perk_trick_kills_blood_money", "1" )
+						ComponentSetValue2( comp_worldstate, "perk_trick_kills_blood_money", true )
 					end
 				end
 			end
@@ -191,7 +192,7 @@ de_perk_list_recompose =
 			if ( world_entity_id ~= nil ) then
 				local comp_worldstate = EntityGetFirstComponent( world_entity_id, "WorldStateComponent" )
 				if ( comp_worldstate ~= nil ) then
-					ComponentSetValue( comp_worldstate, "perk_trick_kills_blood_money", "0" )
+					ComponentSetValue2( comp_worldstate, "perk_trick_kills_blood_money", false )
 					ComponentSetValue2( comp_worldstate, "perk_hp_drop_chance", 0 )
 				end
 			end
@@ -1159,10 +1160,9 @@ de_perk_list_recompose =
 			local x,y = EntityGetTransform( entity_who_picked )
 			local child_id = EntityLoad( "data/entities/misc/perks/shield.xml", x, y )
 			
-			local shield_num = tonumber( GlobalsGetValue( "PERK_SHIELD_COUNT", "0" ) )
+			local shield_num = tonumber( GlobalsGetValue( "PERK_SHIELD_COUNT", "0" ) ) + 1
 			local shield_radius = math.min( 12.5 + shield_num * 2.48, 29.86 ) + shield_num * 0.02
 			local charge_speed = math.max( 0.20 + shield_num * 0.05, 0.55 )
-			shield_num = shield_num + 1
 			GlobalsSetValue( "PERK_SHIELD_COUNT", tostring( shield_num ) )
 			
 			local comps = EntityGetComponent( child_id, "EnergyShieldComponent" )

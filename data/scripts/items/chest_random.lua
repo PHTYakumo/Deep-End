@@ -51,7 +51,7 @@ function chest_load_gold_entity( entity_filename, x, y, remove_timer )
 
 	-- auto_pickup e.g. gold should have a delay in the next_frame_pickable, since they get gobbled up too fast by the player to see
 	if item_comp ~= nil then
-		if( ComponentGetValue2( item_comp, "auto_pickup") ) then
+		if ComponentGetValue2( item_comp, "auto_pickup") then
 			ComponentSetValue2( item_comp, "next_frame_pickable", GameGetFrameNum() + 15 )	
 		end
 	end
@@ -176,7 +176,7 @@ function drop_random_reward( x, y, entity_id, rand_x, rand_y, set_rnd_  )
 			end
 
 			rnd = Random(1,100)
-			if (rnd <= 80) then
+			if ( rnd <= 80 ) then
 				for i=1,Random(2,4) do
 					chest_load_gold_entity( "data/entities/items/pickup/goldnugget_1000.xml", x + Random(-10,10), y - 4 + Random(-10,5), false )
 				end
@@ -195,23 +195,23 @@ function drop_random_reward( x, y, entity_id, rand_x, rand_y, set_rnd_  )
 
 			rnd = Random(1,100) 
 			if ( rnd <= 33 ) and ( y <= 0 ) then table.insert( entities, { "data/entities/items/pickup/speed_run_package.xml" } ) end
-		elseif( rnd <= 45 ) then -- 20%
+		elseif ( rnd <= 45 ) then -- 20%
 			-------------------------------------------------------------------
 			-- Potion
 			-------------------------------------------------------------------
 			rnd = Random(1,100)
 			local potion_type_list = { "_secret", "_random_material", "" }
 
-			if (y > 0) then
+			if ( y > 0 ) then
 				for i=1,5 do table.insert( entities, { "data/entities/items/pickup/potion" .. potion_type_list[Random(1,3)] .. ".xml" } ) end
-			elseif (rnd > 66) then
+			elseif ( rnd > 66 ) then
 				for i=1,3 do table.insert( entities, { "data/entities/items/pickup/potion" .. potion_type_list[Random(1,3)] .. ".xml" } ) end
 				table.insert( entities, { "data/entities/items/pickup/potion.xml" } )
 				table.insert( entities, { "data/entities/items/pickup/potion.xml" } )
 			else
 				for i=1,5 do table.insert( entities, { "data/entities/items/pickup/potion.xml" } ) end
 			end
-		elseif( rnd <= 65 ) then -- 20%W
+		elseif ( rnd <= 65 ) then -- 20%W
 			-------------------------------------------------------------------
 			-- Random card
 			-------------------------------------------------------------------
@@ -220,15 +220,15 @@ function drop_random_reward( x, y, entity_id, rand_x, rand_y, set_rnd_  )
 			-- this does NOT call SetRandomSeed() on purpouse
 			local amount = 3
 			rnd = Random(1,100)
-			if (rnd <= 25) then -- 25
+			if ( rnd <= 25 ) then -- 25
 				amount = 3
-			elseif (rnd <= 45) then -- 20
+			elseif ( rnd <= 45 ) then -- 20
 				amount = 4
-			elseif (rnd <= 65) then -- 20
+			elseif ( rnd <= 65 ) then -- 20
 				amount = 5
-			elseif (rnd <= 80) then -- 15
+			elseif ( rnd <= 80 ) then -- 15
 				amount = 6
-			elseif (rnd <= 90) then -- 10
+			elseif ( rnd <= 90 ) then -- 10
 				amount = 7
 			else -- 10
 				amount = 8
@@ -244,30 +244,30 @@ function drop_random_reward( x, y, entity_id, rand_x, rand_y, set_rnd_  )
 
 			rnd = Random(1,100)
 			
-			if( rnd <= 4 ) then --4
+			if ( rnd <= 4 ) then --4
 				table.insert( entities, { "data/entities/items/wand_unshuffle_02.xml" } )
-			elseif( rnd <= 20 ) then --16
+			elseif ( rnd <= 20 ) then --16
 				table.insert( entities, { "data/entities/items/wand_unshuffle_03.xml" } )
-			elseif( rnd <= 54 ) then --34
+			elseif ( rnd <= 54 ) then --34
 				table.insert( entities, { "data/entities/items/wand_unshuffle_04.xml" } )
-			elseif( rnd <= 87 ) then --33
+			elseif ( rnd <= 87 ) then --33
 				table.insert( entities, { "data/entities/items/wand_unshuffle_05.xml" } )
-			elseif( rnd <= 99 ) then --12
+			elseif ( rnd <= 99 ) then --12
 				table.insert( entities, { "data/entities/items/wand_unshuffle_06.xml" } )
-			elseif( rnd <= 100 ) then --1
+			elseif ( rnd <= 100 ) then --1
 				table.insert( entities, { "data/entities/items/wand_unshuffle_10.xml" } )
 			end
-		elseif( rnd <= 100 ) then -- 10%
+		elseif ( rnd <= 100 ) then -- 10%
 			-------------------------------------------------------------------
 			-- Heart(s)
 			-------------------------------------------------------------------
 			rnd = Random(1,100)
 			
-			if (rnd <= 10) and (y > 0)then -- 10
+			if ( rnd <= 10 ) and ( y > 0 )then -- 10
 				table.insert( entities, { "data/entities/animals/illusions/dark_alchemist.xml" } )
-			elseif (rnd <= 70) then -- 60
+			elseif ( rnd <= 70 ) then -- 60
 				table.insert( entities, { "data/entities/items/pickup/heart.xml" } )
-			elseif (rnd <= 95) then -- 25
+			elseif ( rnd <= 95 ) then -- 25
 				table.insert( entities, { "data/entities/items/pickup/heart_better.xml" } )
 			else -- 5
 				table.insert( entities, { "data/entities/items/pickup/heart_fullhp.xml" } )
@@ -278,7 +278,7 @@ function drop_random_reward( x, y, entity_id, rand_x, rand_y, set_rnd_  )
 
 		rnd = Random(1,199)
 
-		if (rnd == 199) and (plus < 7) and (y > 0) then 
+		if ( rnd == 199 ) and ( plus < 7 ) and ( y > 0 ) then 
 			count = count + 1 
 			plus = plus + 1
 		end
@@ -286,7 +286,7 @@ function drop_random_reward( x, y, entity_id, rand_x, rand_y, set_rnd_  )
 
 	for i,entity in ipairs(entities) do
 		local eid = 0 
-		if( entity[2] ~= nil and entity[3] ~= nil ) then 
+		if ( entity[2] ~= nil and entity[3] ~= nil ) then 
 			eid = EntityLoad( entity[1], entity[2], entity[3] ) 
 		else
 			eid = EntityLoad( entity[1], rand_x, rand_y )
@@ -297,7 +297,7 @@ function drop_random_reward( x, y, entity_id, rand_x, rand_y, set_rnd_  )
 
 		-- auto_pickup e.g. gold should have a delay in the next_frame_pickable, since they get gobbled up too fast by the player to see
 		if item_comp ~= nil then
-			if( ComponentGetValue2( item_comp, "auto_pickup") ) then
+			if ComponentGetValue2( item_comp, "auto_pickup") then
 				ComponentSetValue2( item_comp, "next_frame_pickable", GameGetFrameNum() + 30 )	
 			end
 		end
@@ -319,7 +319,7 @@ function on_open( entity_item )
 
 	-- PositionSeedComponent
 	local position_comp = EntityGetFirstComponent( entity_item, "PositionSeedComponent" )
-	if( position_comp ) then
+	if ( position_comp ) then
 		rand_x = ComponentGetValue2( position_comp, "pos_x")
 		rand_y = ComponentGetValue2( position_comp, "pos_y")
 	end

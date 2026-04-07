@@ -1,7 +1,8 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
 local entity_id = GetUpdatedEntityID()
-local x, y, a, px, py = EntityGetTransform( entity_id )
+local x, y, a = EntityGetTransform( entity_id )
+local px, py = x, y
 
 local pl = EntityGetClosestWithTag( x, y, "player_unit" )
 if pl ~= nil then px, py = EntityGetTransform( pl ) end

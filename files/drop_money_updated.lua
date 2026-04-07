@@ -1,6 +1,20 @@
 dofile_once("data/scripts/lib/utilities.lua")
 dofile_once( "data/scripts/game_helpers.lua" )
 
+function de_load_gold_entity( entity_filename, x, y, level )
+	local gold_entity = EntityLoad( entity_filename, x, y )
+
+	if level > 1 then
+		local lcomps = EntityGetComponent( gold_entity, "LifetimeComponent" )
+
+		if lcomps ~= nil then for i,lcomp in ipairs( lcomps ) do -- 15s -> level * 15s
+			ComponentSetValue2( lcomp, "lifetime", ComponentGetValue2( lcomp, "lifetime" ) * level )
+		end end
+	end
+	
+	return gold_entity
+end
+
 
 function do_money_drop( amount_multiplier, trick_kill )
 	if GameGetIsTrailerModeEnabled() then return end
@@ -29,7 +43,7 @@ function do_money_drop( amount_multiplier, trick_kill )
 	local money = math.max( math.floor( Random( 9 + hah_amount_multiplier, 12 + 3 * hah_amount_multiplier ) * amount ), Random( 9 + hah_amount_multiplier, 12 + 3 * hah_amount_multiplier ) - 5 )
 	local gold_entity = "data/entities/items/pickup/goldnugget_"
 	
-	local remove_timer = false
+	local remove_timer_level = 0
 	local is_blood_money = false
 
 	local comp_worldstate = EntityGetFirstComponent( GameGetWorldStateEntity(), "WorldStateComponent" )
@@ -54,25 +68,25 @@ function do_money_drop( amount_multiplier, trick_kill )
 			is_blood_money = true
 		end
 
-		if ComponentGetValue2( comp_worldstate, "perk_gold_is_forever" ) and ( money > 10 or is_blood_money ) then remove_timer = true end
+		if ComponentGetValue2( comp_worldstate, "perk_gold_is_forever" ) and ( money > 10 or is_blood_money ) then remove_timer_level = 2 end
 	end
 
 	local d_dollar = entity
 	
 	if money >= 1000*1000 then
-		d_dollar = load_gold_entity( "data/entities/items/pickup/gold_giant_dollar.xml", x, y-8, remove_timer )
+		d_dollar = de_load_gold_entity( "data/entities/items/pickup/gold_giant_dollar.xml", x, y-8, remove_timer_level * 4 )
 	elseif money >= 100*1000 then
-		d_dollar = load_gold_entity( "data/entities/items/pickup/gold_dollar.xml", x, y-8, remove_timer )
+		d_dollar = de_load_gold_entity( "data/entities/items/pickup/gold_dollar.xml", x, y-8, remove_timer_level * 3.5 )
 	elseif money >= 10*1000 then
-		d_dollar = load_gold_entity( gold_entity .. "10000.xml", x, y-8, remove_timer )
+		d_dollar = de_load_gold_entity( gold_entity .. "10000.xml", x, y-8, remove_timer_level * 3 )
 	elseif money >= 1000 then
-		d_dollar = load_gold_entity( gold_entity .. "1000.xml", x, y-8, remove_timer )
+		d_dollar = de_load_gold_entity( gold_entity .. "1000.xml", x, y-8, remove_timer_level * 2.5 )
 	elseif money >= 200 then
-		d_dollar = load_gold_entity( gold_entity .. "200.xml", x, y-8, remove_timer )
+		d_dollar = de_load_gold_entity( gold_entity .. "200.xml", x, y-8, remove_timer_level * 2 )
 	elseif money >= 50 then
-		d_dollar = load_gold_entity( gold_entity .. "50.xml", x, y-8, remove_timer )
+		d_dollar = de_load_gold_entity( gold_entity .. "50.xml", x, y-8, remove_timer_level * 1.5 )
 	else
-		d_dollar = load_gold_entity( gold_entity .. "10.xml", x, y-8, remove_timer )
+		d_dollar = de_load_gold_entity( gold_entity .. "10.xml", x, y-8, remove_timer_level )
 	end
 
 	local dollar_comps = EntityGetComponent( d_dollar, "VariableStorageComponent" )
