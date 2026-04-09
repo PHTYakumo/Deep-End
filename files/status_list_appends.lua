@@ -1,6 +1,25 @@
 
 local de_status_list = {
     {
+        id="DEEP_END_HP_UP",
+        ui_name="$status_de_hp_up",
+        ui_description="$dstatus_de_hp_up",
+        ui_icon="data/ui_gfx/status_indicators/de_hp_up.png",
+        -- is_harmful=true,
+        effect_entity="data/entities/misc/effect_de_hp_up.xml",
+        -- effect_permanent=true,
+    },
+    {
+        id="DEEP_END_HP_UP",
+        ui_name="$status_de_hp_up",
+        ui_description="$dstatus_de_hp_up",
+        ui_icon="data/ui_gfx/status_indicators/de_hp_up.png",
+        -- is_harmful=true,
+        effect_entity="data/entities/misc/effect_de_hp_up_plus.xml",
+        min_threshold_normalized=0.2, -- 12s
+        -- effect_permanent=true,
+    },
+    {
         id="DEEP_END_GRAVITY_EFFECT",
         ui_name="$dde_gravity_potion",
         ui_description="$ddde_gravity_potion",
@@ -16,6 +35,16 @@ local de_status_list = {
         ui_icon="data/ui_gfx/status_indicators/de_laser_eye.png",
         is_harmful=true,
         effect_entity="data/entities/misc/effect_de_personal_laser.xml",
+        -- effect_permanent=true,
+    },
+    {
+        id="DEEP_END_LASER_EYE_EFFECT",
+        ui_name="$dde_laser_eye",
+        ui_description="$ddde_laser_eye",
+        ui_icon="data/ui_gfx/status_indicators/de_laser_eye_hyper.png",
+        is_harmful=true,
+        effect_entity="data/entities/misc/effect_de_personal_laser_hyper.xml",
+        min_threshold_normalized=1.1, -- 66s
         -- effect_permanent=true,
     },
     {
@@ -53,16 +82,6 @@ local de_status_list = {
         ui_icon="data/ui_gfx/status_indicators/de_dizzy.png",
         is_harmful=true,
         effect_entity="data/entities/misc/effect_de_light_headedness.xml",
-        -- effect_permanent=true,
-    },
-
-    {
-        id="DEEP_END_HP_UP",
-        ui_name="$status_de_hp_up",
-        ui_description="$dstatus_de_hp_up",
-        ui_icon="data/ui_gfx/status_indicators/de_hp_up.png",
-        -- is_harmful=true,
-        effect_entity="data/entities/misc/effect_de_hp_up.xml",
         -- effect_permanent=true,
     },
 }

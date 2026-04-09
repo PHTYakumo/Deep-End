@@ -33,7 +33,7 @@
 
 	<GameEffectComponent
 		effect="NO_DAMAGE_FLASH" 
-        frames="90"
+        frames="180"
     >
 	</GameEffectComponent >
 </Entity>

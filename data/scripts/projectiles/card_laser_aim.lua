@@ -9,6 +9,4 @@ local laser_types = { "spark_red_bright", "spark_yellow", "spark_green", "spark_
 local laser_type = CellFactory_GetType( laser_types[Random( 1, #laser_types )] )
 
 local laseremitter = EntityGetFirstComponentIncludingDisabled( entity_id, "LaserEmitterComponent" )
-if( laseremitter ~= nil ) then
-	ComponentObjectSetValue( laseremitter, "laser", "beam_particle_type", tostring(laser_type) )
-end
+if laseremitter ~= nil then ComponentObjectSetValue( laseremitter, "laser", "beam_particle_type", tostring(laser_type) ) end
