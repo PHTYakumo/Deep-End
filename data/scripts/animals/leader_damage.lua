@@ -1,6 +1,6 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
-function damage_received( damage, desc, entity_who_caused, is_fatal )
+function damage_received( damage, desc, entity_who_caused, is_fatal, projectile_id )
 	local entity_id    = GetUpdatedEntityID()
 	local pos_x, pos_y = EntityGetFirstHitboxCenter( entity_id )
 	
@@ -45,7 +45,10 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 		x = x + pos_x
 		y = y + pos_y
 
-		local scavengers = { "heal", "shield", "mine", "glue", "glue", "grenade", "grenade", "grenade", "smg", "smg", "smg", "clusterbomb", "poison" }
+		local scavengers = {
+			"grenade", "grenade", "grenade", "smg", "smg", "smg",
+			"heal", "invis", "shield", "glue", "glue",
+			"clusterbomb", "poison" }
 
 		EntityLoad( "data/entities/animals/scavenger_" .. scavengers[Random(1,#scavengers)] .. ".xml", x, y )
 		EntityLoad( "data/entities/particles/teleportation_target.xml", x, y )

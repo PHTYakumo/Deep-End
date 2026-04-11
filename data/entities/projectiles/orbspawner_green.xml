@@ -1,6 +1,4 @@
-<Entity 
-	name="$projectile_default" 
-	>
+<Entity tags="de_projectile_spawner" >
 
 	<Base file="data/entities/base_projectile.xml" >
 		<VelocityComponent

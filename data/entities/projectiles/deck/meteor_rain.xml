@@ -1,6 +1,6 @@
 <Entity 
 	name="$projectile_default" 
-	tags="player_projectile"
+	tags="player_projectile,de_projectile_spawner"
 	>
 	
 	<VelocityComponent

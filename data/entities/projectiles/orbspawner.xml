@@ -1,6 +1,4 @@
-<Entity 
-	name="$projectile_default" 
-	>
+<Entity tags="de_projectile_spawner" >
 
 	<Base file="data/entities/base_projectile.xml" >
 		<VelocityComponent
@@ -108,8 +106,6 @@
 		offset_x="0" 
 		offset_y="0" 
 		rect_animation="spawn" 
-
-
 		update_transform_rotation="0"
 		>
 	</SpriteComponent>
@@ -124,7 +120,6 @@
 		rect_animation="spawn" 
 		emissive="1"
 		additive="1"
-
 		update_transform_rotation="0"
 		>
 	</SpriteComponent>

@@ -4,7 +4,10 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 	local entity_id = GetUpdatedEntityID()
 	local x, y = EntityGetTransform( entity_id )
 	
-	if script_wait_frames( entity_id, 4 ) or damage < 0 or entity_who_caused == entity_id or ( EntityGetParent( entity_id ) ~= NULL_ENTITY and entity_who_caused == EntityGetParent( entity_id ) ) then return end
+	if damage < 0 or script_wait_frames( entity_id, 4 ) or entity_who_caused == entity_id
+	or ( EntityGetParent( entity_id ) ~= NULL_ENTITY and entity_who_caused == EntityGetParent( entity_id ) ) then return end
+
+	if EntityHasTag( entity_id, "enemy" ) and script_wait_frames( entity_id, 10 ) then return end
 	local herd_id, release_exp, bullet = -1, false, ""
 
 	if EntityHasTag( entity_id, "player_unit" ) then

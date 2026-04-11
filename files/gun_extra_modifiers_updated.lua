@@ -10,14 +10,13 @@ function extra_modifiers.critical_plus_small()
 end
 
 function extra_modifiers.damage_plus_small()
-	c.damage_projectile_add = c.damage_projectile_add + 0.36
-	c.damage_projectile_add = c.damage_projectile_add * 1.25
-	c.damage_healing_add = c.damage_healing_add * 1.25
+	c.damage_projectile_add = c.damage_projectile_add * 1.2 + 0.4
+	c.damage_healing_add = c.damage_healing_add * 1.2
 end
 
 function extra_modifiers.powerful_shot()
-	c.damage_explosion_add = c.damage_explosion_add + 0.12
-	c.damage_projectile_add = c.damage_projectile_add + 0.6
+	c.damage_projectile_add = c.damage_projectile_add + 0.8
+	-- c.damage_explosion_add = c.damage_explosion_add + 0.12
 	c.speed_multiplier = c.speed_multiplier * 1.6
 	c.lifetime_add = c.lifetime_add + 12
 end
@@ -29,9 +28,8 @@ end
 
 function extra_modifiers.lower_spread()
 	c.spread_degrees = c.spread_degrees - 30
-	c.damage_projectile_add = c.damage_projectile_add + 0.6
-	c.damage_explosion_add = c.damage_explosion_add + 0.4
-	c.explosion_radius = clamp( c.explosion_radius -5, 1, 200 )
+	c.damage_projectile_add = c.damage_projectile_add + 0.5
+	-- c.damage_explosion_add = c.damage_explosion_add + 0.4
 	-- c.fire_rate_wait   = c.fire_rate_wait + 2
 	-- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 8.0
 end

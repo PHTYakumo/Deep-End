@@ -1,4 +1,4 @@
-<Entity tags="projectile_player" >
+<Entity tags="projectile_player,de_projectile_spawner" >
 
 	<!-- teleport logic -->
 

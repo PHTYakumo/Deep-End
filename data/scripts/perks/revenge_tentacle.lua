@@ -1,18 +1,14 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
 function damage_received( damage, desc, entity_who_caused, is_fatal )
-	local entity_id    = GetUpdatedEntityID()
+	local entity_id = GetUpdatedEntityID()
 	local x, y = EntityGetTransform( entity_id )
 	
-	-- don't revenge tentacle on heal
-	if ( damage < 0 ) then return end
+	if damage < 0 or script_wait_frames( entity_id, 4 ) or entity_who_caused == entity_id
+	or ( EntityGetParent( entity_id ) ~= NULL_ENTITY and entity_who_caused == EntityGetParent( entity_id ) ) then return end
 
+	if EntityHasTag( entity_id, "enemy" ) and script_wait_frames( entity_id, 10 ) then return end
 	SetRandomSeed( GameGetFrameNum(), x + y + entity_id )
-	
-	if ( entity_who_caused == entity_id ) or ( ( EntityGetParent( entity_id ) ~= NULL_ENTITY ) and ( entity_who_caused == EntityGetParent( entity_id ) ) ) then return end
-
-	-- check that we're only shooting every 10 frames
-	if script_wait_frames( entity_id, 2 ) then  return  end
 
 	EntityAddChild( entity_id, EntityLoad( "data/entities/misc/effect_melee_counter.xml", x, y ) )
 	

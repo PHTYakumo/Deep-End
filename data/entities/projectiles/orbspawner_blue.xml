@@ -1,6 +1,4 @@
-<Entity 
-  name="$projectile_default" 
-   >
+<Entity tags="de_projectile_spawner" >
 
 	<Base file="data/entities/base_projectile.xml" >
 		<VelocityComponent
@@ -30,8 +28,7 @@
 		damage_every_x_frames="7"
     on_collision_die="0"
     lifetime="10" 
-	>
-    <config_explosion
+	><config_explosion
       never_cache="1" 
       camera_shake="0" 
       explosion_radius="10" 
@@ -39,15 +36,15 @@
       explosion_sprite_lifetime="0.0" 
       create_cell_probability="0" 
       create_cell_material="" 
-	  ray_energy="10000"
+	    ray_energy="10000"
       hole_destroy_liquid="1"
-	  explosion_sprite_emissive="1"
-	  explosion_sprite_additive="1"
+	    explosion_sprite_emissive="1"
+	    explosion_sprite_additive="1"
       hole_enabled="1" 
       hole_image="" 
       particle_effect="0" 
       damage_mortals="0"
-	  physics_explosion_power.min="0.2"
+	    physics_explosion_power.min="0.2"
       physics_explosion_power.max="0.3"
       physics_throw_enabled="1" 
       shake_vegetation="1" 
@@ -69,11 +66,8 @@
     offset_x="6" 
     offset_y="6" 
     rect_animation="spawn" 
-     
-     
-	update_transform_rotation="0"
-	>
-  </SpriteComponent>
+	  update_transform_rotation="0"
+	></SpriteComponent>
   
   <SpriteComponent 
     _enabled="1" 
@@ -83,26 +77,23 @@
     offset_x="6" 
     offset_y="6" 
     rect_animation="spawn" 
-	emissive="1"
+	  emissive="1"
     additive="1"
-     
-	update_transform_rotation="0"
-	>
-  </SpriteComponent>
+	  update_transform_rotation="0"
+	></SpriteComponent>
 
   <HitEffectComponent 
-        effect_hit="LOAD_UNIQUE_CHILD_ENTITY"
-        value_string="data/entities/misc/effect_de_woolgather_short.xml" >
+    effect_hit="LOAD_UNIQUE_CHILD_ENTITY"
+    value_string="data/entities/misc/effect_de_woolgather_short.xml" >
 	</HitEffectComponent >
 
   <LuaComponent 
 		_enabled="1" 
 		script_source_file="data/scripts/projectiles/orbspawn_blue.lua" 
 		remove_after_executed="1"
-		>
-   </LuaComponent>
+	></LuaComponent>
    
-   <LightComponent 
+  <LightComponent 
     _enabled="1" 
     radius="150" 
     r="30"
@@ -111,8 +102,8 @@
   </LightComponent>
 
   <AudioComponent
-      file="data/audio/Desktop/projectiles.bank"
-      event_root="projectiles/orb_a" >
+    file="data/audio/Desktop/projectiles.bank"
+    event_root="projectiles/orb_a" >
   </AudioComponent>
   
 	<VariableStorageComponent

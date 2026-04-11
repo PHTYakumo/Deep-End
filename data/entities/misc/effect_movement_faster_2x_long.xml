@@ -13,7 +13,7 @@
 	</GameEffectComponent >
 
 	<UIIconComponent
-		icon_sprite_file="data/ui_gfx/status_indicators/g_fuel_oh_yeah.png"
+		icon_sprite_file="data/ui_gfx/status_indicators/g_fuel_oh_yeah_short.png"
 		name="$GFUEL"
 		description="$dGFUEL"
 		display_above_head="1"

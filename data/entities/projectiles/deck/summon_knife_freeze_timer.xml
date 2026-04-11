@@ -1,5 +1,5 @@
 <Entity 
-  name="$projectile_default" tags="projectile_knife,projectile_player"
+  name="$projectile_default" tags="projectile_knife,projectile_player,de_projectile_spawner"
    >
 
 	<Base file="data/entities/base_projectile.xml" >
