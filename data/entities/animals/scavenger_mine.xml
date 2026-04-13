@@ -118,7 +118,7 @@
 		frames_between_global="110"
 		attack_ranged_action_frame="8"
 		animation_name="attack_bullet"
-		attack_ranged_entity_file="data/entities/projectiles/laser_turret.xml" 
+		attack_ranged_entity_file="data/entities/projectiles/sentryshot.xml" 
 		state_duration_frames="80"
 		attack_ranged_entity_count_min="1"
 		attack_ranged_entity_count_max="1"

@@ -16,7 +16,7 @@
 		damage_per_frame="0.2"
 		update_every_n_frame="1"
 		entities_with_tag="prey"
-		damage_type="DAMAGE_OVEREATING"
+		damage_type="DAMAGE_PROJECTILE"
 		>
 	</AreaDamageComponent>
 	
