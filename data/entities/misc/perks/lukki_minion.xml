@@ -112,7 +112,6 @@
 	
 	<VelocityComponent />
 
-
 	<!-- damage -->
 
 	<DamageModelComponent 
@@ -133,8 +132,7 @@
 		wait_for_kill_flag_on_death="1"
 		physics_objects_damage="0"
 		materials_damage="0" 
-		>
-		<damage_multipliers
+		><damage_multipliers
 			melee="0.0"
 			projectile="0.0"
 			explosion="0.0"
@@ -143,8 +141,7 @@
 			slice="0.0"
 			ice="0.0"
 			radioactive="0.0"
-			>
-		</damage_multipliers>
+		></damage_multipliers>
 	</DamageModelComponent>
 	
 	<GenomeDataComponent 
@@ -160,7 +157,6 @@
 		aabb_max_y="6"
 		damage_multiplier="1.0" >
 	</HitboxComponent>
-
 
 	<!-- etc -->
 

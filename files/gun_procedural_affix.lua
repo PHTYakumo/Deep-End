@@ -91,7 +91,7 @@ function deep_end_gun_affix_apply( gun, entity_id, level, better )
 	if level > 9 then wand_lv_name = "10" end
 	if better then wand_lv_name = wand_lv_name .. "+" end
 	wand_lv_name = " lv." .. wand_lv_name
-	if level > 12 then wand_lv_name = "MAX" end
+	if level > 12 then wand_lv_name = " MAX" end
 
 	local light_comp = EntityGetFirstComponent( entity_id, "LightComponent" )
 

@@ -138,5 +138,10 @@
 		offset.x="0" 
 		offset.y="0">
 	</HotspotComponent>
+
+	<LuaComponent 
+		_enabled="1" 
+		script_damage_received="data/scripts/animals/de_damage_jump.lua" >
+	</LuaComponent>
 </Entity>
 

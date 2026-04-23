@@ -25,7 +25,6 @@ function de_effect_entities_add( game_effect_entities, add_entity )
 	local effect_entities = game_effect_entities
 
 	if judge == nil then effect_entities = effect_entities .. add_entity end
-
 	return effect_entities
 end
 
