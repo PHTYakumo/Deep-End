@@ -28,7 +28,7 @@
 		</AnimalAIComponent>
 		
 		<DamageModelComponent 
-            hp="3.6"
+            hp="3.2"
             ragdoll_material="steel"
 			ragdoll_filenames_file="data/ragdolls/tank_rocket/filenames.txt" 
 			blood_material="smoke"
@@ -174,8 +174,8 @@
 	<AIAttackComponent
 		min_distance="150"
 		max_distance="250"
-		frames_between="75"
-		frames_between_global="75"
+		frames_between="96"
+		frames_between_global="96"
 		attack_ranged_aim_rotation_enabled="1"
 		attack_ranged_aim_rotation_speed="0.05"
 		attack_ranged_aim_rotation_shooting_ok_angle_deg="30"
@@ -193,8 +193,8 @@
 	<AIAttackComponent
 		min_distance="250"
 		max_distance="350"
-		frames_between="6"
-		frames_between_global="6"
+		frames_between="27"
+		frames_between_global="27"
 		attack_ranged_aim_rotation_enabled="1"
 		attack_ranged_aim_rotation_speed="0.25"
 		attack_ranged_aim_rotation_shooting_ok_angle_deg="45"
@@ -212,8 +212,8 @@
 	<AIAttackComponent
 		min_distance="50"
 		max_distance="150"
-		frames_between="30"
-		frames_between_global="30"
+		frames_between="36"
+		frames_between_global="36"
 		attack_ranged_aim_rotation_enabled="1"
 		attack_ranged_aim_rotation_speed="0.15"
 		attack_ranged_aim_rotation_shooting_ok_angle_deg="45"
@@ -231,8 +231,8 @@
 	<AIAttackComponent
 		min_distance="1"
 		max_distance="50"
-		frames_between="80"
-		frames_between_global="80"
+		frames_between="85"
+		frames_between_global="85"
 		attack_ranged_aim_rotation_enabled="1"
 		attack_ranged_aim_rotation_speed="0.35"
 		attack_ranged_aim_rotation_shooting_ok_angle_deg="30"

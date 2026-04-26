@@ -66,3 +66,5 @@ dude = clamp( dude, 1, 149 )
 for i=1,dude do EntityLoad("data/entities/animals/longleg.xml", x, y ) end
 
 -- cards at inventory_quick ( ABILITY_ACTIONS_MATERIALIZED ) are not under consideration
+
+-- GameDropPlayerInventoryItems()

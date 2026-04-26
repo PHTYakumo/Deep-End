@@ -10381,6 +10381,7 @@ local de_actions_recompose =
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/particles/tinyspark_purple.xml," )
 			c.material = "blood_fungi"
 			c.material_amount = c.material_amount + 33
+			c.fire_rate_wait = c.fire_rate_wait - 19
 			shot_effects.recoil_knockback = math.max( shot_effects.recoil_knockback - 10, 0.0 )
 			draw_actions( 1, true )
 		end,
@@ -10402,6 +10403,7 @@ local de_actions_recompose =
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/particles/tinyspark_green.xml," )
 			c.material = "radioactive_liquid_fading"
 			c.material_amount = c.material_amount + 33
+			c.fire_rate_wait = c.fire_rate_wait - 19
 			shot_effects.recoil_knockback = math.max( shot_effects.recoil_knockback - 10, 0.0 )
 			draw_actions( 1, true )
 		end,
@@ -10424,6 +10426,7 @@ local de_actions_recompose =
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/particles/light_shot.xml," )
 			c.material = "water_fading"
 			c.material_amount = c.material_amount + 33
+			c.fire_rate_wait = c.fire_rate_wait - 19
 			shot_effects.recoil_knockback = math.max( shot_effects.recoil_knockback - 10, 0.0 )
 			draw_actions( 1, true )
 		end,
@@ -10446,6 +10449,7 @@ local de_actions_recompose =
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/particles/tinyspark_white_weak.xml," )
 			c.material = "concrete_static"
 			c.material_amount = c.material_amount + 100
+			c.fire_rate_wait = c.fire_rate_wait - 19
 			shot_effects.recoil_knockback = math.max( shot_effects.recoil_knockback - 10, 0.0 )
 			draw_actions( 1, true )
 		end,
@@ -10466,6 +10470,7 @@ local de_actions_recompose =
 		action 		= function()
 			c.material = "coal_static"
 			c.material_amount = c.material_amount + 100
+			c.fire_rate_wait = c.fire_rate_wait - 19
 			shot_effects.recoil_knockback = math.max( shot_effects.recoil_knockback - 10, 0.0 )
 			draw_actions( 1, true )
 		end,

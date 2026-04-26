@@ -1,4 +1,4 @@
-<Entity tags="death_ghost" >
+<Entity tags="death_ghost_ghost" >
 	<Entity>
 		<HitboxComponent 
 			_tags="enabled_in_world"
@@ -22,8 +22,8 @@
 			aabb_min.y="-9" 
 			aabb_max.x="9" 
 			aabb_max.y="9" 
-			damage_per_frame="0.13"
-			update_every_n_frame="1"
+			damage_per_frame="1.3"
+			update_every_n_frame="10"
 			entities_with_tag="homing_target"
 			damage_type="DAMAGE_CURSE"
 			>
@@ -54,7 +54,7 @@
 	</Entity>
 	
 	<CameraBoundComponent
-	  max_count="20"
+	  max_count="60"
 	  distance="2000">
 	</CameraBoundComponent>
 	

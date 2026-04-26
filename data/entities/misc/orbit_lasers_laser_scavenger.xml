@@ -107,7 +107,7 @@
 		laser_angle_add_rad="1.570796"
 		>
 		<laser
-			damage_to_entities="0.04"
+			damage_to_entities="0.025"
 			max_cell_durability_to_destroy="11"
 			damage_to_cells="10000"
 			root_entity_is_responsible_for_damage="1"

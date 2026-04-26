@@ -3,7 +3,7 @@ dofile_once("data/scripts/lib/utilities.lua")
 local entity_id = GetUpdatedEntityID()
 local x, y = EntityGetTransform( entity_id )
 
-local items = EntityGetWithTag( "gold_nugget" )
+local items = EntityGetInRadiusWithTag( x, y, 512, "gold_nugget" )
 local distance_full = tonumber( GlobalsGetValue( "PERK_ATTRACT_ITEMS_RANGE", "100" ) )
 
 if #items > 0 then for i,item_id in ipairs(items) do	

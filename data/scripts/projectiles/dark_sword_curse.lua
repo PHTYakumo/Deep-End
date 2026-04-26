@@ -24,7 +24,7 @@ component_readwrite( dcomp, { hp = 0, max_hp = 0, }, function(dcomp)
 	local curse_id = EntityGetInRadiusWithTag( px, py, 278, "de_dark_curse" )
 
 	local curse_dmg = dcomp.max_hp - dcomp.hp
-	curse_dmg = clamp( curse_dmg * 0.4, 0.04 + enemies_killed * 0.01 * 0.16, 266.6664 )
+	curse_dmg = clamp( curse_dmg * 0.4 + enemies_killed * 0.002, 0.2, 266.6664 )
 
     if ( #curse_id > 0 ) then
         for i = 1, #curse_id do
@@ -49,7 +49,6 @@ component_readwrite( dcomp, { hp = 0, max_hp = 0, }, function(dcomp)
 
 	if GameGetFrameNum() - tonumber( GlobalsGetValue( "DEEP_END_SOUND_DARK_SWORD_CURSE_LAST_PLAY_FRAME" ) ) > 10 then
 		GamePlaySound( "data/audio/Desktop/animals.bank", "animals/failed_alchemist_b_orb/explode", x, y )
-
 		GlobalsSetValue( "DEEP_END_SOUND_DARK_SWORD_CURSE_LAST_PLAY_FRAME", tostring( GameGetFrameNum() ) )
 	end
 end)

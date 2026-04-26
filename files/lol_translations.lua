@@ -105,10 +105,19 @@ function DEEP_END_LOL_TRANSLATIONS( monolingual )
 	ModTextFileSetContent( main, main_content:gsub( [===[烈焰]===], [===[红温]===] ) )
 
 	main_content = ModTextFileGetContent( main )
+	ModTextFileSetContent( main, main_content:gsub( [===[神秘]===], [===[申必]===] ) )
+
+	main_content = ModTextFileGetContent( main )
+	ModTextFileSetContent( main, main_content:gsub( [===[神奇]===], [===[申必]===] ) )
+
+	main_content = ModTextFileGetContent( main )
 	ModTextFileSetContent( main, main_content:gsub( [===[神圣]===], [===[天哪]===] ) )
 
 	main_content = ModTextFileGetContent( main )
 	ModTextFileSetContent( main, main_content:gsub( [===[神]===], [===[神经]===] ) )
+
+	main_content = ModTextFileGetContent( main )
+	ModTextFileSetContent( main, main_content:gsub( [===[神经明]===], [===[神经]===] ) )
 
 	main_content = ModTextFileGetContent( main )
 	ModTextFileSetContent( main, main_content:gsub( [===[静态]===], [===[区]===] ) )

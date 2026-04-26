@@ -28,7 +28,7 @@
 		</AnimalAIComponent>
 		
 		<DamageModelComponent 
-            hp="3.2"
+            hp="2.4"
             ragdoll_material="steel"
 			ragdoll_filenames_file="data/ragdolls/tank/filenames.txt" 
 			blood_material="smoke"
@@ -153,26 +153,26 @@
 	</SpriteComponent>
 
 	<SpriteComponent 
-   	_tags="laser_sight"
-    _enabled="1" 
-    alpha="1" 
-    image_file="data/particles/laser_blue.png"
-    offset_x="5" 
-    offset_y="5"
-    emissive="1"
-    additive="1"
-    visible="0"
-    update_transform="0"
-    next_rect_animation="" 
-    rect_animation="default" 
-     >
-  </SpriteComponent>
+		_tags="laser_sight"
+		_enabled="1" 
+		alpha="1" 
+		image_file="data/particles/laser_blue.png"
+		offset_x="5" 
+		offset_y="5"
+		emissive="1"
+		additive="1"
+		visible="0"
+		update_transform="0"
+		next_rect_animation="" 
+		rect_animation="default" 
+		>
+	</SpriteComponent>
 
 	<AIAttackComponent
 		min_distance="275"
 		max_distance="325"
-		frames_between="60"
-		frames_between_global="60"
+		frames_between="70"
+		frames_between_global="70"
 		attack_ranged_aim_rotation_enabled="1"
 		attack_ranged_aim_rotation_speed="0.35"
 		attack_ranged_aim_rotation_shooting_ok_angle_deg="5"
@@ -207,8 +207,8 @@
 	<AIAttackComponent
 		min_distance="1"
 		max_distance="75"
-		frames_between="12"
-		frames_between_global="12"
+		frames_between="24"
+		frames_between_global="24"
 		attack_ranged_aim_rotation_enabled="1"
 		attack_ranged_aim_rotation_speed="0.45"
 		attack_ranged_aim_rotation_shooting_ok_angle_deg="30"

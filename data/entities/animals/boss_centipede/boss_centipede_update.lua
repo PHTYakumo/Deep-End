@@ -757,6 +757,8 @@ function check_death()
 				PhysicsApplyForce( o, 0, -600)
 				PhysicsApplyTorque( o, 200)
 				GameCreateParticle( "material_darkness", x+20, y, 250, 0, -20, true, false )
+				
+				EntityAddChild( entity_id, EntityLoad( "data/entities/misc/effect_no_heal.xml", x, y ) )
 
 				local p = EntityGetInRadiusWithTag( x, y, 256, "projectile" )
 				if #p > 0 then for i=1,#p do EntityKill( p[i] ) end end

@@ -18,7 +18,9 @@ for i,v in ipairs( pls ) do
 end
 
 local maxhp = ComponentGetValue2( bcomp, "max_hp" )
-local hp = ComponentGetValue2( bcomp, "hp" ) + math.max( total, 0.4 )
+local hp = ComponentGetValue2( bcomp, "hp" )
 
-hp = math.min( hp, maxhp )
-ComponentSetValue2( bcomp, "hp", hp )
+if hp > 1 then
+    hp = hp + math.max( total, 0.4 )
+    ComponentSetValue2( bcomp, "hp", hp )
+end
