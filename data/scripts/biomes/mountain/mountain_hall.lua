@@ -356,98 +356,96 @@ function spawn_all_perks( x, y )
 			--perk_spawn( 395, -380, "ABYSS", true ) 
 		end
 
-		if ( ModSettingGet( "DEEP_END.EVERYONE_IS_POWERFUL" ) ) then
-			local opts =
+		local opts =
+		{
+			"REMOVE_FOG_OF_WAR", "UNLIMITED_SPELLS", "NO_MORE_SHUFFLE", "EDIT_WANDS_EVERYWHERE", "RESPAWN", "SAVING_GRACE",
+			"DE_DUPLICATE", "PERKS_LOTTERY", "WAND_EXPERIMENTER", "TRICK_BLOOD_MONEY", "NO_WAND_EDITING", "EXTRA_HP",
+			"VOMIT_RATS", "MOLD", "WAND_RADAR", "RADAR_ENEMY", "FIRE_GAS", "TELEKINESIS"
+			
+		}
+		
+		-- perk_spawn_with_name( x - 444, y - 10, "EDIT_WANDS_EVERYWHERE", true )
+		perk_spawn_many( x - 474, y + 6, true, opts )
+		
+		local rid = EntityLoad( "data/entities/items/pickup/perk_reroll.xml", x - 465, y + 50 )
+		local reroll_comp = EntityGetFirstComponent( rid, "ItemCostComponent" )	
+
+		if ( reroll_comp ~= nil ) then EntitySetComponentIsEnabled( rid, reroll_comp, false ) end
+
+		reroll_comp = EntityGetComponent( rid, "SpriteComponent", "shop_cost" )
+		
+		if ( reroll_comp ~= nil ) then
+			for a,b in ipairs( reroll_comp ) do
+				EntitySetComponentIsEnabled( rid, b, false )
+			end
+		end
+	
+		EntitySetComponentsWithTagEnabled( rid, "perk_reroll_disable", false )
+
+		local hah_f = math.floor( ModSettingGet( "DEEP_END.HELL_AND_HELL_HP" ) + 0.5 )
+		local str_hf = "HPX" .. tostring(hah_f)
+
+		if ( ModSettingGet( "DEEP_END.HELL_AND_HELL_PERK" ) ) then str_hf = str_hf .. "!!!" end
+
+		if ( hah_f > 1 ) or ( ModSettingGet( "DEEP_END.HELL_AND_HELL_PERK" ) ) then
+			EntityAddComponent2( rid, "SpriteComponent",
 			{
-				"REMOVE_FOG_OF_WAR", "UNLIMITED_SPELLS", "NO_MORE_SHUFFLE", "EDIT_WANDS_EVERYWHERE", "RESPAWN", "SAVING_GRACE",
-				"DE_DUPLICATE", "PERKS_LOTTERY", "WAND_EXPERIMENTER", "TRICK_BLOOD_MONEY", "NO_WAND_EDITING", "EXTRA_HP",
-				"VOMIT_RATS", "MOLD", "WAND_RADAR", "RADAR_ENEMY", "FIRE_GAS", "TELEKINESIS"
-				
-			}
-			
-			-- perk_spawn_with_name( x - 444, y - 10, "EDIT_WANDS_EVERYWHERE", true )
-			perk_spawn_many( x - 474, y + 6, true, opts )
-			
-			local rid = EntityLoad( "data/entities/items/pickup/perk_reroll.xml", x - 465, y + 50 )
-			local reroll_comp = EntityGetFirstComponent( rid, "ItemCostComponent" )	
+				_tags="enabled_in_world",
+				image_file="data/fonts/font_pixel_white.xml", 
+				is_text_sprite=true, 
+				offset_x=1.2*(#str_hf+5.4), 
+				offset_y=23.0, 
+				update_transform=true, 
+				update_transform_rotation=false,
+				text = str_hf, 
+				has_special_scale=true,
+				special_scale_x=0.7,
+				special_scale_y=0.7,
+				z_index=-0.99,
+			})
+		end
 
-			if ( reroll_comp ~= nil ) then EntitySetComponentIsEnabled( rid, reroll_comp, false ) end
+		hah_f = math.floor( ModSettingGet( "DEEP_END.HELL_AND_HELL_AMOUNT" ) + 0.5 )
+		str_hf = "NumX" .. tostring(hah_f)
 
-			reroll_comp = EntityGetComponent( rid, "SpriteComponent", "shop_cost" )
-			
-			if ( reroll_comp ~= nil ) then
-				for a,b in ipairs( reroll_comp ) do
-					EntitySetComponentIsEnabled( rid, b, false )
-				end
-			end
-		
-			EntitySetComponentsWithTagEnabled( rid, "perk_reroll_disable", false )
+		if ( ModSettingGet( "DEEP_END.HELL_AND_HELL_PERK" ) ) then str_hf = str_hf .. "!!!" end
 
-			local hah_f = math.floor( ModSettingGet( "DEEP_END.HELL_AND_HELL_HP" ) + 0.5 )
-			local str_hf = "HPX" .. tostring(hah_f)
+		if ( hah_f > 1 ) or ( ModSettingGet( "DEEP_END.HELL_AND_HELL_PERK" ) ) then
+			EntityAddComponent2( rid, "SpriteComponent",
+			{
+				_tags="enabled_in_world",
+				image_file="data/fonts/font_pixel_white.xml", 
+				is_text_sprite=true, 
+				offset_x=1.2*(#str_hf+6.0), 
+				offset_y=15.0, 
+				update_transform=true, 
+				update_transform_rotation=false,
+				text = str_hf, 
+				has_special_scale=true,
+				special_scale_x=0.7,
+				special_scale_y=0.7,
+				z_index=-0.99,
+			})
+		end
 
-			if ( ModSettingGet( "DEEP_END.HELL_AND_HELL_PERK" ) ) then str_hf = str_hf .. "!!!" end
+		-- choose one
+		SetRandomSeed( x, y + newgame_n )
 
-			if ( hah_f > 1 ) or ( ModSettingGet( "DEEP_END.HELL_AND_HELL_PERK" ) ) then
-				EntityAddComponent2( rid, "SpriteComponent",
-				{
-					_tags="enabled_in_world",
-					image_file="data/fonts/font_pixel_white.xml", 
-					is_text_sprite=true, 
-					offset_x=1.2*(#str_hf+5.4), 
-					offset_y=23.0, 
-					update_transform=true, 
-					update_transform_rotation=false,
-					text = str_hf, 
-					has_special_scale=true,
-					special_scale_x=0.7,
-					special_scale_y=0.7,
-					z_index=-0.99,
-				})
-			end
+		local rnd = 0
+		opts = { "REMOVE_FOG_OF_WAR", "UNLIMITED_SPELLS", "NO_MORE_SHUFFLE" }
+	
+		for i=1,3 do
+			rnd = Random( 1, #opts )
 
-			hah_f = math.floor( ModSettingGet( "DEEP_END.HELL_AND_HELL_AMOUNT" ) + 0.5 )
-			str_hf = "NumX" .. tostring(hah_f)
+			local starting_perk = perk_spawn( x + 12 + 20 * ( i - 1 ), y - 1, opts[rnd], true )
 
-			if ( ModSettingGet( "DEEP_END.HELL_AND_HELL_PERK" ) ) then str_hf = str_hf .. "!!!" end
+			EntityAddComponent( starting_perk, "LuaComponent", 
+			{ 
+				script_item_picked_up="data/scripts/perks/perk_choose_one.lua", -- script_death ?
+			} )
 
-			if ( hah_f > 1 ) or ( ModSettingGet( "DEEP_END.HELL_AND_HELL_PERK" ) ) then
-				EntityAddComponent2( rid, "SpriteComponent",
-				{
-					_tags="enabled_in_world",
-					image_file="data/fonts/font_pixel_white.xml", 
-					is_text_sprite=true, 
-					offset_x=1.2*(#str_hf+6.0), 
-					offset_y=15.0, 
-					update_transform=true, 
-					update_transform_rotation=false,
-					text = str_hf, 
-					has_special_scale=true,
-					special_scale_x=0.7,
-					special_scale_y=0.7,
-					z_index=-0.99,
-				})
-			end
-
-			-- choose one
-			SetRandomSeed( x, y + newgame_n )
-
-			local rnd = 0
-			opts = { "REMOVE_FOG_OF_WAR", "UNLIMITED_SPELLS", "NO_MORE_SHUFFLE" }
-		
-			for i=1,3 do
-				rnd = Random( 1, #opts )
-
-				local starting_perk = perk_spawn( x + 12 + 20 * ( i - 1 ), y - 1, opts[rnd], true )
-
-				EntityAddComponent( starting_perk, "LuaComponent", 
-				{ 
-					script_item_picked_up="data/scripts/perks/perk_choose_one.lua", -- script_death ?
-				} )
-
-				EntityAddTag( starting_perk, "perk_choose_one")
-				table.remove( opts, rnd )
-			end
+			EntityAddTag( starting_perk, "perk_choose_one")
+			table.remove( opts, rnd )
 		end
 	end
 
@@ -538,7 +536,7 @@ function spawn_all_shopitems( x, y )
 				stealable="0",
 			} )
 		end
-	elseif ( ModSettingGet( "DEEP_END.EVERYONE_IS_POWERFUL" ) ) then
+	else
 		local chosen = tonumber(ModSettingGet( "DEEP_END.MAP_TYPE" ))
 		local opts = { "wand_unshuffle_02", "wand_unshuffle_03", "wand_level_03_better", "wand_level_04" }
 		local count = 4

@@ -143,9 +143,9 @@ if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 				},
 				{
 					id = "EVERYONE_IS_POWERFUL",
-					ui_name = "强化后的世界",
+					ui_name = "武装敌人",
 					ui_description = 
-					"\n   包括敌人和你的初始奖励!",
+					"\n   根据所在群系加强敌人!",
 					value_default = true,
 					scope = MOD_SETTING_SCOPE_NEW_GAME,
 				},
@@ -434,9 +434,9 @@ else
 				},
 				{
 					id = "EVERYONE_IS_POWERFUL",
-					ui_name = "Enhance everyone",
+					ui_name = "Enemy armament",
 					ui_description = 
-					"\n   Include starting perks and wands.",
+					"\n   Strengthen the enemy based on the biome.",
 					value_default = true,
 					scope = MOD_SETTING_SCOPE_NEW_GAME,
 				},

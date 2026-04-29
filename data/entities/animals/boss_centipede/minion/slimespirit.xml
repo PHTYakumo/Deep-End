@@ -26,7 +26,7 @@
 		</AnimalAIComponent>
 		
 		<DamageModelComponent 
-			hp="2"
+			hp="0.8"
 			critical_damage_resistance="0.99"
 			physics_objects_damage="0"
 			ragdoll_filenames_file=""
@@ -35,21 +35,25 @@
 			ragdoll_material="rock_static_glow"
 			blood_material="plasma_fading"
 			blood_spray_material="plasma_fading"
+			blood_multiplier="0.1"
 			blood_sprite_directional=""
 			blood_sprite_large=""
 			air_needed="0"
 			>
 			<damage_multipliers
-				projectile="0.4"
-				explosion="0"
-				ice="-2"
-				slice="0.4"
-				drill="0.4"
+				projectile="0.8"
+				explosion="0.2"
+				fire="0"
+				ice="-1"
+				electricity="0"
+				radioactive="0"
+				slice="0.8"
+				drill="0.8"
 				melee="0.8"
 				holy="2"
 				curse="2"
-				poison="0"
-				physics_hit="0.8" 
+				poison="0.2"
+				physics_hit="0" 
 				>
 			</damage_multipliers>
 		</DamageModelComponent>
@@ -164,5 +168,14 @@
 	<VariableStorageComponent
 		_tags="no_gold_drop">
 	</VariableStorageComponent>
+
+	<Entity>
+		<InheritTransformComponent />
+
+		<GameEffectComponent 
+	        effect="STUN_PROTECTION_ELECTRICITY"
+	        frames="-1">
+		</GameEffectComponent>
+	</Entity>
 </Entity>
 

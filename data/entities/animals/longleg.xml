@@ -28,6 +28,7 @@
 
         <DamageModelComponent
             hp="0.14"
+			fire_probability_of_ignition="0" 
             ragdoll_filenames_file="data/ragdolls/longleg/filenames.txt"
             ragdoll_offset_y="-6"
             ragdoll_material="grass_holy"
@@ -117,29 +118,15 @@
 
 	<Entity>
 		<InheritTransformComponent />
-		
-	    <GameEffectComponent 
-	        effect="PROTECTION_FIRE"
-	        frames="-1">
-		</GameEffectComponent>
 
 		<GameEffectComponent 
-	        effect="PROTECTION_FREEZE"
+	        effect="STUN_PROTECTION_FREEZE"
 	        frames="-1">
 		</GameEffectComponent>
 
 		<GameEffectComponent 
 	        effect="SAVING_GRACE"
 	        frames="-1">
-		</GameEffectComponent>
-	</Entity>
-
-	<Entity>
-		<InheritTransformComponent />
-		
-	    <GameEffectComponent 
-	        effect="PROTECTION_ALL"
-	        frames="66">
 		</GameEffectComponent>
 	</Entity>
 
