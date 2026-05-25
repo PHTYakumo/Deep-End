@@ -10303,7 +10303,7 @@ local de_actions_recompose =
 				GamePlaySound( "data/audio/Desktop/animals.bank", "animals/boss_centipede/damage/projectile", px, py )
 			end
 
-			related_projectiles	= {"data/entities/misc/mana_from_spell_short.xml"},
+			add_projectile("data/entities/misc/mana_from_spell_short.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 12
 		end,
 	},
