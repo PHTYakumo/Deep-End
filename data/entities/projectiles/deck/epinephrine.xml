@@ -33,11 +33,11 @@
     on_death_item_pickable_radius="9"
     collide_with_entities="0"
     penetrate_world="1"
-	shoot_light_flash_radius="200" 
-	shoot_light_flash_r="255"
-	shoot_light_flash_g="150"
-	shoot_light_flash_b="255"
-	damage_every_x_frames="20"
+    shoot_light_flash_radius="200" 
+    shoot_light_flash_r="255"
+    shoot_light_flash_g="150"
+    shoot_light_flash_b="255"
+    damage_every_x_frames="20"
     >
     <config_explosion
       never_cache="1" 
@@ -53,7 +53,7 @@
       hole_image="data/temp/explosion_hole.png" 
       particle_effect="0" 
       damage_mortals="0"
-	  physics_explosion_power.min="0" 
+	    physics_explosion_power.min="0" 
       physics_explosion_power.max="0" 
       physics_throw_enabled="0" 
       shake_vegetation="0" 
@@ -74,17 +74,17 @@
   </ProjectileComponent>
 
   <LuaComponent 
-	_enabled="1" 
-	remove_after_executed="0"
-	script_source_file="data/scripts/projectiles/g_fuel_effect.lua"
-  execute_every_n_frame="1" >
+    _enabled="1" 
+    remove_after_executed="0"
+    script_source_file="data/scripts/projectiles/g_fuel_effect.lua"
+    execute_every_n_frame="1" >
   </LuaComponent>
 
   <LuaComponent 
-	execute_on_removed="1"
-  execute_every_n_frame="-1"
-	script_source_file="data/scripts/projectiles/g_fuel_effect_end.lua" 
-  remove_after_executed="0">
+    execute_on_removed="1"
+    execute_every_n_frame="-1"
+    script_source_file="data/scripts/projectiles/g_fuel_effect_end.lua" 
+    remove_after_executed="0">
   </LuaComponent>
   
   <AudioComponent

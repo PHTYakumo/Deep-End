@@ -1,0 +1,6 @@
+<Entity tags="de_effect_charge_side" >
+	<GameEffectComponent 
+        effect="MANA_REGENERATION"
+        frames="12" >
+	</GameEffectComponent >
+</Entity>

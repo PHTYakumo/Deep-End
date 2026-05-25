@@ -44,6 +44,7 @@
 		falling_damages="0" 
 		fire_damage_amount="0" 
 		fire_how_much_fire_generates="0" 
+		critical_damage_resistance="0.5"
 		fire_probability_of_ignition="0"
 		ragdoll_fx_forced="DISINTEGRATED"
 		hp="2666.664" 

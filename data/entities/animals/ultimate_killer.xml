@@ -44,6 +44,7 @@
 			ragdoll_filenames_file="data/ragdolls/ultimate_killer/filenames.txt" 
 			ragdoll_material="magic_liquid_berserk"
 			fire_probability_of_ignition="2"
+			critical_damage_resistance="1.0"
 			blood_material="plasma_fading_pink"
     		blood_spray_material="plasma_fading_pink"
 			ragdoll_offset_y="1"

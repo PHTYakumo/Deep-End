@@ -237,13 +237,19 @@ function DEEP_END_LOL_TRANSLATIONS( monolingual )
 	ModTextFileSetContent( main, main_content:gsub( [===[罐子]===], [===[压缩包]===] ) )
 
 	main_content = ModTextFileGetContent( main )
-	ModTextFileSetContent( main, main_content:gsub( [===[隐形]===], [===[掩耳盗铃]===] ) )
+	ModTextFileSetContent( main, main_content:gsub( [===[隐形]===], [===[棍母]===] ) )
 
 	main_content = ModTextFileGetContent( main )
-	ModTextFileSetContent( main, main_content:gsub( [===[隐身]===], [===[掩耳盗铃]===] ) )
+	ModTextFileSetContent( main, main_content:gsub( [===[隐身]===], [===[棍母]===] ) )
 
 	main_content = ModTextFileGetContent( main )
-	ModTextFileSetContent( main, main_content:gsub( [===[虚幻]===], [===[掩耳盗铃]===] ) )
+	ModTextFileSetContent( main, main_content:gsub( [===[虚幻]===], [===[棍母]===] ) )
+
+	main_content = ModTextFileGetContent( main )
+	ModTextFileSetContent( main, main_content:gsub( [===[虚无]===], [===[棍母]===] ) )
+
+	main_content = ModTextFileGetContent( main )
+	ModTextFileSetContent( main, main_content:gsub( [===[虚空]===], [===[棍母]===] ) )
 
 	main_content = ModTextFileGetContent( main )
 	ModTextFileSetContent( main, main_content:gsub( [===[潮湿]===], [===[优柔寡断]===] ) )
@@ -351,16 +357,16 @@ function DEEP_END_LOL_TRANSLATIONS( monolingual )
 	ModTextFileSetContent( main, main_content:gsub( [===[ Perk]===], [===[ Ppeerrkk]===] ) )
 
 	main_content = ModTextFileGetContent( main )
-	ModTextFileSetContent( main, main_content:gsub( [===[ curse]===], [===[ perk]===] ) )
+	ModTextFileSetContent( main, main_content:gsub( [===[ curse]===], [===[ peak]===] ) )
 
 	main_content = ModTextFileGetContent( main )
-	ModTextFileSetContent( main, main_content:gsub( [===[ Curse]===], [===[ Perk]===] ) )
+	ModTextFileSetContent( main, main_content:gsub( [===[ Curse]===], [===[ Peak]===] ) )
 
 	main_content = ModTextFileGetContent( main )
-	ModTextFileSetContent( main, main_content:gsub( [===[ ppeerrkk]===], [===[ curse]===] ) )
+	ModTextFileSetContent( main, main_content:gsub( [===[ ppeerrkk]===], [===[ peek]===] ) )
 
 	main_content = ModTextFileGetContent( main )
-	ModTextFileSetContent( main, main_content:gsub( [===[ Ppeerrkk]===], [===[ Curse]===] ) )
+	ModTextFileSetContent( main, main_content:gsub( [===[ Ppeerrkk]===], [===[ Peek]===] ) )
 
 	main_content = ModTextFileGetContent( main )
 	ModTextFileSetContent( main, main_content:gsub( [===[ second]===], [===[ one sixtieth minute]===] ) )

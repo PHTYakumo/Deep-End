@@ -1913,7 +1913,7 @@ local de_actions_recompose =
 			c.damage_slice_add = c.damage_slice_add + 0.1
 			c.fire_rate_wait = 0
 			c.spread_degrees = c.spread_degrees + 6.0
-			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 2.0
+			if shot_effects.recoil_knockback < 2 then shot_effects.recoil_knockback = 2.0 end
 			current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the digger reload time back to 0
 		end,
 	},
@@ -10213,7 +10213,7 @@ local de_actions_recompose =
 		name 		= "$GFUEL",
 		description = "$dGFUEL",
 		sprite 		= "data/ui_gfx/gun_actions/deep_end/g_fuel.png",
-		related_projectiles	= {"data/entities/projectiles/deck/epinephrine.xml"},
+		-- related_projectiles	= {"data/entities/projectiles/deck/epinephrine.xml"},
 		type 		= ACTION_TYPE_UTILITY,
 		spawn_level       = "0,1,2,3,4,5,6,10", -- X_RAY
 		spawn_probability = "0.2,0.4,0.6,0.6,0.4,0.2,0.2,0.01", -- X_RAY
@@ -10233,7 +10233,7 @@ local de_actions_recompose =
 		name 		= "$CHARGE",
 		description = "$dCHARGE",
 		sprite 		= "data/ui_gfx/gun_actions/deep_end/charge.png",
-		related_projectiles	= {"data/entities/misc/mana_from_spell_side.xml"},
+		related_projectiles	= {"data/entities/misc/mana_from_spell_short.xml"},
 		type 		= ACTION_TYPE_UTILITY,
 		spawn_level       = "0,1,2,3,4,5,6,10", -- X_RAY
 		spawn_probability = "0.1,0.2,0.3,0.3,0.2,0.1,0.1,0.04", -- X_RAY
@@ -10256,7 +10256,8 @@ local de_actions_recompose =
 				EntityAddChild( entity_id, eid )
 			end
 			
-			-- c.screenshake = c.screenshake + clamp( math.floor( mana * 0.04 - 3 ), -0.5, 16.0 )
+			add_projectile("data/entities/misc/mana_from_spell_short.xml")
+
 			if GameGetFrameNum() < 60 then
 				c.fire_rate_wait = c.fire_rate_wait + 20
 				current_reload_time = current_reload_time + 20
@@ -10265,6 +10266,7 @@ local de_actions_recompose =
 				current_reload_time = current_reload_time - math.min( math.floor( mana * 0.08 - 20 ), 10 )
 			end
 			
+			-- c.screenshake = c.screenshake + clamp( math.floor( mana * 0.04 - 3 ), -0.5, 16.0 )
 			mana = clamp( math.ceil( mana * 0.5 ), 25, 200 )
 		end,
 	},
@@ -10301,6 +10303,7 @@ local de_actions_recompose =
 				GamePlaySound( "data/audio/Desktop/animals.bank", "animals/boss_centipede/damage/projectile", px, py )
 			end
 
+			related_projectiles	= {"data/entities/misc/mana_from_spell_short.xml"},
 			c.fire_rate_wait = c.fire_rate_wait + 12
 		end,
 	},

@@ -42,6 +42,7 @@
 			ragdoll_material="magic_liquid_charm"
 			blood_multiplier="0.01"
 			fire_probability_of_ignition="100"
+			critical_damage_resistance="1.0"
 			blood_material="magic_gas_weakness"
     		blood_spray_material="magic_gas_weakness"
 			ragdoll_offset_y="1"

@@ -1,7 +1,7 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
 local entity_id = GetUpdatedEntityID()
-if not EntityHasTag( entity_id, "enemy" ) then return end
+if not EntityHasTag( entity_id, "enemy" ) then return end -- "polymorphed_player"
 
 if GlobalsGetValue( "DEEP_END_GLOBAL_GORE" ) == "t" then
     local comp = EntityGetFirstComponent( entity_id, "DamageModelComponent" )

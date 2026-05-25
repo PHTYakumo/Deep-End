@@ -4,6 +4,8 @@ dofile_once("data/scripts/gun/gun_actions.lua")
 dofile_once("data/scripts/gun/gun_enums.lua")
 dofile_once("data/scripts/de_input.lua")
 
+-- LuaComponent::script_enabled_changed, enabled_changed()
+
 local entity_id, comp_id = GetUpdatedEntityID(), GetUpdatedComponentID()
 if ComponentHasTag( comp_id, "deep_end_qol_script" ) then EntitySetComponentIsEnabled( entity_id, comp_id, false ) end
 
