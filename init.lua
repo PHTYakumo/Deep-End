@@ -1,6 +1,5 @@
 dofile_once("data/scripts/lib/utilities.lua")
 dofile_once("data/scripts/perks/perk.lua")
-dofile_once("mods/deep_end/files/lol_translations.lua")
 
 local year, month, day, hour, minute, second = GameGetDateAndTimeLocal()
 
@@ -731,6 +730,8 @@ local content = ModTextFileGetContent( "data/entities/buildings/workshop.xml" )
 ModTextFileSetContent( "data/entities/buildings/workshop.xml", content:gsub( ",workshop_untouched", "" ) )
 
 -- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< crazy texts >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< --
+
+dofile_once("mods/deep_end/files/lol_translations.lua")
 
 local tmt = ModIsEnabled("noita.fairmod") or ModIsEnabled("evaisa.tmtrainer") -- the translation of perks will crash the game
 if ModSettingGet( "DEEP_END.LOL_TRANS" ) or tmt then DEEP_END_LOL_TRANSLATIONS( tmt ) end -- so I have to do something

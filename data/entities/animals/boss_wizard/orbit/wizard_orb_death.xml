@@ -81,7 +81,7 @@
 		critical_damage_resistance="0.9"
 		physics_objects_damage="0"
 		materials_damage="0" 
-		>
+		healing_particle_effect_entity="data/entities/particles/heal_effect.xml">
 		<damage_multipliers
 		projectile="1"
 		holy="-1"

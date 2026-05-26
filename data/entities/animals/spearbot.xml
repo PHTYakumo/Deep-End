@@ -42,7 +42,8 @@
 			blood_spray_material="plasma_fading"
 			blood_multiplier="0.1"
 			fire_probability_of_ignition="0"
-			physics_objects_damage="0" >
+			physics_objects_damage="0"
+			healing_particle_effect_entity="data/entities/particles/heal_effect.xml" >
 			<damage_multipliers
 				electricity="0.25"
 				holy="-0.25"

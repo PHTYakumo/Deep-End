@@ -37,7 +37,7 @@
 			materials_that_damage="blood_cold,blood_cold_vapour,lava" 
 			materials_how_much_damage="0.0004,0.0004,-0.002"
 			physics_objects_damage="0"
-			>
+			healing_particle_effect_entity="data/entities/particles/heal_effect.xml">
 			<damage_multipliers
 				melee="0.0"
 				projectile="1.0"

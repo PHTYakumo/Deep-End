@@ -36,7 +36,7 @@
 			blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_purple_$[1-3].xml"
 			minimum_knockback_force="100000"
 			physics_objects_damage="0"
-			>
+			healing_particle_effect_entity="data/entities/particles/heal_effect.xml">
 			<damage_multipliers
 				fire="1.4"
 				explosion="0.0"

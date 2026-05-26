@@ -29,6 +29,7 @@
 			blood_sprite_large=""
 			wet_status_effect_damage="0.4"
 			critical_damage_resistance="1.0"
+			healing_particle_effect_entity="data/entities/particles/heal_effect.xml"
 			><damage_multipliers
 				explosion="0.0"
 				fire="-0.3" 

@@ -56,7 +56,7 @@
 		ragdoll_offset_y="-6"
 		blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_purple_$[1-3].xml"
 		blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_purple_$[1-3].xml"
-		>
+		healing_particle_effect_entity="data/entities/particles/heal_effect.xml">
 		<damage_multipliers
 			projectile="0"
 			explosion="-0.125"

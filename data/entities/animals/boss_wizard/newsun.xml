@@ -187,7 +187,7 @@
 
 	<BlackHoleComponent
 		particle_attractor_force="4"
-		damage_probability="0.25"
+		damage_amount="0"
 		radius="140">
 	</BlackHoleComponent>
 

@@ -34,7 +34,7 @@
 			air_needed="0"
 			physics_objects_damage="0"
 			fire_probability_of_ignition="0"
-			>
+			healing_particle_effect_entity="data/entities/particles/heal_effect.xml">
 			<damage_multipliers
 				radioactive="-4.0"
 				poison="-4.0"

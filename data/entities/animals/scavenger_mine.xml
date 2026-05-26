@@ -36,7 +36,7 @@
 			materials_that_damage="acid,lava,poison,rock_static_cursed" 
 			materials_how_much_damage="0.001,0.001,0.0004,0.002"
 			physics_objects_damage="0"
-			>
+			healing_particle_effect_entity="data/entities/particles/heal_effect.xml">
 			<damage_multipliers
 				melee="0.3"
 				projectile="0.6"

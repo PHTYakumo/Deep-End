@@ -48,6 +48,7 @@
 			ragdoll_offset_y="1"
 			air_needed="0"
 			materials_damage="0"
+			healing_particle_effect_entity="data/entities/particles/heal_effect.xml"
 			><damage_multipliers
 			melee="-10"
 			slice="-10"

@@ -28,7 +28,7 @@
 			fire_probability_of_ignition="0"
 			blood_sprite_directional=""
 			blood_sprite_large=""
-			>
+			healing_particle_effect_entity="data/entities/particles/heal_effect.xml">
 			<damage_multipliers
 				fire="0.06"
 				ice="-0.06"

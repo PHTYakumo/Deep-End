@@ -32,7 +32,7 @@
     		blood_spray_material="blood"
             blood_spray_create_some_cosmetic="1"
 			physics_objects_damage="0"
-			>
+			healing_particle_effect_entity="data/entities/particles/heal_effect.xml">
 			<damage_multipliers
 				fire="-0.2"
 				explosion="-0.2"

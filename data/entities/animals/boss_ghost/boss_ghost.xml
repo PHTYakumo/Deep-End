@@ -116,7 +116,7 @@
 		physics_objects_damage="0"
 		materials_damage="0" 
 		falling_damages="0"
-		>
+		healing_particle_effect_entity="data/entities/particles/heal_effect.xml">
 		<damage_multipliers
 			holy="-0.2"
 			curse="-0.2"

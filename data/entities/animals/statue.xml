@@ -45,6 +45,7 @@
 			materials_how_much_damage="0.08"
 			physics_objects_damage="0"
 			air_needed="0"
+			healing_particle_effect_entity="data/entities/particles/heal_effect.xml"
 			><damage_multipliers
 				melee="5.0"
 				projectile="-0.5"

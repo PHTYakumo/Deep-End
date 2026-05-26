@@ -35,7 +35,8 @@
 			critical_damage_resistance="1.0"
 			fire_probability_of_ignition="0"
 			in_liquid_shooting_electrify_prob="5"
-			physics_objects_damage="0" >
+			physics_objects_damage="0"
+			healing_particle_effect_entity="data/entities/particles/heal_effect.xml" >
 			<damage_multipliers
 				projectile="0.06"
 				explosion="-0.06"
