@@ -1,4 +1,4 @@
-<Entity tags="glue_NOT,polymorphable_NOT,no_swap,deep_end_drone_physics_hell" name="$deep_end_drone_physics_hell">
+<Entity tags="glue_NOT,polymorphable_NOT,no_swap,deep_end_drone_physics_hell,do_not_homing_this" name="$deep_end_drone_physics_hell">
   
 	<PhysicsAIComponent
 		target_vec_max_len="15.0"

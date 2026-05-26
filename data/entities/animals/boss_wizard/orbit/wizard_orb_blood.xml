@@ -1,6 +1,6 @@
 <Entity 
   name="$projectile_default" 
-  tags="hittable,glue_NOT,touchmagic_immunity,polymorphable_NOT"
+  tags="hittable,glue_NOT,touchmagic_immunity,polymorphable_NOT,do_not_homing_this"
    >
 	<ParticleEmitterComponent 
 		emitted_material_name="blood"

@@ -20,7 +20,7 @@ for i=1,9 do
 	if not EntityHasTag( wid, "teleportable_NOT" ) then EntityAddTag( wid, "teleportable_NOT" ) end
 	if not EntityHasTag( wid, "touchmagic_immunity" ) then EntityAddTag( wid, "touchmagic_immunity" ) end
 	if not EntityHasTag( wid, "polymorphable_NOT" ) then EntityAddTag( wid, "polymorphable_NOT" ) end
-	-- if not EntityHasTag( wid, "necrobot_NOT" ) then EntityAddTag( wid, "necrobot_NOT" ) end
+	if not EntityHasTag( wid, "do_not_homing_this" ) then EntityAddTag( wid, "do_not_homing_this" ) end
 
 	-- local boost = EntityLoad( "data/entities/misc/effect_protection_all_once_no_ui.xml" )
     -- EntityAddChild( wid, boost )
