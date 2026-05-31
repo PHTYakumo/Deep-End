@@ -3704,6 +3704,9 @@ local de_actions_recompose =
 			-- damage = 0.3
 			c.fire_rate_wait = c.fire_rate_wait - 20
 			c.spread_degrees = c.spread_degrees + 5
+
+			SetRandomSeed( GameGetFrameNum(), GameGetFrameNum() )
+			c.pattern_degrees = Random( 1, 360 ) + 180
 		end,
 	},
 	{
@@ -5289,6 +5292,7 @@ local de_actions_recompose =
 		action 		= function()
 			c.pattern_degrees = 0.5
 			draw_actions(1, true)
+			c.pattern_degrees = 0.5
 			c.spread_degrees = math.min( c.spread_degrees - 10.0, 180.0 )
 		end,
 	},
@@ -5307,6 +5311,7 @@ local de_actions_recompose =
 		action 		= function()
 			c.pattern_degrees = 180
 			draw_actions(2, true)
+			c.pattern_degrees = 180
 			c.spread_degrees = math.min( c.spread_degrees - 10.0, 180.0 )
 		end,
 	},
@@ -5325,6 +5330,7 @@ local de_actions_recompose =
 		action 		= function()
 			c.pattern_degrees = 45
 			draw_actions(2, true)
+			c.pattern_degrees = 45
 			c.spread_degrees = math.min( c.spread_degrees - 10.0, 180.0 )
 		end,
 	},
@@ -5343,6 +5349,7 @@ local de_actions_recompose =
 		action 		= function()
 			c.pattern_degrees = 90
 			draw_actions(3, true)
+			c.pattern_degrees = 90
 			c.spread_degrees = math.min( c.spread_degrees - 10.0, 180.0 )
 		end,
 	},
@@ -5361,6 +5368,7 @@ local de_actions_recompose =
 		action 		= function()
 			c.pattern_degrees = 20
 			draw_actions(3, true)
+			c.pattern_degrees = 20
 			c.spread_degrees = math.min( c.spread_degrees - 10.0, 180.0 )
 		end,
 	},
@@ -5379,6 +5387,7 @@ local de_actions_recompose =
 		action 		= function()
 			c.pattern_degrees = 180
 			draw_actions(6, true)
+			c.pattern_degrees = 180
 			c.spread_degrees = math.min( c.spread_degrees - 10.0, 180.0 )
 		end,
 	},
@@ -5397,6 +5406,7 @@ local de_actions_recompose =
 		action 		= function()
 			c.pattern_degrees = 180
 			draw_actions(5, true)
+			c.pattern_degrees = 180
 			c.spread_degrees = math.min( c.spread_degrees - 10.0, 180.0 )
 			--c.rad_pattern_degrees_offset = 150 // TODO: implement this
 			--c.pattern_pos_offset = 30
@@ -10489,7 +10499,8 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.2,0.3,0.3,0.4", -- ACID_TRAIL
 		price = 360,
 		mana = 60,
-		max_uses = 50,
+		max_uses = 7,
+		never_unlimited = true,
 		custom_xml_file = "data/entities/misc/custom_cards/de_acid_trail.xml",
 		action 		= function()
 			if c.trail_material_amount > 100 then 
@@ -10521,7 +10532,8 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.3,0.3", -- POISON_TRAIL
 		price = 160,
 		mana = 10,
-		--max_uses = 50,
+		max_uses = 13,
+		never_unlimited = true,
 		custom_xml_file = "data/entities/misc/custom_cards/poison_trail.xml",
 		action 		= function()
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/timelimiter_400.xml," )
