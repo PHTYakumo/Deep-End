@@ -610,7 +610,7 @@ function OnPlayerSpawned( player_entity )
 			-- CreateItemActionEntity( "MELODY", x, y-16 )
 
 			local global_genome_relations_modifier = tonumber( ComponentGetValue2( comp_worldstate, "global_genome_relations_modifier" ) )
-			ComponentSetValue( comp_worldstate, "global_genome_relations_modifier", tostring( global_genome_relations_modifier  + 20 ) )
+			ComponentSetValue( comp_worldstate, "global_genome_relations_modifier", tostring( global_genome_relations_modifier + 20 ) )
 		elseif ( month == 10 ) and ( day == 31 ) then
 			GamePrintImportant( "$thalloween_1", "$thalloween_2", "data/ui_gfx/decorations/halloween.png" )
 			-- EntityAddRandomStains( player_entity, CellFactory_GetType("magic_liquid_hp_regeneration"), 888 ) 

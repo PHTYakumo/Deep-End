@@ -1,6 +1,4 @@
-<Entity 
-  name="$projectile_default" tags="projectile_player,fireball,laser"
-   >
+<Entity name="$projectile_default" tags="projectile_player,fireball,laser" >
 
 	<Base file="data/entities/base_projectile.xml" >
 		<VelocityComponent

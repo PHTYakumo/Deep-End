@@ -228,7 +228,19 @@ de_perk_list_recompose =
 		max_in_perk_pool = 1,
 		func = function( entity_perk_item, entity_who_picked, item_name )
 			local comp = EntityGetFirstComponent( entity_who_picked, "CharacterDataComponent" )
-			if comp ~= nil then ComponentSetValue2( comp, "mFlyingTimeLeft", 3*1024 ) end
+			if comp ~= nil then
+				ComponentSetValue2( comp, "mFlyingTimeLeft", 3 * 1024 )
+				ComponentSetValue2( comp, "flying_in_air_wait_frames", 23 )
+				ComponentSetValue2( comp, "fly_recharge_spd", math.min( ComponentGetValue2( comp, "fly_recharge_spd" ) * 2, 3 ) )
+			end
+		end,
+		func_remove = function( entity_who_picked )
+			local comp = EntityGetFirstComponent( entity_who_picked, "CharacterDataComponent" )
+			if comp ~= nil then
+				ComponentSetValue2( comp, "mFlyingTimeLeft", 1 )
+				ComponentSetValue2( comp, "flying_in_air_wait_frames", 38 )
+				ComponentSetValue2( comp, "fly_recharge_spd", 0.4 )
+			end
 		end,
 	},
 	{

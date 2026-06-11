@@ -31,6 +31,8 @@ function on_open( entity_item )
 		else
 			EntityLoad( "data/entities/animals/boss_sky/apparition_spawn_fx.xml", x, y-4 )
 		end
+	else
+		EntityLoad( "data/entities/animals/boss_sky/apparition_spawn_fx.xml", x, y-4 )
 	end
 end
 

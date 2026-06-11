@@ -273,6 +273,9 @@ function DEEP_END_LOL_TRANSLATIONS( monolingual )
 	ModTextFileSetContent( main, main_content:gsub( [===[格挡]===], [===[拆特]===] ) )
 
 	main_content = ModTextFileGetContent( main )
+	ModTextFileSetContent( main, main_content:gsub( [===[免疫]===], [===[拆特]===] ) )
+
+	main_content = ModTextFileGetContent( main )
 	ModTextFileSetContent( main, main_content:gsub( [===[瞄准]===], [===[锁]===] ) )
 
 	main_content = ModTextFileGetContent( main )
