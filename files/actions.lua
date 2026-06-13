@@ -11414,6 +11414,7 @@ local de_actions_recompose =
 			end
 			
 			data.action( rec )
+			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/dmg_type_conversion.xml," )
 		end,
 	},
 	{
@@ -11457,6 +11458,7 @@ local de_actions_recompose =
 			end
 			
 			data.action( rec )
+			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/dmg_type_conversion.xml," )
 		end,
 	},
 	{
@@ -11500,6 +11502,7 @@ local de_actions_recompose =
 			end
 			
 			data.action( rec )
+			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/dmg_type_conversion.xml," )
 		end,
 	},
 	{

@@ -1,0 +1,40 @@
+<Entity>
+  <ParticleEmitterComponent 
+    emitted_material_name="material_confusion"
+		offset.x="0"
+		offset.y="0"
+		x_pos_offset_min="-2.5"
+		x_pos_offset_max="2.5"
+		y_pos_offset_min="-2.5"
+		y_pos_offset_max="2.5"
+		gravity.y="0"
+		x_vel_min="-10"
+		x_vel_max="10"
+		y_vel_min="-10"
+		y_vel_max="10"
+		count_min="1"
+		count_max="2"
+		is_trail="1"
+		trail_gap="1"
+		fade_based_on_lifetime="1"
+    friction="1"
+		attractor_force="5"
+		lifetime_min="1"
+		lifetime_max="1"
+		airflow_force="1"
+		airflow_time="0.5"
+		airflow_scale="0.1"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		render_on_grid="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="2"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+  <LuaComponent
+		script_source_file="data/scripts/projectiles/dmg_type_conversion.lua"
+		execute_every_n_frame="2"
+    remove_after_executed="1"
+	></LuaComponent>
+</Entity>
