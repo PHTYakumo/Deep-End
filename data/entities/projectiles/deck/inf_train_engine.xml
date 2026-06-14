@@ -1,4 +1,4 @@
-<Entity name="$projectile_default" tags="projectile_heal,hittable,teleportable_NOT,no_swap,touchmagic_immunity,polymorphable_NOT,curse_NOT,necrobot_NOT,glue_NOT">
+<Entity name="$projectile_default" tags="projectile_heal,hittable,teleportable_NOT,no_swap,touchmagic_immunity,polymorphable_NOT,curse_NOT,necrobot_NOT,glue_NOT,resist_repulsion">
 
 	<VelocityComponent
 		terminal_velocity="777"

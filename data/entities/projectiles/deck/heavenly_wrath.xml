@@ -1,4 +1,4 @@
-<Entity name="$projectile_default" tags="projectile_player,thunder,death_cross,projtile_heal" >
+<Entity name="$projectile_default" tags="projectile_player,thunder,death_cross,projtile_heal,resist_repulsion" >
 
 	<Base file="data/entities/base_projectile.xml" >
 		<VelocityComponent

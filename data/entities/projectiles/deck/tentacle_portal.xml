@@ -1,12 +1,12 @@
-<Entity tags="projectile_player,de_projectile_spawner" >
+<Entity tags="projectile_player,de_projectile_spawner,resist_repulsion" >
 
 	<!-- teleport logic -->
 
 	<TeleportComponent
 		_enabled="0"
 		target_x_is_absolute_position="1"
-		target.x="1911" 
-		target.y="250" 
+		target.x="nan" 
+		target.y="nan" 
 	></TeleportComponent>
 
 	<HitboxComponent 
@@ -20,8 +20,7 @@
 	
 	<UIInfoComponent
 		name="$action_tentacle_portal"
-		>
-	</UIInfoComponent>
+	></UIInfoComponent>
 
 	<LightComponent 
 		_enabled="1" 
@@ -76,39 +75,35 @@
 		randomize_angular_velocity.max="3.5"
 		randomize_rotation.min="-90"
 		randomize_rotation.max="90"
-		>
-	</SpriteParticleEmitterComponent>
+	></SpriteParticleEmitterComponent>
 	
 	<LuaComponent
-		script_source_file="data/scripts/projectiles/tentacle_portal.lua"
-		execute_every_n_frame="8"
-		>
-	</LuaComponent>
+		script_source_file="data/scripts/projectiles/de_tentacle_portal.lua"
+		execute_every_n_frame="1"
+	></LuaComponent>
 	
 	<LifetimeComponent
 		lifetime="360"
-		>
-	</LifetimeComponent>
+	></LifetimeComponent>
 	
-	<Base file="data/entities/base_projectile.xml" >
-		<VelocityComponent
+	<Base file="data/entities/base_projectile.xml" 
+		><VelocityComponent
     		gravity_y="0"
 			air_friction="0"
 			mass="0.08"
-			>
-    	</VelocityComponent> 
+		></VelocityComponent> 
 	</Base>
 	
 	<AudioComponent
-      file="data/audio/Desktop/projectiles.bank"
-      event_root="player_projectiles/tentacle_portal"
-      set_latest_event_position="1" >
-	</AudioComponent>
+		file="data/audio/Desktop/projectiles.bank"
+		event_root="player_projectiles/tentacle_portal"
+		set_latest_event_position="1"
+	></AudioComponent>
 
-  <AudioLoopComponent
-    file="data/audio/Desktop/projectiles.bank"
-    event_name="player_projectiles/tentacle_portal/loop"
-    auto_play="1">
-  </AudioLoopComponent>
+	<AudioLoopComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_name="player_projectiles/tentacle_portal/loop"
+		auto_play="1"
+	></AudioLoopComponent>
     
 </Entity>

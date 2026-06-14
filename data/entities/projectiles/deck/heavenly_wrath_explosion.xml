@@ -1,4 +1,4 @@
-<Entity name="$projectile_default" tags="ultra_light,thunder,death_cross,projtile_heal" >
+<Entity name="$projectile_default" tags="ultra_light,thunder,death_cross,projtile_heal,resist_repulsion" >
 
   <ProjectileComponent 
     _enabled="1" 
