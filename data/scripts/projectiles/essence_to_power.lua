@@ -38,7 +38,7 @@ if ( who_shot ~= nil ) and ( comp ~= nil ) then
 	end
 	
 	local damage = ComponentGetValue2( comp, "damage" )
-	local expdamage = ComponentObjectGetValue( comp, "config_explosion", "damage" )
+	local expdamage = ComponentObjectGetValue2( comp, "config_explosion", "damage" )
 	
 	damage = damage + math.min( 400, count * 0.1 )
 	expdamage = expdamage + math.min( 400, count * 0.1 )
@@ -46,7 +46,7 @@ if ( who_shot ~= nil ) and ( comp ~= nil ) then
 	-- print("FINAL: " .. tostring(count))
 	
 	ComponentSetValue2( comp, "damage", damage )
-	ComponentObjectSetValue( comp, "config_explosion", "damage", expdamage )
+	ComponentObjectSetValue2( comp, "config_explosion", "damage", expdamage )
 	
 	local effect_id = EntityLoad("data/entities/particles/tinyspark_blue_large.xml", x, y)
 	EntityAddChild( root_id, effect_id )

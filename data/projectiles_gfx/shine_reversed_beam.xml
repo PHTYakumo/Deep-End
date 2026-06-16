@@ -1,7 +1,7 @@
 <Sprite
- filename="data/projectiles_gfx/katana_cross_slash.png"
- offset_x="15"
- offset_y="12.5"
+ filename="data/projectiles_gfx/shine_reversed_beam.png"
+ offset_x="1.25"
+ offset_y="4.5"
  default_animation="fireball" >
 
  <!-- animation -->
@@ -10,11 +10,10 @@
   pos_x="0"
   pos_y="0"
   frame_count="1"
-  frame_width="30"
-  frame_height="25"
-  frame_wait="0.1"
-  frames_per_row="6"
+  frame_width="325"
+  frame_height="9"
+  frame_wait="0.2"
+  frames_per_row="1"
   loop="1"   >
  </RectAnimation>
- 
 </Sprite>

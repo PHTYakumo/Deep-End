@@ -1,0 +1,49 @@
+<Entity>
+
+  <Base file="data/entities/projectiles/deck/orb_shine_reversed_nobeam.xml">
+
+    <VelocityComponent
+      terminal_velocity="0.1">
+    </VelocityComponent>
+
+    <AreaDamageComponent
+      _tags="area_damage,enable_when_player_seen"
+      _enabled="0"
+      damage_per_frame="0" >
+    </AreaDamageComponent>
+
+    <SpriteComponent 
+      _enabled="1"
+      alpha="0.01" >
+    </SpriteComponent>
+
+    <SpriteComponent 
+      _enabled="1" >
+    </SpriteComponent>
+
+  </Base>
+
+  <SpriteComponent 
+    _tags="enable_when_player_seen"
+    _enabled="0" 
+    alpha="0.34" 
+    z_index="-2"
+    image_file="data/projectiles_gfx/shine_reversed_beam.xml" 
+    next_rect_animation="" 
+    offset_x="0" 
+    offset_y="0" 
+    rect_animation="" 
+    has_special_scale="1"
+	  special_scale_x="3.45"
+	  special_scale_y="0.125" >
+  </SpriteComponent>
+
+  <LuaComponent
+		_enabled="1" 
+		remove_after_executed="0"
+		script_source_file="data/scripts/projectiles/shine_reversed_beam.lua"
+		execute_every_n_frame="1" >
+	</LuaComponent>
+  
+</Entity>
+

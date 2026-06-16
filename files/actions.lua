@@ -776,14 +776,35 @@ local de_actions_recompose =
 		-- sprite_unidentified = "data/ui_gfx/gun_actions/slimeball_unidentified.png",
 		related_projectiles	= {"data/entities/projectiles/deck/tentacle_portal.xml"},
 		type 		= ACTION_TYPE_STATIC_PROJECTILE,
-		spawn_level                       = "1,2,3,4,10", -- TENTACLE_PORTAL
-		spawn_probability                 = "0.3,0.3,0.3,0.3,0.025", -- TENTACLE_PORTAL
-		price = 220,
-		mana = 67,
+		spawn_level                       = "0,2,4,6,10", -- TENTACLE_PORTAL
+		spawn_probability                 = "0.01,0.01,0.01,0.01,0.005", -- TENTACLE_PORTAL
+		price = 225,
+		mana = 34,
 		max_uses = 5,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/tentacle_portal.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 30
+		end,
+	},
+	{
+		Deep_End_Unique_Spell = true,
+		id          = "DE_DARKBEAM",
+		name 		= "$DARKBEAM",
+		description = "$dDARKBEAM",
+		sprite 		= "data/ui_gfx/gun_actions/deep_end/orb_shine_reversed_beam.png",
+		-- sprite_unidentified = "data/ui_gfx/gun_actions/slimeball_unidentified.png",
+		related_projectiles	= {"data/entities/projectiles/deck/orb_shine_reversed_nobeam.xml"},
+		type 		= ACTION_TYPE_STATIC_PROJECTILE,
+		spawn_level                       = "1,3,5,7,10", -- TENTACLE_PORTAL
+		spawn_probability                 = "0.01,0.01,0.01,0.01,0.005", -- TENTACLE_PORTAL
+		price = 225,
+		mana = 67,
+		max_uses = 7,
+		ai_never_uses = true,
+		action 		= function()
+			add_projectile("data/entities/projectiles/deck/orb_shine_reversed.xml")
+			add_projectile("data/entities/misc/mana_from_spell_short.xml")
+			current_reload_time = current_reload_time + 15
 		end,
 	},
 	{

@@ -2,6 +2,8 @@ dofile_once("data/scripts/lib/utilities.lua")
 
 function damage_about_to_be_received( damage, x, y, entity_thats_responsible, critical_hit_chance )
 	local entity_id = GetUpdatedEntityID()
+	-- GamePrint(tostring(entity_thats_responsible))
+
 	local dmgmod = EntityGetFirstComponent( entity_id, "DamageModelComponent" )
 	if damage < 0.2 or dmgmod == nil then return damage, critical_hit_chance end
 	

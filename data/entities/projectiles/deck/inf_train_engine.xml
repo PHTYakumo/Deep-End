@@ -12,6 +12,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
+		z_index="-1.8"
 		image_file="data/items_gfx/inf_train_engine.png" 
 		has_special_scale="1"
 		special_scale_x="1"

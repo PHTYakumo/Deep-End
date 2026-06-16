@@ -3,6 +3,24 @@ dofile_once("data/scripts/lib/utilities.lua")
 local entity_id, rad = GetUpdatedEntityID(), 1.9
 local x, y = EntityGetTransform( entity_id )
 
+local sampos = EntityGetInRadiusWithTag( x, y, 6, "this_is_sampo" )
+
+if #sampos > 0 then for i=1,#sampos do if EntityGetRootEntity( sampos[i] ) == sampos[i] then
+    dofile_once("data/scripts/newgame_plus.lua")
+    local pls = EntityGetInRadiusWithTag( x, y, 66, "player_unit" )
+
+    if #pls > 0 then
+        local newgame_n = tonumber( SessionNumbersGetValue( "NEW_GAME_PLUS_COUNT" ) )
+        DEEP_END_do_newgame_any_dimension( newgame_n - 1 )
+
+        EntityKill( sampos[i] )
+        EntityKill( entity_id )
+
+        GamePrint( "$chest_bad_msg_13" )
+        break
+    end
+end end end
+
 local enemies = EntityGetInRadiusWithTag( x, y, 66, "mortal" )
 
 if #enemies > 0 then for i=1,#enemies do if not EntityHasTag( enemies[i], "projectile" ) then

@@ -191,7 +191,7 @@ end
 function spawn_minion()
 	-- check that we only have less than N minions
 	local existing_minion_count = 0
-	local existing_minions = EntityGetWithTag( "slimeshooter_boss_limbs" )
+	local existing_minions = EntityGetWithTag( "de_boss_limbs" )
 	if ( #existing_minions > 0 ) then
 		existing_minion_count = #existing_minions
 	end
