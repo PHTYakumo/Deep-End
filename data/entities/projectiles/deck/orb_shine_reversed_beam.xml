@@ -49,7 +49,7 @@
       explosion_sprite="data/particles/explosion_016_plasma_dark.xml" 
       explosion_sprite_lifetime="0.0" 
       create_cell_probability="0" 
-      create_cell_material="plasma_fading"
+      create_cell_material="spark_electric"
 	    explosion_sprite_emissive="1"
 	    explosion_sprite_additive="1"
 	    ray_energy="10"
@@ -62,7 +62,7 @@
 	    physics_throw_enabled="0"
       shake_vegetation="0"  
       sparks_enabled="0" 
-	    spark_material="plasma_fading"
+	    spark_material="spark_electric"
       sparks_count_max="1" 
       sparks_count_min="1"
       light_fade_time="1" 
@@ -77,6 +77,10 @@
   <LifetimeComponent
 		lifetime="66" >
 	</LifetimeComponent>
-  
+
+  <HitEffectComponent 
+    effect_hit="LOAD_UNIQUE_CHILD_ENTITY"
+    value_string="data/entities/misc/sacred_burning.xml" >
+	</HitEffectComponent>
 </Entity>
 

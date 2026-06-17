@@ -96,6 +96,8 @@ elseif frame_count > 75 and frame_count % 10 == 7 then
         local vcomp = EntityGetFirstComponent( entity_id, "VelocityComponent" )
         if vcomp == nil then return end
 
+        dmg = dmg * 0.5
+
         local vx, vy = ComponentGetValue2( vcomp, "mVelocity" )
         local pid = EntityLoad( "data/entities/projectiles/deck/orb_shine_reversed_beam.xml", x - vy * 1.5, y + vx * 1.5 )
 

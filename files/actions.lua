@@ -1991,6 +1991,46 @@ local de_actions_recompose =
 		end,
 	},
 	{
+		Deep_End_Unique_Spell = true,
+		id          = "DE_TENTACLE_HAND",
+		name 		= "$TENTACLE_HAND",
+		description = "$dTENTACLE_HAND",
+		-- spawn_requires_flag = "card_unlocked_tentacle",
+		sprite 		= "data/ui_gfx/gun_actions/deep_end/de_hand.png",
+		-- sprite_unidentified = "data/ui_gfx/gun_actions/tentacle_unidentified.png",
+		related_projectiles	= {"data/entities/projectiles/de_hand.xml"},
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "3,4,5,6,7", -- TENTACLE
+		spawn_probability                 = "0.1,0.3,0.3,0.4,0.2", -- TENTACLE
+		price = 200,
+		mana = 39,
+		-- custom_xml_file = "data/entities/misc/custom_cards/tentacle.xml",
+		action 		= function()
+			add_projectile("data/entities/projectiles/de_hand.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 21
+		end,
+	},
+	{
+		Deep_End_Unique_Spell = true,
+		id          = "DE_TENTACLE_VINE",
+		name 		= "$TENTACLE_VINE",
+		description = "$dTENTACLE_VINE",
+		-- spawn_requires_flag = "card_unlocked_tentacle",
+		sprite 		= "data/ui_gfx/gun_actions/deep_end/de_cirrus.png",
+		-- sprite_unidentified = "data/ui_gfx/gun_actions/tentacle_unidentified.png",
+		related_projectiles	= {"data/entities/projectiles/de_cirrus.xml"},
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "3,4,5,6,7", -- TENTACLE
+		spawn_probability                 = "0.2,0.3,0.3,0.3,0.1", -- TENTACLE
+		price = 200,
+		mana = 11,
+		-- custom_xml_file = "data/entities/misc/custom_cards/tentacle.xml",
+		action 		= function()
+			add_projectile("data/entities/projectiles/de_cirrus.xml")
+			c.fire_rate_wait = c.fire_rate_wait - 8
+		end,
+	},
+	{
 		id          = "TENTACLE",
 		name 		= "$action_tentacle",
 		description = "$actiondesc_tentacle",
@@ -2000,10 +2040,9 @@ local de_actions_recompose =
 		related_projectiles	= {"data/entities/projectiles/deck/tentacle.xml"},
 		type 		= ACTION_TYPE_PROJECTILE,
 		spawn_level                       = "3,4,5,6,7", -- TENTACLE
-		spawn_probability                 = "0.4,0.5,0.5,0.6,0.7", -- TENTACLE
+		spawn_probability                 = "0.2,0.3,0.3,0.4,0.3", -- TENTACLE
 		price = 200,
 		mana = 20,
-		max_uses = DE_USAGE * 2,
 		custom_xml_file = "data/entities/misc/custom_cards/tentacle.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/tentacle.xml")
@@ -2020,10 +2059,9 @@ local de_actions_recompose =
 		related_projectiles	= {"data/entities/projectiles/deck/tentacle.xml"},
 		type 		= ACTION_TYPE_PROJECTILE,
 		spawn_level                       = "3,4,5,6,7", -- TENTACLE
-		spawn_probability                 = "0.3,0.4,0.4,0.5,0.5", -- TENTACLE
+		spawn_probability                 = "0.1,0.2,0.3,0.2,0.1", -- TENTACLE
 		price = 250,
 		mana = 20,
-		max_uses = DE_USAGE * 2,
 		custom_xml_file = "data/entities/misc/custom_cards/tentacle_timer.xml",
 		action 		= function()
 			add_projectile_trigger_timer("data/entities/projectiles/deck/tentacle.xml",20,1)

@@ -463,7 +463,7 @@ end
 
 local deep_end_super_fish = EntityGetInRadiusWithTag( x, y, 128, "super_fish" )
 
-if ( #deep_end_super_fish > 0 ) then
+if ( #deep_end_super_fish > 0 ) and ( not ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) ) then
 	local players = EntityGetWithTag( "player_unit" )
 
 	if ( #players > 0 ) then

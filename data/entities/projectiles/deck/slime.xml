@@ -18,7 +18,7 @@
 		on_lifetime_out_explode="1"
 		on_collision_die="1"
 		explosion_dont_damage_shooter="1"
-		damage="0.25"
+		damage="0"
 		lifetime="380"
 		shoot_light_flash_r="40"
 		shoot_light_flash_g="120"
@@ -26,34 +26,34 @@
 		shoot_light_flash_radius="72"
 		knockback_force="1.5"
 		physics_impulse_coeff="8000"
-		><damage_by_type
-		radioactive="0.09"
-		></damage_by_type>
-		<config_explosion
-		    never_cache="1" 
-			damage="0.3"
-			camera_shake="3.0" 
-			explosion_radius="9" 
-			explosion_sprite="data/particles/explosion_032_slimeburst.xml" 
-			explosion_sprite_lifetime="0" 
-			create_cell_probability="5" 
-			create_cell_material="radioactive_liquid_fading"
-			hole_destroy_liquid="0" 
-			hole_enabled="1" 
-			hole_image="data/temp/explosion_hole.png" 
-			particle_effect="0" 
-			damage_mortals="1"
-			physics_explosion_power.max="0.2"
-			physics_explosion_power.max="0.3" 
-			physics_throw_enabled="1" 
-			shake_vegetation="1" 
-			sparks_count_max="20" 
-			sparks_count_min="7" 
-			sparks_enabled="0" 
-			stains_enabled="1" 
-			stains_radius="11"
-			audio_enabled="0" >
-		</config_explosion>
+	><damage_by_type
+		radioactive="0.36"
+	></damage_by_type
+	><config_explosion
+		never_cache="1" 
+		damage="0.3"
+		camera_shake="3.0" 
+		explosion_radius="9" 
+		explosion_sprite="data/particles/explosion_032_slimeburst.xml" 
+		explosion_sprite_lifetime="0" 
+		create_cell_probability="5" 
+		create_cell_material="radioactive_liquid_fading"
+		hole_destroy_liquid="0" 
+		hole_enabled="1" 
+		hole_image="data/temp/explosion_hole.png" 
+		particle_effect="0" 
+		damage_mortals="1"
+		physics_explosion_power.max="0.2"
+		physics_explosion_power.max="0.3" 
+		physics_throw_enabled="1" 
+		shake_vegetation="1" 
+		sparks_count_max="20" 
+		sparks_count_min="7" 
+		sparks_enabled="0" 
+		stains_enabled="1" 
+		stains_radius="11"
+		audio_enabled="0" 
+	></config_explosion>
 	</ProjectileComponent>
 
 	<SpriteComponent 
@@ -63,9 +63,7 @@
 		next_rect_animation="" 
 		offset_x="8" 
 		offset_y="6" 
-		rect_animation="" 
-		 
-		 >
+		rect_animation="" >
 	</SpriteComponent>
 
 	<ParticleEmitterComponent 
@@ -116,10 +114,10 @@
         create_ragdoll="0" >
     </DamageModelComponent>
 
-  <AudioComponent
-      file="data/audio/Desktop/projectiles.bank"
-      event_root="player_projectiles/bullet_slime">
-  </AudioComponent>
+  	<AudioComponent
+      	file="data/audio/Desktop/projectiles.bank"
+      	event_root="player_projectiles/bullet_slime">
+  	</AudioComponent>
   
 	<VariableStorageComponent
 		name="projectile_file"

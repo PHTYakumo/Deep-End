@@ -11,6 +11,7 @@ function collision_trigger()
 	for i = 1,hah_amount do
 		if ( newgame_n < 0 ) then
 			eid = EntityLoad( "data/entities/animals/maggot_tiny/maggot_tiny.xml", pos_x, pos_y )
+			EntityLoad( "data/entities/projectiles/remove_ground.xml", pos_x, pos_y )
 		else	
 			eid = EntityLoad( "data/entities/animals/boss_dragon.xml", pos_x, pos_y )
 			

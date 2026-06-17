@@ -1,0 +1,65 @@
+<Entity>
+  <InheritTransformComponent 
+		_enabled="1" >
+  </InheritTransformComponent>
+
+  <ParticleEmitterComponent 
+    emitted_material_name="spark_blue_dark"
+    count_min="1"
+    count_max="1"
+    offset.x="0"
+    offset.y="-4"
+    x_pos_offset_min="-5"
+    y_pos_offset_min="-9"
+    x_pos_offset_max="5"
+    y_pos_offset_max="9"
+    x_vel_min="-27"
+    x_vel_max="27"
+    y_vel_min="-36"
+    y_vel_max="36"
+    lifetime_min="1.8"
+    lifetime_max="1.8"
+    create_real_particles="0"
+    emit_cosmetic_particles="1"
+    emission_interval_min_frames="1"
+    emission_interval_max_frames="4"
+    is_emitting="1" >
+  </ParticleEmitterComponent>
+
+  <ParticleEmitterComponent 
+    emitted_material_name="spark_electric"
+    custom_style="FIRE"
+    color="ff001aff"
+    count_min="1"
+    count_max="1"
+    offset.x="0"
+    offset.y="-4"
+    x_pos_offset_min="-5"
+    y_pos_offset_min="-9"
+    x_pos_offset_max="5"
+    y_pos_offset_max="9"
+    x_vel_min="-27"
+    x_vel_max="27"
+    y_vel_min="-36"
+    y_vel_max="36"
+    lifetime_min="1.8"
+    lifetime_max="1.8"
+    create_real_particles="0"
+    emit_cosmetic_particles="1"
+    emission_interval_min_frames="1"
+    emission_interval_max_frames="4"
+    is_emitting="1" >
+  </ParticleEmitterComponent>
+
+  <LifetimeComponent
+		lifetime="666" >
+	</LifetimeComponent>
+
+  <LuaComponent
+		_enabled="1" 
+		remove_after_executed="0"
+		script_source_file="data/scripts/projectiles/sacred_burning.lua"
+		execute_every_n_frame="10" >
+	</LuaComponent>
+
+</Entity>

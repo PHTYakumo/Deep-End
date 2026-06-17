@@ -5,6 +5,7 @@
     air_friction="0"
     terminal_velocity="100"
     mass="0.01"
+    liquid_drag="0"
 		affect_physics_bodies="1" >
 	</VelocityComponent>
 
@@ -32,6 +33,8 @@
     on_lifetime_out_explode="0"
     explosion_dont_damage_shooter="1" 
     on_collision_die="0"
+    collide_with_world="0"
+		penetrate_world_velocity_coeff="1"
     damage_every_x_frames="30"
     never_hit_player="1"
     lifetime="-1"
