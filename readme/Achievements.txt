@@ -1,11 +1,14 @@
+----------------------------------------------------------------------------------------------------------------
+
 -> The fastest record ( Updated on 2025.05.03 )
 
-by			机・丹尼尔・奥利瓦 ( Eto Demerzel )
+by			Hardpossession
 
-in game time	03m58s
+in game time	02m26s
 
-video link		https://www.bilibili.com/video/BV1mZMnzCEZ4
+video link		https://www.youtube.com/watch?v=Ocpde__ns5g
 
+----------------------------------------------------------------------------------------------------------------
 
 -> The first wandless achiever
 
@@ -13,11 +16,15 @@ by
 
 video link		
 
+----------------------------------------------------------------------------------------------------------------
+
 -> The first all bosses slayer
 
 by			
 
 video link	
+
+----------------------------------------------------------------------------------------------------------------
 
 -> The first hitless achiever
 
@@ -25,6 +32,7 @@ by
 
 video link	
 
+----------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------
 
 No other mods can be loaded and no bugs can be intentionally used.
@@ -37,6 +45,7 @@ Full video recording is required.
 
 "hitless" means the player cannot take any damage
 
+----------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------
 
 all bosses:
@@ -70,10 +79,15 @@ all bosses:
 ( Some can not be so easy to summon )
 
 ----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
 
 If you complete any of the above challenges please contact me via Discord:
 
 https://discord.gg/cN3T69yPfP
+
+Steam Workshop will be updated as soon as possible.
+
+The relaese on github will not be updated immediately, but will be updated together with the next release
 
 
 

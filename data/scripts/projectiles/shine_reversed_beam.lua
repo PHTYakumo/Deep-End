@@ -1,10 +1,10 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
 --[[
-    0~10f       reveal
-    11~75f      aim
-    76~300f     beam
-    301~345f    fade
+    0~10f           reveal
+    11~75f          aim
+    76~100~300f     beam
+    301~345f        fade
 ]]--
 
 local entity_id = GetUpdatedEntityID()
@@ -73,7 +73,8 @@ if frame_count == 10 then
     if scomp ~= nil then EntitySetComponentIsEnabled( entity_id, scomp, true ) end
 elseif frame_count == 75 then
     EntitySetComponentIsEnabled( entity_id, acomp, true )
-
+    
+    --[[
     local x, y, dir = EntityGetTransform( entity_id )
     local pls = EntityGetInRadiusWithTag( x, y, 66, "boss_centipede" )
     if #pls == 0 then return end
@@ -83,7 +84,9 @@ elseif frame_count == 75 then
 
     ComponentSetValue2( acomp, "damage_per_frame", dmg )
     GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/barren_puzzle_completed/create", x, y )
+
     -- GamePrint( tostring( dmg * 25) )
+    ]]--
 elseif frame_count == 345 then
     EntityConvertToMaterial( entity_id, "spark_blue_dark" )
 elseif frame_count > 345 then
