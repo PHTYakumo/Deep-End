@@ -302,44 +302,39 @@ function deep_end_biome( biome_name, hp_scale, attack_speed )
 end
 
 function OnWorldInitialized() 
-	if ModSettingGet( "DEEP_END.EVERYONE_IS_POWERFUL" ) or ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) then
-		deep_end_biome( "coalmine", 0.5, 1 )
-		deep_end_biome( "coalmine_alt", 0.6, 0.9 )
-		deep_end_biome( "excavationsite", 0.75, 0.9 )
-		deep_end_biome( "snowcastle", 1, 0.8 )
-		deep_end_biome( "snowcave", 1, 0.8 )
-		deep_end_biome( "rainforest_dark", 1.25, 0.7 )
-		deep_end_biome( "snowcave_tunnel", 2, 0.7 )
-		deep_end_biome( "liquidcave", 1.5, 0.75 )
-		deep_end_biome( "vault", 2.5, 0.5 )
-		deep_end_biome( "fungicave", 1.5, 0.7 )
-		deep_end_biome( "pyramid", 3, 0.5 )
-		deep_end_biome( "wandcave", 1.25, 0.6 )
-		deep_end_biome( "rainforest", 2, 0.6 )
-		deep_end_biome( "rainforest_open", 2, 0.6 )
-		deep_end_biome( "robobase", 1.5, 0.75 )
-		deep_end_biome( "crypt", 2.5, 0.5 )
-		deep_end_biome( "desert", 3, 0.5 )
-		deep_end_biome( "forest", 3, 0.5 )
-		deep_end_biome( "winter_caves", 3, 0.4 )
-		deep_end_biome( "vault_frozen", 4, 0.4 )
-		deep_end_biome( "wizardcave", 4, 0.4 )
-		deep_end_biome( "fungiforest", 2, 0.25 )
-		deep_end_biome( "sandcave", 5, 0.6 )
-		deep_end_biome( "clouds", 6, 0.3 )
-		deep_end_biome( "the_end", 7, 0.3 )
-		deep_end_biome( "the_sky", 7, 0.3 )
-		deep_end_biome( "robot_egg", 10, 0.2 )
+	deep_end_biome( "coalmine", 0.5, 1 )
+	deep_end_biome( "coalmine_alt", 0.6, 0.9 )
+	deep_end_biome( "excavationsite", 0.75, 0.9 )
+	deep_end_biome( "snowcastle", 1, 0.8 )
+	deep_end_biome( "snowcave", 1, 0.8 )
+	deep_end_biome( "rainforest_dark", 1.25, 0.7 )
+	deep_end_biome( "snowcave_tunnel", 2, 0.7 )
+	deep_end_biome( "liquidcave", 1.5, 0.75 )
+	deep_end_biome( "vault", 2.5, 0.5 )
+	deep_end_biome( "fungicave", 1.5, 0.7 )
+	deep_end_biome( "pyramid", 3, 0.5 )
+	deep_end_biome( "wandcave", 1.25, 0.6 )
+	deep_end_biome( "rainforest", 2, 0.6 )
+	deep_end_biome( "rainforest_open", 2, 0.6 )
+	deep_end_biome( "robobase", 1.5, 0.75 )
+	deep_end_biome( "crypt", 2.5, 0.5 )
+	deep_end_biome( "desert", 3, 0.5 )
+	deep_end_biome( "forest", 3, 0.5 )
+	deep_end_biome( "winter_caves", 3, 0.4 )
+	deep_end_biome( "vault_frozen", 4, 0.4 )
+	deep_end_biome( "wizardcave", 4, 0.4 )
+	deep_end_biome( "fungiforest", 2, 0.25 )
+	deep_end_biome( "sandcave", 5, 0.6 )
+	deep_end_biome( "clouds", 6, 0.3 )
+	deep_end_biome( "the_end", 7, 0.3 )
+	deep_end_biome( "the_sky", 7, 0.3 )
+	deep_end_biome( "robot_egg", 10, 0.2 )
 
-		if ModSettingGet( "DEEP_END.MEAT_HEAL" ) then
-			deep_end_biome( "meat", 3.5, 1 )
-		else
-			deep_end_biome( "meat", 1.5, 1 )
-		end
+	if ModSettingGet( "DEEP_END.MEAT_HEAL" ) then deep_end_biome( "meat", 3.5, 1 )
+	else deep_end_biome( "meat", 1.5, 1 ) end
 
-		deep_end_biome( "tower/solid_wall_tower", 8, 0.25 )
-		for i=1,10 do deep_end_biome( "tower/solid_wall_tower_" .. tostring(i), 8, 0.25 ) end
-	end
+	deep_end_biome( "tower/solid_wall_tower", 8, 0.25 )
+	for i=1,10 do deep_end_biome( "tower/solid_wall_tower_" .. tostring(i), 8, 0.25 ) end
 
 	if tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") ) == 0 then
 		SessionNumbersSetValue( "DESIGN_SCALE_ENEMIES", "1" )
@@ -349,11 +344,8 @@ function OnWorldInitialized()
 
 			deep_end_biome( "fungiforest", 5, 2 )
 
-			if ModSettingGet( "DEEP_END.MEAT_HEAL" ) then
-				deep_end_biome( "meat", 1, 4 )
-			else
-				deep_end_biome( "meat", 0.4, 4 )
-			end
+			if ModSettingGet( "DEEP_END.MEAT_HEAL" ) then deep_end_biome( "meat", 1, 4 )
+			else deep_end_biome( "meat", 0.4, 4 ) end
 
 			if mania_level > 40 then
 				SessionNumbersSetValue( "DESIGN_NEW_GAME_PLUS_HP_SCALE_MIN", tostring(20*ex_hp_mult) )
@@ -374,13 +366,9 @@ function OnWorldInitialized()
 				SessionNumbersSetValue( "DESIGN_NEW_GAME_PLUS_HP_SCALE_MAX", tostring(hp_f*ex_hp_mult) )
 				SessionNumbersSetValue( "DESIGN_NEW_GAME_PLUS_ATTACK_SPEED", tostring(rage_f) )
 			end
-		elseif ModSettingGet( "DEEP_END.EVERYONE_IS_POWERFUL" ) then
+		else
 			SessionNumbersSetValue( "DESIGN_NEW_GAME_PLUS_HP_SCALE_MIN", tostring(2*ex_hp_mult) )
 			SessionNumbersSetValue( "DESIGN_NEW_GAME_PLUS_HP_SCALE_MAX", tostring(2*ex_hp_mult) )
-			SessionNumbersSetValue( "DESIGN_NEW_GAME_PLUS_ATTACK_SPEED", "1" )
-		else
-			SessionNumbersSetValue( "DESIGN_NEW_GAME_PLUS_HP_SCALE_MIN", tostring(ex_hp_mult) )
-			SessionNumbersSetValue( "DESIGN_NEW_GAME_PLUS_HP_SCALE_MAX", tostring(ex_hp_mult) )
 			SessionNumbersSetValue( "DESIGN_NEW_GAME_PLUS_ATTACK_SPEED", "1" )
 		end
 	end
@@ -649,13 +637,19 @@ function OnPlayerDied(player_entity)
 	GameSetCameraFree(true)
 	ComponentSetValue2( EntityGetFirstComponent( GameGetWorldStateEntity(), "WorldStateComponent" ), "open_fog_of_war_everywhere", true )
 
-	if tonumber( StatsGetValue("projectiles_shot") ) <= 0 and tonumber( StatsGetValue("wands_edited" ) ) <= 0 then 
-		EntityLoad( "data/entities/animals/boss_centipede/rewards/reward_notinkeringofwands.xml", x+24, y-4 )
-		EntityLoad( "data/entities/animals/boss_centipede/rewards/reward_nowands.xml", x-24, y-4 )
+	local reward_list = { "gold_reward_sprite" }
+
+	if tonumber( StatsGetValue("projectiles_shot") ) <= 0 and tonumber( StatsGetValue("wands_edited" ) ) <= 0 then
+		table.insert( reward_list, "reward_de_wandless" )
 	end
 
-	if tonumber( StatsGetValue("damage_taken") ) <= 0 then EntityLoad( "data/entities/animals/boss_centipede/rewards/reward_nohit.xml", x, y-52 ) end
-	if EntityHasTag( player_entity, "speed_run_complete_in_deep_end" ) then EntityLoad( "data/entities/animals/boss_centipede/rewards/reward_clock.xml", x, y-27 ) end
+	if EntityHasTag( player_entity, "de_hitless" ) then
+		table.insert( reward_list, "reward_nohit" )
+	end
+
+	if EntityHasTag( player_entity, "speed_run_complete_in_deep_end" ) then
+		table.insert( reward_list, "reward_clock" )
+	end
 
 	EntityLoad( "data/entities/props/my_tombstone_0" .. tostring(Random( 1, 7 )) .. ".xml", x, y-4 )
 	shoot_projectile( player_entity, "data/entities/projectiles/deck/my_soul.xml", x, y, 0, -40 )
@@ -675,6 +669,10 @@ function OnPlayerDied(player_entity)
 	else
 		GameCreateSpriteForXFrames( "data/ui_gfx/game_over_menu/Pow.png", x, y-4, true, 0, 0, 12, true )
 	end
+
+	if EntityHasTag( player_entity, "de_ending_top" ) then for i=1,#reward_list do
+		GameCreateSpriteForXFrames( "data/entities/animals/boss_centipede/rewards/" .. reward_list[i] .. ".png", x+50+25*i, y+110, true, 0, 0, 9999, true )
+	end end
 
 	-- GameRemoveFlagRun( "ending_no_game_over_menu" )
 end

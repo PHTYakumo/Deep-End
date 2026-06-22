@@ -485,35 +485,37 @@ function spawn_all_perks( x, y )
 
 		EntityLoad( "data/entities/items/pickup/recycling_bin.xml", 353, -247 )
 
-		local friend_rnd = Random( -345, 345 )
+		if ModSettingGet( "DEEP_END.FESTIVAL_EVENTS" ) then
+			local friend_rnd = Random( -345, 345 )
 
-		if ( friend_rnd == 284 ) or ( friend_rnd == 22 ) then
-			EntityLoad( "data/entities/animals/friend.xml", 277, -250 )
+			if ( friend_rnd == 284 ) or ( friend_rnd == 22 ) then
+				EntityLoad( "data/entities/animals/friend.xml", 277, -250 )
 
-			SetRandomSeed( friend_rnd, x + y )
-			local killer_rnd = Random( 10, 25 )
+				SetRandomSeed( friend_rnd, x + y )
+				local killer_rnd = Random( 10, 25 )
 
-			for i=1,killer_rnd do
-				local killer_id = EntityLoad( "data/entities/animals/ultimate_killer.xml", Random( -50, 50 ) + 300, Random( -35, 35 ) - 117 )
+				for i=1,killer_rnd do
+					local killer_id = EntityLoad( "data/entities/animals/ultimate_killer.xml", Random( -50, 50 ) + 300, Random( -35, 35 ) - 117 )
 
-				local hcomp = EntityGetFirstComponent( killer_id, "BossHealthBarComponent" )
-				if hcomp ~= nil then EntityRemoveComponent( killer_id, hcomp ) end
+					local hcomp = EntityGetFirstComponent( killer_id, "BossHealthBarComponent" )
+					if hcomp ~= nil then EntityRemoveComponent( killer_id, hcomp ) end
+				end
+			else
+				local fox_num = math.max( math.floor( friend_rnd^0.5 / 32 ), 1 )
+				for i=1,fox_num do EntityLoad( "data/entities/animals/fox.xml", 101+math.floor(124*i/fox_num), -81-math.floor(44*i/fox_num) ) end
+
+				EntityAddComponent( EntityLoad( "data/entities/animals/fox.xml", 277, -135 ), "LuaComponent", 
+				{
+					script_death="data/scripts/animals/mr_fox_death.lua",
+					execute_every_n_frame="-1",
+					remove_after_executed="0",
+				} )
+
+				EntityLoad( "data/entities/animals/ultimate_killer.xml", 380, -135 )
+				-- EntityLoad( "data/entities/animals/ultimate_ultra_killer.xml", 840, -1530 )
+
+				for i=1,10 do EntityLoad( "data/entities/animals/gazer.xml", x+960+16*i, y-144-16*i ) end
 			end
-		else
-			local fox_num = math.max( math.floor( friend_rnd^0.5 / 32 ), 1 )
-			for i=1,fox_num do EntityLoad( "data/entities/animals/fox.xml", 101+math.floor(124*i/fox_num), -81-math.floor(44*i/fox_num) ) end
-
-			EntityAddComponent( EntityLoad( "data/entities/animals/fox.xml", 277, -135 ), "LuaComponent", 
-			{
-				script_death="data/scripts/animals/mr_fox_death.lua",
-				execute_every_n_frame="-1",
-				remove_after_executed="0",
-			} )
-
-			EntityLoad( "data/entities/animals/ultimate_killer.xml", 380, -135 )
-			-- EntityLoad( "data/entities/animals/ultimate_ultra_killer.xml", 840, -1530 )
-
-			for i=1,10 do EntityLoad( "data/entities/animals/gazer.xml", x+960+16*i, y-144-16*i ) end
 		end
 
 		-- CreateItemActionEntity( "EXPLODING_DEER", -14075, 180 )

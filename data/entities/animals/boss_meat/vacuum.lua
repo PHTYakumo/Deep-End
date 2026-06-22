@@ -10,8 +10,7 @@ function calculate_force_at(body_x, body_y)
 	local direction = 0 - math.atan2( ( y - body_y ), ( x - body_x ) )
 
 	local gravity_percent = ( distance_full - distance ) / distance_full
-	local gravity_coeff = 130
-	if ModSettingGet( "DEEP_END.MEAT_HEAL" ) then gravity_coeff = 610 end
+	local gravity_coeff = 610
 	
 	local fx = -math.cos( direction ) * ( gravity_coeff * gravity_percent )
 	local fy = math.sin( direction ) * ( gravity_coeff * gravity_percent )
@@ -61,8 +60,5 @@ end
 local size = distance_full * 0.5
 PhysicsApplyForceOnArea( calculate_force_for_body, entity_id, x-size, y-size, x+size, y+size )
 
-if ModSettingGet( "DEEP_END.MEAT_HEAL" ) and ComponentGetValue2( GetUpdatedComponentID(), "mTimesExecuted" ) % 6 == 1 then
-	shoot_projectile( entity_id, "data/entities/animals/boss_meat/acidshot_slow.xml", x, y, 0, 0 )
-end
 
 

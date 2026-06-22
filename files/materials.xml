@@ -141,6 +141,34 @@
 	</StatusEffects>
 	</CellData>
 
+	<CellDataChild
+  	_parent="material_darkness"
+	_inherit_reactions="1"
+	name="pus"
+	ui_name="$mat_pus"
+	wang_color="44695642"
+	gfx_glow="0"
+	liquid_stains_self="1"
+	>
+    <Graphics
+		texture_file="data/materials_gfx/pus.png"
+		color="aa695642"
+		>
+    </Graphics>
+	<StatusEffects>
+		<Stains>
+			<StatusEffect type="POISONED" />
+			<StatusEffect type="FOOD_POISONING" />
+			<StatusEffect type="DEEP_END_NO_HEAL_EFFECT" />
+		</Stains>
+		<Ingestion>
+			<StatusEffect type="POISONED" amount="1" />
+			<StatusEffect type="FOOD_POISONING" amount="1" />
+			<StatusEffect type="DEEP_END_NO_HEAL_EFFECT" amount="1" />
+		</Ingestion>
+	</StatusEffects>
+  	</CellDataChild>
+
 	<CellData
 	name="cheese_static"
 	ui_name="$mat_cheese_static"
@@ -2088,6 +2116,11 @@
 	<Reaction probability="100" 
 		input_cell1="Rock_Magic_Deep_End" 			input_cell2="magic_liquid"
 		output_cell1="smoke" 						output_cell2="smoke"
+	></Reaction>
+
+	<Reaction probability="1" 
+		input_cell1="Rock_Magic_Deep_End" 			input_cell2="magic_liquid"
+		output_cell1="magic_liquid" 						output_cell2="magic_liquid"
 	></Reaction>
 
 </Materials>

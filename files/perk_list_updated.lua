@@ -361,7 +361,7 @@ de_perk_list_recompose =
 	{
 		id = "REPELLING_CAPE",
 		ui_name = "$perk_repelling_cape",
-		ui_description = "$perkdesc_repelling_cape",
+		ui_description = "$dperk_repelling_cape",
 		ui_icon = "data/ui_gfx/perk_icons/repelling_cape.png",
 		perk_icon = "data/items_gfx/perks/repelling_cape.png",
 		game_effect = "STAINS_DROP_FASTER",
@@ -848,7 +848,7 @@ de_perk_list_recompose =
 	{
 		id = "STAINLESS_ARMOUR",
 		ui_name = "$perk_stainless_armour",
-		ui_description = "$perkdesc_stainless_armour",
+		ui_description = "$dperk_stainless_armour",
 		ui_icon = "data/ui_gfx/perk_icons/stainless_armour.png",
 		perk_icon = "data/items_gfx/perks/stainless_armour.png",
 		game_effect = "STAINLESS_ARMOUR",
@@ -2567,7 +2567,7 @@ de_perk_list_recompose =
 	{
 		id = "NO_MORE_KNOCKBACK",
 		ui_name = "$perk_no_more_knockback",
-		ui_description = "$perkdesc_no_more_knockback",
+		ui_description = "$dperk_no_more_knockback",
 		ui_icon = "data/ui_gfx/perk_icons/no_player_knockback.png",
 		perk_icon = "data/items_gfx/perks/no_player_knockback.png",
 		game_effect = "KNOCKBACK_IMMUNITY",

@@ -28,7 +28,7 @@ if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 	{
 		{
 			id = "FESTIVAL_EVENTS",
-			ui_name = "开启节日事件",
+			ui_name = "开启节日事件&出生点动物",
 			ui_description = 
 			"\n   大部分是正面效果, 大部分..",
 			value_default = true,
@@ -109,14 +109,6 @@ if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 					value_default = "",
 					scope = MOD_SETTING_SCOPE_RUNTIME,
 				},
-				{
-					id = "LOCATE_MOUNT",
-					ui_name = "简易地图显示圣山",
-					ui_description = 
-						"\n   否则呼出地图将只告知方位!",
-					value_default = true,
-					scope = MOD_SETTING_SCOPE_RUNTIME,
-				},
 			},
 		},
 		{
@@ -138,14 +130,6 @@ if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 					ui_name = "获得随编",
 					ui_description = 
 					"\n   同时根据伤害类型增加受伤伤害!",
-					value_default = true,
-					scope = MOD_SETTING_SCOPE_NEW_GAME,
-				},
-				{
-					id = "EVERYONE_IS_POWERFUL",
-					ui_name = "武装敌人",
-					ui_description = 
-					"\n   根据所在群系加强敌人!",
 					value_default = true,
 					scope = MOD_SETTING_SCOPE_NEW_GAME,
 				},
@@ -269,6 +253,14 @@ if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 					scope = MOD_SETTING_SCOPE_NEW_GAME,
 				},
 				{
+					id = "DOUBLE_TAPPING",
+					ui_name = "双击间隔(帧)",
+					ui_description = 
+					"\n   10~20是比较舒适的区间.",
+					value_default = "13",
+					scope = MOD_SETTING_SCOPE_RUNTIME,
+				},
+				{
 					id = "PERK_DASH_HOOK_PRIMARY",
 					ui_name = "发射钩爪按键(首选):",
 					ui_description =
@@ -303,14 +295,6 @@ if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 					value_default = "",
 					scope = MOD_SETTING_SCOPE_RUNTIME,
 				},
-				{
-					id = "DOUBLE_TAPPING",
-					ui_name = "双击间隔(帧)",
-					ui_description = 
-					"\n   10~20是比较舒适的区间.",
-					value_default = "13",
-					scope = MOD_SETTING_SCOPE_RUNTIME,
-				},
 			},
 		},
 	}
@@ -319,7 +303,7 @@ else
 	{
 		{
 			id = "FESTIVAL_EVENTS",
-			ui_name = "Enable seasonal events",
+			ui_name = "Enable seasonal events & animal at starting point",
 			ui_description = 
 			"\n   Mostly positive, mostly..",
 			value_default = true,
@@ -400,14 +384,6 @@ else
 					value_default = "",
 					scope = MOD_SETTING_SCOPE_RUNTIME,
 				},
-				{
-					id = "LOCATE_MOUNT",
-					ui_name = "Displaying the position of Holy Mount",
-					ui_description = 
-						"\n   If false, map will only give coordinatess.",
-					value_default = true,
-					scope = MOD_SETTING_SCOPE_RUNTIME,
-				},
 			},
 		},
 		{
@@ -429,14 +405,6 @@ else
 					ui_name = "Tinker-with-Wands-Everywhere",
 					ui_description = 
 					"\n   You will receive 1.25 times damage. ( avergae )",
-					value_default = true,
-					scope = MOD_SETTING_SCOPE_NEW_GAME,
-				},
-				{
-					id = "EVERYONE_IS_POWERFUL",
-					ui_name = "Enemy armament",
-					ui_description = 
-					"\n   Strengthen the enemy based on the biome.",
 					value_default = true,
 					scope = MOD_SETTING_SCOPE_NEW_GAME,
 				},
@@ -571,6 +539,14 @@ else
 					scope = MOD_SETTING_SCOPE_NEW_GAME,
 				},
 				{
+					id = "DOUBLE_TAPPING",
+					ui_name = "Interval to judge whether you double-tap",
+					ui_description = 
+					"\n   Frames, 10 to 20 may be comfortable.",
+					value_default = "13",
+					scope = MOD_SETTING_SCOPE_RUNTIME,
+				},
+				{
 					id = "PERK_DASH_HOOK_PRIMARY",
 					ui_name = "Key Seting 1:",
 					ui_description = 
@@ -607,14 +583,6 @@ else
 					"\n   Slowing down flight and descent vertically" ..
 					"\n   by pressing this key.",
 					value_default = "",
-					scope = MOD_SETTING_SCOPE_RUNTIME,
-				},
-				{
-					id = "DOUBLE_TAPPING",
-					ui_name = "Interval to judge whether you double-tap",
-					ui_description = 
-					"\n   Frames, 10 to 20 may be comfortable.",
-					value_default = "13",
 					scope = MOD_SETTING_SCOPE_RUNTIME,
 				},
 			},

@@ -3,11 +3,17 @@ dofile( "data/scripts/perks/deep_end_perk_utilities.lua" )
 dofile_once("data/scripts/newgame_plus.lua")
 
 local players = EntityGetWithTag( "player_unit")
+local hitless = false
 
 if #players > 0 then
+    if tonumber( StatsGetValue("damage_taken") ) <= 0 then hitless = true end
+
     for i=1,#players do
         local player_entity = players[i]
         local px, py = EntityGetTransform( player_entity )
+
+        EntityAddTag( player_entity, "de_ending_top" )
+        if hitless then EntityAddTag( player_entity, "de_hitless" ) end
 
         EntityAddComponent( player_entity, "LuaComponent", 
         {

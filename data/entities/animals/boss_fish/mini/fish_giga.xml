@@ -28,6 +28,7 @@
 		falling_damages="0" 
 		fire_damage_amount="0" 	 
 		fire_probability_of_ignition="0" 
+		critical_damage_resistance="1"
 		blood_material="blood"
 		is_on_fire="0" 
 		materials_damage="0" 

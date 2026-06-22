@@ -238,7 +238,6 @@ function spawn_statue_01( x, y )
 	
 	if curse then
 		EntityLoad( "data/entities/misc/greed_curse/greed_crystal.xml", x, y - 48 )
-		EntityLoad( "data/entities/props/temple_statue_01_green.xml", x, y )
 	else
 		EntityLoad( "data/entities/buildings/biome_modifiers/smuggling_pipe_spawner.xml", x-14, y-42 )
 		EntityLoad( "data/entities/props/temple_statue_01.xml", x, y )
@@ -246,7 +245,10 @@ function spawn_statue_01( x, y )
 end
 
 function spawn_statue_02( x, y )
-	EntityLoad( "data/entities/props/temple_statue_02.xml", x , y )
+	local curse = GameHasFlagRun( "greed_curse" )
+	
+	if curse then EntityLoad( "data/entities/props/temple_statue_01_green.xml", x, y )
+	else EntityLoad( "data/entities/props/temple_statue_02.xml", x , y ) end
 end
 
 function spawn_fish(x, y)

@@ -414,13 +414,16 @@ function next_phase()
 		-- If player is way too far, boss assumes they have left the arena entirely and sets up phase 2
 		if dist > 2000 and boss_chase == 0 then
 			boss_chase = 1
+
+			--[[
 			local celleater = EntityGetFirstComponent( GetUpdatedEntityID(), "CellEaterComponent" )
 		
 			if celleater ~= nil then
 				ComponentSetValue2( celleater, "eat_probability", 100 )
 				ComponentSetValue2( celleater, "radius", 64 )
 			end
-			
+			]]--
+
 			set_force_coeff_mult(5)
 			phase = phase_chase_direct
 		end --print("Boss distance: " .. tostring(dist))
@@ -750,14 +753,22 @@ function check_death()
 
 				set_main_animation("aggro", "aggro")
 
+				local celleater = EntityGetFirstComponent( entity_id, "CellEaterComponent" )
+		
+				if celleater ~= nil then
+					ComponentSetValue2( celleater, "eat_probability", 100 )
+					ComponentSetValue2( celleater, "radius", 64 )
+				end
+
 				-- spawn body chunks
 				GameEntityPlaySound( entity_id, "destroy_face" )
+
 				local x,y = EntityGetTransform( entity_id )
 				local o = EntityLoad( "data/entities/animals/boss_centipede/body_chunks.xml", x, y)
 				PhysicsApplyForce( o, 0, -600)
 				PhysicsApplyTorque( o, 200)
+
 				GameCreateParticle( "material_darkness", x+20, y, 250, 0, -20, true, false )
-				
 				EntityAddChild( entity_id, EntityLoad( "data/entities/misc/effect_no_heal.xml", x, y ) )
 
 				local p = EntityGetInRadiusWithTag( x, y, 256, "projectile" )

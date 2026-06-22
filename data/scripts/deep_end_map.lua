@@ -139,7 +139,7 @@ if timercomp ~= nil then
 		timer = timer + map_speed
 		if timer >= 9999 then timer = 300 end
 
-		if timer > 30 and ModSettingGet( "DEEP_END.LOCATE_MOUNT" ) then
+		if timer > 30 then
 			if show_de_map then
 				local mount_depth = { -80, 1910, 4982, 9078, 14198, 19830, 25974, 32630, 37775, 40242, 9640 }
 				local mount_x = { 227, -256, -256, -256, -256, -256, -256, -256, 260, 3546, 1540 }
