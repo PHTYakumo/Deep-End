@@ -85,6 +85,7 @@
 		<damage_multipliers
 		projectile="1"
 		holy="-1"
+		curse="-1"
 		>
 		</damage_multipliers>
 	</DamageModelComponent>
@@ -136,17 +137,5 @@
 		velocity_always_away_from_center="100"
 		>
 	</ParticleEmitterComponent>
-	
-	<AreaDamageComponent
-		aabb_min.x="-12" 
-		aabb_min.y="-12" 
-		aabb_max.x="12" 
-		aabb_max.y="12" 
-		damage_per_frame="0.06"
-		update_every_n_frame="4"
-		entities_with_tag="human"
-		damage_type="DAMAGE_CURSE"
-		>
-	</AreaDamageComponent>
 
 </Entity>

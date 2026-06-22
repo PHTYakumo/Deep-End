@@ -2,7 +2,7 @@
 
 	<Base file="data/entities/base_custom_card.xml" > 
 		<SpriteComponent 
-			image_file="data/ui_gfx/gun_actions/deep_end/diplomana.png" >
+			image_file="mods/deep_end/files/actions_sprite/diplomana.png" >
 		</SpriteComponent>
 
 		<ItemComponent

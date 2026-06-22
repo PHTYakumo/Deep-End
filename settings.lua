@@ -59,6 +59,14 @@ if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 			scope = MOD_SETTING_SCOPE_NEW_GAME,
 		},
 		{
+			id = "BOSS_GUIDE",
+			ui_name = "Boss承伤信息",
+			ui_description =
+			"\n   在部分Boss的头顶显示承伤信息",
+			value_default = true,
+			scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
+		},
+		{
 			category_id = "WARNING",
 			ui_name = "!!!",
 			foldable = true,
@@ -332,6 +340,14 @@ else
 			"\n   Healable in Meat Realm even without defeating the boss there!?",
 			value_default = true,
 			scope = MOD_SETTING_SCOPE_NEW_GAME,
+		},
+		{
+			id = "BOSS_GUIDE",
+			ui_name = "Boss damage-multipliers information",
+			ui_description =
+			"\n   Display damage-multipliers information on the heads of some Bosses",
+			value_default = true,
+			scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
 		},
 		{
 			category_id = "WARNING",

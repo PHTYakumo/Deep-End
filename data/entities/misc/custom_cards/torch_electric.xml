@@ -1,10 +1,6 @@
 <Entity>
 	
 	<Base file="data/entities/base_custom_card.xml" > 
-		<SpriteComponent 
-			image_file="data/ui_gfx/gun_actions/deep_end/torch_electric.png" >
-		</SpriteComponent>
-		
 		<ItemActionComponent 
 			_tags="enabled_in_world"
 			action_id="TORCH_ELECTRIC" >

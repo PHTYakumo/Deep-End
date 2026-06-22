@@ -48,13 +48,15 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	if ng_n == 0 then EntityLoad( "data/entities/buildings/teleport_teleroom.xml",  x, y-67 ) end
 	
 	ConvertMaterialEverywhere( CellFactory_GetType( "ice_glass_b2" ), CellFactory_GetType( "fire_blue" ) )
+
+	--[[
+	ConvertMaterialEverywhere( CellFactory_GetType( "plasma_fading_green" ), CellFactory_GetType( "fire_blue" ) )
+	ConvertMaterialEverywhere( CellFactory_GetType( "plasma_fading_pink" ), CellFactory_GetType( "fire_blue" ) )
+	ConvertMaterialEverywhere( CellFactory_GetType( "plasma_fading" ), CellFactory_GetType( "fire_blue" ) )
+	ConvertMaterialEverywhere( CellFactory_GetType( "plasma_fading_bright" ), CellFactory_GetType( "fire_blue" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "blood_fungi" ), CellFactory_GetType( "material_confusion" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "blood_worm" ), CellFactory_GetType( "material_confusion" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "blood_cold" ), CellFactory_GetType( "material_confusion" ) )
-	ConvertMaterialEverywhere( CellFactory_GetType( "plasma_fading" ), CellFactory_GetType( "fire_blue" ) )
-	ConvertMaterialEverywhere( CellFactory_GetType( "plasma_fading_bright" ), CellFactory_GetType( "fire_blue" ) )
-	ConvertMaterialEverywhere( CellFactory_GetType( "plasma_fading_green" ), CellFactory_GetType( "fire_blue" ) )
-	ConvertMaterialEverywhere( CellFactory_GetType( "plasma_fading_pink" ), CellFactory_GetType( "fire_blue" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "magic_liquid_movement_faster" ), CellFactory_GetType( "juhannussima" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "magic_liquid_faster_levitation" ), CellFactory_GetType( "juhannussima" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "magic_liquid_faster_levitation_and_movement" ), CellFactory_GetType( "juhannussima" ) )
@@ -62,6 +64,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	ConvertMaterialEverywhere( CellFactory_GetType( "magic_liquid_berserk" ), CellFactory_GetType( "juhannussima" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "magic_liquid_charm" ), CellFactory_GetType( "juhannussima" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "magic_liquid_invisibility" ), CellFactory_GetType( "juhannussima" ) )
+	]]--
 
 	GamePrintImportant( "$defeat_boss_ghost_1", "$defeat_boss_ghost_2", "data/ui_gfx/decorations/boss_defeat.png" )
 

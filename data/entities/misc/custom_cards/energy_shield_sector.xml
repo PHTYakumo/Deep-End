@@ -3,7 +3,7 @@
     <Base file="data/entities/misc/custom_cards/energy_shield.xml" > 
 
         <SpriteComponent 
-            image_file="data/ui_gfx/gun_actions/deep_end/energy_shield_sector.png" >
+            image_file="mods/deep_end/files/actions_sprite/energy_shield_sector.png" >
         </SpriteComponent>
 
         <ItemActionComponent 

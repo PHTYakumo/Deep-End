@@ -96,7 +96,7 @@
 		healing_particle_effect_entity="data/entities/particles/heal_effect.xml">
 		<damage_multipliers
 		projectile="0.5"
-		explosion="0.5"
+		explosion="0.005"
 		holy="-5"
 		>
 		</damage_multipliers>

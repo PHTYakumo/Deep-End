@@ -1,2 +1,0 @@
-ng0,
-ENDING_HAPPINESS

@@ -110,6 +110,14 @@
 	</Base>
 
 	<LuaComponent
+		_enabled="1"
+		script_source_file="data/entities/animals/boss_alchemist/weak_point_icon.lua"
+		execute_every_n_frame="-1"
+		execute_on_added="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
 		_tags="enable_when_player_seen"
 		_enabled="0"
 		script_source_file="data/scripts/animals/necromancer_super_chase.lua"
@@ -123,63 +131,6 @@
 		execute_every_n_frame="30"
 		>
 	</LuaComponent>
-
-	<Entity>
-		<InheritTransformComponent />
-		
-		<LifetimeComponent
-			lifetime="-1"
-			>
-		</LifetimeComponent>
-		
-		<UIIconComponent
-			icon_sprite_file="data/ui_gfx/status_indicators/curse_wither_explosion.png"
-			name="$status_curse_wither_explosion"
-			description="$statusdesc_curse_wither_explosion"
-			display_above_head="1"
-			display_in_hud="0"
-			is_perk="0"
-			>
-		</UIIconComponent>
-	</Entity>
-
-	<Entity>
-		<InheritTransformComponent />
-		
-		<LifetimeComponent
-			lifetime="-1"
-			>
-		</LifetimeComponent>
-		
-		<UIIconComponent
-			icon_sprite_file="data/ui_gfx/status_indicators/curse_wither_explosion.png"
-			name="$status_curse_wither_explosion"
-			description="$statusdesc_curse_wither_explosion"
-			display_above_head="1"
-			display_in_hud="0"
-			is_perk="0"
-			>
-		</UIIconComponent>
-	</Entity>
-
-	<Entity>
-		<InheritTransformComponent />
-		
-		<LifetimeComponent
-			lifetime="-1"
-			>
-		</LifetimeComponent>
-		
-		<UIIconComponent
-			icon_sprite_file="data/ui_gfx/status_indicators/curse_wither_explosion.png"
-			name="$status_curse_wither_explosion"
-			description="$statusdesc_curse_wither_explosion"
-			display_above_head="1"
-			display_in_hud="0"
-			is_perk="0"
-			>
-		</UIIconComponent>
-	</Entity>
 	
 	<AudioLoopComponent
 		file="data/audio/Desktop/animals.bank"

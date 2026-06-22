@@ -5,6 +5,18 @@ local x, y = EntityGetTransform( GetUpdatedEntityID() )
 
 local dm = 1.0
 
+if not EntityHasTag( entity_id, "drillable" ) then
+    EntityAddTag( entity_id, "drillable" )
+	EntityAddComponent( entity_id, "StatusEffectDataComponent", { } )
+
+    EntityAddComponent( entity_id, "LuaComponent", 
+    {
+        script_source_file="data/entities/animals/boss_pit/weak_point_icon.lua",
+		execute_every_n_frame="-1",
+		execute_on_added="1",
+    } )
+end
+
 edit_component( entity_id, "HitboxComponent", function(comp,vars)
 	dm = ComponentGetValue2( comp, "damage_multiplier" )
 	

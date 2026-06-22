@@ -36,13 +36,15 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	ConvertMaterialEverywhere( CellFactory_GetType( "meat_slime" ), CellFactory_GetType( "spark_white" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "meat_slime_green" ), CellFactory_GetType( "spark_white" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "meat_slime_orange" ), CellFactory_GetType( "spark_white" ) )
+	ConvertMaterialEverywhere( CellFactory_GetType( "rock_static_intro_breakable" ), CellFactory_GetType( "static_magic_material" ) )
+
+	--[[
 	ConvertMaterialEverywhere( CellFactory_GetType( "rock_static" ), CellFactory_GetType( "gold_static_dark" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "rock_static_wet" ), CellFactory_GetType( "gold_static_dark" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "rock_static_intro" ), CellFactory_GetType( "gold_static_dark" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "rock_static_trip_secret" ), CellFactory_GetType( "gold_static_dark" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "rock_static_trip_secret2" ), CellFactory_GetType( "gold_static_dark" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "rock_static_noedge" ), CellFactory_GetType( "gold_static_dark" ) )
-	ConvertMaterialEverywhere( CellFactory_GetType( "rock_static_intro_breakable" ), CellFactory_GetType( "static_magic_material" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "waterrock" ), CellFactory_GetType( "gold_static_dark" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "coal_static" ), CellFactory_GetType( "gold_static_dark" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "rock_static_grey" ), CellFactory_GetType( "gold_static_dark" ) )
@@ -55,6 +57,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	ConvertMaterialEverywhere( CellFactory_GetType( "wood_burns_forever" ), CellFactory_GetType( "templebrick_golden_static" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "wood_static_wet" ), CellFactory_GetType( "templebrick_golden_static" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "wood_static_gas" ), CellFactory_GetType( "templebrick_golden_static" ) )
+	]]--
 
 	GamePrintImportant( "$defeat_boss_alchemist_1", "$defeat_boss_alchemist_2", "data/ui_gfx/decorations/boss_defeat.png" )
 

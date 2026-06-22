@@ -7,7 +7,7 @@
 	    </ItemComponent>
 
 		<SpriteComponent 
-			image_file="data/ui_gfx/gun_actions/deep_end/bomb_sticky.png" 
+			image_file="mods/deep_end/files/actions_sprite/bomb_sticky.png" 
 		></SpriteComponent>
 		
 		<ItemActionComponent 

@@ -23,7 +23,7 @@
 
     <SpriteComponent 
         _tags="enabled_in_world,item_identified"
-        image_file="data/ui_gfx/gun_actions/deep_end/energy_shield.png"
+        image_file="mods/deep_end/files/actions_sprite/energy_shield.png"
         offset_x="8"
         offset_y="17"
         z_index="-1.51" >

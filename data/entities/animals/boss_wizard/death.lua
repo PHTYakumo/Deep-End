@@ -53,6 +53,11 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	ConvertMaterialEverywhere( CellFactory_GetType( "meat_polymorph" ), CellFactory_GetType( "fire_blue" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "meat_polymorph_protection" ), CellFactory_GetType( "fire_blue" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "meat_confusion" ), CellFactory_GetType( "fire_blue" ) )
+	ConvertMaterialEverywhere( CellFactory_GetType( "wizardstone" ), CellFactory_GetType( "templebrick_diamond_static" ) )
+	ConvertMaterialEverywhere( CellFactory_GetType( "rock_static_purple" ), CellFactory_GetType( "templebrick_diamond_static" ) )
+	ConvertMaterialEverywhere( CellFactory_GetType( "rock_static_cursed" ), CellFactory_GetType( "cheese_static" ) )
+
+	--[[
 	ConvertMaterialEverywhere( CellFactory_GetType( "water_swamp" ), CellFactory_GetType( "blood" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "water_salt" ), CellFactory_GetType( "blood" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "water_ice" ), CellFactory_GetType( "blood" ) )
@@ -66,12 +71,10 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	ConvertMaterialEverywhere( CellFactory_GetType( "sand" ), CellFactory_GetType( "diamond" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "sand_blue" ), CellFactory_GetType( "diamond" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "sand_surface" ), CellFactory_GetType( "diamond" ) )
-	ConvertMaterialEverywhere( CellFactory_GetType( "wizardstone" ), CellFactory_GetType( "templebrick_diamond_static" ) )
-	ConvertMaterialEverywhere( CellFactory_GetType( "rock_static_purple" ), CellFactory_GetType( "templebrick_diamond_static" ) )
-	ConvertMaterialEverywhere( CellFactory_GetType( "rock_static_cursed" ), CellFactory_GetType( "cheese_static" ) )
 	-- ConvertMaterialEverywhere( CellFactory_GetType( "magic_liquid_hp_regeneration" ), CellFactory_GetType( "mammi" ) )
 	-- ConvertMaterialEverywhere( CellFactory_GetType( "magic_liquid_hp_regeneration_unstable" ), CellFactory_GetType( "mammi" ) )
 	-- ConvertMaterialEverywhere( CellFactory_GetType( "magic_gas_hp_regeneration" ), CellFactory_GetType( "mammi" ) )
+	]]--
 
 	GamePrintImportant( "$defeat_boss_wizard_1", "$defeat_boss_wizard_2", "data/ui_gfx/decorations/boss_defeat.png" )
 

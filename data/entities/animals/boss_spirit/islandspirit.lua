@@ -33,6 +33,8 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 
 	ConvertMaterialEverywhere( CellFactory_GetType( "meat_helpless" ), CellFactory_GetType( "spark_white" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "magic_liquid_protection_all" ), CellFactory_GetType( "magic_liquid_polymorph" ) )
+	
+	--[[
 	ConvertMaterialEverywhere( CellFactory_GetType( "steam" ), CellFactory_GetType( "magic_gas_polymorph" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "steam_trailer" ), CellFactory_GetType( "magic_gas_polymorph" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "acid_gas" ), CellFactory_GetType( "magic_gas_polymorph" ) )
@@ -45,6 +47,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	ConvertMaterialEverywhere( CellFactory_GetType( "magic_gas_worm_blood" ), CellFactory_GetType( "magic_gas_polymorph" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "magic_gas_teleport" ), CellFactory_GetType( "magic_gas_polymorph" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "magic_gas_fungus" ), CellFactory_GetType( "magic_gas_polymorph" ) )
+	]]--
 
 	GamePrintImportant( "$defeat_boss_spirit_1", "$defeat_boss_spirit_2", "data/ui_gfx/decorations/boss_defeat.png" )
 

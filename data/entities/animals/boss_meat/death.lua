@@ -33,15 +33,15 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	ConvertMaterialEverywhere( CellFactory_GetType( "meat_static" ), CellFactory_GetType( "nest_static" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "pus" ), CellFactory_GetType( "vomit" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "just_death" ), CellFactory_GetType( "porridge" ) )
-	ConvertMaterialEverywhere( CellFactory_GetType( "Eucharist_Deep_End" ), CellFactory_GetType( "mud" ) )
+	-- ConvertMaterialEverywhere( CellFactory_GetType( "Eucharist_Deep_End" ), CellFactory_GetType( "mud" ) )
 	-- ConvertMaterialEverywhere( CellFactory_GetType( "magic_liquid_hp_regeneration_unstable" ), CellFactory_GetType( "mud" ) )
 	-- ConvertMaterialEverywhere( CellFactory_GetType( "magic_liquid_hp_regeneration" ), CellFactory_GetType( "mud" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "sand_static_rainforest" ), CellFactory_GetType( "root_growth" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "sand_static_rainforest_dark" ), CellFactory_GetType( "root_growth" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "soil_dead" ), CellFactory_GetType( "honey" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "soil_dark" ), CellFactory_GetType( "honey" ) )
-	ConvertMaterialEverywhere( CellFactory_GetType( "soil_lush" ), CellFactory_GetType( "sand_herb" ) )
-	ConvertMaterialEverywhere( CellFactory_GetType( "soil_lush_dark" ), CellFactory_GetType( "sand_herb" ) )
+	-- ConvertMaterialEverywhere( CellFactory_GetType( "soil_lush" ), CellFactory_GetType( "sand_herb" ) )
+	-- ConvertMaterialEverywhere( CellFactory_GetType( "soil_lush_dark" ), CellFactory_GetType( "sand_herb" ) )
 
 	GamePrintImportant( "$defeat_boss_meat_1", "$defeat_boss_meat_2", "data/ui_gfx/decorations/boss_defeat.png" )
 	

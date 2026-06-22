@@ -1,0 +1,14 @@
+<Entity>
+	<InheritTransformComponent />
+	
+	<LifetimeComponent lifetime="-1" />
+	
+	<UIIconComponent
+		icon_sprite_file="mods/deep_end/files/weak_point_icon/blank.png"
+		name=""
+		description=""
+		display_above_head="1"
+		display_in_hud="0"
+		is_perk="0"
+	></UIIconComponent>
+</Entity>
