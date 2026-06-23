@@ -279,6 +279,13 @@
 
 	<LuaComponent
 		_enabled="1"
+		script_source_file="data/entities/animals/boss_limbs/boss_limbs_duplicate.lua"
+		execute_every_n_frame="150"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		_enabled="1"
 		script_source_file="data/entities/animals/boss_limbs/weak_point_icon.lua"
 		execute_every_n_frame="-1"
 		execute_on_added="1"

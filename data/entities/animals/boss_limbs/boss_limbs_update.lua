@@ -76,7 +76,6 @@ function phase2()
 
 	boss_wait(30)
 
-	spawn_minion()
 	chase_stop()
 
 	boss_wait(10)
@@ -189,26 +188,7 @@ function homingshot()
 end
 
 function spawn_minion()
-	-- check that we only have less than N minions
-	local existing_minion_count = 0
-	local existing_minions = EntityGetWithTag( "de_boss_limbs" )
-	if ( #existing_minions > 0 ) then
-		existing_minion_count = #existing_minions
-	end
-
-	if existing_minion_count >= 13 then
-		return
-	end
-
-	-- spawn
-	local entity_id    = GetUpdatedEntityID()
-	local pos_x, pos_y = EntityGetTransform( entity_id )
-
-	EntityLoad( "data/entities/animals/boss_limbs/boss_limbs.xml", pos_x, pos_y )
-	EntityLoad( "data/entities/particles/image_emitters/magical_symbol_fast.xml", pos_x, pos_y )
-
-	GamePlaySound( "data/audio/Desktop/animals.bank", "animals/boss_centipede/dying", pos_x, pos_y )
-	GamePrint( tostring(existing_minion_count) .. "/16" )
+	EntityAddChild( GetUpdatedEntityID(), EntityLoad( "data/entities/misc/effect_regeneration_boss_shorter.xml", x, y) )
 	
 	-- EntityKill( entity_id )
 	
