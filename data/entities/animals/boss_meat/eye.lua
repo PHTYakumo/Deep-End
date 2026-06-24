@@ -15,7 +15,7 @@ if ( sprite ~= nil ) then
 		local hitcomp = EntityGetFirstComponent( entity_id, "HitboxComponent" )
 		ComponentSetValue2( hitcomp, "damage_multiplier", 1.0 )
 
-		shoot_projectile( entity_id, "data/entities/projectiles/deck/de_circle_water.xml", x, y, 0, 0 )
+		shoot_projectile( entity_id, "data/entities/animals/boss_pit/spells/circle_bad.xml", x, y, 0, 0 )
 	elseif ( status == 3 ) then
 		GamePlayAnimation( entity_id, "close", 0, "stand", 0 )
 

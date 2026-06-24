@@ -6549,7 +6549,7 @@ local de_actions_recompose =
 			if EntityHasTag( entity_id, "player_unit" ) then
 				local x,y = EntityGetTransform( entity_id )
 
-				if math.abs(newgame_n) > 9999 or newgame_n == -579 then
+				if newgame_n == -579 then
 					EntityLoad( "data/entities/misc/what_is_this/forget_everything.xml", x, y )
 				else
 					-- this is crazy!

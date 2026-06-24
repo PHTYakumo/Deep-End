@@ -31,7 +31,7 @@ function death()
 		EntityLoad( "data/entities/buildings/teleport_teleroom_extele.xml", 780, -900 )
 		EntityLoad( "data/entities/buildings/teleport_teleroom.xml", 9985, -1280 )
 
-		EntityLoad( "data/entities/items/pickup/heart_fullhp_inf.xml", 3835, 12140 )
+		EntityLoad( "data/entities/items/pickup/heart_fullhp_inf.xml", 3835, 12000 )
 		EntityLoad( "data/entities/items/pickup/temple_travel_mark.xml", 350, -120 )
 		EntityLoad( "data/entities/misc/what_is_this/clues.xml", 145, 145 )
 
@@ -58,7 +58,7 @@ function death()
 
 	if comp_worldstate ~= nil and newgame_n == 0 and ( not ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) ) then
 		local ed2_happened = ComponentGetValue2( comp_worldstate, "ENDING_HAPPINESS" )
-		if ed2_happened then EntityLoad( "data/entities/animals/boss_fish/fish_giga.xml",  3842, 42620 ) end
+		if ed2_happened then EntityLoad( "data/entities/animals/boss_fish/fish_giga.xml", 3842, 42620 ) end
 	end
 
 	local p = EntityGetWithTag( "player_unit" )

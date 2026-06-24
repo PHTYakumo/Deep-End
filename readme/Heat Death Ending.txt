@@ -1,0 +1,44 @@
+----------------------------------------------------------------------------------------------------------------
+
+Spoiler alert!
+
+----------------------------------------------------------------------------------------------------------------
+
+After defeating kolmi, this text will appear in the open space below the starting point:
+
+"Reforge The Bin,
+ Reactivate The Portal,
+ Remove The God,
+ Rewind The Regression,
+ Reach The Bound,
+ Reveal The ■"
+
+
+Corresponding to the following steps:
+
+1. Take the Bin above the starting point to the Forge in the jungle.
+    The Bin will be reforged to show a coordinate position. ( Your current position can be confirmed through the simple map )
+2. Reforge the Broken Spell ( via hand statues or just collected on the map ) to obtain "Summon Portal" spell.
+    Release it at the above coordinate position to activate the portal. ( You can also go directly to the Robot Egg )
+3. Open the chest inside the Robot Egg with sampo to obtain "Ultimate Spark" spell.
+    Use this spell to kill "God of Friendship" at the sky altar, then you will enter next NG ( NG+1 )
+4. There will be a great chest instead of Bin above the starting point, open it to obtain Gold Bin.
+    The Gold Bin will increase the NG count based on the damage dealt by players, and it is bound to pass through NG+55.
+    ( Going directly from +1 to +55 requires dealing 533,722 damage at once )
+    Open the chest inside the Robot Egg again in NG+55 to obtain "REGRESS" spell.
+5. Make the NG count greater than 9999 through Gold Bin, then dealt it any further damage to enter NG-579.
+6. Cast "REGRESS" at NG-579 to reach the Heat Death Ending.
+
+----------------------------------------------------------------------------------------------------------------
+
+- "Ultimate Spark" can kill almost any creature, including bosses
+
+- Releasing "REGRESS" in NG0 will reset the world, and all creatures will become friendly
+
+- Releasing "REGRESS" in other NG count will reverse the NG count
+
+- Limatoukka is inside the Dragon Egg ( 6000, 13500 ) at minus NG count, can also be summoned through "Circle of Nightmare?" ( not recommend )
+
+- If the world has been reset and the new kolmi is killed, Syväolento will appear ( at 3842, 42620 ), sacrificing a "Fish Story" at the sky altar can also summon it ( no other conditions are required )
+
+----------------------------------------------------------------------------------------------------------------

@@ -31,23 +31,23 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	AddFlagPersistent( "card_unlocked_polymorph" )
 	AddFlagPersistent( "miniboss_islandspirit" )
 
+	--[[
 	ConvertMaterialEverywhere( CellFactory_GetType( "meat_helpless" ), CellFactory_GetType( "spark_white" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "magic_liquid_protection_all" ), CellFactory_GetType( "magic_liquid_polymorph" ) )
+	]]--
 	
-	--[[
-	ConvertMaterialEverywhere( CellFactory_GetType( "steam" ), CellFactory_GetType( "magic_gas_polymorph" ) )
-	ConvertMaterialEverywhere( CellFactory_GetType( "steam_trailer" ), CellFactory_GetType( "magic_gas_polymorph" ) )
+	-- ConvertMaterialEverywhere( CellFactory_GetType( "steam" ), CellFactory_GetType( "magic_gas_polymorph" ) )
+	-- ConvertMaterialEverywhere( CellFactory_GetType( "steam_trailer" ), CellFactory_GetType( "magic_gas_polymorph" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "acid_gas" ), CellFactory_GetType( "magic_gas_polymorph" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "acid_gas_static" ), CellFactory_GetType( "magic_gas_polymorph" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "poison_gas" ), CellFactory_GetType( "magic_gas_polymorph" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "fungal_gas" ), CellFactory_GetType( "magic_gas_polymorph" ) )
 	-- ConvertMaterialEverywhere( CellFactory_GetType( "magic_gas_hp_regeneration" ), CellFactory_GetType( "magic_gas_polymorph" ) )
 	-- ConvertMaterialEverywhere( CellFactory_GetType( "poo_gas" ), CellFactory_GetType( "magic_gas_polymorph" ) )
-	ConvertMaterialEverywhere( CellFactory_GetType( "blood_cold_vapour" ), CellFactory_GetType( "magic_gas_polymorph" ) )
+	-- ConvertMaterialEverywhere( CellFactory_GetType( "blood_cold_vapour" ), CellFactory_GetType( "magic_gas_polymorph" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "magic_gas_worm_blood" ), CellFactory_GetType( "magic_gas_polymorph" ) )
 	ConvertMaterialEverywhere( CellFactory_GetType( "magic_gas_teleport" ), CellFactory_GetType( "magic_gas_polymorph" ) )
-	ConvertMaterialEverywhere( CellFactory_GetType( "magic_gas_fungus" ), CellFactory_GetType( "magic_gas_polymorph" ) )
-	]]--
+	-- ConvertMaterialEverywhere( CellFactory_GetType( "magic_gas_fungus" ), CellFactory_GetType( "magic_gas_polymorph" ) )
 
 	GamePrintImportant( "$defeat_boss_spirit_1", "$defeat_boss_spirit_2", "data/ui_gfx/decorations/boss_defeat.png" )
 

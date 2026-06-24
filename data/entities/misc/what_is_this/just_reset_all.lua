@@ -10,7 +10,7 @@ local just_reset_alls = EntityGetWithTag( "just_reset_all" )
 just_reset_alls = #just_reset_alls
 
 if newgame_n == de_ng_pre then
-    if de_ng_pre == 0 then
+    if de_ng_pre == 0 or math.abs(de_ng_pre) > 9999 then
         local ed2_happened = ComponentGetValue2( EntityGetFirstComponent( GameGetWorldStateEntity(), "WorldStateComponent" ), "ENDING_HAPPINESS" )
 
         if not ed2_happened and just_reset_alls == 1 then
@@ -27,6 +27,9 @@ if newgame_n == de_ng_pre then
         if just_reset_alls == 28 then newgame_n = sign( newgame_n ) * 9999 -- D10 + Omega + Regress
         else newgame_n = newgame_n * just_reset_alls * (-1)^just_reset_alls end
 
+        if newgame_n == -579 then newgame_n = 0 end
+        if math.abs(newgame_n) > 9999 and just_reset_alls > 1 then newgame_n = 0 end
+        
         clamp( newgame_n, -9999, 9999 )
         if newgame_n == de_ng_pre then newgame_n = -newgame_n end
 

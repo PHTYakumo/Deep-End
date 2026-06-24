@@ -22,11 +22,11 @@ function on_open( entity_item )
 
 		if newgame_n == -579 or newgame_n == 55 then
 			CreateItemActionEntity( "DE_RESET_ALL", x, y )
-		elseif newgame_n < 0 then
-			CreateItemActionEntity( "SUMMON_WANDGHOST", x, y )
-		elseif newgame_n > 0 then
-			CreateItemActionEntity( "DE_SUICIDE_KING", x, y )
+		elseif newgame_n ~= 0 then
+			if ed2_happened then CreateItemActionEntity( "SUMMON_WANDGHOST", x, y )
+			else CreateItemActionEntity( "DE_SUICIDE_KING", x, y ) end
 		elseif #with_sampo > 0 then
+			for i=1,#with_sampo do EntityKill( with_sampo[i] ) end
 			CreateItemActionEntity( "DE_ULTIMATE", x, y )
 		else
 			EntityLoad( "data/entities/animals/boss_sky/apparition_spawn_fx.xml", x, y-4 )

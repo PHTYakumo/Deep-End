@@ -17,13 +17,12 @@ end
 
 -- remove all your perks AHAAAAAA!!!!!!!
 local players = get_players()
-
 if players == nil then return end
 
 for i=1,#players do
     local pl = players[i]
         
-    if ( pl ~= nil ) then
+    if pl ~= nil then
         if EntityHasTag( pl, "chaos_frankenstein" ) then
             GamePrintImportant( "$debuff_boss_wizard_1", "$debuff_boss_wizard_2" )
             
@@ -34,16 +33,24 @@ for i=1,#players do
         create_all_player_perks( x, y - 32 )
         IMPL_remove_all_perks( pl )
 
+        GlobalsSetValue( "TEMPLE_PERK_COUNT", "3" )
+        local itemcomp = EntityGetFirstComponent( pl, "Inventory2Component" )
+
+        if itemcomp ~= nil then
+            ComponentSetValue2( itemcomp, "full_inventory_slots_x", 18 )
+            ComponentSetValue2( itemcomp, "full_inventory_slots_y", 1 )
+        end
+
         local gcomp = EntityGetFirstComponent( pl, "CharacterPlatformingComponent" )
-        if ( gcomp ~= nil ) then ComponentSetValue2( gcomp, "pixel_gravity", math.abs(ComponentGetValue2( gcomp, "pixel_gravity" )) ) end
+        if gcomp ~= nil then ComponentSetValue2( gcomp, "pixel_gravity", math.abs(ComponentGetValue2( gcomp, "pixel_gravity" )) ) end
 
-        local px,py,pr,psx,psy = EntityGetTransform( pl )
-        EntitySetTransform( pl, px, py, pr, psx, math.abs(psy) )
+        local px, py = EntityGetTransform( pl )
+        EntitySetTransform( pl, px, py, 0, 1, 1 )
 
-        -- BossHealthBarComponent, full_inventory_slots_x, full_inventory_slots_y, run_velocity, blood_material, etc
+        -- BossHealthBarComponent, run_velocity, blood_material, etc
         -- enjoy them!
 
-        EntityRemoveIngestionStatusEffect( pl, "PROTECTION_ALL" )
+        -- EntityRemoveIngestionStatusEffect( pl, "PROTECTION_ALL" )
         -- EntityRemoveIngestionStatusEffect( pl, "PROTECTION_POLYMORPH" )
         -- EntityRemoveIngestionStatusEffect( pl, "DEEP_END_HARDEN_EFFECT" )
     end

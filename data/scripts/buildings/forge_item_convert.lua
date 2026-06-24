@@ -153,9 +153,17 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 128, "chaos_frankenstei
 		EntityRemoveTag( id, "chaos_frankenstein" )
 
 		IMPL_remove_all_perks( id )
+		GlobalsSetValue( "TEMPLE_PERK_COUNT", "3" )
 
-        local x, y, plr, plsx, plsy = EntityGetTransform( id )
-        EntitySetTransform( id, x, y, 0, 1, 1)
+        local itemcomp = EntityGetFirstComponent( id, "Inventory2Component" )
+
+        if itemcomp ~= nil then
+            ComponentSetValue2( itemcomp, "full_inventory_slots_x", 18 )
+            ComponentSetValue2( itemcomp, "full_inventory_slots_y", 1 )
+        end
+
+        local x, y = EntityGetTransform( id )
+        EntitySetTransform( id, x, y, 0, 1, 1 )
 		-- BossHealthBarComponent, full_inventory_slots_x, full_inventory_slots_y, run_velocity, blood_material, etc
 		-- enjoy them!
 		SetRandomSeed( x+plsy, y+plsx )
