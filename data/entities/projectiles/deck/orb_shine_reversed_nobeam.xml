@@ -88,11 +88,11 @@
   
   <AreaDamageComponent
     _enabled="1"
-		aabb_min.x="-7" 
-		aabb_min.y="-7" 
-		aabb_max.x="7" 
-		aabb_max.y="7"
-    circle_radius="7"
+		aabb_min.x="-7.5" 
+		aabb_min.y="-7.5" 
+		aabb_max.x="7.5" 
+		aabb_max.y="7.5"
+    circle_radius="7.5"
 		damage_per_frame="1"
 		update_every_n_frame="10"
 		entities_with_tag="homing_target"
