@@ -481,7 +481,7 @@ if ( #deep_end_super_fish > 0 ) and ( not ModSettingGet( "DEEP_END.HEAVEN_OR_HEL
 			local px, py = EntityGetTransform( player_id )
 
 			EntitySetTransform( pid, 2300, 200 )
-			--EntityApplyTransform( pid, 2300, 200 )
+			EntityApplyTransform( pid, 2300, 200 )
 		end
 	end
 end

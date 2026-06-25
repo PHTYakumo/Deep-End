@@ -6,6 +6,8 @@ local entity_id, icon_path = GetUpdatedEntityID(), "mods/deep_end/files/weak_poi
 local x, y = EntityGetTransform( entity_id )
 
 local icon_list = {
+	"vulnerable/curse",
+	"vulnerable/holy",
 	"vulnerable/melee",
 	"vulnerable/explosion",
 	"vulnerable/slice",

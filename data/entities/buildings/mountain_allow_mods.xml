@@ -1,0 +1,15 @@
+<Entity tags="workshop">
+
+  <HitboxComponent 
+    aabb_min_x="-161" 
+    aabb_min_y="-124"
+    aabb_max_x="161" 
+    aabb_max_y="32" >
+  </HitboxComponent>
+
+  <LifetimeComponent
+		lifetime="9000" >
+	</LifetimeComponent>
+  
+</Entity>
+

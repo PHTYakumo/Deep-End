@@ -6,26 +6,26 @@
     <GameEffectComponent
 		_tags="protection_all_short,effect_protection_all"
         effect="PROTECTION_ALL"
-        frames="31"
+        frames="16"
     >
 	</GameEffectComponent >
 	
 	<GameEffectComponent
 		_tags="protection_all_short,effect_protection_all"
         effect="PROTECTION_FREEZE"
-        frames="31"
+        frames="16"
     >
 	</GameEffectComponent >
 	
 	<GameEffectComponent
 		_tags="protection_all_short,effect_protection_all"
         effect="PROTECTION_FIRE"
-        frames="31"
+        frames="16"
     >
 	</GameEffectComponent >
 	
 	<LifetimeComponent
-		lifetime="31"
+		lifetime="16"
 		>
 	</LifetimeComponent>
 	

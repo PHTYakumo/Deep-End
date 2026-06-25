@@ -16,7 +16,7 @@ function collision_trigger()
 
 	for i,comp in ipairs( new_components ) do EntitySetComponentIsEnabled( new_entity_id, comp, true ) end
 
-	if ( ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) ) then
+	if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) then
 		GamePrintImportant( "$menu_paused", " ", "data/ui_gfx/decorations/angered_the_gods.png" )
 	else
 		local chosen, m_tip = tonumber(ModSettingGet( "DEEP_END.MAP_TYPE" )), " "
@@ -33,6 +33,7 @@ function collision_trigger()
 	end
 
 	LoadPixelScene( "data/biome_impl/empty.png", "data/biome_impl/empty.png", 512, -512, "data/biome_impl/mountain/hall_background_append.png", true )
+	if not ModSettingGet( "DEEP_END.EDIT" ) then EntityLoad( "data/entities/buildings/mountain_allow_mods.xml", x, y ) end
 
 	-- GamePrint(tostring(#actions))
 	-- GamePrint(tostring(#perk_list))

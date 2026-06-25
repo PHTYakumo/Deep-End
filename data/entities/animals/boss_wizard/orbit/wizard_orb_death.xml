@@ -43,7 +43,7 @@
 	
 	<LuaComponent
 		script_source_file="data/entities/animals/boss_wizard/orbit/orb_death_effect.lua"
-		execute_every_n_frame="30"
+		execute_every_n_frame="15"
 		>
 	</LuaComponent>
 	
