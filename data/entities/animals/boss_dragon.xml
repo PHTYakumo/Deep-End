@@ -273,6 +273,13 @@
 		>
 	</LuaComponent>
 
+	<LuaComponent
+		_enabled="1"
+		script_damage_about_to_be_received="data/entities/animals/boss_centipede/dmg_cap.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
 	<StatusEffectDataComponent />
 
 </Entity>

@@ -740,7 +740,7 @@ function check_death()
 		-- check aggro
 		if not is_aggro then
 			local max_hp = ComponentGetValueInt( comp, "max_hp")
-			is_aggro = hp <= clamp(max_hp * 0.08, 40, 4000000)
+			is_aggro = hp <= clamp(max_hp * 0.2, 40, 8000000)
 			--print("hp/max: " .. hp .. " / " .. max_hp)
 
 			-- enter aggro mode
@@ -760,16 +760,22 @@ function check_death()
 					ComponentSetValue2( celleater, "radius", 64 )
 				end
 
+				local shields = EntityGetAllChildren( entity_id, "perk_component" )
+		
+				if shields ~= nil then for i=1,#shields do
+					local vsc = EntityGetFirstComponent( shields[i], "VariableStorageComponent", "perk_component" )
+					if ComponentGetValue2( vsc, "name" ) == "shield_protection" then ComponentSetValue2( vsc, "value_int", 30 ) end
+				end end
+
 				-- spawn body chunks
 				GameEntityPlaySound( entity_id, "destroy_face" )
 
-				local x,y = EntityGetTransform( entity_id )
+				local x, y = EntityGetTransform( entity_id )
 				local o = EntityLoad( "data/entities/animals/boss_centipede/body_chunks.xml", x, y)
 				PhysicsApplyForce( o, 0, -600)
 				PhysicsApplyTorque( o, 200)
 
 				GameCreateParticle( "material_darkness", x+20, y, 250, 0, -20, true, false )
-				EntityAddChild( entity_id, EntityLoad( "data/entities/misc/effect_no_heal.xml", x, y ) )
 
 				local p = EntityGetInRadiusWithTag( x, y, 256, "projectile" )
 				if #p > 0 then for i=1,#p do EntityKill( p[i] ) end end

@@ -1,4 +1,4 @@
-<Entity name="shield_entity" tags="energy_shield">
+<Entity name="shield_entity" tags="energy_shield,perk_component">
 	<InheritTransformComponent>
 	</InheritTransformComponent>
 	<SpriteComponent 
@@ -82,6 +82,8 @@
 	</ParticleEmitterComponent>
 	
 	<AreaDamageComponent
+		_tags="shield,disabled_at_start"
+  		_enabled="0"
 		aabb_min.x="-38" 
 		aabb_min.y="-38" 
 		aabb_max.x="38" 
@@ -93,6 +95,26 @@
 		damage_type="DAMAGE_CURSE"
 		>
 	</AreaDamageComponent>
+
+	<LuaComponent
+  		_enabled="1"
+		script_damage_about_to_be_received="data/entities/animals/boss_centipede/dmg_cap.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+	<VariableStorageComponent
+		_tags="perk_component"
+		name="shield_protection"
+		value_int="30"
+		>
+	</VariableStorageComponent>
+
+	<GameEffectComponent 
+		_tags="perk_component"
+		effect="SAVING_GRACE"
+		frames="-1">
+	</GameEffectComponent>
 		
 	<AudioComponent 
 		file="data/audio/Desktop/animals.bank"

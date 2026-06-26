@@ -5,7 +5,7 @@ local x, y = EntityGetTransform( entity_id )
 
 if EntityHasTag( entity_id, "boss_centipede" ) then
     dmg = ComponentGetValue2( EntityGetFirstComponentIncludingDisabled( entity_id, "DamageModelComponent" ), "max_hp" ) or 50
-    dmg = math.max( dmg * 0.01, 0.36 )
+    dmg = math.max( dmg * 0.01, 36 )
 end
 
 EntityInflictDamage( entity_id, dmg, "DAMAGE_HOLY", "$damage_holy", "NONE", 0, 0, entity_id )
