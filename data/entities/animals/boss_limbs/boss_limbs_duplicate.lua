@@ -4,6 +4,9 @@ if #existing_minions >= 16 or existing_minions == nil then return end
 local entity_id = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform( entity_id )
 
+local dcomp = EntityGetFirstComponent( entity_id, "DamageModelComponent" )
+if dcomp == nil or ComponentGetValue2( dcomp, "hp" ) < 0.12 then return end
+
 EntityLoad( "data/entities/animals/boss_limbs/boss_limbs.xml", pos_x, pos_y )
 EntityLoad( "data/entities/particles/image_emitters/magical_symbol_fast.xml", pos_x, pos_y )
 

@@ -45,7 +45,7 @@ Full video recording is required.
 
 "wandless" means means putting the wands down at the beginning and not picking them up at all.
 
-"hitless" means the player cannot take any damage.
+"hitless" means the player cannot take any damage. ( Immunity can be utilized )
 
 ----------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------

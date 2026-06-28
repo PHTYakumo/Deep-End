@@ -13857,7 +13857,7 @@ local de_actions_recompose =
 				ComponentSetValue2( inventory, "mDisplayFireRateWaitBar", true )
 			end
 
-			if lifetime >= -1 then
+			if lifetime > 0 or lifetime < -1 then
 				local platformshooter = EntityGetFirstComponentIncludingDisabled( caster_entity, "PlatformShooterPlayerComponent" )
 				if platformshooter ~= nil then
 					ComponentSetValue2( platformshooter, "mCessationDo", true )
