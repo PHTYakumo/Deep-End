@@ -37,7 +37,7 @@ video link
 
 No other mods* can be loaded and no BUGs can be intentionally used.
 
-* Except for decorative mods from Steam's Workshop, such as skins and translations.
+* Except for decorative mods from Steam's Workshop, such as skins and translations. ( "UI: T, H, D" is also allowed but must come from Steam's Workshop )
 
 "Mania Mode" the mod setting option must be set false.
 

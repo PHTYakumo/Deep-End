@@ -7,6 +7,7 @@
 			air_friction="-0.75"
 			gravity_y="0"
 			mass="0.04"
+      liquid_drag="0"
 		>
 	</VelocityComponent>
 	</Base>

@@ -4,9 +4,10 @@
 
 	<Base file="data/entities/base_projectile.xml" >
 		<VelocityComponent
-    		gravity_y="0"
+    	gravity_y="0"
 			air_friction="-0.2"
 			mass="0.05"
+      liquid_drag="0"
 			>
     	</VelocityComponent> 
 	</Base>

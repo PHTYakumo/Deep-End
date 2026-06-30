@@ -1,6 +1,6 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
-function de_key_judge( all_input, init )
+function de_key_judge( all_input, init ) -- "data/scripts/debug/keycodes.lua"
     local judge_result, key_input = false, init
 
     if string.len(all_input) > 0 then key_input = string.byte( all_input, 1, 1 ) end -- if key_input == 32 then key_input = init end
@@ -31,9 +31,11 @@ function de_key_judge( all_input, init )
 
         local mouse_strs = 
         { 
-            "left", "Left", "LEFT", 
-            "right", "Right", "RIGHT", 
-            "mid", "Mid", "MID"
+            "X1", "x1", "4",
+            "X2", "x2", "5",
+            "left", "Left", "LEFT", "1", 
+            "right", "Right", "RIGHT", "2",
+            "mid", "Mid", "MID", "3"
         }
 
         local wheel_strs = 
@@ -54,9 +56,11 @@ function de_key_judge( all_input, init )
 
         local mouse_str_results = 
         { 
-            1, 1, 1,
-            2, 2, 2,
-            3, 3, 3
+            6, 6, 6,
+            7, 7, 7,
+            1, 1, 1, 1,
+            2, 2, 2, 2,
+            3, 3, 3, 3
         }
 
         local wheel_strs_results = 
@@ -88,6 +92,7 @@ function de_key_judge( all_input, init )
             for i=1,#wheel_strs do if string.find( all_input, wheel_strs[i] ) then 
                 key_result = wheel_strs_results[i] 
                 use_mouse = true
+                find = true
                 break
             end end
         end

@@ -191,7 +191,7 @@ function phase_circleshot()
 	open_eye()
 	GameEntityPlaySound( GetUpdatedEntityID(), "phase_circleshot_start" )
 	
-	local shot_count = 10 + math.floor(orbcount / 3)
+	local shot_count = clamp( 10 + math.floor(orbcount / 3), 1, 25 )
 	local frame = GameGetFrameNum()
 	local r = ProceduralRandomf(frame, frame)
 	local spiral_speed = 25 * (r*2-1) -- random turn speed & direction with each attack
@@ -213,13 +213,14 @@ end
 function phase_spawn_minion()
 	set_logic_state( states.FollowPlayer )
 	
-	local spawn_count = 1 + math.floor(orbcount / 2)
+	local spawn_count = clamp( 1 + math.floor(orbcount / 2), 1, 3 )
+
 	for i=1,spawn_count do
 		if not minion_check_maxcount() then
 			open_eye()
 			GameEntityPlaySound( GetUpdatedEntityID(), "spawn_minion" )
 			spawn_minion()
-			boss_wait(20)
+			boss_wait(2)
 		end
 	end
 
@@ -264,7 +265,8 @@ end
 function phase_homingshot()
 	open_eye()
 	
-	local shot_count = 4 + math.floor(orbcount * 0.5)
+	local shot_count = clamp( 4 + math.floor(orbcount * 0.5), 16 )
+
 	for i=1,shot_count do
 		homingshot()
 		GameEntityPlaySound( GetUpdatedEntityID(), "shoot_homingshot" )
@@ -327,7 +329,8 @@ function phase_aggro()
 	boss_wait(45)
 
 	-- circle shots to random directions
-	local shot_count = 12 + math.floor(orbcount / 3)
+	local shot_count = clamp( 12 + math.floor(orbcount / 3), 1, 25 )
+
 	local frame = GameGetFrameNum()
 	for i=1,shot_count do
 		circleshot_aggro()
@@ -515,7 +518,7 @@ function polymorphshot()
 		angle = angle + space
 	end
 
-	EntityAddChild( entity_id, EntityLoad( "data/entities/misc/effect_regeneration_boss_shorter.xml" ) )
+	EntityAddChild( this, EntityLoad( "data/entities/misc/effect_regeneration_boss_shorter.xml" ) )
 end
 
 function firepillar()
@@ -561,14 +564,10 @@ function clear_materials()
 	
 	shoot_projectile( this, "data/entities/animals/boss_centipede/clear_materials.xml", pos_x, pos_y, 0, 0 )
 
-	local amount = 6 + orbcount - phase_repeats * 2
+	local amount = clamp( 6 + orbcount - phase_repeats * 2, 3, 24 )
 	local space  = math.floor(360 / amount)
 	local speed  = 30
 	local angle  = space * 0.5
-
-	if amount > 24 then
-		amount = 24
-	end
 	
 	for i=1,amount do
 		local vel_x = math.cos( math.rad(angle) ) * speed

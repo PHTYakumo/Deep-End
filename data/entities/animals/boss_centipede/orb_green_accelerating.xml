@@ -8,6 +8,7 @@
 			air_friction="-2.5"
 			terminal_velocity="500"
 			mass="0.05"
+			liquid_drag="0"
 			>
 		</VelocityComponent> 
 	</Base>
