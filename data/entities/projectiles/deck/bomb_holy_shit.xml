@@ -1,0 +1,18 @@
+<Entity name="I HAVE AN APPLE" >
+
+  <Base file="data/entities/projectiles/bomb_holy_shit.xml">
+
+    <PhysicsBodyComponent 
+      linear_damping="50" 
+      angular_damping="25"
+      buoyancy="100" >
+    </PhysicsBodyComponent>
+
+    <VariableStorageComponent
+		  name="projectile_file"
+		  value_string="data/entities/projectiles/deck/bomb_holy_shit.xml" >
+	  </VariableStorageComponent>
+
+  </Base>
+
+</Entity>

@@ -212,7 +212,11 @@ local de_actions_recompose =
 		max_uses    = 6, 
 		custom_xml_file = "data/entities/misc/custom_cards/bomb.xml",
 		action 		= function()
-			add_projectile("data/entities/projectiles/bomb_beep.xml")
+			local x, y, r, sx, sy = EntityGetTransform( GetUpdatedEntityID() )
+
+			if r ~= 0 or math.abs(sx) ~= math.abs(sy) then add_projectile("data/entities/projectiles/deck/bomb_holy_shit.xml")
+			else add_projectile("data/entities/projectiles/bomb_beep.xml") end
+
 			c.fire_rate_wait = c.fire_rate_wait + 35
 		end,
 	},
@@ -3153,7 +3157,11 @@ local de_actions_recompose =
 		max_uses    = 6, 
 		custom_xml_file = "data/entities/misc/custom_cards/bomb_sticky.xml",
 		action 		= function()
-			add_projectile("data/entities/projectiles/bomb_sticky_shoot.xml")
+			local x, y, r, sx, sy = EntityGetTransform( GetUpdatedEntityID() )
+
+			if r ~= 0 or math.abs(sx) ~= math.abs(sy) then add_projectile("data/entities/projectiles/deck/bomb_holy_shit.xml")
+			else add_projectile("data/entities/projectiles/bomb_sticky_shoot.xml") end
+
 			c.fire_rate_wait = c.fire_rate_wait + 35
 		end,
 	},
@@ -3173,7 +3181,11 @@ local de_actions_recompose =
 		max_uses    = 6, 
 		custom_xml_file = "data/entities/misc/custom_cards/bomb_bouncy.xml",
 		action 		= function()
-			add_projectile("data/entities/projectiles/bomb_bouncy.xml")
+			local x, y, r, sx, sy = EntityGetTransform( GetUpdatedEntityID() )
+
+			if r ~= 0 or math.abs(sx) ~= math.abs(sy) then add_projectile("data/entities/projectiles/deck/bomb_holy_shit.xml")
+			else add_projectile("data/entities/projectiles/bomb_bouncy.xml") end
+
 			c.fire_rate_wait = c.fire_rate_wait + 35
 		end,
 	},

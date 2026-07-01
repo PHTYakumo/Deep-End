@@ -9,29 +9,29 @@
     </PhysicsBodyComponent>
 
     <PhysicsImageShapeComponent 
-      image_file="data/items_gfx/bomb.png"
+      image_file="data/items_gfx/apple_bomb.png"
       material="meat_confusion" >
     </PhysicsImageShapeComponent>
 
     <DamageModelComponent 
-    hp="9999"
-    ui_report_damage="0">
-  </DamageModelComponent>
+      hp="9999"
+      ui_report_damage="0">
+    </DamageModelComponent>
   
     <ProjectileComponent
       lifetime="90"
-	  damage="0"
-	  muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_launcher_large.xml"
-	  shoot_light_flash_radius="120"
-	  shoot_light_flash_r="255"
-	  shoot_light_flash_g="240"
-	  shoot_light_flash_b="30"
+      damage="0"
+      muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_launcher_large.xml"
+      shoot_light_flash_radius="120"
+      shoot_light_flash_r="255"
+      shoot_light_flash_g="240"
+      shoot_light_flash_b="30"
       ><config_explosion
         never_cache="0" 
         damage="0.03"
         camera_shake="2" 
         explosion_radius="60" 
-        explosion_sprite="data/particles/explosion_128.xml" 
+        explosion_sprite="data/particles/black_hole_big_circle_out.xml" 
         explosion_sprite_lifetime="0" 
         load_this_entity="data/entities/particles/treble_eye.xml"
         create_cell_probability="1"
@@ -112,11 +112,6 @@
     create_real_particles="0"
     is_emitting="1" >
   </ParticleEmitterComponent>
-
-  <AudioComponent
-      file="data/audio/Desktop/projectiles.bank"
-      event_root="player_projectiles/bomb_holy">
-  </AudioComponent>
 
   <AudioLoopComponent
     file="data/audio/Desktop/projectiles.bank"

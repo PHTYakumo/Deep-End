@@ -43,12 +43,10 @@ function init_boss()
 		-- Get the amount of orbs to adjust boss difficulty
 		-- orbcount = orbcount + new game plus count
 		local newgame_n = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") )
-		orbcount = GameGetOrbCountThisRun()
-		orbcount = orbcount + newgame_n
+		orbcount = GameGetOrbCountThisRun() + newgame_n
 
 		if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) then
 			local mania_level = math.floor( ModSettingGet( "DEEP_END.HEAVEN_OR_HELL_FACTOR" ) + 0.5 )
-
 			orbcount = orbcount + math.ceil( mania_level / 6 - 0.51 )
 		end
 
@@ -58,33 +56,16 @@ function init_boss()
 		local ex_hp_mult = math.floor( ModSettingGet( "DEEP_END.HELL_AND_HELL_HP" ) + 0.5 )
 		local boss_hp = 1600.0 * ex_hp_mult
 
-		if ( orbcount >= 0 ) then
-			boss_hp = boss_hp + ( 2^orbcount ) + ( orbcount^4 * 16 ) + orbcount * 256
-		else
-			boss_hp = math.max ( boss_hp / ( 1.25^( -orbcount ) ), 0.04 )
-		end
-
-		local comp = EntityGetFirstComponent( entity, "DamageModelComponent" )
-		if ( comp ~= nil ) then
-			ComponentSetValue2( comp, "max_hp", boss_hp ) 
-			ComponentSetValue2( comp, "hp", boss_hp )
-		end
-
-		if ( ModSettingGet( "DEEP_END.HELL_AND_HELL_PERK" ) ) then
-			EntityAddChild( entity, EntityLoad("data/entities/animals/boss_centipede/boss_centipede_shield_weak_plus.xml", pos_x, pos_y) )
-		end
-
-		EntityAddChild( entity, EntityLoad("data/entities/animals/boss_centipede/boss_centipede_shield_strong.xml", pos_x, pos_y) )
-		
-		EntityAddComponent( entity, "LuaComponent", 
-		{ 
-			script_source_file="data/entities/animals/boss_centipede/flee_check.lua",
-			execute_every_n_frame="10",
-		} )
+		if orbcount >= 0 then boss_hp = boss_hp + ( 2^orbcount ) + ( orbcount^4 * 16 ) + orbcount * 256
+		else boss_hp = math.max ( boss_hp / ( 1.25^( -orbcount ) ), 0.04 ) end
 
 		-- orbs boost damage resistances
 		local damagemodel_comp = EntityGetFirstComponent( entity, "DamageModelComponent" )
+
 		if damagemodel_comp ~= nil then
+			ComponentSetValue2( damagemodel_comp, "max_hp", boss_hp ) 
+			ComponentSetValue2( damagemodel_comp, "hp", boss_hp )
+
 			ComponentSetValue2( damagemodel_comp, "blood_material", "poo_gas" )
 			ComponentSetValue2( damagemodel_comp, "blood_spray_material", "plasma_fading_pink" )
 			ComponentSetValue2( damagemodel_comp, "ragdoll_material", "fire_blue" )
@@ -134,6 +115,22 @@ function init_boss()
 		end
 
 		EntityAddTag( entity, "touchmagic_immunity")
+
+		if ModSettingGet( "DEEP_END.HELL_AND_HELL_PERK" ) then
+			EntityAddChild( entity, EntityLoad("data/entities/animals/boss_centipede/boss_centipede_shield_weak_plus.xml", pos_x, pos_y) )
+		end
+
+		local shield_id = EntityLoad("data/entities/animals/boss_centipede/boss_centipede_shield_strong.xml", pos_x, pos_y)
+		EntityAddChild( entity, shield_id )
+
+		local vsc = EntityGetFirstComponent( shield_id, "VariableStorageComponent", "perk_component" )
+		if ComponentGetValue2( vsc, "name" ) == "shield_protection" and orbcount > 3 then ComponentSetValue2( vsc, "value_int", orbcount * 10 ) end
+		
+		EntityAddComponent( entity, "LuaComponent", 
+		{ 
+			script_source_file="data/entities/animals/boss_centipede/flee_check.lua",
+			execute_every_n_frame="10",
+		} )
 	else
 		-- make sure orbcount is not lost on game load
 		orbcount = ComponentGetValue2(orbcount_comp, "value_int")
@@ -142,11 +139,9 @@ function init_boss()
 	-- Turn on the limbs
 	local children = EntityGetAllChildren( entity )
 	
-	if children ~= nil then
-		for _,it in ipairs(children) do
-			EntitySetComponentsWithTagEnabled( it, "disabled_at_start", true )
-		end
-	end
+	if children ~= nil then for _,it in ipairs(children) do
+		EntitySetComponentsWithTagEnabled( it, "disabled_at_start", true )
+	end end
 
 	-- check if boss was in aggro mode
 	is_aggro = get_variable_storage_component(entity, "aggro") ~= nil

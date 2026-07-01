@@ -3190,12 +3190,12 @@ de_perk_list_recompose =
 				GamePrintImportant( "$dpCHAOS_1", "$dpCHAOS_2" )
 			end
 
-			if ( not EntityHasTag( entity_who_picked, "de_respawn" ) ) then EntityAddTag( entity_who_picked, "de_respawn") end
+			if not EntityHasTag( entity_who_picked, "de_respawn" ) then EntityAddTag( entity_who_picked, "de_respawn") end
+			if not EntityHasTag( entity_who_picked, "forgeable" ) then EntityAddTag( entity_who_picked, "forgeable") end
 
 			EntityAddTag( entity_who_picked, "blessed")
 			EntityAddTag( entity_who_picked, "fish_attractor")
 			EntityAddTag( entity_who_picked, "chaos_frankenstein")
-			if not EntityHasTag( entity_who_picked, "forgeable" ) then EntityAddTag( entity_who_picked, "forgeable") end
 
 			GlobalsSetValue( "TEMPLE_PERK_COUNT", "0" )
 
