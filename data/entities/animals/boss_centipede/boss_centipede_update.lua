@@ -96,7 +96,11 @@ function init_boss()
 			ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "ice", 0)
 			ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "radioactive", 0.2)
 			ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "poison", 0.2)
+
 			EntitySetDamageFromMaterial( entity, "acid", 0.0)
+			EntitySetDamageFromMaterial( entity, "magic_liquid_hp_regeneration_unstable", 0.004)
+			EntitySetDamageFromMaterial( entity, "magic_liquid_hp_regeneration", 0.004)
+			EntitySetDamageFromMaterial( entity, "magic_liquid_protection_all", 0.004)
 
 			if orbcount >= 0 then
 				ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "explosion", 0.1)
@@ -108,22 +112,19 @@ function init_boss()
 				ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "physics_hit", 0)
 				ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "curse", 0.75)
 				ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "holy", 0.75)
-				EntitySetDamageFromMaterial( entity, "magic_liquid_hp_regeneration_unstable", 0.004)
-				EntitySetDamageFromMaterial( entity, "magic_liquid_hp_regeneration", 0.004)
-				EntitySetDamageFromMaterial( entity, "magic_liquid_protection_all", 0.004)
 			end
 
 			if orbcount >= 2 then
 				ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "melee", 0.5)
-				ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "slice", 0)
-				ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "drill", 0)
+				ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "slice", 0.00001)
+				ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "drill", 0.00001)
 				ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "explosion", 0)
 				ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "curse", 0.5)
 				ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "holy", 0.5)
 			end
 
 			if orbcount >= 4 then
-				ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "melee", 0)
+				ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "melee", 0.00001)
 				ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "projectile", 0.1)
 				ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "radioactive", 0.1)
 				ComponentObjectSetValue2(damagemodel_comp, "damage_multipliers", "poison", 0.1)
@@ -220,7 +221,7 @@ function phase_spawn_minion()
 			open_eye()
 			GameEntityPlaySound( GetUpdatedEntityID(), "spawn_minion" )
 			spawn_minion()
-			boss_wait(2)
+			boss_wait(10)
 		end
 	end
 
@@ -265,7 +266,7 @@ end
 function phase_homingshot()
 	open_eye()
 	
-	local shot_count = clamp( 4 + math.floor(orbcount * 0.5), 16 )
+	local shot_count = clamp( 4 + math.floor(orbcount * 0.5), 2, 16 )
 
 	for i=1,shot_count do
 		homingshot()
@@ -888,7 +889,7 @@ end
 
 -- run phase state machine -----------------
 
-next_phase()
+--next_phase()
 -- always start combat with circle shots
 --if get_initialized() then
 --	phase = phase_circleshot
