@@ -9,7 +9,7 @@
 	<!-- give an initial velocity -->
   
 	<LuaComponent
-		script_source_file="data/custom_materials/mimic_potion_death.lua"
+		script_source_file="mods/deep_end/files/custom_materials/mimic_potion_death.lua"
 		execute_on_added="1"
 	></LuaComponent>
 

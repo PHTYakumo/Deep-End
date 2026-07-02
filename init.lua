@@ -302,6 +302,12 @@ function deep_end_biome( biome_name, hp_scale, attack_speed )
 end
 
 function OnWorldInitialized() 
+	-- audios
+	GlobalsSetValue( "DEEP_END_SOUND_DARK_SWORD_CURSE_LAST_PLAY_FRAME", "0" )
+	GlobalsSetValue( "DEEP_END_SOUND_SNIPER_FIRE_LAST_PLAY_FRAME", "0" )
+	GlobalsSetValue( "DEEP_END_SOUND_LIMBS_BOSS_SCREAM_PLAY_FRAME", "0" )
+
+	-- biomes
 	deep_end_biome( "coalmine", 0.5, 1 )
 	deep_end_biome( "coalmine_alt", 0.6, 0.9 )
 	deep_end_biome( "excavationsite", 0.75, 0.9 )
@@ -375,11 +381,6 @@ function OnWorldInitialized()
 end
 
 function OnPlayerSpawned( player_entity ) 
-	-- protect your hearing
-	GlobalsSetValue( "DEEP_END_SOUND_DARK_SWORD_CURSE_LAST_PLAY_FRAME", "0" )
-	GlobalsSetValue( "DEEP_END_SOUND_SNIPER_FIRE_LAST_PLAY_FRAME", "0" )
-	GlobalsSetValue( "DEEP_END_SOUND_LIMBS_BOSS_SCREAM_PLAY_FRAME", "0" )
-
 	-- reset the player's gravity
 	local gcomp = EntityGetFirstComponent( player_entity, "CharacterPlatformingComponent" )
 	if gcomp ~= nil then ComponentSetValue2( gcomp, "pixel_gravity", math.abs(ComponentGetValue2( gcomp, "pixel_gravity" )) )end
@@ -416,6 +417,9 @@ function OnPlayerSpawned( player_entity )
 	GlobalsSetValue( "STEVARI_DEATHS", "2" )
 	GlobalsSetValue( "DEEP_END_REMOVE_FOG_OF_WAR", "f" )
 	GlobalsSetValue( "DEEP_END_MAP_SPECIAL_MATERIAL_SPAWN", "null" )
+
+	GlobalsSetValue( "DEEP_END_POTION_POINT", "0" )
+	GlobalsSetValue( "DEEP_END_POTION_NUM", "0" )
 
 	if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) then
 		ComponentSetValue2( comp_worldstate, "perk_hp_drop_chance", 20 )
@@ -468,12 +472,6 @@ function OnPlayerSpawned( player_entity )
 	{
 		script_damage_about_to_be_received = "data/scripts/perks/no_instant_death.lua",
 		execute_every_n_frame = "-1",
-	} )
-
-	EntityAddComponent( player_entity, "LuaComponent", 
-	{ 
-		script_source_file="data/scripts/deep_end_map.lua",
-		execute_every_n_frame="1",
 	} )
 
 	EntityAddComponent( player_entity, "LuaComponent", 

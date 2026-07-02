@@ -14,7 +14,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	local alive = (mat == mat_mimic)
 
 	if alive and (not EntityHasTag( entity_id, "mimic_potion_sky" )) then
-		EntityLoad( "data/custom_materials/mimic_potion_death.xml", x ,y-2 )
+		EntityLoad( "mods/deep_end/files/custom_materials/mimic_potion_death.xml", x ,y-2 )
 	end
 end
 

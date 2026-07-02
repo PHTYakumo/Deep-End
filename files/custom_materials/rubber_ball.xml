@@ -118,7 +118,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="data/custom_materials/rubber_ball.xml"
+		value_string="mods/deep_end/files/custom_materials/rubber_ball.xml"
 		>
 	</VariableStorageComponent>
 

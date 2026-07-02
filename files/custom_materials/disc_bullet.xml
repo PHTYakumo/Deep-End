@@ -121,7 +121,7 @@
     
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="data/custom_materials/disc_bullet.xml"
+		value_string="mods/deep_end/files/custom_materials/disc_bullet.xml"
 		>
 	</VariableStorageComponent>
 

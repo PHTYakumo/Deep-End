@@ -163,7 +163,7 @@
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="data/custom_materials/grenade.xml"
+		value_string="mods/deep_end/files/custom_materials/grenade.xml"
 		>
 	</VariableStorageComponent>
   

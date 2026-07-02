@@ -116,7 +116,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="data/custom_materials/white_hole.xml"
+		value_string="mods/deep_end/files/custom_materials/white_hole.xml"
 		>
 	</VariableStorageComponent>
 </Entity>

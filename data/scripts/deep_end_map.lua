@@ -109,14 +109,16 @@ if timercomp ~= nil then
 	)
 
 	if is_hover then
+		local hover_x = 10.05
+
 		edit_component( entity_id, "VelocityComponent", function(vcomp,vars)
 			local fx,fy = ComponentGetValue2( vcomp, "mVelocity" )
-			ComponentSetValueVector2( vcomp, "mVelocity", 0, fy )
+			ComponentSetValueVector2( vcomp, "mVelocity", hover_x * sign(-fx), fy )
 		end )
 
 		edit_component( entity_id, "CharacterDataComponent", function(ccomp,vars)
 			local fx,fy = ComponentGetValue2( ccomp, "mVelocity" )
-			ComponentSetValueVector2( ccomp, "mVelocity", 0, fy )
+			ComponentSetValueVector2( ccomp, "mVelocity", hover_x * sign(-fx), fy )
 		end )
 	end
 
@@ -224,9 +226,11 @@ if timercomp ~= nil then
 		local flight = ComponentGetValue2( fcomp, "mFlyingTimeLeft" )
 		local on_ceiling = RaytracePlatforms( x, y, x, y-5 )
 
-		if ( is_up or on_ground ) and psy <= 0 then
+		if ( is_up or on_ground ) and psy <= 0 then -- scale.y == 0
 			local fmult = 33
-			if on_ground then fmult = -33 end
+
+			if on_ground then fmult = -fmult end
+			if psy == 0 then fmult = fmult * 2 end
 
 			if flight > 0 or on_ground then
 				edit_component( entity_id, "VelocityComponent", function(vcomp,vars)

@@ -9,7 +9,7 @@
 	<!-- give an initial velocity -->
   
 	<LuaComponent
-		script_source_file="data/custom_materials/rubber_ball_spawner.lua"
+		script_source_file="mods/deep_end/files/custom_materials/rubber_ball_spawner.lua"
 		execute_on_added="1"
 	></LuaComponent>
 

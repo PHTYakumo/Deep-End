@@ -435,7 +435,7 @@
 		cell_explosion_damage_required="1"
 		cell_explosion_radius_min="1"
 		explosion_sprite=""
-		load_this_entity="data/custom_materials/rubber_ball_spawner.xml"
+		load_this_entity="mods/deep_end/files/custom_materials/rubber_ball_spawner.xml"
 		ray_energy="1"
 		sparks_enabled="0"
 		>
@@ -600,7 +600,7 @@
 		cell_explosion_damage_required="1"
 		cell_explosion_radius_min="1"
 		explosion_sprite=""
-		load_this_entity="data/custom_materials/disc_spawner.xml"
+		load_this_entity="mods/deep_end/files/custom_materials/disc_spawner.xml"
 		ray_energy="1"
 		sparks_enabled="0"
 		>
@@ -687,7 +687,7 @@
 		cell_explosion_damage_required="1"
 		cell_explosion_radius_min="1"
 		explosion_sprite=""
-		load_this_entity="data/custom_materials/cell_eater_spawner.xml"
+		load_this_entity="mods/deep_end/files/custom_materials/cell_eater_spawner.xml"
 		ray_energy="1"
 		sparks_enabled="0"
 		>
@@ -1615,37 +1615,37 @@
 	<Reaction probability="100"
 			input_cell1="Firebolt_powder" 	input_cell2="air"
 			output_cell1="air" 				output_cell2="air"
-			entity="data/custom_materials/grenade_spawner.xml"
+			entity="mods/deep_end/files/custom_materials/grenade_spawner.xml"
 	></Reaction>
 
 	<Reaction probability="5"
 			input_cell1="Pollen_powder" 	input_cell2="air"
 			output_cell1="air" 				output_cell2="air"
-			entity="data/custom_materials/pollen_spawner.xml"
+			entity="mods/deep_end/files/custom_materials/pollen_spawner.xml"
 	></Reaction>
 
 	<Reaction probability="100"
 			input_cell1="Lightning_Spells_powder" 	input_cell2="air"
 			output_cell1="air" 						output_cell2="air"
-			entity="data/custom_materials/lightning_spawner.xml"
+			entity="mods/deep_end/files/custom_materials/lightning_spawner.xml"
 	></Reaction>
 
 	<Reaction probability="100"
 			input_cell1="Vigour_powder" input_cell2="[burnable]" input_cell3="[burnable]"
 			output_cell1="air" 			output_cell2="air"
-			entity="data/custom_materials/regeneration_field_spawner.xml"
+			entity="mods/deep_end/files/custom_materials/regeneration_field_spawner.xml"
 	></Reaction>
 
 	<Reaction probability="50"
 			input_cell1="Vigour_powder" input_cell2="air"
 			output_cell1="air" 			output_cell2="air"
-			entity="data/custom_materials/regeneration_field_spawner.xml"
+			entity="mods/deep_end/files/custom_materials/regeneration_field_spawner.xml"
 	></Reaction>
 
 	<Reaction probability="5"
 			input_cell1="Witch_powder" 	input_cell2="air"
 			output_cell1="air" 			output_cell2="air"
-			entity="data/custom_materials/konna_spawner.xml"
+			entity="mods/deep_end/files/custom_materials/konna_spawner.xml"
 	></Reaction>
 
 	<Reaction probability="20" 
