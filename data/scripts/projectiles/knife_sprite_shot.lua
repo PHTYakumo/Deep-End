@@ -45,6 +45,7 @@ function shot( entity_id )
     	image_file="data/projectiles_gfx/summon_knife.xml",
     	next_rect_animation="",
    		rect_animation="",
+		z_index="-1.6",
 	} )
 
 	EntityAddComponent( entity_id, "SpriteComponent", 
@@ -53,5 +54,6 @@ function shot( entity_id )
     	image_file="data/projectiles_gfx/summon_knife_freeze_time.xml",
     	next_rect_animation="",
    		rect_animation="",
+		z_index="-1.6",
 	} )
 end

@@ -93,8 +93,8 @@ g_small_enemies =
 	{
 		prob   		= 0.05,
 		min_count	= 1,
-		max_count	= 2,    
-		entity 	= "data/entities/animals/ethereal_being.xml"
+		max_count	= 1,    
+		entity 	= "data/entities/buildings/darkghost_crystal.xml"
 	},
 	{
 		prob   		= 0.08,

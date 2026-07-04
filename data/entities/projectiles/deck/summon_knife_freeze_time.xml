@@ -100,6 +100,7 @@
 		image_file="data/projectiles_gfx/summon_knife_freeze_time.xml" 
 		next_rect_animation=""
 		rect_animation="" 
+		z_index="-1.6"
 		>
 	</SpriteComponent>
   

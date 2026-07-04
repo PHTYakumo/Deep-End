@@ -56,6 +56,7 @@
 		lifetime_max="0.3"
 		create_real_particles="0"
 		emit_cosmetic_particles="1"
+		cosmetic_force_create="1"
 		emission_interval_min_frames="2"
 		emission_interval_max_frames="3"
 		is_emitting="1" >
@@ -81,6 +82,7 @@
 		lifetime_max="0.4"
 		create_real_particles="0"
 		emit_cosmetic_particles="1"
+		cosmetic_force_create="1"
 		emission_interval_min_frames="2"
 		emission_interval_max_frames="3"
 		is_emitting="1" >
@@ -106,6 +108,7 @@
 		lifetime_max="1.1"
 		create_real_particles="0"
 		emit_cosmetic_particles="1"
+		cosmetic_force_create="1"
 		emission_interval_min_frames="5"
 		emission_interval_max_frames="13"
 		is_emitting="1" >

@@ -68,6 +68,7 @@
     lifetime_max="0.1"
     emit_real_particles="0"
 	  render_on_grid="1"
+    cosmetic_force_create="1"
     emit_cosmetic_particles="1"
     emission_interval_min_frames="1"
     emission_interval_max_frames="2"
