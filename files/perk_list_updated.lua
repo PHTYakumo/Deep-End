@@ -563,13 +563,10 @@ de_perk_list_recompose =
 			local damagemodels = EntityGetComponent( entity_who_picked, "DamageModelComponent" )
 			if ( damagemodels ~= nil ) then
 				for i,damagemodel in ipairs(damagemodels) do
-					local max_hp = ComponentGetValue2( damagemodel, "max_hp" ) * 25
-					ComponentSetValue( damagemodel, "max_hp_cap", 0.0 )
+					local max_hp = ComponentGetValue2( damagemodel, "max_hp" ) * 4
 					
-					if ( max_hp < 100 ) then
-						ComponentSetValue( damagemodel, "max_hp", 4 )
-						ComponentSetValue( damagemodel, "hp", 4 )
-					end
+					ComponentSetValue( damagemodel, "max_hp", max_hp )
+					ComponentSetValue( damagemodel, "hp", max_hp )
 				end
 			end
 		end,

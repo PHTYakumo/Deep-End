@@ -18,9 +18,11 @@ function de_is_valid_file2( file )
 	return false
 end
 
+DEEP_END_ELCB_OLD = entity_load_camera_bound
 function entity_load_camera_bound(entity_data, x, y, rndx, rndy)
 	local hah_amount = math.max( math.floor( ModSettingGet( "DEEP_END.HELL_AND_HELL_AMOUNT" ) + 0.5 ), 1 )
 
+	if hah_amount == 1 then DEEP_END_ELCB_OLD(entity_data, x, y, rndx, rndy) end
 	local rand_x = 4
 	local rand_y = 4
 

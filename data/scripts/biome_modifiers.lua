@@ -428,7 +428,7 @@ biome_modifiers =
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
-				entity 	=  "data/entities/animals/shaman_wind.xml",
+				entity 	=  "data/entities/animals/illusions/shaman_wind.xml",
 			})
 		end,
 	},

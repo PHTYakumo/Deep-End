@@ -1,6 +1,4 @@
-<Entity 
-	name="$projectile_default" 
-	>
+<Entity name="$projectile_default" >
 	<Base file="data/entities/base_projectile.xml" >
 		<VelocityComponent
 			gravity_y="0"
@@ -30,9 +28,9 @@
 		lifetime="54" >
 	</ProjectileComponent>
 
-	<LifetimeComponent
-			lifetime="240" >
-	</LifetimeComponent>
+	<LifetimeComponent lifetime="240" />
+
+	<GameAreaEffectComponent radius="24" />
 
 	<SpriteComponent 
 		_enabled="1" 
