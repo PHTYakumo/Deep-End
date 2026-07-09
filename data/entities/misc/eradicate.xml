@@ -1,0 +1,14 @@
+<Entity tags="teleportable_NOT,seed_f" >
+	<InheritTransformComponent />
+	
+	<LuaComponent
+		script_source_file="data/scripts/magic/eradicate.lua"
+		execute_every_n_frame="50"
+		>
+	</LuaComponent>
+	
+	<LifetimeComponent
+		lifetime="666"
+		>
+	</LifetimeComponent>
+<Entity>

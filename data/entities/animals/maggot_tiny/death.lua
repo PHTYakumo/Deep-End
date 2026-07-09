@@ -5,7 +5,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	local entity_id = GetUpdatedEntityID()
 	local pos_x, pos_y = EntityGetTransform( entity_id )
 
-	ConvertMaterialEverywhere( CellFactory_GetType( "water" ), CellFactory_GetType( "smoke" ) )
+	ConvertMaterialEverywhere( CellFactory_GetType( "smoke" ), CellFactory_GetType( "water" ) )
 
 	-- do some kind of an effect? throw some particles into the air?
 	EntityLoad( "data/entities/items/pickup/heart_evil.xml", pos_x - 20, pos_y - 10 )

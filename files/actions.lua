@@ -6756,7 +6756,7 @@ local de_actions_recompose =
 		mana = 0,
 		max_uses = 150,
 		action 		= function()
-			c.extra_entities = c.extra_entities .. "data/entities/misc/avoiding_arc.xml,"
+			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/avoiding_arc.xml," )
 			c.fire_rate_wait    = c.fire_rate_wait - 15
 			draw_actions( 1, true )
 		end,
@@ -6775,7 +6775,7 @@ local de_actions_recompose =
 		mana = 0,
 		max_uses = 150,
 		action 		= function()
-			c.extra_entities = c.extra_entities .. "data/entities/misc/floating_arc.xml,"
+			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/floating_arc.xml," )
 			c.fire_rate_wait    = c.fire_rate_wait - 15
 			draw_actions( 1, true )
 		end,
@@ -6794,8 +6794,8 @@ local de_actions_recompose =
 		mana = 0,
 		--max_uses = 150,
 		action 		= function()
-			c.extra_entities = c.extra_entities .. "data/entities/misc/fly_downwards.xml,"
-			c.gravity = c.gravity * 2
+			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/fly_downwards.xml," )
+			c.gravity = c.gravity * 0.5
 			c.fire_rate_wait    = c.fire_rate_wait - 8
 			c.speed_multiplier	= c.speed_multiplier * 1.2
 			draw_actions( 1, true )
@@ -6815,8 +6815,8 @@ local de_actions_recompose =
 		mana = 0,
 		--max_uses = 150,
 		action 		= function()
-			c.extra_entities = c.extra_entities .. "data/entities/misc/fly_upwards.xml,"
-			c.gravity = c.gravity * 2
+			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/fly_upwards.xml," )
+			c.gravity = c.gravity * 0.5
 			c.fire_rate_wait    = c.fire_rate_wait - 8
 			c.speed_multiplier	= c.speed_multiplier * 1.2
 			draw_actions( 1, true )
@@ -6901,7 +6901,7 @@ local de_actions_recompose =
 		--max_uses = 150,
 		action 		= function()
 			c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_shot.xml,"
-			c.gravity = c.gravity * 2
+			c.gravity = 0
 			c.damage_projectile_add = c.damage_projectile_add + 0.1
 			c.fire_rate_wait = c.fire_rate_wait - 6
 			c.lifetime_add = c.lifetime_add + 50
@@ -7290,6 +7290,7 @@ local de_actions_recompose =
 		mana = 100,
 		max_uses = 125,
 		action 		= function()
+			c.speed_multiplier	= c.speed_multiplier * 0.8
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/clipping_shot.xml," )
 			c.fire_rate_wait = c.fire_rate_wait + 3
 			draw_actions( 1, true )
