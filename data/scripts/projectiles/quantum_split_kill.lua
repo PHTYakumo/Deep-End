@@ -21,11 +21,19 @@ local function modify_projectile( next_id )
 	end
 end
 
-local init_id = tonumber( ComponentGetValue2( storage_comp, "value_string" ) )
-local qt_id = ComponentGetValue2( storage_comp, "value_int" )
+local lid = tonumber( ComponentGetValue2( storage_comp, "value_string" ) )
+local rid = ComponentGetValue2( storage_comp, "value_int" )
 
 -- make sure that non-entanglement entities won't be mistakenly deleted after any redistribution of id
 -- the entangled projectile-copy will forcibly vanish if the initial projectile or another entangled copy have vanished
 
-if EntityHasTag( init_id, "projectile_cloned" ) then modify_projectile( init_id ) end
-if EntityHasTag( qt_id, "projectile_cloned" ) then modify_projectile( qt_id ) end
+if EntityHasTag( entity_id, "projectile_cloned" ) then
+	if EntityGetFirstComponent( rid, "ProjectileComponent" ) == nil then
+		EntityAddComponent( lid, "LifetimeComponent", { lifetime="1", } )
+	end
+
+	modify_projectile( rid )
+else
+	modify_projectile( lid )
+	modify_projectile( rid )
+end

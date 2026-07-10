@@ -2,10 +2,21 @@
 
 	<Base file="data/entities/base_wand_ghost.xml" >
 		<AnimalAIComponent 
-		attack_ranged_entity_file="data/entities/projectiles/rubber_ball_enemy.xml"
-		creature_detection_check_every_x_frames="20"
-		>
+			attack_ranged_entity_file="data/entities/projectiles/rubber_ball_enemy.xml"
+			creature_detection_check_every_x_frames="24">
 		</AnimalAIComponent>
+
+		<DamageModelComponent 
+            hp="0.4"
+			><damage_multipliers
+				melee="0.4"
+				electricity="0.4"
+				radioactive="0.4"
+				poison="0.4"
+				fire="0.4"
+				ice="0.4" 
+			></damage_multipliers>
+		</DamageModelComponent>
 
 		<CameraBoundComponent
 			_enabled="0"
@@ -36,14 +47,11 @@
 		auto_play="1">
 	</AudioLoopComponent>
 
-	<Entity>
-		<InheritTransformComponent />
-		
-	    <GameEffectComponent 
-	        effect="PROTECTION_EXPLOSION"
-	        frames="-1"
-	    >
-		</GameEffectComponent >
-	</Entity>
+	<Entity> <Base file="data/entities/misc/effect_confusion_malfunction.xml">
+		<GameEffectComponent 
+			effect="PROTECTION_EXPLOSION"
+			frames="-1"
+		></GameEffectComponent>
+	</Base> </Entity>
 
 </Entity>

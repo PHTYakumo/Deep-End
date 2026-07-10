@@ -28,6 +28,15 @@ function de_effect_entities_add( game_effect_entities, add_entity )
 	return effect_entities
 end
 
+function de_effect_entities_gsub( game_effect_entities, old_entity, new_entity, times )
+	if type( game_effect_entities ) == "table" or type( old_entity ) == "table" or type( new_entity ) == "table" then
+		return game_effect_entities
+	else
+		if times == nil then times = 1 end
+		return string.gsub( game_effect_entities, old_entity, new_entity, times )
+	end
+end
+
 function DEEP_END_add_projectile_trigger_customized( entity_filename, customized_timer_list, action_draw_count_list, can_reload_at_end )
 	if reflecting then 
 		Reflection_RegisterProjectile( entity_filename )
@@ -2248,7 +2257,7 @@ local de_actions_recompose =
 			c.lifetime_add = c.lifetime_add - 16
 			c.gravity = -36.0
 			c.spread_degrees = math.max( c.spread_degrees + 18, 42 )
-			-- if c.pattern_degrees < 0.5 then c.pattern_degrees = 12 end
+			if c.pattern_degrees > 66 then c.pattern_degrees = c.pattern_degrees - 33 end
 			c.screenshake = c.screenshake + 32
 			shot_effects.recoil_knockback = 24.0
 			current_reload_time = current_reload_time + 2
@@ -2277,7 +2286,7 @@ local de_actions_recompose =
 			c.material = "spark_blue_dark"
 			-- c.game_effect_entities = de_effect_entities_add( c.game_effect_entities, "data/entities/misc/effect_disintegrated_air.xml," )
 			c.gravity = 0.0
-			if c.pattern_degrees < 0.5 then c.pattern_degrees = 12 end
+			c.pattern_degrees = c.pattern_degrees + 12
 			c.screenshake = c.screenshake + 42
 			c.damage_electricity_add = c.damage_electricity_add + 0.24
 			shot_effects.recoil_knockback = 28.0
@@ -5380,7 +5389,7 @@ local de_actions_recompose =
 		mana = 0,
 		-- max_uses = DE_USAGE * 30,
 		action 		= function()
-			c.pattern_degrees = 180
+			-- c.pattern_degrees = 180
 			draw_actions(2, true)
 			c.pattern_degrees = 180
 			c.spread_degrees = math.min( c.spread_degrees - 10.0, 180.0 )
@@ -5399,7 +5408,7 @@ local de_actions_recompose =
 		mana = 0,
 		-- max_uses = DE_USAGE * 30,
 		action 		= function()
-			c.pattern_degrees = 45
+			-- c.pattern_degrees = 45
 			draw_actions(2, true)
 			c.pattern_degrees = 45
 			c.spread_degrees = math.min( c.spread_degrees - 10.0, 180.0 )
@@ -5418,7 +5427,7 @@ local de_actions_recompose =
 		mana = 1,
 		-- max_uses = DE_USAGE * 15,
 		action 		= function()
-			c.pattern_degrees = 90
+			-- c.pattern_degrees = 90
 			draw_actions(3, true)
 			c.pattern_degrees = 90
 			c.spread_degrees = math.min( c.spread_degrees - 10.0, 180.0 )
@@ -5437,7 +5446,7 @@ local de_actions_recompose =
 		mana = 1,
 		-- max_uses = DE_USAGE * 15,
 		action 		= function()
-			c.pattern_degrees = 20
+			-- c.pattern_degrees = 20
 			draw_actions(3, true)
 			c.pattern_degrees = 20
 			c.spread_degrees = math.min( c.spread_degrees - 10.0, 180.0 )
@@ -5456,7 +5465,7 @@ local de_actions_recompose =
 		mana = 4,
 		-- max_uses = DE_USAGE * 14,
 		action 		= function()
-			c.pattern_degrees = 180
+			-- c.pattern_degrees = 180
 			draw_actions(6, true)
 			c.pattern_degrees = 180
 			c.spread_degrees = math.min( c.spread_degrees - 10.0, 180.0 )
@@ -5475,7 +5484,7 @@ local de_actions_recompose =
 		mana = 3,
 		-- max_uses = DE_USAGE * 14,
 		action 		= function()
-			c.pattern_degrees = 180
+			-- c.pattern_degrees = 180
 			draw_actions(5, true)
 			c.pattern_degrees = 180
 			c.spread_degrees = math.min( c.spread_degrees - 10.0, 180.0 )
@@ -6927,7 +6936,7 @@ local de_actions_recompose =
 			if judge == nil then
 				c.extra_entities = c.extra_entities .. "data/entities/misc/phasing_arc.xml,"
 			else
-				c.extra_entities = c.extra_entities:gsub( "data/entities/misc/chaotic_arc.xml,", "data/entities/misc/phasing_arc_reverse.xml,", 1 )
+				c.extra_entities = de_effect_entities_gsub( c.extra_entities, "data/entities/misc/chaotic_arc.xml,", "data/entities/misc/phasing_arc_reverse.xml,", 13 )
 			end
 
 			c.gravity = 0
@@ -7059,7 +7068,7 @@ local de_actions_recompose =
 			if mdf_1 == nil then
 				c.extra_entities = c.extra_entities .. "data/entities/misc/anti_homing.xml,"
 			elseif mdf_2 == nil then
-				c.extra_entities = c.extra_entities:gsub( "data/entities/misc/anti_homing.xml,", "data/entities/misc/anti_homing_shooter.xml,", 1 )
+				c.extra_entities = de_effect_entities_gsub( c.extra_entities, "data/entities/misc/anti_homing.xml,", "data/entities/misc/anti_homing_shooter.xml," )
 			end
 
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/particles/tinyspark_white_small.xml," )
@@ -7203,7 +7212,7 @@ local de_actions_recompose =
 				if mdf_1 == nil then
 					c.extra_entities = c.extra_entities .. "data/entities/misc/homing_cursor.xml,"
 				else
-					c.extra_entities = c.extra_entities:gsub( "data/entities/misc/homing_cursor.xml,", "data/entities/misc/de_homing_cursor.xml,", 1 )
+					c.extra_entities = de_effect_entities_gsub( c.extra_entities, "data/entities/misc/homing_cursor.xml,", "data/entities/misc/de_homing_cursor.xml," )
 				end
 
 				c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/particles/tinyspark_white_small.xml," )
@@ -9398,7 +9407,7 @@ local de_actions_recompose =
 				if mdf_1 == nil then
 					c.extra_entities = c.extra_entities .. "data/entities/misc/blasting_chain_reaction.xml,"
 				else
-					c.extra_entities = c.extra_entities:gsub( "data/entities/misc/blasting_chain_reaction.xml,", "data/entities/misc/blasting_chain_reaction_rapid.xml,", 1 )
+					c.extra_entities = de_effect_entities_gsub( c.extra_entities, "data/entities/misc/blasting_chain_reaction.xml,", "data/entities/misc/blasting_chain_reaction_rapid.xml," )
 				end
 
 				c.screenshake = c.screenshake + 15
@@ -10933,7 +10942,7 @@ local de_actions_recompose =
 			-- c.spread_degrees = math.min( c.spread_degrees, 30 )
 			-- shot_effects.recoil_knockback = math.min( shot_effects.recoil_knockback, 30.0 )
 			draw_actions( 1, false )
-			if c.pattern_degrees > 0.5 then c.pattern_degrees = c.pattern_degrees + 5 end
+			if c.pattern_degrees > 1 then c.pattern_degrees = math.max( c.pattern_degrees - 10, 0.5 ) end
 		end,
 	},
 	{
