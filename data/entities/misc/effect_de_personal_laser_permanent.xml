@@ -16,7 +16,7 @@
 	
 	<LaserEmitterComponent>
 		<laser
-			damage_to_entities="0.18"
+			damage_to_entities="0.04"
 			damage_to_cells="9500"
 			max_length="36"
 			beam_radius="2.0"

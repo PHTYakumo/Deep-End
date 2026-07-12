@@ -3,7 +3,7 @@
 		<VelocityComponent
 			gravity_y="0"
 			air_friction="0"
-			terminal_velocity="32"
+			terminal_velocity="1"
 			>
 		</VelocityComponent> 
 	</Base>
@@ -30,16 +30,17 @@
 
 	<LifetimeComponent lifetime="240" />
 
-	<GameAreaEffectComponent radius="24" />
+	<GameAreaEffectComponent radius="20.5" />
 
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="data/projectiles_gfx/target.xml" 
+		image_file="data/projectiles_gfx/target_order.xml" 
 		next_rect_animation="" 
-		offset_x="0" 
-		offset_y="0" 
 		rect_animation="fireball"
+		has_special_scale="1"
+		special_scale_x="1.1"
+		special_scale_y="1.1" 
 		additive="1"
 		emissive="1"
 		>
@@ -61,6 +62,14 @@
 		>
 	</LuaComponent>
 
+	<LuaComponent
+		_enabled="1" 
+		execute_on_removed="1"
+		script_source_file="data/scripts/projectiles/order_fade.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
 	<AudioLoopComponent
 		file="data/audio/Desktop/projectiles.bank"
 		event_name="player_projectiles/meteor/loop"
@@ -71,6 +80,11 @@
 		file="data/audio/Desktop/projectiles.bank"
 		event_root="player_projectiles/megalaser">
 	</AudioComponent>
+
+	<HitEffectComponent 
+        effect_hit="LOAD_UNIQUE_CHILD_ENTITY"
+        value_string="data/entities/misc/effect_movement_slower_ui.xml" >
+	</HitEffectComponent >
 	
 	<VariableStorageComponent
 		name="projectile_file"

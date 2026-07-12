@@ -200,12 +200,12 @@ function drop_random_reward( x, y, entity_id, rand_x, rand_y, set_rnd_  )
 			-- Potion
 			-------------------------------------------------------------------
 			rnd = Random(1,100)
-			local potion_type_list = { "_secret", "_random_material", "" }
+			local potion_type_list = { "_secret", "_random_material", "_random_material", "_random_material", "", "", "", "", "", "" }
 
 			if ( y > 0 ) then
-				for i=1,5 do table.insert( entities, { "data/entities/items/pickup/potion" .. potion_type_list[Random(1,3)] .. ".xml" } ) end
+				for i=1,5 do table.insert( entities, { "data/entities/items/pickup/potion" .. potion_type_list[Random(1,10)] .. ".xml" } ) end
 			elseif ( rnd > 66 ) then
-				for i=1,3 do table.insert( entities, { "data/entities/items/pickup/potion" .. potion_type_list[Random(1,3)] .. ".xml" } ) end
+				for i=1,3 do table.insert( entities, { "data/entities/items/pickup/potion" .. potion_type_list[Random(1,10)] .. ".xml" } ) end
 				table.insert( entities, { "data/entities/items/pickup/potion.xml" } )
 				table.insert( entities, { "data/entities/items/pickup/potion.xml" } )
 			else

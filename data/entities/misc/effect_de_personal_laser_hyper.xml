@@ -22,7 +22,7 @@
 	<LaserEmitterComponent
 		laser_angle_add_rad="0.9"
 		><laser
-			damage_to_entities="0.16"
+			damage_to_entities="0.12"
 			damage_to_cells="9000"
 			max_length="27"
 			beam_radius="1.25"

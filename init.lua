@@ -404,7 +404,7 @@ function OnPlayerSpawned( player_entity )
 		end end end
 	end
 
-	local px,py,pr,psx,psy = EntityGetTransform( player_entity )
+	local px, py, pr, psx, psy = EntityGetTransform( player_entity )
 	EntitySetTransform( player_entity, px, py, pr, psx, math.abs(psy) )
 
 	-- single use
@@ -514,75 +514,69 @@ function OnPlayerSpawned( player_entity )
 		execute_every_n_frame="1",
 	} )
 
-
 	-- damage multipliers
 	if ModSettingGet( "DEEP_END.EDIT" ) or ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) then
 		local init_perk = perk_spawn( x, y, "EDIT_WANDS_EVERYWHERE", true )
-
 		perk_pickup(init_perk, player_entity, EntityGetName(init_perk), false, false)
+	end
 
-		local damagemodels = EntityGetComponent( player_entity, "DamageModelComponent" )
-		if damagemodels ~= nil then
-			for i,damagemodel in ipairs(damagemodels) do
-				
-				local melee = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "melee" ) )
-				local projectile = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "projectile" ) )
-				local explosion = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "explosion" ) )
-				local electricity = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "electricity" ) )
-				local fire = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "fire" ) )
-				local drill = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "drill" ) )
-				local slice = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "slice" ) )
-				local ice = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "ice" ) )
-				local healing = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "healing" ) )
-				local physics_hit = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "physics_hit" ) )
-				local radioactive = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "radioactive" ) )
-				local poison = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "poison" ) )
-				local curse = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "curse" ) )
+	local damagemodels = EntityGetComponent( player_entity, "DamageModelComponent" )
 
-				melee = melee * 1.5
-				projectile = projectile * 1.2
-				explosion = explosion * 1.2
-				electricity = electricity * 1.2
-				fire = fire * 1.2
-				drill = drill * 1.5
-				slice = slice * 1.5
-				ice = ice * 1.2
-				physics_hit = physics_hit * 0.5
-				radioactive = radioactive * 1.2
-				poison = poison * 1.5
-				curse = curse * 2.0
-				-- healing = healing
-				
-				if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) then
-					projectile = projectile * 1.25 -- x1.5
-					electricity = electricity * 1.2 -- x1.44
-					fire = fire * 1.5 -- x1.8
-					ice = ice * 1.2 -- x1.44
-					radioactive = radioactive * 1.5 -- x1.8
-					poison = poison * 1.5 -- x2.25
-					curse = curse * 1.25 -- x2.5
-				end
+	if damagemodels ~= nil then for i,damagemodel in ipairs(damagemodels) do
+		local melee = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "melee" ) )
+		local projectile = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "projectile" ) )
+		local explosion = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "explosion" ) )
+		local electricity = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "electricity" ) )
+		local fire = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "fire" ) )
+		local drill = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "drill" ) )
+		local slice = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "slice" ) )
+		local ice = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "ice" ) )
+		local healing = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "healing" ) )
+		local physics_hit = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "physics_hit" ) )
+		local radioactive = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "radioactive" ) )
+		local poison = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "poison" ) )
+		local curse = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "curse" ) )
 
-				ComponentObjectSetValue( damagemodel, "damage_multipliers", "melee", tostring(melee) )
-				ComponentObjectSetValue( damagemodel, "damage_multipliers", "projectile", tostring(projectile) )
-				ComponentObjectSetValue( damagemodel, "damage_multipliers", "explosion", tostring(explosion) )
-				ComponentObjectSetValue( damagemodel, "damage_multipliers", "electricity", tostring(electricity) )
-				ComponentObjectSetValue( damagemodel, "damage_multipliers", "fire", tostring(fire) )
-				ComponentObjectSetValue( damagemodel, "damage_multipliers", "drill", tostring(drill) )
-				ComponentObjectSetValue( damagemodel, "damage_multipliers", "slice", tostring(slice) )
-				ComponentObjectSetValue( damagemodel, "damage_multipliers", "ice", tostring(ice) )
-				ComponentObjectSetValue( damagemodel, "damage_multipliers", "healing", tostring(healing) )
-				ComponentObjectSetValue( damagemodel, "damage_multipliers", "physics_hit", tostring(physics_hit) )
-				ComponentObjectSetValue( damagemodel, "damage_multipliers", "radioactive", tostring(radioactive) )
-				ComponentObjectSetValue( damagemodel, "damage_multipliers", "poison", tostring(poison) )
-				ComponentObjectSetValue( damagemodel, "damage_multipliers", "curse", tostring(curse) )
-			end
+		melee = melee * 1.5
+		projectile = projectile * 1.2
+		explosion = explosion * 1.2
+		electricity = electricity * 1.2
+		fire = fire * 1.2
+		drill = drill * 1.5
+		slice = slice * 1.5
+		ice = ice * 1.2
+		physics_hit = physics_hit * 0.5
+		radioactive = radioactive * 1.2
+		poison = poison * 1.5
+		curse = curse * 2.0
+		-- healing = healing
+		
+		if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) then
+			projectile = projectile * 1.25 -- x1.5
+			electricity = electricity * 1.2 -- x1.44
+			fire = fire * 1.5 -- x1.8
+			ice = ice * 1.2 -- x1.44
+			radioactive = radioactive * 1.5 -- x1.8
+			poison = poison * 1.5 -- x2.25
+			curse = curse * 1.25 -- x2.5
+
+			EntityAddRandomStains( player_entity, CellFactory_GetType("midas"), 666 )
 		end
 
-		-- EntityAddRandomStains( player_entity, CellFactory_GetType("magic_liquid_faster_levitation_and_movement"), 666 )
-	else
-		EntityAddRandomStains( player_entity, CellFactory_GetType("midas"), 666 )
-	end
+		ComponentObjectSetValue( damagemodel, "damage_multipliers", "melee", tostring(melee) )
+		ComponentObjectSetValue( damagemodel, "damage_multipliers", "projectile", tostring(projectile) )
+		ComponentObjectSetValue( damagemodel, "damage_multipliers", "explosion", tostring(explosion) )
+		ComponentObjectSetValue( damagemodel, "damage_multipliers", "electricity", tostring(electricity) )
+		ComponentObjectSetValue( damagemodel, "damage_multipliers", "fire", tostring(fire) )
+		ComponentObjectSetValue( damagemodel, "damage_multipliers", "drill", tostring(drill) )
+		ComponentObjectSetValue( damagemodel, "damage_multipliers", "slice", tostring(slice) )
+		ComponentObjectSetValue( damagemodel, "damage_multipliers", "ice", tostring(ice) )
+		ComponentObjectSetValue( damagemodel, "damage_multipliers", "healing", tostring(healing) )
+		ComponentObjectSetValue( damagemodel, "damage_multipliers", "physics_hit", tostring(physics_hit) )
+		ComponentObjectSetValue( damagemodel, "damage_multipliers", "radioactive", tostring(radioactive) )
+		ComponentObjectSetValue( damagemodel, "damage_multipliers", "poison", tostring(poison) )
+		ComponentObjectSetValue( damagemodel, "damage_multipliers", "curse", tostring(curse) )
+	end end
 
 	if ModSettingGet( "DEEP_END.HELL_AND_HELL_PERK" ) then GlobalsSetValue( "TEMPLE_PERK_REROLL_COUNT", tostring(-1) ) end
 
@@ -600,32 +594,32 @@ function OnPlayerSpawned( player_entity )
 			EntityLoad("data/entities/projectiles/bomb_holy_" .. bomb_lists[math.ceil(Random(1,15)^0.4-0.01)] .. ".xml", 100, -450 )
 		elseif ( month == 12 ) and ( day >= 24 ) and ( day <= 26 ) then
 			GamePrintImportant( "$txmas_1", "$txmas_2", "data/ui_gfx/decorations/xmas.png" )
-			-- EntityAddRandomStains( player_entity, CellFactory_GetType("magic_liquid_hp_regeneration"), 777 ) 
-			-- CreateItemActionEntity( "MELODY", x, y-16 )
 
 			local global_genome_relations_modifier = tonumber( ComponentGetValue2( comp_worldstate, "global_genome_relations_modifier" ) )
 			ComponentSetValue( comp_worldstate, "global_genome_relations_modifier", tostring( global_genome_relations_modifier + 20 ) )
 		elseif ( month == 10 ) and ( day == 31 ) then
 			GamePrintImportant( "$thalloween_1", "$thalloween_2", "data/ui_gfx/decorations/halloween.png" )
-			-- EntityAddRandomStains( player_entity, CellFactory_GetType("magic_liquid_hp_regeneration"), 888 ) 
 		elseif ( month == 11 ) and ( day == 1 ) then
-			GamePrintImportant( "$thallowmas_1", "$thallowmas_2", "data/ui_gfx/decorations/halloween.png" )
-			-- EntityAddRandomStains( player_entity, CellFactory_GetType("magic_liquid_protection_all"), 777 ) 
+			GamePrintImportant( "$thallowmas_1", "$thallowmas_2", "data/ui_gfx/decorations/halloween.png" ) 
 		elseif ( month == 1 and day == 1 ) or ( month == 1 and day >= 21 ) or ( month == 2 and day <= 28 ) then 
-			-- It's a little hard to judge if it's Chinese New Year, so I put in all the possible dates!
 			if ( month == 1 and day == 1 ) then GamePrintImportant( "$tnewyear_1", "$tnewyear_2", "data/ui_gfx/decorations/newyear.png" )
 			else GamePrintImportant( "$tnewyear_0", "$tnewyear_2", "data/ui_gfx/decorations/newyear.png" ) end
-			-- EntityAddRandomStains( player_entity, CellFactory_GetType("magic_liquid_protection_all"), 888 ) 
+			-- It's a little hard to judge if it's Chinese New Year, so I put in all the possible dates!
 
 			for i=1,16 do
 				SetRandomSeed( x + i, y + player_entity )
 
-				local prj = EntityLoad( "data/entities/projectiles/deck/new_year/ultimate_spark_new_year.xml", x + (-1)^Random( 1, 2 ) * Random( 30, 121 ), y + Random( -90, -31 ) )
+				EntityLoad( "data/entities/projectiles/deck/new_year/ultimate_spark_new_year.xml", x + (-1)^Random( 1, 2 ) * Random( 30, 121 ), y + Random( -90, -31 ) )
 
-				EntityAddComponent( prj, "LifetimeComponent", 
-				{ 
-					lifetime=tostring( 36 * i ),
-				} )
+				EntityAddComponent(
+					EntityLoad(
+						"data/entities/projectiles/deck/new_year/ultimate_spark_new_year.xml",
+						x + (-1)^Random( 1, 2 ) * Random( 30, 121 ),
+						y + Random( -90, -31 )
+					),
+					"LifetimeComponent",
+					{ lifetime=tostring( 36 * i ), }
+				)
 			end
 
 			CreateItemActionEntity( "FIREWORK", 388, -102 )

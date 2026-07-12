@@ -1,0 +1,27 @@
+<Entity >
+
+	<LifetimeComponent lifetime="29" />
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="data/projectiles_gfx/target_order.xml" 
+		next_rect_animation="" 
+		rect_animation="fireball"
+		has_special_scale="1"
+		special_scale_x="1.1"
+		special_scale_y="1.1" 
+		additive="1"
+		emissive="1"
+		>
+	</SpriteComponent>
+
+	<LuaComponent
+		_enabled="1" 
+		remove_after_executed="0"
+		script_source_file="data/scripts/projectiles/order_fade.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+</Entity>

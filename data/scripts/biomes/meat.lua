@@ -236,37 +236,37 @@ g_items =
 		entity 	= ""
 	},
 	{
-		prob   		= 1,
+		prob   		= 3,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/items/wand_level_06.xml"
 	},
 	{
-		prob   		= 1,
+		prob   		= 2,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/items/wand_level_06_better.xml"
 	},
 	{
-		prob   		= 1,
+		prob   		= 2,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/items/wand_unshuffle_06.xml"
 	},
 	{
-		prob   		= 2,
+		prob   		= 1,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/items/wand_level_10.xml"
 	},
 	{
-		prob   		= 2,
+		prob   		= 1,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/items/wand_unshuffle_10.xml"
 	},
 	{
-		prob   		= 3,
+		prob   		= 1,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/items/wand_level_100.xml"

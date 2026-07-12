@@ -37,8 +37,8 @@
 	  knockback_force="0.3"
     physics_impulse_coeff="100000"
 	  ><damage_by_type
-			drill="0.012"
-			melee="0.012"
+			drill="0.028"
+			melee="0.028"
 		></damage_by_type
     ><config_explosion
       never_cache="1" 

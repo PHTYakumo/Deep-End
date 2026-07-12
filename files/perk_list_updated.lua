@@ -3397,6 +3397,7 @@ remove_perk( "ITEM_RADAR" )
 
 if ( ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) ) then
 	remove_from_default_perk_pool( "NO_WAND_EDITING" )
+	remove_from_default_perk_pool( "PEACE_WITH_GODS" )
 	remove_from_default_perk_pool( "TRICK_BLOOD_MONEY" )
 	remove_from_default_perk_pool( "SAVING_GRACE" )
 	remove_from_default_perk_pool( "EXTRA_SHOP_ITEM" )
