@@ -179,6 +179,14 @@ for i=1,#spell_list do
 	ModTextFileSetContent( spell_base, isb:gsub( [===[name="$projectile_default" ]===], [===[name="$projectile_default" tags="de_]===] .. spell_list[i] .. [===["]===], 1 ) )
 end
 
+spell_list = { "projectile_gravity_field", "projectile_thunder_field", "projectile_transmutation_field" }
+
+for i=1,#spell_list do
+	spell_base = "data/entities/projectiles/deck/" .. spell_list[i] .. ".xml"
+	isb = ModTextFileGetContent( spell_base )
+	ModTextFileSetContent( spell_base, isb:gsub( [===[Entity tags="]===], [===[Entity tags="de_projtrans_field,]===], 1 ) )
+end
+
 if not ( ModSettingGet( "DEEP_END.ORIGINAL_SPELLS" ) ) then
 	local prj_base = "data/entities/projectiles/deck/lance_holy.xml"
 	local prjb = ModTextFileGetContent( prj_base )

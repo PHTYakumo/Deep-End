@@ -2284,7 +2284,6 @@ local de_actions_recompose =
 			add_projectile("data/entities/projectiles/deck/geomagnetic_storm.xml")
 			add_projectile("data/entities/projectiles/deck/geomagnetic_storm_ex.xml")
 			c.material = "spark_blue_dark"
-			-- c.game_effect_entities = de_effect_entities_add( c.game_effect_entities, "data/entities/misc/effect_disintegrated_air.xml," )
 			c.gravity = 0.0
 			c.pattern_degrees = c.pattern_degrees + 12
 			c.screenshake = c.screenshake + 42
@@ -7949,6 +7948,7 @@ local de_actions_recompose =
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/lava_to_blood.xml," )
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/particles/tinyspark_orange.xml," )
 			c.fire_rate_wait = c.fire_rate_wait + 2
+			c.speed_multiplier = c.speed_multiplier * 0.9
 			draw_actions( 1, true )
 		end,
 	},
@@ -7970,6 +7970,7 @@ local de_actions_recompose =
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/particles/light_shot.xml," )
 			c.game_effect_entities = de_effect_entities_add( c.game_effect_entities, "data/entities/misc/effect_disintegrated_air.xml," )
 			c.fire_rate_wait = c.fire_rate_wait + 2
+			c.speed_multiplier = c.speed_multiplier * 0.9
 			draw_actions( 1, true )
 		end,
 	},
@@ -7990,6 +7991,7 @@ local de_actions_recompose =
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/toxic_to_acid.xml," )
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/particles/tinyspark_green.xml," )
 			c.fire_rate_wait = c.fire_rate_wait + 2
+			c.speed_multiplier = c.speed_multiplier * 0.9
 			draw_actions( 1, true )
 		end,
 	},
@@ -8010,6 +8012,7 @@ local de_actions_recompose =
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/static_to_sand.xml," )
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/particles/tinyspark_yellow.xml," )
 			c.fire_rate_wait = c.fire_rate_wait + 30
+			c.speed_multiplier = c.speed_multiplier * 0.9
 			draw_actions( 1, true )
 		end,
 	},
@@ -8030,6 +8033,7 @@ local de_actions_recompose =
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/transmutation.xml," )
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/particles/tinyspark_purple_bright.xml," )
 			c.fire_rate_wait = c.fire_rate_wait + 20
+			c.speed_multiplier = c.speed_multiplier * 0.85
 			draw_actions( 1, true )
 		end,
 	},
@@ -8293,16 +8297,11 @@ local de_actions_recompose =
 		spawn_probability                 = "0.33,0.33,0.33,0.3,0.01", -- CHARM_FIELD
 		price = 100,
 		mana = 240,
-		max_uses = 20,
-		-- never_unlimited = true,
+		max_uses = 12,
+		never_unlimited = true,
 		action 		= function()
 			local fields = EntityGetWithTag( "de_charm_field" )
-
-			if #fields > 0 then
-				for i=1,#fields do
-					EntityKill( fields[i] )
-				end
-			end
+			if #fields > 0 then for i=1,#fields do EntityKill( fields[i] ) end end
 
 			add_projectile("data/entities/projectiles/deck/charm_field.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
@@ -8324,12 +8323,7 @@ local de_actions_recompose =
 		-- never_unlimited = true,
 		action 		= function()
 			local fields = EntityGetWithTag( "de_berserk_field" )
-
-			if #fields > 0 then
-				for i=1,#fields do
-					EntityKill( fields[i] )
-				end
-			end
+			if #fields > 0 then for i=1,#fields do EntityKill( fields[i] ) end end
 			
 			add_projectile("data/entities/projectiles/deck/berserk_field.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
@@ -8348,15 +8342,10 @@ local de_actions_recompose =
 		price = 200,
 		mana = 200,
 		max_uses = 10,
-		-- never_unlimited = true,
+		never_unlimited = true,
 		action 		= function()
 			local fields = EntityGetWithTag( "de_polymorph_field" )
-
-			if #fields > 0 then
-				for i=1,#fields do
-					EntityKill( fields[i] )
-				end
-			end
+			if #fields > 0 then for i=1,#fields do EntityKill( fields[i] ) end end
 			
 			add_projectile("data/entities/projectiles/deck/polymorph_field.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
@@ -8375,15 +8364,10 @@ local de_actions_recompose =
 		price = 200,
 		mana = 80,
 		max_uses = 15,
-		-- never_unlimited = true,
+		never_unlimited = true,
 		action 		= function()
 			local fields = EntityGetWithTag( "de_chaos_polymorph_field" )
-
-			if #fields > 0 then
-				for i=1,#fields do
-					EntityKill( fields[i] )
-				end
-			end
+			if #fields > 0 then for i=1,#fields do EntityKill( fields[i] ) end end
 			
 			add_projectile("data/entities/projectiles/deck/chaos_polymorph_field.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
@@ -8405,12 +8389,7 @@ local de_actions_recompose =
 		-- never_unlimited = true,
 		action 		= function()
 			local fields = EntityGetWithTag( "de_electrocution_field" )
-
-			if #fields > 0 then
-				for i=1,#fields do
-					EntityKill( fields[i] )
-				end
-			end
+			if #fields > 0 then for i=1,#fields do EntityKill( fields[i] ) end end
 			
 			add_projectile("data/entities/projectiles/deck/electrocution_field.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
@@ -8432,12 +8411,7 @@ local de_actions_recompose =
 		-- never_unlimited = true,
 		action 		= function()
 			local fields = EntityGetWithTag( "de_freeze_field" )
-
-			if #fields > 0 then
-				for i=1,#fields do
-					EntityKill( fields[i] )
-				end
-			end
+			if #fields > 0 then for i=1,#fields do EntityKill( fields[i] ) end end
 			
 			add_projectile("data/entities/projectiles/deck/freeze_field.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
@@ -8503,7 +8477,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.5,0.5,0.3", -- LEVITATION_FIELD
 		price = 120,
 		mana = 60,
-		max_uses = 25,
+		max_uses = 6,
 		never_unlimited = true,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/levitation_field.xml")
@@ -8543,12 +8517,7 @@ local de_actions_recompose =
 		-- never_unlimited = true,
 		action 		= function()
 			local fields = EntityGetWithTag( "de_shield_field" )
-
-			if #fields > 0 then
-				for i=1,#fields do
-					EntityKill( fields[i] )
-				end
-			end
+			if #fields > 0 then for i=1,#fields do EntityKill( fields[i] ) end end
 
 			add_projectile("data/entities/projectiles/deck/shield_field.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
@@ -8571,12 +8540,7 @@ local de_actions_recompose =
 		custom_xml_file = "data/entities/misc/custom_cards/enchantment_field.xml",
 		action 		= function()
 			local fields = EntityGetWithTag( "de_enchantment_field" )
-
-			if #fields > 0 then
-				for i=1,#fields do
-					EntityKill( fields[i] )
-				end
-			end
+			if #fields > 0 then for i=1,#fields do EntityKill( fields[i] ) end end
 
 			add_projectile("data/entities/projectiles/deck/enchantment_field.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
@@ -8598,12 +8562,7 @@ local de_actions_recompose =
 		never_unlimited = true,
 		action 		= function()
 			local fields = EntityGetWithTag( "de_guidance_field" )
-
-			if #fields > 0 then
-				for i=1,#fields do
-					EntityKill( fields[i] )
-				end
-			end
+			if #fields > 0 then for i=1,#fields do EntityKill( fields[i] ) end end
 
 			add_projectile("data/entities/projectiles/deck/guidance_field.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
@@ -8625,12 +8584,7 @@ local de_actions_recompose =
 		never_unlimited = true,
 		action 		= function()
 			local fields = EntityGetWithTag( "de_assimilation_field" )
-
-			if #fields > 0 then
-				for i=1,#fields do
-					EntityKill( fields[i] )
-				end
-			end
+			if #fields > 0 then for i=1,#fields do EntityKill( fields[i] ) end end
 
 			add_projectile("data/entities/projectiles/deck/assimilation_field.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
@@ -8651,6 +8605,9 @@ local de_actions_recompose =
 		max_uses = 13,
 		never_unlimited = true,
 		action 		= function()
+			local fields = EntityGetWithTag( "de_projtrans_field" )
+			if #fields > 0 then for i=1,#fields do EntityKill( fields[i] ) end end
+
 			add_projectile("data/entities/projectiles/deck/projectile_transmutation_field.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
 		end,
@@ -8670,6 +8627,9 @@ local de_actions_recompose =
 		max_uses = 13,
 		never_unlimited = true,
 		action 		= function()
+			local fields = EntityGetWithTag( "de_projtrans_field" )
+			if #fields > 0 then for i=1,#fields do EntityKill( fields[i] ) end end
+
 			add_projectile("data/entities/projectiles/deck/projectile_thunder_field.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
 		end,
@@ -8689,6 +8649,9 @@ local de_actions_recompose =
 		max_uses = 13,
 		never_unlimited = true,
 		action 		= function()
+			local fields = EntityGetWithTag( "de_projtrans_field" )
+			if #fields > 0 then for i=1,#fields do EntityKill( fields[i] ) end end
+
 			add_projectile("data/entities/projectiles/deck/projectile_gravity_field.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
 		end,
@@ -10476,6 +10439,7 @@ local de_actions_recompose =
 			c.material = "blood_fungi"
 			c.material_amount = c.material_amount + 33
 			c.fire_rate_wait = c.fire_rate_wait - 19
+			c.speed_multiplier = c.speed_multiplier * 1.15
 			shot_effects.recoil_knockback = math.max( shot_effects.recoil_knockback - 10, 0.0 )
 			draw_actions( 1, true )
 		end,
@@ -10498,6 +10462,7 @@ local de_actions_recompose =
 			c.material = "radioactive_liquid_fading"
 			c.material_amount = c.material_amount + 33
 			c.fire_rate_wait = c.fire_rate_wait - 19
+			c.speed_multiplier = c.speed_multiplier * 1.15
 			shot_effects.recoil_knockback = math.max( shot_effects.recoil_knockback - 10, 0.0 )
 			draw_actions( 1, true )
 		end,
@@ -10521,6 +10486,7 @@ local de_actions_recompose =
 			c.material = "water_fading"
 			c.material_amount = c.material_amount + 33
 			c.fire_rate_wait = c.fire_rate_wait - 19
+			c.speed_multiplier = c.speed_multiplier * 1.15
 			shot_effects.recoil_knockback = math.max( shot_effects.recoil_knockback - 10, 0.0 )
 			draw_actions( 1, true )
 		end,
@@ -10544,6 +10510,7 @@ local de_actions_recompose =
 			c.material = "concrete_static"
 			c.material_amount = c.material_amount + 100
 			c.fire_rate_wait = c.fire_rate_wait - 19
+			c.speed_multiplier = c.speed_multiplier * 1.3
 			shot_effects.recoil_knockback = math.max( shot_effects.recoil_knockback - 10, 0.0 )
 			draw_actions( 1, true )
 		end,
@@ -10565,6 +10532,7 @@ local de_actions_recompose =
 			c.material = "coal_static"
 			c.material_amount = c.material_amount + 100
 			c.fire_rate_wait = c.fire_rate_wait - 19
+			c.speed_multiplier = c.speed_multiplier * 1.3
 			shot_effects.recoil_knockback = math.max( shot_effects.recoil_knockback - 10, 0.0 )
 			draw_actions( 1, true )
 		end,
@@ -11907,12 +11875,7 @@ local de_actions_recompose =
 		custom_xml_file = "data/entities/misc/custom_cards/summon_portal.xml",
 		action = function()
 			local fields = EntityGetWithTag( "de_summon_portal" )
-
-			if #fields > 0 then
-				for i=1,#fields do
-					EntityKill( fields[i] )
-				end
-			end
+			if #fields > 0 then for i=1,#fields do EntityKill( fields[i] ) end end
 
 			add_projectile("data/entities/projectiles/deck/summon_portal.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 80

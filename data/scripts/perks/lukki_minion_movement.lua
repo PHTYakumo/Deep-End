@@ -45,7 +45,7 @@ end end
 
 if owner_id == nil then -- no comp
 	local owner_id = EntityGetClosestWithTag( x, y, "player_unit" )
-	if owner_id ~= nil then return end
+	if owner_id == nil then return end
 
 	EntityAddComponent( entity_id, "VariableStorageComponent", 
 	{
