@@ -1,0 +1,53 @@
+<Entity tags="hittable" >
+
+	<LifetimeComponent lifetime="60" />
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="data/projectiles_gfx/target2.xml" 
+		has_special_scale="1"
+		special_scale_x="1"
+		special_scale_y="1"
+		next_rect_animation="" 
+		offset_x="0" 
+		offset_y="0" 
+		rect_animation="fireball"
+		additive="1"
+		emissive="1" >
+	</SpriteComponent>
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="data/projectiles_gfx/target2.xml" 
+		has_special_scale="1"
+		special_scale_x="0.7"
+		special_scale_y="0.7"
+		next_rect_animation="" 
+		offset_x="0" 
+		offset_y="0" 
+		rect_animation="fireball"
+		additive="1"
+		emissive="1" >
+	</SpriteComponent>
+
+	<HitboxComponent 
+		aabb_max_x="0.5" 
+		aabb_max_y="0.5" 
+		aabb_min_x="-0.5" 
+		aabb_min_y="-0.5" 
+		is_enemy="1" 
+		is_item="0" 
+		is_player="0"
+	></HitboxComponent>
+
+	<LuaComponent
+		_enabled="1" 
+		remove_after_executed="0"
+		script_source_file="data/scripts/projectiles/order_ex_fade.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+</Entity>

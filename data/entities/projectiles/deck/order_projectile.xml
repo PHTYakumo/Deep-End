@@ -37,15 +37,15 @@
 		never_hit_player="1"
 		><damage_by_type
 			fire="0.4"
-			ice="0.4"
 			slice="0.4"
 			drill="0.4"
-			electricity="0.4" 
+			poison="0.4" 
 			radioactive="0.4"
 			holy="0.4"
 			curse="0.4"
-			melee="0.04"
-			healing="-0.0004"
+			melee="0.2"
+			physics_hit="0.2"
+			healing="-0.0000001"
 		></damage_by_type>
 		<config_explosion
 		  never_cache="0" 

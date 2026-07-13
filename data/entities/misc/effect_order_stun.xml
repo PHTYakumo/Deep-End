@@ -1,0 +1,47 @@
+<Entity tags="effect_protection,effect_order_stun">
+	<InheritTransformComponent />
+
+	<Base file="data/entities/particles/electricity.xml" >
+		<SpriteParticleEmitterComponent randomize_position_inside_hitbox="1" />
+	</Base>
+
+	<SpriteComponent 
+		_enabled="1" 
+		_tags="lurker_data"
+		alpha="0" 
+		image_file="data/projectiles_gfx/target_order.xml" 
+		next_rect_animation="" 
+		rect_animation="fireball"
+		has_special_scale="1"
+		special_scale_x="0.815"
+		special_scale_y="0.815" 
+		additive="1"
+		emissive="1"
+		>
+	</SpriteComponent>
+
+	<GameEffectComponent 
+    	effect="ELECTROCUTION"
+    	frames="60"
+    	disable_movement="1" >
+	</GameEffectComponent>
+
+    <GameEffectComponent 
+        effect="FROZEN"
+        frames="60"
+        disable_movement="1"
+        ragdoll_effect="FROZEN"
+        ragdoll_material="ice_glass_b2" >
+	</GameEffectComponent>
+
+    <AudioComponent
+        file="data/audio/Desktop/misc.bank"
+        event_root="game_effect/frozen" >
+    </AudioComponent>
+
+	<LuaComponent 
+		_enabled="1" 
+		script_source_file="data/scripts/projectiles/effect_order_stun.lua"
+		execute_every_n_frame="1" >
+   	</LuaComponent>
+</Entity>

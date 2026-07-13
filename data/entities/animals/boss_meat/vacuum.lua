@@ -7,7 +7,7 @@ local x, y, rot = EntityGetTransform( entity_id )
 
 function calculate_force_at(body_x, body_y)
 	local distance = math.sqrt( ( x - body_x ) ^ 2 + ( y - body_y ) ^ 2 )
-	local direction = 0 - math.atan2( ( y - body_y ), ( x - body_x ) )
+	local direction = -math.atan2( ( y - body_y ), ( x - body_x ) )
 
 	local gravity_percent = ( distance_full - distance ) / distance_full
 	local gravity_coeff = 610
@@ -28,17 +28,14 @@ for _,id in ipairs(entities) do
 		local px, py = EntityGetTransform( id )
 		local velocitycomp = EntityGetFirstComponent( id, "VelocityComponent" )
 
-		if ( velocitycomp ~= nil ) then
-			local fx, fy = calculate_force_at(px, py)
+		if velocitycomp ~= nil then
+			local fx, fy = calculate_force_at( px, py )
+			local vel_x, vel_y = ComponentGetValue2( velocitycomp, "mVelocity" )
+			
+			if EntityHasTag( id, "resist_repulsion" ) then fx, fy = fx * 0.4, fy * 0.4 end
+			vel_x, vel_y = vel_x + fx, vel_y + fy
 
-			edit_component( id, "VelocityComponent", function(comp,vars)
-				local vel_x,vel_y = ComponentGetValue2( comp, "mVelocity" )
-				
-				vel_x = vel_x + fx
-				vel_y = vel_y + fy
-
-				ComponentSetValue2( comp, "mVelocity", vel_x, vel_y )
-			end)
+			ComponentSetValue2( velocitycomp, "mVelocity", vel_x, vel_y )
 		end
 	end
 end
