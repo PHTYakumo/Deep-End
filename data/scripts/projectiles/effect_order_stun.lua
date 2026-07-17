@@ -3,11 +3,17 @@ dofile_once("data/scripts/lib/utilities.lua")
 local entity_id = GetUpdatedEntityID()
 if not EntityHasTag( entity_id, "effect_protection" ) then return end
 
-local executed_times = ComponentGetValue2( GetUpdatedComponentID(), "mTimesExecuted" )
-local comp = EntityGetFirstComponentIncludingDisabled( entity_id, "SpriteComponent" )
-if comp ~= nil then  ComponentSetValue2( comp, "alpha", clamp( ( 59.99 - executed_times ) * 0.0667, 0, 1 ) ) end
-
+local et = ComponentGetValue2( GetUpdatedComponentID(), "mTimesExecuted" )
 local pl_id = EntityGetParent( entity_id )
+
+local comp = EntityGetFirstComponentIncludingDisabled( entity_id, "SpriteComponent" )
+if comp ~= nil then  ComponentSetValue2( comp, "alpha", clamp( ( 59.99 - et ) * 0.0667, 0, 1 ) ) end
+
+if et < 1 then
+    local cids = EntityGetAllChildren( pl_id, "effect_order_stun" )
+    if cids ~= nil and #cids > 1 then EntityKill( cids[#cids] ) end
+end
+
 local px, py, r, psx, psy = EntityGetTransform( pl_id )
 
 if pl_id ~= NULL_ENTITY and px ~= nil and psy ~= nil then

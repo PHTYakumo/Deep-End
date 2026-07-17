@@ -4,7 +4,7 @@
 	<LuaComponent 
 		_enabled="1" 
 		script_source_file="data/scripts/projectiles/fireball_ray_enemy.lua" 
-		execute_every_n_frame="8">
+		execute_every_n_frame="45">
    </LuaComponent>
 	
 	<LifetimeComponent

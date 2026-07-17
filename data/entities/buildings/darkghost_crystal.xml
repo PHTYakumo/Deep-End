@@ -90,6 +90,17 @@
 		>
 	</LightComponent>
 
+  <LightComponent 
+		_enabled="1" 
+		radius="75"
+		fade_out_time="1" 
+		r="230"
+		g="120"
+		b="230"
+		offset_y="-6"
+		>
+	</LightComponent>
+
   <LuaComponent 
     _enabled="1" 
     execute_on_added="1"

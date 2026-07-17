@@ -11418,8 +11418,11 @@ local de_actions_recompose =
 				
 				safety = safety + 1
 			end
+
+			if safety < 100 or ( data.id ~= "RANDOM_SPELL" and data.id ~= "DE_RESET_ALL" ) then data.action( rec )
+			else EntityKill( GetUpdatedEntityID() ) end
 			
-			data.action( rec )
+			if safety > 0 then c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/dmg_type_conversion.xml," ) end
 		end,
 	},
 	{
@@ -13090,6 +13093,8 @@ local de_actions_recompose =
 		max_uses    = 1, 
 		action 		= function()
 			current_reload_time = math.min( current_reload_time - 25, math.floor( current_reload_time * 0.5 ), 90 )
+
+			if #hand + #deck > 65536 then force_stop_draws = true end
 			
 			for i,v in ipairs( hand ) do
 				-- print( "removed " .. v.id .. " from hand" )
@@ -13104,7 +13109,7 @@ local de_actions_recompose =
 			hand = {}
 			deck = {}
 			
-			if ( force_stop_draws == false ) then
+			if force_stop_draws == false then
 				force_stop_draws = true
 				move_discarded_to_deck()
 				order_deck()

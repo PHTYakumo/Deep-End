@@ -167,7 +167,7 @@ function drop_random_reward( x, y, entity_id, rand_x, rand_y, set_rnd_  )
 			
 		elseif ( rnd <= 35 ) then -- 25%
 			-------------------------------------------------------------------
-			-- Gold (I think the reason there's empty is chests is goldnuggets)
+			-- Gold
 			-------------------------------------------------------------------
 			local remove_gold_timer = false
 	

@@ -93,7 +93,7 @@ pl = ModTextFileGetContent( player_base )
 ModTextFileSetContent( player_base, pl:gsub( [===[suck_health="1"]===], [===[suck_health="0"]===], 1 ) )
 
 pl = ModTextFileGetContent( player_base )
-ModTextFileSetContent( player_base, pl:gsub( [===[materials_how_much_damage="0.004,0.002,0.0006,0.0008,0.0012,0.0012,0.0012,0.0012,0.0012,0.0012,0.0012,0.0012,0.0012,0.016,-0.002,0.0002,0.0002,0.004,0.0004,0.000012"]===], [===[materials_how_much_damage="0.002,0.0012,0.00024,0.00036,0.0004,0.0004,0.0004,0.0004,0.0004,0.0004,0.0004,0.0004,0.0004,0.002,-0.01,0.06,0.06,0.0016,0.0002,0.000004"]===], 1 ) )
+ModTextFileSetContent( player_base, pl:gsub( [===[materials_how_much_damage="0.004,0.002,0.0006,0.0008,0.0012,0.0012,0.0012,0.0012,0.0012,0.0012,0.0012,0.0012,0.0012,0.001,-0.002,0.0002,0.0002,0.004,0.0004,0.000012"]===], [===[materials_how_much_damage="0.002,0.0012,0.00024,0.00036,0.0004,0.0004,0.0004,0.0004,0.0004,0.0004,0.0004,0.0004,0.0004,0.002,-0.01,0.06,0.06,0.0016,0.0002,0.000004"]===], 1 ) )
 
 pl = ModTextFileGetContent( player_base )
 if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) then
@@ -292,15 +292,6 @@ for i=1,#nugget_list do
 	ModTextFileSetContent( nugget_base, ngb:gsub( [===[item_name="$item_goldnugget_]===] .. nugget_list[i] .. [===["]===], [===[item_name="$item_goldnugget"]===], 1 ) )
 end
 
--- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< polymorph table >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< --
-
-PolymorphTableAddEntity( "data/entities/animals/fox.xml", false, true )
-PolymorphTableAddEntity( "data/entities/animals/drone_physics_hell.xml", false, true )
--- PolymorphTableAddEntity( "data/entities/animals/boss_centipede/minion/berserkspirit.xml", true, true )
--- PolymorphTableAddEntity( "data/entities/animals/boss_centipede/minion/confusespirit.xml", true, true )
--- PolymorphTableAddEntity( "data/entities/animals/boss_centipede/minion/slimespirit.xml", true, true )
--- PolymorphTableAddEntity( "data/entities/animals/boss_centipede/minion/weakspirit.xml", true, true )
-
 -- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< initialization >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< --
 
 function deep_end_biome( biome_name, hp_scale, attack_speed )
@@ -389,6 +380,34 @@ function OnWorldInitialized()
 end
 
 function OnPlayerSpawned( player_entity ) 
+	-- polymorph table
+    PolymorphTableRemoveEntity( "data/entities/animals/scorpion.xml", true , false )
+	PolymorphTableRemoveEntity( "data/entities/animals/scorpion_watchtower.xml", true , false )
+    PolymorphTableRemoveEntity( "data/entities/animals/fish.xml", true , false )
+    PolymorphTableRemoveEntity( "data/entities/animals/fish_large.xml", true , false )
+    PolymorphTableRemoveEntity( "data/entities/animals/duck.xml", true , false )
+    PolymorphTableRemoveEntity( "data/entities/animals/deer.xml", true , false )
+    PolymorphTableRemoveEntity( "data/entities/animals/fungus.xml", true , false )
+    PolymorphTableRemoveEntity( "data/entities/animals/fungus_big.xml", true , false )
+    PolymorphTableRemoveEntity( "data/entities/animals/fungus_giga.xml", true , false )
+    PolymorphTableRemoveEntity( "data/entities/animals/worm.xml", true , false )
+    PolymorphTableRemoveEntity( "data/entities/animals/worm_big.xml", true , false )
+    PolymorphTableRemoveEntity( "data/entities/animals/worm_end.xml", true , false )
+    PolymorphTableRemoveEntity( "data/entities/animals/worm_skull.xml", true , false )
+    PolymorphTableRemoveEntity( "data/entities/animals/worm_tiny.xml", true , false )
+    PolymorphTableRemoveEntity( "data/entities/animals/meatmaggot.xml", true , false )
+    PolymorphTableRemoveEntity( "data/entities/animals/zombie_weak.xml", true , false )
+    PolymorphTableRemoveEntity( "data/entities/animals/shotgunner_weak.xml", true , false )
+    PolymorphTableRemoveEntity( "data/entities/animals/slimeshooter_weak.xml", true , false )
+    PolymorphTableRemoveEntity( "data/entities/animals/acidshooter_weak.xml", true , false )
+    PolymorphTableRemoveEntity( "data/entities/animals/giantshooter_weak.xml", true , false )
+
+	PolymorphTableAddEntity( "data/entities/animals/fox.xml", false, true )
+	PolymorphTableAddEntity( "data/entities/player_base.xml", true, true )
+	PolymorphTableAddEntity( "data/entities/animals/apparition/playerghost.xml", true, true )
+	PolymorphTableAddEntity( "data/entities/animals/boss_alchemist/boss_alchemist.xml", true, true )
+    PolymorphTableAddEntity( "data/entities/animals/boss_wizard/boss_wizard.xml", true, true )
+
 	-- reset the player's gravity
 	local gcomp = EntityGetFirstComponent( player_entity, "CharacterPlatformingComponent" )
 	if gcomp ~= nil then ComponentSetValue2( gcomp, "pixel_gravity", math.abs(ComponentGetValue2( gcomp, "pixel_gravity" )) )end
@@ -671,7 +690,7 @@ function OnPlayerDied(player_entity)
 	end
 
 	if EntityHasTag( player_entity, "de_ending_top" ) then for i=1,#reward_list do
-		GameCreateSpriteForXFrames( "data/entities/animals/boss_centipede/rewards/" .. reward_list[i] .. ".png", x+50+25*i, y+110, true, 0, 0, 9999, true )
+		GameCreateSpriteForXFrames( "data/entities/animals/boss_centipede/rewards/" .. reward_list[i] .. ".png", x+50+25*i, y+101, true, 0, 0, 9999, true )
 	end end
 
 	-- GameRemoveFlagRun( "ending_no_game_over_menu" )

@@ -22,18 +22,13 @@ function item_pickup( entity_item, entity_who_picked, item_name )
 	local damagemodels = EntityGetComponent( entity_who_picked, "DamageModelComponent" )
 	if( damagemodels ~= nil ) then
 		for i,damagemodel in ipairs(damagemodels) do
-			ComponentSetValue( damagemodel, "blood_material", "gold" )
-			ComponentSetValue( damagemodel, "blood_spray_material", "gold" )
-			ComponentSetValue( damagemodel, "blood_multiplier", "2.0" )
+			ComponentSetValue2( damagemodel, "blood_material", "gold_radioactive" )
+			ComponentSetValue2( damagemodel, "blood_spray_material", "gold_radioactive" )
+			ComponentSetValue2( damagemodel, "blood_multiplier", 2 )
+			ComponentSetValue2( damagemodel, "materials_damage_proportional_to_maxhp", true )
 		end
 	end
 
-	local moneycomp = EntityGetFirstComponent( entity_who_picked, "WalletComponent" )
-	local money = ComponentGetValue2( moneycomp, "money" )
-
-	money = math.max( money * 64, 64 )
-	ComponentSetValue2( moneycomp, "money", money )
-	
 	GameAddFlagRun( "greed_curse" )
 	AddFlagPersistent( "greed_curse_picked" )
 

@@ -7,8 +7,9 @@ function de_load_gold_entity( entity_filename, x, y, level )
 	if level > 1 then
 		local lcomps = EntityGetComponent( gold_entity, "LifetimeComponent" )
 
-		if lcomps ~= nil then for i,lcomp in ipairs( lcomps ) do -- 15s -> level * 15s
-			ComponentSetValue2( lcomp, "lifetime", ComponentGetValue2( lcomp, "lifetime" ) * level )
+		if lcomps ~= nil then for i,lcomp in ipairs( lcomps ) do -- 15s -> level * 10s
+			local lt = ComponentGetValue2( lcomp, "lifetime" ) or 600
+			ComponentSetValue2( lcomp, "lifetime", math.max( lt - 300, 600) * level )
 		end end
 	end
 	

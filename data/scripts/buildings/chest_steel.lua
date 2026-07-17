@@ -32,7 +32,8 @@ function on_open( entity_item )
 			EntityLoad( "data/entities/animals/boss_sky/apparition_spawn_fx.xml", x, y-4 )
 		end
 	else
-		EntityLoad( "data/entities/animals/boss_sky/apparition_spawn_fx.xml", x, y-4 )
+		local players = EntityGetWithTag( "player_unit" )
+		if #players > 0 then LoadGameEffectEntityTo( players[1], "data/entities/misc/effect_polymorph_random.xml" ) end
 	end
 end
 
