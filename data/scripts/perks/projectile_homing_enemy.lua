@@ -6,8 +6,9 @@ function shot( entity_id )
 		EntityAddComponent( entity_id, "HomingComponent", 
 		{ 
 			target_tag="prey",
-			homing_targeting_coeff = "130.0",
-			homing_velocity_multiplier = "0.84",
+			detect_distance = "75",
+			max_turn_rate = "0.025",
+			just_rotate_towards_target = true,
 		} )
 	end
 end

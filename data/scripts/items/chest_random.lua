@@ -177,7 +177,7 @@ function drop_random_reward( x, y, entity_id, rand_x, rand_y, set_rnd_  )
 
 			rnd = Random(1,100)
 			if ( rnd <= 80 ) then
-				for i=1,Random(2,4) do
+				for i=1,Random(1,4) do
 					chest_load_gold_entity( "data/entities/items/pickup/goldnugget_1000.xml", x + Random(-10,10), y - 4 + Random(-10,5), false )
 				end
 			else

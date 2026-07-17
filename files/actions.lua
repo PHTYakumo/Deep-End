@@ -11026,6 +11026,23 @@ local de_actions_recompose =
 			draw_actions( 1, false )
 		end,
 	},
+	{
+		Deep_End_Unique_Spell = true,
+		id          = "DE_HOMING_PASSIVE",
+		name 		= "$HOMING_PASSIVE",
+		description = "$dHOMING_PASSIVE",
+		sprite 		= "mods/deep_end/files/actions_sprite/homing_passive.png",
+		type 		= ACTION_TYPE_PASSIVE,
+		spawn_level                       = "10", -- TINY_GHOST
+		spawn_probability                 = "0", -- TINY_GHOST
+		price = 999,
+		mana = 0,
+		-- max_uses = 0,
+		custom_xml_file = "data/entities/misc/custom_cards/homing_passive.xml",
+		action 		= function()
+			draw_actions( 1, false )
+		end,
+	},
 	--[[
 	{
 		id          = "DUCK",
