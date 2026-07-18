@@ -10,25 +10,29 @@ function make_random_ammo_card( x, y )
 	-- SetRandomSeed( x, y )
 
 	local item = ""
-	local valid = false
+	local valid, try = false, 666
 
-	while valid == false do
+	while valid == false and try > 0 do
 		local itemno = Random(1,#actions)
 		local thisitem = actions[itemno]
-		item = string.lower(thisitem.id)
 		
-		if thisitem.type == ACTION_TYPE_PROJECTILE or thisitem.type == ACTION_TYPE_STATIC_PROJECTILE or thisitem.type == ACTION_TYPE_MATERIAL or thisitem.type == ACTION_TYPE_PASSIVE then
-			-- always true
+		if thisitem.type == ACTION_TYPE_MATERIAL
+		and Random( 1, 100 ) < 25 then
+			valid = false
+		elseif thisitem.type == ACTION_TYPE_PROJECTILE
+		or thisitem.type == ACTION_TYPE_STATIC_PROJECTILE
+		or thisitem.type == ACTION_TYPE_MATERIAL then
 			valid = true
-
-			if thisitem.id == "DE_RESET_ALL" or thisitem.id == "DE_ULTIMATE" then valid = false end
 		else
 			valid = false
 		end
+
+		item = string.lower(thisitem.id)
+		try = try - 1
 	end
 
 
-	if ( string.len(item) > 0 ) then
+	if string.len(item) > 0 then
 		local card_entity = CreateItemActionEntity( item, x, y )
 		return card_entity
 	else

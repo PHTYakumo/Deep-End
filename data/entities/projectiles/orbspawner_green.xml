@@ -41,7 +41,7 @@
 			explosion_sprite="data/particles/explosion_016_plasma_green.xml" 
 			explosion_sprite_lifetime="0.0" 
 			create_cell_probability="0" 
-			create_cell_material="" 
+			create_cell_material="flame" 
 			explosion_sprite_emissive="1"
 			explosion_sprite_additive="1"
 			ray_energy="10000"

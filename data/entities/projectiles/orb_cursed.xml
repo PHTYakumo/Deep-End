@@ -46,7 +46,7 @@
 			explosion_sprite="data/particles/explosion_016_plasma_red.xml" 
 			explosion_sprite_lifetime="0.2" 
 			create_cell_probability="0" 
-			create_cell_material="" 
+			create_cell_material="spark_red"
 			ray_energy="0"
 			hole_destroy_liquid="0" 
 			hole_enabled="0" 

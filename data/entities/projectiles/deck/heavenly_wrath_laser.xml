@@ -36,7 +36,7 @@
       explosion_radius="0" 
       explosion_sprite="" 
       explosion_sprite_lifetime="0" 
-      create_cell_material=""
+      create_cell_material="flame"
       create_cell_probability="0"  
       hole_destroy_liquid="0" 
       hole_enabled="0" 

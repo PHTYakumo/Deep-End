@@ -41,7 +41,7 @@
 			explosion_sprite="data/particles/explosion_016.xml" 
 			explosion_sprite_lifetime="0.2" 
 			create_cell_probability="0" 
-			create_cell_material="" 
+			create_cell_material="flame" 
 			hole_destroy_liquid="1" 
 			hole_enabled="1" 
 			ray_energy="300000"

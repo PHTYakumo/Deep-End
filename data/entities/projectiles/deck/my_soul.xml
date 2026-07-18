@@ -52,7 +52,7 @@
 			load_this_entity="data/entities/particles/particle_explosion/main_guts.xml,data/entities/particles/particle_explosion/main_guts.xml,data/entities/particles/particle_explosion/main_guts.xml"	  
 			explosion_sprite_lifetime="0" 
 			create_cell_probability="0" 
-			create_cell_material=""
+			create_cell_material="flame"
 			hole_destroy_liquid="0" 
 			hole_enabled="1" 
 			hole_image="data/temp/explosion_hole.png" 

@@ -39,7 +39,7 @@
       explosion_sprite="data/particles/darkflame.xml"
       explosion_sprite_lifetime="0.0" 
       create_cell_probability="0" 
-      create_cell_material="" 
+	  create_cell_material="spark_purple" 
 	  ray_energy="0"
       hole_destroy_liquid="0" 
       hole_enabled="0" 

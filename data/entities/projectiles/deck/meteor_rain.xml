@@ -35,7 +35,7 @@
 			explosion_sprite="" 
 			explosion_sprite_lifetime="0.0" 
 			create_cell_probability="0" 
-			create_cell_material="" 
+			create_cell_material="flame" 
 			ray_energy="0"
 			hole_enabled="0" 	
 			particle_effect="0" 

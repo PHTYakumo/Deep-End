@@ -10,27 +10,29 @@ function make_random_utility_card( x, y )
 	-- SetRandomSeed( x, y )
 
 	local item = ""
-	local valid = false
+	local valid, try = false, 666
 
-	while valid == false do
+	while valid == false and try > 0 do
 		local itemno = Random(1,#actions)
 		local thisitem = actions[itemno]
-		item = string.lower(thisitem.id)
 		
-		if thisitem.type ~= ACTION_TYPE_MODIFIER and ( Random( 1, 75 ) < 37 ) then -- 49%
+		if thisitem.type == ACTION_TYPE_UTILITY
+		and Random( 1, 100 ) < 25 then
 			valid = false
-		elseif thisitem.type == ACTION_TYPE_UTILITY or thisitem.type == ACTION_TYPE_MODIFIER or thisitem.type == ACTION_TYPE_OTHER or thisitem.type == ACTION_TYPE_PASSIVE then
+		elseif thisitem.type == ACTION_TYPE_MODIFIER
+		or thisitem.type == ACTION_TYPE_PASSIVE
+		or thisitem.type == ACTION_TYPE_UTILITY then
 			valid = true
-
-			if thisitem.id == "DE_RESET_ALL" or thisitem.id == "DE_ULTIMATE" then valid = false end
-			if thisitem.spawn_requires_flag ~= nil and ( thisitem.spawn_requires_flag == "card_unlocked_kantele" or thisitem.spawn_requires_flag == "card_unlocked_ocarina" ) then valid = false end
 		else
 			valid = false
 		end
+
+		item = string.lower(thisitem.id)
+		try = try - 1
 	end
 
 
-	if ( string.len(item) > 0 ) then
+	if string.len(item) > 0 then
 		local card_entity = CreateItemActionEntity( item, x, y )
 		return card_entity
 	else

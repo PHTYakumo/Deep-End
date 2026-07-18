@@ -35,7 +35,7 @@
 			explosion_sprite="data/particles/explosion_016_plasma.xml" 
 			explosion_sprite_lifetime="0.0" 
 			create_cell_probability="0" 
-			create_cell_material="" 
+			create_cell_material="flame" 
 			ray_energy="5000"
 			hole_destroy_liquid="1" 
 			hole_enabled="1"
