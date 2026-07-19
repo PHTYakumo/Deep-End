@@ -4,7 +4,7 @@
     
     <GameEffectComponent 
     	effect="FASTER_LEVITATION"
-    	frames="5400"
+    	frames="6000"
     >
 	</GameEffectComponent >
 	

@@ -635,8 +635,7 @@ de_perk_list_recompose =
 		stackable_is_rare = true,
 		func = function( entity_perk_item, entity_who_picked, item_name )
 			add_halo_level(entity_who_picked, 1)
-
-			if ( not EntityHasTag( entity_who_picked, "de_respawn" ) ) then EntityAddTag( entity_who_picked, "de_respawn") end
+			-- if not EntityHasTag( entity_who_picked, "de_respawn" ) then EntityAddTag( entity_who_picked, "de_respawn") end
 		end,
 	},
 
@@ -3151,10 +3150,10 @@ de_perk_list_recompose =
 				GamePrintImportant( "$dpCHAOS_1", "$dpCHAOS_2" )
 			end
 
-			if not EntityHasTag( entity_who_picked, "de_respawn" ) then EntityAddTag( entity_who_picked, "de_respawn") end
+			-- if not EntityHasTag( entity_who_picked, "de_respawn" ) then EntityAddTag( entity_who_picked, "de_respawn") end
 			if not EntityHasTag( entity_who_picked, "forgeable" ) then EntityAddTag( entity_who_picked, "forgeable") end
 
-			EntityAddTag( entity_who_picked, "blessed")
+			-- EntityAddTag( entity_who_picked, "blessed")
 			EntityAddTag( entity_who_picked, "fish_attractor")
 			EntityAddTag( entity_who_picked, "chaos_frankenstein")
 

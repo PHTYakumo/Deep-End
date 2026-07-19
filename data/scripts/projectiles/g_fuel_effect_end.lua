@@ -16,7 +16,7 @@ if shooter ~= nil and shooter ~= NULL_ENTITY and ( not EntityHasTag( shooter, "w
     if gcomp ~= nil then EntitySetTransform( shooter, px, py, pr, 1, sign( ComponentGetValue2( gcomp, "pixel_gravity" ) ) ) end
     SetRandomSeed( GameGetFrameNum() - shooter, entity_id )
 
-    if Random( 1, 100 ) == 67 then
+    if Random( 1, 100 ) == 67 and Random( 1, 100 ) > 67 and not EntityHasTag( shooter, "necrobot_NOT" ) then
         EntityAddChild( shooter, EntityLoad( "data/entities/misc/effect_de_addiction.xml", px, py ) )
     else
         EntityAddChild( shooter, EntityLoad( "data/entities/misc/effect_movement_faster_long.xml", px, py ) )

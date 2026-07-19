@@ -2,7 +2,7 @@
 
 	<GameEffectComponent 
     	effect="MOVEMENT_FASTER"
-    	frames="5400"
+    	frames="6000"
     >
 	</GameEffectComponent >
 

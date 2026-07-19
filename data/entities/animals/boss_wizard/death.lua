@@ -4,13 +4,15 @@ dofile_once("data/scripts/lib/utilities.lua")
 local function Forever()
 	local p = EntityGetWithTag( "player_unit" )
 
-	if #p > 0 then for i=1,#p do
+	if #p > 0 then for i=1,#p do if not EntityHasTag( p[i], "necrobot_NOT" ) then
+		EntityAddTag( p[i], "necrobot_NOT" )
+
 		EntityAddComponent( p[i], "LuaComponent", 
 		{
 			script_damage_received = "data/scripts/perks/defeat_boss_wizard.lua",
 			execute_every_n_frame = "-1",
 		} )
-	end end
+	end end end
 end
 
 function death( damage_type_bit_field, damage_message, entity_thats_responsible, drop_items )

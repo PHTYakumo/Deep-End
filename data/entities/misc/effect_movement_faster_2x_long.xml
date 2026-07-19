@@ -8,7 +8,7 @@
     
     <GameEffectComponent 
     	effect="MOVEMENT_FASTER_2X"
-    	frames="900"
+    	frames="1000"
     	>
 	</GameEffectComponent >
 

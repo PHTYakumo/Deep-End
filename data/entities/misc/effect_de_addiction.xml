@@ -2,7 +2,7 @@
 	<InheritTransformComponent />	
     
     <LifetimeComponent
-		lifetime="5400"
+		lifetime="1500"
 	></LifetimeComponent>
 
 	<LuaComponent 
