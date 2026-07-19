@@ -36,7 +36,7 @@
     shoot_light_flash_b="245"
     shoot_light_flash_radius="75"
 	  knockback_force="2.0"
-    collide_with_tag="player_unit"
+    dont_collide_with_tag="boss_centipede_minion"
 	><damage_by_type 
 	  holy="0.32"
     healing="-0.0002"

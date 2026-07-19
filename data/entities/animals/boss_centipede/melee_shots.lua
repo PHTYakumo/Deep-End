@@ -23,6 +23,6 @@ for i=1,branches do
 	if not EntityHasTag( pid, "projectile_centipede" ) then EntityAddTag( pid, "projectile_centipede" ) end
 
 	local comp = EntityGetFirstComponent( pid, "ProjectileComponent" )
-	if comp ~= nil then ComponentSetValue2( comp, "collide_with_tag", "player_unit" ) end
+	if comp ~= nil then ComponentSetValue2( comp, "dont_collide_with_tag", "boss_centipede_minion" ) end
 end
 

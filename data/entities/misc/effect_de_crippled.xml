@@ -1,0 +1,15 @@
+<Entity>
+	<InheritTransformComponent />	
+    
+    <GameEffectComponent 
+    	effect="ALLERGY_RADIOACTIVE"
+    	frames="360"
+    ></GameEffectComponent>
+
+	<LuaComponent 
+		_enabled="1"
+    	script_source_file="data/scripts/status_effects/de_crippled.lua"
+		execute_every_n_frame="1"
+    ></LuaComponent>
+
+</Entity>

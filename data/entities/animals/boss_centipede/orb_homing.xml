@@ -1,5 +1,5 @@
 <Entity 
-	tags="hittable,projectile_converted,projectile_centipede,projectile_heal"
+	tags="hittable,projectile_converted,projectile_centipede,boss_centipede_minion"
 	name="$projectile_default" 
 	>
 	<Base file="data/entities/base_projectile.xml" >
@@ -182,7 +182,11 @@
 		blood_multiplier="0"
 		create_ragdoll="0"
 		minimum_knockback_force="0"
-		>
+		><damage_multipliers
+			explosion="0.1"
+			electricity="0"
+			ice="0" 
+		></damage_multipliers>
 	</DamageModelComponent>
 	
 	<VariableStorageComponent

@@ -84,6 +84,15 @@ local de_status_list = {
         effect_entity="data/entities/misc/effect_de_light_headedness.xml",
         -- effect_permanent=true,
     },
+    {
+        id="DEEP_END_CRIPPLE_EFFECT",
+        ui_name="$status_de_crippled",
+        ui_description="$dstatus_de_crippled",
+        ui_icon="data/ui_gfx/status_indicators/de_crippled.png",
+        is_harmful=true,
+        effect_entity="data/entities/misc/effect_de_crippled.xml",
+        -- effect_permanent=true,
+    },
 }
 
 local list_len = #status_effects

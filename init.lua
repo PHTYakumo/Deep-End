@@ -301,6 +301,9 @@ function deep_end_biome( biome_name, hp_scale, attack_speed )
 end
 
 function OnWorldInitialized() 
+	-- player_info
+	GlobalsSetValue( "DEEP_END_PLAYER_LAST_DAMAGED_FRAME", "-1" )
+
 	-- audios
 	GlobalsSetValue( "DEEP_END_SOUND_DARK_SWORD_CURSE_LAST_PLAY_FRAME", "0" )
 	GlobalsSetValue( "DEEP_END_SOUND_SNIPER_FIRE_LAST_PLAY_FRAME", "0" )

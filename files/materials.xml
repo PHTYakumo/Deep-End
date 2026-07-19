@@ -159,7 +159,7 @@
 		<Stains>
 			<StatusEffect type="POISONED" />
 			<StatusEffect type="FOOD_POISONING" />
-			<StatusEffect type="DEEP_END_NO_HEAL_EFFECT" />
+			<StatusEffect type="DEEP_END_CRIPPLE_EFFECT" />
 		</Stains>
 		<Ingestion>
 			<StatusEffect type="POISONED" amount="1" />
@@ -611,7 +611,7 @@
     </Graphics>
 	<StatusEffects>
 		<Ingestion>
-			<StatusEffect type="DEEP_END_DIZZY_EFFECT" amount="0.15" />
+			<StatusEffect type="DEEP_END_CRIPPLE_EFFECT" amount="0.15" />
 		</Ingestion>
 	</StatusEffects>
   </CellData>
@@ -771,7 +771,7 @@
 		</Stains>
 		<Ingestion>
 			<StatusEffect type="DEEP_END_NO_HEAL_EFFECT" amount="0.15" />
-			<StatusEffect type="DEEP_END_DIZZY_EFFECT" amount="0.15" />
+			<StatusEffect type="DEEP_END_CRIPPLE_EFFECT" amount="0.15" />
 		</Ingestion>
 	</StatusEffects>
   </CellData>
@@ -863,7 +863,6 @@
 			<StatusEffect type="CONFUSION" amount="0.66" />
 			<StatusEffect type="DEEP_END_DIZZY_EFFECT" amount="0.66" />
 			<StatusEffect type="DEEP_END_NO_EDIT_EFFECT" amount="0.66" />
-			<StatusEffect type="DEEP_END_NO_HEAL_EFFECT" amount="0.66" />
 			<StatusEffect type="INGESTION_FREEZING" amount="0.66" />
 			<StatusEffect type="INGESTION_ON_FIRE" amount="0.66" />
 		</Ingestion>
@@ -925,10 +924,11 @@
 			<StatusEffect type="DEEP_END_NO_EDIT_EFFECT" />
 			<StatusEffect type="DEEP_END_NO_HEAL_EFFECT" />
 			<StatusEffect type="DEEP_END_DIZZY_EFFECT" />
+			<StatusEffect type="DEEP_END_CRIPPLE_EFFECT" />
 		</Stains>
 		<Ingestion>
-			<StatusEffect type="DEEP_END_DIZZY_EFFECT" amount="99.0" />
-			<StatusEffect type="DEEP_END_HARDEN_EFFECT" amount="99.0" />
+			<StatusEffect type="DEEP_END_NO_HEAL_EFFECT" amount="99.0" />
+			<StatusEffect type="DEEP_END_CRIPPLE_EFFECT" amount="99.0" />
 		</Ingestion>
 	</StatusEffects>
   </CellData>

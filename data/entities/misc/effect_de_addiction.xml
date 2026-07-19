@@ -1,0 +1,24 @@
+<Entity>
+	<InheritTransformComponent />	
+    
+    <LifetimeComponent
+		lifetime="5400"
+	></LifetimeComponent>
+
+	<LuaComponent 
+		_enabled="1" 
+    	script_source_file="data/scripts/animals/de_enemy_jump.lua"
+		execute_every_n_frame="75"
+    ></LuaComponent>
+
+	<UIIconComponent
+		name="$status_de_addiction"
+		description="$dstatus_de_addiction"
+		icon_sprite_file="data/ui_gfx/status_indicators/de_addiction.png"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+
+</Entity>
