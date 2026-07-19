@@ -62,7 +62,7 @@
     sparks_enabled="1" 
     stains_enabled="1" 
     stains_radius="35"
-    background_lightning_count="5" 
+    background_lightning_count="1" 
     max_durability_to_destroy="12"
     audio_event_name="explosions/nuke"
   ></config_explosion>

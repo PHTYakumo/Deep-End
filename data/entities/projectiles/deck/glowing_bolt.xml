@@ -43,8 +43,8 @@
     shoot_light_flash_g="250"
     shoot_light_flash_b="250"
     shoot_light_flash_radius="100"
-	knockback_force="2.8"
-	physics_impulse_coeff="4000"
+	  knockback_force="2.8"
+	  physics_impulse_coeff="4000"
 	><damage_by_type
 		holy="0.04"
 	></damage_by_type>

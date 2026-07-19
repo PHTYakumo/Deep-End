@@ -19,7 +19,7 @@
 	</ShotEffectComponent>
 	
 	<LifetimeComponent
-		lifetime="1200"
+		lifetime="800"
 		>
 	</LifetimeComponent>
 

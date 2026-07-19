@@ -68,11 +68,12 @@
     sparks_count_max="30" 
     sparks_count_min="25"
 	  spark_material="spark_yellow"
-      light_fade_time="1.8" 
-	    light_r="255"
-	    light_g="215"
-      light_b="555"
-    stains_enabled="1" 
+    light_fade_time="1.8" 
+	  light_r="255"
+	  light_g="195"
+    light_b="255"
+    light_radius_coeff="32"
+    stains_enabled="0" 
     stains_image="data/temp/explosion_stain.png"
     audio_event_name="explosions/holy" >
     </config_explosion>

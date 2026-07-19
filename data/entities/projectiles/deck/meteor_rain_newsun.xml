@@ -67,7 +67,12 @@
 		sparks_enabled="1" 
 		stains_enabled="1" 
 		stains_radius="160"
-		background_lightning_count="9" 
+		light_fade_time="1" 
+		light_r="255"
+		light_g="195"
+		light_b="255"
+		light_radius_coeff="16"
+		background_lightning_count="4" 
 		max_durability_to_destroy="15" 
       	audio_event_name="explosions/holy" >
     </config_explosion>

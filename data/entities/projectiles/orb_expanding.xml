@@ -59,7 +59,7 @@
 			light_r="255"
 			light_g="30"
 			light_b="30"
-			light_radius_coeff="64"
+			light_radius_coeff="8"
 			stains_enabled="0" 
 			stains_image="data/temp/explosion_stain.png"
 			spark_material="spark" >
