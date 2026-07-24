@@ -310,39 +310,39 @@ function OnWorldInitialized()
 	GlobalsSetValue( "DEEP_END_SOUND_LIMBS_BOSS_SCREAM_PLAY_FRAME", "0" )
 
 	-- biomes
-	deep_end_biome( "coalmine", 0.5, 1 )
-	deep_end_biome( "coalmine_alt", 0.6, 0.9 )
-	deep_end_biome( "excavationsite", 0.75, 0.9 )
-	deep_end_biome( "snowcastle", 1, 0.8 )
-	deep_end_biome( "snowcave", 1, 0.8 )
-	deep_end_biome( "rainforest_dark", 1.25, 0.7 )
-	deep_end_biome( "snowcave_tunnel", 2, 0.7 )
-	deep_end_biome( "liquidcave", 1.5, 0.75 )
-	deep_end_biome( "vault", 2.5, 0.5 )
-	deep_end_biome( "fungicave", 1.5, 0.7 )
-	deep_end_biome( "pyramid", 3, 0.5 )
-	deep_end_biome( "wandcave", 1.25, 0.6 )
-	deep_end_biome( "rainforest", 2, 0.6 )
-	deep_end_biome( "rainforest_open", 2, 0.6 )
-	deep_end_biome( "robobase", 1.5, 0.75 )
-	deep_end_biome( "crypt", 2.5, 0.5 )
-	deep_end_biome( "desert", 3, 0.5 )
-	deep_end_biome( "forest", 3, 0.5 )
-	deep_end_biome( "winter_caves", 3, 0.4 )
-	deep_end_biome( "vault_frozen", 4, 0.4 )
-	deep_end_biome( "wizardcave", 4, 0.4 )
-	deep_end_biome( "fungiforest", 2, 0.25 )
-	deep_end_biome( "sandcave", 5, 0.6 )
-	deep_end_biome( "clouds", 6, 0.3 )
-	deep_end_biome( "the_end", 7, 0.3 )
-	deep_end_biome( "the_sky", 7, 0.3 )
-	deep_end_biome( "robot_egg", 10, 0.2 )
+	deep_end_biome( "coalmine", 0.5, 1.2 )
+	deep_end_biome( "coalmine_alt", 0.6, 1 )
+	deep_end_biome( "excavationsite", 0.75, 1 )
+	deep_end_biome( "snowcastle", 1, 0.9 )
+	deep_end_biome( "snowcave", 1, 0.9 )
+	deep_end_biome( "rainforest_dark", 1.25, 0.8 )
+	deep_end_biome( "snowcave_tunnel", 1.75, 0.8 )
+	deep_end_biome( "liquidcave", 1.5, 0.8 )
+	deep_end_biome( "vault", 2, 0.6 )
+	deep_end_biome( "fungicave", 1.5, 0.8 )
+	deep_end_biome( "pyramid", 2.5, 0.6 )
+	deep_end_biome( "wandcave", 1.25, 0.7 )
+	deep_end_biome( "rainforest", 1.75, 0.7 )
+	deep_end_biome( "rainforest_open", 1.75, 0.7 )
+	deep_end_biome( "robobase", 1.5, 0.8 )
+	deep_end_biome( "crypt", 2, 0.6 )
+	deep_end_biome( "desert", 3, 0.6 )
+	deep_end_biome( "forest", 3, 0.6 )
+	deep_end_biome( "winter_caves", 2.5, 0.5 )
+	deep_end_biome( "vault_frozen", 3, 0.5 )
+	deep_end_biome( "wizardcave", 3, 0.5 )
+	deep_end_biome( "fungiforest", 2, 0.3 )
+	deep_end_biome( "sandcave", 4, 0.7 )
+	deep_end_biome( "clouds", 5, 0.4 )
+	deep_end_biome( "the_end", 6, 0.4 )
+	deep_end_biome( "the_sky", 6, 0.4 )
+	deep_end_biome( "robot_egg", 10, 0.25 )
 
 	if ModSettingGet( "DEEP_END.MEAT_HEAL" ) then deep_end_biome( "meat", 3.5, 1 )
 	else deep_end_biome( "meat", 1.5, 1 ) end
 
-	deep_end_biome( "tower/solid_wall_tower", 8, 0.25 )
-	for i=1,10 do deep_end_biome( "tower/solid_wall_tower_" .. tostring(i), 8, 0.25 ) end
+	deep_end_biome( "tower/solid_wall_tower", 8, 0.3 )
+	for i=1,10 do deep_end_biome( "tower/solid_wall_tower_" .. tostring(i), 8, 0.3 ) end
 
 	if tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") ) == 0 then
 		SessionNumbersSetValue( "DESIGN_SCALE_ENEMIES", "1" )
@@ -545,23 +545,23 @@ function OnPlayerSpawned( player_entity )
 	local damagemodels = EntityGetComponent( player_entity, "DamageModelComponent" )
 
 	if damagemodels ~= nil then for i,damagemodel in ipairs(damagemodels) do
-		local melee = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "melee" ) )
-		local projectile = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "projectile" ) )
-		local explosion = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "explosion" ) )
-		local electricity = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "electricity" ) )
-		local fire = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "fire" ) )
-		local drill = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "drill" ) )
-		local slice = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "slice" ) )
-		local ice = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "ice" ) )
-		local healing = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "healing" ) )
-		local physics_hit = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "physics_hit" ) )
-		local radioactive = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "radioactive" ) )
-		local poison = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "poison" ) )
-		local curse = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "curse" ) )
+		local melee = ComponentObjectGetValue2( damagemodel, "damage_multipliers", "melee" )
+		local projectile = ComponentObjectGetValue2( damagemodel, "damage_multipliers", "projectile" )
+		local explosion = ComponentObjectGetValue2( damagemodel, "damage_multipliers", "explosion" )
+		local electricity = ComponentObjectGetValue2( damagemodel, "damage_multipliers", "electricity" )
+		local fire = ComponentObjectGetValue2( damagemodel, "damage_multipliers", "fire" )
+		local drill = ComponentObjectGetValue2( damagemodel, "damage_multipliers", "drill" )
+		local slice = ComponentObjectGetValue2( damagemodel, "damage_multipliers", "slice" )
+		local ice = ComponentObjectGetValue2( damagemodel, "damage_multipliers", "ice" )
+		local healing = ComponentObjectGetValue2( damagemodel, "damage_multipliers", "healing" )
+		local physics_hit = ComponentObjectGetValue2( damagemodel, "damage_multipliers", "physics_hit" )
+		local radioactive = ComponentObjectGetValue2( damagemodel, "damage_multipliers", "radioactive" )
+		local poison = ComponentObjectGetValue2( damagemodel, "damage_multipliers", "poison" )
+		local curse = ComponentObjectGetValue2( damagemodel, "damage_multipliers", "curse" )
 
 		melee = melee * 1.5
 		projectile = projectile * 1.2
-		explosion = explosion * 1.2
+		explosion = explosion * 1.2 -- x0.42
 		electricity = electricity * 1.2
 		fire = fire * 1.2
 		drill = drill * 1.5
@@ -570,34 +570,33 @@ function OnPlayerSpawned( player_entity )
 		physics_hit = physics_hit * 0.5
 		radioactive = radioactive * 1.2
 		poison = poison * 1.5
-		curse = curse * 2.0
+		curse = curse * 1.5
 		-- healing = healing
 		
 		if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) then
+			melee = melee * 1.25 -- x1.8
 			projectile = projectile * 1.25 -- x1.5
-			electricity = electricity * 1.2 -- x1.44
-			fire = fire * 1.5 -- x1.8
-			ice = ice * 1.2 -- x1.44
-			radioactive = radioactive * 1.5 -- x1.8
-			poison = poison * 1.5 -- x2.25
-			curse = curse * 1.25 -- x2.5
+			fire = fire * 1.25 -- x1.5
+			ice = ice * 1.25 -- x1.5
+			radioactive = radioactive * 1.25 -- x1.5
+			poison = poison * 1.2 -- x1.8
 
 			EntityAddRandomStains( player_entity, CellFactory_GetType("midas"), 666 )
 		end
 
-		ComponentObjectSetValue( damagemodel, "damage_multipliers", "melee", tostring(melee) )
-		ComponentObjectSetValue( damagemodel, "damage_multipliers", "projectile", tostring(projectile) )
-		ComponentObjectSetValue( damagemodel, "damage_multipliers", "explosion", tostring(explosion) )
-		ComponentObjectSetValue( damagemodel, "damage_multipliers", "electricity", tostring(electricity) )
-		ComponentObjectSetValue( damagemodel, "damage_multipliers", "fire", tostring(fire) )
-		ComponentObjectSetValue( damagemodel, "damage_multipliers", "drill", tostring(drill) )
-		ComponentObjectSetValue( damagemodel, "damage_multipliers", "slice", tostring(slice) )
-		ComponentObjectSetValue( damagemodel, "damage_multipliers", "ice", tostring(ice) )
-		ComponentObjectSetValue( damagemodel, "damage_multipliers", "healing", tostring(healing) )
-		ComponentObjectSetValue( damagemodel, "damage_multipliers", "physics_hit", tostring(physics_hit) )
-		ComponentObjectSetValue( damagemodel, "damage_multipliers", "radioactive", tostring(radioactive) )
-		ComponentObjectSetValue( damagemodel, "damage_multipliers", "poison", tostring(poison) )
-		ComponentObjectSetValue( damagemodel, "damage_multipliers", "curse", tostring(curse) )
+		ComponentObjectSetValue2( damagemodel, "damage_multipliers", "melee", melee )
+		ComponentObjectSetValue2( damagemodel, "damage_multipliers", "projectile", projectile )
+		ComponentObjectSetValue2( damagemodel, "damage_multipliers", "explosion", explosion )
+		ComponentObjectSetValue2( damagemodel, "damage_multipliers", "electricity", electricity )
+		ComponentObjectSetValue2( damagemodel, "damage_multipliers", "fire", fire )
+		ComponentObjectSetValue2( damagemodel, "damage_multipliers", "drill", drill )
+		ComponentObjectSetValue2( damagemodel, "damage_multipliers", "slice", slice )
+		ComponentObjectSetValue2( damagemodel, "damage_multipliers", "ice", ice )
+		ComponentObjectSetValue2( damagemodel, "damage_multipliers", "healing", healing )
+		ComponentObjectSetValue2( damagemodel, "damage_multipliers", "physics_hit", physics_hit )
+		ComponentObjectSetValue2( damagemodel, "damage_multipliers", "radioactive", radioactive )
+		ComponentObjectSetValue2( damagemodel, "damage_multipliers", "poison", poison )
+		ComponentObjectSetValue2( damagemodel, "damage_multipliers", "curse", curse )
 	end end
 
 	if ModSettingGet( "DEEP_END.HELL_AND_HELL_PERK" ) then GlobalsSetValue( "TEMPLE_PERK_REROLL_COUNT", tostring(-1) ) end

@@ -1492,6 +1492,9 @@ de_perk_list_recompose =
 					ComponentSetMetaCustom( component, "run_velocity", run_speed )
 					ComponentSetMetaCustom( component, "velocity_min_x", vel_x_min )
 					ComponentSetMetaCustom( component, "velocity_max_x", vel_x_max )
+
+					local plg = ComponentGetValue2( component, "pixel_gravity" )
+					ComponentSetValue2( component, "pixel_gravity", plg * 0.5 )
 				end
 			end
 			
@@ -1577,6 +1580,9 @@ de_perk_list_recompose =
 					ComponentSetMetaCustom( component, "run_velocity", run_speed )
 					ComponentSetMetaCustom( component, "velocity_min_x", vel_x_min )
 					ComponentSetMetaCustom( component, "velocity_max_x", vel_x_max )
+
+					local plg = ComponentGetValue2( component, "pixel_gravity" )
+					ComponentSetValue2( component, "pixel_gravity", plg * 0.5 )
 				end
 			end
 			
@@ -1595,8 +1601,7 @@ de_perk_list_recompose =
 					ComponentSetMetaCustom( component, "run_velocity", 154 )
 					ComponentSetMetaCustom( component, "velocity_min_x", -57 )
 					ComponentSetMetaCustom( component, "velocity_max_x", 57 )
-					-- NOTE apparently this isn't needed, since the LEGGY works differently from the LUKKI
-					-- ComponentSetValue2( component, "pixel_gravity", 350 )
+					ComponentSetValue2( component, "pixel_gravity", 350 )
 				end
 			end
 		end,

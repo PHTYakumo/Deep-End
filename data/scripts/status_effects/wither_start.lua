@@ -19,7 +19,7 @@ if ( player_id ~= NULL_ENTITY ) and ( entity_id ~= player_id ) then
 			local wither_r = r
 
 			if EntityHasTag( player_id, "player_unit" ) then
-				wither_r = clamp( wither_r*1.2, 2.0, 2^newgame_n + 3 )
+				wither_r = clamp( wither_r*1.2, 1.5, 2^newgame_n + 3 )
 				
 				result = result .. tostring(r)
 				
@@ -28,9 +28,9 @@ if ( player_id ~= NULL_ENTITY ) and ( entity_id ~= player_id ) then
 				end
 
 				if ( b == "melee" ) then
-					wither_r = clamp( r*1.2, 3.0, 2^newgame_n + 4 )
+					wither_r = clamp( r*1.2, 2, 2^newgame_n + 4 )
 				elseif ( b == "explosion" ) then
-					wither_r = clamp( r*2.0, 1.2, 2^newgame_n + 3.2 )
+					wither_r = clamp( r*2.0, 1, 2^newgame_n + 3.2 )
 				end
 			else
 				wither_r = clamp( r+0.1, 0, 16 ) -- in NG+?

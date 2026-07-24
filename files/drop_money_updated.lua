@@ -32,11 +32,11 @@ function do_money_drop( amount_multiplier, trick_kill )
 
 	SetRandomSeed( GameGetFrameNum(), entity )
 
-	local amount = 0.6667
+	local amount = 1
 	local hpcomp = EntityGetFirstComponent( entity, "DamageModelComponent" )
 
 	if hpcomp ~= nil then amount = ComponentGetValue2( hpcomp, "max_hp") end
-	if amount > 0.6667 then amount = math.floor( amount * ( Random( 25, 50 ) * 0.02 + Random( 1, 100 ) * 0.01 ) ) end
+	if amount > 1 then amount = math.floor( amount * ( Random( 25, 50 ) * 0.02 + Random( 1, 100 ) * 0.01 ) ) end
 
 	local hah_amount_multiplier = math.max( math.floor( ModSettingGet( "DEEP_END.HELL_AND_HELL_HP" ) + 0.5 ), 1 )
 	amount = amount * amount_multiplier * math.ceil( hah_amount_multiplier^0.8 )
@@ -76,9 +76,9 @@ function do_money_drop( amount_multiplier, trick_kill )
 	if DEEP_END_MONEY_CACHE == nil then DEEP_END_MONEY_CACHE = 0 end
 
 	if GameGetFrameNum() - DEEP_END_MONEY_CD < 30 then
-		DEEP_END_MONEY_CACHE = money + DEEP_END_MONEY_CACHE 
+		DEEP_END_MONEY_CACHE = DEEP_END_MONEY_CACHE + money + clamp( 10 + DEEP_END_MONEY_CD - GameGetFrameNum(), 1, 10 )
 	else
-		money = money + DEEP_END_MONEY_CACHE
+		money = math.ceil( money + DEEP_END_MONEY_CACHE )
 		DEEP_END_MONEY_CACHE = 0
 
 		local d_dollar = entity
@@ -89,11 +89,11 @@ function do_money_drop( amount_multiplier, trick_kill )
 			d_dollar = de_load_gold_entity( "data/entities/items/pickup/gold_dollar.xml", x, y-8, remove_timer_level * 3.5 )
 		elseif money >= 10*1000 then
 			d_dollar = de_load_gold_entity( gold_entity .. "10000.xml", x, y-8, remove_timer_level * 3 )
-		elseif money >= 1000 then
+		elseif money >= 500 then
 			d_dollar = de_load_gold_entity( gold_entity .. "1000.xml", x, y-8, remove_timer_level * 2.5 )
-		elseif money >= 200 then
+		elseif money >= 100 then
 			d_dollar = de_load_gold_entity( gold_entity .. "200.xml", x, y-8, remove_timer_level * 2 )
-		elseif money >= 50 then
+		elseif money >= 25 then
 			d_dollar = de_load_gold_entity( gold_entity .. "50.xml", x, y-8, remove_timer_level * 1.5 )
 		else
 			d_dollar = de_load_gold_entity( gold_entity .. "10.xml", x, y-8, remove_timer_level )

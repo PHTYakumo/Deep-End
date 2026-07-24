@@ -2536,7 +2536,7 @@ local de_actions_recompose =
 
 			if players[1] ~= nil then
 				local x,y = EntityGetTransform( players[1] )
-				local trians = EntityGetInRadiusWithTag( x, y, 512, "de_inf_train" )
+				local trians = EntityGetInRadiusWithTag( x, y, 800, "de_inf_train" )
 			
 				if trians[1] == nil then
 					add_projectile("data/entities/projectiles/deck/inf_train_guidance.xml")
@@ -4655,8 +4655,8 @@ local de_actions_recompose =
 		sprite 		= "mods/deep_end/files/actions_sprite/teleport_projectile_v2.png",
 		related_projectiles	= {"data/entities/projectiles/deck/teleport_projectile_v2_no_hole.xml"},
 		type 		= ACTION_TYPE_STATIC_PROJECTILE,
-		spawn_level                       = "3,4,5,6,7,10", -- TELEPORT_PROJECTILE
-		spawn_probability                 = "0.3,0.3,0.4,0.4,0.3,0.05", -- TELEPORT_PROJECTILE
+		spawn_level                       = "3,4,5,6,10", -- TELEPORT_PROJECTILE
+		spawn_probability                 = "0.05,0.05,0.1,0.1,0.01", -- TELEPORT_PROJECTILE
 		price = 130,
 		mana = 75,
 		max_uses = 10,
@@ -13075,12 +13075,14 @@ local de_actions_recompose =
 		-- max_uses    = 12, 
 		action 		= function()
 			local players = EntityGetWithTag( "player_unit" )
-			if ( players ~= nil ) then
+
+			if players ~= nil then
 				local pid = GetUpdatedEntityID()
 				local x,y = EntityGetTransform( pid )
-				local ultra = EntityGetInRadiusWithTag( x, y, 512, "ultra" )
+
+				local ultra = EntityGetInRadiusWithTag( x, y, 4000, "ultra" )
 			
-				if ( #ultra < 1 ) then
+				if #ultra < 1 then
 					add_projectile("data/entities/projectiles/deck/ultimate_spark.xml")
 
 					c.spread_degrees = math.min( -720, c.spread_degrees )
