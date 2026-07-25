@@ -83,20 +83,16 @@ function drop_random_reward( x, y, entity_id, rand_x, rand_y, set_rnd_  )
 		count = count - 1
 
 		local chosen = tonumber(ModSettingGet( "DEEP_END.MAP_TYPE" ))
-		local unlimited = 123
+		local unlimited = 60
 
 		if ( not ModSettingGet( "DEEP_END.ORIGINAL_SPELLS" ) ) and ( y > 512 ) then
-			local rrnd = Random(1,777)
-			if ComponentGetValue2( EntityGetFirstComponent( GameGetWorldStateEntity(), "WorldStateComponent" ), "perk_infinite_spells" ) then unlimited = 456 end
+			local rrnd = Random(1,100)
+			if ComponentGetValue2( EntityGetFirstComponent( GameGetWorldStateEntity(), "WorldStateComponent" ), "perk_infinite_spells" ) then unlimited = 30 end
 			
-			if ( rrnd > 765 ) then
-				table.insert( entities, { "data/entities/items/pickup/ammo_box.xml" } )
-			elseif ( rrnd > 750 ) then
-				table.insert( entities, { "data/entities/items/pickup/utility_box.xml" } )
-			elseif ( rrnd > unlimited ) then
+			if rrnd <= unlimited then
 				table.insert( entities, { "data/entities/items/pickup/spell_refresh.xml" } )
 				unlimited = 0
-			elseif ( rrnd < 66 ) then
+			elseif rrnd >= 90 then
 				table.insert( entities, { "data/entities/animals/illusions/shaman_wind.xml" } )
 			end
 		end

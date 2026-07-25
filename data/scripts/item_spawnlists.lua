@@ -16,7 +16,7 @@ spawnlists =
 
 						SetRandomSeed( x * 13 - GameGetFrameNum(), y )
 						
-						if ( y < 512 * 27 ) or ( math.abs(x) > 512 * 27 ) then
+						if y < 14080 and not GameHasFlagRun( "greed_curse_gone" ) then
 							if Random( 1, 100 ) >= 88 then
 								local entity_id = EntityLoad( "data/entities/items/pickup/summon_portal_broken.xml", x + ox, y + oy )
 							elseif Random( 1, 100 ) <= 20 then
@@ -41,16 +41,14 @@ spawnlists =
 
 						SetRandomSeed( x * 13 - GameGetFrameNum(), y )
 						
-						if GameHasFlagRun( "greed_curse" ) and ( GameHasFlagRun( "greed_curse_gone" ) == false ) then
+						if GameHasFlagRun( "greed_curse" ) or Random( 1, 100 ) < 67 then
 							local opts = { "gold_orb", "gold_orb_greed", "greed_die", "die" }
 							local entity_id = EntityLoad( "data/entities/items/pickup/physics_" .. opts[Random( 1, #opts )] .. ".xml", x + ox, y + oy )
 						else
 							local opts = { "laser", "fireball", "lava", "slow", "null", "disc", "metal" }
 							local entity_id = EntityLoad( "data/entities/items/pickup/runestones/runestone_" .. opts[Random( 1, #opts )] .. ".xml", x + ox, y + oy )
 
-							if ( Random( 1, 100 ) < 70 ) then
-								runestone_activate( entity_id )
-							end
+							if Random( 1, 100 ) > 67 then runestone_activate( entity_id ) end
 						end
 					end,
 				offset_y = -13,
@@ -65,7 +63,7 @@ spawnlists =
 
 						SetRandomSeed( x * 13 - GameGetFrameNum(), y )
 
-						if ( Random( 1, 100 ) < 66 ) then
+						if math.abs(x) < 4096 then
 							local entity_id = EntityLoad( "data/entities/items/pickup/safe_haven.xml", x + ox, y + oy )
 						else
 							local opts = { "fire", "monster", "purple", "red", "slime", "spiders", "worm" }
