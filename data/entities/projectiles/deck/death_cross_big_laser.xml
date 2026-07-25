@@ -1,5 +1,5 @@
 <Entity 
-  name="$projectile_default" tags="projectile_player,projectile_boss_spirit,death_cross,acid,disc_bullet_big,rocket,projectile_heal"
+  name="$projectile_default" tags="projectile_boss_spirit,death_cross,acid,disc_bullet_big,rocket,projectile_heal"
    >
 
 	<Base file="data/entities/base_projectile.xml" >

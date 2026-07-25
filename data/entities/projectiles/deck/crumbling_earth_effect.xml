@@ -1,4 +1,4 @@
-<Entity name="$projectile_default" tags="projectile_player" >
+<Entity name="$projectile_default" >
 	<LoadEntitiesComponent
         count.min="1"
         count.max="1"

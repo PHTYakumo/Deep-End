@@ -1,4 +1,4 @@
-<Entity name="$projectile_default" tags="resist_repulsion,projectile_player,disc_bullet_big" >
+<Entity name="$projectile_default" tags="resist_repulsion,disc_bullet_big" >
 
 	<Base file="data/entities/base_projectile.xml" >
 		<VelocityComponent

@@ -1,4 +1,4 @@
-<Entity tags="de_projectile_spawner" >
+<Entity tags="de_projectile_spawner,live_fungus" >
 
 	<Base file="data/entities/base_projectile.xml" >
 		<VelocityComponent

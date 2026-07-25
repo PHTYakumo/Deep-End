@@ -23,8 +23,14 @@ function de_enemy_give_wand( target, wand_level )
 			or EntityHasTag( target, "de_mimic" ) then
 			
 			local comps = EntityGetComponent( target, "CameraBoundComponent" )
-			if comps ~= nil then for i,camerabound in ipairs(comps) do
-				EntitySetComponentIsEnabled( target, camerabound, false )	
+			if comps ~= nil then for i,cp in ipairs(comps) do
+				EntitySetComponentIsEnabled( target, cp, false )	
+			end end
+
+			comps = EntityGetComponent( target, "ItemPickUpperComponent" )
+			if comps ~= nil then for i,cp in ipairs(comps) do
+				ComponentSetValue2( cp, "is_immune_to_kicks", true )
+				ComponentSetValue2( cp, "drop_items_on_death", false )	
 			end end
 
 			local wand_level_str = "1"
@@ -35,8 +41,8 @@ function de_enemy_give_wand( target, wand_level )
 			EntityAddTag( wid, "abyss_wand" )
 
 			local icomp = EntityGetFirstComponent( wid, "ItemComponent" )
-			ComponentSetValue( icomp, "is_frozen", "true" )
-			ComponentSetValue( icomp, "is_all_spells_book", "true" )
+			ComponentSetValue2( icomp, "is_frozen", true )
+			ComponentSetValue2( icomp, "is_all_spells_book", true )
 		end
 	end
 end
@@ -82,6 +88,7 @@ function de_shuffle_pl_perk( player_id )
 	end
 
 	IMPL_remove_all_perks( player_id )
+	EntityLoad("data/entities/particles/image_emitters/chest_effect_bad.xml", x, y )
 
 	if #perks_to_sp > 0 then for i=1,#perks_to_sp do
 		local pid = perk_spawn_random( x, y, true )

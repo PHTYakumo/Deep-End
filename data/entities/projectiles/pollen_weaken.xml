@@ -1,5 +1,5 @@
 <Entity 
-  name="$projectile_default" tags="projectile_player,hittable"
+  name="$projectile_default" tags="hittable,live_fungus"
    >
 
 	<Base file="data/entities/base_projectile.xml" >

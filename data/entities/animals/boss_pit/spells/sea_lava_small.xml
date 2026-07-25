@@ -1,4 +1,4 @@
-<Entity name="$projectile_default" tags="projectile_player,sea_of_lava" >
+<Entity name="$projectile_default" tags="sea_of_lava" >
 
 	<MaterialSeaSpawnerComponent
 	    size.x="200"

@@ -1,5 +1,5 @@
 <Entity 
-  name="$projectile_default" tags="projectile_player,teleportable_NOT"
+  name="$projectile_default" tags="teleportable_NOT"
    >
 
   <VelocityComponent

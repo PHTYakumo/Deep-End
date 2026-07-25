@@ -1,4 +1,4 @@
-<Entity name="$projectile_default" tags="projectile_player,projectile_boss_spirit,projectile_heal,fireball,laser,death_cross,acid,black_hole,disc_bullet_big,nuke,rocket" >
+<Entity name="$projectile_default" tags="projectile_boss_spirit,projectile_heal,fireball,laser,death_cross,acid,black_hole,disc_bullet_big,nuke,rocket" >
 
 	<Base file="data/entities/base_projectile.xml" >
 		<VelocityComponent

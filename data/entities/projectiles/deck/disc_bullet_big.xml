@@ -1,4 +1,4 @@
-<Entity name="$projectile_default" tags="projectile_player,disc_bullet_big" >
+<Entity name="$projectile_default" tags="disc_bullet_big" >
 
 	<Base file="data/entities/base_projectile.xml" >
 		<VelocityComponent
