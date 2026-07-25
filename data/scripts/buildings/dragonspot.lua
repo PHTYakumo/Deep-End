@@ -1,7 +1,7 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
 function collision_trigger()
-	local entity_id    = GetUpdatedEntityID()
+	local entity_id = GetUpdatedEntityID()
 	local pos_x, pos_y = EntityGetTransform( entity_id )
 
 	local hah_amount = math.max( math.floor( ModSettingGet( "DEEP_END.HELL_AND_HELL_AMOUNT" ) + 0.5 ), 1 )
@@ -9,7 +9,7 @@ function collision_trigger()
 	local eid = entity_id
 
 	for i = 1,hah_amount do
-		if ( newgame_n < 0 ) then
+		if newgame_n < 0 then
 			eid = EntityLoad( "data/entities/animals/maggot_tiny/maggot_tiny.xml", pos_x, pos_y )
 			EntityLoad( "data/entities/projectiles/remove_ground.xml", pos_x, pos_y )
 		else	
@@ -26,8 +26,7 @@ function collision_trigger()
 	end
 
 	local player = EntityGetClosestWithTag( pos_x, pos_y, "player_unit")
-
-	if ( player ~= nil ) then EntityAddChild( player, EntityLoad( "data/entities/misc/effect_protection_all_once_no_ui.xml", pos_x, pos_y ) ) end
+	if player ~= nil then EntityAddChild( player, EntityLoad( "data/entities/misc/effect_protection_all_once_no_ui.xml", pos_x, pos_y ) ) end
 	
 	EntityLoad( "data/entities/particles/image_emitters/magical_symbol_fast.xml", pos_x, pos_y )
 	EntityKill( entity_id )

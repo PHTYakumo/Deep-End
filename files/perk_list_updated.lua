@@ -1208,7 +1208,7 @@ de_perk_list_recompose =
 			
 			local shield_num = tonumber( GlobalsGetValue( "PERK_SHIELD_COUNT", "0" ) ) + 1
 			local shield_radius = math.min( 12.5 + shield_num * 2.48, 29.86 ) + shield_num * 0.02
-			local charge_speed = math.max( 0.20 + shield_num * 0.05, 0.55 )
+			local charge_speed = math.min( 0.20 + shield_num * 0.05, 0.55 )
 			GlobalsSetValue( "PERK_SHIELD_COUNT", tostring( shield_num ) )
 			
 			local comps = EntityGetComponent( child_id, "EnergyShieldComponent" )
@@ -1216,6 +1216,10 @@ de_perk_list_recompose =
 				for i,comp in ipairs( comps ) do
 					ComponentSetValue2( comp, "radius", shield_radius )
 					ComponentSetValue2( comp, "recharge_speed", charge_speed )
+
+					ComponentSetValue2( comp, "damage_multiplier", 1.25 )
+					ComponentSetValue2( comp, "max_energy", 1.6 )
+					ComponentSetValue2( comp, "energy_required_to_shield", 0.1 )
 				end
 			end
 			

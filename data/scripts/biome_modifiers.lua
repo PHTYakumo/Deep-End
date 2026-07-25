@@ -401,12 +401,12 @@ biome_modifiers =
 				offset_y 	= 0,    
 				entity 	= "data/entities/buildings/biome_modifiers/lasergun_spawner.xml",
 			})
-			inject_spawn( g_props, 0.5, {
+			inject_spawn( g_lamp, 0.1, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
-				entity 	= "data/entities/buildings/biome_modifiers/lasergun_spawner.xml",
+				entity 	=  "data/entities/props/physics_lantern.xml",
 			})
 			-- mimic
 			inject_spawn( g_big_enemies, 0.05, {
@@ -447,6 +447,13 @@ biome_modifiers =
 				max_count	= 1,
 				offset_y 	= 0,    
 				entity 	= "data/entities/buildings/biome_modifiers/lasergun_spawner.xml",
+			})
+			inject_spawn( g_lamp, 0.1, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/props/physics_lantern.xml",
 			})
 			inject_spawn( g_props, 0.75, {
 				prob   		= 0,
@@ -574,13 +581,6 @@ biome_modifiers =
 				max_count	= 2,
 				offset_y 	= 0,    
 				entity 	=  "data/entities/buildings/biome_modifiers/tiny_ghost_spawner.xml",
-			})
-			inject_spawn( g_lamp, 0.25, {
-				prob   		= 0,
-				min_count	= 1,
-				max_count	= 2,
-				offset_y 	= 0,    
-				entity 	=  "data/entities/props/physics_lantern.xml",
 			})
 			inject_spawn( g_props, 0.75, {
 				prob   		= 0,
@@ -1053,13 +1053,6 @@ biome_modifiers =
 				max_count	= 1,
 				offset_y 	= 0,    
 				entity 	=  "data/entities/buildings/biome_modifiers/energy_shield_sector_spawner.xml",
-			})
-			inject_spawn( g_lamp, 0.5, {
-				prob   		= 0,
-				min_count	= 1,
-				max_count	= 1,
-				offset_y 	= 0,    
-				entity 	= "data/entities/buildings/biome_modifiers/lasergun_spawner.xml",
 			})
 			inject_spawn( g_props, 0.75, {
 				prob   		= 0,
