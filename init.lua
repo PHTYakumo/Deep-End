@@ -473,15 +473,7 @@ function OnPlayerSpawned( player_entity )
 	local foodcomp = EntityGetFirstComponent( player_entity, "IngestionComponent" )
 
 	if foodcomp ~= nil then
-		local size = ComponentGetValue2( foodcomp, "ingestion_size" )
-		local capacity = ComponentGetValue2( foodcomp, "ingestion_capacity" )
-		
-		component_write( foodcomp,
-		{
-			ingestion_cooldown_delay_frames = 400,
-			ingestion_reduce_every_n_frame = 3,
-			ingestion_size = math.max( size, capacity * 0.6 ),
-		})
+		local capacity = ComponentGetValue2( foodcomp, "ingestion_capacity" ) or 10000
 
 		if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) then
 			EntityAddComponent( player_entity, "LuaComponent", 
@@ -489,6 +481,20 @@ function OnPlayerSpawned( player_entity )
 				script_source_file = "data/scripts/perks/food_clock.lua",
 				execute_every_n_frame = "75",
 			} )
+
+			component_write( foodcomp,
+			{
+				ingestion_cooldown_delay_frames = 600,
+				ingestion_reduce_every_n_frame = 5,
+				ingestion_size = capacity * 0.7,
+			})
+		else
+			component_write( foodcomp,
+			{
+				ingestion_cooldown_delay_frames = 400,
+				ingestion_reduce_every_n_frame = 3,
+				ingestion_size = capacity * 0.5,
+			})
 		end
 	end
 

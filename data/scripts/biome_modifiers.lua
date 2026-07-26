@@ -1047,21 +1047,14 @@ biome_modifiers =
 		does_not_apply_to_biome={"mountain_hall","excavationsite","snowcave"},
 		action = function( biome_name, biome_filename )	end,
 		inject_spawns_action = function()
-			inject_spawn( g_small_enemies, 0.1, {
+			inject_spawn( g_props, 0.5, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
 				entity 	=  "data/entities/buildings/biome_modifiers/energy_shield_sector_spawner.xml",
 			})
-			inject_spawn( g_props, 0.75, {
-				prob   		= 0,
-				min_count	= 1,
-				max_count	= 1,
-				offset_y 	= 0,    
-				entity 	=  "data/entities/buildings/biome_modifiers/energy_shield_sector_spawner.xml",
-			})
-			inject_spawn( g_props2, 0.75, {
+			inject_spawn( g_props2, 0.55, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,
@@ -1081,6 +1074,20 @@ biome_modifiers =
 				max_count	= 1,
 				offset_y 	= 0,    
 				entity 	=  "data/entities/props/forcefield_generator.xml",
+			})
+			inject_spawn( g_small_enemies, 0.1, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 3,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/misc/homunculus.xml",
+			})
+			inject_spawn( g_big_enemies, 0.1, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 3,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/misc/homunculus.xml",
 			})
 		end,
 	},

@@ -146,6 +146,16 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 216, "broken_wand_big")
 	end
 end
 
+for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 216, "homunculus")) do
+	-- make sure item is not carried in inventory or wand
+	if EntityGetRootEntity(id) == id then
+		local x,y = EntityGetTransform(id)
+		EntityLoad("data/entities/misc/homunculus.xml", x, y - 2)
+		EntityKill(id)
+		converted = true
+	end
+end
+
 for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 128, "chaos_frankenstein")) do
 	if EntityGetRootEntity(id) == id then
 		-- EntityKill(id)

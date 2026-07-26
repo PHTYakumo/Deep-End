@@ -3,7 +3,152 @@
 CHEST_LEVEL = 3
 dofile_once("data/scripts/director_helpers.lua")
 dofile_once("data/scripts/biome_scripts.lua")
-dofile_once("data/scripts/biome_modifiers.lua")
+dofile_once("data/scripts/items/chest_random.lua")
+
+RegisterSpawnFunction( 0xff55AF8C, "spawn_skulls" )
+RegisterSpawnFunction( 0xffffeedd, "init" )
+RegisterSpawnFunction( 0xff366178, "spawn_teleporter" )
+
+--------------------------------------
+
+g_skulls =
+{
+	total_prob = 0,
+	{
+		prob   		= 6,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= ""
+	},
+	{
+		prob   		= 1.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_skull_01.xml"
+	},
+	{
+		prob   		= 1.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_skull_02.xml"
+	},
+	{
+		prob   		= 1.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_skull_03.xml"
+	},
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_bone_01.xml"
+	},
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_bone_02.xml"
+	},
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_bone_03.xml"
+	},
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_bone_04.xml"
+	},
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_bone_05.xml"
+	},
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_bone_06.xml"
+	},
+}
+
+g_stones =
+{
+	total_prob = 0,
+	{
+		prob   		= 2,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/stonepile.xml"
+	},
+	{
+		prob   		= 1.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_stone_01.xml"
+	},
+	{
+		prob   		= 1.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_stone_02.xml"
+	},
+	{
+		prob   		= 1.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_stone_03.xml"
+	},
+	{
+		prob   		= 1.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_stone_04.xml"
+	},
+	{
+		prob   		= 4,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= ""
+	},
+}
+
+
+--------------------------------------
+
+function init(x, y, w, h)
+	LoadPixelScene( "data/biome_impl/snowcastle/hourglass_chamber.png", "", x, y, "data/biome_impl/snowcastle/hourglass_chamber_background.png", true )
+end
+
+function spawn_skulls(x, y)
+	spawn(g_skulls,x,y,0,0)
+end
+
+function spawn_teleporter(x, y)
+	EntityLoad("data/entities/buildings/teleport_hourglass_return.xml", x, y)
+end
+
+function spawn_shopitem( x, y ) end
 
 RegisterSpawnFunction( 0xffC8C800, "spawn_lamp2" )
 RegisterSpawnFunction( 0xff01a1fa, "spawn_turret" )
@@ -1507,3 +1652,4 @@ end
 function spawn_cook(x, y)
 	EntityLoad( "data/entities/animals/miner_chef.xml", x, y )
 end
+

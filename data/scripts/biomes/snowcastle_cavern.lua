@@ -3,7 +3,7 @@
 CHEST_LEVEL = 3
 dofile_once("data/scripts/director_helpers.lua")
 dofile_once("data/scripts/biome_scripts.lua")
-dofile_once("data/scripts/biome_modifiers.lua")
+dofile( "data/scripts/items/generate_shop_item.lua" )
 
 RegisterSpawnFunction( 0xffC8C800, "spawn_lamp2" )
 RegisterSpawnFunction( 0xff01a1fa, "spawn_turret" )
@@ -42,6 +42,26 @@ RegisterSpawnFunction( 0xfffec390, "load_furniture_bunk" )
 RegisterSpawnFunction( 0xff4c63e0, "spawn_root_grower" )
 RegisterSpawnFunction( 0xff4cacab, "spawn_forge_check" )
 RegisterSpawnFunction( 0xff2a78ff, "spawn_drill_laser" )
+
+RegisterSpawnFunction( 0xff33934c, "spawn_shopitem" )
+RegisterSpawnFunction( 0xffffeedd, "init" )
+RegisterSpawnFunction( 0xff03deaf, "spawn_fish" )
+RegisterSpawnFunction( 0xffff2974, "spawn_hourglass_blood" )
+RegisterSpawnFunction( 0xffff9122, "spawn_hourglass_master" )
+RegisterSpawnFunction( 0xff216bff, "spawn_hourglass_music_trigger" )
+
+------------ ITEMS ------------------------------------------------------------
+
+g_fish =
+{
+	total_prob = 0,
+	{
+		prob   		= 1.0,
+		min_count	= 2,
+		max_count	= 5,    
+		entity 	= "data/entities/animals/fish.xml"
+	},
+}
 
 ------------ SMALL ENEMIES ----------------------------------------------------
 
@@ -1506,4 +1526,38 @@ end
 
 function spawn_cook(x, y)
 	EntityLoad( "data/entities/animals/miner_chef.xml", x, y )
+end
+
+function init(x, y, w, h)
+	-- the pixel scene spawns to left or right by random
+	local is_right = ProceduralRandom(0,0) > 0.5
+
+	-- don't spawn when looping around world to avoid incorrect placement
+	if x > 10000 or x < -10000 then return end
+
+	if is_right and x > 0 then
+		LoadPixelScene( "data/biome_impl/snowcastle/side_cavern_right.png", "data/biome_impl/snowcastle/side_cavern_right_visual.png", x-50, y, "data/biome_impl/snowcastle/side_cavern_right_background.png", true )
+	elseif not is_right and x < 0 then
+		LoadPixelScene( "data/biome_impl/snowcastle/side_cavern_left.png", "data/biome_impl/snowcastle/side_cavern_left_visual.png", x+50, y, "data/biome_impl/snowcastle/side_cavern_left_background.png", true )
+	end
+end
+
+function spawn_shopitem( x, y )
+	generate_shop_item( x, y, false, nil )
+end
+
+function spawn_fish(x, y) spawn(g_fish,x,y,0,0) end
+
+function spawn_hourglass_blood(x, y)
+	EntityLoad( "data/entities/buildings/hourglass_blood.xml", x, y )
+end
+
+function spawn_hourglass_master(x, y)
+	EntityLoad( "data/entities/buildings/hourglass_master.xml", x, y )
+	EntityLoad( "data/entities/buildings/teleport_hourglass.xml", x, y )
+end
+
+function spawn_hourglass_music_trigger(x, y)
+	-- NOTE: this has a separate spawnto keep area symmetrical if scene spawns on the other side
+	EntityLoad( "data/entities/buildings/hourglass_music.xml", x, y )
 end
