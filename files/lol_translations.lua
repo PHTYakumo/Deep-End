@@ -1,5 +1,3 @@
-dofile_once("data/scripts/lib/utilities.lua")
-
 --[[
 
 ******							******					******					******
@@ -30,42 +28,16 @@ dofile_once("data/scripts/lib/utilities.lua")
 
 ]]--
 
--- if you use SPACE in the name of the translation key, the swapper below may cause these translation keys to fail to work properly
-
 function DEEP_END_LOL_TRANSLATIONS( en )
 	local main = "data/translations/common.csv"
-
-	main_content = ModTextFileGetContent( main )
-	ModTextFileSetContent( main, main_content:gsub( [===[ perk]===], [===[ ppeerrkk]===] ) )
-
-	main_content = ModTextFileGetContent( main )
-	ModTextFileSetContent( main, main_content:gsub( [===[ Perk]===], [===[ Ppeerrkk]===] ) )
-
-	main_content = ModTextFileGetContent( main )
-	ModTextFileSetContent( main, main_content:gsub( [===[ curse]===], [===[ pork]===] ) )
-
-	main_content = ModTextFileGetContent( main )
-	ModTextFileSetContent( main, main_content:gsub( [===[ Curse]===], [===[ Pork]===] ) )
-
-	main_content = ModTextFileGetContent( main )
-	ModTextFileSetContent( main, main_content:gsub( [===[ ppeerrkk]===], [===[ curse]===] ) )
-
-	main_content = ModTextFileGetContent( main )
-	ModTextFileSetContent( main, main_content:gsub( [===[ Ppeerrkk]===], [===[ Curse]===] ) )
-
-	main_content = ModTextFileGetContent( main )
-	ModTextFileSetContent( main, main_content:gsub( [===[ second]===], [===[ one sixtieth minute]===] ) )
-
-	main_content = ModTextFileGetContent( main )
-	ModTextFileSetContent( main, main_content:gsub( [===[ Second]===], [===[ One sixtieth minute]===] ) )
-
 	translations = ModTextFileGetContent( "mods/deep_end/files/translations_ex.csv" )
+
 	main_content = ModTextFileGetContent( main )
 	ModTextFileSetContent( main, main_content .. translations )
 	
 	if en then -- everything is in English
 		main_content = ModTextFileGetContent( main )
-		ModTextFileSetContent( main, main_content:gsub( [===[,,,,,,,,]===], [===[,,,,,,,,,,,,,,,,,,,,,,,,]===] ) )
+		ModTextFileSetContent( main, main_content:gsub( [===[,[\u4e00-\u9fa5]{0,},]===], [===[,,]===] ) )
 	else
 		main_content = ModTextFileGetContent( main )
 		ModTextFileSetContent( main, main_content:gsub( [===[秒]===], [===[六十分之一分钟]===] ) )

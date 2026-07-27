@@ -36,7 +36,7 @@
 			drill="0.0"
 			slice="0.3"
 			fire="0.0"
-			explosion="-0.1"
+			explosion="0"
 			electricity="0.1"
 			melee="0.0"
 			>

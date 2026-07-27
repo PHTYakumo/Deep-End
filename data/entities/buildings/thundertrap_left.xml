@@ -35,7 +35,7 @@
 		<damage_multipliers
 			drill="0.4"
 			fire="0.0"
-			explosion="0.2"
+			explosion="0.0"
 			electricity="0.0"
 			>
 		</damage_multipliers>

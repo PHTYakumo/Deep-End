@@ -35,7 +35,7 @@
 		<damage_multipliers
 			drill="0.3"
 			slice="0.0"
-			fire="0.0"
+			fire="0.1"
 			explosion="0.3"
 			melee="0.0"
 			>

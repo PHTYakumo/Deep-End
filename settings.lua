@@ -206,7 +206,7 @@ if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 		},
 		{
 			category_id = "LOL_SETTING",
-			ui_name = "其他设置",
+			ui_name = "杂项设置",
 			foldable = true,
 			_folded = true,
 			settings = {
