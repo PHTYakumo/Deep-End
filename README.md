@@ -9,11 +9,11 @@ Update synchronously on the [Steam Workshop](https://steamcommunity.com/sharedfi
 - Check the filepath, the path of the file called ***mod.xml*** should be: ``mods\deep_end\mod.xml``
 
 # Play the mod
-- "Deep End" need to be enabled ***manually*** in the ***Mod List***.
- - ~~It was an optional game mode in the past version~~
-- Please ensure that "Deep End" is enabled ***before*** creating a new game,
+"Deep End" need to be enabled ***manually*** in the ***Mod List***.
+- ~~It was an optional game mode in the past version~~
+Please ensure that "Deep End" is enabled ***before*** creating a new game,
  - And do not change its enabled status during this game.
-- ***Compatibility:***
- - "Deep End" is ***compatible*** with most ***qol*** mods.
- - But has poor compatibility with mods that have a significant impact on gameplay.
- - If you insist on enabling these mods, please place "Deep End" ***above*** them in the ***Mod List***.
+**Compatibility:**
+- "Deep End" is ***compatible*** with most ***qol*** mods.
+- But has poor compatibility with mods that have a significant impact on gameplay.
+- If you insist on enabling these mods, please place "Deep End" ***above*** them in the ***Mod List***.
