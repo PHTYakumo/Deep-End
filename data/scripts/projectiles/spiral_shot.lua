@@ -1,34 +1,18 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
-local entity_id    = GetUpdatedEntityID()
-local pos_x, pos_y = EntityGetTransform( entity_id )
-local length = 8
+local entity_id = GetUpdatedEntityID()
+local x, y = EntityGetTransform( entity_id )
+local len, minl = 6, 3
 
-local c = EntityGetAllChildren( entity_id )
+local c = EntityGetAllChildren( entity_id, "spiral_part" )
 
-if ( c ~= nil ) then
-	for i,v in ipairs( c ) do
-		if EntityHasTag( v, "spiral_part" ) then
-			local comp = EntityGetFirstComponent( v, "VariableStorageComponent", "theta" )
-			if ( comp ~= nil ) then
-				local theta = ComponentGetValue2( comp, "value_float" )
-				
-				if ( theta ~= nil ) then
-					local x, y = EntityGetTransform( v )
-
-					length = math.min( theta * 0.4 + length * 0.6, length )
-					length = length + 3 * ( math.sin( theta * 1.7 ) )
-					
-					local new_x = pos_x + math.cos( theta ) * length
-					local new_y = pos_y + math.sin( theta ) * length
-					
-					EntitySetTransform( v, new_x, new_y )
-					EntityApplyTransform( v, new_x, new_y )
-					
-					theta = theta + 0.08
-					ComponentSetValue2( comp, "value_float", theta )
-				end
-			end
-		end
-	end
-end
+if c ~= nil then if #c > 0 then for i=1,#c do
+	local circle = math.pi * 2
+	local dir =  circle * i / #c + GameGetFrameNum() * 0.015
+	
+	local nx = x + math.cos( dir ) * ( math.sin( 2 * dir )^2 * 12 - 4 )
+	local ny = y + math.sin( dir ) * ( math.sin( 2 * dir )^2 * 12 - 4 )
+	
+	EntitySetTransform( c[i], nx, ny )
+	EntityApplyTransform( c[i], nx, ny )
+end end end

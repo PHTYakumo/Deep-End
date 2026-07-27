@@ -17,7 +17,7 @@ for i=1,#players do if not IsInvisible( players[i] ) then
 		EntityAddTag( players[i], "speed_run_complete_in_deep_end" )
 
 		GamePrintImportant( "$flee_boss_centipede_3", "$flee_boss_centipede_4" )
-	elseif dis > 2000 and not EntityHasTag( players[i], "speed_runner_in_deep_end" ) then
+	elseif dis > 1000 and not EntityHasTag( players[i], "speed_runner_in_deep_end" ) then
 		EntitySetTransform( players[i], 3400, 40150 )
 		EntityApplyTransform( players[i], 3400, 40150 )
 		

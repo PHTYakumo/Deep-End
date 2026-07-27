@@ -60,7 +60,7 @@ function init_boss()
 		else boss_hp = math.max ( boss_hp / ( 1.25^( -orbcount ) ), 0.04 ) end
 
 		-- orbs boost damage resistances
-		local damagemodel_comp = EntityGetFirstComponent( entity, "DamageModelComponent" )
+		local damagemodel_comp = EntityGetFirstComponentIncludingDisabled( entity, "DamageModelComponent" )
 
 		if damagemodel_comp ~= nil then
 			ComponentSetValue2( damagemodel_comp, "max_hp", boss_hp ) 
@@ -326,17 +326,15 @@ function phase_aggro()
 
 	-- circle shots to random directions
 	local shot_count = clamp( 12 + math.floor(orbcount / 3), 1, 25 )
-
 	local frame = GameGetFrameNum()
+
 	for i=1,shot_count do
+		boss_wait(30-i)
 		circleshot_aggro()
-		boss_wait(12)
 	end
 	
-	boss_wait(5)
 	explosion_attack()
-
-	boss_wait(5)
+	boss_wait(10)
 
 	set_logic_state( states.FollowPlayer )
 	next_phase()
@@ -386,7 +384,7 @@ function next_phase()
 			-- do a melee attack
 			phase = phase_melee
 			phase_repeats = 0
-		elseif dist < 700 then -- use attack phases
+		elseif dist < 400 then -- use attack phases
 			-- see if phase has repeats queued before picking a new one
 			if phase_repeats > 0 then
 				phase_repeats = phase_repeats - 1
@@ -411,17 +409,15 @@ function next_phase()
 		end
 		
 		-- If player is way too far, boss assumes they have left the arena entirely and sets up phase 2
-		if dist > 2000 and boss_chase == 0 then
+		if dist > 700 and boss_chase == 0 then
 			boss_chase = 1
 
-			--[[
 			local celleater = EntityGetFirstComponent( GetUpdatedEntityID(), "CellEaterComponent" )
 		
 			if celleater ~= nil then
 				ComponentSetValue2( celleater, "eat_probability", 100 )
 				ComponentSetValue2( celleater, "radius", 64 )
 			end
-			]]--
 
 			set_force_coeff_mult(5)
 			phase = phase_chase_direct
@@ -436,17 +432,22 @@ function circleshot(angle)
 	local this         = GetUpdatedEntityID()
 	local pos_x, pos_y = EntityGetTransform( this )
 
-	local branches = 2 * clamp( 4 + orbcount - phase_repeats, 3, 12 )
+	local branches = 3 * clamp( 4 + orbcount - phase_repeats, 3, 12 )
 	local space = math.floor(3600 / branches) * 0.1
-	local speed = 45
+	local speed = 70
 	
 	-- spawn projectiles on each branch
 	for i=1,branches do
 		local vel_x = math.cos( math.rad(angle) ) * speed
 		local vel_y = math.sin( math.rad(angle) ) * speed
-		shoot_projectile( this, "data/entities/animals/boss_centipede/orb_boss_limbs.xml", pos_x, pos_y, vel_x*1.25, vel_y*1.25 )
-		shoot_projectile( this, "data/entities/animals/boss_centipede/orb_green_accelerating.xml", pos_x, pos_y, vel_x, vel_y )
-		if (i % 2 == 1 ) then shoot_projectile( this, "data/entities/animals/boss_centipede/orb_green_boss_dragon.xml", pos_x, pos_y, -vel_x, -vel_y ) end
+		if phase_repeats % 2 == 0 then
+			shoot_projectile( this, "data/entities/animals/boss_centipede/orb_boss_limbs.xml", pos_x, pos_y, vel_x, vel_y )
+		else
+			shoot_projectile( this, "data/entities/animals/boss_centipede/orb_green_accelerating.xml", pos_x, pos_y, vel_x, vel_y )
+		end
+		if i % 3 == 1 then
+			shoot_projectile( this, "data/entities/animals/boss_centipede/orb_green_boss_dragon.xml", pos_x, pos_y, -vel_x, -vel_y )
+		end
 		angle = angle + space
 	end
 
@@ -472,7 +473,7 @@ function circleshot_aggro()
 		shoot_projectile( this, "data/entities/projectiles/orb_green_boss_dragon.xml", pos_x, pos_y, vel_x*1.25, vel_y*1.25 )
 		shoot_projectile( this, "data/entities/projectiles/orb_pink_big_super_shrapnel.xml", pos_x, pos_y, -vel_y, vel_x )
 		shoot_projectile( this, "data/entities/animals/boss_centipede/orb_circleshot.xml", pos_x, pos_y, vel_y, -vel_x )
-		if ( i % 2 == 0 ) then shoot_projectile( this, "data/entities/animals/boss_limbs/orb_pink_big.xml", pos_x, pos_y, -vel_x, -vel_y ) end
+		if ( i % 4 == 3 ) then shoot_projectile( this, "data/entities/animals/boss_limbs/orb_pink_big.xml", pos_x, pos_y, -vel_x*0.25, -vel_y*0.25 ) end
 		speed = speed + 20 * (-1)^i
 	end
 
@@ -521,7 +522,7 @@ function firepillar()
 	local this         = GetUpdatedEntityID()
 	local pos_x, pos_y = EntityGetTransform( this )
 
-	local amount = 3 * clamp( 9 + orbcount - phase_repeats, 3, 9 )
+	local amount = 3 * clamp( 5 + orbcount - phase_repeats, 4, 12 )
 	local space  = math.floor(240 / amount)
 	local speed  = 240
 	local angle  = space * 0.5
@@ -531,7 +532,9 @@ function firepillar()
 		local vel_y = math.sin( math.rad(angle) ) * speed
 		vel_y = vel_y - 200
 		shoot_projectile( this, "data/entities/animals/boss_centipede/laser_bouncy.xml", pos_x, pos_y, vel_x, vel_y )
-		if ( i % 3 == 0 ) then shoot_projectile( this, "data/entities/animals/boss_centipede/rocket_tank.xml", pos_x, pos_y, vel_x, vel_y ) end
+		if i % 2 ~= phase_repeats % 2 then
+			shoot_projectile( this, "data/entities/animals/boss_centipede/rocket_tank.xml", pos_x, pos_y, vel_x * 0.5, -vel_y * 0.5 )
+		end
 		angle = angle + space
 	end
 
@@ -560,7 +563,7 @@ function clear_materials()
 	
 	shoot_projectile( this, "data/entities/animals/boss_centipede/clear_materials.xml", pos_x, pos_y, 0, 0 )
 
-	local amount = clamp( 6 + orbcount - phase_repeats * 2, 3, 24 )
+	local amount = clamp( 6 + orbcount - phase_repeats * 2, 3, 12 )
 	local space  = math.floor(360 / amount)
 	local speed  = 30
 	local angle  = space * 0.5
@@ -568,14 +571,13 @@ function clear_materials()
 	for i=1,amount do
 		local vel_x = math.cos( math.rad(angle) ) * speed
 		local vel_y = math.sin( math.rad(angle) ) * speed
-		vel_y = vel_y - 200
 		shoot_projectile( this, "data/entities/animals/boss_centipede/orb_homing.xml", pos_x, pos_y, vel_x, vel_y )
 		angle = angle + space
 	end
 end
 
 function minion_check_maxcount()
-	return #EntityGetWithTag("boss_centipede_minion") > 3
+	return #EntityGetWithTag("boss_centipede_minion") >= 3
 end
 
 function spawn_minion()

@@ -14,6 +14,9 @@ for i=1,#entities do if not EntityHasTag( entities[i], "robot_egg_boosted" ) the
 	local acomp = EntityGetFirstComponent( entities[i], "AnimalAIComponent" )
 	if acomp ~= nil then ComponentSetValue2( acomp, "dont_counter_attack_own_herd", true ) end
 
+	local acomp = EntityGetFirstComponent( entities[i], "GenomeDataComponent" )
+	if acomp ~= nil then ComponentSetValue2( acomp, "berserk_dont_attack_friends", true ) end
+
 	local dcomp = EntityGetFirstComponent( entities[i], "DamageModelComponent" )
 	if dcomp ~= nil then ComponentSetValue2( dcomp, "blood_multiplier", 0.0001 ) end
 

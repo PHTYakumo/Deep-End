@@ -2161,7 +2161,7 @@ local de_actions_recompose =
 		spawn_level                       = "4,5,6", -- SPIRAL_SHOT
 		spawn_probability                 = "0.7,0.8,0.7", -- SPIRAL_SHOT
 		price = 190,
-		mana = 48,
+		mana = 72,
 		max_uses    = 24, 
 		custom_xml_file = "data/entities/misc/custom_cards/spiral_shot.xml",
 		action 		= function()
@@ -2762,7 +2762,7 @@ local de_actions_recompose =
 		spawn_level                       = "3,5,6", -- DARKFLAME
 		spawn_probability                 = "1,0.9,0.8", -- DARKFLAME
 		price = 180,
-		mana = 72,
+		mana = 48,
 		custom_xml_file = "data/entities/misc/custom_cards/darkflame.xml",
 		max_uses    = 48, 
 		action 		= function()
@@ -6400,7 +6400,7 @@ local de_actions_recompose =
 			local entity_id = GetUpdatedEntityID()
 			local dcomp = EntityGetFirstComponent( entity_id, "DamageModelComponent" )
 			
-			if ( dcomp ~= nil ) then
+			if dcomp ~= nil and GameGetFrameNum() > 10 then
 				local hp = ComponentGetValue2( dcomp, "hp" )
 				local damage = hp * 50
 				local self_damage = hp * 0.2
@@ -6482,7 +6482,7 @@ local de_actions_recompose =
 		action 		= function()
 			local entity_id = GetUpdatedEntityID()
 
-			if ( entity_id ~= nil ) and ( entity_id ~= NULL_ENTITY ) then
+			if entity_id ~= nil and entity_id ~= NULL_ENTITY and GameGetFrameNum() > 10 then
 				local x,y = EntityGetTransform( entity_id )
 				local childs = EntityGetAllChildren( entity_id )
 
@@ -7349,7 +7349,7 @@ local de_actions_recompose =
 			local result = 0
 			result = math.max( c.damage_projectile_add + 0.2 * multiplier, -0.4 )
 
-			if GameGetFrameNum() > 60 then
+			if GameGetFrameNum() > 10 then
 				c.damage_projectile_add = result
 			else -- display the average damage
 				c.damage_projectile_add = c.damage_projectile_add + 0.4
@@ -8123,7 +8123,7 @@ local de_actions_recompose =
 			rnd_b = rnd_b + 0.8 * Random( -4, 7 ) * Random( 0, 13 )
 			rnd_c = rnd_c + 0.2 * Random( -4, 7 )
 
-			if GameGetFrameNum() > 60 then -- display the average damage
+			if GameGetFrameNum() > 10 then -- display the average damage
 				c.damage_slice_add = c.damage_slice_add + 0.01 * rnd_a
 				c.damage_drill_add = c.damage_drill_add + 0.01 * rnd_b
 				c.damage_melee_add = c.damage_melee_add + 0.01 * rnd_c
@@ -10297,7 +10297,7 @@ local de_actions_recompose =
 		action 		= function()
 			local entity_id, eid = GetUpdatedEntityID(), nil
 
-			if entity_id ~= nil and entity_id ~= NULL_ENTITY then
+			if entity_id ~= nil and entity_id ~= NULL_ENTITY and GameGetFrameNum() > 10 then
 				local px, py = EntityGetTransform( entity_id )
 
 				if EntityHasTag( entity_id, "de_effect_charge" ) then
@@ -10307,10 +10307,10 @@ local de_actions_recompose =
 
 					EntityAddTag( entity_id, "de_effect_charge" )
 				end
+
 				EntityAddChild( entity_id, eid )
+				add_projectile("data/entities/misc/mana_from_spell_short.xml")
 			end
-			
-			add_projectile("data/entities/misc/mana_from_spell_short.xml")
 
 			if GameGetFrameNum() < 60 then
 				c.fire_rate_wait = c.fire_rate_wait + 20
@@ -10340,7 +10340,7 @@ local de_actions_recompose =
 		action 		= function()
 			local entity_id, eid = GetUpdatedEntityID(), nil
 
-			if entity_id ~= nil and entity_id ~= NULL_ENTITY then
+			if entity_id ~= nil and entity_id ~= NULL_ENTITY and GameGetFrameNum() > 10 then
 				local px, py = EntityGetTransform( entity_id )
 
 				if EntityHasTag( entity_id, "de_effect_cannon" ) then
@@ -10377,7 +10377,7 @@ local de_actions_recompose =
 		action 		= function()
 			local entity_id = GetUpdatedEntityID()
 
-			if ( entity_id ~= nil ) and ( entity_id ~= NULL_ENTITY ) then
+			if entity_id ~= nil and entity_id ~= NULL_ENTITY and GameGetFrameNum() > 10 then
 				local px, py = EntityGetTransform( entity_id )
     			EntityAddChild( entity_id, EntityLoad( "data/entities/misc/cape_purification.xml", px, py ) )
 			end
@@ -11436,7 +11436,7 @@ local de_actions_recompose =
 				safety = safety + 1
 			end
 
-			if safety < 100 or ( data.id ~= "RANDOM_SPELL" and data.id ~= "DE_RESET_ALL" ) then data.action( rec )
+			if safety < 100 or ( data.id ~= "RANDOM_SPELL" and data.id ~= "ALL_SPELLS" and data.id ~= "DE_RESET_ALL" ) then data.action( rec )
 			else EntityKill( GetUpdatedEntityID() ) end
 			
 			if safety > 0 then c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/dmg_type_conversion.xml," ) end

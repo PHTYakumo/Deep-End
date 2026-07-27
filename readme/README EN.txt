@@ -1,4 +1,4 @@
-[b]This mod provides a new optional game-mode with multiplying the depth of the standard dungeon to 40000![/b]
+[b]This mod provides new game maps with multiplying the depth of the vanilla dungeon to 40000![/b]
 
 There are seven holy-mountains and the final laboratory And after that.... challenging the lunatically enhanced boss Kolmisilmä!
 

@@ -8,6 +8,7 @@
 			gravity_y="0"
 			mass="0.04"
       liquid_drag="0"
+      terminal_velocity="512"
 		>
 	</VelocityComponent>
 	</Base>
@@ -26,7 +27,7 @@
     explosion_dont_damage_shooter="1" 
     on_collision_die="1"
 	  die_on_liquid_collision="0"
-    lifetime="250"
+    lifetime="175"
     damage="0.12"
     lifetime_randomness="7"
     ragdoll_force_multiplier="0.01"
@@ -35,7 +36,7 @@
     shoot_light_flash_radius="180"
 	  go_through_this_material="gem_box2d"
     dont_collide_with_tag="boss_centipede_minion"
-    bounces_left="20"
+    bounces_left="12"
 	  bounce_always="1"
 	  bounce_energy="0.9"
 	  muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_laser.xml"

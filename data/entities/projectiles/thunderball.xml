@@ -4,11 +4,11 @@
 
 	<Base file="data/entities/base_projectile.xml" >
 		<VelocityComponent
-    		gravity_y="0"
+    	gravity_y="0"
 			air_friction="-1"
 			mass="0.9"
 			>
-    	</VelocityComponent> 
+    </VelocityComponent> 
 	</Base>
 
   <ProjectileComponent 
@@ -36,43 +36,43 @@
     bounce_always="1"
     bounces_left="6"
     bounce_energy="0.9"
-    ><damage_by_type 
-		  electricity="1.5" 
-    ></damage_by_type
-    ><config_explosion
-      never_cache="1" 
-      camera_shake="30.5" 
-      explosion_radius="50" 
-      explosion_sprite="data/particles/explosion_032_electric.xml"
-	    load_this_entity="data/entities/particles/particle_explosion/main_blue.xml,data/entities/misc/explosion_was_here.xml"
-      explosion_sprite_lifetime="0.0" 
-      create_cell_probability="4" 
-      create_cell_material="plasma_fading" 
-	    explosion_sprite_emissive="1"
-	    explosion_sprite_additive="1"
-	    ray_energy="700000"
-      hole_destroy_liquid="1" 
-      hole_enabled="1" 
-	    damage="1.8"
-      hole_image="data/temp/explosion_hole.png" 
-      particle_effect="0" 
-      damage_mortals="1" 
-	    physics_explosion_power.min="1.5"
-      physics_explosion_power.max="2.6" 
-	    physics_throw_enabled="1"
-      shake_vegetation="1"  
-      sparks_enabled="1" 
-      sparks_count_max="15" 
-      sparks_count_min="30"
-	    spark_material="spark_blue"
-      light_fade_time="1.2" 
-	    light_r="45"
-	    light_g="120"
-      light_b="150"
-      stains_enabled="1" 
-      stains_image="data/temp/explosion_stain.png"
-      audio_event_name="explosions/electric" >
-    </config_explosion>
+  ><damage_by_type 
+    electricity="1.5" 
+  ></damage_by_type
+  ><config_explosion
+    never_cache="1" 
+    camera_shake="30.5" 
+    explosion_radius="50" 
+    explosion_sprite="data/particles/explosion_032_electric.xml"
+    load_this_entity="data/entities/particles/particle_explosion/main_blue.xml,data/entities/misc/explosion_was_here.xml"
+    explosion_sprite_lifetime="0.0" 
+    create_cell_probability="4" 
+    create_cell_material="plasma_fading" 
+    explosion_sprite_emissive="1"
+    explosion_sprite_additive="1"
+    ray_energy="700000"
+    hole_destroy_liquid="1" 
+    hole_enabled="1" 
+    damage="1.8"
+    hole_image="data/temp/explosion_hole.png" 
+    particle_effect="0" 
+    damage_mortals="1" 
+    physics_explosion_power.min="1.5"
+    physics_explosion_power.max="2.6" 
+    physics_throw_enabled="1"
+    shake_vegetation="1"  
+    sparks_enabled="1" 
+    sparks_count_max="15" 
+    sparks_count_min="30"
+    spark_material="spark_blue"
+    light_fade_time="1.2" 
+    light_r="45"
+    light_g="120"
+    light_b="150"
+    stains_enabled="1" 
+    stains_image="data/temp/explosion_stain.png"
+    audio_event_name="explosions/electric" >
+  </config_explosion>
   </ProjectileComponent>
   
   <SpriteComponent 
@@ -126,9 +126,9 @@
   </AudioComponent>
 
   <AudioLoopComponent
-      file="data/audio/Desktop/projectiles.bank"
-      event_name="projectiles/electric/loop"
-      auto_play="1">
+    file="data/audio/Desktop/projectiles.bank"
+    event_name="projectiles/electric/loop"
+    auto_play="1">
   </AudioLoopComponent>
   
 	<VariableStorageComponent

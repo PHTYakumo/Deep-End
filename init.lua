@@ -720,43 +720,10 @@ if hah_amount > 1 then ModLuaFileAppend( "data/scripts/director_helpers.lua", "m
 
 -- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< other >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< --
 
---[[
-
-******							******					******					******
-******							******					******					******
-******							******					******					******
-******							******					******					******
-******							******											******
-******							******											******
-******							******					******					******
-******							******					******					******
-******							******					******					******
-******							******					******					******
-******							******					******					******
-**************************************					******					******
-**************************************					******					******
-**************************************					******					******
-******							******					******					******
-******							******					******					******
-******							******					******					******
-******							******					******					******
-******							******					******					******
-******							******					******
-******							******					******
-******							******					******					******
-******							******					******					******
-******							******					******					******
-******							******					******					******
-
-]]--
-
--- steal from @Shug
-local content = ModTextFileGetContent( "data/entities/buildings/workshop.xml" )
+local content = ModTextFileGetContent( "data/entities/buildings/workshop.xml" ) -- steal from @Shug
 ModTextFileSetContent( "data/entities/buildings/workshop.xml", content:gsub( ",workshop_untouched", "" ) )
-
--- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< crazy texts >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< --
 
 dofile_once("mods/deep_end/files/lol_translations.lua")
 
-local tmt = ModIsEnabled("noita.fairmod") or ModIsEnabled("evaisa.tmtrainer") -- the translation of perks will crash the game
-if ModSettingGet( "DEEP_END.LOL_TRANS" ) or tmt then DEEP_END_LOL_TRANSLATIONS( tmt ) end -- so I have to do something
+local en = ModIsEnabled("noita.fairmod") or ModIsEnabled("evaisa.tmtrainer") -- cjk translation of perks may crash the game
+if ModSettingGet( "DEEP_END.LOL_TRANS" ) or en then DEEP_END_LOL_TRANSLATIONS( en ) end

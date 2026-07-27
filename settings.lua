@@ -1,12 +1,10 @@
 dofile_once("data/scripts/lib/mod_settings.lua")
 
 local mod_id = "DEEP_END"
-local language = GameTextGet( "$current_language" )
 mod_settings_version = 1
 
-
 function mod_setting_warning(mod_id, gui, in_main_menu, im_id, setting)
-    GuiColorSetForNextWidget(gui, 1.0, 0.4, 0.4, 1.0)
+    GuiColorSetForNextWidget(gui, 1.0, 0.1, 0.0, 0.9)
     GuiText(gui, mod_setting_group_x_offset, 0, setting.ui_name .. ": " .. setting.ui_description)
 end
 
@@ -23,6 +21,8 @@ function ModSettingsGui( gui, in_main_menu )
 	mod_settings_gui( mod_id, mod_settings, gui, in_main_menu )
 end
 
+local language = GameTextGet( "$current_language" )
+
 if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 	mod_settings = 
 	{
@@ -35,14 +35,6 @@ if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 			scope = MOD_SETTING_SCOPE_NEW_GAME,
 		},
 		{
-			id = "NIGHTMARE_END",
-			ui_name = "简易结局演出",
-			ui_description =
-			"\n   简化完成游戏的动画效果 (可降低卡顿)",
-			value_default = true,
-			scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
-		},
-		{
 			id = "NOT_AUTO_PICK_UP",
 			ui_name = "不再自动拾取完全回复和法术刷新",
 			ui_description = 
@@ -51,43 +43,19 @@ if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 			scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
 		},
 		{
-			id = "MEAT_HEAL",
-			ui_name = "温和的肉界",
+			ui_fn = mod_setting_warning,
+			ui_name = "警告",
 			ui_description =
-			"\n   取消肉界的禁疗诅咒!?",
-			value_default = true,
-			scope = MOD_SETTING_SCOPE_NEW_GAME,
-		},
-		{
-			id = "BOSS_GUIDE",
-			ui_name = "Boss承伤信息",
-			ui_description =
-			"\n   在部分Boss的头顶显示承伤信息",
-			value_default = true,
-			scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
-		},
-		{
-			category_id = "WARNING",
-			ui_name = "!!!",
-			foldable = true,
-			_folded = false,
-			settings = {
-				{
-					ui_fn = mod_setting_warning,
-					ui_name = "警告",
-					ui_description =
-					"\n   如果语言选项不使用官中 部分文本可能会没有中文翻译" ..
-					"\n   推荐将设置里的装饰粒子数量和画面震动强度分别设置为20%和小于15" ..
-					"\n   (不然卡了不怪我)",
-					not_setting = true,
-				}
-			},
+			"\n   如果语言选项不使用官中 部分文本可能会没有中文翻译" ..
+			"\n   推荐将设置里的装饰粒子数量和画面震动强度分别设置为20%和小于15" ..
+			"\n   (不然卡了不怪我)",
+			not_setting = true,
 		},
 		{
 			category_id = "MAP_SETTING",
 			ui_name = "QOL设置",
 			foldable = true,
-			_folded = false,
+			_folded = true,
 			settings = {
 				{
 					id = "QOL_KEY_1",
@@ -117,13 +85,21 @@ if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 					value_default = "",
 					scope = MOD_SETTING_SCOPE_RUNTIME,
 				},
+				{
+					id = "BOSS_GUIDE",
+					ui_name = "Boss承伤信息",
+					ui_description =
+					"\n   在部分Boss的头顶显示承伤信息",
+					value_default = true,
+					scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
+				},
 			},
 		},
 		{
 			category_id = "POWER_SETTING",
-			ui_name = "能力与玩法设置",
+			ui_name = "玩法设置",
 			foldable = true,
-			_folded = false,
+			_folded = true,
 			settings = {
 				{
 					id = "MAP_TYPE",
@@ -173,6 +149,22 @@ if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 					value_display_formatting = " $0/40 ",
 					scope = MOD_SETTING_SCOPE_NEW_GAME,
 				},
+			},
+		},
+		{
+			category_id = "MONSTER_SETTING",
+			ui_name = "敌人设置",
+			foldable = true,
+			_folded = true,
+			settings = {
+				{
+					id = "MEAT_HEAL",
+					ui_name = "温和的肉界",
+					ui_description =
+					"\n   取消肉界的禁疗诅咒!?",
+					value_default = true,
+					scope = MOD_SETTING_SCOPE_NEW_GAME,
+				},
 				{
 					id = "HELL_AND_HELL_HP",
 					ui_name = "敌人额外血量倍率",
@@ -216,7 +208,7 @@ if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 			category_id = "LOL_SETTING",
 			ui_name = "其他设置",
 			foldable = true,
-			_folded = false,
+			_folded = true,
 			settings = {
 				{
 					id = "BIOME_MODIFIER",
@@ -239,6 +231,14 @@ if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 					scope = MOD_SETTING_SCOPE_NEW_GAME,
 				},
 				{
+					id = "NIGHTMARE_END",
+					ui_name = "简易结局演出",
+					ui_description =
+					"\n   简化完成游戏的动画效果 (可降低卡顿)",
+					value_default = true,
+					scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
+				},
+				{
 					id = "LOL_TRANS",
 					ui_name = "害人汉化?",
 					ui_description = 
@@ -250,9 +250,9 @@ if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 		},
 		{
 			category_id = "DASH_SETTING",
-			ui_name = "冲刺天赋设置",
+			ui_name = "位移设置",
 			foldable = true,
-			_folded = false,
+			_folded = true,
 			settings = {
 				{
 					id = "ALWAYS_CAN_DASH",
@@ -320,14 +320,6 @@ else
 			scope = MOD_SETTING_SCOPE_NEW_GAME,
 		},
 		{
-			id = "NIGHTMARE_END",
-			ui_name = "Simple ending performance",
-			ui_description =
-			"\n   Simplify the death effect ( reduce lag )",
-			value_default = true,
-			scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
-		},
-		{
 			id = "NOT_AUTO_PICK_UP",
 			ui_name = "Pick up Full-Hp and Spell-Refresh manually",
 			ui_description = 
@@ -336,42 +328,18 @@ else
 			scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
 		},
 		{
-			id = "MEAT_HEAL",
-			ui_name = "Milder Meat Realm",
+			ui_fn = mod_setting_warning,
+			ui_name = "Attention",
 			ui_description = 
-			"\n   Healable in Meat Realm even without defeating the boss there!?",
-			value_default = true,
-			scope = MOD_SETTING_SCOPE_NEW_GAME,
-		},
-		{
-			id = "BOSS_GUIDE",
-			ui_name = "Boss damage-multipliers information",
-			ui_description =
-			"\n   Display damage-multipliers information on the heads of some Bosses",
-			value_default = true,
-			scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
-		},
-		{
-			category_id = "WARNING",
-			ui_name = "!!!",
-			foldable = true,
-			_folded = false,
-			settings = {
-				{
-					ui_fn = mod_setting_warning,
-					ui_name = "Attention",
-					ui_description = 
-					"\n   Setting Cosmetic-particle-amount below 20% and Screen-shake-intensity" ..
-					"\n   below 15 is recommended. ( to avoid the game stuck )",
-					not_setting = true,
-				}
-			},
+			"\n   Setting Cosmetic-particle-amount below 20% and Screen-shake-intensity" ..
+			"\n   below 15 is recommended. ( to avoid the game stuck )",
+			not_setting = true,
 		},
 		{
 			category_id = "MAP_SETTING",
 			ui_name = "QOL settings",
 			foldable = true,
-			_folded = false,
+			_folded = true,
 			settings = {
 				{
 					id = "QOL_KEY_1",
@@ -402,13 +370,21 @@ else
 					value_default = "",
 					scope = MOD_SETTING_SCOPE_RUNTIME,
 				},
+				{
+					id = "BOSS_GUIDE",
+					ui_name = "Boss damage-multipliers information",
+					ui_description =
+					"\n   Display damage-multipliers information on the heads of some Bosses",
+					value_default = true,
+					scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
+				},
 			},
 		},
 		{
 			category_id = "POWER_SETTING",
-			ui_name = "Ability settings",
+			ui_name = "Gameplay settings",
 			foldable = true,
-			_folded = false,
+			_folded = true,
 			settings = {
 				{
 					id = "MAP_TYPE",
@@ -456,6 +432,22 @@ else
 					value_max = 41,
 					value_display_multiplier = 1,
 					value_display_formatting = " $0/40 ",
+					scope = MOD_SETTING_SCOPE_NEW_GAME,
+				},
+			},
+		},
+		{
+			category_id = "MONSTER_SETTING",
+			ui_name = "Monster settings",
+			foldable = true,
+			_folded = true,
+			settings = {
+				{
+					id = "MEAT_HEAL",
+					ui_name = "Milder Meat Realm",
+					ui_description = 
+					"\n   Healable in Meat Realm even without defeating the boss there!?",
+					value_default = true,
 					scope = MOD_SETTING_SCOPE_NEW_GAME,
 				},
 				{
@@ -512,7 +504,7 @@ else
 			category_id = "LOL_SETTING",
 			ui_name = "Scene settings",
 			foldable = true,
-			_folded = false,
+			_folded = true,
 			settings = {
 				{
 					id = "BIOME_MODIFIER",
@@ -535,6 +527,14 @@ else
 					scope = MOD_SETTING_SCOPE_NEW_GAME,
 				},
 				{
+					id = "NIGHTMARE_END",
+					ui_name = "Simple ending performance",
+					ui_description =
+					"\n   Simplify the death effect ( reduce lag )",
+					value_default = true,
+					scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
+				},
+				{
 					id = "LOL_TRANS",
 					ui_name = "Chaotic translations",
 					ui_description = 
@@ -546,13 +546,13 @@ else
 		},
 		{
 			category_id = "DASH_SETTING",
-			ui_name = "How-to-dash perk settings",
+			ui_name = "Movement settings",
 			foldable = true,
-			_folded = false,
+			_folded = true,
 			settings = {
 				{
 					id = "ALWAYS_CAN_DASH",
-					ui_name = "Get HOW-TO-DASH immediately",
+					ui_name = "Get DASH perk immediately",
 					ui_description = 
 					"\n   Instead of picking at starting point.",
 					value_default = false,

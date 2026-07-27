@@ -29,7 +29,7 @@
 		on_collision_die="0"
 		collide_with_world="0"
 		penetrate_world_velocity_coeff="1"
-		damage_every_x_frames="1"
+		damage_every_x_frames="60"
 		never_hit_player="1"
 		lifetime="28"
 		damage="0"
