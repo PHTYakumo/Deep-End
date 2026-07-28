@@ -8,4 +8,8 @@
 		remove_after_executed="1"
 	></LuaComponent>
 
+	<LifetimeComponent
+		lifetime="10" >
+	</LifetimeComponent>
+
 </Entity>

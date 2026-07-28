@@ -3265,7 +3265,7 @@ de_perk_list_recompose =
 		usable_by_enemies = false,
 		func = function( entity_perk_item, entity_who_picked, item_name )
 			local x, y = EntityGetTransform( entity_who_picked )
-			EntityAddChild( entity_who_picked, EntityLoad( "data/entities/misc/what_is_this/de_perk_duplicater.xml", x, y ) )
+			EntityLoad( "data/entities/misc/what_is_this/de_perk_duplicater.xml", x, y )
 		end,	-- "damage_multipliers" will not be reset, so it is very powerful in some cases
 	},
 	--[[

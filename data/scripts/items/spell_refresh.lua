@@ -9,6 +9,7 @@ function item_pickup( entity_item, entity_who_picked, name )
 	if EntityHasTag( entity_who_picked, "player_unit" ) then
 		GamePrintImportant( "$itemtitle_spell_refresh", "$itemdesc_spell_refresh" )
 		GameRegenItemActionsInPlayer( entity_who_picked )
-		EntityKill( entity_item )
 	end
+
+	EntityKill( entity_item )
 end

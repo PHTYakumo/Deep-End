@@ -33,7 +33,9 @@ function on_open( entity_item )
 		end
 	else
 		local players = EntityGetWithTag( "player_unit" )
-		if #players > 0 then LoadGameEffectEntityTo( players[1], "data/entities/misc/effect_polymorph_random.xml" ) end
+		if #players > 0 then for i=1,#players do
+			LoadGameEffectEntityTo( players[i], "data/entities/misc/effect_polymorph_random.xml" )
+		end end
 	end
 end
 

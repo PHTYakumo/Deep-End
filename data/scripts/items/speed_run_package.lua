@@ -45,9 +45,9 @@ function item_pickup( entity_item, entity_who_picked, name )
 		end
 
 		GameRegenItemActionsInPlayer( entity_who_picked )
-
-		-- remove the item from the game
-		EntityKill( entity_item )
 	end
+
+	-- remove the item from the game
+	EntityKill( entity_item )
 end
  

@@ -148,11 +148,11 @@ function on_open( entity_item )
 end
 
 function item_pickup( entity_item, entity_who_picked, name )
-	if EntityHasTag( entity_who_picked, "player_unit" ) then
-		GamePrintImportant( "$log_chest", "", "data/ui_gfx/decorations/peace_temple_break.png" )
-	else
-		GamePrintImportant( "$log_chest_hamis_haha", "", "data/ui_gfx/decorations/peace_temple_break.png" )
-	end
+	local is_pl = EntityHasTag( entity_who_picked, "player_unit" ) or EntityHasTag( entity_who_picked, "polymorphed_player" ) or EntityHasTag( entity_who_picked, "ew_client" ) or EntityHasTag( entity_who_picked, "ew_peer" )
+	
+	if is_pl then GamePrintImportant( "$log_chest", "", "data/ui_gfx/decorations/peace_temple_break.png" )
+	else GamePrintImportant( "$log_chest_hamis_haha", "", "data/ui_gfx/decorations/peace_temple_break.png" ) end
+
 	-- GameTriggerMusicCue( "item" )
 
 	--if (remove_entity == false) then
@@ -160,8 +160,7 @@ function item_pickup( entity_item, entity_who_picked, name )
 	--end
 
 	on_open( entity_item )
-
-	if not EntityHasTag( entity_who_picked, "player_unit" ) then EntityKill( entity_who_picked ) end
+	if not is_pl then EntityKill( entity_who_picked ) end
 	
 	EntityKill( entity_item )
 end

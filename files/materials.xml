@@ -1031,7 +1031,7 @@
   <CellData
 	name="Hemokinesis_powder"
 	ui_name="$HEMOKINESIS"
-  	tags="[liquid],[corrodible],[soluble],[liquid_common]"
+  	tags="[liquid],[corrodible],[soluble],[liquid_common],[catastrophic]"
 	burnable="0"  
 	density="3"  
 	cell_type="liquid" 
@@ -1057,7 +1057,7 @@
   <CellData
 	name="Hemokinesis_powder_worm"
 	ui_name="$HEMOKINESIS"
-  	tags="[liquid],[corrodible],[soluble],[liquid_common]"
+  	tags="[liquid],[corrodible],[soluble],[liquid_common],[catastrophic]"
 	burnable="0"  
 	density="3"  
 	cell_type="liquid" 
