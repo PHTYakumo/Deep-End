@@ -35,17 +35,13 @@ ATTENTION! If you've planted SUN, please be extra careful when exploring the las
 
 -----------------------------------------------------------------------------------------------------
 
-This mod DOES NOT need to be enabled manually.
+'Deep End' need to be enabled manually in the Mod List. [strike]It was an optional game mode in the past version[/strike]
 
-Please select the GAME MODE named "Deep end" in the "New Game" option.
+Please ensure that 'Deep End' is enabled BEFORE creating a new game, and please do not change its enabled status during this game.
 
-If you want to play this mod as a SWITCHABLE MOD in the "Mods" option rather than a game mode:
+'Deep End' is compatible with many qol mods, but it has poor compatibility with mods that have a significant impact on gameplay.
 
-- browse the workshop file [i]Steam\steamapps\workshop\content\881100\3356681136\mod.xml[/i]
-
-- edit the code [i]is_game_mode="1"[/i] as [i]is_game_mode="0"[/i]
-
-- if do so, please enable this mod in A NEW RUN , otherwise errors may occur!
+If you insist on enabling these mods, please place 'Deep End' ABOVE them in the Mod List.
 
 If you run into any issues, please reach out to me on Discord:
 [spoiler]https://discord.gg/cN3T69yPfP[/spoiler]

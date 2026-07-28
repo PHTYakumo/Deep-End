@@ -723,9 +723,7 @@ if hah_amount > 1 then ModLuaFileAppend( "data/scripts/director_helpers.lua", "m
 local content = ModTextFileGetContent( "data/entities/buildings/workshop.xml" ) -- steal from @Shug
 ModTextFileSetContent( "data/entities/buildings/workshop.xml", content:gsub( ",workshop_untouched", "" ) )
 
-local en = ModIsEnabled("noita.fairmod") or ModIsEnabled("evaisa.tmtrainer") -- cjk translation of perks may crash the game
-
-if ModSettingGet( "DEEP_END.LOL_TRANS" ) or en then
+if ModSettingGet( "DEEP_END.LOL_TRANS" ) then
 	dofile_once("mods/deep_end/files/lol_translations.lua")
-	DEEP_END_LOL_TRANSLATIONS( en )
+	DEEP_END_LOL_TRANSLATIONS()
 end
