@@ -265,7 +265,7 @@ pkb = ModTextFileGetContent( pickup_base )
 ModTextFileSetContent( pickup_base, pkb:gsub( [===[material="steel"]===], [===[material="Box2d_Deep_End"]===], 1 ) )
 
 for i=1,#pickup_list do
-	local pi_manager = [===[<LuaComponent _tags="enabled_in_hand" _enabled="0" script_source_file="data/scripts/items/preferred_inventory_manager_quick.lua" execute_every_n_frame="1"></LuaComponent><LuaComponent _tags="enabled_in_inventory" _enabled="0" script_source_file="data/scripts/items/preferred_inventory_manager_full.lua" execute_every_n_frame="6"></LuaComponent>]===]
+	local pi_manager = [===[<LuaComponent _tags="enabled_in_hand,enabled_in_world" _enabled="0" script_source_file="data/scripts/items/preferred_inventory_manager_quick.lua" execute_every_n_frame="1"></LuaComponent><LuaComponent _tags="enabled_in_inventory" _enabled="0" script_source_file="data/scripts/items/preferred_inventory_manager_full.lua" execute_every_n_frame="6"></LuaComponent>]===]
 	pickup_base = "data/entities/items/pickup/" .. pickup_list[i] .. ".xml"
 
 	pkb = ModTextFileGetContent( pickup_base )

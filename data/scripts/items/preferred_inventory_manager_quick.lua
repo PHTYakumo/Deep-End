@@ -9,3 +9,5 @@ else
 	if components ~= nil then for i=1,#components do ComponentSetValue2( components[i], "preferred_inventory", "QUICK" ) end end
 	-- GamePrint("QUICK")
 end
+
+if EntityGetRootEntity( entity_id ) == entity_id then EntitySetComponentIsEnabled( entity_id, GetUpdatedComponentID(), false ) end

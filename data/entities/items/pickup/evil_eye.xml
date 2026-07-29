@@ -105,7 +105,7 @@
 	</LuaComponent>
 
 	<LuaComponent
-		_tags="enabled_in_hand"
+		_tags="enabled_in_hand,enabled_in_world"
 		_enabled="0"
 		script_source_file="data/scripts/items/preferred_inventory_manager_quick.lua"
 		execute_every_n_frame="1"
