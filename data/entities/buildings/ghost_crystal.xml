@@ -1,6 +1,6 @@
 <Entity 
   name="unknown" 
-  tags="hittable,mortal,boss_ghost_helper,de_face_trap" >
+  tags="hittable,mortal,boss_ghost_helper,de_face_trap,enemy" >
 
   <DamageModelComponent 
     _enabled="1" 
@@ -98,10 +98,10 @@
   </LuaComponent>
   
   <VariableStorageComponent
-	_tags="ghost_id"
-	name="ghost_id"
-	value_int="0"
-	>
+    _tags="ghost_id"
+    name="ghost_id"
+    value_int="0"
+    >
 	</VariableStorageComponent>
 
 </Entity>

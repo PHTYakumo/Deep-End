@@ -1,6 +1,6 @@
 <Entity 
   name="unknown" 
-  tags="hittable,mortal" >
+  tags="hittable,mortal,boss_ghost_helper,de_face_trap,enemy" >
 
   <DamageModelComponent 
     _enabled="1" 
@@ -19,13 +19,22 @@
     is_on_fire="0" 
     blood_material="poison_gas"
     materials_create_messages="0" 
-    materials_damage="1" 
+    materials_damage="0" 
     materials_how_much_damage="" 
     materials_that_damage="" 
     max_hp="10" 
     ragdoll_material="sand_herb_vapour"
     ragdoll_filenames_file="" 
-    ragdoll_offset_y="-6" >
+    ragdoll_offset_y="-6" 
+    ><damage_multipliers
+			drill="0.2"
+			slice="0.2"
+			fire="0.0"
+			explosion="0.2"
+			electricity="0.0"
+			melee="0.2"
+			>
+		</damage_multipliers>
   </DamageModelComponent>
 
   <GenomeDataComponent 
@@ -37,10 +46,10 @@
 
   <HitboxComponent 
     _enabled="1" 
-    aabb_max_x="2" 
-    aabb_max_y="0" 
-    aabb_min_x="-2" 
-    aabb_min_y="-2" 
+    aabb_max_x="8" 
+    aabb_max_y="8" 
+    aabb_min_x="-8" 
+    aabb_min_y="-8" 
     is_enemy="0" 
     is_item="0" 
     is_player="1" >
@@ -108,6 +117,20 @@
     execute_every_n_frame="-1"
     script_source_file="data/scripts/buildings/darkghost_crystal.lua" >
   </LuaComponent>
+
+  <LuaComponent 
+    _enabled="1" 
+    remove_after_executed="0"
+    execute_every_n_frame="-1"
+    script_death="data/scripts/buildings/ghost_crystal_death.lua" >
+  </LuaComponent>
+  
+  <VariableStorageComponent
+    _tags="ghost_id"
+    name="ghost_id"
+    value_int="0"
+    >
+	</VariableStorageComponent>
 
 </Entity>
 

@@ -13,54 +13,42 @@ g_small_enemies =
 	total_prob = 0,
 	-- this is air, so nothing spawns at 0.6
 	{
-		prob   		= 1.0,
+		prob   		= 0.81,
 		min_count	= 0,
 		max_count	= 0,    
 		entity 	= ""
 	},
 	-- add skullflys after this step
 	{
-		prob   		= 0.5,
+		prob   		= 0.024,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/berserkspirit.xml"
 	},
 	{
-		prob   		= 0.5,
+		prob   		= 0.033,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/confusespirit.xml"
 	},
 	
 	{
-		prob   		= 0.5,
+		prob   		= 0.051,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/slimespirit.xml"
 	},
 	{
-		prob   		= 0.05,
+		prob   		= 0.002,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/weakspirit.xml"
 	},
 	{
-		prob   		= 0.2,
+		prob   		= 0.08,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/wraith.xml"
-	},
-	{
-		prob   		= 0.2,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/wraith_glowing.xml"
-	},
-	{
-		prob   		= 0.05,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/wraith_storm.xml"
+		entity 	= "data/entities/buildings/darkghost_crystal.xml"
 	},
 }
 
@@ -80,7 +68,7 @@ g_lamp =
 	total_prob = 0,
 	-- this is air, so nothing spawns at 0.6
 	{
-		prob   		= 1.25,
+		prob   		= 0.25,
 		min_count	= 0,
 		max_count	= 0,    
 		entity 	= ""
@@ -88,12 +76,18 @@ g_lamp =
 	-- add skullflys after this step
 	{
 		prob   		= 0.5,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/props/physics_lantern.xml"
+		min_count	= 0,
+		max_count	= 0,    
+		entity 	= "data/entities/items/easter/beer_bottle.xml"
 	},
 	{
-		prob   		= 0.25,
+		prob   		= 0.375,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/props/physics/temple_lantern.xml"
+	},
+	{
+		prob   		= 0.125,
 		min_count	= 1,
 		max_count	= 1,    
 		offset_y 	= 5,

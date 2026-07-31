@@ -1,6 +1,6 @@
 <Entity 
   name="$animal_hpcrystal" 
-  tags="hittable,mortal,boss_ghost_helper" >
+  tags="hittable,mortal,boss_ghost_helper,de_face_trap,enemy" >
 
   <DamageModelComponent 
     _enabled="1" 

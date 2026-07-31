@@ -239,6 +239,7 @@ function get_modifier_mappings()
 	]]--
 
 	-- force custom fog of war in these biomes
+	set_modifier_if_has_none( "town_under", "FOG_OF_WAR_REAPPEARS" )
 	result["alchemist_secret"] = biome_modifier_fog_of_war_clear_at_player
 
 	-- side biomes

@@ -317,6 +317,7 @@ function OnWorldInitialized()
 	deep_end_biome( "snowcave", 1, 0.9 )
 	deep_end_biome( "rainforest_dark", 1.25, 0.8 )
 	deep_end_biome( "snowcave_tunnel", 1.75, 0.8 )
+	deep_end_biome( "town", 1.25, 0.7 )
 	deep_end_biome( "liquidcave", 1.5, 0.8 )
 	deep_end_biome( "vault", 2, 0.6 )
 	deep_end_biome( "fungicave", 1.5, 0.8 )
@@ -700,8 +701,6 @@ function OnPlayerDied(player_entity)
 	if EntityHasTag( player_entity, "de_ending_top" ) then for i=1,#reward_list do
 		GameCreateSpriteForXFrames( "data/entities/animals/boss_centipede/rewards/" .. reward_list[i] .. ".png", x+50+25*i, y+101, true, 0, 0, 9999, true )
 	end end
-
-	-- GameRemoveFlagRun( "ending_no_game_over_menu" )
 end
 
 -- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< append files >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< --
