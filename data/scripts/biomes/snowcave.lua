@@ -45,25 +45,25 @@ g_small_enemies =
 	},
 	-- add skullflys after this step
 	{
-		prob   		= 0.25,
+		prob   		= 0.175,
 		min_count	= 1,
 		max_count	= 2,    
 		entity 	= "data/entities/animals/shotgunner.xml"
 	},
 	{
-		prob   		= 0.1,
+		prob   		= 0.05,
 		min_count	= 1,
 		max_count	= 2,    
 		entity 	= "data/entities/animals/lasershooter.xml"
 	},
 	{
-		prob   		= 0.15,
+		prob   		= 0.075,
 		min_count	= 1,
 		max_count	= 2,    
 		entity 	= "data/entities/animals/vault/bigzombie.xml"
 	},
 	{
-		prob   		= 0.15,
+		prob   		= 0.125,
 		min_count	= 1,
 		max_count	= 4,    
 		entity 	= "data/entities/animals/rat.xml"
@@ -102,19 +102,19 @@ g_small_enemies =
 		entity 	= "data/entities/animals/sniper.xml"
 	},
 	{
-		prob   		= 0.1,
+		prob   		= 0.05,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/tank.xml"
 	},
 	{
-		prob   		= 0.05,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/tank_rocket.xml"
 	},
 	{
-		prob   		= 0.1,
+		prob   		= 0.05,
 		min_count	= 1,
 		max_count	= 1,
 		ngpluslevel	= 1,
@@ -144,7 +144,7 @@ g_big_enemies =
 	},
 	-- add skullflys after this step
 	{
-		prob   		= 0.2,
+		prob   		= 0.1,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/thundermage.xml"
@@ -163,25 +163,25 @@ g_big_enemies =
 		entity 	= "data/entities/animals/worm_big.xml"
 	},
 	{
-		prob   		= 0.05,
+		prob   		= 0.075,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/worm.xml"
 	},
 	{
-		prob   		= 0.05,
+		prob   		= 0.1,
 		min_count	= 1,
 		max_count	= 3,    
 		entity 	= "data/entities/animals/worm_tiny.xml"
 	},
 	{
-		prob   		= 0.2,
+		prob   		= 0.15,
 		min_count	= 1,
 		max_count	= 3,    
 		entity 	= "data/entities/animals/iceskull.xml"
 	},
 	{
-		prob   		= 0.5,
+		prob   		= 0.2,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/giant.xml"
@@ -210,13 +210,13 @@ g_big_enemies =
 		}
 	},
 	{
-		prob   		= 0.2,
+		prob   		= 0.15,
 		min_count	= 2,
 		max_count	= 3,    
 		entity 	= "data/entities/animals/scavenger_grenade.xml"
 	},
 	{
-		prob   		= 0.2,
+		prob   		= 0.15,
 		min_count	= 2,
 		max_count	= 3,    
 		entity 	= "data/entities/animals/scavenger_smg.xml"
@@ -239,7 +239,7 @@ g_big_enemies =
 		}
 	},
 	{
-		prob   		= 0.02,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 1,
 		ngpluslevel = 1,
@@ -262,13 +262,13 @@ g_big_enemies =
 		}
 	},
 	{
-		prob   		= 0.1,
+		prob   		= 0.075,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/tank.xml"
 	},
 	{
-		prob   		= 0.03,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/tank_rocket.xml"
@@ -310,7 +310,7 @@ g_big_enemies =
 		entity 	= "data/entities/animals/thunderskull.xml"
 	},
 	{
-		prob   		= 0.15,
+		prob   		= 0.125,
 		min_count	= 2,
 		max_count	= 4,    
 		entity 	= "data/entities/animals/scavenger_glue.xml",
@@ -403,7 +403,7 @@ g_unique_enemy =
 		entity 	= "data/entities/animals/tank_rocket.xml"
 	},
 	{
-		prob   		= 0.001,
+		prob   		= 0.004,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/tank_super.xml"
@@ -421,7 +421,7 @@ g_unique_enemy =
 		entity 	= "data/entities/animals/wizard_dark.xml"
 	},
 	{
-		prob   		= 0.07,
+		prob   		= 0.096,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/wizard_swapper.xml"
@@ -446,13 +446,13 @@ g_unique_enemy2 =
 	},
 	-- add skullflys after this step
 	{
-		prob   		= 0.6,
+		prob   		= 0.5,
 		min_count	= 1,
 		max_count	= 2,    
 		entity 	= "data/entities/animals/scavenger_grenade.xml"
 	},
 	{
-		prob   		= 0.6,
+		prob   		= 0.5,
 		min_count	= 1,
 		max_count	= 2,    
 		entity 	= "data/entities/animals/scavenger_smg.xml"

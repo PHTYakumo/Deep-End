@@ -162,7 +162,7 @@
 	<ExplosionComponent
 		trigger="ON_DEATH"
 		><config_explosion
-		  damage="2.8"
+		  damage="1.76"
 		  never_cache="0" 
 		  camera_shake="8" 
 		  explosion_radius="20" 
@@ -195,7 +195,7 @@
 		trigger="ON_TIMER"
 		timeout_frames="400"
 		><config_explosion
-		  damage="2.8"
+		  damage="1.76"
 		  never_cache="0" 
 		  camera_shake="8" 
 		  explosion_radius="20" 

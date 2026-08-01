@@ -50,7 +50,7 @@ g_small_enemies =
 	total_prob = 0,
 	-- this is air, so nothing spawns at 0.6
 	{
-		prob   		= 0.2,
+		prob   		= 0.1,
 		min_count	= 0,
 		max_count	= 0,    
 		entity 	= ""
@@ -113,31 +113,31 @@ g_small_enemies =
 		entity 	= "data/entities/animals/tank_rocket.xml"
 	},
 	{
-		prob   		= 0.002,
+		prob   		= 0.005,
 		min_count	= 1,
 		max_count	= 2,    
 		entity 	= "data/entities/animals/tank_super.xml"
 	},
 	{
-		prob   		= 0.01,
+		prob   		= 0.0125,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/scavenger_heal.xml"
 	},
 	{
-		prob   		= 0.01,
+		prob   		= 0.0125,
 		min_count	= 1,
 		max_count	= 2,    
 		entity 	= "data/entities/animals/miner_santa.xml"
 	},
 	{
-		prob   		= 0.01,
+		prob   		= 0.0125,
 		min_count	= 1,
 		max_count	= 2,    
 		entity 	= "data/entities/animals/miner_chef.xml"
 	},
 	{
-		prob   		= 0.01,
+		prob   		= 0.0025,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/miner_hell.xml"
@@ -149,14 +149,7 @@ g_small_enemies =
 		entity 	= "data/entities/animals/drone_lasership.xml"
 	},
 	{
-		prob   		= 0.1,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/tank_super.xml",
-		ngpluslevel = 1,
-	},
-	{
-		prob   		= 0.1,
+		prob   		= 0.075,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/scavenger_leader.xml",
@@ -201,7 +194,7 @@ g_small_enemies =
 
 	-- jussi
 	{
-		prob   		= 1.1,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 2,    
 		entities 	= {
@@ -214,7 +207,7 @@ g_small_enemies =
 		end,
 	},
 	{
-		prob   		= 1.1,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 2,    
 		entities 	= {
@@ -235,7 +228,7 @@ g_small_enemies =
 		end,
 	},
 	{
-		prob   		= 1.1,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/drunk/sniper.xml",
@@ -245,7 +238,7 @@ g_small_enemies =
 		end,
 	},
 	{
-		prob   		= 1.1,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 2,    
 		entity 	= "data/entities/animals/drunk/miner.xml",
@@ -255,7 +248,7 @@ g_small_enemies =
 		end,
 	},
 	{
-		prob   		= 1.1,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 2,    
 		entity 	= "data/entities/animals/drunk/shotgunner.xml",
@@ -265,7 +258,7 @@ g_small_enemies =
 		end,
 	},
 	{
-		prob   		= 1.05,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 2,    
 		entity 	= "data/entities/items/easter/beer_bottle.xml",
@@ -275,27 +268,7 @@ g_small_enemies =
 		end,
 	},
 	{
-		prob   		= 1.01,
-		min_count	= 1,
-		max_count	= 2,    
-		entity 	= "data/entities/items/easter/beer_bottle.xml",
-		spawn_check = function()
-			local year,month,day,temp1,temp2,temp3,jussi = GameGetDateAndTimeLocal()
-			return jussi
-		end,
-	},
-	{
-		prob   		= 1.002,
-		min_count	= 1,
-		max_count	= 2,    
-		entity 	= "data/entities/items/easter/beer_bottle.xml",
-		spawn_check = function()
-			local year,month,day,temp1,temp2,temp3,jussi = GameGetDateAndTimeLocal()
-			return jussi
-		end,
-	},
-	{
-		prob   		= 1.04,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/drunk/scavenger_heal.xml",
@@ -305,27 +278,7 @@ g_small_enemies =
 		end,
 	},
 	{
-		prob   		= 1.05,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/items/easter/beer_bottle.xml",
-		spawn_check = function()
-			local year,month,day,temp1,temp2,temp3,jussi = GameGetDateAndTimeLocal()
-			return jussi
-		end,
-	},
-	{
-		prob   		= 1.1,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/items/easter/beer_bottle.xml",
-		spawn_check = function()
-			local year,month,day,temp1,temp2,temp3,jussi = GameGetDateAndTimeLocal()
-			return jussi
-		end,
-	},
-	{
-		prob   		= 1.1,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 1,    
 		entities 	= {
@@ -354,7 +307,7 @@ g_big_enemies =
 	total_prob = 0,
 	-- this is air, so nothing spawns at 0.6
 	{
-		prob   		= 0.3,
+		prob   		= 0.2,
 		min_count	= 0,
 		max_count	= 0,    
 		entity 	= ""
@@ -503,7 +456,7 @@ g_big_enemies =
 	},
 	-- jussi
 	{
-		prob   		= 1.5,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 1,    
 		entities 	=  {
@@ -525,7 +478,7 @@ g_big_enemies =
 		end,
 	},
 	{
-		prob   		= 1.5,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 1,
 		ngpluslevel	= 1,
@@ -548,7 +501,7 @@ g_big_enemies =
 		end,
 	},
 	{
-		prob   		= 1.0,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/drunk/scavenger_heal.xml",
@@ -558,7 +511,7 @@ g_big_enemies =
 		end,
 	},
 	{
-		prob   		= 2.02,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 1,    
 		entities 	=  {
@@ -593,7 +546,7 @@ g_unique_enemy =
 	total_prob = 0,
 	-- this is air, so nothing spawns at 0.6
 	{
-		prob   		= 0.0,
+		prob   		= 0.05,
 		min_count	= 0,
 		max_count	= 0,    
 		entity 	= ""
@@ -630,7 +583,7 @@ g_unique_enemy2 =
 	total_prob = 0,
 	-- this is air, so nothing spawns at 0.6
 	{
-		prob   		= 0.0,
+		prob   		= 0.05,
 		min_count	= 0,
 		max_count	= 0,    
 		entity 	= ""
@@ -662,7 +615,7 @@ g_unique_enemy2 =
 	},
 	-- jussi 
 	{
-		prob   		= 2.5,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 3,    
 		entity 	= "data/entities/animals/drunk/scavenger_grenade.xml",
@@ -672,7 +625,7 @@ g_unique_enemy2 =
 		end,
 	},
 	{
-		prob   		= 2.5,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 3,    
 		entity 	= "data/entities/animals/drunk/scavenger_smg.xml",
@@ -682,7 +635,7 @@ g_unique_enemy2 =
 		end,
 	},
 	{
-		prob   		= 2.5,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/drunk/sniper.xml",
@@ -692,7 +645,7 @@ g_unique_enemy2 =
 		end,
 	},
 	{
-		prob   		= 2.01,
+		prob   		= 0.025,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/drunk/scavenger_heal.xml",
@@ -1242,33 +1195,23 @@ end
 -- actual functions that get called from the wang generator
 
 function spawn_small_enemies(x, y)
-	if safe( x, y ) then
-		spawn(g_small_enemies,x,y)
-	end
+	spawn(g_small_enemies,x,y)
 end
 
 function spawn_big_enemies(x, y)
-	if safe( x, y ) then
-		spawn(g_big_enemies,x,y)
-	end
+	spawn(g_big_enemies,x,y)
 end
 
 function spawn_unique_enemy(x, y)
-	if safe( x, y ) then
-		spawn(g_unique_enemy,x,y)
-	end
+	spawn(g_unique_enemy,x,y)
 end
 
 function spawn_unique_enemy2(x, y)
-	if safe( x, y ) then
-		spawn(g_unique_enemy2,x,y)
-	end
+	spawn(g_unique_enemy2,x,y)
 end
 
 function spawn_turret(x, y)
-	if safe( x, y ) then
-		spawn(g_turret,x,y,0,0)
-	end
+	spawn(g_turret,x,y,0,0)
 end
 
 function spawn_items(x, y)
@@ -1280,49 +1223,37 @@ function spawn_items(x, y)
 end
 
 function spawn_lamp(x, y)
-	if safe( x, y ) then
-		spawn(g_lamp,x+5,y,0,0)
-	end
+	spawn(g_lamp,x+5,y,0,0)
 end
 
 function spawn_lamp2(x, y)
-	if safe( x, y ) then
-		spawn(g_lamp,x,y,0,0)
-	end
+	spawn(g_lamp,x,y,0,0)
 end
 
 function spawn_props(x, y)
-	if safe( x, y ) then
-		spawn(g_props,x,y-3,0,0)
-	end
+	spawn(g_props,x,y-3,0,0)
 end
 
 function spawn_props2(x, y)
-	if safe( x, y ) then
-		spawn(g_props2,x,y-3,0,0)
-	end
+	spawn(g_props2,x,y-3,0,0)
 end
 
 function spawn_props3(x, y)
-	if safe( x, y ) then
-		spawn(g_props3,x,y,0,0)
-	end
+	spawn(g_props3,x,y,0,0)
 end
 
 function spawn_props4(x, y)
-	if safe( x, y ) then
-		spawn(g_props4,x,y,0,0)
-	end
+	spawn(g_props4,x,y,0,0)
 end
 
 function load_pixel_scene( x, y )
-	if not safe(x,y) then return end
+	-- if not safe(x,y) then return end
 	--print("pixel scene spawned at: " .. x .. ", " .. y)
 	load_random_pixel_scene( g_pixel_scene_01, x, y )
 end
 
 function load_pixel_scene2( x, y )
-	if not safe(x,y) then return end
+	-- if not safe(x,y) then return end
 	--print("pixel scene spawned at: " .. x .. ", " .. y)
 	load_random_pixel_scene( g_pixel_scene_02, x, y )
 end
@@ -1384,7 +1315,7 @@ function spawn_barricade(x, y)
 end
 
 function spawn_forcefield_generator(x, y)
-	if not safe(x,y) then return end
+	-- if not safe(x,y) then return end
 	spawn(g_forcefield_generator,x,y-2,0,0)
 end
 
@@ -1407,67 +1338,67 @@ end
 -- \/ \/
 
 function load_chamfer_top_r(x,y)
-	if not safe(x,y) then return end
+	-- if not safe(x,y) then return end
 	LoadPixelScene( "data/biome_impl/snowcastle/chamfer_top_r.png", "", x-10, y, "", true )
 end
 
 function load_chamfer_top_l(x,y)
-	if not safe(x,y) then return end
+	-- if not safe(x,y) then return end
 	LoadPixelScene( "data/biome_impl/snowcastle/chamfer_top_l.png", "", x-1, y, "", true )
 end
 
 function load_chamfer_bottom_r(x,y)
-	if not safe(x,y) then return end
+	-- if not safe(x,y) then return end
 	LoadPixelScene( "data/biome_impl/snowcastle/chamfer_bottom_r.png", "", x-10, y-20, "", true )
 end
 
 function load_chamfer_bottom_l(x,y)
-	if not safe(x,y) then return end
+	-- if not safe(x,y) then return end
 	LoadPixelScene( "data/biome_impl/snowcastle/chamfer_bottom_l.png", "", x-1, y-20, "", true )
 end
 
 function load_chamfer_inner_top_r(x,y)
-	if not safe(x,y) then return end
+	-- if not safe(x,y) then return end
 	LoadPixelScene( "data/biome_impl/snowcastle/chamfer_inner_top_r.png", "", x-10, y, "", true )
 end
 
 function load_chamfer_inner_top_l(x,y)
-	if not safe(x,y) then return end
+	-- if not safe(x,y) then return end
 	LoadPixelScene( "data/biome_impl/snowcastle/chamfer_inner_top_l.png", "", x, y, "", true )
 end
 
 function load_chamfer_inner_bottom_r(x,y)
-	if not safe(x,y) then return end
+	-- if not safe(x,y) then return end
 	LoadPixelScene( "data/biome_impl/snowcastle/chamfer_inner_bottom_r.png", "", x-10, y-20, "", true )
 end
 
 function load_chamfer_inner_bottom_l(x,y)
-	if not safe(x,y) then return end
+	-- if not safe(x,y) then return end
 	LoadPixelScene( "data/biome_impl/snowcastle/chamfer_inner_bottom_l.png", "", x, y-20, "", true )
 end
 
 function load_pillar_filler(x,y)
-	if not safe(x,y) then return end
+	-- if not safe(x,y) then return end
 	LoadPixelScene( "data/biome_impl/snowcastle/pillar_filler_01.png", "", x, y, "", true )
 end
 
 function load_pillar_filler_tall(x,y)
-	if not safe(x,y) then return end
+	-- if not safe(x,y) then return end
 	LoadPixelScene( "data/biome_impl/snowcastle/pillar_filler_tall_01.png", "", x, y, "", true )
 end
 
 function load_pod_large( x, y )
-	if not safe(x,y-50) then return end
+	-- if not safe(x,y-50) then return end
 	load_random_pixel_scene(g_pods_large, x, y-50)
 end
 
 function load_pod_small_l( x, y )
-	if not safe(x,y-40) then return end
+	-- if not safe(x,y-40) then return end
 	load_random_pixel_scene(g_pods_small_l, x-30, y-40)
 end
 
 function load_pod_small_r( x, y )
-	if not safe(x,y-40) then return end
+	-- if not safe(x,y-40) then return end
 	load_random_pixel_scene(g_pods_small_r, x-10, y-40)
 end
 

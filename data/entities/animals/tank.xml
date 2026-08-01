@@ -169,10 +169,10 @@
 	</SpriteComponent>
 
 	<AIAttackComponent
-		min_distance="275"
-		max_distance="325"
-		frames_between="70"
-		frames_between_global="70"
+		min_distance="145"
+		max_distance="190"
+		frames_between="75"
+		frames_between_global="75"
 		attack_ranged_aim_rotation_enabled="1"
 		attack_ranged_aim_rotation_speed="0.35"
 		attack_ranged_aim_rotation_shooting_ok_angle_deg="5"
@@ -187,8 +187,8 @@
 	</AIAttackComponent>
 	
 	<AIAttackComponent
-		min_distance="75"
-		max_distance="275"
+		min_distance="70"
+		max_distance="145"
 		frames_between="2"
 		frames_between_global="2"
 		attack_ranged_aim_rotation_enabled="1"
@@ -206,9 +206,9 @@
 	
 	<AIAttackComponent
 		min_distance="1"
-		max_distance="75"
-		frames_between="24"
-		frames_between_global="24"
+		max_distance="70"
+		frames_between="36"
+		frames_between_global="36"
 		attack_ranged_aim_rotation_enabled="1"
 		attack_ranged_aim_rotation_speed="0.45"
 		attack_ranged_aim_rotation_shooting_ok_angle_deg="30"

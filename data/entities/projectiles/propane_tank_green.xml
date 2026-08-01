@@ -23,9 +23,9 @@
 	  shoot_light_flash_r="255"
 	  shoot_light_flash_g="240"
 	  shoot_light_flash_b="30"
-      > <config_explosion
+      ><config_explosion
       never_cache="0"
-      damage="6.5"
+      damage="4.75"
       camera_shake="45" 
       explosion_radius="45" 
       explosion_sprite="data/particles/explosion_032.xml" 
@@ -171,7 +171,7 @@
     >
     <config_explosion
       never_cache="0"
-      damage="13"
+      damage="4.75"
       camera_shake="60" 
       explosion_radius="60" 
       explosion_sprite="data/particles/explosion_032.xml" 

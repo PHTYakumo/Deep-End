@@ -19,10 +19,15 @@ function de_is_valid_file2( file )
 end
 
 DEEP_END_ELCB_OLD = entity_load_camera_bound
+
 function entity_load_camera_bound(entity_data, x, y, rndx, rndy)
 	local hah_amount = math.max( math.floor( ModSettingGet( "DEEP_END.HELL_AND_HELL_AMOUNT" ) + 0.5 ), 1 )
 
-	if hah_amount == 1 then DEEP_END_ELCB_OLD(entity_data, x, y, rndx, rndy) end
+	if hah_amount == 1 then
+		DEEP_END_ELCB_OLD(entity_data, x, y, rndx, rndy)
+		return 1 -- unnecessary
+	end
+
 	local rand_x = 4
 	local rand_y = 4
 
@@ -92,8 +97,6 @@ function entity_load_camera_bound(entity_data, x, y, rndx, rndy)
 						if( ev.offset_x ~= nil ) then pos_x = pos_x + ev.offset_x end
 
 						EntityLoadCameraBound( ev, pos_x, pos_y )
-
-						if not de_is_valid_file( ev ) then break end
 					end
 
 					--[[
@@ -107,7 +110,7 @@ function entity_load_camera_bound(entity_data, x, y, rndx, rndy)
 		end
 	end
 
-	if( entity_data.entity == nil or  entity_data.entity == '' ) then
+	if( entity_data.entity == nil or entity_data.entity == '' ) then
 		return 0
 	end
 

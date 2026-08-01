@@ -172,10 +172,10 @@
   </SpriteComponent>
   
 	<AIAttackComponent
-		min_distance="150"
-		max_distance="250"
-		frames_between="96"
-		frames_between_global="96"
+		min_distance="180"
+		max_distance="255"
+		frames_between="100"
+		frames_between_global="100"
 		attack_ranged_aim_rotation_enabled="1"
 		attack_ranged_aim_rotation_speed="0.05"
 		attack_ranged_aim_rotation_shooting_ok_angle_deg="30"
@@ -191,10 +191,10 @@
 	</AIAttackComponent>
 
 	<AIAttackComponent
-		min_distance="250"
-		max_distance="350"
-		frames_between="27"
-		frames_between_global="27"
+		min_distance="120"
+		max_distance="180"
+		frames_between="45"
+		frames_between_global="45"
 		attack_ranged_aim_rotation_enabled="1"
 		attack_ranged_aim_rotation_speed="0.25"
 		attack_ranged_aim_rotation_shooting_ok_angle_deg="45"
@@ -210,10 +210,10 @@
 	</AIAttackComponent>
 
 	<AIAttackComponent
-		min_distance="50"
-		max_distance="150"
-		frames_between="36"
-		frames_between_global="36"
+		min_distance="45"
+		max_distance="120"
+		frames_between="50"
+		frames_between_global="50"
 		attack_ranged_aim_rotation_enabled="1"
 		attack_ranged_aim_rotation_speed="0.15"
 		attack_ranged_aim_rotation_shooting_ok_angle_deg="45"
@@ -230,9 +230,9 @@
 
 	<AIAttackComponent
 		min_distance="1"
-		max_distance="50"
-		frames_between="85"
-		frames_between_global="85"
+		max_distance="45"
+		frames_between="95"
+		frames_between_global="95"
 		attack_ranged_aim_rotation_enabled="1"
 		attack_ranged_aim_rotation_speed="0.35"
 		attack_ranged_aim_rotation_shooting_ok_angle_deg="30"
