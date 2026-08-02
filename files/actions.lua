@@ -4,20 +4,17 @@ dofile_once( "data/scripts/gun/gun_enums.lua")
 dofile_once("data/entities/misc/what_is_this/BSOD.lua")
 
 DE_DRAW_STATE = 0
-
-local DE_USAGE = 20
 local DE_ULTIMATE_MANA = 343
 
 -- data/scripts/gun/gun.lua
 function de_str_finder( game_effect_entities, add_entity )
-	local str_check = false
+	local str_check = nil
 
-	if type( game_effect_entities ) == "table" or type( add_entit ) == "table" then
-		return false
-	else
+	if type( game_effect_entities ) ~= "table" and type( add_entit ) ~= "table" then
 		str_check = string.find( game_effect_entities, add_entity )
-		return str_check
 	end
+
+	return str_check
 end
 
 function de_effect_entities_add( game_effect_entities, add_entity )
@@ -241,7 +238,7 @@ local de_actions_recompose =
 		spawn_probability                 = "1.5,1,0.5", -- LIGHT_BULLET
 		price = 100,
 		mana = 5,
-		-- max_uses = DE_USAGE * 10,
+		-- max_uses = 20 * 10,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/de_light_bullet.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 2
@@ -261,7 +258,7 @@ local de_actions_recompose =
 		spawn_probability                   = "0.7,0.8,0.5,0.4,0.3", -- LIGHT_BULLET_TRIGGER
 		price = 140,
 		mana = 10,
-		-- max_uses = DE_USAGE * 10,
+		-- max_uses = 20 * 10,
 		action 		= function()
 			c.fire_rate_wait = c.fire_rate_wait + 2
 			c.screenshake = c.screenshake + 0.2
@@ -280,7 +277,7 @@ local de_actions_recompose =
 		spawn_probability                   = "0.5,0.5,0.75,0.75,0.05", -- LIGHT_BULLET_TRIGGER_2
 		price = 250,
 		mana = 12,
-		-- max_uses = DE_USAGE * 10,
+		-- max_uses = 20 * 10,
 		action 		= function()
 			c.fire_rate_wait = c.fire_rate_wait + 3
 			c.screenshake = c.screenshake + 0.5
@@ -355,7 +352,7 @@ local de_actions_recompose =
 		spawn_probability                   = "0.25,0.5,0.75,0.5", -- LIGHT_BULLET_TIMER
 		price = 140,
 		mana = 10,
-		-- max_uses = DE_USAGE * 10,
+		-- max_uses = 20 * 10,
 		action 		= function()
 			c.fire_rate_wait = c.fire_rate_wait + 2
 			c.screenshake = c.screenshake + 0.2
@@ -375,7 +372,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.6,0.5,0.4,0.3,0.2", -- BULLET
 		price = 150,
 		mana = 10,
-		-- max_uses = DE_USAGE * 10,
+		-- max_uses = 20 * 10,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/bullet.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 3
@@ -397,7 +394,7 @@ local de_actions_recompose =
 		spawn_probability                   = "0.4,0.6,0.4,0.6,0.4", -- BULLET_TRIGGER
 		price = 190,
 		mana = 14,
-		-- max_uses = DE_USAGE * 10,
+		-- max_uses = 20 * 10,
 		action 		= function()
 			c.fire_rate_wait = c.fire_rate_wait + 3
 			c.screenshake = c.screenshake + 1
@@ -419,7 +416,7 @@ local de_actions_recompose =
 		spawn_probability                   = "0.5,0.5,0.5,0.4,0.4", -- BULLET_TIMER
 		price = 190,
 		mana = 14,
-		-- max_uses = DE_USAGE * 10,
+		-- max_uses = 20 * 10,
 		action 		= function()
 			c.fire_rate_wait = c.fire_rate_wait + 3
 			c.screenshake = c.screenshake + 1
@@ -441,7 +438,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.5,0.75,0.75,0.75,0.75", -- HEAVY_BULLET
 		price = 200,
 		mana = 15,
-		-- max_uses = DE_USAGE * 12,
+		-- max_uses = 20 * 12,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/bullet_heavy.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 5
@@ -464,7 +461,7 @@ local de_actions_recompose =
 		spawn_probability                   = "0.5,0.5,0.5,0.75,0.5", -- HEAVY_BULLET_TRIGGER
 		price = 240,
 		mana = 18,
-		-- max_uses = DE_USAGE * 12,
+		-- max_uses = 20 * 12,
 		action 		= function()
 			c.fire_rate_wait = c.fire_rate_wait + 5
 			c.screenshake = c.screenshake + 1.5
@@ -487,7 +484,7 @@ local de_actions_recompose =
 		spawn_probability                   = "0.5,0.5,0.5,0.5,0.75", -- HEAVY_BULLET_TIMER
 		price = 240,
 		mana = 18,
-		-- max_uses = DE_USAGE * 12,
+		-- max_uses = 20 * 12,
 		action 		= function()
 			c.fire_rate_wait = c.fire_rate_wait + 5
 			c.screenshake = c.screenshake + 1.5
@@ -510,7 +507,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.75,0.75", -- AIR_BULLET
 		price = 80,
 		mana = 4,
-		-- max_uses = DE_USAGE * 12,
+		-- max_uses = 20 * 12,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/light_bullet_air.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 2
@@ -532,7 +529,7 @@ local de_actions_recompose =
 		spawn_probability                 = "1,1,1,1", -- SLOW_BULLET
 		price = 160,
 		mana = 12,
-		-- max_uses = DE_USAGE * 12,
+		-- max_uses = 20 * 12,
 		custom_xml_file = "data/entities/misc/custom_cards/bullet_slow.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/bullet_slow.xml")
@@ -554,7 +551,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.5,0.5,0.5,0.5,1", -- SLOW_BULLET_TRIGGER
 		price = 200,
 		mana = 15,
-		-- max_uses = DE_USAGE * 12,
+		-- max_uses = 20 * 12,
 		custom_xml_file = "data/entities/misc/custom_cards/bullet_slow.xml",
 		action 		= function()
 			-- c.fire_rate_wait = c.fire_rate_wait + 5
@@ -576,7 +573,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.5,0.5,0.5,0.5,1,1", -- SLOW_BULLET_TIMER
 		price = 200,
 		mana = 15,
-		-- max_uses = DE_USAGE * 12,
+		-- max_uses = 20 * 12,
 		custom_xml_file = "data/entities/misc/custom_cards/bullet_slow.xml",
 		action 		= function()
 			-- c.fire_rate_wait = c.fire_rate_wait + 5
@@ -598,7 +595,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.2,0.3,0.4,0.1,0.2", -- BULLET
 		price = 120,
 		mana = 2,
-		-- max_uses = DE_USAGE * 20,
+		-- max_uses = 20 * 20,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/de_hook.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 6
@@ -793,7 +790,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.01,0.01,0.01,0.01,0.005", -- TENTACLE_PORTAL
 		price = 225,
 		mana = 34,
-		max_uses = 5,
+		max_uses = 9,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/tentacle_portal.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 30
@@ -812,7 +809,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.01,0.01,0.01,0.01,0.005", -- TENTACLE_PORTAL
 		price = 225,
 		mana = 67,
-		max_uses = 7,
+		max_uses = 9,
 		ai_never_uses = true,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/orb_shine_reversed.xml")
@@ -832,7 +829,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.75,1,1,0.5", -- SPITTER
 		price = 110,
 		mana = 3,
-		-- max_uses = DE_USAGE * 10,
+		-- max_uses = 20 * 10,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/spitter.xml")
 			-- damage = 0.1
@@ -856,7 +853,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.5,0.5,0.5,1", -- SPITTER_TIMER
 		price = 140,
 		mana = 8,
-		-- max_uses = DE_USAGE * 10,
+		-- max_uses = 20 * 10,
 		action 		= function()
 			-- damage = 0.1
 			c.fire_rate_wait = c.fire_rate_wait - 1
@@ -880,7 +877,7 @@ local de_actions_recompose =
 		spawn_probability                 = "1,1,1,0.5", -- SPITTER_TIER_2
 		price = 190,
 		mana = 6,
-		-- max_uses = DE_USAGE * 10,
+		-- max_uses = 20 * 10,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/spitter_tier_2.xml")
 			-- damage = 0.1
@@ -904,7 +901,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.5,0.5,0.5,1", -- SPITTER_TIER_2_TIMER
 		price = 220,
 		mana = 10,
-		-- max_uses = DE_USAGE * 10,
+		-- max_uses = 20 * 10,
 		action 		= function()
 			add_projectile_trigger_timer("data/entities/projectiles/deck/spitter_tier_2.xml", 40, 1)
 			-- damage = 0.1
@@ -928,7 +925,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.8,0.8,1,1", -- SPITTER_TIER_3
 		price = 240,
 		mana = 9,
-		-- max_uses = DE_USAGE * 10,
+		-- max_uses = 20 * 10,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/spitter_tier_3.xml")
 			-- damage = 0.1
@@ -952,7 +949,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.5,0.65,0.5", -- SPITTER_TIER_3_TIMER
 		price = 260,
 		mana = 12,
-		-- max_uses = DE_USAGE * 10,
+		-- max_uses = 20 * 10,
 		action 		= function()
 			add_projectile_trigger_timer("data/entities/projectiles/deck/spitter_tier_3.xml", 40, 1)
 			-- damage = 0.1
@@ -976,7 +973,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.8,0.6,1,0.5", -- BUBBLESHOT
 		price = 100,
 		mana = 3,
-		-- max_uses = DE_USAGE * 10,
+		-- max_uses = 20 * 10,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/bubbleshot.xml")
 			c.bounces = c.bounces + 1
@@ -998,7 +995,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.5,0.5,1", -- BUBBLESHOT_TRIGGER
 		price = 120,
 		mana = 6,
-		-- max_uses = DE_USAGE * 10,
+		-- max_uses = 20 * 10,
 		action 		= function()
 			c.fire_rate_wait = c.fire_rate_wait - 5
 			c.bounces = c.bounces + 1
@@ -1020,7 +1017,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.8,0.7,0.6", -- DISC_BULLET
 		price = 10,
 		mana = 7,
-		max_uses = DE_USAGE * 2,
+		-- max_uses = 20 * 2,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/disc_bullet.xml")
 			c.bounces = c.bounces + 1
@@ -1041,7 +1038,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.6,0.7,0.8", -- DISC_BULLET_BIG
 		price = 180,
 		mana = 35,
-		max_uses = DE_USAGE * 1,
+		max_uses = 20 * 1,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/disc_bullet_big.xml")
 			-- damage = 0.3
@@ -1064,7 +1061,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.4,0.7,0.05", -- DISC_BULLET_BIG
 		price = 270,
 		mana = 84,
-		max_uses = DE_USAGE * 1,
+		max_uses = 20 * 1,
 		ai_never_uses = true,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/disc_bullet_bigger.xml")
@@ -1117,7 +1114,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.5,0.75,1", -- BOUNCY_ORB
 		price = 120,
 		mana = 10,
-		-- max_uses = DE_USAGE * 8,
+		-- max_uses = 20 * 8,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/de_bouncy_orb.xml")
 			c.bounces = c.bounces + 1
@@ -1140,7 +1137,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.5,0.5,0.5", -- BOUNCY_ORB_TIMER
 		price = 150,
 		mana = 15,
-		-- max_uses = DE_USAGE * 8,
+		-- max_uses = 20 * 8,
 		action 		= function()
 			add_projectile_trigger_timer("data/entities/projectiles/deck/bouncy_orb.xml",200,1)
 			c.bounces = c.bounces + 1
@@ -1182,7 +1179,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.7,0.5,0.5,0.3", -- ARROW
 		price = 20,
 		mana = 3,
-		max_uses = DE_USAGE * 5,
+		-- max_uses = 20 * 5,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/arrow.xml")
 			-- damage = 0.3
@@ -1203,7 +1200,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.4,0.4,0.5,0.5", -- ARROW
 		price = 50,
 		mana = 0,
-		max_uses = DE_USAGE * 6,
+		-- max_uses = 20 * 6,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/pollen.xml")
 			-- damage = 0.3
@@ -1223,7 +1220,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.7,0.7,0.7,0.7", -- LANCE
 		price = 180,
 		mana = 12,
-		max_uses = DE_USAGE * 6,
+		max_uses = 150,
 		custom_xml_file = "data/entities/misc/custom_cards/lance.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/lance.xml")
@@ -1246,7 +1243,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.4,0.8,0.8,0.4,0.08", -- LANCE
 		price = 250,
 		mana = 45,
-		max_uses = DE_USAGE * 6,
+		max_uses = 125,
 		custom_xml_file = "data/entities/misc/custom_cards/lance_holy.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/de_lance_holy.xml")
@@ -1270,7 +1267,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.5,0.6,0.7,0.6,0.5,0.05", -- DEATH_CROSS_BIG
 		price = 310,
 		mana = 21,
-		max_uses = 48,
+		max_uses = 75,
 		-- custom_xml_file = "data/entities/misc/custom_cards/death_cross.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/icey_lance.xml")
@@ -1293,7 +1290,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.5,0.4,0.3,0.2,0.1", -- ROCKET
 		price = 220,
 		mana = 50,
-		max_uses    = 24, 
+		max_uses    = 25, 
 		custom_xml_file = "data/entities/misc/custom_cards/rocket.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/rocket.xml")
@@ -1337,7 +1334,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.3,0.5,0.5,0.3", -- ROCKET_TIER_3
 		price = 250,
 		mana = 90,
-		max_uses    = 16, 
+		max_uses    = 20, 
 		custom_xml_file = "data/entities/misc/custom_cards/rocket_tier_3.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/rocket_tier_3.xml")
@@ -1451,7 +1448,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.2,0.1,0.1,0.1", -- GRENADE_ANTI
 		price = 50,
 		mana = 5,
-		max_uses = DE_USAGE * 20, 
+		max_uses = 20 * 20, 
 		custom_xml_file = "data/entities/misc/custom_cards/grenade.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/grenade_anti.xml")
@@ -1583,7 +1580,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.09,0.07,0.05,0.03,0.1,0.01", -- FISH
 		price = 250,
 		mana = 22,
-		max_uses    = 33, 
+		max_uses    = 34, 
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/fish.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 80
@@ -1602,7 +1599,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.4,0.3,0.2", -- EXPLODING_DEER
 		price = 170,
 		mana = 33,
-		max_uses    = 22, 
+		max_uses    = 33, 
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/exploding_deer.xml")
 			c.material = "blood_fading_slow"
@@ -1688,7 +1685,7 @@ local de_actions_recompose =
 		spawn_probability                 = "1,1,1", -- LASER
 		price = 180,
 		mana = 20,
-		-- max_uses = DE_USAGE * 9,
+		-- max_uses = 20 * 9,
 		custom_xml_file = "data/entities/misc/custom_cards/laser.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/laser.xml")
@@ -1710,7 +1707,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.2,0.4,0.2,0.05", -- MEGALASER
 		price = 300,
 		mana = 45,
-		max_uses = DE_USAGE * 3,
+		max_uses = 20 * 3,
 		action 		= function()
 			-- beams are added in advance so that they inherit modifiers
 			add_projectile("data/entities/projectiles/deck/megalaser_beam.xml")
@@ -1738,7 +1735,7 @@ local de_actions_recompose =
 		spawn_probability                 = "1,0.7,0.5,0.6", -- LIGHTNING
 		price = 250,
 		mana = 35,
-		max_uses = 45,
+		max_uses = 110,
 		custom_xml_file = "data/entities/misc/custom_cards/electric_charge.xml",
 		action 		= function()
 			SetRandomSeed( GameGetFrameNum(), GameGetFrameNum() )
@@ -1764,7 +1761,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.2,0.3,0.4", -- LIGHTNING
 		price = 290,
 		mana = 45,
-		max_uses = 45,
+		max_uses = 110,
 		custom_xml_file = "data/entities/misc/custom_cards/electric_charge.xml",
 		action 		= function()
 			SetRandomSeed( GameGetFrameNum(), GameGetFrameNum() )
@@ -1835,7 +1832,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.2,0.8,1,0.5", -- LASER
 		price = 180,
 		mana = 90,
-		max_uses = DE_USAGE * 4,
+		max_uses = 20 * 4,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/orb_laseremitter.xml")
 			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
@@ -1856,7 +1853,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.2,0.9,0.3,0.5,1", -- LASER
 		price = 200,
 		mana = 110,
-		max_uses = DE_USAGE * 4,
+		max_uses = 20 * 4,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/orb_laseremitter_four.xml")
 			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
@@ -1877,7 +1874,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.5,0.7,0.6,0.4,0.2,0.1", -- LASER
 		price = 120,
 		mana = 90,
-		max_uses = DE_USAGE * 4,
+		max_uses = 20 * 4,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/orb_laseremitter_cutter.xml")
 			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 10.0
@@ -1898,7 +1895,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.5,0.4,0.3,0.5", -- DIGGER
 		price = 70,
 		mana = 0,
-		-- max_uses = DE_USAGE * 40,
+		-- max_uses = 20 * 40,
 		sound_loop_tag = "sound_digger",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/digger.xml")
@@ -1919,7 +1916,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.4,0.5,0.6,0.3,0.5", -- POWERDIGGER
 		price = 110,
 		mana = 0,
-		-- max_uses = DE_USAGE * 60,
+		-- max_uses = 20 * 60,
 		sound_loop_tag = "sound_digger",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/powerdigger.xml")
@@ -1940,7 +1937,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.9,0.7,0.5", -- CHAINSAW
 		price = 80,
 		mana = 8,
-		-- max_uses = DE_USAGE * 30,
+		-- max_uses = 20 * 30,
 		sound_loop_tag = "sound_chainsaw",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/chainsaw.xml")
@@ -2162,7 +2159,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.7,0.8,0.7", -- SPIRAL_SHOT
 		price = 190,
 		mana = 72,
-		max_uses    = 24, 
+		max_uses    = 80, 
 		custom_xml_file = "data/entities/misc/custom_cards/spiral_shot.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/spiral_shot.xml")
@@ -2217,7 +2214,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.45,0.6,0.75,0.45,0.01", -- SPIRAL_SHOT
 		price = 216,
 		mana = 36,
-		max_uses = 72,
+		max_uses = 50,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/guided_missile.xml")
 			add_projectile("data/entities/projectiles/deck/guided_missile.xml")
@@ -2242,7 +2239,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.45,0.6,0.75,0.45,0.01", -- SPIRAL_SHOT
 		price = 200,
 		mana = 44,
-		max_uses = DE_USAGE * 3,
+		max_uses = 20 * 3,
 		custom_xml_file = "data/entities/misc/custom_cards/thermal_impact.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/thermal_impact.xml")
@@ -2275,7 +2272,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.45,0.6,0.75,0.45,0.02", -- SPIRAL_SHOT
 		price = 177,
 		mana = 77,
-		max_uses = DE_USAGE * 3,
+		max_uses = 30,
 		ai_never_uses = true,
 		custom_xml_file = "data/entities/misc/custom_cards/geomagnetic_storm_electric.xml",
 		action 		= function()
@@ -2306,7 +2303,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.45,0.6,0.75,0.45,0.01", -- SPIRAL_SHOT
 		price = 270,
 		mana = 30,
-		max_uses = 18,
+		max_uses = 70,
 		custom_xml_file = "data/entities/misc/custom_cards/bloody_thorn.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/bloody_thorn.xml")
@@ -2326,7 +2323,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.45,0.6,0.75,0.45,0.01", -- SPIRAL_SHOT
 		price = 270,
 		mana = 42,
-		max_uses = 18,
+		max_uses = 40,
 		custom_xml_file = "data/entities/misc/custom_cards/ghosty_bullet.xml",
 		action 		= function()
 			local x, y = EntityGetTransform( GetUpdatedEntityID() )
@@ -2352,7 +2349,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.4,0.3,0.1,0.2,0.1,0.05", -- SPIRAL_SHOT
 		price = 200,
 		mana = 15,
-		-- max_uses = DE_USAGE * 6,
+		-- max_uses = 20 * 6,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/sniperbullet.xml")
 			c.game_effect_entities = de_effect_entities_add( c.game_effect_entities, "data/entities/misc/effect_disintegrated_air.xml," )
@@ -2431,7 +2428,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.2,0.3,0.3,0.2,0.05", -- SPIRAL_SHOT
 		price = 200,
 		mana = 49,
-		-- max_uses = DE_USAGE * 3,
+		-- max_uses = 20 * 3,
 		custom_xml_file = "data/entities/misc/custom_cards/soldiershot.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/soldiers_shot.xml")
@@ -2457,7 +2454,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.2,0.3,0.4,0.1", -- SPIRAL_SHOT
 		price = 233,
 		mana = 65,
-		max_uses = 36,
+		max_uses = 75,
 		custom_xml_file = "data/entities/misc/custom_cards/dark_sword.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/dark_sword.xml")
@@ -2479,7 +2476,7 @@ local de_actions_recompose =
 		-- spawn_requires_flag = "card_unlocked_black_hole",
 		price = 400,
 		mana = 175,
-		max_uses = 15,
+		max_uses = 18,
 		custom_xml_file = "data/entities/misc/custom_cards/de_order.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/order.xml")
@@ -2505,7 +2502,7 @@ local de_actions_recompose =
 		-- spawn_requires_flag = "card_unlocked_black_hole",
 		price = 400,
 		mana = 110,
-		max_uses = 30,
+		max_uses = 72,
 		custom_xml_file = "data/entities/misc/custom_cards/de_uav.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/uav.xml")
@@ -2529,7 +2526,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.02",
 		price = 200,
 		mana = 720, 
-		max_uses    = 64, 
+		max_uses    = 7, 
 		custom_xml_file = "data/entities/misc/custom_cards/inf_train.xml",
 		action 		= function()
 			local players = EntityGetWithTag( "player_unit" )
@@ -2576,7 +2573,7 @@ local de_actions_recompose =
 		-- spawn_requires_flag = "card_unlocked_black_hole",
 		price = 200,
 		mana = 60,
-		max_uses = DE_USAGE * 3,
+		max_uses = 20 * 3,
 		custom_xml_file = "data/entities/misc/custom_cards/de_cleave.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/projectile_circle_slash.xml")
@@ -2598,7 +2595,7 @@ local de_actions_recompose =
 		-- spawn_requires_flag = "card_unlocked_black_hole",
 		price = 240,
 		mana = 80,
-		max_uses = DE_USAGE * 3,
+		max_uses = 20 * 3,
 		custom_xml_file = "data/entities/misc/custom_cards/de_slash.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/projectile_circle_slash.xml")
@@ -2639,7 +2636,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.8,0.25,0.7,0.7,0.7", -- CHAIN_BOLT
 		price = 240,
 		mana = 35,
-		max_uses = DE_USAGE * 3,
+		max_uses = 20 * 3,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/chain_bolt.xml")
 			c.spread_degrees = c.spread_degrees + 20.0
@@ -2742,7 +2739,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.8,0.7,0.6", -- SLIMEBALL
 		price = 130,
 		mana = 6,
-		-- max_uses = DE_USAGE * 4,
+		-- max_uses = 20 * 4,
 		custom_xml_file = "data/entities/misc/custom_cards/slimeball.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/slime.xml")
@@ -2764,7 +2761,7 @@ local de_actions_recompose =
 		price = 180,
 		mana = 48,
 		custom_xml_file = "data/entities/misc/custom_cards/darkflame.xml",
-		max_uses    = 48, 
+		max_uses    = 90, 
 		action 		= function()
 			add_projectile("data/entities/projectiles/darkflame.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 20
@@ -2781,7 +2778,7 @@ local de_actions_recompose =
 		spawn_probability                        = "0.5,0.5,1,1", -- MISSILE
 		price = 200,
 		mana = 60,
-		max_uses    = 36, 
+		max_uses    = 80, 
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/rocket_player.xml")
 			current_reload_time = current_reload_time + 30
@@ -2802,7 +2799,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.2,0.2,0.2", -- LIGHT_BULLET
 		price = 50,
 		mana = 1,
-		-- max_uses = DE_USAGE * 20,
+		-- max_uses = 20 * 20,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/machinegun_bullet.xml")
 			c.fire_rate_wait = c.fire_rate_wait - 3
@@ -2825,7 +2822,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.03,0.03,0.03,0.03,0.06,0.03", -- LIGHT_BULLET
 		price = 250,
 		mana = 4,
-		-- max_uses = DE_USAGE * 2,
+		-- max_uses = 20 * 2,
 		action 		= function()
 			add_projectile_trigger_hit_world("data/entities/projectiles/deck/machinegun_bullet.xml",3)
 			c.fire_rate_wait = c.fire_rate_wait - 3
@@ -2848,7 +2845,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.03,0.03,0.03,0.03,0.06,0.03", -- LIGHT_BULLET
 		price = 250,
 		mana = 4,
-		-- max_uses = DE_USAGE * 2,
+		-- max_uses = 20 * 2,
 		action 		= function()
 			DEEP_END_add_projectile_trigger_customized("data/entities/projectiles/deck/machinegun_bullet.xml",{-1,13,0},{1,1,1})
 
@@ -2870,7 +2867,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.15,0.2,0.25,0.025", -- SPIRAL_SHOT
 		price = 300,
 		mana = 16,
-		-- max_uses = DE_USAGE * 2,
+		-- max_uses = 20 * 2,
 		action 		= function()
 			add_projectile_trigger_hit_world("data/entities/projectiles/deck/sniperbullet.xml",3)
 			c.game_effect_entities = de_effect_entities_add( c.game_effect_entities, "data/entities/misc/effect_disintegrated_air.xml," )
@@ -2897,7 +2894,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.15,0.2,0.25,0.025", -- SPIRAL_SHOT
 		price = 300,
 		mana = 16,
-		-- max_uses = DE_USAGE * 2,
+		-- max_uses = 20 * 2,
 		action 		= function()
 			DEEP_END_add_projectile_trigger_customized("data/entities/projectiles/deck/sniperbullet.xml",{-1,4,0},{1,1,1})
 			c.game_effect_entities = de_effect_entities_add( c.game_effect_entities, "data/entities/misc/effect_disintegrated_air.xml," )
@@ -2924,7 +2921,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.15,0.2,0.4,0.04", -- SPIRAL_SHOT
 		price = 300,
 		mana = 49,
-		-- max_uses = DE_USAGE * 1,
+		max_uses = 10,
 		custom_xml_file = "data/entities/misc/custom_cards/soldiershot.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/soldiers_shot.xml")
@@ -3009,7 +3006,7 @@ local de_actions_recompose =
 		spawn_probability                 = "1,1,0.6,0.6,0.4", -- BUCKSHOT
 		price = 160,
 		mana = 18,
-		-- max_uses = DE_USAGE * 4,
+		-- max_uses = 20 * 4,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/buckshot_player.xml")
 			add_projectile("data/entities/projectiles/deck/buckshot_player.xml")
@@ -3031,7 +3028,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.2,0.3,0.4,0.02", -- BUCKSHOT
 		price = 160,
 		mana = 30,
-		-- max_uses = DE_USAGE * 4,
+		-- max_uses = 20 * 4,
 		action 		= function()
 			add_projectile_trigger_hit_world("data/entities/projectiles/deck/buckshot_player.xml",1)
 			add_projectile_trigger_timer("data/entities/projectiles/deck/buckshot_player.xml",13,1)
@@ -3080,7 +3077,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.5,0.6,0.7,0.1", -- FREEZING_GAZE
 		price = 220,
 		mana = 45,
-		max_uses = DE_USAGE * 2,
+		max_uses = 20 * 2,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/glowing_bolt.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 40
@@ -3119,7 +3116,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.25,0.4,0.25,0.1", -- SPORE_POD
 		price = 100,
 		mana = 16,
-		-- max_uses = DE_USAGE * 4,
+		max_uses = 888,
 		custom_xml_file = "data/entities/misc/custom_cards/spore_pod.xml",
 		action 		= function()
 			add_projectile("data/entities/misc/perks/spore_pod.xml")
@@ -3139,7 +3136,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.7,0.4,0.2,0.5", -- GLUE_SHOT
 		price = 10,
 		mana = 0,
-		-- max_uses = DE_USAGE * 20,
+		-- max_uses = 20 * 20,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/glue_shot.xml")
 			c.fire_rate_wait = math.min( c.fire_rate_wait - 1, 27 )
@@ -3293,7 +3290,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.2,0.1", -- CURSED_ORB
 		price = 200,
 		mana = 13,
-		-- max_uses = DE_USAGE * 5,
+		-- max_uses = 20 * 5,
 		action 		= function()
 			add_projectile("data/entities/projectiles/orb_cursed.xml")
 			c.spread_degrees = c.spread_degrees - 24
@@ -3314,7 +3311,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.5,0.5,1,1,0.5", -- CURSED_ORB
 		price = 200,
 		mana = 15,
-		-- max_uses = DE_USAGE * 5,
+		-- max_uses = 20 * 5,
 		action 		= function()
 			add_projectile("data/entities/projectiles/orb_expanding.xml")
 			c.damage_projectile_add = c.damage_projectile_add + 0.08
@@ -3399,7 +3396,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.6,0.8,0.7,0.8,0.3", -- SUMMON_HOLLOW_EGG
 		price = 120,
 		mana = 18, 
-		max_uses = DE_USAGE * 8,
+		max_uses = 20 * 8,
 		action 		= function()
 			add_projectile_trigger_death("data/entities/items/pickup/egg_hollow.xml", 1)
 			c.fire_rate_wait = c.fire_rate_wait - 12
@@ -3453,7 +3450,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.32,0.33,0.35", -- SPIRAL_SHOT
 		price = 90,
 		mana = 15,
-		-- max_uses = DE_USAGE * 2,
+		-- max_uses = 20 * 2,
 		custom_xml_file = "data/entities/misc/custom_cards/swarm_fly.xml",
 		action 		= function()
 			c.spread_degrees = c.spread_degrees + 1
@@ -3474,7 +3471,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.32,0.33,0.35", -- SPIRAL_SHOT
 		price = 120,
 		mana = 18,
-		-- max_uses = DE_USAGE * 2,
+		-- max_uses = 20 * 2,
 		custom_xml_file = "data/entities/misc/custom_cards/swarm_wasp.xml",
 		action 		= function()
 			c.fire_rate_wait = c.fire_rate_wait + 5
@@ -3494,7 +3491,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.32,0.33,0.35", -- SPIRAL_SHOT
 		price = 100,
 		mana = 28,
-		max_uses = DE_USAGE * 2,
+		max_uses = 20 * 2,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/de_swarm_firebug.xml")
 			add_projectile("data/entities/projectiles/deck/de_swarm_firebug.xml")
@@ -3517,7 +3514,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.32,0.33,0.35", -- SPIRAL_SHOT
 		price = 160,
 		mana = 42,
-		max_uses = DE_USAGE * 2,
+		max_uses = 20 * 2,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/de_friend_fly.xml")
 			c.spread_degrees = c.spread_degrees + 24.0
@@ -3633,7 +3630,7 @@ local de_actions_recompose =
 		spawn_probability                 = "1,0.9,0.7", -- FIREBOMB
 		price = 100,
 		mana = 10,
-		-- max_uses = DE_USAGE * 8, 
+		-- max_uses = 20 * 8, 
 		custom_xml_file = "data/entities/misc/custom_cards/firebomb.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/firebomb.xml")
@@ -3651,6 +3648,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.8,0.8,1,0.75", -- SOILBALL
 		price = 10,
 		mana = 1,
+		max_uses = 80,
 		action 		= function()
 			add_projectile("data/entities/projectiles/chunk_of_soil.xml")
 			c.material = "soil"
@@ -3689,7 +3687,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.9,0.7,0.5,0.4,0.3", -- DEATH_CROSS
 		price = 210,
 		mana = 33,
-		max_uses = 44,
+		max_uses = 48,
 		-- custom_xml_file = "data/entities/misc/custom_cards/death_cross.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/de_death_cross.xml")
@@ -3709,7 +3707,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.1,0.1,0.1,0.2,0.3", -- DEATH_CROSS
 		price = 210,
 		mana = 35,
-		max_uses = 45,
+		max_uses = 48,
 		-- custom_xml_file = "data/entities/misc/custom_cards/death_cross.xml",
 		action 		= function()
 			add_projectile_trigger_death("data/entities/projectiles/deck/de_death_cross.xml",1)
@@ -3728,7 +3726,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.4,0.5,0.55,0.3,0.4,0.05", -- DEATH_CROSS_BIG
 		price = 310,
 		mana = 44,
-		max_uses = 25,
+		max_uses = 24,
 		-- custom_xml_file = "data/entities/misc/custom_cards/death_cross.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/de_death_cross_big.xml")
@@ -3775,7 +3773,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.2,0.3,0.3,0.4", -- RUBBER_BALL
 		price = 160,
 		mana = 20,
-		max_uses = DE_USAGE * 4,
+		max_uses = 20 * 4,
 		action 		= function()
 			for i=1,6 do
 				add_projectile("data/entities/projectiles/deck/de_infestation.xml")
@@ -3800,7 +3798,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.4,0.4,0.6,0.5,0.2", -- WALL_HORIZONTAL
 		price = 160,
 		mana = 70,
-		max_uses = 22,
+		max_uses = 10,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/wall_horizontal.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 5
@@ -3818,7 +3816,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.4,0.4,0.6,0.5,0.2", -- WALL_VERTICAL
 		price = 160,
 		mana = 70,
-		max_uses = 22,
+		max_uses = 10,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/wall_vertical.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 5
@@ -3836,7 +3834,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.2,0.6,0.5,0.4,0.4", -- WALL_SQUARE
 		price = 160,
 		mana = 110,
-		max_uses = 14,
+		max_uses = 10,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/wall_square.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 20
@@ -3909,7 +3907,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.8,0.8,1,0.7,0.5,0.4", -- DELAYED_SPELL
 		price = 240,
 		mana = 0,
-		max_uses = DE_USAGE * 2,
+		max_uses = 20 * 2,
 		action 		= function()
 			add_projectile_trigger_death("data/entities/projectiles/deck/delayed_spell.xml", 3)
 			c.fire_rate_wait = c.fire_rate_wait + 10
@@ -3927,7 +3925,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.2,0.2,0.3,0.2,0.1,0.1", -- LONG_DISTANCE_CAST
 		price = 90,
 		mana = 0,
-		max_uses = DE_USAGE * 6,
+		max_uses = 20 * 6,
 		action 		= function()
 			add_projectile_trigger_death("data/entities/projectiles/deck/long_distance_cast.xml", 1)
 			c.fire_rate_wait = c.fire_rate_wait - 20
@@ -3946,7 +3944,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.2,0.2,0.2,0.3,0.3", -- TELEPORT_CAST
 		price = 190,
 		mana = 55,
-		max_uses = DE_USAGE * 4,
+		max_uses = 20 * 4,
 		action 		= function()
 			add_projectile_trigger_death("data/entities/projectiles/deck/teleport_cast.xml", 1)
 			c.fire_rate_wait = c.fire_rate_wait + 18
@@ -3967,7 +3965,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.2,0.3,0.3", -- SUPER_TELEPORT_CAST
 		price = 160,
 		mana = 5,
-		max_uses = DE_USAGE * 5,
+		max_uses = 20 * 5,
 		action 		= function()
 			-- add_projectile_trigger_death("data/entities/projectiles/deck/de_super_teleport_cast.xml", 1)
 
@@ -3998,7 +3996,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.2,0.2,0.4,0.4,0.2", -- CASTER_CAST
 		price = 70,
 		mana = 2,
-		max_uses = DE_USAGE * 4,
+		max_uses = 20 * 4,
 		action 		= function()
 			c.spread_degrees = c.spread_degrees - 720
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/caster_cast.xml," )
@@ -4380,7 +4378,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.4,0.4,0.4,0.4,0.4", -- MATERIAL_WATER
 		price = 110,
 		mana = -1,
-		-- max_uses = DE_USAGE * 5,
+		-- max_uses = 20 * 5,
 		sound_loop_tag = "sound_spray",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/material_water.xml")
@@ -4513,7 +4511,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.06", -- TELEPORT_PROJECTILE
 		price = 170,
 		mana = 50,
-		max_uses = 77,
+		max_uses = 20,
 		ai_never_uses = true,
 		custom_xml_file = "data/entities/misc/custom_cards/lightning_teleport.xml",
 		action 		= function()
@@ -4659,7 +4657,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.05,0.05,0.1,0.1,0.01", -- TELEPORT_PROJECTILE
 		price = 130,
 		mana = 75,
-		max_uses = 10,
+		max_uses = 2,
 		ai_never_uses = true,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/teleport_projectile_v2.xml")
@@ -5209,7 +5207,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.8,0.8,0.8,0.8,0.8,0.8,0.8", -- BURST_2
 		price = 140,
 		mana = 0,
-		-- max_uses = DE_USAGE * 20,
+		-- max_uses = 20 * 20,
 		action 		= function()
 			draw_actions( 2, true )
 		end,
@@ -5225,7 +5223,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.7,0.7,0.7,0.7,0.7,0.7", -- BURST_3
 		price = 160,
 		mana = 2,
-		-- max_uses = DE_USAGE * 6,
+		-- max_uses = 20 * 6,
 		action 		= function()
 			draw_actions( 3, true )
 		end,
@@ -5241,7 +5239,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.4,0.5,0.6,0.6,0.6", -- BURST_4
 		price = 180,
 		mana = 4,
-		-- max_uses = DE_USAGE * 4,
+		-- max_uses = 20 * 4,
 		action 		= function()
 			draw_actions( 4, true )
 		end,
@@ -5258,7 +5256,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.1,0.5", -- BURST_4
 		price = 300,
 		mana = 8,
-		-- max_uses = DE_USAGE * 4,
+		-- max_uses = 20 * 4,
 		action 		= function()
 			draw_actions( 8, true )
 		end,
@@ -5294,7 +5292,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.8,0.8,0.7", -- SCATTER_2
 		price = 100,
 		mana = 0,
-		-- max_uses = DE_USAGE * 24,
+		-- max_uses = 20 * 24,
 		action 		= function()
 			draw_actions( 2, true )
 			c.spread_degrees = c.spread_degrees + 10.0
@@ -5311,7 +5309,7 @@ local de_actions_recompose =
 		spawn_probability                = "0.6,0.7,0.7,0.8", -- SCATTER_3
 		price = 120,
 		mana = 1,
-		-- max_uses = DE_USAGE * 10,
+		-- max_uses = 20 * 10,
 		action 		= function()
 			draw_actions( 3, true )
 			c.spread_degrees = c.spread_degrees + 20.0
@@ -5328,7 +5326,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.5,0.6,0.7,0.8,0.8,0.6", -- SCATTER_4
 		price = 140,
 		mana = 2,
-		-- max_uses = DE_USAGE * 10,
+		-- max_uses = 20 * 10,
 		action 		= function()
 			draw_actions( 4, true )
 			c.spread_degrees = c.spread_degrees + 40.0
@@ -5367,7 +5365,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.2,0.3", -- I_SHAPE
 		price = 10,
 		mana = 0,
-		-- max_uses = DE_USAGE * 50,
+		-- max_uses = 20 * 50,
 		action 		= function()
 			c.pattern_degrees = 0.5
 			draw_actions(1, true)
@@ -5386,7 +5384,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.4,0.5,0.3", -- I_SHAPE
 		price = 30,
 		mana = 0,
-		-- max_uses = DE_USAGE * 30,
+		-- max_uses = 20 * 30,
 		action 		= function()
 			-- c.pattern_degrees = 180
 			draw_actions(2, true)
@@ -5405,7 +5403,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.8,0.5,0.4,0.3", -- Y_SHAPE
 		price = 30,
 		mana = 0,
-		-- max_uses = DE_USAGE * 30,
+		-- max_uses = 20 * 30,
 		action 		= function()
 			-- c.pattern_degrees = 45
 			draw_actions(2, true)
@@ -5424,7 +5422,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.4,0.5,0.4,0.3", -- T_SHAPE
 		price = 30,
 		mana = 1,
-		-- max_uses = DE_USAGE * 15,
+		-- max_uses = 20 * 15,
 		action 		= function()
 			-- c.pattern_degrees = 90
 			draw_actions(3, true)
@@ -5443,7 +5441,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.4,0.3,0.5,0.3,0.3", -- W_SHAPE
 		price = 50,
 		mana = 1,
-		-- max_uses = DE_USAGE * 15,
+		-- max_uses = 20 * 15,
 		action 		= function()
 			-- c.pattern_degrees = 20
 			draw_actions(3, true)
@@ -5462,7 +5460,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.2,0.3,0.3,0.3,0.3", -- CIRCLE_SHAPE
 		price = 50,
 		mana = 4,
-		-- max_uses = DE_USAGE * 14,
+		-- max_uses = 20 * 14,
 		action 		= function()
 			-- c.pattern_degrees = 180
 			draw_actions(6, true)
@@ -5481,7 +5479,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.4,0.4,0.3,0.2,0.1", -- PENTAGRAM_SHAPE
 		price = 50,
 		mana = 3,
-		-- max_uses = DE_USAGE * 14,
+		-- max_uses = 20 * 14,
 		action 		= function()
 			-- c.pattern_degrees = 180
 			draw_actions(5, true)
@@ -8048,7 +8046,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.5,0.7", -- TRANSMUTATION
 		price = 240,
 		mana = 120,
-		max_uses = 30,
+		max_uses = 32,
 		ai_never_uses = true,
 		action 		= function()
 			c.extra_entities = de_effect_entities_add( c.extra_entities .. "data/entities/misc/random_explosion.xml,", "data/entities/particles/tinyspark_purple_bright.xml," )
@@ -9307,7 +9305,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.04,0.04,0.04,0.04,0.04,0.04,0.02,0.2,0.04", -- PETRIFY
 		price = 512,
 		mana = 25,
-		max_uses = 64,
+		max_uses = 101,
 		action 		= function()
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/f_t_l.xml," )
 			c.game_effect_entities = de_effect_entities_add( c.game_effect_entities, "data/entities/misc/effect_disintegrated_air.xml," )
@@ -9359,7 +9357,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.2,0.3,0.4,0.5,0.06", -- PETRIFY
 		price = 512,
 		mana = 64,
-		max_uses = 12,
+		-- max_uses = 12,
 		custom_xml_file = "data/entities/misc/custom_cards/blasting_chain_reaction.xml",
 		action 		= function()
 			local mdf_1 = de_str_finder( c.extra_entities, "data/entities/misc/blasting_chain_reaction.xml," )
@@ -9616,7 +9614,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.2,0.1,0.05", -- FIREBALL_RAY
 		price = 150,
 		mana = 10,
-		max_uses = 16,
+		max_uses = 10,
 		action 		= function()
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/timelimiter_400.xml," )
 			c.extra_entities = c.extra_entities .. "data/entities/misc/fireball_ray.xml,"
@@ -9635,7 +9633,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.05,0.1,0.1,0.2", -- LIGHTNING_RAY
 		price = 180,
 		mana = 10,
-		max_uses = 16,
+		max_uses = 10,
 		custom_xml_file = "data/entities/misc/custom_cards/electric_charge.xml",
 		action 		= function()
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/timelimiter_400.xml," )
@@ -9655,7 +9653,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.1,0.2,0.05", -- TENTACLE_RAY
 		price = 150,
 		mana = 10,
-		max_uses = 16,
+		max_uses = 10,
 		action 		= function()
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/timelimiter_400.xml," )
 			c.extra_entities = c.extra_entities .. "data/entities/misc/tentacle_ray.xml,"
@@ -9674,7 +9672,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.05,0.1,0.05,0.1", -- TENTACLE_RAY
 		price = 150,
 		mana = 10,
-		max_uses = 16,
+		max_uses = 10,
 		action 		= function()
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/timelimiter_400.xml," )
 			c.extra_entities = c.extra_entities .. "data/entities/misc/laser_emitter_ray.xml,"
@@ -9790,7 +9788,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.2,0.3,0.3,0.2,0.1", -- FIREBALL_RAY_ENEMY
 		price = 140,
 		mana = 45,
-		max_uses = 66,
+		max_uses = 30,
 		action 		= function()
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/hitfx_curse.xml," )
 			c.game_effect_entities = de_effect_entities_add( c.game_effect_entities, "data/entities/misc/effect_apply_poison.xml," )
@@ -9810,7 +9808,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.5,0.5,0.6,0.1,0.1", -- FIREBALL_RAY_ENEMY
 		price = 100,
 		mana = 15,
-		max_uses = 66,
+		max_uses = 50,
 		action 		= function()
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/hitfx_curse_wither_projectile.xml," )
 			c.damage_projectile_add = c.damage_projectile_add + 0.02
@@ -9829,7 +9827,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.6,0.6,0.4,0.1,0.1", -- FIREBALL_RAY_ENEMY
 		price = 100,
 		mana = 15,
-		max_uses = 66,
+		max_uses = 50,
 		action 		= function()
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/hitfx_curse_wither_explosion.xml," )
 			c.damage_explosion_add = c.damage_explosion_add + 0.02
@@ -9848,7 +9846,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.4,0.6,0.6,0.1,0.1", -- FIREBALL_RAY_ENEMY
 		price = 100,
 		mana = 15,
-		max_uses = 66,
+		max_uses = 50,
 		action 		= function()
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/hitfx_curse_wither_melee.xml," )
 			c.damage_melee_add = c.damage_melee_add + 0.02
@@ -9867,7 +9865,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.5,0.6,0.5,0.1,0.1", -- FIREBALL_RAY_ENEMY
 		price = 100,
 		mana = 15,
-		max_uses = 66,
+		max_uses = 50,
 		action 		= function()
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/hitfx_curse_wither_electricity.xml," )
 			c.damage_electricity_add = c.damage_electricity_add + 0.02
@@ -9887,7 +9885,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.4,0.4,0.3", -- GRAVITY_FIELD_ENEMY
 		price = 200,
 		mana = 20,
-		max_uses = DE_USAGE * 5,
+		max_uses = 90,
 		action 		= function()
 			c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_discs.xml,"
 			draw_actions( 1, true )
@@ -9906,7 +9904,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.4,0.5,0.3,0.1", -- GRAVITY_FIELD_ENEMY
 		price = 140,
 		mana = 25,
-		max_uses = DE_USAGE * 5,
+		max_uses = 90,
 		action 		= function()
 			c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_fireballs.xml,"
 			draw_actions( 1, true )
@@ -9948,7 +9946,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.4,0.5,0.3,0.1", -- GRAVITY_FIELD_ENEMY
 		price = 200,
 		mana = 75,
-		max_uses = DE_USAGE * 5,
+		max_uses = 90,
 		action 		= function()
 			c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_lasers.xml,"
 			draw_actions( 1, true )
@@ -9967,7 +9965,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.15,0.3,0.45,0.05", -- GRAVITY_FIELD_ENEMY
 		price = 240,
 		mana = 125,
-		max_uses = DE_USAGE * 5,
+		max_uses = 90,
 		action 		= function()
 			c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_larpa.xml,"
 			draw_actions( 1, true )
@@ -9985,7 +9983,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.2,0.3,0.5", -- AREA_DAMAGE
 		price = 240,
 		mana = 30,
-		max_uses = 100,
+		-- max_uses = 99,
 		action 		= function()
 			c.extra_entities = c.extra_entities .. "data/entities/misc/chain_shot.xml,"
 			c.lifetime_add = c.lifetime_add - 30
@@ -10291,7 +10289,7 @@ local de_actions_recompose =
 		spawn_level       = "0,1,2,3,4,5,6,7,10", -- X_RAY
 		spawn_probability = "0.1,0.2,0.3,0.3,0.2,0.1,0.1,0.01,0.05", -- X_RAY
 		price = 200,
-		max_uses    = 128,
+		max_uses    = 240,
 		mana = 0,
 		action 		= function()
 			local entity_id, eid = GetUpdatedEntityID(), nil
@@ -10580,8 +10578,8 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.3,0.3", -- POISON_TRAIL
 		price = 160,
 		mana = 10,
-		max_uses = 13,
-		never_unlimited = true,
+		max_uses = 12,
+		-- never_unlimited = true,
 		custom_xml_file = "data/entities/misc/custom_cards/poison_trail.xml",
 		action 		= function()
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/timelimiter_400.xml," )
@@ -10734,6 +10732,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.3,0.5,0.4,0.3", -- ENERGY_SHIELD_SHOT
 		price = 180,
 		mana = 5,
+		max_uses = 80,
 		action 		= function()
 			c.speed_multiplier = math.max( c.speed_multiplier * 0.4, 0 )
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/energy_shield_shot.xml," )
@@ -12149,7 +12148,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.2,0.2,0.05", -- FIREBALL_RAY
 		price = 260,
 		mana = 100,
-		max_uses = 25,
+		max_uses = 33,
 		action 		= function()
 			c.fire_rate_wait = c.fire_rate_wait + 9
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/larpa_chaos.xml," )
@@ -12168,7 +12167,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.15,0.2,0.1,0.05", -- FIREBALL_RAY
 		price = 290,
 		mana = 120,
-		max_uses = 15,
+		max_uses = 33,
 		action 		= function()
 			c.fire_rate_wait = c.fire_rate_wait + 9
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/larpa_downwards.xml," )
@@ -12187,7 +12186,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.2,0.15,0.1,0.05", -- FIREBALL_RAY
 		price = 290,
 		mana = 120,
-		max_uses = 15,
+		max_uses = 33,
 		action 		= function()
 			c.fire_rate_wait = c.fire_rate_wait + 9
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/larpa_upwards.xml," )
@@ -12207,7 +12206,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.25,0.05", -- FIREBALL_RAY
 		price = 300,
 		mana = 150,
-		max_uses = 15,
+		max_uses = 33,
 		action 		= function()
 			c.fire_rate_wait = c.fire_rate_wait + 9
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/larpa_chaos_2.xml," )
@@ -12226,7 +12225,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.1,0.2,0.05", -- FIREBALL_RAY
 		price = 150,
 		mana = 90,
-		max_uses = 25,
+		max_uses = 33,
 		action 		= function()
 			c.fire_rate_wait = c.fire_rate_wait + 9
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/larpa_death.xml," )
@@ -12939,7 +12938,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.02",
 		price = 300,
 		mana = 575, 
-		max_uses    = 2, 
+		max_uses    = 3, 
 		custom_xml_file = "data/entities/misc/custom_cards/meteor_rain.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/meteor_rain.xml")
@@ -13016,7 +13015,7 @@ local de_actions_recompose =
 		-- spawn_requires_flag = "card_unlocked_rain",
 		price = 600,
 		mana = 37,
-		max_uses = 666,
+		max_uses = 67,
 		custom_xml_file = "data/entities/misc/custom_cards/summon_sword.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/sword_summon.xml")

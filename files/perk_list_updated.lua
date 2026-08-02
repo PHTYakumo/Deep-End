@@ -629,15 +629,6 @@ de_perk_list_recompose =
 				_tags = "perk_component",
 				extra_modifier = "duplicate_projectile",
 			} )
-			
-			local damagemodels = EntityGetComponent( entity_who_picked, "DamageModelComponent" )
-			if ( damagemodels ~= nil ) then
-				for i,damagemodel in ipairs(damagemodels) do
-					local projectile_resistance = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "projectile" ))
-					projectile_resistance = projectile_resistance * 1.1
-					ComponentObjectSetValue( damagemodel, "damage_multipliers", "projectile", tostring(projectile_resistance) )
-				end
-			end
 		end,
 	},
 	{
@@ -884,6 +875,15 @@ de_perk_list_recompose =
 		one_off_effect = true,
 		do_not_remove = true,
 		usable_by_enemies = false,
+		func = function( entity_perk_item, entity_who_picked, item_name )
+			local damagemodels = EntityGetComponent( entity_who_picked, "DamageModelComponent" )
+            if ( damagemodels ~= nil ) then
+                for i,damagemodel in ipairs(damagemodels) do
+                    local projectile_resistance = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "radioactive" ))
+                    ComponentObjectSetValue2( damagemodel, "damage_multipliers", "radioactive", 0 )
+                end
+            end
+		end,
 	},
 	{
 		id = "TELEPORTITIS_DODGE",
