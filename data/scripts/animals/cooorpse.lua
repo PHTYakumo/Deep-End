@@ -1,10 +1,10 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
-function damage_received( damage, msg, source )
+function damage_received( damage, msg, source, is_fatal )
     local entity_id = GetUpdatedEntityID()
     local x, y = EntityGetTransform( entity_id )
 
-    if script_wait_frames( entity_id, 6 ) or damage <= 0 or source == entity_id then return end
+    if script_wait_frames( entity_id, 6 ) or damage <= 0 or source == entity_id or is_fatal then return end
     SetRandomSeed( entity_id - x, GameGetFrameNum() - y )
 
     if script_wait_frames( entity_id, 30 ) and Random(1,100) > 50 then return end

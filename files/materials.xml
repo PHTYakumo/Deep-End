@@ -279,9 +279,9 @@
 	texture_file="data/materials_gfx/deep_end_brick.png"
 	color="ff5c14d0" >
     </Graphics>
-  </CellDataChild>
+	</CellDataChild>
 
-  <CellDataChild
+	<CellDataChild
   	_parent="rock_static"
   	_inherit_reactions="1"
   	name="Wood_Deep_End" 
@@ -297,9 +297,9 @@
 	texture_file="data/materials_gfx/deep_end_wood.png"
 	color="ff5600e1" >
     </Graphics>
-  </CellDataChild>
+	</CellDataChild>
 
-  <CellDataChild
+	<CellDataChild
   	_parent="aluminium"
   	_inherit_reactions="1"
 	tags="[box2d],[matter_eater_ignore_list],[indestructible],[sunbaby_ignore_list]"
@@ -319,9 +319,9 @@
 		texture_file="data/materials_gfx/rock.png"
 		color="ff2d2dac" >
     </Graphics>
-  </CellDataChild>
+	</CellDataChild>
 
-  <CellData
+	<CellData
 	name="Eucharist_Deep_End"
 	ui_name="$Eucharist_Deep_End"
   	tags="[sand_other],[corrodible],[alchemy]"
@@ -361,9 +361,9 @@
 			<StatusEffect type="PROTECTION_ALL" amount="0.04" />
 		</Ingestion>
 	</StatusEffects>
-  </CellData>
+	</CellData>
 
-  <CellDataChild
+	<CellDataChild
   	_parent="aluminium"
   	_inherit_reactions="1"
 	tags="[box2d]"
@@ -386,9 +386,9 @@
 	texture_file="data/materials_gfx/crystal.png"
 	color="ff5787E7" >
     </Graphics>
-  </CellDataChild>
+	</CellDataChild>
 
-  <CellDataChild
+	<CellDataChild
   	_parent="templerock_static"
   	_inherit_reactions="1"
   	name="glowstone_Deep_End" 
@@ -402,12 +402,172 @@
 	texture_file="data/materials_gfx/templebrick_alt.png"
 	color="ffAAF06E" >
     </Graphics>
-  </CellDataChild>
+	</CellDataChild>
+
+	<CellData
+	name="monster_powder_test"
+	ui_name="$mat_monster_powder_test"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy],[catastrophic],[NO_FUNGAL_SHIFT]"
+	burnable="1"
+	density="7"
+	cell_type="liquid"
+	wang_color="ff200073"
+	generates_smoke="0"
+	liquid_gravity="2"
+	liquid_sand="1"
+	on_fire="1"
+	requires_oxygen="0"
+	temperature_of_fire="50"
+	autoignition_temperature="0"
+	hp="1000" 
+	fire_hp="300"
+	audio_physics_material_event="sand"
+	audio_physics_material_wall="sand"
+	audio_physics_material_solid="sand"
+	show_in_creative_mode="0"
+	audio_event_name="explosions/gunpowder"
+	>
+	<ExplosionConfig 
+		damage="0"
+		cell_explosion_power="20"
+		cell_explosion_damage_required="10"
+		cell_explosion_radius_min="2"
+		explosion_sprite="data/particles/explosion_012.xml"
+		load_this_entity="data/entities/animals/boss_pit/boss_pit_spawner.xml"
+		ray_energy="10"
+		>
+	</ExplosionConfig>
+    <Graphics
+	  texture_file="data/materials_gfx/gunpowder.png"
+	  color="ffb89e57" >
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="WEAKNESS" amount="1.0" />
+			<StatusEffect type="TRIP" amount="1.0" />
+		</Ingestion>
+	</StatusEffects>
+	</CellData>
+  
+	<CellData
+	name="rat_powder"
+	ui_name="$mat_rat_powder"
+  	tags="[sand_other],[catastrophic],[NO_FUNGAL_SHIFT]"
+	burnable="0"
+	density="7"
+	durability="3"
+	cell_type="liquid"
+	wang_color="ffbe4dff"
+	generates_smoke="0"
+	liquid_gravity="2"
+	liquid_sand="1"
+	on_fire="0"
+	requires_oxygen="0"
+	temperature_of_fire="10"
+	autoignition_temperature="0"
+	generates_flames="0"
+	on_fire_flame_material="swamp"
+	hp="1000" 
+	fire_hp="20"
+	audio_physics_material_event="sand"
+	audio_physics_material_wall="sand"
+	audio_physics_material_solid="sand"
+	show_in_creative_mode="0"
+	lifetime="4.0"
+	>
+    <Graphics
+	  texture_file="data/materials_gfx/meat_rotten.png"
+	  color="ffb89e57" >
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="TRIP" amount="0.15" />
+		</Ingestion>
+		<Stains>
+			<StatusEffect type="TRIP" />
+		</Stains>
+	</StatusEffects>
+	</CellData>
+  
+	<CellData
+	name="fungus_powder"
+	ui_name="$mat_fungisoil"
+  	tags="[sand_other],[fungus],[catastrophic],[NO_FUNGAL_SHIFT]"
+	burnable="0"
+	density="7"
+	durability="3"
+	cell_type="liquid"
+	wang_color="ffbecafe"
+	generates_smoke="0"
+	liquid_gravity="2"
+	liquid_sand="1"
+	on_fire="0"
+	requires_oxygen="0"
+	temperature_of_fire="10"
+	autoignition_temperature="0"
+	generates_flames="0"
+	on_fire_flame_material="swamp"
+	hp="1000" 
+	fire_hp="20"
+	audio_physics_material_event="sand"
+	audio_physics_material_wall="sand"
+	audio_physics_material_solid="sand"
+	show_in_creative_mode="0"
+	lifetime="4.0"
+	>
+    <Graphics
+	  texture_file="data/materials_gfx/meat_rotten.png"
+	  color="ffb89e57" >
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="TRIP" amount="0.15" />
+		</Ingestion>
+		<Stains>
+			<StatusEffect type="TRIP" />
+		</Stains>
+	</StatusEffects>
+	</CellData>
+
+	<CellDataChild
+  	_parent="water"
+	tags="[liquid],[magic],[catastrophic],[NO_FUNGAL_SHIFT]"
+	name="just_death"
+	ui_name="$mat_magic_liquid_death"
+	wang_color="ffb2332b"
+	gfx_glow="255"
+	lifetime="200"
+	show_in_creative_mode="1"
+	>
+    <Graphics
+	color="ff000000"
+	>
+    </Graphics>
+	<ParticleEffect
+		vel_random.min_x="-40"
+		vel_random.max_x="40"
+		vel_random.min_y="-40"
+		vel_random.max_y="40"
+		render_on_grid="1"
+		lifetime.min="5"
+		lifetime.max="20"
+		probability="0.6"
+		count.min="0"
+		count.max="1"
+	>
+	</ParticleEffect>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="WEAKNESS" amount="99.0" />
+			<StatusEffect type="TRIP" amount="99.0" />
+		</Ingestion>
+	</StatusEffects>
+	</CellDataChild>
 
 	<CellData
 	name="Bouncing_Burst_powder"
 	ui_name="$Bouncing_Burst_powder"
-  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy],[catastrophic],[NO_FUNGAL_SHIFT]"
 	burnable="1"
 	density="7"
 	cell_type="liquid"
@@ -449,12 +609,12 @@
 			<StatusEffect type="DEEP_END_NO_EDIT_EFFECT" amount="0.15" />
 		</Ingestion>
 	</StatusEffects>
-  </CellData>
+	</CellData>
 
-  <CellData
+	<CellData
 	name="Firebolt_powder"
 	ui_name="$Firebolt_powder"
-  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy],[catastrophic],[NO_FUNGAL_SHIFT]"
 	burnable="1"
 	density="7"
 	durability="3"
@@ -489,12 +649,12 @@
 			<StatusEffect type="INGESTION_ON_FIRE" amount="0.1" />
 		</Ingestion>
 	</StatusEffects>
-  </CellData>
+	</CellData>
 
-  <CellData
+	<CellData
 	name="Pollen_powder"
 	ui_name="$Pollen_powder"
-  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy],[catastrophic],[NO_FUNGAL_SHIFT]"
 	burnable="1"
 	density="7"
 	durability="3"
@@ -528,12 +688,12 @@
 			<StatusEffect type="DEEP_END_DIZZY_EFFECT" amount="0.15" />
 		</Ingestion>
 	</StatusEffects>
-  </CellData>
+	</CellData>
 
-  <CellData
+	<CellData
 	name="Lightning_Spells_powder"
 	ui_name="$Lightning_Spells_powder"
-  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy],[catastrophic],[NO_FUNGAL_SHIFT]"
 	burnable="1"
 	density="7"
 	durability="3"
@@ -567,12 +727,12 @@
 			<StatusEffect type="DEEP_END_NO_HEAL_EFFECT" amount="0.15" />
 		</Ingestion>
 	</StatusEffects>
-  </CellData>
+	</CellData>
 
-  <CellData
+	<CellData
 	name="Disc_powder"
 	ui_name="$Disc_powder"
-  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy],[catastrophic],[NO_FUNGAL_SHIFT]"
 	burnable="1"
 	density="7"
 	cell_type="liquid"
@@ -614,12 +774,12 @@
 			<StatusEffect type="DEEP_END_CRIPPLE_EFFECT" amount="0.15" />
 		</Ingestion>
 	</StatusEffects>
-  </CellData>
+	</CellData>
 
-  <CellData
+	<CellData
 	name="Vigour_powder"
 	ui_name="$Vigour_powder"
-  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy],[catastrophic],[NO_FUNGAL_SHIFT]"
 	burnable="1"
 	density="7"
 	durability="3"
@@ -654,12 +814,12 @@
 			<StatusEffect type="RAINBOW_FARTS" amount="0.15" />
 		</Ingestion>
 	</StatusEffects>
-  </CellData>
+	</CellData>
 
-  <CellData
+	<CellData
 	name="Cell_Eater_powder"
 	ui_name="$Cell_Eater_powder"
-  	tags="[sand_other],[corrodible],[burnable],[alchemy],[indestructible]"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy],[indestructible],[catastrophic],[NO_FUNGAL_SHIFT]"
 	burnable="1"
 	density="7"
 	cell_type="liquid"
@@ -701,12 +861,12 @@
 			<StatusEffect type="WEAKNESS" amount="0.1" />
 		</Ingestion>
 	</StatusEffects>
-  </CellData>
+	</CellData>
 
-  <CellData
+	<CellData
 	name="Witch_powder"
 	ui_name="$Witch_powder"
-  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy],[catastrophic],[NO_FUNGAL_SHIFT]"
 	burnable="1"
 	density="7"
 	durability="3"
@@ -741,9 +901,9 @@
 			<StatusEffect type="CURSE_CLOUD" amount="0.15" />
 		</Ingestion>
 	</StatusEffects>
-  </CellData>
+	</CellData>
 
-  <CellData 
+	<CellData 
 	name="super_urine"  
 	ui_name="$super_urine"
   	tags="[liquid],[corrodible],[soluble],[liquid_common]"
@@ -774,9 +934,9 @@
 			<StatusEffect type="DEEP_END_CRIPPLE_EFFECT" amount="0.15" />
 		</Ingestion>
 	</StatusEffects>
-  </CellData>
+	</CellData>
 
-  <CellData 
+	<CellData 
 	name="super_beer"  
 	ui_name="$super_beer"
   	tags="[liquid],[water],[impure],[liquid_common]"
@@ -804,9 +964,9 @@
 			<StatusEffect type="DEEP_END_DIZZY_EFFECT" amount="0.15" />
 		</Ingestion>
 	</StatusEffects>
-  </CellData>
+	</CellData>
 
-  <CellData
+	<CellData
 	name="deep_end_magic_acid"
 	ui_name="$deep_end_magic_acid"
   	tags="[fire_lava],[liquid],[matter_eater_ignore_list],[indestructible],[sunbaby_ignore_list]"
@@ -867,12 +1027,12 @@
 			<StatusEffect type="INGESTION_ON_FIRE" amount="0.66" />
 		</Ingestion>
 	</StatusEffects>
-  </CellData>
+	</CellData>
 
-  <CellData
+	<CellData
 	name="deep_end_creepy_liquid"
 	ui_name="$deep_end_creepy_liquid"
-  	tags="[liquid],[impure],[catastrophic]"
+  	tags="[liquid],[impure],[catastrophic],[NO_FUNGAL_SHIFT]"
 	burnable="0"
 	density="15"
 	lifetime="999999"
@@ -931,9 +1091,9 @@
 			<StatusEffect type="DEEP_END_CRIPPLE_EFFECT" amount="99.0" />
 		</Ingestion>
 	</StatusEffects>
-  </CellData>
+	</CellData>
 
-  <CellData 
+	<CellData 
 	name="deep_end_gravity_potion"  
 	ui_name="$de_gravity_potion"
   	tags="[liquid],[corrodible],[soluble],[liquid_common]"
@@ -961,9 +1121,9 @@
 			<StatusEffect type="DEEP_END_GRAVITY_EFFECT" amount="0.6" />
 		</Ingestion>
 	</StatusEffects>
-  </CellData>
+	</CellData>
 
-  <CellData 
+	<CellData 
 	name="deep_end_laser_eye_potion"  
 	ui_name="$de_laser_eye"
   	tags="[liquid],[corrodible],[soluble],[liquid_common]"
@@ -992,9 +1152,9 @@
 			<StatusEffect type="DEEP_END_LASER_EYE_EFFECT" amount="0.6" />
 		</Ingestion>
 	</StatusEffects>
-  </CellData>
+	</CellData>
 
-  <CellData 
+	<CellData 
 	name="deep_end_harden_potion"  
 	ui_name="$de_hardener"
   	tags="[liquid],[corrodible],[soluble],[liquid_common]"
@@ -1026,12 +1186,12 @@
 			<StatusEffect type="DEEP_END_HARDEN_EFFECT" amount="0.1" />
 		</Ingestion>
 	</StatusEffects>
-  </CellData>
+	</CellData>
 
-  <CellData
+	<CellData
 	name="Hemokinesis_powder"
 	ui_name="$HEMOKINESIS"
-  	tags="[liquid],[corrodible],[soluble],[liquid_common],[catastrophic]"
+  	tags="[liquid],[corrodible],[soluble],[liquid_common],[catastrophic],[NO_FUNGAL_SHIFT]"
 	burnable="0"  
 	density="3"  
 	cell_type="liquid" 
@@ -1052,12 +1212,12 @@
 			<StatusEffect type="POISONED" amount="0.04" />
 		</Ingestion>
 	</StatusEffects>
-  </CellData>
+	</CellData>
 
-  <CellData
+	<CellData
 	name="Hemokinesis_powder_worm"
 	ui_name="$HEMOKINESIS"
-  	tags="[liquid],[corrodible],[soluble],[liquid_common],[catastrophic]"
+  	tags="[liquid],[corrodible],[soluble],[liquid_common],[catastrophic],[NO_FUNGAL_SHIFT]"
 	burnable="0"  
 	density="3"  
 	cell_type="liquid" 
@@ -1078,12 +1238,12 @@
 			<StatusEffect type="WORM_ATTRACTOR" amount="0.04" />
 		</Ingestion>
 	</StatusEffects>
-  </CellData>
+	</CellData>
 
 	<CellData
 		name="deep_end_hush"
 		ui_name="$deep_end_hush"
-		tags="[gas]"
+		tags="[gas],[NO_FUNGAL_SHIFT]"
 		burnable="0"
 		density="5"
 		durability="1"
@@ -1131,7 +1291,7 @@
 	<CellData
 		name="deep_end_hush_static"
 		ui_name="$deep_end_hush"
-		tags="[static],[matter_eater_ignore_list],[indestructible],[sunbaby_ignore_list],"
+		tags="[static],[matter_eater_ignore_list],[indestructible],[sunbaby_ignore_list],[NO_FUNGAL_SHIFT]"
 		burnable="0"
 		density="15"
 		durability="19"
