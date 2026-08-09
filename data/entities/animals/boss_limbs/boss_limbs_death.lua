@@ -12,7 +12,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	
 	SetRandomSeed( pos_x + GameGetFrameNum(), pos_x + entity_id )
 	
-	local opts = { "NOLLA", "DRAW_RANDOM", "DRAW_RANDOM_X3", "DRAW_3_RANDOM", "CURSE", "CURSE_WITHER_ELECTRICITY", "CURSE_WITHER_EXPLOSION", "CURSE_WITHER_MELEE", "CURSE_WITHER_PROJECTILE" }
+	local opts = { "NOLLA", "CURSE_WITHER_ELECTRICITY", "CURSE_WITHER_EXPLOSION", "CURSE_WITHER_MELEE", "CURSE_WITHER_PROJECTILE", "DE_PRECISE_HUNT" }
 	local rnd = Random( 1, #opts )
 	
 	if flag_status then

@@ -59,8 +59,9 @@ if entity_id ~= nil and entity_id ~= NULL_ENTITY then
 
 	local exp_rad = ComponentObjectGetValue2( pcomp0, "config_explosion", "explosion_radius" )
 
-	if exp_rad ~= nil and exp_rad > 4 then
+	if exp_rad ~= nil then
 		ComponentObjectSetValue2( pcomp0, "config_explosion", "explosion_radius", exp_rad - 1 )
+		exp_rad = math.max( exp_rad, 10 )
 
 		local exp_id = shoot_projectile( shooter, "data/entities/projectiles/blasting_chain_reaction_explosion.xml", x, y, 0, 0, false )
 		if exp_id == nil then return end

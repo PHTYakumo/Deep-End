@@ -1038,7 +1038,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.6,0.7,0.8", -- DISC_BULLET_BIG
 		price = 180,
 		mana = 35,
-		max_uses = 20 * 1,
+		max_uses = 20,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/disc_bullet_big.xml")
 			-- damage = 0.3
@@ -1061,7 +1061,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.4,0.7,0.05", -- DISC_BULLET_BIG
 		price = 270,
 		mana = 84,
-		max_uses = 20 * 1,
+		max_uses = 20,
 		ai_never_uses = true,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/disc_bullet_bigger.xml")
@@ -1220,7 +1220,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.7,0.7,0.7,0.7", -- LANCE
 		price = 180,
 		mana = 12,
-		max_uses = 150,
+		-- max_uses = 150,
 		custom_xml_file = "data/entities/misc/custom_cards/lance.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/lance.xml")
@@ -2921,7 +2921,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.1,0.15,0.2,0.4,0.04", -- SPIRAL_SHOT
 		price = 300,
 		mana = 49,
-		max_uses = 10,
+		max_uses = 1000,
 		custom_xml_file = "data/entities/misc/custom_cards/soldiershot.xml",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/soldiers_shot.xml")
@@ -4678,7 +4678,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.3,0.2,0.4", -- RUBBER_BALL
 		price = 60,
 		mana = 0,
-		max_uses = 45,
+		-- max_uses = 45,
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/shockwave.xml")
 			c.speed_multiplier = 0.01
@@ -4958,7 +4958,7 @@ local de_actions_recompose =
 		spawn_probability                 = "1,0.8,1,1,0.5,0.3", -- FIREWORK
 		price = 220,
 		mana = 35,
-		max_uses = 42, 
+		-- max_uses = 42, 
 		action 		= function()
 			local year, month, day = GameGetDateAndTimeLocal()
 
@@ -6109,7 +6109,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.48,0.56,0.64,0.72,0.1", -- LIFETIME
 		price = 250,
 		mana = 25,
-		max_uses = 120,
+		-- max_uses = 120,
 		custom_xml_file = "data/entities/misc/custom_cards/lifetime.xml",
 		action 		= function()
 			c.lifetime_add = c.lifetime_add + 75
@@ -6128,7 +6128,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.72,0.64,0.56,0.48,0.1", -- LIFETIME_DOWN
 		price = 90,
 		mana = 5,
-		max_uses = 120,
+		-- max_uses = 120,
 		custom_xml_file = "data/entities/misc/custom_cards/lifetime_down.xml",
 		action 		= function()
 			c.lifetime_add = c.lifetime_add - 42
@@ -6630,7 +6630,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.5,0.6,0.5,0.5,1", -- MANA_REDUCE
 		price = 1234,
 		mana = 10,
-		max_uses = 133,
+		-- max_uses = 133,
 		action 		= function()
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/quantum_split.xml," )
 			c.fire_rate_wait = c.fire_rate_wait + 5
@@ -7056,7 +7056,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.05,0.25,0.25,0.15,0.15,0.05", -- ANTI_HOMING
 		price = 110,
 		mana = 0,
-		max_uses = 150,
+		-- max_uses = 150,
 		action 		= function()
 			local mdf_1 = de_str_finder( c.extra_entities, "data/entities/misc/anti_homing.xml," )
 			local mdf_2 = de_str_finder( c.extra_entities, "data/entities/misc/anti_homing_shooter.xml," )
@@ -8066,7 +8066,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.2,0.1", -- NECROMANCY
 		price = 200,
 		mana = 2,
-		max_uses = 30,
+		-- max_uses = 30,
 		action 		= function()
 			c.game_effect_entities = de_effect_entities_add( c.game_effect_entities, "data/entities/misc/effect_necromancy.xml," )
 			c.damage_curse_add = c.damage_curse_add + 0.03
@@ -8087,7 +8087,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.2,0.3,0.4,0.2,0.1,0.05", -- NECROMANCY
 		price = 200,
 		mana = 28,
-		max_uses = 40,
+		-- max_uses = 40,
 		action 		= function()
 			c.game_effect_entities = de_effect_entities_add( c.game_effect_entities, "data/entities/misc/effect_de_drowning.xml," )
 			c.damage_curse_add = c.damage_curse_add + 0.39
@@ -8108,7 +8108,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.4,0.6,0.5,0.3,0.01", -- NECROMANCY
 		price = 200,
 		mana = 12,
-		max_uses = 120,
+		-- max_uses = 120,
 		action 		= function()
 			SetRandomSeed( GameGetFrameNum() + 81, GameGetFrameNum() + 13 )
 
@@ -8967,7 +8967,7 @@ local de_actions_recompose =
 		spawn_probability                 = "1,1,0.8,0.7", -- ELECTRIC_CHARGE
 		price = 150,
 		mana = 20,
-		max_uses = 150,
+		-- max_uses = 150,
 		custom_xml_file = "data/entities/misc/custom_cards/electric_charge.xml",
 		action 		= function()
 			c.lightning_count = 1
@@ -9007,7 +9007,7 @@ local de_actions_recompose =
 		spawn_probability                 = "1,1,0.9,0.8", -- FREEZE
 		price = 140,
 		mana = 4,
-		max_uses = 150,
+		-- max_uses = 150,
 		custom_xml_file = "data/entities/misc/custom_cards/freeze.xml",
 		action 		= function()
 			c.damage_ice_add = c.damage_ice_add + 0.08
@@ -9786,7 +9786,7 @@ local de_actions_recompose =
 		type 		= ACTION_TYPE_MODIFIER,
 		spawn_level                       = "2,3,5,6,10", -- FIREBALL_RAY_ENEMY
 		spawn_probability                 = "0.2,0.3,0.3,0.2,0.1", -- FIREBALL_RAY_ENEMY
-		price = 140,
+		price = 400,
 		mana = 45,
 		max_uses = 30,
 		action 		= function()
@@ -9873,6 +9873,66 @@ local de_actions_recompose =
 		end,
 	},
 	{
+		Deep_End_Unique_Spell = true,
+		id          = "DE_PRECISE_HUNT",
+		name 		= "$PRECISE_HUNT",
+		description = "$dPRECISE_HUNT",
+		sprite 		= "mods/deep_end/files/actions_sprite/precise_hunt.png",
+		related_extra_entities = { "data/entities/misc/hitfx_precise_hunt.xml" },
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "2,3,5,6,7,10", -- FIREBALL_RAY_ENEMY
+		spawn_probability                 = "0.2,0.3,0.3,0.2,0.025,0.1", -- FIREBALL_RAY_ENEMY
+		price = 400,
+		mana = 25,
+		max_uses = 50,
+		action 		= function()
+			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/hitfx_precise_hunt.xml," )
+			c.screenshake = c.screenshake + 10
+
+			draw_actions( 1, true )
+		end,
+	},
+	{
+		Deep_End_Unique_Spell = true,
+		id          = "DE_SPLASH",
+		name 		= "$SPLASH",
+		description = "$dSPLASH",
+		sprite 		= "mods/deep_end/files/actions_sprite/splash.png",
+		related_extra_entities = { "data/entities/misc/de_splash.xml" },
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "1,2,4,5,6", -- EXPLOSIVE_PROJECTILE
+		spawn_probability                 = "0.3,0.45,0.3,0.45,0.3", -- EXPLOSIVE_PROJECTILE
+		price = 111,
+		mana = 15,
+		-- max_uses = 75,
+		action 		= function()
+			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/de_splash.xml," )
+			c.damage_projectile_add = c.damage_projectile_add - 0.08
+
+			draw_actions( 1, true )
+		end,
+	},
+	{
+		Deep_End_Unique_Spell = true,
+		id          = "DE_SALVO",
+		name 		= "$SALVO",
+		description = "$dSALVO",
+		sprite 		= "mods/deep_end/files/actions_sprite/salvo.png",
+		related_extra_entities = { "data/entities/misc/de_salvo.xml" },
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "1,3,5", -- GRAVITY_FIELD_ENEMY
+		spawn_probability                 = "0.4,0.35,0.3", -- GRAVITY_FIELD_ENEMY
+		price = 123,
+		mana = 24,
+		-- max_uses = 90,
+		action 		= function()
+			c.extra_entities = c.extra_entities .. "data/entities/misc/de_salvo.xml,"
+			c.lifetime_add = math.max( c.lifetime_add - 11, 0 )
+
+			draw_actions( 1, true )
+		end,
+	},
+	{
 		id          = "ORBIT_DISCS",
 		name 		= "$action_orbit_discs",
 		description = "$actiondesc_orbit_discs",
@@ -9885,7 +9945,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.4,0.4,0.3", -- GRAVITY_FIELD_ENEMY
 		price = 200,
 		mana = 20,
-		max_uses = 90,
+		-- max_uses = 90,
 		action 		= function()
 			c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_discs.xml,"
 			draw_actions( 1, true )
@@ -9904,7 +9964,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.4,0.5,0.3,0.1", -- GRAVITY_FIELD_ENEMY
 		price = 140,
 		mana = 25,
-		max_uses = 90,
+		-- max_uses = 90,
 		action 		= function()
 			c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_fireballs.xml,"
 			draw_actions( 1, true )
@@ -9946,7 +10006,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.3,0.4,0.5,0.3,0.1", -- GRAVITY_FIELD_ENEMY
 		price = 200,
 		mana = 75,
-		max_uses = 90,
+		-- max_uses = 90,
 		action 		= function()
 			c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_lasers.xml,"
 			draw_actions( 1, true )
@@ -10711,7 +10771,7 @@ local de_actions_recompose =
 		spawn_probability                 = "0.4,0.3,0.3", -- BURN_TRAIL
 		price = 100,
 		mana = 2,
-		max_uses = 150,
+		-- max_uses = 150,
 		custom_xml_file = "data/entities/misc/custom_cards/burn_trail.xml",
 		action 		= function()
 			c.damage_fire_add = c.damage_fire_add + 0.08

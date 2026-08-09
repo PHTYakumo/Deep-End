@@ -115,6 +115,6 @@ if target_id ~= NULL_ENTITY  then
 
 	local tlimit = 13
 
-	if EntityHasTag( target_id, "death_cross") then tlimit = 69 end -- "ftl + deathcross with trigger + ftl + deathcross with trigger" can go directly to PW
+	if EntityHasTag( target_id, "death_cross") then tlimit = 67 end
 	if timelimit then EntityAddComponent( target_id, "LifetimeComponent",{lifetime = tostring(tlimit),} ) end -- time limitation
 end

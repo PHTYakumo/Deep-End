@@ -8,12 +8,13 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	AddFlagPersistent( "miniboss_alchemist" )
 	
 	if EntityHasTag( entity_id, "holy_mountain_creature" ) then return end
-
 	local pw = check_parallel_pos( x )
 	
 	SetRandomSeed( pw, 60 )
 	
 	local opts = { "ALPHA", "OMEGA", "GAMMA", "MU", "ZETA", "PHI", "TAU", "SIGMA" }
+	if pw ~= 0 then opts = { "DRAW_RANDOM", "DRAW_RANDOM_X3", "DRAW_3_RANDOM" } end
+
 	local rnd = Random( 1, #opts )
 	
 	for i=1,#opts do
