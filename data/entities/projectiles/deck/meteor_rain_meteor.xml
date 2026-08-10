@@ -222,5 +222,12 @@
 		value_string="data/entities/projectiles/deck/meteor_rain_meteor.xml"
 		>
 	</VariableStorageComponent>
+
+  <LuaComponent
+		script_source_file="data/scripts/perks/safe_exp.lua"
+		execute_every_n_frame="-1"
+		execute_on_removed="1"
+		>
+	</LuaComponent>
 </Entity>
 
