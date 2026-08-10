@@ -340,6 +340,8 @@ de_perk_list_recompose =
 		ui_icon = "data/ui_gfx/perk_icons/telekinesis.png",
 		perk_icon = "data/ui_gfx/perk_icons/telekinesis.png",
 		stackable = STACKABLE_NO,
+		do_not_remove = true,
+		one_off_effect = true,
 		usable_by_enemies = false,
 		func = function( entity_perk_item, entity_who_picked, item_name )
 			EntityLoadToEntity( "data/entities/misc/perk_telekinesis.xml", entity_who_picked )
@@ -439,6 +441,8 @@ de_perk_list_recompose =
 		ui_icon = "data/ui_gfx/perk_icons/money_shield.png",
 		perk_icon = "data/ui_gfx/perk_icons/money_shield.png",
 		stackable = STACKABLE_NO,
+		do_not_remove = true,
+		one_off_effect = true,
 		usable_by_enemies = false,
 		func = function( entity_perk_item, entity_who_picked, item_name )
 			EntityAddComponent( entity_who_picked, "LuaComponent", 
@@ -823,8 +827,8 @@ de_perk_list_recompose =
 		game_effect = "PROTECTION_EXPLOSION",
 		stackable = STACKABLE_NO,
 		usable_by_enemies = true,
-		one_off_effect = true,
 		do_not_remove = true,
+		one_off_effect = true,
 	},
 	{
 		id = "PROTECTION_MELEE",
@@ -834,8 +838,7 @@ de_perk_list_recompose =
 		perk_icon = "data/ui_gfx/perk_icons/protection_melee.png",
 		game_effect = "PROTECTION_MELEE",
 		stackable = STACKABLE_NO,
-		one_off_effect = true,
-		do_not_remove = true,
+		do_not_remove = true,one_off_effect = true,
 		usable_by_enemies = false,
 	},
 	{
@@ -846,8 +849,8 @@ de_perk_list_recompose =
 		perk_icon = "data/ui_gfx/perk_icons/protection_electricity.png",
 		game_effect = "PROTECTION_ELECTRICITY",
 		stackable = STACKABLE_NO,
-		one_off_effect = true,
 		do_not_remove = true,
+		one_off_effect = true,
 		usable_by_enemies = false,
 	},
 	{
@@ -860,8 +863,8 @@ de_perk_list_recompose =
 		game_effect2 = "STUN_PROTECTION_FREEZE",
 		usable_by_enemies = true,
 		not_in_default_perk_pool = true,
-		one_off_effect = true,
 		do_not_remove = true,
+		one_off_effect = true,
 	},
 	{
 		id = "PROTECTION_RADIOACTIVITY",
@@ -872,8 +875,8 @@ de_perk_list_recompose =
 		game_effect = "PROTECTION_RADIOACTIVITY",
 		game_effect2 = "PROTECTION_FOOD_POISONING",
 		not_in_default_perk_pool = true,
-		one_off_effect = true,
 		do_not_remove = true,
+		one_off_effect = true,
 		usable_by_enemies = false,
 		func = function( entity_perk_item, entity_who_picked, item_name )
 			local damagemodels = EntityGetComponent( entity_who_picked, "DamageModelComponent" )
