@@ -36,6 +36,7 @@ function collision_trigger()
 	EntityKill( workshop_3 );
 	--print("Destroyed workshop hint entity")
 
+	--[[
 	-- kill temple_areacheckers that are on (about) the same horizontal level as we are
 	local temple_areacheckers = EntityGetInRadiusWithTag( pos_x, pos_y, 2048, "temple_areachecker" )
 	for k,areachecker in pairs(temple_areacheckers) do
@@ -45,6 +46,7 @@ function collision_trigger()
 			EntityKill( areachecker )
 		end
 	end
+	]]--
 
 	-- SetGlobalValue( "temple_collapsed_" )
 	-- tags="temple_areachecker"

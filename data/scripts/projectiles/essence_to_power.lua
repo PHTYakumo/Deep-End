@@ -2,37 +2,34 @@ dofile_once("data/scripts/lib/utilities.lua")
 
 local entity_id = GetUpdatedEntityID()
 local root_id = EntityGetRootEntity( entity_id )
+
+local comp = EntityGetFirstComponent( entity_id, "ProjectileComponent" )
+if comp == nil then return end
+
+local who_shot = ComponentGetValue2( comp, "mWhoShot" )
+local count = 0.4
+
 local x, y = EntityGetTransform( entity_id )
 local radius = 160
 
 local projectiles = EntityGetInRadiusWithTag( x, y, radius, "homing_target" )
 local projectiles2 = EntityGetInRadiusWithTag( x, y, radius, "summon_player" )
 
-if ( #projectiles2 > 0 ) then
-	for i,v in ipairs( projectiles2 ) do
-		table.insert( projectiles, v )
-	end
-end
+if #projectiles2 > 0 then for i,v in ipairs( projectiles2 ) do
+	table.insert( projectiles, v )
+end end
 
-local count = 0.4
-local who_shot
-local comp = EntityGetFirstComponent( entity_id, "ProjectileComponent" )
-if ( comp ~= nil ) then
-	who_shot = ComponentGetValue2( comp, "mWhoShot" )
-end
-
-if ( who_shot ~= nil ) and ( comp ~= nil ) then
-	for i,projectile_id in ipairs(projectiles) do
-		if ( projectile_id ~= root_id ) and ( projectile_id ~= entity_id ) and ( projectile_id ~= who_shot ) and ( EntityHasTag( projectile_id, "essence_to_power_target" ) == false ) then
-			local comp2 = EntityGetFirstComponent( projectile_id, "DamageModelComponent" )
+if who_shot ~= nil and comp ~= nil then
+	for i,pid in ipairs(projectiles) do
+		if pid ~= root_id and pid ~= entity_id and pid ~= who_shot and EntityHasTag( pid, "essence_to_power_target" ) == false then
+			local comp2 = EntityGetFirstComponent( pid, "DamageModelComponent" )
 			
-			if ( comp2 ~= nil ) then
+			if comp2 ~= nil then
 				local amount = ComponentGetValue2( comp2, "max_hp" ) or 0.4
-				
 				count = count + math.max( 0.4, amount )
 				
-				EntityAddTag( projectile_id, "essence_to_power_target" )
-				EntityAddChild( projectile_id, EntityLoad( "data/entities/misc/essence_to_power_cooldown.xml", x, y ) )
+				EntityAddTag( pid, "essence_to_power_target" )
+				EntityAddChild( pid, EntityLoad( "data/entities/misc/essence_to_power_cooldown.xml", x, y ) )
 			end
 		end
 	end

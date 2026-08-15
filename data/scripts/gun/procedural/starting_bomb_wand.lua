@@ -47,7 +47,8 @@ gun.spread_degrees = 0
 gun.speed_multiplier = 1
 gun.mana_charge_speed = {15,25}
 gun.mana_max = {80,120}
-gun.actions = {"BOMB","DYNAMITE","BOMB","DYNAMITE","BOMB","DYNAMITE","ROCKET","FIREWORK"}
+gun.actions = {"BOMB","DYNAMITE","ROCKET","FIREWORK"}
+if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) then gun.actions = {"GLITTER_BOMB","GRENADE_LARGE","ROCKET","FIREWORK"} end
 
 local mana_max = get_random_between_range( gun.mana_max )
 local deck_capacity = gun.deck_capacity

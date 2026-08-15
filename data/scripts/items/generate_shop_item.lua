@@ -8,6 +8,13 @@ function generate_shop_item( x, y, cheap_item, biomeid_, is_stealable )
 	
 	-- this makes the shop items deterministic
 	SetRandomSeed( x, y )
+	local bad_shop = ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" )
+
+	if bad_shop and Random(1,100) < 10 then
+		local eid = EntityLoad( "data/entities/projectiles/bomb_apple.xml", x, y )
+		return eid
+	end
+		
 
 	local biomes =
 	{
@@ -94,9 +101,11 @@ function generate_shop_item( x, y, cheap_item, biomeid_, is_stealable )
 	cardcost = cardcost * ( 1 + ( 49 - Random(1,100) ) * 0.001 )
 	if cardcost < 25 then cardcost = cardcost * 0.5 + 12.5 end
 
-	if cheap_item then
+	if cheap_item and not bad_shop then
 		cardcost = 0.5 * cardcost
 		EntityLoad( "data/entities/misc/sale_indicator.xml", x, y )
+	else
+		cardcost = cardcost * ( 1 + Random(1,100) * 0.01 )
 	end
 	
 	if biomeid >= 10 then
@@ -193,6 +202,12 @@ end
 function generate_shop_wand( x, y, cheap_item, biomeid_ )
 	-- this makes the shop items deterministic
 	SetRandomSeed( x, y )
+	local bad_shop = ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" )
+
+	if bad_shop and ( Random(1,100) < 10 or ( cheap_item and Random(1,100) > 50 ) ) then
+		local eid = EntityLoad( "data/entities/projectiles/bomb_apple.xml", x, y )
+		return eid
+	end
 
 	local biomes =
 	{
@@ -263,9 +278,11 @@ function generate_shop_wand( x, y, cheap_item, biomeid_ )
 	local wandcost = ( 50 + biomeid * 210 ) + ( Random( -15, 15 ) * 10 )
 	wandcost = wandcost * ( 1 + ( 49 - Random(1,100) ) * 0.001 )
 
-	if cheap_item then
+	if cheap_item and not bad_shop then
 		wandcost = 0.5 * wandcost
 		EntityLoad( "data/entities/misc/sale_indicator.xml", x, y )
+	else
+		wandcost = wandcost * ( 1 + Random(1,100) * 0.01 )
 	end
 
 	wandcost = math.max( math.floor( wandcost ), 1 )

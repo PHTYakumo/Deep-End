@@ -73,10 +73,6 @@ local player_start = "data/entities/player.xml"
 local pls = ModTextFileGetContent( player_start )
 
 if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) then
-	ModTextFileSetContent( player_start, pls:gsub( [===[<Entity><Base file="data/entities/items/starting_wand_rng.xml" /></Entity>]===], [===[<Entity><Base file="data/entities/items/wand_level_03_better.xml" /></Entity> <Entity><Base file="data/entities/items/wand_level_03_better.xml" /></Entity>]===], 1 ) )
-	pls = ModTextFileGetContent( player_start )
-	ModTextFileSetContent( player_start, pls:gsub( [===[<Entity><Base file="data/entities/items/starting_bomb_wand_rng.xml" /></Entity>]===], [===[<Entity><Base file="data/entities/items/wand_level_03_better.xml" /></Entity> <Entity><Base file="data/entities/items/wand_level_03_better.xml" /></Entity>]===], 1 ) )
-	pls = ModTextFileGetContent( player_start )
 	ModTextFileSetContent( player_start, pls:gsub( [===[<Entity><Base file="data/entities/items/pickup/potion_starting.xml" /></Entity>]===], [===[<Entity><Base file="data/entities/items/pickup/potion_water.xml" /></Entity> <Entity><Base file="data/entities/items/pickup/potion_water.xml" /></Entity>]===], 1 ) )
 else
 	ModTextFileSetContent( player_start, pls:gsub( [===[<Entity><Base file="data/entities/items/pickup/potion_starting.xml" /></Entity>]===], [===[<Entity><Base file="data/entities/items/wands/level_01/wand_007.xml" /></Entity> <Entity><Base file="data/entities/items/wands/level_01/wand_017.xml" /></Entity> <Entity><Base file="data/entities/items/pickup/potion_starting.xml" /></Entity> <Entity><Base file="data/entities/items/pickup/gourd.xml" /></Entity>]===], 1 ) )
@@ -456,7 +452,7 @@ function OnPlayerSpawned( player_entity )
 		ComponentSetValue2( comp_worldstate, "perk_hp_drop_chance", 20 )
 
 		GlobalsSetValue( "TEMPLE_PERK_COUNT", 1 )
-		GlobalsSetValue( "TEMPLE_PERK_REROLL_COUNT", -2 )
+		GlobalsSetValue( "TEMPLE_PERK_REROLL_COUNT", -1 )
 		GlobalsSetValue( "TEMPLE_SHOP_ITEM_COUNT", 6 )
 	end
 
@@ -606,7 +602,7 @@ function OnPlayerSpawned( player_entity )
 		ComponentObjectSetValue2( damagemodel, "damage_multipliers", "curse", curse )
 	end end
 
-	if ModSettingGet( "DEEP_END.HELL_AND_HELL_PERK" ) then GlobalsSetValue( "TEMPLE_PERK_REROLL_COUNT", tostring(-1) ) end
+	if ModSettingGet( "DEEP_END.HELL_AND_HELL_PERK" ) then GlobalsSetValue( "TEMPLE_PERK_REROLL_COUNT", tostring(-2) ) end
 
 	-- festal
 	if ModSettingGet( "DEEP_END.FESTIVAL_EVENTS" ) then

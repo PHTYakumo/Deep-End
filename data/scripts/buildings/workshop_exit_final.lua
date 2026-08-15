@@ -17,11 +17,13 @@ function collision_trigger()
 	workshop = EntityGetClosestWithTag( x, y, "workshop_show_hint" )
 	EntityKill( workshop );
 
+	--[[
 	local temple_areacheckers = EntityGetInRadiusWithTag( x, y, 2048, "temple_areachecker" )
 	for k,areachecker in pairs(temple_areacheckers) do
 		local ax, ay = EntityGetTransform( areachecker )
 		if math.abs( y - ay ) < 512 then EntityKill( areachecker ) end
 	end
+	]]--
 
 	temple_set_active_flag( x, y, "0" )
 	GlobalsSetValue( "FINAL_BOSS_ARENA_ENTERED", "1" )

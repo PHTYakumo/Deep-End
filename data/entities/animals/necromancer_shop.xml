@@ -38,7 +38,7 @@
 			physics_objects_damage="0"
 			>
 			<damage_multipliers
-				projectile="0.75"
+				projectile="1"
 				explosion="0.25"
 				electricity="0.75"
 				ice="0.5"

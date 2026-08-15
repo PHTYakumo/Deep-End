@@ -198,7 +198,13 @@ function spawn_control_workshop(x,y)
 end
 
 function spawn_perk_reroll( x, y )
-	if ( ModSettingGet( "DEEP_END.HELL_AND_HELL_PERK" ) ) or ( ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) ) then GlobalsSetValue( "TEMPLE_PERK_REROLL_COUNT", "-2" ) end
+	local perk_reroll_count = tonumber( GlobalsGetValue( "TEMPLE_PERK_REROLL_COUNT", "0" ) )
+
+	if ( ModSettingGet( "DEEP_END.HELL_AND_HELL_PERK" ) ) then
+		GlobalsSetValue( "TEMPLE_PERK_REROLL_COUNT", tostring( math.min( perk_reroll_count, -2 ) ) )
+	elseif ( ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) ) then
+		GlobalsSetValue( "TEMPLE_PERK_REROLL_COUNT", tostring( math.max( perk_reroll_count - 1, -1 ) ) )
+	end
 
 	local rid = EntityLoad( "data/entities/items/pickup/perk_reroll.xml", x, y )
 	local reroll_comp = EntityGetFirstComponent( rid, "ItemCostComponent" )

@@ -711,7 +711,7 @@ function spawn_any_enemy( x, y )
 		local target = enemy_list[rnd]
 		
 		local folder = "animals/"
-		if string.sub( target, 1, 10 ) == "buildings/" then folder = "" nd
+		if string.sub( target, 1, 10 ) == "buildings/" then folder = "" end
 		
 		if folder == "" then EntityLoad( "data/entities/" .. target .. ".xml", x, y )
 		else EntityLoadCameraBound( "data/entities/" .. folder .. target .. ".xml", x, y ) end

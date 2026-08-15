@@ -49,6 +49,7 @@ gun.mana_charge_speed = {70,120}
 gun.mana_max = {180,220}
 -- Note(Petri): Removed DYNAMITE
 gun.actions = {"SPITTER","RUBBER_BALL","BOUNCY_ORB"}
+if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) then gun.actions = {"SPITTER_TIER_2","BUCKSHOT","LASER"} end
 
 local mana_max = get_random_between_range( gun.mana_max )
 local deck_capacity = get_random_between_range( gun.deck_capacity )

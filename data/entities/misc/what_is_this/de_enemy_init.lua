@@ -3,13 +3,12 @@ dofile_once("data/scripts/lib/utilities.lua")
 local entity_id = GetUpdatedEntityID()
 if not EntityHasTag( entity_id, "enemy" ) then return end -- "polymorphed_player"
 
-if GlobalsGetValue( "DEEP_END_GLOBAL_GORE" ) == "t" then
+if GlobalsGetValue( "DEEP_END_GLOBAL_GORE" ) == "t" then -- clear ragdoll
     local comp = EntityGetFirstComponent( entity_id, "DamageModelComponent" )
     if comp ~= nil then ComponentSetValue2( comp, "ragdoll_fx_forced", "CONVERT_TO_MATERIAL" ) end
-    -- in fact, death will disappear directly without leaving any ragdolls or materials
 end
 
-if GlobalsGetValue( "PERK_NO_MORE_SHUFFLE_WANDS" ) == "1" then
+if GlobalsGetValue( "PERK_NO_MORE_SHUFFLE_WANDS" ) == "1" then -- no enemy with wand
     if EntityHasTag( entity_id, "wand_ghost" ) and not ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) then
         EntityAddComponent( entity_id, "LuaComponent", 
         {
@@ -22,7 +21,7 @@ if GlobalsGetValue( "PERK_NO_MORE_SHUFFLE_WANDS" ) == "1" then
     end
 end
 
-if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) and not EntityHasTag( entity_id, "boss" ) then
+if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) and not EntityHasTag( entity_id, "boss" ) then -- scale
     local mania_level = math.floor( ModSettingGet( "DEEP_END.HEAVEN_OR_HELL_FACTOR" ) + 0.5 )
     SetRandomSeed( entity_id - mania_level, GameGetFrameNum() - mania_level )
 
@@ -47,18 +46,35 @@ if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) and not EntityHasTag( entity_id, "
     
     scale = scale^0.5 * 0.2
     sx, sy = sx * scale, sy * scale
+
     -- 0.2 ~ 2.0, average scale = 1.343
     -- GamePrint( scale )
 
-    if comps ~= nil then for i,v in ipairs( comps ) do
-        ComponentSetValue2( v, "aabb_min_x", ComponentGetValue2( v, "aabb_min_x" ) * scale )
-        ComponentSetValue2( v, "aabb_max_x", ComponentGetValue2( v, "aabb_max_x" ) * scale )
-        ComponentSetValue2( v, "aabb_min_y", ComponentGetValue2( v, "aabb_min_y" ) * scale )
-        ComponentSetValue2( v, "aabb_max_y", ComponentGetValue2( v, "aabb_max_y" ) * scale )
-    end end
+    if EntityGetFirstComponent( entity_id, "CrawlerAnimalComponent" ) == nil then
+        local hpcomp = EntityGetFirstComponent( entity_id, "DamageModelComponent" )
+
+        if hpcomp ~= nil then
+            local max_hp = ComponentGetValue2( hpcomp, "max_hp" ) * ( 0.5 + scale * 0.5 )
+            local hp = ComponentGetValue2( hpcomp, "hp" ) * ( 0.5 + scale * 0.5 )
+
+            ComponentSetValue2( hpcomp, "max_hp", max_hp )
+            ComponentSetValue2( hpcomp, "hp", hp )
+        end
+
+        if comps ~= nil then for i,v in ipairs( comps ) do
+            ComponentSetValue2( v, "aabb_min_x", ComponentGetValue2( v, "aabb_min_x" ) * scale )
+            ComponentSetValue2( v, "aabb_max_x", ComponentGetValue2( v, "aabb_max_x" ) * scale )
+            ComponentSetValue2( v, "aabb_min_y", ComponentGetValue2( v, "aabb_min_y" ) * scale )
+            ComponentSetValue2( v, "aabb_max_y", ComponentGetValue2( v, "aabb_max_y" ) * scale )
+        end end
+
+        EntitySetTransform( entity_id, x, y, r, sx, sy )
+        EntityApplyTransform( entity_id, x, y, r, sx, sy ) -- not so good for enemies with child entities
+    end
 
     if comp ~= nil then
         if Random( 1, 100 ) <= 25 then ComponentSetValue2( comp, "attack_ranged_predict", true ) end
+
         ComponentSetValue2( comp, "sense_creatures_through_walls", true )
         ComponentSetValue2( comp, "dont_counter_attack_own_herd", true )
         
@@ -67,14 +83,9 @@ if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) and not EntityHasTag( entity_id, "
         ComponentSetValue2( comp, "attack_melee_max_distance", ComponentGetValue2( comp, "attack_melee_max_distance" ) * scale )
         ComponentSetValue2( comp, "attack_dash_distance", ComponentGetValue2( comp, "attack_dash_distance" ) * scale )
     end
-                    
-    if EntityGetFirstComponent( entity_id, "CrawlerAnimalComponent" ) == nil then
-        EntitySetTransform( entity_id, x, y, r, sx, sy )
-        EntityApplyTransform( entity_id, x, y, r, sx, sy ) -- not so good for enemies with child entities
-    end
 end
 
-if EntityHasTag( entity_id, "robot" )
+if EntityHasTag( entity_id, "robot" ) -- robots
 and ( not EntityHasTag( entity_id, "boss" ) )
 and ( not EntityHasTag( entity_id, "robot_egg_boosted" ) )
 then

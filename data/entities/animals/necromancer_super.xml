@@ -41,9 +41,9 @@
 			physics_objects_damage="0"
 			>
 			<damage_multipliers
-				projectile="0.2"
+				projectile="0.3"
 				explosion="0.2"
-				electricity="0.0"
+				electricity="0.1"
 				ice="0.0"
 				fire="0.0" 
 				holy="0.2"
@@ -233,7 +233,7 @@
         </GameEffectComponent >
 
 		<GameEffectComponent 
-            effect="PROTECTION_ELECTRICITY"
+            effect="STUN_PROTECTION_ELECTRICITY"
             frames="-1"
         >
         </GameEffectComponent >

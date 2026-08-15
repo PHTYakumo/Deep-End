@@ -2,7 +2,7 @@
 	<LoadEntitiesComponent
 		count.min="3"
 		count.max="6"
-		kill_entity="0"
+		kill_entity="1"
 		entity_file="data/entities/projectiles/glitter_bomb_shrapnel.xml" >
 	</LoadEntitiesComponent>
 </Entity>

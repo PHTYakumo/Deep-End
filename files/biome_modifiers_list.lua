@@ -1120,7 +1120,14 @@ biome_modifiers =
 			--BiomeObjectSetValue( biome_filename, "modifiers", "projectile_drag_coeff", 1.1 )
 		end,
 		inject_spawns_action = function()
-			inject_spawn( g_props, 0.8, {
+			inject_spawn( g_props, 0.2, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/props/physics_barrel_burning_starting.xml",
+			})
+			inject_spawn( g_props, 0.6, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,

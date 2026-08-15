@@ -3,7 +3,7 @@
 	<Base file="data/entities/base_projectile.xml" >
 		<VelocityComponent
       gravity_y="0"
-			mass="1.65"
+			mass="1.25"
       terminal_velocity="1600"
 			>
 		</VelocityComponent>
@@ -29,7 +29,7 @@
     lifetime_randomness="0"
     ragdoll_force_multiplier="0.01"
     hit_particle_force_multiplier="0.25"
-	  ground_penetration_coeff="3.9"
+	  ground_penetration_coeff="5"
 	  ground_penetration_max_durability_to_destroy="14"
     ><damage_by_type
 		drill="0.4"
