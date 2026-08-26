@@ -5,7 +5,12 @@ local year, month, day, hour, minute, second = GameGetDateAndTimeLocal()
 
 -- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< translations >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< --
 
+local menu_lan, language, mod_cn = GameTextGet( "$menuoptions_language" ), GameTextGet( "$current_language" ), false
+if string.find( menu_lan, "喵体中文" ) or string.find( menu_lan, "汪体中文" ) or string.find( menu_lan, "更坏的中文" ) then mod_cn = true end
+
 local translater = "mods/deep_end/translations.csv"
+if mod_cn then translater = "mods/deep_end/files/trans_cn/translations.csv" end
+
 local main = "data/translations/common.csv"
 local translations = ModTextFileGetContent( translater )
 local main_content = ModTextFileGetContent( main )
@@ -720,5 +725,5 @@ ModTextFileSetContent( "data/entities/buildings/workshop.xml", content:gsub( ",w
 
 if ModSettingGet( "DEEP_END.LOL_TRANS" ) then
 	dofile_once("mods/deep_end/files/lol_translations.lua")
-	DEEP_END_LOL_TRANSLATIONS()
+	DEEP_END_LOL_TRANSLATIONS( language, mod_cn )
 end

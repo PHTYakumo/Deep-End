@@ -3494,10 +3494,7 @@ for i,perk_data in ipairs( perk_list ) do
 	end
 end
 
-if ( string.find( GameTextGet( "$current_language" ), "中文" ) or string.find( GameTextGet( "$current_language" ), "汉化" ) )
-and ( ModIsEnabled("noita.fairmod") or ModIsEnabled("evaisa.tmtrainer") ) then
-	for i=1,#perk_list do
-		perk_list[i].ui_name = "$perkdesc_edit_wands_everywhere"
-		perk_list[i].ui_description = "$perk_edit_wands_everywhere"
-	end
-end
+if ModIsEnabled("noita.fairmod") or ModIsEnabled("evaisa.tmtrainer") then for i=1,#perk_list do
+	perk_list[i].ui_name = "$perkdesc_edit_wands_everywhere"
+	perk_list[i].ui_description = "$perk_edit_wands_everywhere"
+end end

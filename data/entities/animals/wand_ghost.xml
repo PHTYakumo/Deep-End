@@ -34,6 +34,13 @@
 		offset_y="13" >
 	</SpriteComponent>
 
+	<SpriteComponent 
+        alpha="0.2"
+        image_file="data/particles/fog_of_war_hole.xml"
+        smooth_filtering="1"
+        fog_of_war_hole="1" >
+    </SpriteComponent>
+
 	<LuaComponent 
 		_enabled="1"
 		remove_after_executed="1"

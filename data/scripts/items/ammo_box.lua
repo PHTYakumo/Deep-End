@@ -16,9 +16,10 @@ function make_random_ammo_card( x, y )
 		local itemno = Random(1,#actions)
 		local thisitem = actions[itemno]
 		
-		if thisitem.type == ACTION_TYPE_MATERIAL
-		and Random( 1, 100 ) < 25 then
-			valid = false
+		if thisitem.type == ACTION_TYPE_STATIC_PROJECTILE
+		or thisitem.type == ACTION_TYPE_MATERIAL then
+			if Random( 1, 100 ) < 36 then valid = true
+			else valid = false end
 		elseif thisitem.type == ACTION_TYPE_PROJECTILE
 		or thisitem.type == ACTION_TYPE_STATIC_PROJECTILE
 		or thisitem.type == ACTION_TYPE_MATERIAL then

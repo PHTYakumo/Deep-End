@@ -17,7 +17,7 @@ function collision_trigger()
 	for i,comp in ipairs( new_components ) do EntitySetComponentIsEnabled( new_entity_id, comp, true ) end
 
 	if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) then
-		GamePrintImportant( "$menu_paused", " ", "data/ui_gfx/decorations/angered_the_gods.png" )
+		GamePrintImportant( "$map_text_info", " ", "data/ui_gfx/decorations/angered_the_gods.png" )
 	else
 		local chosen, m_tip = tonumber(ModSettingGet( "DEEP_END.MAP_TYPE" )), " "
 
@@ -28,7 +28,7 @@ function collision_trigger()
 		elseif chosen == 4 then m_tip = GameTextGetTranslatedOrNot("$tip_text_doomsday")
 		end
 
-		GamePrintImportant( "$menu_paused", m_tip, "data/ui_gfx/decorations/peace_temple_break.png" )
+		GamePrintImportant( "$map_text_info", m_tip, "data/ui_gfx/decorations/peace_temple_break.png" )
 		GamePrint("$map_text")
 	end
 

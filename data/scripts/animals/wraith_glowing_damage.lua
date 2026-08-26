@@ -25,6 +25,9 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 	local vel_x = math.cos( angle ) * length
 	local vel_y = -math.sin( angle ) * length
 
-	shoot_projectile( entity_id, "data/entities/projectiles/wraith_glowing_laser.xml", x, y, vel_x, vel_y )
+	local eid = shoot_projectile( entity_id, "data/entities/projectiles/wraith_glowing_laser.xml", x, y, vel_x, vel_y )
 	GameEntityPlaySound( entity_id, "shoot" )
+
+	if not EntityHasTag( eid, "thunder" ) then EntityAddTag( eid, "thunder" ) end
+	if not EntityHasTag( eid, "resist_repulsion" ) then EntityAddTag( eid, "resist_repulsion" ) end
 end

@@ -28,14 +28,16 @@
 
 ]]--
 
-function DEEP_END_LOL_TRANSLATIONS()
-	local main = "data/translations/common.csv"
-	translations = ModTextFileGetContent( "mods/deep_end/files/translations_ex.csv" )
+function DEEP_END_LOL_TRANSLATIONS( language, mod_cn )
+	local translater = "mods/deep_end/translations_ex.csv"
+	if mod_cn then translater = "mods/deep_end/files/trans_cn/translations_ex.csv" end
 
-	main_content = ModTextFileGetContent( main )
+	local main = "data/translations/common.csv"
+	local translations = ModTextFileGetContent( translater )
+	local main_content = ModTextFileGetContent( main )
 	ModTextFileSetContent( main, main_content .. translations )
-	
-	if ModIsEnabled("noita.fairmod") or ModIsEnabled("evaisa.tmtrainer") then
+
+	if string.find( language, "中文" ) or string.find( language, "汉化" ) or mod_cn then
 		main_content = ModTextFileGetContent( main )
 		ModTextFileSetContent( main, main_content:gsub( [===[秒]===], [===[六十分之一分钟]===] ) )
 

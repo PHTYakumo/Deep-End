@@ -1,12 +1,7 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
 local entity_id = GetUpdatedEntityID()
-local parent_id = EntityGetParent(entity_id)
-local root_id = EntityGetRootEntity(entity_id)
-
 local x, y = EntityGetTransform(entity_id)
-local px, py = EntityGetTransform(root_id)
-py = py - 4
 
 local ncomp = EntityGetFirstComponent( entity_id, "VariableStorageComponent" )
 if ncomp == nil then return end
@@ -14,13 +9,19 @@ if ncomp == nil then return end
 local scomp = EntityGetFirstComponent( entity_id, "SpriteComponent" )
 if scomp == nil then return end
 
+local parent_id = EntityGetParent(entity_id)
+local root_id = EntityGetRootEntity(entity_id)
+
+local px, py = EntityGetTransform(root_id)
+py = py - 4
+
 -- GamePrint( tostring(root_id) .. ", " .. tostring(parent_id) .. ", " .. tostring(entity_id) )
 EntitySetTransform( parent_id, px, py - 4 )
 EntityApplyTransform( parent_id, px, py - 4 )
 
 if EntityHasTag( root_id, "player_unit" ) and GameGetFrameNum() > 60 then
     local dist = ( (x-px)^2 + (y-py)^2 )^0.5
-    local do_shot = false
+    local do_shot, ts = false, { 0.075, 0.07 }
     
     if dist > 600 then
         EntitySetTransform( entity_id, px, py + 128 * sign(py-y) )
@@ -51,16 +52,17 @@ if EntityHasTag( root_id, "player_unit" ) and GameGetFrameNum() > 60 then
         end
     end
 
-    if dist < 8 then do_shot = false end
-
     local mcomp = EntityGetFirstComponent( root_id, "ControlsComponent" )
     if mcomp ~= nil then px,py = ComponentGetValueVector2( mcomp, "mMousePosition") end
 
+    if dist < 8 then do_shot = false end
     dist = ( (x-px)^2 + (y-py)^2 )^0.5
-    if dist > 24 then do_shot = false end
 
-    EntitySetTransform( entity_id, px * 0.125 + x * 0.875, py * 0.12 + y * 0.88 )
-    EntityApplyTransform( entity_id, px * 0.125 + x * 0.875, py * 0.12 + y * 0.88 )
+    if dist > 24 then do_shot = false end
+    px, py = px * ts[1] + x * ( 1 - ts[1] ), py * ts[2] + y * ( 1 - ts[2] )
+
+    EntitySetTransform( entity_id, px, py )
+    EntityApplyTransform( entity_id, px, py )
 
     ComponentSetValue2( scomp, "alpha", clamp( 1.2 - dist * 0.03, 0.25, 1 ) )
     if do_shot then ComponentSetValue2( ncomp, "value_bool", true ) end

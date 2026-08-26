@@ -6233,6 +6233,7 @@ local de_actions_recompose =
 		-- max_uses = 120,
 		action 		= function()
 			c.extra_entities = c.extra_entities .. "data/entities/misc/laser_emitter_wider.xml,"
+			c.speed_multiplier = c.speed_multiplier + 1
 			c.fire_rate_wait = c.fire_rate_wait - 5
 			current_reload_time = current_reload_time - 3
 			draw_actions( 1, true )
@@ -6762,6 +6763,7 @@ local de_actions_recompose =
 		-- max_uses = 150,
 		action 		= function()
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/avoiding_arc.xml," )
+			c.speed_multiplier = c.speed_multiplier + 0.1
 			c.fire_rate_wait    = c.fire_rate_wait - 15
 			draw_actions( 1, true )
 		end,
@@ -6781,6 +6783,7 @@ local de_actions_recompose =
 		-- max_uses = 150,
 		action 		= function()
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/floating_arc.xml," )
+			c.speed_multiplier = c.speed_multiplier + 0.1
 			c.fire_rate_wait    = c.fire_rate_wait - 15
 			draw_actions( 1, true )
 		end,

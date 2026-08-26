@@ -1,4 +1,4 @@
-<Entity name="$projectile_default" tags="resist_repulsion,projectile_player,thunder,teleportable_NOT">
+<Entity name="$projectile_default" tags="resist_repulsion,thunder">
 	
 	<VelocityComponent
     air_friction="-0.1"
