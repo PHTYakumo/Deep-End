@@ -8,7 +8,10 @@ local pcomp = EntityGetFirstComponent( entity_id, "ProjectileComponent" )
 
 if vcomp == nil or pcomp == nil then return end
 local vx,vy = ComponentGetValueVector2( vcomp, "mVelocity" )
-		
+
+local year, month, day = GameGetDateAndTimeLocal()
+rrad = (-1)^day * rrad
+
 local rx = math.cos( rrad ) * vx - math.sin( rrad ) * vy
 local ry = math.sin( rrad ) * vx + math.cos( rrad ) * vy
 

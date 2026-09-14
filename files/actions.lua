@@ -2281,7 +2281,7 @@ local de_actions_recompose =
 			add_projectile("data/entities/projectiles/deck/geomagnetic_storm.xml")
 			add_projectile("data/entities/projectiles/deck/geomagnetic_storm_ex.xml")
 			c.material = "spark_blue_dark"
-			c.gravity = 0.0
+			c.gravity = 0
 			c.pattern_degrees = c.pattern_degrees + 12
 			c.screenshake = c.screenshake + 42
 			c.damage_electricity_add = c.damage_electricity_add + 0.24
@@ -3335,7 +3335,7 @@ local de_actions_recompose =
 		max_uses    = 3, 
 		ai_never_uses = true,
 		action 		= function()
-			c.gravity = 0.0
+			c.gravity = 0
 			add_projectile("data/entities/projectiles/deck/crumbling_earth.xml")
 			current_reload_time = 48
 		end,
@@ -4135,7 +4135,7 @@ local de_actions_recompose =
 		mana = 10,
 		max_uses = 45,
 		action 		= function()
-			c.gravity = 0.0
+			c.gravity = 0
 			add_projectile("data/entities/projectiles/deck/mist_radioactive.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 10
 		end,
@@ -4154,7 +4154,7 @@ local de_actions_recompose =
 		mana = 10,
 		max_uses = 50,
 		action 		= function()
-			c.gravity = 0.0
+			c.gravity = 0
 			add_projectile("data/entities/projectiles/deck/mist_alcohol.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 7
 		end,
@@ -4173,7 +4173,7 @@ local de_actions_recompose =
 		mana = 10,
 		max_uses = 40,
 		action 		= function()
-			c.gravity = 0.0
+			c.gravity = 0
 			add_projectile("data/entities/projectiles/deck/mist_slime.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 10
 		end,
@@ -4192,7 +4192,7 @@ local de_actions_recompose =
 		mana = 10,
 		max_uses = 35,
 		action 		= function()
-			c.gravity = 0.0
+			c.gravity = 0
 			add_projectile("data/entities/projectiles/deck/mist_blood.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 13
 		end,
@@ -4212,7 +4212,7 @@ local de_actions_recompose =
 		mana = 45,
 		max_uses = 15,
 		action 		= function()
-			c.gravity = 0.0
+			c.gravity = 0
 			add_projectile_trigger_timer("data/entities/projectiles/deck/mist_radioactive.xml",60,1)
 			c.fire_rate_wait = c.fire_rate_wait + 10
 		end,
@@ -4232,7 +4232,7 @@ local de_actions_recompose =
 		mana = 45,
 		max_uses = 16,
 		action 		= function()
-			c.gravity = 0.0
+			c.gravity = 0
 			add_projectile_trigger_timer("data/entities/projectiles/deck/mist_alcohol.xml",60,1)
 			c.fire_rate_wait = c.fire_rate_wait + 7
 		end,
@@ -4252,7 +4252,7 @@ local de_actions_recompose =
 		mana = 45,
 		max_uses = 14,
 		action 		= function()
-			c.gravity = 0.0
+			c.gravity = 0
 			add_projectile_trigger_timer("data/entities/projectiles/deck/mist_slime.xml",60,1)
 			c.fire_rate_wait = c.fire_rate_wait + 10
 		end,
@@ -4272,7 +4272,7 @@ local de_actions_recompose =
 		mana = 45,
 		max_uses = 13,
 		action 		= function()
-			c.gravity = 0.0
+			c.gravity = 0
 			add_projectile_trigger_timer("data/entities/projectiles/deck/mist_blood.xml",60,1)
 			c.fire_rate_wait = c.fire_rate_wait + 13
 		end,
@@ -4294,7 +4294,7 @@ local de_actions_recompose =
 		ai_never_uses = true,
 		action 		= function()
 			mana = math.max( mana - 666, 66 )
-			c.gravity = 0.0
+			c.gravity = 0
 			add_projectile("data/entities/projectiles/deck/de_circle_water.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 240
 		end,
@@ -4316,7 +4316,7 @@ local de_actions_recompose =
 		ai_never_uses = true,
 		action 		= function()
 			mana = math.max( mana - 666, 66 )
-			c.gravity = 0.0
+			c.gravity = 0
 			add_projectile("data/entities/projectiles/deck/de_circle_fire.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 240
 		end,
@@ -4338,7 +4338,7 @@ local de_actions_recompose =
 		ai_never_uses = true,
 		action 		= function()
 			mana = math.max( mana - 666, 666 )
-			c.gravity = 0.0
+			c.gravity = 0
 			add_projectile("data/entities/projectiles/deck/de_circle_oil.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 240
 		end,
@@ -4360,7 +4360,7 @@ local de_actions_recompose =
 		ai_never_uses = true,
 		action 		= function()
 			mana = math.max( mana - 666, 666 )
-			c.gravity = 0.0
+			c.gravity = 0
 			add_projectile("data/entities/projectiles/deck/de_circle_acid.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 240
 		end,
@@ -4382,7 +4382,7 @@ local de_actions_recompose =
 		sound_loop_tag = "sound_spray",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/material_water.xml")
-			c.gravity = 0.0
+			c.gravity = 0
 			c.game_effect_entities = de_effect_entities_add( c.game_effect_entities, "data/entities/misc/effect_apply_wet.xml," )
 			c.fire_rate_wait = c.fire_rate_wait - 15
 			current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
@@ -4403,7 +4403,7 @@ local de_actions_recompose =
 		sound_loop_tag = "sound_spray",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/material_oil.xml")
-			c.gravity = 0.0
+			c.gravity = 0
 			c.game_effect_entities = de_effect_entities_add( c.game_effect_entities, "data/entities/misc/effect_apply_oiled.xml," )
 			c.fire_rate_wait = c.fire_rate_wait - 15
 			current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
@@ -4426,7 +4426,7 @@ local de_actions_recompose =
 		sound_loop_tag = "sound_spray",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/material_blood.xml")
-			c.gravity = 0.0
+			c.gravity = 0
 			c.game_effect_entities = de_effect_entities_add( c.game_effect_entities, "data/entities/misc/effect_apply_bloody.xml," )
 			c.fire_rate_wait = c.fire_rate_wait - 15
 			current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
@@ -4449,7 +4449,7 @@ local de_actions_recompose =
 		sound_loop_tag = "sound_spray",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/material_acid.xml")
-			c.gravity = 0.0
+			c.gravity = 0
 			c.fire_rate_wait = c.fire_rate_wait - 15
 			current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
 		end,
@@ -4472,7 +4472,7 @@ local de_actions_recompose =
 		sound_loop_tag = "sound_spray",
 		action 		= function()
 			add_projectile("data/entities/projectiles/deck/material_cement.xml")
-			c.gravity = 0.0
+			c.gravity = 0
 			c.fire_rate_wait = c.fire_rate_wait - 15
 			current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
 		end,
@@ -6703,7 +6703,6 @@ local de_actions_recompose =
 			c.extra_entities = c.extra_entities .. "data/entities/misc/sinewave.xml,"
 			c.speed_multiplier = c.speed_multiplier * 2
 			c.gravity = 0
-			
 			draw_actions( 1, true )
 		end,
 	},
@@ -6724,7 +6723,6 @@ local de_actions_recompose =
 			c.extra_entities = c.extra_entities .. "data/entities/misc/chaotic_arc.xml,"
 			c.speed_multiplier = c.speed_multiplier * 2
 			c.gravity = 0
-			
 			draw_actions( 1, true )
 		end,
 	},
@@ -6743,8 +6741,8 @@ local de_actions_recompose =
 		--max_uses = 150,
 		action 		= function()
 			c.extra_entities = c.extra_entities .. "data/entities/misc/pingpong_path.xml,"
-			c.gravity = 0
 			c.lifetime_add = c.lifetime_add + 25
+			c.gravity = 0
 			draw_actions( 1, true )
 		end,
 	},
@@ -6845,9 +6843,9 @@ local de_actions_recompose =
 		--max_uses = 150,
 		action 		= function()
 			c.extra_entities = c.extra_entities .. "data/entities/misc/horizontal_arc.xml,"
-			c.gravity = 0
 			c.damage_projectile_add = c.damage_projectile_add + 0.3
 			c.fire_rate_wait    = c.fire_rate_wait - 6
+			c.gravity = 0
 			draw_actions( 1, true )
 		end,
 	},
@@ -6866,9 +6864,9 @@ local de_actions_recompose =
 		--max_uses = 150,
 		action 		= function()
 			c.extra_entities = c.extra_entities .. "data/entities/misc/line_arc.xml,"
-			c.gravity = 0
 			c.damage_projectile_add = c.damage_projectile_add + 0.2
-			c.fire_rate_wait    = c.fire_rate_wait - 4
+			c.fire_rate_wait = c.fire_rate_wait - 4
+			c.gravity = 0
 			draw_actions( 1, true )
 		end,
 	},
@@ -6887,11 +6885,11 @@ local de_actions_recompose =
 		--max_uses = 150,
 		action 		= function()
 			c.extra_entities = c.extra_entities .. "data/entities/misc/spiraling_shot.xml,"
-			c.gravity = 0
 			c.damage_projectile_add = c.damage_projectile_add + 0.1
 			c.fire_rate_wait = c.fire_rate_wait - 6
 			c.lifetime_add = c.lifetime_add + 25
 			draw_actions( 1, true )
+			c.gravity = 0
 		end,
 	},
 	{
@@ -6909,11 +6907,12 @@ local de_actions_recompose =
 		--max_uses = 150,
 		action 		= function()
 			c.extra_entities = c.extra_entities .. "data/entities/misc/orbit_shot.xml,"
-			c.gravity = 0
+			c.speed_multiplier = math.max( c.speed_multiplier * 0.4, 0 )
 			c.damage_projectile_add = c.damage_projectile_add + 0.1
 			c.fire_rate_wait = c.fire_rate_wait - 6
 			c.lifetime_add = c.lifetime_add + 50
 			draw_actions( 1, true )
+			c.gravity = 0
 		end,
 	},
 	{
@@ -6938,12 +6937,12 @@ local de_actions_recompose =
 				c.extra_entities = de_effect_entities_gsub( c.extra_entities, "data/entities/misc/chaotic_arc.xml,", "data/entities/misc/phasing_arc_reverse.xml,", 13 )
 			end
 
-			c.gravity = 0
 			c.fire_rate_wait = c.fire_rate_wait - 12
 			c.lifetime_add = c.lifetime_add + 80
+			draw_actions( 1, true )
 			c.speed_multiplier = math.max( c.speed_multiplier * 0.33, 0 )
 			c.child_speed_multiplier = math.max( c.child_speed_multiplier * 0.33, 0 )
-			draw_actions( 1, true )
+			c.gravity = 0
 		end,
 	},
 	{
@@ -6987,7 +6986,6 @@ local de_actions_recompose =
 			c.speed_multiplier = math.max( c.speed_multiplier * 0.15, 0 )
 			c.lifetime_add = c.lifetime_add + 60
 			c.gravity = 0
-			
 			draw_actions( 1, true )
 		end,
 	},
@@ -9455,7 +9453,7 @@ local de_actions_recompose =
 		mana = -10,
 		-- max_uses = 150,
 		action 		= function()
-			c.gravity = 0.0
+			c.gravity = 0
 			c.fire_rate_wait = c.fire_rate_wait - 20
 			c.speed_multiplier = c.speed_multiplier * 1.2
 			if c.screenshake < 256 then c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/fizzle.xml," ) end

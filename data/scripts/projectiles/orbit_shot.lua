@@ -15,6 +15,9 @@ local vx,vy = ComponentGetValueVector2( vcomp, "mVelocity" )
 local r = ComponentGetValue2( pcomp, "angular_velocity" )
 local vel = ComponentGetValue2( pcomp, "speed_min" )
 
+local year, month, day = GameGetDateAndTimeLocal()
+rrad = -(-1)^day * rrad
+
 vx = math.cos( frame_count * rrad - r ) * rrate - math.sin( r ) * ( 1 - rrate )
 vy = math.sin( frame_count * rrad - r ) * rrate + math.cos( r ) * ( 1 - rrate )
 
