@@ -9605,11 +9605,11 @@ local de_actions_recompose =
 	},
 	{
 		id          = "FIREBALL_RAY",
-		name 		= "$action_fireball_ray",
-		description = "$actiondesc_fireball_ray",
-		sprite 		= "mods/deep_end/files/actions_sprite/fireball_ray.png",
+		name 		= "$dacidburst_ray",
+		description = "$ddacidburst_ray",
+		sprite 		= "mods/deep_end/files/actions_sprite/acidburst_ray.png",
 		-- sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
-		related_extra_entities = { "data/entities/misc/fireball_ray.xml" },
+		related_extra_entities = { "data/entities/misc/acidburst_ray.xml" },
 		type 		= ACTION_TYPE_MODIFIER,
 		spawn_level                       = "1,2,4,5", -- FIREBALL_RAY
 		spawn_probability                 = "0.1,0.2,0.1,0.05", -- FIREBALL_RAY
@@ -9618,7 +9618,7 @@ local de_actions_recompose =
 		max_uses = 10,
 		action 		= function()
 			c.extra_entities = de_effect_entities_add( c.extra_entities, "data/entities/misc/timelimiter_400.xml," )
-			c.extra_entities = c.extra_entities .. "data/entities/misc/fireball_ray.xml,"
+			c.extra_entities = c.extra_entities .. "data/entities/misc/acidburst_ray.xml,"
 			draw_actions( 1, true )
 		end,
 	},

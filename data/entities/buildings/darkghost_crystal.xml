@@ -124,6 +124,13 @@
     execute_every_n_frame="-1"
     script_death="data/scripts/buildings/ghost_crystal_death.lua" >
   </LuaComponent>
+
+  <LuaComponent 
+    _enabled="1" 
+    remove_after_executed="0"
+    execute_every_n_frame="8"
+    script_source_file="data/scripts/buildings/darkghost_fade.lua" >
+  </LuaComponent>
   
   <VariableStorageComponent
     _tags="ghost_id"

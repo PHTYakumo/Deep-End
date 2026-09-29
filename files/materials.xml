@@ -2218,6 +2218,26 @@
 		output_cell1="bone_static" 			output_cell2="poo_gas"
 	></Reaction>
 
+	<Reaction probability="25" 
+		input_cell1="ice_cold_glass" 			input_cell2="air"  
+		output_cell1="blood_cold" 					output_cell2="blood_cold_vapour"
+	></Reaction>
+
+	<Reaction probability="10" 
+		input_cell1="ice_cold_glass" 			input_cell2="blood_cold_vapour"  
+		output_cell1="ice_cold_glass" 					output_cell2="blood_cold"
+	></Reaction>
+
+	<Reaction probability="10" 
+		input_cell1="[gas]" 					input_cell2="blood_cold_vapour"  	input_cell3="blood_cold_vapour"
+		output_cell1="[gas]" 					output_cell2="alcohol_gas"			output_cell3="steam"
+	></Reaction>
+
+	<Reaction probability="100" 
+		input_cell1="snow" 							input_cell2="blood_cold_vapour"  
+		output_cell1="snow_static" 					output_cell2="smoke"
+	></Reaction>
+
 	<Reaction probability="1" 
 		input_cell1="deep_end_harden_potion" 		input_cell2="air"  
 		output_cell1="plastic_red" 					output_cell2="concrete_sand"

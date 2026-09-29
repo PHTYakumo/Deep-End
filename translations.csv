@@ -184,6 +184,8 @@ dPIPE_BOMB_DEATH_TRIGGER,"Dormant Crystal With Double Death Trigger",,,,,,,,"二
 ddPIPE_BOMB_DEATH_TRIGGER,"A crystal that explodes and casts two new spells when caught in an explosion",,,,,,,,"在失效时释放两个法术的休眠晶体",,,,,
 dFIREBALL_RAY_LINE,"Two-Way Firework Thrower",,,,,,,,"双向烟花发射器",,,,,
 ddFIREBALL_RAY_LINE,"Makes projs fire small fireworks perpendicular to its trajectory",,,,,,,,"令投射物在垂直两侧发射烟花",,,,,
+dacidburst_ray,"Acid Thrower",,,,,,,,"酸液发射器",,,,,
+ddacidburst_ray,"Makes a projectile spray acid in random directions",,,,,,,,"令投射物向随机方向喷射酸液",,,,,
 pus_to_oil,"Pus To Oil",,,,,,,,"化脓为油",,,,,
 dpus_to_oil,"Makes any pus within a projectile's range turns into oil",,,,,,,,"令投射物周围的所有脓液化为油",,,,,
 dUNSTABLE_GUNPOWDER,"Hydration",,,,,,,,"水化",,,,,
