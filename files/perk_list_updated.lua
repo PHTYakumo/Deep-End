@@ -447,6 +447,7 @@ de_perk_list_recompose =
 		func = function( entity_perk_item, entity_who_picked, item_name )
 			EntityAddComponent( entity_who_picked, "LuaComponent", 
 			{ 
+				_tags = "perk_component",
 				script_damage_about_to_be_received = "data/scripts/perks/de_money_shield.lua",
 				execute_every_n_frame = "-1",
 			} )

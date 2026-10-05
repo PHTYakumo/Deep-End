@@ -1,4 +1,4 @@
-<Entity name="$projectile_default" tags="projectile_heal">
+<Entity name="$projectile_default" tags="projectile_heal,resist_repulsion">
 	<GameAreaEffectComponent
   		radius="32" >
 	</GameAreaEffectComponent>

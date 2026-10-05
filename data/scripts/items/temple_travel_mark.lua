@@ -4,7 +4,7 @@ local entity_id, do_tp = GetUpdatedEntityID(), false
 if EntityGetFirstComponent( entity_id, "SpriteComponent", "shop_cost" ) ~= nil then return end
 
 local x, y = EntityGetTransform( entity_id )
-local players = EntityGetInRadiusWithTag( x, y, 15, "player_unit" )
+local players = EntityGetInRadiusWithTag( x, y, 31, "player_unit" )
 
 if #players == 0 then return end
 local ng_now, ng = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") ), 0

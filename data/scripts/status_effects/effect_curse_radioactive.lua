@@ -15,5 +15,5 @@ local moneycomp = EntityGetFirstComponent( pid, "WalletComponent" )
 
 if moneycomp ~= nil then
 	local money = ComponentGetValue2( moneycomp, "money" )
-	ComponentSetValue2( moneycomp, "money", math.min( money * 2, 10000000 ) )
+	ComponentSetValue2( moneycomp, "money", math.min( money * 2, math.ceil( math.abs(x) + math.abs(y) ) ) )
 end
