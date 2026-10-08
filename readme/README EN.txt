@@ -45,6 +45,12 @@ If you insist on enabling these mods, please place 'Deep End' ABOVE them in the 
 
 -----------------------------------------------------------------------------------------------------
 
+Here are some recommended QoL Mods, for new players of this mod want a better experience:
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2814231575] Detailed Information [/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3777006120] Cartographer [/url]
+
+-----------------------------------------------------------------------------------------------------
+
 For more information about this mod, please check [url=https://github.com/PHTYakumo/Deep-End/tree/main/readme] here. [/url]
 
 If you run into any issues, please reach out to me on [url=https://discord.gg/cN3T69yPfP] Discord. [/url]

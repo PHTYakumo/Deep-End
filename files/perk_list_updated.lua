@@ -441,8 +441,8 @@ de_perk_list_recompose =
 		ui_icon = "data/ui_gfx/perk_icons/money_shield.png",
 		perk_icon = "data/ui_gfx/perk_icons/money_shield.png",
 		stackable = STACKABLE_NO,
-		do_not_remove = true,
-		one_off_effect = true,
+		do_not_remove = false,
+		one_off_effect = false,
 		usable_by_enemies = false,
 		func = function( entity_perk_item, entity_who_picked, item_name )
 			EntityAddComponent( entity_who_picked, "LuaComponent", 

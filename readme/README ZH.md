@@ -66,7 +66,7 @@
 
 -----------------------------------------------------------------------------------------------------
 
-[spoiler][b]-> 关于剧情:[/b]
-
-冇想好, [strike]可以先当平行世界或者前传(([/strike]
-[/spoiler]
+辅助模组推荐:
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2814231575] 详细生物信息 [/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3777006120] 测绘地图(显示已探索地形和资源) [/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3750259586] 高级地图(显示群系分布和地标建筑) [/url]
