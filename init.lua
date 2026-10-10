@@ -78,7 +78,7 @@ local player_start = "data/entities/player.xml"
 local pls = ModTextFileGetContent( player_start )
 
 if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) then
-	ModTextFileSetContent( player_start, pls:gsub( [===[<Entity><Base file="data/entities/items/pickup/potion_starting.xml" /></Entity>]===], [===[<Entity><Base file="data/entities/items/pickup/potion_water.xml" /></Entity> <Entity><Base file="data/entities/items/pickup/potion_water.xml" /></Entity>]===], 1 ) )
+	ModTextFileSetContent( player_start, pls:gsub( [===[<Entity><Base file="data/entities/items/pickup/potion_starting.xml" /></Entity>]===], [===[<Entity><Base file="data/entities/items/pickup/potion_water.xml" /></Entity>]===], 1 ) )
 else
 	ModTextFileSetContent( player_start, pls:gsub( [===[<Entity><Base file="data/entities/items/pickup/potion_starting.xml" /></Entity>]===], [===[<Entity><Base file="data/entities/items/wands/level_01/wand_007.xml" /></Entity> <Entity><Base file="data/entities/items/wands/level_01/wand_017.xml" /></Entity> <Entity><Base file="data/entities/items/pickup/potion_starting.xml" /></Entity> <Entity><Base file="data/entities/items/pickup/gourd.xml" /></Entity>]===], 1 ) )
 end
@@ -358,8 +358,8 @@ function OnWorldInitialized()
 			else deep_end_biome( "meat", 0.4, 4 ) end
 
 			if mania_level > 40 then
-				SessionNumbersSetValue( "DESIGN_NEW_GAME_PLUS_HP_SCALE_MIN", tostring(20*ex_hp_mult) )
-				SessionNumbersSetValue( "DESIGN_NEW_GAME_PLUS_HP_SCALE_MAX", tostring(20*ex_hp_mult) )
+				SessionNumbersSetValue( "DESIGN_NEW_GAME_PLUS_HP_SCALE_MIN", tostring(24*ex_hp_mult) )
+				SessionNumbersSetValue( "DESIGN_NEW_GAME_PLUS_HP_SCALE_MAX", tostring(24*ex_hp_mult) )
 				SessionNumbersSetValue( "DESIGN_NEW_GAME_PLUS_ATTACK_SPEED", "0.3" )
 			else
 				local hp_f = mania_level
@@ -369,7 +369,9 @@ function OnWorldInitialized()
 				elseif hp_f <= 25 then hp_f = 0.4 * hp_f - 1
 				elseif hp_f <= 25 then hp_f = 0.75 * hp_f - 10 end
 
-				if rage_f > 4 then rage_f = math.ceil( 1000 / rage_f ) * 0.0032 + 0.22
+				hp_f = hp_f + 3
+
+				if rage_f > 4 then rage_f = math.ceil( 1000 / rage_f ) * 0.0032 + 0.17
 				else rage_f = 1.8 - 0.2 * rage_f end
 
 				SessionNumbersSetValue( "DESIGN_NEW_GAME_PLUS_HP_SCALE_MIN", tostring(hp_f*ex_hp_mult) )
@@ -478,12 +480,14 @@ function OnPlayerSpawned( player_entity )
 		local capacity = ComponentGetValue2( foodcomp, "ingestion_capacity" ) or 10000
 
 		if ModSettingGet( "DEEP_END.HEAVEN_OR_HELL" ) then
+			--[[
 			EntityAddComponent( player_entity, "LuaComponent", 
 			{
 				script_source_file = "data/scripts/perks/food_clock.lua",
 				execute_every_n_frame = "75",
 			} )
-
+			]]--
+			
 			component_write( foodcomp,
 			{
 				ingestion_cooldown_delay_frames = 600,

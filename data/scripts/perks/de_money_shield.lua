@@ -13,12 +13,13 @@ function damage_about_to_be_received( damage, x, y, entity_thats_responsible, cr
 	local audio_path = { "data/audio/Desktop/animals.bank", "animals/spearbot/damage/physics_hit", "animals/robot/damage/projectile" }
 	local rmoney, rdamage = money, rdamage
 	
-	if damage > shield_energy then
-		if shield_energy >= 0.01 then for i=1,2 do GamePlaySound( audio_path[1], audio_path[2], x, y ) end end
-		rmoney, rdamage = 0, math.max( damage - shield_energy, 0 )
-	else
-		if shield_energy >= 0.01 then for i=1,2 do GamePlaySound( audio_path[1], audio_path[3], x, y ) end end
-		rmoney, rdamage = math.max( money - damage / shield_convent, 0 ), 0
+	if damage > shield_energy then rmoney, rdamage = 0, math.max( damage - shield_energy, 0 )
+	elseif damage <= shield_convent then rmoney, rdamage = math.max( money - damage / shield_convent, 0 ), 0
+	else rmoney, rdamage = math.max( money - damage * 0.99 / shield_convent, 0 ), damage * 0.01 end
+
+	if shield_energy >= 0.01 then
+		if rmoney > 0 then for i=1,2 do GamePlaySound( audio_path[1], audio_path[3], x, y ) end
+		else for i=1,3 do GamePlaySound( audio_path[1], audio_path[2], x, y ) end end
 	end
 	
 	ComponentSetValue2( wcomp, "money", rmoney )

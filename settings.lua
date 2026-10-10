@@ -130,7 +130,6 @@ if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 					ui_name = "<<<<<<狂热模式>>>>>>",
 					ui_description = 
 					"\n   你和敌人都将获得超乎想象的力量!!!" ..
-					"\n   你会因为饥饿而失血, 好在你并不挑食." ..
 					"\n   敌人的大小将会随机化, 圣山有概率缺货." ..
 					"\n   (开启本模式将禁用上述三个设置)",
 					value_default = false,
@@ -142,7 +141,7 @@ if string.find( language, "中文" ) or string.find( language, "汉化" ) then
 					ui_description = 
 					"\n   调整敌人的强化倍率." ..
 					"\n   (因子>40时可能需要强劲的电脑)",
-					value_default = 4,
+					value_default = 8,
 					value_min = 0,
 					value_max = 41,
 					value_display_multiplier = 1,
@@ -415,7 +414,6 @@ else
 					ui_name = "<<<<<< Mania Mode >>>>>>",
 					ui_description = 
 					"\n   Both you and your enemy will gain power beyond your imagination!!!" ..
-					"\n   You may lose hp due to hunger, fortunately you are not picky about food." ..
 					"\n   The Holy Mountain might be out of stock." ..
 					"\n   Creatures' size will be randomized." ..
 					"\n   ( Enabling this mode will disable the ABOVE three Settings )",
@@ -428,7 +426,7 @@ else
 					ui_description = 
 					"\n   Adjust enemies' HP & AS rate in Mania Mode," ..
 					"\n   ( If it's > 40, you probably need a powerful CPU )",
-					value_default = 4,
+					value_default = 8,
 					value_min = 0,
 					value_max = 41,
 					value_display_multiplier = 1,
