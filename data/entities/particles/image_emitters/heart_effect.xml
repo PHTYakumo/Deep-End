@@ -34,5 +34,16 @@
       event_root="event_cues/heart">
     </AudioComponent>
 
+	<SpriteComponent 
+	    _tags="enabled_in_hand"
+        alpha="0.33"
+        image_file="data/particles/torch_fog_of_war_hole.xml"
+        smooth_filtering="1"
+        fog_of_war_hole="1"
+        has_special_scale="1"
+        special_scale_x="7"
+        special_scale_y="7" >
+    </SpriteComponent>
+
 </Entity>
 
