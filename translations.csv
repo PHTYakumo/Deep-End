@@ -121,7 +121,7 @@ dMULT_TIMER,"Copy the subsequent projs and draw three times make the copy cast t
 MULT_DEATH,"Expiration Loader",,,,,,,,"装填失效触发",,,,,
 dMULT_DEATH,"Copy the subsequent projs and draw three times make the copy cast them individually upon expiring",,,,,,,,"复制投射物并抽取三次 令复制品在失效时施放每次抽取的结果",,,,,
 CAST_FOLD,"Pause Cast",,,,,,,,"休止",,,,,
-dCAST_FOLD,"Stop the remaining spells to draw cast it repeatedly will stop drawing immediately",,,,,,,,"后续法术不会再进行抽取 重复释放将立即停止本次施法的抽取",,,,,
+dCAST_FOLD,"Stop the remaining spells to draw, cast it repeatedly will stop drawing immediately",,,,,,,,"后续法术不会再进行抽取 重复释放将立即停止本次施法的抽取",,,,,
 BUCKSHOT_TRIGGER_3,"Triplicate Bolt With Three Triggers",,,,,,,,"三联复式触发魔弹",,,,,
 dBUCKSHOT_TRIGGER_3,"A formation of three bolt that casts three new spells upon collision, set time or expiring",,,,,,,,"在三种不同条件触发法术的三联魔弹",,,,,
 GLOWING_BOLT_WITH_TIMER_2,"Pinpoint Of Light With Double Timer",,,,,,,,"双重定时聚爆光束",,,,,

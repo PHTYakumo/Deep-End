@@ -10,12 +10,12 @@ local exp_rad = ComponentObjectGetValue2( pcomp, "config_explosion", "explosion_
 local proj_dmg = ComponentGetValue2( pcomp, "damage" ) or 0
 
 exp_rad = math.max( exp_rad, 10 )
-proj_dmg = math.max( proj_dmg, 0 )
+proj_dmg = math.max( proj_dmg, 0.04 )
 
 local shooter = ComponentGetValue2( pcomp, "mWhoShot" ) or entity_id
 local enemies = EntityGetInRadiusWithTag( x, y, exp_rad + 10, "hittable" )
 
-if enemies ~= nil and proj_dmg > 0 then
+if exp_rad > 0 and proj_dmg > 0 then
 	proj_dmg = proj_dmg / ( #enemies * 0.5 + 1 ) -- 2x/(x+2)
 
 	for i,pid in ipairs( enemies ) do if pid ~= shooter and EntityGetFirstComponent( pid, "DamageModelComponent" ) ~= nil then
@@ -26,4 +26,12 @@ if enemies ~= nil and proj_dmg > 0 then
 	GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/bullet_rubber_ball/bounce", x - exp_rad, y )
 	GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/bullet_rubber_ball/bounce", x, y + exp_rad )
 	GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/bullet_rubber_ball/bounce", x, y - exp_rad )
+
+	local scomps = EntityGetComponent( EntityLoad( "data/entities/misc/de_splash_blast.xml", x, y ), "SpriteComponent" )
+	local scale = exp_rad * 0.037
+
+	for i,scomp in ipairs( scomps ) do
+		ComponentSetValue2( scomp, "special_scale_x", scale )
+		ComponentSetValue2( scomp, "special_scale_y", scale )
+	end
 end
