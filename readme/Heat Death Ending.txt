@@ -13,7 +13,6 @@ After defeating kolmi, this text will appear in the open space below the startin
  Reach The Bound,
  Reveal The ■"
 
-
 Corresponding to the following steps:
 
 1. Take the Bin above the starting point to the Forge in the jungle.

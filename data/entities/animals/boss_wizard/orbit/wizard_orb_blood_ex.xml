@@ -98,6 +98,7 @@
 		projectile="0.5"
 		explosion="0.005"
 		holy="-5"
+		healing="-0.05"
 		>
 		</damage_multipliers>
 	</DamageModelComponent>

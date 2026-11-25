@@ -86,6 +86,7 @@
 		projectile="1"
 		holy="-1"
 		curse="-1"
+		healing="-1"
 		>
 		</damage_multipliers>
 	</DamageModelComponent>

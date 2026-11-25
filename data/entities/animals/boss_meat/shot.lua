@@ -15,6 +15,9 @@ shoot_projectile( entity_id, "data/entities/animals/boss_meat/acidshot_slow.xml"
 ComponentSetValue2( GetUpdatedComponentID(), "execute_every_n_frame", Random( 2, 6 ) )
 
 if not EntityHasTag( entity_id, "touchmagic_immunity" ) then
+    ComponentObjectSetValue2( EntityGetFirstComponentIncludingDisabled( entity_id, "DamageModelComponent" ), "damage_multipliers", "ice", 0 )
+    ComponentSetValue2( GetGameEffectLoadTo( entity_id, "PROTECTION_FIRE", true ), "frames", -1 )
+
     EntityAddTag( entity_id, "touchmagic_immunity" )
     EntityAddComponent( entity_id, "StatusEffectDataComponent", { } )
 

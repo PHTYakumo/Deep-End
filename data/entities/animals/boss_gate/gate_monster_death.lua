@@ -19,13 +19,10 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	
 	for i=1,6 do
 		SetRandomSeed( GameGetFrameNum() + seed_offset, ( entity_id + pw ) * i )
-	
 		make_random_card( pos_x + Random(-16,16), pos_y + Random(-16,16) )
 	end
 
 	GamePrint( "$defeat_gate_monster" )
-
-	-- set flag with name of monster. 
 	GameAddFlagRun(EntityGetName(entity_id) .. "_killed")
 
 	-- if all 4 monsters killed, add persistent flag for treetop pillar
@@ -35,4 +32,6 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	and GameHasFlagRun("$animal_gate_monster_d_killed") then
 		AddFlagPersistent( "miniboss_gate_monsters" )
 	end
+
+	if not EntityHasTag( entity_thats_responsible, "player_unit" ) then StatsLogPlayerKill( entity_id ) end
 end

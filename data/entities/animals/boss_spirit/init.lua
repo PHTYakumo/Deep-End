@@ -4,7 +4,7 @@ local entity_id    = GetUpdatedEntityID()
 local x, y = EntityGetTransform( GetUpdatedEntityID() )
 
 local anger = tonumber( GlobalsGetValue( "HELPLESS_KILLS", "1" ) ) or 1
-local boss_hp = math.ceil( clamp( anger^3/7 + anger^2/5 + anger/3, 20 , 100000000 ) / 25 )
+local boss_hp = math.ceil( clamp( anger^3/7 + anger^2/5 + anger/3, 20, 100000000 ) / 25 )
 local comp = EntityGetFirstComponent( entity_id, "DamageModelComponent" )
 
 print("KILLED ANIMALS: " .. tostring( anger ) )

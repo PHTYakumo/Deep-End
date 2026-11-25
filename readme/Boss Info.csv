@@ -1,0 +1,18 @@
+﻿,,,,,,,,,,,,,,,,,,,
+File Name,Boss Name,Normal HP,projectile,explosion,electricity,fire,ice,radioactive,poison,melee,drill,slice,curse,holy,healing,physics_hit,overeating,Injury Mechanism,Crit Dmg Multiplier
+boss_centipede,Kolmisilmä,40025,0.25,0.1,0.25,0,0,0.2,0.2,1,0.25,0.25,0.75,0.75,1,0,1,"SPELL_EATER, SAVING_GRACE",logarithm
+boss_dragon,Suomuhauki,4321,0.5,-0.25,-0.5,-0.5,-0.25,-0.5,-0.25,0,0.25,0.25,-0.125,-0.05,1,1,1,EXCLUSIVE,<5
+boss_limbs,Kolmisilmän Koipi,333,0.004,0.2,0,0.8,0,-0.2,-0.2,0.8,-0.2,-0.2,-0.2,0.2,1,0.004,1,"SHIELD, SAVING_GRACE",5
+boss_pit,Sauvojen tuntija,800,0.3,0.3,0.3,0.3,0.3,1,1,1,0,1,1,0.4,1,1,1,COUNTER,1
+boss_wizard,Mestarien mestari,3930,0.005,-0.25,0,-0.05,-0.05,-0.05,-0.25,-0.25,0,0,0.025,0.025,1,0.005,1,ORBS,1
+wizard_orb_blood,Blood Orb,125000,5 (0.5),0.05 (0.005),1,1,1,1,1,1,1,1,1,-5,-0.05,1,1,"EXCLUSIVE, COUNTER",ignore
+wizard_orb_death,Death Orb,666,1,1,1,1,1,1,1,1,1,1,-1,-1,-1,1,1,EXCLUSIVE,ignore
+boss_alchemist,Ylialkemisti,100000,-0.8,2,-8,-8,-0.8,-0.8,-8,-0.8,0,0,0.4,0.4,1,0,1,SPELL_EATER,2
+boss_robot,Kolmisilmän silmä,5000,immune,-0.4,0.08,-0.24,-0.24,-0.32,-0.32,immune,0,0,0,0,1,0.08,1,"SPELL_EATER, HEAL",5
+boss_meat,Kolmisilmän sydän,1000,0.4,0.5,0,immune,0,1,1,0.6,0.9,1.1,1,1,1,1,1,"SHIELD, HEAL",5
+boss_ghost,Unohdettu,1230,immune,-0.2,0,0,immune,0,-0.2,0,0,0,-0.2,-0.2,0,0,1,INVIS,4
+boss_spirit,Tapion vasalli,550,immune,-0.4,immune,0,0,0,-0.8,-0.8,0,0,-0.8,-0.8,-4,0,1,COUNTER,3
+boss_fish,Syväolento,7500,immune,0.01,0,0,0,0,1,0.01,0,0.01,1,1,1,1,1,COUNTER,1
+maggot_tiny,Limatoukka,66666.6,immune,-0.125,-0.125,0.125,0.125,-0.125,-0.625,0,0.125,0.125,-0.375,-0.375,1,1,1,EXCLUSIVE,ignore
+ultimate_ultra_killer,God of Friendship,5776,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,-10,0,-10,1,NONE,1
+,,,,,,,,,,,,,,,,,,,
